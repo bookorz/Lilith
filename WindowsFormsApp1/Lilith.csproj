@@ -76,7 +76,7 @@
       <HintPath>lib\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="SplitButton">
-      <HintPath>..\packages\SplitButton\bin\Debug\SplitButton.dll</HintPath>
+      <HintPath>lib\SplitButton.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -596,6 +596,8 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
