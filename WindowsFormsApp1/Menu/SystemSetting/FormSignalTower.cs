@@ -7,11 +7,11 @@ using System.Text;
 using System.Windows.Forms;
 using SANWA.Utility;
 using System.Linq;
-using Adam.UI_Update.Monitoring;
+using Lilith.UI_Update.Monitoring;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
-    public partial class FormSignalTower : Adam.Menu.SystemSetting.FormSettingFram
+    public partial class FormSignalTower : Lilith.Menu.SystemSetting.FormSettingFram
     {
         public FormSignalTower()
         {
@@ -189,7 +189,7 @@ namespace Adam.Menu.SystemSetting
 
                 MessageBox.Show("Done it.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormSignalTower", Signal.Text);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormSignalTower", Signal.Text);
 
                 UpdateList();
 

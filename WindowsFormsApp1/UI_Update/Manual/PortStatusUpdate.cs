@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adam.UI_Update.Manual
+namespace Lilith.UI_Update.Manual
 {
     class ManualPortStatusUpdate
     {

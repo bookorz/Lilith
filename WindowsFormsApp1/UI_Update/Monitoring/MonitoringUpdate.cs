@@ -1,4 +1,4 @@
-﻿using Adam.Util;
+﻿using Lilith.Util;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.Monitoring
+namespace Lilith.UI_Update.Monitoring
 {
     public class MonitoringUpdate
     {

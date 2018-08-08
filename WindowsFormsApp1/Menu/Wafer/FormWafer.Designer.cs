@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.Wafer
+﻿namespace Lilith.Menu.Wafer
 {
     partial class FormWafer
     {

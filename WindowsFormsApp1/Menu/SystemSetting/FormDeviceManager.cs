@@ -10,9 +10,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SANWA.Utility;
 using TransferControl.Management;
-using Adam.UI_Update.OCR;
+using Lilith.UI_Update.OCR;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
     public partial class FormDeviceManager : Form
     {
@@ -304,7 +304,7 @@ namespace Adam.Menu.SystemSetting
                 dBUtil.ExecuteNonQuery(strSql, keyValues);
                 MessageBox.Show("Done it.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
 
                 UpdateNodeList();
                 ClearUI();

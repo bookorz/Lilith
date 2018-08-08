@@ -13,11 +13,11 @@ using System.Threading;
 using System.Windows.Forms;
 using TransferControl.Management;
 using System.Linq;
-using Adam.UI_Update.OCR;
+using Lilith.UI_Update.OCR;
 
-namespace Adam.Menu.OCR
+namespace Lilith.Menu.OCR
 {
-    public partial class FormOCR : Adam.Menu.FormFrame
+    public partial class FormOCR : Lilith.Menu.FormFrame
     {
         [DllImport("user32.dll", SetLastError = true)]
         private static extern long SetParent(IntPtr hWndChild, IntPtr hWndNewParent);

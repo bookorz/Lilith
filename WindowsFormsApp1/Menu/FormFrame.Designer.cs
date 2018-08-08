@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu
+﻿namespace Lilith.Menu
 {
     partial class FormFrame
     {

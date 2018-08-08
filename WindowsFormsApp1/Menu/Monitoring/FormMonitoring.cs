@@ -7,9 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.Menu.Monitoring
+namespace Lilith.Menu.Monitoring
 {
-    public partial class FormMonitoring : Adam.Menu.FormFrame
+    public partial class FormMonitoring : Lilith.Menu.FormFrame
     {
         public FormMonitoring()
         {

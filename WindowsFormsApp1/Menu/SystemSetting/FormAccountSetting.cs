@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using SANWA.Utility;
 using System.Linq;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
     public partial class FormAccountSetting : Form
     {
@@ -363,7 +363,7 @@ namespace Adam.Menu.SystemSetting
                 }
 
                 dBUtil.ExecuteNonQuery(strSql, keyValues);
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormAccountSetting", strUserID);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormAccountSetting", strUserID);
                 MessageBox.Show("Done it.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 FormAccountSetting_Load(sender, e);
 

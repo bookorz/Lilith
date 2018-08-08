@@ -1,6 +1,6 @@
-﻿using Adam;
-using Adam.UI_Update.Manual;
-using Adam.Util;
+﻿using Lilith;
+using Lilith.UI_Update.Manual;
+using Lilith.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

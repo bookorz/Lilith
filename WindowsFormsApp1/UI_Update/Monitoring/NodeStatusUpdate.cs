@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.Monitoring
+namespace Lilith.UI_Update.Monitoring
 {
     class NodeStatusUpdate
     {

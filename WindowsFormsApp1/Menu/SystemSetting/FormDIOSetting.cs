@@ -8,9 +8,9 @@ using System.Windows.Forms;
 using SANWA.Utility;
 using System.Linq;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
-    public partial class FormDIOSetting : Adam.Menu.SystemSetting.FormSettingFram
+    public partial class FormDIOSetting : Lilith.Menu.SystemSetting.FormSettingFram
     {
         public FormDIOSetting()
         {
@@ -152,7 +152,7 @@ namespace Adam.Menu.SystemSetting
                 keyValues.Add("@type", lsbCondition.Text.Split('-')[1].ToString());
 
                 dBUtil.ExecuteNonQuery(strSql, keyValues);
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormDIOSetting", Signal.Text);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormDIOSetting", Signal.Text);
                 MessageBox.Show("Done it.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
                 UpdateList();

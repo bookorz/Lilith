@@ -1,5 +1,5 @@
-﻿using Adam.UI_Update.WaferMapping;
-using Adam.Util;
+﻿using Lilith.UI_Update.WaferMapping;
+using Lilith.Util;
 using log4net;
 using Newtonsoft.Json;
 using System;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.Running
+namespace Lilith.UI_Update.Running
 {
     class RunningUpdate
     {
@@ -142,7 +142,7 @@ namespace Adam.UI_Update.Running
                             {
                                 while (StartSlot <= 25)
                                 {
-                                    if (FinPort.GetJob(StartSlot.ToString()).MapFlag == false)
+                                    if (FinPort.GetJob(StartSlot.ToString()).MapFlag == false || FinPort.Name.Equals(DestPort.Name))
                                     {
                                         job.NeedProcess = true;
                                         job.ProcessFlag = false;

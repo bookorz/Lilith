@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Adam.Util
+namespace Lilith.Util
 {
     class Tools
     {

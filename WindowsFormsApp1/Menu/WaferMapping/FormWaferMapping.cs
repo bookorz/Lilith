@@ -1,5 +1,5 @@
-using Adam.UI_Update.Monitoring;
-using Adam.UI_Update.WaferMapping;
+using Lilith.UI_Update.Monitoring;
+using Lilith.UI_Update.WaferMapping;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,9 +11,9 @@ using System.Threading;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.Menu.WaferMapping
+namespace Lilith.Menu.WaferMapping
 {
-    public partial class FormWaferMapping : Adam.Menu.FormFrame
+    public partial class FormWaferMapping : Lilith.Menu.FormFrame
     {
         object CurrentSelected = null;
 
@@ -375,7 +375,7 @@ namespace Adam.Menu.WaferMapping
                 //    break;
                 case "Fake Data(Full)":
                     //WaferAssignUpdate.UpdateLoadPortMapping(Name, "1111111111111111111111111");
-                    WaferAssignUpdate.UpdateLoadPortMapping(Name, "1111111111111111111111111");
+                    WaferAssignUpdate.UpdateLoadPortMapping(Name, "1000000000000000000000000");
                     break;
                 case "Fake Data(Empty)":
                     WaferAssignUpdate.UpdateLoadPortMapping(Name, "0000000000000000000000000");
@@ -440,7 +440,10 @@ namespace Adam.Menu.WaferMapping
 
                     Port_gv.Enabled = false;
                     DestPort_gv.Enabled = false;
-                    DestPort_btn.Enabled = false;
+                    if (!port.Name.Equals(desport.Name))
+                    {
+                        DestPort_btn.Enabled = false;
+                    }
                 }
             }
             else

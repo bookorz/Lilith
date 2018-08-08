@@ -5,11 +5,11 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Adam.Util;
+using Lilith.Util;
 using SANWA.Utility;
 using System.Linq;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
     public partial class FormAlarmEventSet : Form
     {

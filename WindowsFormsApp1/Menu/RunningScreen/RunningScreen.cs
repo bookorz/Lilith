@@ -1,4 +1,4 @@
-﻿using Adam.UI_Update.Monitoring;
+﻿using Lilith.UI_Update.Monitoring;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.Menu.RunningScreen
+namespace Lilith.Menu.RunningScreen
 {
-    public partial class FormRunningScreen : Adam.Menu.FormFrame
+    public partial class FormRunningScreen : Lilith.Menu.FormFrame
     {
 
         public static int TransCount = 0;

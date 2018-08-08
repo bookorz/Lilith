@@ -1,4 +1,4 @@
-﻿using Adam.UI_Update.Alarm;
+﻿using Lilith.UI_Update.Alarm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam
+namespace Lilith
 {
     public partial class FormAlarmHis : Form
     {

@@ -15,7 +15,7 @@ using System.Windows.Forms;
 using TransferControl.Engine;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.OCR
+namespace Lilith.UI_Update.OCR
 {
     class OCRUpdate
     {

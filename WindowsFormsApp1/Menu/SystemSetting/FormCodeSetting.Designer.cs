@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.SystemSetting
+﻿namespace Lilith.Menu.SystemSetting
 {
     partial class FormCodeSetting
     {

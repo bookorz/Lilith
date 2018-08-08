@@ -8,11 +8,11 @@ using System.Windows.Forms;
 using SANWA.Utility;
 using System.Linq;
 using TransferControl.Management;
-using Adam.UI_Update.Monitoring;
+using Lilith.UI_Update.Monitoring;
 
-namespace Adam.Menu.Wafer
+namespace Lilith.Menu.Wafer
 {
-    public partial class FormWafer : Adam.Menu.SystemSetting.FormSettingFram
+    public partial class FormWafer : Lilith.Menu.SystemSetting.FormSettingFram
     {
         public FormWafer()
         {

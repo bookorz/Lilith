@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.Status
+﻿namespace Lilith.Menu.Status
 {
     partial class FormStatus
     {
@@ -615,9 +615,9 @@
             // 
             // pbRobotState
             // 
-            this.pbRobotState.Image = global::Adam.Properties.Resources.sanwa_robot_status;
+            this.pbRobotState.Image = global::Lilith.Properties.Resources.sanwa_robot_status;
             this.pbRobotState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbRobotState.InitialImage = global::Adam.Properties.Resources.sanwa_robot_status;
+            this.pbRobotState.InitialImage = global::Lilith.Properties.Resources.sanwa_robot_status;
             this.pbRobotState.Location = new System.Drawing.Point(3, 8);
             this.pbRobotState.Name = "pbRobotState";
             this.pbRobotState.Size = new System.Drawing.Size(671, 834);
@@ -648,9 +648,9 @@
             // 
             // pbAlignerState
             // 
-            this.pbAlignerState.Image = global::Adam.Properties.Resources.sanwa_aligner_status;
+            this.pbAlignerState.Image = global::Lilith.Properties.Resources.sanwa_aligner_status;
             this.pbAlignerState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbAlignerState.InitialImage = global::Adam.Properties.Resources.sanwa_robot_status;
+            this.pbAlignerState.InitialImage = global::Lilith.Properties.Resources.sanwa_robot_status;
             this.pbAlignerState.Location = new System.Drawing.Point(3, 8);
             this.pbAlignerState.Name = "pbAlignerState";
             this.pbAlignerState.Size = new System.Drawing.Size(664, 710);
@@ -681,9 +681,9 @@
             // 
             // pbPortState
             // 
-            this.pbPortState.Image = global::Adam.Properties.Resources.tdk_loadport_status;
+            this.pbPortState.Image = global::Lilith.Properties.Resources.tdk_loadport_status;
             this.pbPortState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pbPortState.InitialImage = global::Adam.Properties.Resources.sanwa_robot_status;
+            this.pbPortState.InitialImage = global::Lilith.Properties.Resources.sanwa_robot_status;
             this.pbPortState.Location = new System.Drawing.Point(3, 8);
             this.pbPortState.Name = "pbPortState";
             this.pbPortState.Size = new System.Drawing.Size(668, 714);

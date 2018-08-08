@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adam.UI_Update.Monitoring
+namespace Lilith.UI_Update.Monitoring
 {
     class ConnectionStatusUpdate
     {

@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.OCR
+﻿namespace Lilith.Menu.OCR
 {
     partial class FormOCR
     {

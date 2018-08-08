@@ -16,7 +16,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 
-namespace Adam
+namespace Lilith
 {
     public partial class FormTerminal : Form
     {
@@ -486,7 +486,7 @@ namespace Adam
 
         private void btnClearHistory_Click(object sender, EventArgs e)
         {
-            Adam.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", string.Empty, true);
+            Lilith.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", string.Empty, true);
         }
 
         private void btnAppendlist_Click(object sender, EventArgs e)
@@ -665,15 +665,15 @@ namespace Adam
                         strDevice = alRun[0].ToString().Split('&')[0];
                         strCommand = alRun[0].ToString().Split('&')[1];
 
-                        Adam.UI_Update.Terminal.TerminalUpdate.UpdateLabelText("lbQueue", "Queue:" + alRun.Count.ToString());
-                        Adam.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss ffffff") + "    " + strDevice + " <<  " + strCommand, false);
+                        Lilith.UI_Update.Terminal.TerminalUpdate.UpdateLabelText("lbQueue", "Queue:" + alRun.Count.ToString());
+                        Lilith.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss ffffff") + "    " + strDevice + " <<  " + strCommand, false);
                         strReturnMsg = ControllerManagement.Get(strDevice).DoWorkSync(strCommand, strCommand.IndexOf("CMD") > 0 ? "CMD" : string.Empty);                  
-                        Adam.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss ffffff") + "   " + strDevice + " >>  " + strReturnMsg, false);
+                        Lilith.UI_Update.Terminal.TerminalUpdate.UpdateReturnList("lsbHistory", DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss ffffff") + "   " + strDevice + " >>  " + strReturnMsg, false);
                         alRun.RemoveAt(0);
 
                         if (alRun.Count > 0)
                         {
-                            Adam.UI_Update.Terminal.TerminalUpdate.UpdateLabelText("lbQueue", "Queue:" + alRun.Count.ToString());
+                            Lilith.UI_Update.Terminal.TerminalUpdate.UpdateLabelText("lbQueue", "Queue:" + alRun.Count.ToString());
                         }
                     }
                 }

@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.WaferMapping
+﻿namespace Lilith.Menu.WaferMapping
 {
     partial class FormWaferMapping
     {

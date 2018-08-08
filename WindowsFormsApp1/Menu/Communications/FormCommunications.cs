@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Adam.Util;
+using Lilith.Util;
 using System.Linq;
 using System.IO.Ports;
 using System.Diagnostics;
@@ -14,11 +14,11 @@ using Newtonsoft.Json;
 using SANWA.Utility.Config;
 using TransferControl.Management;
 using TransferControl.Controller;
-using Adam.UI_Update.Communications;
+using Lilith.UI_Update.Communications;
 
-namespace Adam.Menu.Communications
+namespace Lilith.Menu.Communications
 {
-    public partial class FormCommunications : Adam.Menu.FormFrame
+    public partial class FormCommunications : Lilith.Menu.FormFrame
     {
         public FormCommunications()
         {
@@ -505,7 +505,7 @@ namespace Adam.Menu.Communications
 
                 MessageBox.Show("Done it.", "Save", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
 
                 FormCommunications_Load(sender, e);
             }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using SANWA.Utility;
 using TransferControl.Management;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
     public partial class FormCommandScript : Form
     {
@@ -186,7 +186,7 @@ namespace Adam.Menu.SystemSetting
 
                 Form form = Application.OpenForms["FormMain"];
                 Label Signal = form.Controls.Find("lbl_login_id", true).FirstOrDefault() as Label;
-                Adam.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
+                Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
 
                 UpdateNodeList();
                 //改設定後套用

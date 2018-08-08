@@ -1,4 +1,4 @@
-﻿namespace Adam
+﻿namespace Lilith
 {
     partial class FormTransTest
     {

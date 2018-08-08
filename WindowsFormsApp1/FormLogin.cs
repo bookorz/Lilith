@@ -1,5 +1,5 @@
-﻿using Adam.UI_Update.Authority;
-using Adam.Util;
+﻿using Lilith.UI_Update.Authority;
+using Lilith.Util;
 using log4net;
 using SANWA.Utility;
 using System;

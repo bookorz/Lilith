@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.Terminal
+namespace Lilith.UI_Update.Terminal
 {
     class TerminalUpdate
     {

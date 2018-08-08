@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using TransferControl.Controller;
 using TransferControl.Management;
 
-namespace Adam.Util
+namespace Lilith.Util
 {
     class StateUtil
     {

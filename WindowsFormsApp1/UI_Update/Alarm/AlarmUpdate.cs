@@ -1,4 +1,4 @@
-﻿using Adam.UI_Update.Monitoring;
+﻿using Lilith.UI_Update.Monitoring;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransferControl.Management;
 
-namespace Adam.UI_Update.Alarm
+namespace Lilith.UI_Update.Alarm
 {
     class AlarmUpdate
     {

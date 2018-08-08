@@ -1,4 +1,4 @@
-﻿using Adam.Util;
+﻿using Lilith.Util;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -13,9 +13,9 @@ using System.Windows.Forms;
 using TransferControl.Controller;
 using TransferControl.Management;
 
-namespace Adam.Menu.Status
+namespace Lilith.Menu.Status
 {
-    public partial class FormStatus : Adam.Menu.FormFrame
+    public partial class FormStatus : Lilith.Menu.FormFrame
     {
 
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormStatus));

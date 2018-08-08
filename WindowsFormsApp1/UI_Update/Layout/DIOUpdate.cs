@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adam.UI_Update.Layout
+namespace Lilith.UI_Update.Layout
 {
     class DIOUpdate
     {

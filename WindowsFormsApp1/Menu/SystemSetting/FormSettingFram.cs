@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
-    public partial class FormSettingFram : Adam.Menu.FormFrame
+    public partial class FormSettingFram : Lilith.Menu.FormFrame
     {
         public FormSettingFram()
         {

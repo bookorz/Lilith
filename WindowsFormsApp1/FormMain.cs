@@ -7,24 +7,24 @@ using TransferControl.Engine;
 using TransferControl.Management;
 using TransferControl.Parser;
 using log4net.Config;
-using Adam.UI_Update.Monitoring;
+using Lilith.UI_Update.Monitoring;
 using log4net;
-using Adam.UI_Update.Manual;
-using Adam.UI_Update.OCR;
-using Adam.UI_Update.WaferMapping;
+using Lilith.UI_Update.Manual;
+using Lilith.UI_Update.OCR;
+using Lilith.UI_Update.WaferMapping;
 using System.Threading;
-using Adam.UI_Update.Authority;
+using Lilith.UI_Update.Authority;
 using DIOControl;
-using Adam.UI_Update.Layout;
-using Adam.UI_Update.Alarm;
+using Lilith.UI_Update.Layout;
+using Lilith.UI_Update.Alarm;
 using GUI;
-using Adam.UI_Update.Running;
+using Lilith.UI_Update.Running;
 using System.Linq;
 using System.Collections.Concurrent;
-using Adam.Util;
-using Adam.UI_Update.Communications;
+using Lilith.Util;
+using Lilith.UI_Update.Communications;
 
-namespace Adam
+namespace Lilith
 {
     public partial class FormMain : Form, IUserInterfaceReport, IDIOTriggerReport
     {
@@ -184,12 +184,13 @@ namespace Adam
                         case "ROBOT":
                             each.ExcuteScript("RobotInit", "Initialize");
                             break;
-                        case "ALIGNER":
-                            each.ExcuteScript("AlignerInit", "Initialize");
-                            break;
-                        case "LOADPORT":
-                            each.ExcuteScript("LoadPortInit", "Initialize");
-                            break;
+                            //先做ROBOT
+                        //case "ALIGNER":
+                        //    each.ExcuteScript("AlignerInit", "Initialize");
+                        //    break;
+                        //case "LOADPORT":
+                        //    each.ExcuteScript("LoadPortInit", "Initialize");
+                        //    break;
                     }
                 }
             }
@@ -712,6 +713,23 @@ namespace Adam
         {
             logger.Debug("On_Port_Begin");
 
+            //for 200mm
+            Dictionary<string, string> Params = new Dictionary<string, string>();
+            if (PortName.ToUpper().Equals("LOADPORT02"))
+            {
+                Params.Add("12_Inch_OCR", "False");
+                Params.Add("8_Inch_OCR", "True");
+
+                DIO.SetIO(Params);
+            }
+            else if (PortName.ToUpper().Equals("LOADPORT01"))
+            {
+                Params.Add("8_Inch_OCR", "False");
+                Params.Add("12_Inch_OCR", "True");
+
+                DIO.SetIO(Params);
+            }
+
             WaferAssignUpdate.RefreshMapping(PortName);
             WaferAssignUpdate.RefreshMapping(NodeManagement.Get(PortName).DestPort);
             try
@@ -837,6 +855,27 @@ namespace Adam
                             Node.State = "Ready To Load";
                             break;
                     }
+
+                    if (Node.Type.Equals("ROBOT"))//當最後一台Robot 完成Initial時，其他才開始做Initial
+                    {
+                        if (NodeManagement.IsRobotInitial())
+                        {
+                            foreach (Node each in NodeManagement.GetList())
+                            {
+
+                                switch (each.Type.ToUpper())
+                                {
+                                    case "ALIGNER":
+                                        each.ExcuteScript("AlignerInit", "Initialize");
+                                        break;
+                                    case "LOADPORT":
+                                        each.ExcuteScript("LoadPortInit", "Initialize");
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                    
                     if (!NodeManagement.IsNeedInitial())
                     {
                         NodeStatusUpdate.UpdateCurrentState("Idle");

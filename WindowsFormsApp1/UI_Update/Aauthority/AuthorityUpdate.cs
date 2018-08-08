@@ -1,4 +1,4 @@
-﻿using Adam.Util;
+﻿using Lilith.Util;
 using log4net;
 using SANWA.Utility;
 using System;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adam.UI_Update.Authority
+namespace Lilith.UI_Update.Authority
 {
     class AuthorityUpdate
     {

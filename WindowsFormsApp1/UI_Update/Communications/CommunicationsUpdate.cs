@@ -1,4 +1,4 @@
-﻿using Adam.Menu.Communications;
+﻿using Lilith.Menu.Communications;
 using log4net;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Adam.UI_Update.Communications
+namespace Lilith.UI_Update.Communications
 {
     public class CommunicationsUpdate
     {

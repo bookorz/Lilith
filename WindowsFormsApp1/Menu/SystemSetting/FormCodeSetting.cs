@@ -5,12 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Adam.Util;
+using Lilith.Util;
 using SANWA.Utility;
 
-namespace Adam.Menu.SystemSetting
+namespace Lilith.Menu.SystemSetting
 {
-    public partial class FormCodeSetting : Adam.Menu.SystemSetting.FormSettingFram
+    public partial class FormCodeSetting : Lilith.Menu.SystemSetting.FormSettingFram
     {
         public FormCodeSetting()
         {

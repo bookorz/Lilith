@@ -1,4 +1,4 @@
-﻿namespace Adam.Menu.RunningScreen
+﻿namespace Lilith.Menu.RunningScreen
 {
     partial class FormRunningScreen
     {
