@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
+            this.RunSwitch = new System.Windows.Forms.Button();
+            this.AutoReverse_ck = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.WPH = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -179,6 +181,8 @@
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
+            this.Aligner01_tb.Controls.Add(this.RunSwitch);
+            this.Aligner01_tb.Controls.Add(this.AutoReverse_ck);
             this.Aligner01_tb.Controls.Add(this.panel5);
             this.Aligner01_tb.Controls.Add(this.LoadPort02_Mode);
             this.Aligner01_tb.Controls.Add(this.label26);
@@ -211,6 +215,31 @@
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
+            // 
+            // RunSwitch
+            // 
+            this.RunSwitch.BackColor = System.Drawing.Color.Lime;
+            this.RunSwitch.Enabled = false;
+            this.RunSwitch.Location = new System.Drawing.Point(1335, 123);
+            this.RunSwitch.Name = "RunSwitch";
+            this.RunSwitch.Size = new System.Drawing.Size(125, 39);
+            this.RunSwitch.TabIndex = 172;
+            this.RunSwitch.Text = "Start";
+            this.RunSwitch.UseVisualStyleBackColor = false;
+            this.RunSwitch.Click += new System.EventHandler(this.RunSwitch_Click);
+            // 
+            // AutoReverse_ck
+            // 
+            this.AutoReverse_ck.AutoSize = true;
+            this.AutoReverse_ck.Checked = true;
+            this.AutoReverse_ck.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.AutoReverse_ck.Location = new System.Drawing.Point(1335, 86);
+            this.AutoReverse_ck.Name = "AutoReverse_ck";
+            this.AutoReverse_ck.Size = new System.Drawing.Size(86, 19);
+            this.AutoReverse_ck.TabIndex = 171;
+            this.AutoReverse_ck.Text = "自動循環";
+            this.AutoReverse_ck.UseVisualStyleBackColor = true;
+            this.AutoReverse_ck.CheckedChanged += new System.EventHandler(this.AutoReverse_ck_CheckedChanged);
             // 
             // panel5
             // 
@@ -352,7 +381,7 @@
             // OCR01Read_Tb
             // 
             this.OCR01Read_Tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OCR01Read_Tb.Location = new System.Drawing.Point(90, 172);
+            this.OCR01Read_Tb.Location = new System.Drawing.Point(106, 169);
             this.OCR01Read_Tb.Name = "OCR01Read_Tb";
             this.OCR01Read_Tb.Size = new System.Drawing.Size(215, 16);
             this.OCR01Read_Tb.TabIndex = 0;
@@ -2688,5 +2717,7 @@
         private System.Windows.Forms.Panel panel5;
         internal System.Windows.Forms.Label WPH;
         internal System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button RunSwitch;
+        private System.Windows.Forms.CheckBox AutoReverse_ck;
     }
 }

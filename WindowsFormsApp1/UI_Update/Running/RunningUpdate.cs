@@ -92,13 +92,13 @@ namespace Lilith.UI_Update.Running
             }
             else
             {
-                TextBox tb = form.Controls.Find(Param+"_tb", true).FirstOrDefault() as TextBox;
+                TextBox tb = form.Controls.Find(Param + "_tb", true).FirstOrDefault() as TextBox;
                 if (tb == null)
                     return;
                 if (Param.Equals("TransCount"))
                 {
-                    tb.Text = (Convert.ToInt32(tb.Text) - 1).ToString();
-                    
+                    tb.Text = (Convert.ToInt32(tb.Text) + 1).ToString();
+
                 }
                 else
                 {
@@ -109,9 +109,9 @@ namespace Lilith.UI_Update.Running
 
         public static void ReverseRunning(string FinishPort)
         {
-            
+
             Form form = Application.OpenForms["FormRunningScreen"];
-            
+
             if (form == null)
                 return;
 
@@ -129,13 +129,14 @@ namespace Lilith.UI_Update.Running
                 Node FinPort = NodeManagement.Get(FinishPort);
                 if (FinPort != null)
                 {
-                   
+
                     Node DestPort = NodeManagement.Get(FinPort.DestPort);
                     if (DestPort != null)
                     {
                         int StartSlot = 1;
                         List<Job> DestPortJobs = DestPort.JobList.Values.ToList();
                         DestPortJobs.Sort((x, y) => { return Convert.ToInt16(x.Slot).CompareTo(Convert.ToInt16(y.Slot)); });
+
                         foreach (Job job in DestPortJobs)
                         {
                             if (job.MapFlag)
@@ -144,12 +145,16 @@ namespace Lilith.UI_Update.Running
                                 {
                                     if (FinPort.GetJob(StartSlot.ToString()).MapFlag == false || FinPort.Name.Equals(DestPort.Name))
                                     {
+
+                                        job.RecipeID = FinPort.WaferSize;
+
+                                        job.DefaultOCR = "OCR01";
                                         job.NeedProcess = true;
                                         job.ProcessFlag = false;
                                         job.AlignerFlag = true;
                                         job.OCRFlag = true;
                                         job.AssignPort(FinPort.Name, StartSlot.ToString());
-                                       
+
                                         FinPort.ReserveList.TryAdd(job.Slot, job);
                                         StartSlot++;
                                         break;
@@ -162,6 +167,8 @@ namespace Lilith.UI_Update.Running
                                 break;
                             }
                         }
+
+
                         //FinPort.DestPort = "Assign";
                         if (FinPort.Name.Equals(DestPort.Name))
                         {
@@ -178,7 +185,7 @@ namespace Lilith.UI_Update.Running
                         DestPort.DestPort = FinPort.Name;
                         DestPort.ReserveList.Clear();
                         tb = form.Controls.Find("TransCount_tb", true).FirstOrDefault() as TextBox;
-                        if (Convert.ToInt32(tb.Text) <= 1)//次數歸零 停止DEMO
+                        if (!FormMain.AutoReverse)// 停止DEMO
                         {
                             DestPort.Available = false;
                             FormMain.RouteCtrl.Stop();
@@ -186,7 +193,7 @@ namespace Lilith.UI_Update.Running
                         else
                         {
                             ProcessRecord.CreatePr(DestPort);
-                            WaferAssignUpdate.UpdateAssignCM(DestPort.Name, FinPort.Name,false);
+                            WaferAssignUpdate.UpdateAssignCM(DestPort.Name, FinPort.Name, false);
                             DestPort.Available = true;
                             if (DestPort.ByPass)
                             {
@@ -205,13 +212,13 @@ namespace Lilith.UI_Update.Running
                     return;
                 }
 
-                
 
-               
+
+
             }
-        } 
+        }
 
-        
-       
+
+
     }
 }

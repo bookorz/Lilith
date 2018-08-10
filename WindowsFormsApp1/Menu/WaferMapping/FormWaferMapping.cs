@@ -420,15 +420,20 @@ namespace Lilith.Menu.WaferMapping
 
                     CheckBox Align = this.Controls.Find(port.Name + "_Align_ck", true).FirstOrDefault() as CheckBox;
                     CheckBox Ocr = this.Controls.Find(port.Name + "_Align_ck", true).FirstOrDefault() as CheckBox;
+                    
                     foreach (Job j in port.JobList.Values.ToList())
                     {
                         if (j.NeedProcess)
                         {
                             j.AlignerFlag = Align.Checked;
                             j.OCRFlag = Ocr.Checked;
+                            
+                            j.RecipeID = port.WaferSize;
+                            
+                            j.DefaultOCR = "OCR01";
                         }
                     }
-
+                   
 
                     port.Available = true;
 

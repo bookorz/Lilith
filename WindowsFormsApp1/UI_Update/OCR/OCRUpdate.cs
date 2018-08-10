@@ -268,7 +268,7 @@ namespace Lilith.UI_Update.OCR
                 SpinWait.SpinUntil(() => (from prs in Process.GetProcessesByName("VB9BReaderForm").OfType<Process>().ToList()
                                           where prs.MainWindowTitle.Equals("[" + OCR.AdrNo + "]Wafer Reader Version 4.3.1.0")
                                           select prs).Count() != 0, 60000);
-                SpinWait.SpinUntil(() => false, 2000);
+                SpinWait.SpinUntil(() => false, 1000);
                 // Put it into this form
                 if (tabControl1.InvokeRequired)
                 {
@@ -317,7 +317,7 @@ namespace Lilith.UI_Update.OCR
 
                 //Cognex Wafer ID - 4.5.0
                 SpinWait.SpinUntil(() => Process.GetProcessesByName("WaferID")[0].MainWindowTitle.Equals("Cognex Wafer ID - 4.5.0"), 60000);
-                SpinWait.SpinUntil(() => false, 2000);
+                SpinWait.SpinUntil(() => false, 1000);
                 //SpinWait.SpinUntil(() => Process.GetProcessesByName("WaferID").Length != 0, 60000);
 
                 //logger.Debug("1" + Process.GetProcessesByName("WaferID")[0].MainWindowTitle);

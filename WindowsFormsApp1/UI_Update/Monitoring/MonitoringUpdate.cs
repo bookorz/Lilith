@@ -17,6 +17,37 @@ namespace Lilith.UI_Update.Monitoring
 
         delegate void UpdatePortUsed(string PortName, bool Used);
         delegate void UpdateNode(string JobId);
+        delegate void UpdateEnable(bool Enable);
+
+        public static void UpdateStartButton(bool Enable)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                Button W;
+                if (form == null)
+                    return;
+
+                W = form.Controls.Find("RunSwitch", true).FirstOrDefault() as Button;
+                if (W == null)
+                    return;
+
+                if (W.InvokeRequired)
+                {
+                    UpdateEnable ph = new UpdateEnable(UpdateStartButton);
+                    W.BeginInvoke(ph, Enable);
+                }
+                else
+                {
+                    W.Enabled = Enable;
+
+                }
+            }
+            catch
+            {
+                logger.Error("UpdateStartButton: Update fail.");
+            }
+        }
 
         public static void UpdateWPH(string WPH)
         {

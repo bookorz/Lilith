@@ -169,5 +169,27 @@ namespace Lilith.Menu.Monitoring
             OCRResult form2 = new OCRResult((sender as PictureBox).Tag as Job);
             form2.ShowDialog();
         }
+
+        private void RunSwitch_Click(object sender, EventArgs e)
+        {
+            FormMain.AutoReverse = AutoReverse_ck.Checked;
+            if (RunSwitch.Text.Equals("Start"))
+            {
+                RunSwitch.Text = "Stop";
+                RunSwitch.BackColor = Color.OrangeRed;
+                FormMain.RouteCtrl.Start("Running");
+            }
+            else
+            {
+                RunSwitch.Text = "Start";
+                RunSwitch.BackColor = Color.Lime;
+                FormMain.RouteCtrl.Stop();
+            }
+        }
+
+        private void AutoReverse_ck_CheckedChanged(object sender, EventArgs e)
+        {
+            FormMain.AutoReverse = AutoReverse_ck.Checked;
+        }
     }
 }

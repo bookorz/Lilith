@@ -203,7 +203,7 @@
             this.TransCount_tb.Name = "TransCount_tb";
             this.TransCount_tb.Size = new System.Drawing.Size(151, 35);
             this.TransCount_tb.TabIndex = 1;
-            this.TransCount_tb.Text = "9999999";
+            this.TransCount_tb.Text = "0";
             // 
             // label1
             // 

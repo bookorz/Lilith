@@ -104,6 +104,8 @@ namespace Lilith.UI_Update.WaferMapping
                     Port_gv.Columns["Position"].Visible = false;
                     Port_gv.Columns["FromPort"].Visible = false;
                     Port_gv.Columns["LastNode"].Visible = false;
+                    Port_gv.Columns["RecipeID"].Visible = false;
+                    Port_gv.Columns["DefaultOCR"].Visible = false;
                     Port_gv.Columns["CurrentState"].Visible = false;
                     Port_gv.Columns["WaitToDo"].Visible = false;
                     //Port_gv.Columns["FetchRobot"].Visible = false;
@@ -202,6 +204,7 @@ namespace Lilith.UI_Update.WaferMapping
 
                                     break;
                                 case '2':
+                                case 'E':
                                     wafer.Job_Id = "Crossed";
                                     wafer.Host_Job_Id = wafer.Job_Id;
                                     wafer.MapFlag = true;
@@ -252,6 +255,8 @@ namespace Lilith.UI_Update.WaferMapping
                     Port_gv.Columns["LastNode"].Visible = false;
                     Port_gv.Columns["CurrentState"].Visible = false;
                     Port_gv.Columns["WaitToDo"].Visible = false;
+                    Port_gv.Columns["RecipeID"].Visible = false;
+                    Port_gv.Columns["DefaultOCR"].Visible = false;
                     //Port_gv.Columns["FetchRobot"].Visible = false;
                     Port_gv.Columns["ProcessNode"].Visible = false;
                     Port_gv.Columns["MapFlag"].Visible = false;

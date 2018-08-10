@@ -33,6 +33,8 @@ namespace Lilith
         public static AlarmMapping AlmMapping;
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormMain));
 
+        public static bool AutoReverse = true;
+
         FromAlarm alarmFrom = new FromAlarm();
         private Menu.Monitoring.FormMonitoring formMonitoring = new Menu.Monitoring.FormMonitoring();
         private Menu.Communications.FormCommunications formCommunications = new Menu.Communications.FormCommunications();
@@ -185,12 +187,12 @@ namespace Lilith
                             each.ExcuteScript("RobotInit", "Initialize");
                             break;
                             //先做ROBOT
-                        //case "ALIGNER":
-                        //    each.ExcuteScript("AlignerInit", "Initialize");
-                        //    break;
-                        //case "LOADPORT":
-                        //    each.ExcuteScript("LoadPortInit", "Initialize");
-                        //    break;
+                            //case "ALIGNER":
+                            //    each.ExcuteScript("AlignerInit", "Initialize");
+                            //    break;
+                            //case "LOADPORT":
+                            //    each.ExcuteScript("LoadPortInit", "Initialize");
+                            //    break;
                     }
                 }
             }
@@ -300,6 +302,44 @@ namespace Lilith
                 AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
             }
 
+            if (Txn.Method.Equals(Transaction.Command.LoadPortType.GetMapping))
+            {
+                Node Port = null;
+                switch (Node.Type)
+                {
+                    case "LOADPORT":
+                        Port = Node;
+                        break;
+                    case "ROBOT":
+                        Port = NodeManagement.Get(Node.CurrentPosition);
+                        break;
+                }
+
+                if (Port != null)
+                {
+                    //Asign Wafer
+
+                    foreach (Job j in Port.JobList.Values.ToList())
+                    {
+                        if (j.MapFlag)
+                        {
+                            j.AlignerFlag = true;
+                            j.OCRFlag = true;
+                            j.NeedProcess = true;
+                            j.RecipeID = Port.WaferSize;
+                            j.AssignPort(Port.Name, j.Slot);
+                            j.DefaultOCR = "OCR01";
+                        }
+                    }
+                    Port.Mode = "LU";
+                    if (!Port.WaferSize.Equals("200MM"))
+                    {
+                        Port.LoadTime = DateTime.Now;
+                    }
+                    Port.Available = true;
+                }
+            }
+
             switch (Node.Type)
             {
                 case "LOADPORT":
@@ -314,6 +354,15 @@ namespace Lilith
                         case Transaction.Command.LoadPortType.ForceInitialPos:
                             WaferAssignUpdate.RefreshMapping(Node.Name);
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
+                            break;
+                    }
+                    break;
+                case "ROBOT":
+                    switch (Txn.Method)
+                    {
+                        case Transaction.Command.RobotType.GetMapping:
+                            WaferAssignUpdate.RefreshMapping(Node.CurrentPosition);
+                            MonitoringUpdate.UpdateNodesJob(Node.CurrentPosition);
                             break;
                     }
                     break;
@@ -436,50 +485,84 @@ namespace Lilith
                                     bool CheckResult = true;
                                     foreach (KeyValuePair<string, string> each in content)
                                     {
-                                        switch (each.Key)
+                                        if (Node.WaferSize.Equals("200MM"))
                                         {
-                                            case "FOUP Clamp Status":
-                                                if (!each.Value.Equals("Open"))
-                                                {
-                                                    CheckResult = false;
-                                                }
-                                                break;
-                                            case "Latch Key Status":
-                                                if (!each.Value.Equals("Close"))
-                                                {
-                                                    CheckResult = false;
-                                                }
-                                                break;
-                                            case "Cassette Presence":
-                                                if (!each.Value.Equals("Normal position"))
-                                                {
-                                                    CheckResult = false;
-                                                }
-                                                break;
-                                            case "Door Position":
-                                                if (!each.Value.Equals("Close position"))
-                                                {
-                                                    CheckResult = false;
-                                                }
-                                                break;
-                                            case "Equipment Status":
-                                                if (each.Value.Equals("Fatal error"))
-                                                {
-                                                    CheckResult = false;
-                                                }
-                                                break;
+                                            switch (each.Key)
+                                            {
+                                                case "FOUP Clamp Status":
+                                                    if (!each.Value.Equals("Close"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+
+                                                case "Cassette Presence":
+                                                    if (!each.Value.Equals("Normal position"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Door Position":
+                                                    if (!each.Value.Equals("Open position"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Equipment Status":
+                                                    if (each.Value.Equals("Fatal error"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                        else
+                                        {
+                                            switch (each.Key)
+                                            {
+                                                case "FOUP Clamp Status":
+                                                    if (!each.Value.Equals("Open")) //300MM check only,200MM already loaded
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Latch Key Status":
+                                                    if (!each.Value.Equals("Close"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Cassette Presence":
+                                                    if (!each.Value.Equals("Normal position"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Door Position":
+                                                    if (!each.Value.Equals("Close position"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                                case "Equipment Status":
+                                                    if (each.Value.Equals("Fatal error"))
+                                                    {
+                                                        CheckResult = false;
+                                                    }
+                                                    break;
+                                            }
                                         }
                                     }
                                     if (CheckResult)
                                     {
                                         Node.FoupReady = true;
-                                        Node.ExcuteScript("LoadPortFoupIn", "LoadPortFoup", true);
+                                        Node.ExcuteScript("LoadPortFoupIn", "LoadPortFoup", "", true);
 
                                     }
                                     else
                                     {
                                         Node.FoupReady = false;
-                                        Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", true);
+                                        Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
                                         On_Node_State_Changed(Node, "Ready To Load");
                                     }
                                     break;
@@ -570,6 +653,14 @@ namespace Lilith
                 default:
                     switch (Node.Type)
                     {
+                        case "ROBOT":
+                        //switch (Txn.Method)
+                        //{
+                        //    case Transaction.Command.RobotType.Mapping: //when 200mm port mapped by robot's fork, then port's busy switch to false.
+                        //        NodeManagement.Get(Txn.Position).Busy = false;
+                        //        break;
+                        //}
+                        //break;
                         case "LOADPORT":
                             switch (Txn.Method)
                             {
@@ -627,34 +718,67 @@ namespace Lilith
         {
             logger.Debug("On_Event_Trigger");
 
-
-            Transaction txn = new Transaction();
-            switch (Node.Type)
+            try
             {
-                case "LOADPORT":
-                    ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Trigger");
-                    switch (Msg.Command)
-                    {
-                        case "MANSW":
-                            if (Node.FoupReady)
-                            {
-                                Node.ExcuteScript("LoadPortMapping", "MANSW", true);
-                            }
-                            break;
-                        case "PODON":
-                            //檢查LoadPort狀態
-                            txn.Method = Transaction.Command.LoadPortType.ReadStatus;
-                            txn.FormName = "";
-                            Node.SendCommand(txn);
+                Transaction txn = new Transaction();
+                switch (Node.Type)
+                {
+                    case "LOADPORT":
+                        ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Trigger");
+                        switch (Msg.Command)
+                        {
+                            case "MANSW":
+                                if (Node.FoupReady)
+                                {
+                                    MonitoringUpdate.UpdateStartButton(false);//當OpAccess按下，禁用主畫面的Start按鈕
+                                    Node.WaitForFinish = true;
+                                    if (Node.WaferSize.Equals("200MM"))//8" use only , Trigger Robot's fork to mapping wafer.
+                                    {
+                                        RobotPoint rbtP = PointManagement.GetMapPoint(Node.Name, "200MM");
+                                        if (rbtP != null)
+                                        {
+                                            Node Rbt = NodeManagement.Get(rbtP.NodeName);
+                                            if (Rbt != null)
+                                            {
+                                                Dictionary<string, string> vars = new Dictionary<string, string>();
+                                                vars.Add("@loadport", Node.Name);
+                                                Rbt.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
+                                                Node.FoupReady = false;
+                                                //Robot mapping時 LoadPort 的OpAccess燈亮起
+                                                txn = new Transaction();
+                                                txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
+                                                txn.Value = "1";
+                                                txn.FormName = "RobotMapping";
+                                                Node.SendCommand(txn);
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Node.ExcuteScript("LoadPortMapping", "MANSW", "", true);
+                                    }
+                                }
+                                break;
+                            case "PODON":
+                                //檢查LoadPort狀態
+                                txn.Method = Transaction.Command.LoadPortType.ReadStatus;
+                                txn.FormName = "InitialFinish";
+                                Node.SendCommand(txn);
 
-                            break;
-                        case "PODOF":
-                            Node.FoupReady = false;
-                            Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", true);
-                            On_Node_State_Changed(Node, "Ready To Load");
-                            break;
-                    }
-                    break;
+                                break;
+                            case "SMTON":
+                            case "PODOF":
+                                Node.FoupReady = false;
+                                Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
+                                On_Node_State_Changed(Node, "Ready To Load");
+                                break;
+                        }
+                        break;
+                }
+            }
+            catch (Exception e)
+            {
+                logger.Error(e.StackTrace, e);
             }
 
         }
@@ -696,7 +820,7 @@ namespace Lilith
 
                 foreach (Node port in findPort)
                 {
-                    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", true);
+                    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
                 }
                 CommunicationsUpdate.UpdateConnection(Device_ID, true);
             }
@@ -712,18 +836,68 @@ namespace Lilith
         public void On_Port_Begin(string PortName, string FormName)
         {
             logger.Debug("On_Port_Begin");
-
+            Node port = NodeManagement.Get(PortName);
             //for 200mm
             Dictionary<string, string> Params = new Dictionary<string, string>();
-            if (PortName.ToUpper().Equals("LOADPORT02"))
+
+
+            if (port.WaferSize.Equals("200MM"))//8" operation before fetch the first wafer.
             {
+                Dictionary<string, string> vars = new Dictionary<string, string>();
+                RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
+                Node Robot = NodeManagement.Get(robotPoint.NodeName);
+                if (!port.IsMapping)
+                {//除了第一次用手動Mapping，之後的自動循環都要做Mapping
+                    port.WaitForFinish = true;
+                    vars.Add("@loadport", PortName);
+                    Robot.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
+
+                    logger.Debug("Wait for RobotMapping.");
+                    SpinWait.SpinUntil(() => !port.WaitForFinish, 99999999);//等待Robot Mapping動作結束
+                }
+                Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
+                if (Aligner != null)//切換Aligner位置
+                {
+                    Aligner.WaitForFinish = true;
+                    vars = new Dictionary<string, string>();
+                    vars.Add("@size", "100000");
+                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, "200MM");
+                    logger.Debug("Wait for ChangeAlignSize.");
+                    SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
+
+                }
+                else
+                {
+                    logger.Error("ChangeAlignSize error: Aligner not found.");
+                    RouteCtrl.Stop();
+                    return;
+                }
+
                 Params.Add("12_Inch_OCR", "False");
                 Params.Add("8_Inch_OCR", "True");
-
                 DIO.SetIO(Params);
             }
-            else if (PortName.ToUpper().Equals("LOADPORT01"))
+            else if (port.WaferSize.Equals("300MM"))//12" operation before fetch the first wafer.
             {
+                RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
+
+                Node Robot = NodeManagement.Get(robotPoint.NodeName);
+                Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
+                if (Aligner != null)
+                {
+                    Aligner.WaitForFinish = true;
+                    Dictionary<string, string> vars = new Dictionary<string, string>();
+                    vars.Add("@size", "150000");
+                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, "300MM");
+                    logger.Debug("Wait for ChangeAlignSize.");
+                    SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
+                }
+                else
+                {
+                    logger.Error("ChangeAlignSize error: Aligner not found.");
+                    RouteCtrl.Stop();
+                    return;
+                }
                 Params.Add("8_Inch_OCR", "False");
                 Params.Add("12_Inch_OCR", "True");
 
@@ -765,14 +939,41 @@ namespace Lilith
                         //RunningUpdate.UpdateUseState(PortName, false);
                         MonitoringUpdate.UpdateUseState(PortName, false);
                         WaferAssignUpdate.UpdateUseState(PortName, false);
-                        if (!Port.ByPass)
+                        if (FormMain.AutoReverse)
                         {
-                            Port.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished");
-                            DestPort.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished");
+                            if (!Port.ByPass)
+                            {
+                                if (Port.WaferSize.Equals("200MM"))
+                                {
+                                    Port.IsMapping = false;//讓每次循環開始時，都做一次Mapping
+                                    Port.LoadTime = DateTime.Now;
+                                    Port.Available = true;
+                                }
+                                else
+                                {
+                                    //foreach (Node eachPort in NodeManagement.GetLoadPortList())
+                                    //{//當300MM做完才把200MM啟用，這樣不會都一直取200MM的Port
+                                    //    if (eachPort.WaferSize.Equals("200MM"))
+                                    //    {
+                                    //        eachPort.Available = true;
+                                    //    }
+                                    //}
+                                    Port.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished");
+
+                                }
+                            }
+                            else
+                            {
+
+                                //RunningUpdate.ReverseRunning(Port.Name);
+                            }
                         }
                         else
                         {
-                            RunningUpdate.ReverseRunning(Port.Name);
+                            if (!Port.WaferSize.Equals("200MM"))
+                            {
+                                Port.ExcuteScript("LoadPortUnload", "Port_Finished");
+                            }
                         }
                         //RunningUpdate.ReverseRunning(PortName);
 
@@ -795,14 +996,14 @@ namespace Lilith
             try
             {
                 RunningUpdate.UpdateRunningInfo("LapsedTime", LapsedTime);
-                RunningUpdate.UpdateRunningInfo("TransCount", "-1");
+                RunningUpdate.UpdateRunningInfo("TransCount", "+1");
                 RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
                 RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
                 RunningUpdate.UpdateRunningInfo("WPH", (LapsedWfCount / Convert.ToDouble(LapsedTime) * 3600).ToString());
                 MonitoringUpdate.UpdateWPH(Math.Round((LapsedWfCount / Convert.ToDouble(LapsedTime) * 3600), 1).ToString());
-                foreach(Node port in NodeManagement.GetLoadPortList())
+                foreach (Node port in NodeManagement.GetLoadPortList())
                 {
-                    WaferAssignUpdate.ResetAssignCM(port.Name,true);
+                    WaferAssignUpdate.ResetAssignCM(port.Name, true);
                 }
             }
             catch (Exception e)
@@ -823,10 +1024,10 @@ namespace Lilith
                 WaferAssignUpdate.RefreshMapping(port.Name);
                 if (Mode.Equals("Stop"))
                 {
-                    WaferAssignUpdate.ResetAssignCM(port.Name,true);
+                    WaferAssignUpdate.ResetAssignCM(port.Name, true);
                 }
             }
-            
+
         }
 
         public void On_Job_Location_Changed(Job Job)
@@ -840,8 +1041,50 @@ namespace Lilith
         public void On_Script_Finished(Node Node, string ScriptName, string FormName)
         {
             logger.Debug("On_Script_Finished: " + Node.Name + " Script:" + ScriptName + " Finished, Form name:" + FormName);
+            Transaction txn;
             switch (FormName)
             {
+                case "MANSW":
+                    switch (ScriptName)
+                    {
+                        case "LoadPortMapping":
+                            Node.WaitForFinish = false;
+                            //檢查是否還在Mapping
+                            var findPort = from node in NodeManagement.GetLoadPortList()
+                                           where node.WaitForFinish
+                                           select node;
+                            if (findPort.Count() == 0)
+                            {//沒有的話就啟用Start按鈕
+                                MonitoringUpdate.UpdateStartButton(true);
+                            }
+                            break;
+                        case "RobotMapping":
+                            txn = new Transaction();
+                            txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
+                            txn.Value = "0";
+                            txn.FormName = "RobotMapping";
+                            Node port = NodeManagement.Get(Node.CurrentPosition);
+                            if (port != null)
+                            {
+                                port.SendCommand(txn);
+
+                                port.WaitForFinish = false;
+                            }
+                            //檢查是否還在Mapping
+                            findPort = from node in NodeManagement.GetLoadPortList()
+                                       where node.WaitForFinish
+                                       select node;
+                            if (findPort.Count() == 0)
+                            {//沒有的話就啟用Start按鈕
+                                MonitoringUpdate.UpdateStartButton(true);
+                            }
+                            break;
+                    }
+                    break;
+                case "ChangeAlignWaferSize":
+                    Node.WaitForFinish = false;
+
+                    break;
                 case "Initialize":
                     Node.InitialComplete = true;
                     Node.InitialObject();
@@ -869,26 +1112,38 @@ namespace Lilith
                                         each.ExcuteScript("AlignerInit", "Initialize");
                                         break;
                                     case "LOADPORT":
-                                        each.ExcuteScript("LoadPortInit", "Initialize");
+                                        if (each.WaferSize.Equals("200MM"))
+                                        {
+                                            each.ExcuteScript("LoadPortInit200MM", "Initialize");
+                                        }
+                                        else
+                                        {
+                                            each.ExcuteScript("LoadPortInit", "Initialize");
+                                        }
                                         break;
                                 }
                             }
                         }
                     }
-                    
+
                     if (!NodeManagement.IsNeedInitial())
                     {
                         NodeStatusUpdate.UpdateCurrentState("Idle");
                         ConnectionStatusUpdate.UpdateInitial(true.ToString());
-                        foreach (Node port in NodeManagement.GetLoadPortList())
+                        foreach (Node EachPort in NodeManagement.GetLoadPortList())
                         {
-                            if (!port.ByPass)
+                            if (!EachPort.ByPass)
                             {
-                                Transaction txn = new Transaction();
+
+                                txn = new Transaction();
                                 txn.Method = Transaction.Command.LoadPortType.ReadStatus;
                                 txn.FormName = "InitialFinish";
-                                port.SendCommand(txn);
+                                EachPort.SendCommand(txn);
+
                             }
+                            EachPort.JobList.Clear();
+                            MonitoringUpdate.UpdateNodesJob(EachPort.Name);
+                            WaferAssignUpdate.RefreshMapping(EachPort.Name);
                         }
                     }
                     break;
@@ -905,25 +1160,25 @@ namespace Lilith
                 case "Running_Port_Finished":
                     if (ScriptName.Equals("LoadPortUnloadAndLoad"))
                     {
-                        Node Port;
-                        Node DestPort;
+                        //Node Port;
+                        //Node DestPort;
 
-                        Node.PortUnloadAndLoadFinished = true;
-                        if (!Node.DestPort.Equals(""))
-                        {
-                            Port = Node;
-                            DestPort = NodeManagement.Get(Node.DestPort);
-                            // SpinWait.SpinUntil(() => (Port.IsMapping && Port.JobList.Count!=0 && DestPort.IsMapping && DestPort.JobList.Count != 0) || RouteCtrl.GetMode().Equals("Stop") , 99999999);
+                        //Node.PortUnloadAndLoadFinished = true;
+                        //if (!Node.DestPort.Equals(""))
+                        //{
+                        //    Port = Node;
+                        //    DestPort = NodeManagement.Get(Node.DestPort);
+                        //    // SpinWait.SpinUntil(() => (Port.IsMapping && Port.JobList.Count!=0 && DestPort.IsMapping && DestPort.JobList.Count != 0) || RouteCtrl.GetMode().Equals("Stop") , 99999999);
 
-                            SpinWait.SpinUntil(() => (Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished) || RouteCtrl.GetMode().Equals("Stop"), 99999999);
+                        //    SpinWait.SpinUntil(() => (Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished) || RouteCtrl.GetMode().Equals("Stop"), 99999999);
 
-                            if (!RouteCtrl.GetMode().Equals("Stop") && Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished)
-                            {
-                                Port.PortUnloadAndLoadFinished = false;
-                                DestPort.PortUnloadAndLoadFinished = false;
-                                RunningUpdate.ReverseRunning(Port.Name);
-                            }
-                        }
+                        //    if (!RouteCtrl.GetMode().Equals("Stop") && Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished)
+                        //    {
+                        //        Port.PortUnloadAndLoadFinished = false;
+                        //        DestPort.PortUnloadAndLoadFinished = false;
+                        //        RunningUpdate.ReverseRunning(Port.Name);
+                        //    }
+                        //}
                         //else
                         //{
                         //    var findPort = from port in NodeManagement.GetLoadPortList()
