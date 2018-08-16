@@ -136,7 +136,7 @@
             this.RunningSpeed_cb.Name = "RunningSpeed_cb";
             this.RunningSpeed_cb.Size = new System.Drawing.Size(85, 35);
             this.RunningSpeed_cb.TabIndex = 0;
-            this.RunningSpeed_cb.Text = "50%";
+            this.RunningSpeed_cb.Text = "0%";
             this.RunningSpeed_cb.TextChanged += new System.EventHandler(this.RunningSpeed_cb_TextChanged);
             // 
             // LapsedWfCount_tb
@@ -223,6 +223,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormRunningScreen";
             this.Text = "FormTestMode";
+            this.Load += new System.EventHandler(this.FormRunningScreen_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

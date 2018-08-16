@@ -19,6 +19,79 @@ namespace Lilith.UI_Update.Monitoring
         delegate void UpdateNode(string JobId);
         delegate void UpdateEnable(bool Enable);
 
+        public static void UpdateStatus(string Status)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                Button W;
+                if (form == null)
+                    return;
+
+                W = form.Controls.Find("RunSwitch", true).FirstOrDefault() as Button;
+                if (W == null)
+                    return;
+
+                if (W.InvokeRequired)
+                {
+                    UpdateNode ph = new UpdateNode(UpdateStatus);
+                    W.BeginInvoke(ph, Status);
+                }
+                else
+                {
+                    if (Status.Equals("Start"))
+                    {
+
+                        W.Enabled = true;
+                        W.Text = "Stop";
+                        W.BackColor = Color.OrangeRed;
+
+                    }
+                    else
+                    {
+                        W.Text = "Start";
+                        W.Enabled = false;
+                        W.BackColor = Color.Lime;
+
+                    }
+                }
+            }
+            catch
+            {
+                logger.Error("UpdateStatus: Update fail.");
+            }
+        }
+
+        public static void UpdateInitialButton(bool Enable)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                Button W;
+                if (form == null)
+                    return;
+
+                W = form.Controls.Find("Initial_btn", true).FirstOrDefault() as Button;
+                if (W == null)
+                    return;
+
+                if (W.InvokeRequired)
+                {
+                    UpdateEnable ph = new UpdateEnable(UpdateInitialButton);
+                    W.BeginInvoke(ph, Enable);
+                }
+                else
+                {
+                    W.Enabled = Enable;
+                    
+                }
+            }
+            catch
+            {
+                logger.Error("UpdateInitialButton: Update fail.");
+            }
+        }
+
         public static void UpdateStartButton(bool Enable)
         {
             try
@@ -40,7 +113,11 @@ namespace Lilith.UI_Update.Monitoring
                 else
                 {
                     W.Enabled = Enable;
-
+                    CheckBox AutoReverse = form.Controls.Find("AutoReverse_ck", true).FirstOrDefault() as CheckBox;
+                    if (AutoReverse != null)
+                    {
+                        AutoReverse.Enabled = Enable;
+                    }
                 }
             }
             catch
@@ -220,7 +297,7 @@ namespace Lilith.UI_Update.Monitoring
                     {
                         Node LastNode = NodeManagement.Get(Job.LastNode);
                         Node CurrentNode = NodeManagement.Get(Job.Position);
-                        if (LastNode != null )
+                        if (LastNode != null)
                         {
 
                             Label present = form.Controls.Find(Job.LastNode + "_Slot_" + Job.LastSlot, true).FirstOrDefault() as Label;
@@ -234,7 +311,7 @@ namespace Lilith.UI_Update.Monitoring
                             }
 
                         }
-                        if ( CurrentNode != null)
+                        if (CurrentNode != null)
                         {
                             Label present = form.Controls.Find(Job.Position + "_Slot_" + Job.Slot, true).FirstOrDefault() as Label;
                             if (present != null)
@@ -260,6 +337,6 @@ namespace Lilith.UI_Update.Monitoring
             }
         }
 
-       
+
     }
 }

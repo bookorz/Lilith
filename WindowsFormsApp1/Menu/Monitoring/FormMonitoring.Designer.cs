@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.NotchDirect_cb = new System.Windows.Forms.ComboBox();
+            this.Initial_btn = new System.Windows.Forms.Button();
             this.RunSwitch = new System.Windows.Forms.Button();
             this.AutoReverse_ck = new System.Windows.Forms.CheckBox();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -181,6 +184,9 @@
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
+            this.Aligner01_tb.Controls.Add(this.label3);
+            this.Aligner01_tb.Controls.Add(this.NotchDirect_cb);
+            this.Aligner01_tb.Controls.Add(this.Initial_btn);
             this.Aligner01_tb.Controls.Add(this.RunSwitch);
             this.Aligner01_tb.Controls.Add(this.AutoReverse_ck);
             this.Aligner01_tb.Controls.Add(this.panel5);
@@ -215,6 +221,42 @@
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1213, 201);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(107, 15);
+            this.label3.TabIndex = 175;
+            this.label3.Text = "Foup Notch方向";
+            // 
+            // NotchDirect_cb
+            // 
+            this.NotchDirect_cb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NotchDirect_cb.FormattingEnabled = true;
+            this.NotchDirect_cb.Items.AddRange(new object[] {
+            "朝前",
+            "朝右",
+            "朝左",
+            "朝後"});
+            this.NotchDirect_cb.Location = new System.Drawing.Point(1338, 198);
+            this.NotchDirect_cb.Name = "NotchDirect_cb";
+            this.NotchDirect_cb.Size = new System.Drawing.Size(121, 23);
+            this.NotchDirect_cb.TabIndex = 174;
+            this.NotchDirect_cb.Text = "朝後";
+            this.NotchDirect_cb.TextChanged += new System.EventHandler(this.NotchDirect_cb_TextChanged);
+            // 
+            // Initial_btn
+            // 
+            this.Initial_btn.BackColor = System.Drawing.Color.Goldenrod;
+            this.Initial_btn.Location = new System.Drawing.Point(1204, 123);
+            this.Initial_btn.Name = "Initial_btn";
+            this.Initial_btn.Size = new System.Drawing.Size(125, 39);
+            this.Initial_btn.TabIndex = 173;
+            this.Initial_btn.Text = "Initial";
+            this.Initial_btn.UseVisualStyleBackColor = false;
+            this.Initial_btn.Click += new System.EventHandler(this.Initial_btn_Click);
             // 
             // RunSwitch
             // 
@@ -2719,5 +2761,8 @@
         internal System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button RunSwitch;
         private System.Windows.Forms.CheckBox AutoReverse_ck;
+        private System.Windows.Forms.Button Initial_btn;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox NotchDirect_cb;
     }
 }

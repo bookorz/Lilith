@@ -73,7 +73,11 @@ namespace Lilith.Menu.RunningScreen
 
         private void RunningSpeed_cb_TextChanged(object sender, EventArgs e)
         {
-            ChangeSpeed();
+            string strMsg = "確定要修改整機速度?";
+            if (MessageBox.Show(strMsg, "ChangeSpeed", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            {
+                ChangeSpeed();
+            }
         }
 
         private void ChangeSpeed()
@@ -103,6 +107,11 @@ namespace Lilith.Menu.RunningScreen
                     node.SendCommand(txn);
                 }
             }
+        }
+
+        private void FormRunningScreen_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

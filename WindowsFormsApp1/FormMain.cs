@@ -177,27 +177,45 @@ namespace Lilith
             string strMsg = "This equipment performs the initialization and origin search OK?\r\n" + "This equipment will be initalized, each axis will return to home position.\r\n" + "Check the condition of the wafer.";
             if (MessageBox.Show(strMsg, "Initialize", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
             {
-
                 foreach (Node each in NodeManagement.GetList())
                 {
-                    each.InitialComplete = false;
-                    switch (each.Type.ToUpper())
+                    switch (each.Type)
                     {
-                        case "ROBOT":
-                            each.ExcuteScript("RobotInit", "Initialize");
+                        case "ALIGNER":
+                            each.ErrorMsg = "";
+                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit");
                             break;
-                            //先做ROBOT
-                            //case "ALIGNER":
-                            //    each.ExcuteScript("AlignerInit", "Initialize");
-                            //    break;
-                            //case "LOADPORT":
-                            //    each.ExcuteScript("LoadPortInit", "Initialize");
-                            //    break;
+                        case "ROBOT":
+                            each.ErrorMsg = "";
+                            each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit");
+                            break;
                     }
                 }
             }
         }
 
+        private void ProceedInitial()
+        {
+
+            foreach (Node each in NodeManagement.GetList())
+            {
+                each.InitialComplete = false;
+                each.CheckStatus = false;
+                switch (each.Type.ToUpper())
+                {
+                    case "ROBOT":
+                        each.ExcuteScript("RobotInit", "Initialize");
+                        break;
+                        //先做ROBOT
+                        //case "ALIGNER":
+                        //    each.ExcuteScript("AlignerInit", "Initialize");
+                        //    break;
+                        //case "LOADPORT":
+                        //    each.ExcuteScript("LoadPortInit", "Initialize");
+                        //    break;
+                }
+            }
+        }
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             string strMsg = "Move to Home position. OK?";
@@ -295,7 +313,7 @@ namespace Lilith
         {
             logger.Debug("On_Command_Excuted");
 
-            Transaction txn = new Transaction();
+            Transaction SendTxn = new Transaction();
 
             if (Txn.Method == Transaction.Command.LoadPortType.Reset)
             {
@@ -370,6 +388,53 @@ namespace Lilith
 
             switch (Txn.FormName)
             {
+                case "GetStatsBeforeInit":
+                    switch (Txn.Method)
+                    {
+                        //case Transaction.Command.AlignerType.GetStatus:
+
+                        //    break;
+                        //case Transaction.Command.RobotType.GetCombineStatus:
+
+                        //    break;
+                        //case Transaction.Command.AlignerType.GetSpeed:
+
+                        //    break;
+                        case Transaction.Command.AlignerType.GetRIO:
+                            if (Msg.Value == null || Msg.Value.IndexOf(",") < 0)
+                            {
+                                break;
+                            }
+                            string[] result = Msg.Value.Split(',');
+                            switch (result[0])
+                            {
+                                case "004":
+
+                                    if (result[1].Equals("1"))
+                                    {
+                                        Node.ErrorMsg += "Present_R 在席存在 ";
+                                    }
+
+                                    break;
+                                case "005":
+                                    if (result[1].Equals("1"))
+                                    {
+                                        Node.ErrorMsg += "Present_L 在席存在 ";
+                                    }
+                                    break;
+                            }
+                            break;
+                        //case Transaction.Command.AlignerType.GetError:
+                         
+                        //    break;
+                        //case Transaction.Command.AlignerType.GetMode:
+
+                        //    break;
+                        //case Transaction.Command.AlignerType.GetSV:
+
+                        //    break;
+                    }
+                    break;
                 case "FormStatus":
                     Util.StateUtil.UpdateSTS(Node.Name, Msg.Value);
                     break;
@@ -730,26 +795,36 @@ namespace Lilith
                             case "MANSW":
                                 if (Node.FoupReady)
                                 {
-                                    MonitoringUpdate.UpdateStartButton(false);//當OpAccess按下，禁用主畫面的Start按鈕
+                                    if (!RouteCtrl.GetMode().Equals("Start"))
+                                    {
+                                        MonitoringUpdate.UpdateStartButton(false);//當OpAccess按下，禁用主畫面的Start按鈕
+                                    }
                                     Node.WaitForFinish = true;
                                     if (Node.WaferSize.Equals("200MM"))//8" use only , Trigger Robot's fork to mapping wafer.
                                     {
-                                        RobotPoint rbtP = PointManagement.GetMapPoint(Node.Name, "200MM");
-                                        if (rbtP != null)
+                                        if (RouteCtrl.GetMode().Equals("Start"))
                                         {
-                                            Node Rbt = NodeManagement.Get(rbtP.NodeName);
-                                            if (Rbt != null)
+                                            Node.Available = true;
+                                        }
+                                        else
+                                        {
+                                            RobotPoint rbtP = PointManagement.GetMapPoint(Node.Name, "200MM");
+                                            if (rbtP != null)
                                             {
-                                                Dictionary<string, string> vars = new Dictionary<string, string>();
-                                                vars.Add("@loadport", Node.Name);
-                                                Rbt.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
-                                                Node.FoupReady = false;
-                                                //Robot mapping時 LoadPort 的OpAccess燈亮起
-                                                txn = new Transaction();
-                                                txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
-                                                txn.Value = "1";
-                                                txn.FormName = "RobotMapping";
-                                                Node.SendCommand(txn);
+                                                Node Rbt = NodeManagement.Get(rbtP.NodeName);
+                                                if (Rbt != null)
+                                                {
+                                                    Dictionary<string, string> vars = new Dictionary<string, string>();
+                                                    vars.Add("@loadport", Node.Name);
+                                                    Rbt.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
+                                                    Node.FoupReady = false;
+                                                    //Robot mapping時 LoadPort 的OpAccess燈亮起
+                                                    txn = new Transaction();
+                                                    txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
+                                                    txn.Value = "1";
+                                                    txn.FormName = "RobotMapping";
+                                                    Node.SendCommand(txn);
+                                                }
                                             }
                                         }
                                     }
@@ -761,10 +836,12 @@ namespace Lilith
                                 break;
                             case "PODON":
                                 //檢查LoadPort狀態
-                                txn.Method = Transaction.Command.LoadPortType.ReadStatus;
-                                txn.FormName = "InitialFinish";
-                                Node.SendCommand(txn);
-
+                                if (!NodeManagement.IsNeedInitial())
+                                {
+                                    txn.Method = Transaction.Command.LoadPortType.ReadStatus;
+                                    txn.FormName = "InitialFinish";
+                                    Node.SendCommand(txn);
+                                }
                                 break;
                             case "SMTON":
                             case "PODOF":
@@ -970,10 +1047,15 @@ namespace Lilith
                         }
                         else
                         {
-                            if (!Port.WaferSize.Equals("200MM"))
+                            RouteCtrl.Stop();
+                            foreach (Node port in NodeManagement.GetLoadPortList())
                             {
-                                Port.ExcuteScript("LoadPortUnload", "Port_Finished");
+                                if (Port.WaferSize.Equals("300MM"))
+                                {
+                                    Port.ExcuteScript("LoadPortUnload", "Port_Finished");
+                                }
                             }
+                            MessageBox.Show("自動展示模式停止");
                         }
                         //RunningUpdate.ReverseRunning(PortName);
 
@@ -1019,6 +1101,7 @@ namespace Lilith
 
             ConnectionStatusUpdate.UpdateModeStatus(Mode);
             RunningUpdate.UpdateModeStatus(Mode);
+            MonitoringUpdate.UpdateStatus(Mode);
             foreach (Node port in NodeManagement.GetLoadPortList())
             {
                 WaferAssignUpdate.RefreshMapping(port.Name);
@@ -1044,6 +1127,38 @@ namespace Lilith
             Transaction txn;
             switch (FormName)
             {
+                case "GetStatsBeforeInit":
+                    Node.CheckStatus = true;
+
+
+                    //檢查在席是否全部回報完成
+                    var find = from nd in NodeManagement.GetList()
+                               where (nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.CheckStatus
+                               select nd;
+                    if (find.Count() == 0)
+                    {//在席回報完成
+                        
+                        find = from nd in NodeManagement.GetList()
+                               where( nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.ErrorMsg.Equals("")
+                               select nd;
+                        string tmp = "";
+                        foreach (Node each in find)
+                        {
+                            tmp += " " + each.Name + ":" + each.ErrorMsg + "\n";
+                        }
+                        if (tmp != "")
+                        {
+                            MessageBox.Show("偵測到在席，請先確認再執行Initial.\n\n" + tmp);
+                            MonitoringUpdate.UpdateInitialButton(true);
+                        }
+                        else
+                        {//都沒有在席，自動執行Initial
+                            ProceedInitial();
+                        }
+                    }
+
+                    break;
+
                 case "MANSW":
                     switch (ScriptName)
                     {
@@ -1055,7 +1170,19 @@ namespace Lilith
                                            select node;
                             if (findPort.Count() == 0)
                             {//沒有的話就啟用Start按鈕
-                                MonitoringUpdate.UpdateStartButton(true);
+                                //檢查Mapping資料是否有異常
+                                findPort = from node in NodeManagement.GetLoadPortList()
+                                           from j in node.JobList.Values.ToList()
+                                           where j.Job_Id.Equals("Crossed") || j.Job_Id.Equals("Undefined") || j.Job_Id.Equals("Double")
+                                           select node;
+                                if (findPort.Count() == 0)
+                                {
+                                    MonitoringUpdate.UpdateStartButton(true);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mapping異常，請檢查Wafer狀態");
+                                }
                             }
                             break;
                         case "RobotMapping":
@@ -1076,7 +1203,19 @@ namespace Lilith
                                        select node;
                             if (findPort.Count() == 0)
                             {//沒有的話就啟用Start按鈕
-                                MonitoringUpdate.UpdateStartButton(true);
+                                //檢查Mapping資料是否有異常
+                                findPort = from node in NodeManagement.GetLoadPortList()
+                                           from j in node.JobList.Values.ToList()
+                                           where j.Job_Id.Equals("Crossed") || j.Job_Id.Equals("Undefined") || j.Job_Id.Equals("Double")
+                                           select node;
+                                if (findPort.Count() == 0)
+                                {
+                                    MonitoringUpdate.UpdateStartButton(true);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Mapping異常，請檢查Wafer狀態");
+                                }
                             }
                             break;
                     }
@@ -1086,8 +1225,9 @@ namespace Lilith
 
                     break;
                 case "Initialize":
-                    Node.InitialComplete = true;
+
                     Node.InitialObject();
+                    Node.InitialComplete = true;
                     switch (Node.Type)
                     {
                         case "ROBOT":
@@ -1130,6 +1270,7 @@ namespace Lilith
                     {
                         NodeStatusUpdate.UpdateCurrentState("Idle");
                         ConnectionStatusUpdate.UpdateInitial(true.ToString());
+                        MonitoringUpdate.UpdateInitialButton(true);
                         foreach (Node EachPort in NodeManagement.GetLoadPortList())
                         {
                             if (!EachPort.ByPass)

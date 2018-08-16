@@ -65,7 +65,10 @@
             this.btnRPutGet = new System.Windows.Forms.Button();
             this.btnRGetGet = new System.Windows.Forms.Button();
             this.btnRGetPut = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.EightInch_rb = new System.Windows.Forms.RadioButton();
             this.btnRAreaSwap = new System.Windows.Forms.Button();
+            this.TwelveInch_rb = new System.Windows.Forms.RadioButton();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.pnlRobotStatus = new System.Windows.Forms.Panel();
@@ -314,9 +317,6 @@
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.pnlMotionStop = new System.Windows.Forms.Panel();
-            this.TwelveInch_rb = new System.Windows.Forms.RadioButton();
-            this.EightInch_rb = new System.Windows.Forms.RadioButton();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.tbcManual.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -326,6 +326,7 @@
             this.pnlRobotCmdA1.SuspendLayout();
             this.pnlRobotCmdA2.SuspendLayout();
             this.pnlRCmd.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.groupBox21.SuspendLayout();
             this.panel13.SuspendLayout();
             this.pnlRobotStatus.SuspendLayout();
@@ -353,7 +354,6 @@
             this.groupBox25.SuspendLayout();
             this.TblPanel_A.SuspendLayout();
             this.pnlMotionStop.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbcManual
@@ -489,14 +489,7 @@
             this.cbRA1Point.Items.AddRange(new object[] {
             "LOADPORT01",
             "LOADPORT02",
-            "LOADPORT03",
-            "LOADPORT04",
-            "LOADPORT05",
-            "LOADPORT06",
-            "LOADPORT07",
-            "LOADPORT08",
-            "ALIGNER01",
-            "ALIGNER02"});
+            "ALIGNER01"});
             this.cbRA1Point.Location = new System.Drawing.Point(129, 60);
             this.cbRA1Point.Name = "cbRA1Point";
             this.cbRA1Point.Size = new System.Drawing.Size(208, 38);
@@ -690,14 +683,7 @@
             this.cbRA2Point.Items.AddRange(new object[] {
             "LOADPORT01",
             "LOADPORT02",
-            "LOADPORT03",
-            "LOADPORT04",
-            "LOADPORT05",
-            "LOADPORT06",
-            "LOADPORT07",
-            "LOADPORT08",
-            "ALIGNER01",
-            "ALIGNER02"});
+            "ALIGNER01"});
             this.cbRA2Point.Location = new System.Drawing.Point(130, 60);
             this.cbRA2Point.Name = "cbRA2Point";
             this.cbRA2Point.Size = new System.Drawing.Size(208, 38);
@@ -918,6 +904,27 @@
             this.btnRGetPut.UseVisualStyleBackColor = false;
             this.btnRGetPut.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.EightInch_rb);
+            this.panel2.Controls.Add(this.btnRAreaSwap);
+            this.panel2.Controls.Add(this.TwelveInch_rb);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(750, 47);
+            this.panel2.TabIndex = 52;
+            // 
+            // EightInch_rb
+            // 
+            this.EightInch_rb.AutoSize = true;
+            this.EightInch_rb.Location = new System.Drawing.Point(510, 6);
+            this.EightInch_rb.Name = "EightInch_rb";
+            this.EightInch_rb.Size = new System.Drawing.Size(119, 34);
+            this.EightInch_rb.TabIndex = 1;
+            this.EightInch_rb.TabStop = true;
+            this.EightInch_rb.Text = "200MM";
+            this.EightInch_rb.UseVisualStyleBackColor = true;
+            // 
             // btnRAreaSwap
             // 
             this.btnRAreaSwap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -934,6 +941,17 @@
             this.btnRAreaSwap.Text = "Area1 <-> Area2";
             this.btnRAreaSwap.UseVisualStyleBackColor = false;
             this.btnRAreaSwap.Click += new System.EventHandler(this.btnRAreaSwap_Click);
+            // 
+            // TwelveInch_rb
+            // 
+            this.TwelveInch_rb.AutoSize = true;
+            this.TwelveInch_rb.Location = new System.Drawing.Point(628, 6);
+            this.TwelveInch_rb.Name = "TwelveInch_rb";
+            this.TwelveInch_rb.Size = new System.Drawing.Size(119, 34);
+            this.TwelveInch_rb.TabIndex = 0;
+            this.TwelveInch_rb.TabStop = true;
+            this.TwelveInch_rb.Text = "300MM";
+            this.TwelveInch_rb.UseVisualStyleBackColor = true;
             // 
             // groupBox21
             // 
@@ -4503,38 +4521,6 @@
             this.pnlMotionStop.Size = new System.Drawing.Size(755, 50);
             this.pnlMotionStop.TabIndex = 1;
             // 
-            // TwelveInch_rb
-            // 
-            this.TwelveInch_rb.AutoSize = true;
-            this.TwelveInch_rb.Location = new System.Drawing.Point(628, 6);
-            this.TwelveInch_rb.Name = "TwelveInch_rb";
-            this.TwelveInch_rb.Size = new System.Drawing.Size(119, 34);
-            this.TwelveInch_rb.TabIndex = 0;
-            this.TwelveInch_rb.TabStop = true;
-            this.TwelveInch_rb.Text = "300MM";
-            this.TwelveInch_rb.UseVisualStyleBackColor = true;
-            // 
-            // EightInch_rb
-            // 
-            this.EightInch_rb.AutoSize = true;
-            this.EightInch_rb.Location = new System.Drawing.Point(510, 6);
-            this.EightInch_rb.Name = "EightInch_rb";
-            this.EightInch_rb.Size = new System.Drawing.Size(119, 34);
-            this.EightInch_rb.TabIndex = 1;
-            this.EightInch_rb.TabStop = true;
-            this.EightInch_rb.Text = "200MM";
-            this.EightInch_rb.UseVisualStyleBackColor = true;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.EightInch_rb);
-            this.panel2.Controls.Add(this.btnRAreaSwap);
-            this.panel2.Controls.Add(this.TwelveInch_rb);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(750, 47);
-            this.panel2.TabIndex = 52;
-            // 
             // FormManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -4564,6 +4550,8 @@
             this.pnlRobotCmdA2.ResumeLayout(false);
             this.pnlRobotCmdA2.PerformLayout();
             this.pnlRCmd.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.groupBox21.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.pnlRobotStatus.ResumeLayout(false);
@@ -4600,8 +4588,6 @@
             this.TblPanel_A.ResumeLayout(false);
             this.TblPanel_A.PerformLayout();
             this.pnlMotionStop.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
