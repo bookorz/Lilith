@@ -51,9 +51,9 @@ namespace Lilith
             InitializeComponent();
             XmlConfigurator.Configure();
             Initialize();
-            RouteCtrl = new RouteControl(this);
+            
             DIO = new DIO(this);
-
+            RouteCtrl = new RouteControl(this);
             AlmMapping = new AlarmMapping();
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -83,6 +83,8 @@ namespace Lilith
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+
             Int32 oldWidth = this.Width;
             Int32 oldHeight = this.Height;
 
@@ -94,6 +96,9 @@ namespace Lilith
 
             try
             {
+
+               
+
                 for (int i = 0; i < ctrlForm.Length; i++)
                 {
                     ((Form)ctrlForm[i]).TopLevel = false;
@@ -109,7 +114,7 @@ namespace Lilith
                 alarmFrom.Hide();
 
 
-
+                
             }
             catch (Exception ex)
             {
@@ -126,8 +131,9 @@ namespace Lilith
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
             DIO.Connect();
-            AuthorityUpdate.UpdateFuncGroupEnable("INIT");//init 權限
             RouteCtrl.ConnectAll();
+            AuthorityUpdate.UpdateFuncGroupEnable("INIT");//init 權限
+            //RouteCtrl.ConnectAll();
 
             this.Width = oldWidth;
             this.Height = oldHeight;
@@ -621,8 +627,13 @@ namespace Lilith
                                     if (CheckResult)
                                     {
                                         Node.FoupReady = true;
+                                        
                                         Node.ExcuteScript("LoadPortFoupIn", "LoadPortFoup", "", true);
-
+                                        if (Node.WaferSize.Equals("200MM"))
+                                        {
+                                            Node.State = "Load Complete";
+                                            On_Node_State_Changed(Node, "Load Complete");
+                                        }
                                     }
                                     else
                                     {
@@ -891,14 +902,14 @@ namespace Lilith
             if (Status.Equals("Connected"))
             {
                 //當Loadport連線成功，檢查狀態，進行燈號顯示
-                var findPort = from port in NodeManagement.GetLoadPortList()
-                               where port.Controller.Equals(Device_ID) && !port.ByPass && port.Type.Equals("LOADPORT")
-                               select port;
+                // var findPort = from port in NodeManagement.GetLoadPortList()
+                //               where port.Controller.Equals(Device_ID) && !port.ByPass && port.Type.Equals("LOADPORT")
+                //               select port;
 
-                foreach (Node port in findPort)
-                {
-                    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
-                }
+                //foreach (Node port in findPort)
+                //{
+                //    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
+                //}
                 CommunicationsUpdate.UpdateConnection(Device_ID, true);
             }
             else
@@ -920,6 +931,10 @@ namespace Lilith
 
             if (port.WaferSize.Equals("200MM"))//8" operation before fetch the first wafer.
             {
+                Params.Add("12_Inch_OCR", "False");
+                Params.Add("8_Inch_OCR", "True");
+                DIO.SetIO(Params);
+
                 Dictionary<string, string> vars = new Dictionary<string, string>();
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
                 Node Robot = NodeManagement.Get(robotPoint.NodeName);
@@ -929,8 +944,7 @@ namespace Lilith
                     vars.Add("@loadport", PortName);
                     Robot.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
 
-                    logger.Debug("Wait for RobotMapping.");
-                    SpinWait.SpinUntil(() => !port.WaitForFinish, 99999999);//等待Robot Mapping動作結束
+                    
                 }
                 Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
                 if (Aligner != null)//切換Aligner位置
@@ -942,6 +956,11 @@ namespace Lilith
                     logger.Debug("Wait for ChangeAlignSize.");
                     SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
 
+                    if (!port.IsMapping)
+                    {
+                        logger.Debug("Wait for RobotMapping.");
+                        SpinWait.SpinUntil(() => !port.WaitForFinish, 99999999);//等待Robot Mapping動作結束
+                    }
                 }
                 else
                 {
@@ -950,12 +969,16 @@ namespace Lilith
                     return;
                 }
 
-                Params.Add("12_Inch_OCR", "False");
-                Params.Add("8_Inch_OCR", "True");
-                DIO.SetIO(Params);
+                
             }
             else if (port.WaferSize.Equals("300MM"))//12" operation before fetch the first wafer.
             {
+
+                Params.Add("8_Inch_OCR", "False");
+                Params.Add("12_Inch_OCR", "True");
+
+                DIO.SetIO(Params);
+
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
 
                 Node Robot = NodeManagement.Get(robotPoint.NodeName);
@@ -975,10 +998,7 @@ namespace Lilith
                     RouteCtrl.Stop();
                     return;
                 }
-                Params.Add("8_Inch_OCR", "False");
-                Params.Add("12_Inch_OCR", "True");
-
-                DIO.SetIO(Params);
+                
             }
 
             WaferAssignUpdate.RefreshMapping(PortName);

@@ -260,7 +260,7 @@ namespace GUI
             switch (btnFuncName)
             {
                 case "btnConn":
-                    ControllerManagement.Get(aligner.Controller).Connect();
+                    //ControllerManagement.Get(aligner.Controller).Connect();
                     aligner.State = "";
                     SetFormEnable(false);
                     Thread.Sleep(500);//暫解
@@ -268,7 +268,7 @@ namespace GUI
                     SetFormEnable(true);
                     return;
                 case "btnDisConn":
-                    ControllerManagement.Get(aligner.Controller).Close();
+                   // ControllerManagement.Get(aligner.Controller).Close();
                     aligner.State = "";
                     SetFormEnable(false);
                     Thread.Sleep(500);//暫解
@@ -475,8 +475,8 @@ namespace GUI
                 case "btnRConn":
                     try
                     {
-                        ControllerManagement.Get(robot.Controller).Close();
-                        ControllerManagement.Get(robot.Controller).Connect();
+                        //ControllerManagement.Get(robot.Controller).Close();
+                        //ControllerManagement.Get(robot.Controller).Connect();
                         robot.State = "";
                         Thread.Sleep(500);//暫解
                         setRobotStatus();
@@ -489,7 +489,7 @@ namespace GUI
                 case "btnRDisConn":
                     try
                     {
-                        ControllerManagement.Get(robot.Controller).Close();
+                        //ControllerManagement.Get(robot.Controller).Close();
                         robot.State = "";
                         Thread.Sleep(500);//暫解
                         setRobotStatus();
