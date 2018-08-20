@@ -706,7 +706,19 @@ namespace Lilith
             //Transaction txn = new Transaction();
             switch (Txn.FormName)
             {
-
+                case "ChangeAlignWaferSize":
+                    switch (Node.Type)
+                    {
+                        case "ROBOT":
+                            switch (Txn.Method)
+                            {
+                                case Transaction.Command.RobotType.GetWait:
+                                    Node.WaitForFinish = false;
+                                    break;
+                            }
+                            break;
+                    }
+                            break;
                 case "FormManual":
 
                     switch (Node.Type)
@@ -985,12 +997,25 @@ namespace Lilith
                 Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
                 if (Aligner != null)
                 {
+                    Robot.WaitForFinish = true;
+                    Transaction GetWaitCmd = new Transaction();
+                    GetWaitCmd.Method = Transaction.Command.RobotType.GetWait;
+                    GetWaitCmd.Slot = "1";
+                    GetWaitCmd.Arm = "2";
+                    GetWaitCmd.Position = port.Name;
+                    GetWaitCmd.FormName = "ChangeAlignWaferSize";
+                    Robot.SendCommand(GetWaitCmd);
+
                     Aligner.WaitForFinish = true;
                     Dictionary<string, string> vars = new Dictionary<string, string>();
                     vars.Add("@size", "150000");
                     Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, "300MM");
                     logger.Debug("Wait for ChangeAlignSize.");
                     SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
+
+
+                    logger.Debug("Wait for Robot GetWait.");
+                    SpinWait.SpinUntil(() => !Robot.WaitForFinish, 99999999);//等待Robot GetWait動作結束
                 }
                 else
                 {
