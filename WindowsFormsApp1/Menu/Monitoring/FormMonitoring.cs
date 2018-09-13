@@ -170,76 +170,76 @@ namespace Lilith.Menu.Monitoring
             form2.ShowDialog();
         }
 
-        private void RunSwitch_Click(object sender, EventArgs e)
-        {
-            FormMain.AutoReverse = AutoReverse_ck.Checked;
-            if (RunSwitch.Text.Equals("Start"))
-            {
-                if (NodeManagement.IsNeedInitial())
-                {
-                    MessageBox.Show("請先執行初始化功能.");
-                }
-                else
-                {
-                    RunSwitch.Enabled = false;
-                    foreach (Node each in NodeManagement.GetList())
-                    {
-                        each.InitialComplete = false;
-                    }
-                    //RunSwitch.Text = "Stop";
-                    //RunSwitch.BackColor = Color.OrangeRed;
-                    FormMain.RouteCtrl.Start("Running");
-                }
-            }
-            else
-            {
-                RunSwitch.Text = "Start";
-                RunSwitch.Enabled = false;
-                RunSwitch.BackColor = Color.Lime;
-                FormMain.RouteCtrl.Stop();
-            }
-        }
+        //private void RunSwitch_Click(object sender, EventArgs e)
+        //{
+        //    FormMain.AutoReverse = AutoReverse_ck.Checked;
+        //    if (RunSwitch.Text.Equals("Start"))
+        //    {
+        //        if (NodeManagement.IsNeedInitial())
+        //        {
+        //            MessageBox.Show("請先執行初始化功能.");
+        //        }
+        //        else
+        //        {
+        //            RunSwitch.Enabled = false;
+        //            foreach (Node each in NodeManagement.GetList())
+        //            {
+        //                each.InitialComplete = false;
+        //            }
+        //            //RunSwitch.Text = "Stop";
+        //            //RunSwitch.BackColor = Color.OrangeRed;
+        //            FormMain.RouteCtrl.Start("Running");
+        //        }
+        //    }
+        //    else
+        //    {
+        //        RunSwitch.Text = "Start";
+        //        RunSwitch.Enabled = false;
+        //        RunSwitch.BackColor = Color.Lime;
+        //        FormMain.RouteCtrl.Stop();
+        //    }
+        //}
 
-        private void AutoReverse_ck_CheckedChanged(object sender, EventArgs e)
-        {
-            FormMain.AutoReverse = AutoReverse_ck.Checked;
-            if (!AutoReverse_ck.Checked && FormMain.RouteCtrl.GetMode().Equals("Start"))
-            {
-                AutoReverse_ck.Enabled = false;
-            }
-        }
+        //private void AutoReverse_ck_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    FormMain.AutoReverse = AutoReverse_ck.Checked;
+        //    if (!AutoReverse_ck.Checked && FormMain.RouteCtrl.GetMode().Equals("Start"))
+        //    {
+        //        AutoReverse_ck.Enabled = false;
+        //    }
+        //}
 
-        private void Initial_btn_Click(object sender, EventArgs e)
-        {
-            if (FormMain.RouteCtrl.GetMode().Equals("Start"))
-            {
-                MessageBox.Show("目前為Start模式，無法進行Initial.");
-            }
-            else
-            {
-                string strMsg = "This equipment performs the initialization and origin search OK?\r\n" + "This equipment will be initalized, each axis will return to home position.\r\n" + "Check the condition of the wafer.";
-                if (MessageBox.Show(strMsg, "Initialize", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-                {
-                    Initial_btn.Enabled = false;
-                    foreach (Node each in NodeManagement.GetList())
-                    {
-                        each.CheckStatus = false;
-                        switch (each.Type)
-                        {
-                            case "ALIGNER":
+        //private void Initial_btn_Click(object sender, EventArgs e)
+        //{
+        //    if (FormMain.RouteCtrl.GetMode().Equals("Start"))
+        //    {
+        //        MessageBox.Show("目前為Start模式，無法進行Initial.");
+        //    }
+        //    else
+        //    {
+        //        string strMsg = "This equipment performs the initialization and origin search OK?\r\n" + "This equipment will be initalized, each axis will return to home position.\r\n" + "Check the condition of the wafer.";
+        //        if (MessageBox.Show(strMsg, "Initialize", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+        //        {
+        //            Initial_btn.Enabled = false;
+        //            foreach (Node each in NodeManagement.GetList())
+        //            {
+        //                each.CheckStatus = false;
+        //                switch (each.Type)
+        //                {
+        //                    case "ALIGNER":
                                 
-                                each.ErrorMsg = "";
-                                each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit");
-                                break;
-                            case "ROBOT":
-                                each.ErrorMsg = "";
-                                each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit");
-                                break;
-                        }
-                    }
-                }
-            }
-        }
+        //                        each.ErrorMsg = "";
+        //                        each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit");
+        //                        break;
+        //                    case "ROBOT":
+        //                        each.ErrorMsg = "";
+        //                        each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit");
+        //                        break;
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         private void NotchDirect_cb_TextChanged(object sender, EventArgs e)
         {
@@ -258,6 +258,11 @@ namespace Lilith.Menu.Monitoring
                     FormMain.RouteCtrl.NotchDirect = 270;
                     break;
             }
+        }
+
+        private void ResetInterface_Click(object sender, EventArgs e)
+        {
+            FormMain.ctrl.Reset();
         }
     } 
 }

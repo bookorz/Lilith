@@ -23,13 +23,15 @@ using System.Linq;
 using System.Collections.Concurrent;
 using Lilith.Util;
 using Lilith.UI_Update.Communications;
+using EFEMInterface.MessageInterface;
+using EFEMInterface;
 
 namespace Lilith
 {
-    public partial class FormMain : Form, IUserInterfaceReport, IDIOTriggerReport
+    public partial class FormMain : Form, IUserInterfaceReport, IEFEMControl
     {
         public static RouteControl RouteCtrl;
-        public static DIO DIO;
+        public static RorzeInterface ctrl;
         public static AlarmMapping AlmMapping;
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormMain));
 
@@ -51,9 +53,9 @@ namespace Lilith
             InitializeComponent();
             XmlConfigurator.Configure();
             Initialize();
-            
-            DIO = new DIO(this);
-            RouteCtrl = new RouteControl(this);
+
+            ctrl = new RorzeInterface(this);
+            RouteCtrl = new RouteControl(this, ctrl);
             AlmMapping = new AlarmMapping();
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -130,7 +132,7 @@ namespace Lilith
             this.Width = oldWidth;
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
-            DIO.Connect();
+            
             RouteCtrl.ConnectAll();
             AuthorityUpdate.UpdateFuncGroupEnable("INIT");//init 權限
             //RouteCtrl.ConnectAll();
@@ -945,7 +947,7 @@ namespace Lilith
             {
                 Params.Add("12_Inch_OCR", "False");
                 Params.Add("8_Inch_OCR", "True");
-                DIO.SetIO(Params);
+                RouteControl.DIO.SetIO(Params);
 
                 Dictionary<string, string> vars = new Dictionary<string, string>();
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
@@ -989,7 +991,7 @@ namespace Lilith
                 Params.Add("8_Inch_OCR", "False");
                 Params.Add("12_Inch_OCR", "True");
 
-                DIO.SetIO(Params);
+                RouteControl.DIO.SetIO(Params);
 
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
 
@@ -1502,63 +1504,63 @@ namespace Lilith
             switch ((sender as Button).Name)
             {
                 case "RED_Signal":
-                    if (DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("RED", "False");
+                        RouteControl.DIO.SetIO("RED", "False");
                     }
                     else
                     {
-                        DIO.SetIO("RED", "True");
+                        RouteControl.DIO.SetIO("RED", "True");
                     }
                     break;
                 case "ORANGE_Signal":
-                    if (DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("ORANGE", "False");
+                        RouteControl.DIO.SetIO("ORANGE", "False");
                     }
                     else
                     {
-                        DIO.SetIO("ORANGE", "True");
+                        RouteControl.DIO.SetIO("ORANGE", "True");
                     }
                     break;
                 case "GREEN_Signal":
-                    if (DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("GREEN", "False");
+                        RouteControl.DIO.SetIO("GREEN", "False");
                     }
                     else
                     {
-                        DIO.SetIO("GREEN", "True");
+                        RouteControl.DIO.SetIO("GREEN", "True");
                     }
                     break;
                 case "BLUE_Signal":
-                    if (DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("BLUE", "False");
+                        RouteControl.DIO.SetIO("BLUE", "False");
                     }
                     else
                     {
-                        DIO.SetIO("BLUE", "True");
+                        RouteControl.DIO.SetIO("BLUE", "True");
                     }
                     break;
                 case "BUZZER1_Signal":
-                    if (DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("BUZZER1", "False");
+                        RouteControl.DIO.SetIO("BUZZER1", "False");
                     }
                     else
                     {
-                        DIO.SetIO("BUZZER1", "True");
+                        RouteControl.DIO.SetIO("BUZZER1", "True");
                     }
                     break;
                 case "BUZZER2_Signal":
-                    if (DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
+                    if (RouteControl.DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
                     {
-                        DIO.SetIO("BUZZER2", "False");
+                        RouteControl.DIO.SetIO("BUZZER2", "False");
                     }
                     else
                     {
-                        DIO.SetIO("BUZZER2", "True");
+                        RouteControl.DIO.SetIO("BUZZER2", "True");
                     }
                     break;
             }
@@ -1707,6 +1709,29 @@ namespace Lilith
         private void Conn_gv_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void On_CommandMessage(string msg)
+        {
+            MonitoringUpdate.LogUpdate(msg);
+        }
+
+        public void On_Connection_Connected()
+        {
+            MonitoringUpdate.ConnectUpdate("Connected");
+            MonitoringUpdate.LogUpdate("Connected");
+        }
+
+        public void On_Connection_Connecting()
+        {
+            MonitoringUpdate.ConnectUpdate("Connecting");
+            MonitoringUpdate.LogUpdate("Connecting");
+        }
+
+        public void On_Connection_Disconnected()
+        {
+            MonitoringUpdate.ConnectUpdate("Disconnected");
+            MonitoringUpdate.LogUpdate("Disconnected");
         }
     }
 }
