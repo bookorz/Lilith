@@ -14,9 +14,9 @@ using TransferControl.Management;
 
 namespace Lilith
 {
-    public partial class FromAlarm : Form
+    public partial class FormAlarm : Form
     {
-        public FromAlarm()
+        public FormAlarm()
         {
             InitializeComponent();
         }

@@ -37,7 +37,7 @@ namespace Lilith
 
         public static bool AutoReverse = true;
 
-        FromAlarm alarmFrom = new FromAlarm();
+        FormAlarm alarmFrom = new FormAlarm();
         private Menu.Monitoring.FormMonitoring formMonitoring = new Menu.Monitoring.FormMonitoring();
         private Menu.Communications.FormCommunications formCommunications = new Menu.Communications.FormCommunications();
         private Menu.WaferMapping.FormWaferMapping formWafer = new Menu.WaferMapping.FormWaferMapping();
@@ -110,9 +110,9 @@ namespace Lilith
                 }
 
                 tbcMian.SelectTab(0);
-                alarmFrom.Hide();
+                
                 alarmFrom.Show();
-
+//alarmFrom.SendToBack();
                 alarmFrom.Hide();
 
 
@@ -304,7 +304,7 @@ namespace Lilith
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            FromAlarm alarmFrom = new FromAlarm();
+            FormAlarm alarmFrom = new FormAlarm();
             alarmFrom.Text = "MessageFrom";
             alarmFrom.BackColor = Color.Blue;
             alarmFrom.ResetAll_bt.Enabled = false;

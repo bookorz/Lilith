@@ -27,7 +27,7 @@ namespace Lilith.UI_Update.Alarm
             try
             {
 
-                Form form = Application.OpenForms["AlarmFrom"];
+                Form form = Application.OpenForms["FormAlarm"];
                 DataGridView AlarmList_gv;
                 
                    
