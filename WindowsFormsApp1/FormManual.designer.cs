@@ -489,6 +489,8 @@
             this.cbRA1Point.Items.AddRange(new object[] {
             "LOADPORT01",
             "LOADPORT02",
+            "LOADPORT03",
+            "LOADPORT04",
             "ALIGNER01"});
             this.cbRA1Point.Location = new System.Drawing.Point(129, 60);
             this.cbRA1Point.Name = "cbRA1Point";
