@@ -20,6 +20,36 @@ namespace Lilith.UI_Update.Monitoring
         delegate void UpdateEnable(bool Enable);
         delegate void UpdateLog(string msg);
 
+        public static void EventUpdate(string Name,bool Checked)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                CheckBox W;
+                if (form == null)
+                    return;
+
+                W = form.Controls.Find(Name+"_ck", true).FirstOrDefault() as CheckBox;
+                if (W == null)
+                    return;
+
+                if (W.InvokeRequired)
+                {
+                    UpdatePortUsed ph = new UpdatePortUsed(EventUpdate);
+                    W.BeginInvoke(ph, Name, Checked);
+                }
+                else
+                {
+                    W.Checked = Checked;
+
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
         public static void ConnectUpdate(string state)
         {
             try
@@ -88,9 +118,19 @@ namespace Lilith.UI_Update.Monitoring
                         W.SelectedText = "";
                     }
                     W.ScrollToCaret();
+
+                    EventUpdate("MAPDT", FormMain.ctrl.Events.MAPDT);
+                    EventUpdate("PORT", FormMain.ctrl.Events.PORT);
+                    EventUpdate("PRS", FormMain.ctrl.Events.PRS);
+                    EventUpdate("SYSTEM", FormMain.ctrl.Events.SYSTEM);
+                    EventUpdate("TRANSREQ", FormMain.ctrl.Events.TRANSREQ);
+                    EventUpdate("FFU", FormMain.ctrl.Events.FFU);
+
+
+                  
                 }
             }
-            catch
+            catch(Exception e)
             {
 
             }

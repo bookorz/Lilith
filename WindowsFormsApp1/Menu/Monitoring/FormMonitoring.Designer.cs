@@ -29,9 +29,134 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
+            this.TRANSREQ_ck = new System.Windows.Forms.CheckBox();
+            this.MAPDT_ck = new System.Windows.Forms.CheckBox();
+            this.FFU_ck = new System.Windows.Forms.CheckBox();
+            this.PRS_ck = new System.Windows.Forms.CheckBox();
+            this.PORT_ck = new System.Windows.Forms.CheckBox();
+            this.SYSTEM_ck = new System.Windows.Forms.CheckBox();
+            this.ResetInterface = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.ConnectStatus_lb = new System.Windows.Forms.Label();
+            this.LoadPort04_Mode = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.LoadPort03_Mode = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.LoadPort04_Slot_1 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_3 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_4 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_5 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_6 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_7 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_8 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_9 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_10 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_11 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_12 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_13 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_14 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_15 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_16 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_17 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_18 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_19 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_20 = new System.Windows.Forms.Label();
+            this.label107 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_21 = new System.Windows.Forms.Label();
+            this.label109 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_22 = new System.Windows.Forms.Label();
+            this.label111 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_23 = new System.Windows.Forms.Label();
+            this.label113 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_24 = new System.Windows.Forms.Label();
+            this.label115 = new System.Windows.Forms.Label();
+            this.LoadPort04_Slot_25 = new System.Windows.Forms.Label();
+            this.label117 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.LoadPort03_Slot_1 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_2 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_3 = new System.Windows.Forms.Label();
+            this.label123 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_4 = new System.Windows.Forms.Label();
+            this.label125 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_5 = new System.Windows.Forms.Label();
+            this.label127 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_6 = new System.Windows.Forms.Label();
+            this.label129 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_7 = new System.Windows.Forms.Label();
+            this.label131 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_8 = new System.Windows.Forms.Label();
+            this.label133 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_9 = new System.Windows.Forms.Label();
+            this.label135 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_10 = new System.Windows.Forms.Label();
+            this.label137 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_11 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_12 = new System.Windows.Forms.Label();
+            this.label141 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_13 = new System.Windows.Forms.Label();
+            this.label143 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_14 = new System.Windows.Forms.Label();
+            this.label145 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_15 = new System.Windows.Forms.Label();
+            this.label147 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_16 = new System.Windows.Forms.Label();
+            this.label149 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_17 = new System.Windows.Forms.Label();
+            this.label151 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_18 = new System.Windows.Forms.Label();
+            this.label153 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_19 = new System.Windows.Forms.Label();
+            this.label155 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_20 = new System.Windows.Forms.Label();
+            this.label157 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_21 = new System.Windows.Forms.Label();
+            this.label159 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_22 = new System.Windows.Forms.Label();
+            this.label161 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_23 = new System.Windows.Forms.Label();
+            this.label163 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_24 = new System.Windows.Forms.Label();
+            this.label165 = new System.Windows.Forms.Label();
+            this.LoadPort03_Slot_25 = new System.Windows.Forms.Label();
+            this.label167 = new System.Windows.Forms.Label();
+            this.LoadPort04_State = new System.Windows.Forms.TextBox();
+            this.LoadPort03_State = new System.Windows.Forms.TextBox();
+            this.LoadPort04_FID = new System.Windows.Forms.TextBox();
+            this.label168 = new System.Windows.Forms.Label();
+            this.LoadPort03_FID = new System.Windows.Forms.TextBox();
+            this.label169 = new System.Windows.Forms.Label();
+            this.Log_rt = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NotchDirect_cb = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.WPH = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.LoadPort02_Mode = new System.Windows.Forms.Label();
@@ -166,124 +291,12 @@
             this.Aligner01_State = new System.Windows.Forms.TextBox();
             this.LoadPort01_FID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.Log_rt = new System.Windows.Forms.RichTextBox();
-            this.LoadPort04_Mode = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.LoadPort03_Mode = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.LoadPort04_Slot_1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_2 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_3 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_4 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_5 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_6 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_7 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_8 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_9 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_10 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_11 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_12 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_13 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_14 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_15 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_16 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_17 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_18 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_19 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_20 = new System.Windows.Forms.Label();
-            this.label107 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_21 = new System.Windows.Forms.Label();
-            this.label109 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_22 = new System.Windows.Forms.Label();
-            this.label111 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_23 = new System.Windows.Forms.Label();
-            this.label113 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_24 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
-            this.LoadPort04_Slot_25 = new System.Windows.Forms.Label();
-            this.label117 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.LoadPort03_Slot_1 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_2 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_3 = new System.Windows.Forms.Label();
-            this.label123 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_4 = new System.Windows.Forms.Label();
-            this.label125 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_5 = new System.Windows.Forms.Label();
-            this.label127 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_6 = new System.Windows.Forms.Label();
-            this.label129 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_7 = new System.Windows.Forms.Label();
-            this.label131 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_8 = new System.Windows.Forms.Label();
-            this.label133 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_9 = new System.Windows.Forms.Label();
-            this.label135 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_10 = new System.Windows.Forms.Label();
-            this.label137 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_11 = new System.Windows.Forms.Label();
-            this.label139 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_12 = new System.Windows.Forms.Label();
-            this.label141 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_13 = new System.Windows.Forms.Label();
-            this.label143 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_14 = new System.Windows.Forms.Label();
-            this.label145 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_15 = new System.Windows.Forms.Label();
-            this.label147 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_16 = new System.Windows.Forms.Label();
-            this.label149 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_17 = new System.Windows.Forms.Label();
-            this.label151 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_18 = new System.Windows.Forms.Label();
-            this.label153 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_19 = new System.Windows.Forms.Label();
-            this.label155 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_20 = new System.Windows.Forms.Label();
-            this.label157 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_21 = new System.Windows.Forms.Label();
-            this.label159 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_22 = new System.Windows.Forms.Label();
-            this.label161 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_23 = new System.Windows.Forms.Label();
-            this.label163 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_24 = new System.Windows.Forms.Label();
-            this.label165 = new System.Windows.Forms.Label();
-            this.LoadPort03_Slot_25 = new System.Windows.Forms.Label();
-            this.label167 = new System.Windows.Forms.Label();
-            this.LoadPort04_State = new System.Windows.Forms.TextBox();
-            this.LoadPort03_State = new System.Windows.Forms.TextBox();
-            this.LoadPort04_FID = new System.Windows.Forms.TextBox();
-            this.label168 = new System.Windows.Forms.Label();
-            this.LoadPort03_FID = new System.Windows.Forms.TextBox();
-            this.label169 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ConnectStatus_lb = new System.Windows.Forms.Label();
-            this.ResetInterface = new System.Windows.Forms.Button();
             this.Aligner01_tb.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OCR01_Pic)).BeginInit();
             this.panel1.SuspendLayout();
@@ -292,14 +305,17 @@
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.TblPanel_A.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
+            this.Aligner01_tb.Controls.Add(this.TRANSREQ_ck);
+            this.Aligner01_tb.Controls.Add(this.MAPDT_ck);
+            this.Aligner01_tb.Controls.Add(this.FFU_ck);
+            this.Aligner01_tb.Controls.Add(this.PRS_ck);
+            this.Aligner01_tb.Controls.Add(this.PORT_ck);
+            this.Aligner01_tb.Controls.Add(this.SYSTEM_ck);
             this.Aligner01_tb.Controls.Add(this.ResetInterface);
             this.Aligner01_tb.Controls.Add(this.groupBox1);
             this.Aligner01_tb.Controls.Add(this.LoadPort04_Mode);
@@ -345,17 +361,2099 @@
             this.Aligner01_tb.ForeColor = System.Drawing.Color.Black;
             this.Aligner01_tb.Location = new System.Drawing.Point(0, 0);
             this.Aligner01_tb.Name = "Aligner01_tb";
-            this.Aligner01_tb.Size = new System.Drawing.Size(1620, 760);
+            this.Aligner01_tb.Size = new System.Drawing.Size(1460, 760);
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
+            // 
+            // TRANSREQ_ck
+            // 
+            this.TRANSREQ_ck.AutoSize = true;
+            this.TRANSREQ_ck.Location = new System.Drawing.Point(1301, 610);
+            this.TRANSREQ_ck.Name = "TRANSREQ_ck";
+            this.TRANSREQ_ck.Size = new System.Drawing.Size(82, 19);
+            this.TRANSREQ_ck.TabIndex = 196;
+            this.TRANSREQ_ck.Text = "TRANSREQ";
+            this.TRANSREQ_ck.UseVisualStyleBackColor = true;
+            this.TRANSREQ_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // MAPDT_ck
+            // 
+            this.MAPDT_ck.AutoSize = true;
+            this.MAPDT_ck.Location = new System.Drawing.Point(1301, 585);
+            this.MAPDT_ck.Name = "MAPDT_ck";
+            this.MAPDT_ck.Size = new System.Drawing.Size(61, 19);
+            this.MAPDT_ck.TabIndex = 195;
+            this.MAPDT_ck.Text = "MAPDT";
+            this.MAPDT_ck.UseVisualStyleBackColor = true;
+            this.MAPDT_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // FFU_ck
+            // 
+            this.FFU_ck.AutoSize = true;
+            this.FFU_ck.Location = new System.Drawing.Point(1301, 708);
+            this.FFU_ck.Name = "FFU_ck";
+            this.FFU_ck.Size = new System.Drawing.Size(47, 19);
+            this.FFU_ck.TabIndex = 194;
+            this.FFU_ck.Text = "FFU";
+            this.FFU_ck.UseVisualStyleBackColor = true;
+            this.FFU_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // PRS_ck
+            // 
+            this.PRS_ck.AutoSize = true;
+            this.PRS_ck.Location = new System.Drawing.Point(1301, 683);
+            this.PRS_ck.Name = "PRS_ck";
+            this.PRS_ck.Size = new System.Drawing.Size(47, 19);
+            this.PRS_ck.TabIndex = 193;
+            this.PRS_ck.Text = "PRS";
+            this.PRS_ck.UseVisualStyleBackColor = true;
+            this.PRS_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // PORT_ck
+            // 
+            this.PORT_ck.AutoSize = true;
+            this.PORT_ck.Location = new System.Drawing.Point(1301, 658);
+            this.PORT_ck.Name = "PORT_ck";
+            this.PORT_ck.Size = new System.Drawing.Size(54, 19);
+            this.PORT_ck.TabIndex = 192;
+            this.PORT_ck.Text = "PORT";
+            this.PORT_ck.UseVisualStyleBackColor = true;
+            this.PORT_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // SYSTEM_ck
+            // 
+            this.SYSTEM_ck.AutoSize = true;
+            this.SYSTEM_ck.Location = new System.Drawing.Point(1301, 633);
+            this.SYSTEM_ck.Name = "SYSTEM_ck";
+            this.SYSTEM_ck.Size = new System.Drawing.Size(68, 19);
+            this.SYSTEM_ck.TabIndex = 191;
+            this.SYSTEM_ck.Text = "SYSTEM";
+            this.SYSTEM_ck.UseVisualStyleBackColor = true;
+            this.SYSTEM_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // ResetInterface
+            // 
+            this.ResetInterface.Location = new System.Drawing.Point(1466, 64);
+            this.ResetInterface.Name = "ResetInterface";
+            this.ResetInterface.Size = new System.Drawing.Size(75, 23);
+            this.ResetInterface.TabIndex = 190;
+            this.ResetInterface.Text = "Reset";
+            this.ResetInterface.UseVisualStyleBackColor = true;
+            this.ResetInterface.Click += new System.EventHandler(this.ResetInterface_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ConnectStatus_lb);
+            this.groupBox1.Location = new System.Drawing.Point(1328, 50);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(132, 41);
+            this.groupBox1.TabIndex = 189;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "上位系統連線";
+            // 
+            // ConnectStatus_lb
+            // 
+            this.ConnectStatus_lb.AutoSize = true;
+            this.ConnectStatus_lb.BackColor = System.Drawing.Color.Red;
+            this.ConnectStatus_lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ConnectStatus_lb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ConnectStatus_lb.Location = new System.Drawing.Point(6, 18);
+            this.ConnectStatus_lb.MinimumSize = new System.Drawing.Size(120, 9);
+            this.ConnectStatus_lb.Name = "ConnectStatus_lb";
+            this.ConnectStatus_lb.Size = new System.Drawing.Size(120, 17);
+            this.ConnectStatus_lb.TabIndex = 1;
+            // 
+            // LoadPort04_Mode
+            // 
+            this.LoadPort04_Mode.BackColor = System.Drawing.Color.Green;
+            this.LoadPort04_Mode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Mode.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LoadPort04_Mode.ForeColor = System.Drawing.Color.White;
+            this.LoadPort04_Mode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Mode.Location = new System.Drawing.Point(623, 132);
+            this.LoadPort04_Mode.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Mode.Name = "LoadPort04_Mode";
+            this.LoadPort04_Mode.Size = new System.Drawing.Size(98, 18);
+            this.LoadPort04_Mode.TabIndex = 188;
+            this.LoadPort04_Mode.Tag = "1";
+            this.LoadPort04_Mode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Green;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label7.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(569, 132);
+            this.label7.Margin = new System.Windows.Forms.Padding(3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 18);
+            this.label7.TabIndex = 187;
+            this.label7.Tag = "1";
+            this.label7.Text = "Mode";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Mode
+            // 
+            this.LoadPort03_Mode.BackColor = System.Drawing.Color.Green;
+            this.LoadPort03_Mode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Mode.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.LoadPort03_Mode.ForeColor = System.Drawing.Color.White;
+            this.LoadPort03_Mode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Mode.Location = new System.Drawing.Point(442, 132);
+            this.LoadPort03_Mode.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Mode.Name = "LoadPort03_Mode";
+            this.LoadPort03_Mode.Size = new System.Drawing.Size(98, 18);
+            this.LoadPort03_Mode.TabIndex = 186;
+            this.LoadPort03_Mode.Tag = "1";
+            this.LoadPort03_Mode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Green;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label10.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label10.Location = new System.Drawing.Point(388, 132);
+            this.label10.Margin = new System.Windows.Forms.Padding(3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(48, 18);
+            this.label10.TabIndex = 185;
+            this.label10.Tag = "1";
+            this.label10.Text = "Mode";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_1, 1, 24);
+            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 24);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_2, 1, 23);
+            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 23);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_3, 1, 22);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 22);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_4, 1, 21);
+            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 21);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_5, 1, 20);
+            this.tableLayoutPanel2.Controls.Add(this.label36, 0, 20);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_6, 1, 19);
+            this.tableLayoutPanel2.Controls.Add(this.label40, 0, 19);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_7, 1, 18);
+            this.tableLayoutPanel2.Controls.Add(this.label44, 0, 18);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_8, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.label48, 0, 17);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_9, 1, 16);
+            this.tableLayoutPanel2.Controls.Add(this.label52, 0, 16);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_10, 1, 15);
+            this.tableLayoutPanel2.Controls.Add(this.label56, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_11, 1, 14);
+            this.tableLayoutPanel2.Controls.Add(this.label60, 0, 14);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_12, 1, 13);
+            this.tableLayoutPanel2.Controls.Add(this.label64, 0, 13);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_13, 1, 12);
+            this.tableLayoutPanel2.Controls.Add(this.label68, 0, 12);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_14, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.label70, 0, 11);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_15, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.label72, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_16, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.label74, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_17, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.label76, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_18, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.label78, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_19, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.label80, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_20, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.label107, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_21, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.label109, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_22, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label111, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_23, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label113, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_24, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label115, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_25, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.label117, 0, 0);
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(565, 159);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 25;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(159, 576);
+            this.tableLayoutPanel2.TabIndex = 184;
+            this.tableLayoutPanel2.Tag = "1";
+            // 
+            // LoadPort04_Slot_1
+            // 
+            this.LoadPort04_Slot_1.AutoSize = true;
+            this.LoadPort04_Slot_1.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_1.Location = new System.Drawing.Point(51, 556);
+            this.LoadPort04_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_1.Name = "LoadPort04_Slot_1";
+            this.LoadPort04_Slot_1.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_1.TabIndex = 82;
+            this.LoadPort04_Slot_1.Tag = "1";
+            this.LoadPort04_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Navy;
+            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label12.Location = new System.Drawing.Point(4, 556);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(40, 16);
+            this.label12.TabIndex = 81;
+            this.label12.Tag = "1";
+            this.label12.Text = "01";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_2
+            // 
+            this.LoadPort04_Slot_2.AutoSize = true;
+            this.LoadPort04_Slot_2.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_2.Location = new System.Drawing.Point(51, 533);
+            this.LoadPort04_Slot_2.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_2.Name = "LoadPort04_Slot_2";
+            this.LoadPort04_Slot_2.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_2.TabIndex = 79;
+            this.LoadPort04_Slot_2.Tag = "1";
+            this.LoadPort04_Slot_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.BackColor = System.Drawing.Color.Navy;
+            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label14.Location = new System.Drawing.Point(4, 533);
+            this.label14.Margin = new System.Windows.Forms.Padding(3);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 16);
+            this.label14.TabIndex = 78;
+            this.label14.Tag = "1";
+            this.label14.Text = "02";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_3
+            // 
+            this.LoadPort04_Slot_3.AutoSize = true;
+            this.LoadPort04_Slot_3.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_3.Location = new System.Drawing.Point(51, 510);
+            this.LoadPort04_Slot_3.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_3.Name = "LoadPort04_Slot_3";
+            this.LoadPort04_Slot_3.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_3.TabIndex = 76;
+            this.LoadPort04_Slot_3.Tag = "1";
+            this.LoadPort04_Slot_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            this.label24.BackColor = System.Drawing.Color.Navy;
+            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.White;
+            this.label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label24.Location = new System.Drawing.Point(4, 510);
+            this.label24.Margin = new System.Windows.Forms.Padding(3);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(40, 16);
+            this.label24.TabIndex = 75;
+            this.label24.Tag = "1";
+            this.label24.Text = "03";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_4
+            // 
+            this.LoadPort04_Slot_4.AutoSize = true;
+            this.LoadPort04_Slot_4.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_4.Location = new System.Drawing.Point(51, 487);
+            this.LoadPort04_Slot_4.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_4.Name = "LoadPort04_Slot_4";
+            this.LoadPort04_Slot_4.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_4.TabIndex = 73;
+            this.LoadPort04_Slot_4.Tag = "1";
+            this.LoadPort04_Slot_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.BackColor = System.Drawing.Color.Navy;
+            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label30.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.ForeColor = System.Drawing.Color.White;
+            this.label30.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label30.Location = new System.Drawing.Point(4, 487);
+            this.label30.Margin = new System.Windows.Forms.Padding(3);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(40, 16);
+            this.label30.TabIndex = 72;
+            this.label30.Tag = "1";
+            this.label30.Text = "04";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_5
+            // 
+            this.LoadPort04_Slot_5.AutoSize = true;
+            this.LoadPort04_Slot_5.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_5.Location = new System.Drawing.Point(51, 464);
+            this.LoadPort04_Slot_5.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_5.Name = "LoadPort04_Slot_5";
+            this.LoadPort04_Slot_5.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_5.TabIndex = 70;
+            this.LoadPort04_Slot_5.Tag = "1";
+            this.LoadPort04_Slot_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label36
+            // 
+            this.label36.BackColor = System.Drawing.Color.Navy;
+            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.White;
+            this.label36.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label36.Location = new System.Drawing.Point(4, 464);
+            this.label36.Margin = new System.Windows.Forms.Padding(3);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(40, 16);
+            this.label36.TabIndex = 69;
+            this.label36.Tag = "1";
+            this.label36.Text = "05";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_6
+            // 
+            this.LoadPort04_Slot_6.AutoSize = true;
+            this.LoadPort04_Slot_6.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_6.Location = new System.Drawing.Point(51, 441);
+            this.LoadPort04_Slot_6.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_6.Name = "LoadPort04_Slot_6";
+            this.LoadPort04_Slot_6.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_6.TabIndex = 67;
+            this.LoadPort04_Slot_6.Tag = "1";
+            this.LoadPort04_Slot_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label40
+            // 
+            this.label40.BackColor = System.Drawing.Color.Navy;
+            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label40.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.ForeColor = System.Drawing.Color.White;
+            this.label40.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label40.Location = new System.Drawing.Point(4, 441);
+            this.label40.Margin = new System.Windows.Forms.Padding(3);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(40, 16);
+            this.label40.TabIndex = 66;
+            this.label40.Tag = "1";
+            this.label40.Text = "06";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_7
+            // 
+            this.LoadPort04_Slot_7.AutoSize = true;
+            this.LoadPort04_Slot_7.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_7.Location = new System.Drawing.Point(51, 418);
+            this.LoadPort04_Slot_7.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_7.Name = "LoadPort04_Slot_7";
+            this.LoadPort04_Slot_7.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_7.TabIndex = 64;
+            this.LoadPort04_Slot_7.Tag = "1";
+            this.LoadPort04_Slot_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label44
+            // 
+            this.label44.BackColor = System.Drawing.Color.Navy;
+            this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label44.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.White;
+            this.label44.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label44.Location = new System.Drawing.Point(4, 418);
+            this.label44.Margin = new System.Windows.Forms.Padding(3);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(40, 16);
+            this.label44.TabIndex = 63;
+            this.label44.Tag = "1";
+            this.label44.Text = "07";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_8
+            // 
+            this.LoadPort04_Slot_8.AutoSize = true;
+            this.LoadPort04_Slot_8.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_8.Location = new System.Drawing.Point(51, 395);
+            this.LoadPort04_Slot_8.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_8.Name = "LoadPort04_Slot_8";
+            this.LoadPort04_Slot_8.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_8.TabIndex = 61;
+            this.LoadPort04_Slot_8.Tag = "1";
+            this.LoadPort04_Slot_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.BackColor = System.Drawing.Color.Navy;
+            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label48.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.White;
+            this.label48.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label48.Location = new System.Drawing.Point(4, 395);
+            this.label48.Margin = new System.Windows.Forms.Padding(3);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(40, 16);
+            this.label48.TabIndex = 60;
+            this.label48.Tag = "1";
+            this.label48.Text = "08";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_9
+            // 
+            this.LoadPort04_Slot_9.AutoSize = true;
+            this.LoadPort04_Slot_9.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_9.Location = new System.Drawing.Point(51, 372);
+            this.LoadPort04_Slot_9.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_9.Name = "LoadPort04_Slot_9";
+            this.LoadPort04_Slot_9.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_9.TabIndex = 58;
+            this.LoadPort04_Slot_9.Tag = "1";
+            this.LoadPort04_Slot_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label52
+            // 
+            this.label52.BackColor = System.Drawing.Color.Navy;
+            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label52.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.ForeColor = System.Drawing.Color.White;
+            this.label52.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label52.Location = new System.Drawing.Point(4, 372);
+            this.label52.Margin = new System.Windows.Forms.Padding(3);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(40, 16);
+            this.label52.TabIndex = 57;
+            this.label52.Tag = "1";
+            this.label52.Text = "09";
+            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_10
+            // 
+            this.LoadPort04_Slot_10.AutoSize = true;
+            this.LoadPort04_Slot_10.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_10.Location = new System.Drawing.Point(51, 349);
+            this.LoadPort04_Slot_10.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_10.Name = "LoadPort04_Slot_10";
+            this.LoadPort04_Slot_10.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_10.TabIndex = 55;
+            this.LoadPort04_Slot_10.Tag = "1";
+            this.LoadPort04_Slot_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label56
+            // 
+            this.label56.BackColor = System.Drawing.Color.Navy;
+            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label56.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.ForeColor = System.Drawing.Color.White;
+            this.label56.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label56.Location = new System.Drawing.Point(4, 349);
+            this.label56.Margin = new System.Windows.Forms.Padding(3);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(40, 16);
+            this.label56.TabIndex = 54;
+            this.label56.Tag = "1";
+            this.label56.Text = "10";
+            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_11
+            // 
+            this.LoadPort04_Slot_11.AutoSize = true;
+            this.LoadPort04_Slot_11.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_11.Location = new System.Drawing.Point(51, 326);
+            this.LoadPort04_Slot_11.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_11.Name = "LoadPort04_Slot_11";
+            this.LoadPort04_Slot_11.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_11.TabIndex = 52;
+            this.LoadPort04_Slot_11.Tag = "1";
+            this.LoadPort04_Slot_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label60
+            // 
+            this.label60.BackColor = System.Drawing.Color.Navy;
+            this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label60.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.ForeColor = System.Drawing.Color.White;
+            this.label60.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label60.Location = new System.Drawing.Point(4, 326);
+            this.label60.Margin = new System.Windows.Forms.Padding(3);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(40, 16);
+            this.label60.TabIndex = 51;
+            this.label60.Tag = "1";
+            this.label60.Text = "11";
+            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_12
+            // 
+            this.LoadPort04_Slot_12.AutoSize = true;
+            this.LoadPort04_Slot_12.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_12.Location = new System.Drawing.Point(51, 303);
+            this.LoadPort04_Slot_12.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_12.Name = "LoadPort04_Slot_12";
+            this.LoadPort04_Slot_12.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_12.TabIndex = 49;
+            this.LoadPort04_Slot_12.Tag = "1";
+            this.LoadPort04_Slot_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label64
+            // 
+            this.label64.BackColor = System.Drawing.Color.Navy;
+            this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label64.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.ForeColor = System.Drawing.Color.White;
+            this.label64.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label64.Location = new System.Drawing.Point(4, 303);
+            this.label64.Margin = new System.Windows.Forms.Padding(3);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(40, 16);
+            this.label64.TabIndex = 48;
+            this.label64.Tag = "1";
+            this.label64.Text = "12";
+            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_13
+            // 
+            this.LoadPort04_Slot_13.AutoSize = true;
+            this.LoadPort04_Slot_13.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_13.Location = new System.Drawing.Point(51, 280);
+            this.LoadPort04_Slot_13.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_13.Name = "LoadPort04_Slot_13";
+            this.LoadPort04_Slot_13.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_13.TabIndex = 46;
+            this.LoadPort04_Slot_13.Tag = "1";
+            this.LoadPort04_Slot_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label68
+            // 
+            this.label68.BackColor = System.Drawing.Color.Navy;
+            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label68.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.ForeColor = System.Drawing.Color.White;
+            this.label68.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label68.Location = new System.Drawing.Point(4, 280);
+            this.label68.Margin = new System.Windows.Forms.Padding(3);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(40, 16);
+            this.label68.TabIndex = 45;
+            this.label68.Tag = "1";
+            this.label68.Text = "13";
+            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_14
+            // 
+            this.LoadPort04_Slot_14.AutoSize = true;
+            this.LoadPort04_Slot_14.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_14.Location = new System.Drawing.Point(51, 257);
+            this.LoadPort04_Slot_14.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_14.Name = "LoadPort04_Slot_14";
+            this.LoadPort04_Slot_14.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_14.TabIndex = 43;
+            this.LoadPort04_Slot_14.Tag = "1";
+            this.LoadPort04_Slot_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label70
+            // 
+            this.label70.BackColor = System.Drawing.Color.Navy;
+            this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label70.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label70.ForeColor = System.Drawing.Color.White;
+            this.label70.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label70.Location = new System.Drawing.Point(4, 257);
+            this.label70.Margin = new System.Windows.Forms.Padding(3);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(40, 16);
+            this.label70.TabIndex = 42;
+            this.label70.Tag = "1";
+            this.label70.Text = "14";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_15
+            // 
+            this.LoadPort04_Slot_15.AutoSize = true;
+            this.LoadPort04_Slot_15.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_15.Location = new System.Drawing.Point(51, 234);
+            this.LoadPort04_Slot_15.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_15.Name = "LoadPort04_Slot_15";
+            this.LoadPort04_Slot_15.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_15.TabIndex = 40;
+            this.LoadPort04_Slot_15.Tag = "1";
+            this.LoadPort04_Slot_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label72
+            // 
+            this.label72.BackColor = System.Drawing.Color.Navy;
+            this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label72.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.ForeColor = System.Drawing.Color.White;
+            this.label72.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label72.Location = new System.Drawing.Point(4, 234);
+            this.label72.Margin = new System.Windows.Forms.Padding(3);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(40, 16);
+            this.label72.TabIndex = 39;
+            this.label72.Tag = "1";
+            this.label72.Text = "15";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_16
+            // 
+            this.LoadPort04_Slot_16.AutoSize = true;
+            this.LoadPort04_Slot_16.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_16.Location = new System.Drawing.Point(51, 211);
+            this.LoadPort04_Slot_16.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_16.Name = "LoadPort04_Slot_16";
+            this.LoadPort04_Slot_16.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_16.TabIndex = 37;
+            this.LoadPort04_Slot_16.Tag = "1";
+            this.LoadPort04_Slot_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.BackColor = System.Drawing.Color.Navy;
+            this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label74.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label74.ForeColor = System.Drawing.Color.White;
+            this.label74.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label74.Location = new System.Drawing.Point(4, 211);
+            this.label74.Margin = new System.Windows.Forms.Padding(3);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(40, 16);
+            this.label74.TabIndex = 36;
+            this.label74.Tag = "1";
+            this.label74.Text = "16";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_17
+            // 
+            this.LoadPort04_Slot_17.AutoSize = true;
+            this.LoadPort04_Slot_17.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_17.Location = new System.Drawing.Point(51, 188);
+            this.LoadPort04_Slot_17.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_17.Name = "LoadPort04_Slot_17";
+            this.LoadPort04_Slot_17.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_17.TabIndex = 34;
+            this.LoadPort04_Slot_17.Tag = "1";
+            this.LoadPort04_Slot_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label76
+            // 
+            this.label76.BackColor = System.Drawing.Color.Navy;
+            this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label76.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.ForeColor = System.Drawing.Color.White;
+            this.label76.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label76.Location = new System.Drawing.Point(4, 188);
+            this.label76.Margin = new System.Windows.Forms.Padding(3);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(40, 16);
+            this.label76.TabIndex = 33;
+            this.label76.Tag = "1";
+            this.label76.Text = "17";
+            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_18
+            // 
+            this.LoadPort04_Slot_18.AutoSize = true;
+            this.LoadPort04_Slot_18.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_18.Location = new System.Drawing.Point(51, 165);
+            this.LoadPort04_Slot_18.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_18.Name = "LoadPort04_Slot_18";
+            this.LoadPort04_Slot_18.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_18.TabIndex = 31;
+            this.LoadPort04_Slot_18.Tag = "1";
+            this.LoadPort04_Slot_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.BackColor = System.Drawing.Color.Navy;
+            this.label78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label78.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label78.ForeColor = System.Drawing.Color.White;
+            this.label78.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label78.Location = new System.Drawing.Point(4, 165);
+            this.label78.Margin = new System.Windows.Forms.Padding(3);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(40, 16);
+            this.label78.TabIndex = 30;
+            this.label78.Tag = "1";
+            this.label78.Text = "18";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_19
+            // 
+            this.LoadPort04_Slot_19.AutoSize = true;
+            this.LoadPort04_Slot_19.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_19.Location = new System.Drawing.Point(51, 142);
+            this.LoadPort04_Slot_19.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_19.Name = "LoadPort04_Slot_19";
+            this.LoadPort04_Slot_19.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_19.TabIndex = 28;
+            this.LoadPort04_Slot_19.Tag = "1";
+            this.LoadPort04_Slot_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label80
+            // 
+            this.label80.BackColor = System.Drawing.Color.Navy;
+            this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label80.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label80.ForeColor = System.Drawing.Color.White;
+            this.label80.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label80.Location = new System.Drawing.Point(4, 142);
+            this.label80.Margin = new System.Windows.Forms.Padding(3);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(40, 16);
+            this.label80.TabIndex = 27;
+            this.label80.Tag = "1";
+            this.label80.Text = "19";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_20
+            // 
+            this.LoadPort04_Slot_20.AutoSize = true;
+            this.LoadPort04_Slot_20.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_20.Location = new System.Drawing.Point(51, 119);
+            this.LoadPort04_Slot_20.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_20.Name = "LoadPort04_Slot_20";
+            this.LoadPort04_Slot_20.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_20.TabIndex = 25;
+            this.LoadPort04_Slot_20.Tag = "1";
+            this.LoadPort04_Slot_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label107
+            // 
+            this.label107.BackColor = System.Drawing.Color.Navy;
+            this.label107.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label107.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label107.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label107.ForeColor = System.Drawing.Color.White;
+            this.label107.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label107.Location = new System.Drawing.Point(4, 119);
+            this.label107.Margin = new System.Windows.Forms.Padding(3);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(40, 16);
+            this.label107.TabIndex = 24;
+            this.label107.Tag = "1";
+            this.label107.Text = "20";
+            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_21
+            // 
+            this.LoadPort04_Slot_21.AutoSize = true;
+            this.LoadPort04_Slot_21.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_21.Location = new System.Drawing.Point(51, 96);
+            this.LoadPort04_Slot_21.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_21.Name = "LoadPort04_Slot_21";
+            this.LoadPort04_Slot_21.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_21.TabIndex = 22;
+            this.LoadPort04_Slot_21.Tag = "1";
+            this.LoadPort04_Slot_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label109
+            // 
+            this.label109.BackColor = System.Drawing.Color.Navy;
+            this.label109.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label109.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label109.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label109.ForeColor = System.Drawing.Color.White;
+            this.label109.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label109.Location = new System.Drawing.Point(4, 96);
+            this.label109.Margin = new System.Windows.Forms.Padding(3);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(40, 16);
+            this.label109.TabIndex = 21;
+            this.label109.Tag = "1";
+            this.label109.Text = "21";
+            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_22
+            // 
+            this.LoadPort04_Slot_22.AutoSize = true;
+            this.LoadPort04_Slot_22.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_22.Location = new System.Drawing.Point(51, 73);
+            this.LoadPort04_Slot_22.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_22.Name = "LoadPort04_Slot_22";
+            this.LoadPort04_Slot_22.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_22.TabIndex = 19;
+            this.LoadPort04_Slot_22.Tag = "1";
+            this.LoadPort04_Slot_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label111
+            // 
+            this.label111.BackColor = System.Drawing.Color.Navy;
+            this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label111.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label111.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label111.ForeColor = System.Drawing.Color.White;
+            this.label111.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label111.Location = new System.Drawing.Point(4, 73);
+            this.label111.Margin = new System.Windows.Forms.Padding(3);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(40, 16);
+            this.label111.TabIndex = 18;
+            this.label111.Tag = "1";
+            this.label111.Text = "22";
+            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_23
+            // 
+            this.LoadPort04_Slot_23.AutoSize = true;
+            this.LoadPort04_Slot_23.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_23.Location = new System.Drawing.Point(51, 50);
+            this.LoadPort04_Slot_23.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_23.Name = "LoadPort04_Slot_23";
+            this.LoadPort04_Slot_23.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_23.TabIndex = 16;
+            this.LoadPort04_Slot_23.Tag = "1";
+            this.LoadPort04_Slot_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label113
+            // 
+            this.label113.BackColor = System.Drawing.Color.Navy;
+            this.label113.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label113.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label113.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label113.ForeColor = System.Drawing.Color.White;
+            this.label113.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label113.Location = new System.Drawing.Point(4, 50);
+            this.label113.Margin = new System.Windows.Forms.Padding(3);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(40, 16);
+            this.label113.TabIndex = 15;
+            this.label113.Tag = "1";
+            this.label113.Text = "23";
+            this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_24
+            // 
+            this.LoadPort04_Slot_24.AutoSize = true;
+            this.LoadPort04_Slot_24.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_24.Location = new System.Drawing.Point(51, 27);
+            this.LoadPort04_Slot_24.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_24.Name = "LoadPort04_Slot_24";
+            this.LoadPort04_Slot_24.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_24.TabIndex = 13;
+            this.LoadPort04_Slot_24.Tag = "1";
+            this.LoadPort04_Slot_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label115
+            // 
+            this.label115.BackColor = System.Drawing.Color.Navy;
+            this.label115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label115.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label115.ForeColor = System.Drawing.Color.White;
+            this.label115.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label115.Location = new System.Drawing.Point(4, 27);
+            this.label115.Margin = new System.Windows.Forms.Padding(3);
+            this.label115.Name = "label115";
+            this.label115.Size = new System.Drawing.Size(40, 16);
+            this.label115.TabIndex = 12;
+            this.label115.Tag = "1";
+            this.label115.Text = "24";
+            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_Slot_25
+            // 
+            this.LoadPort04_Slot_25.AutoSize = true;
+            this.LoadPort04_Slot_25.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_Slot_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_Slot_25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort04_Slot_25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort04_Slot_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort04_Slot_25.Location = new System.Drawing.Point(51, 4);
+            this.LoadPort04_Slot_25.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort04_Slot_25.Name = "LoadPort04_Slot_25";
+            this.LoadPort04_Slot_25.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort04_Slot_25.TabIndex = 10;
+            this.LoadPort04_Slot_25.Tag = "1";
+            this.LoadPort04_Slot_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label117
+            // 
+            this.label117.BackColor = System.Drawing.Color.Navy;
+            this.label117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label117.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label117.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label117.ForeColor = System.Drawing.Color.White;
+            this.label117.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label117.Location = new System.Drawing.Point(4, 4);
+            this.label117.Margin = new System.Windows.Forms.Padding(3);
+            this.label117.Name = "label117";
+            this.label117.Size = new System.Drawing.Size(40, 16);
+            this.label117.TabIndex = 9;
+            this.label117.Tag = "1";
+            this.label117.Text = "25";
+            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_1, 1, 24);
+            this.tableLayoutPanel3.Controls.Add(this.label119, 0, 24);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_2, 1, 23);
+            this.tableLayoutPanel3.Controls.Add(this.label121, 0, 23);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_3, 1, 22);
+            this.tableLayoutPanel3.Controls.Add(this.label123, 0, 22);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_4, 1, 21);
+            this.tableLayoutPanel3.Controls.Add(this.label125, 0, 21);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_5, 1, 20);
+            this.tableLayoutPanel3.Controls.Add(this.label127, 0, 20);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_6, 1, 19);
+            this.tableLayoutPanel3.Controls.Add(this.label129, 0, 19);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_7, 1, 18);
+            this.tableLayoutPanel3.Controls.Add(this.label131, 0, 18);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_8, 1, 17);
+            this.tableLayoutPanel3.Controls.Add(this.label133, 0, 17);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_9, 1, 16);
+            this.tableLayoutPanel3.Controls.Add(this.label135, 0, 16);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_10, 1, 15);
+            this.tableLayoutPanel3.Controls.Add(this.label137, 0, 15);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_11, 1, 14);
+            this.tableLayoutPanel3.Controls.Add(this.label139, 0, 14);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_12, 1, 13);
+            this.tableLayoutPanel3.Controls.Add(this.label141, 0, 13);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_13, 1, 12);
+            this.tableLayoutPanel3.Controls.Add(this.label143, 0, 12);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_14, 1, 11);
+            this.tableLayoutPanel3.Controls.Add(this.label145, 0, 11);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_15, 1, 10);
+            this.tableLayoutPanel3.Controls.Add(this.label147, 0, 10);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_16, 1, 9);
+            this.tableLayoutPanel3.Controls.Add(this.label149, 0, 9);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_17, 1, 8);
+            this.tableLayoutPanel3.Controls.Add(this.label151, 0, 8);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_18, 1, 7);
+            this.tableLayoutPanel3.Controls.Add(this.label153, 0, 7);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_19, 1, 6);
+            this.tableLayoutPanel3.Controls.Add(this.label155, 0, 6);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_20, 1, 5);
+            this.tableLayoutPanel3.Controls.Add(this.label157, 0, 5);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_21, 1, 4);
+            this.tableLayoutPanel3.Controls.Add(this.label159, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_22, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.label161, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_23, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.label163, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_24, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.label165, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_25, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label167, 0, 0);
+            this.tableLayoutPanel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(384, 159);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 25;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(159, 576);
+            this.tableLayoutPanel3.TabIndex = 183;
+            this.tableLayoutPanel3.Tag = "1";
+            // 
+            // LoadPort03_Slot_1
+            // 
+            this.LoadPort03_Slot_1.AutoSize = true;
+            this.LoadPort03_Slot_1.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_1.Location = new System.Drawing.Point(51, 556);
+            this.LoadPort03_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_1.Name = "LoadPort03_Slot_1";
+            this.LoadPort03_Slot_1.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_1.TabIndex = 82;
+            this.LoadPort03_Slot_1.Tag = "1";
+            this.LoadPort03_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label119
+            // 
+            this.label119.BackColor = System.Drawing.Color.Navy;
+            this.label119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label119.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label119.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label119.ForeColor = System.Drawing.Color.White;
+            this.label119.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label119.Location = new System.Drawing.Point(4, 556);
+            this.label119.Margin = new System.Windows.Forms.Padding(3);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(40, 16);
+            this.label119.TabIndex = 81;
+            this.label119.Tag = "1";
+            this.label119.Text = "01";
+            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_2
+            // 
+            this.LoadPort03_Slot_2.AutoSize = true;
+            this.LoadPort03_Slot_2.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_2.Location = new System.Drawing.Point(51, 533);
+            this.LoadPort03_Slot_2.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_2.Name = "LoadPort03_Slot_2";
+            this.LoadPort03_Slot_2.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_2.TabIndex = 79;
+            this.LoadPort03_Slot_2.Tag = "1";
+            this.LoadPort03_Slot_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label121
+            // 
+            this.label121.BackColor = System.Drawing.Color.Navy;
+            this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label121.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label121.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label121.ForeColor = System.Drawing.Color.White;
+            this.label121.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label121.Location = new System.Drawing.Point(4, 533);
+            this.label121.Margin = new System.Windows.Forms.Padding(3);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(40, 16);
+            this.label121.TabIndex = 78;
+            this.label121.Tag = "1";
+            this.label121.Text = "02";
+            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_3
+            // 
+            this.LoadPort03_Slot_3.AutoSize = true;
+            this.LoadPort03_Slot_3.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_3.Location = new System.Drawing.Point(51, 510);
+            this.LoadPort03_Slot_3.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_3.Name = "LoadPort03_Slot_3";
+            this.LoadPort03_Slot_3.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_3.TabIndex = 76;
+            this.LoadPort03_Slot_3.Tag = "1";
+            this.LoadPort03_Slot_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label123
+            // 
+            this.label123.BackColor = System.Drawing.Color.Navy;
+            this.label123.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label123.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label123.ForeColor = System.Drawing.Color.White;
+            this.label123.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label123.Location = new System.Drawing.Point(4, 510);
+            this.label123.Margin = new System.Windows.Forms.Padding(3);
+            this.label123.Name = "label123";
+            this.label123.Size = new System.Drawing.Size(40, 16);
+            this.label123.TabIndex = 75;
+            this.label123.Tag = "1";
+            this.label123.Text = "03";
+            this.label123.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_4
+            // 
+            this.LoadPort03_Slot_4.AutoSize = true;
+            this.LoadPort03_Slot_4.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_4.Location = new System.Drawing.Point(51, 487);
+            this.LoadPort03_Slot_4.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_4.Name = "LoadPort03_Slot_4";
+            this.LoadPort03_Slot_4.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_4.TabIndex = 73;
+            this.LoadPort03_Slot_4.Tag = "1";
+            this.LoadPort03_Slot_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label125
+            // 
+            this.label125.BackColor = System.Drawing.Color.Navy;
+            this.label125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label125.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label125.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label125.ForeColor = System.Drawing.Color.White;
+            this.label125.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label125.Location = new System.Drawing.Point(4, 487);
+            this.label125.Margin = new System.Windows.Forms.Padding(3);
+            this.label125.Name = "label125";
+            this.label125.Size = new System.Drawing.Size(40, 16);
+            this.label125.TabIndex = 72;
+            this.label125.Tag = "1";
+            this.label125.Text = "04";
+            this.label125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_5
+            // 
+            this.LoadPort03_Slot_5.AutoSize = true;
+            this.LoadPort03_Slot_5.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_5.Location = new System.Drawing.Point(51, 464);
+            this.LoadPort03_Slot_5.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_5.Name = "LoadPort03_Slot_5";
+            this.LoadPort03_Slot_5.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_5.TabIndex = 70;
+            this.LoadPort03_Slot_5.Tag = "1";
+            this.LoadPort03_Slot_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label127
+            // 
+            this.label127.BackColor = System.Drawing.Color.Navy;
+            this.label127.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label127.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label127.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label127.ForeColor = System.Drawing.Color.White;
+            this.label127.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label127.Location = new System.Drawing.Point(4, 464);
+            this.label127.Margin = new System.Windows.Forms.Padding(3);
+            this.label127.Name = "label127";
+            this.label127.Size = new System.Drawing.Size(40, 16);
+            this.label127.TabIndex = 69;
+            this.label127.Tag = "1";
+            this.label127.Text = "05";
+            this.label127.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_6
+            // 
+            this.LoadPort03_Slot_6.AutoSize = true;
+            this.LoadPort03_Slot_6.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_6.Location = new System.Drawing.Point(51, 441);
+            this.LoadPort03_Slot_6.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_6.Name = "LoadPort03_Slot_6";
+            this.LoadPort03_Slot_6.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_6.TabIndex = 67;
+            this.LoadPort03_Slot_6.Tag = "1";
+            this.LoadPort03_Slot_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label129
+            // 
+            this.label129.BackColor = System.Drawing.Color.Navy;
+            this.label129.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label129.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label129.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label129.ForeColor = System.Drawing.Color.White;
+            this.label129.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label129.Location = new System.Drawing.Point(4, 441);
+            this.label129.Margin = new System.Windows.Forms.Padding(3);
+            this.label129.Name = "label129";
+            this.label129.Size = new System.Drawing.Size(40, 16);
+            this.label129.TabIndex = 66;
+            this.label129.Tag = "1";
+            this.label129.Text = "06";
+            this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_7
+            // 
+            this.LoadPort03_Slot_7.AutoSize = true;
+            this.LoadPort03_Slot_7.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_7.Location = new System.Drawing.Point(51, 418);
+            this.LoadPort03_Slot_7.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_7.Name = "LoadPort03_Slot_7";
+            this.LoadPort03_Slot_7.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_7.TabIndex = 64;
+            this.LoadPort03_Slot_7.Tag = "1";
+            this.LoadPort03_Slot_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label131
+            // 
+            this.label131.BackColor = System.Drawing.Color.Navy;
+            this.label131.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label131.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label131.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label131.ForeColor = System.Drawing.Color.White;
+            this.label131.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label131.Location = new System.Drawing.Point(4, 418);
+            this.label131.Margin = new System.Windows.Forms.Padding(3);
+            this.label131.Name = "label131";
+            this.label131.Size = new System.Drawing.Size(40, 16);
+            this.label131.TabIndex = 63;
+            this.label131.Tag = "1";
+            this.label131.Text = "07";
+            this.label131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_8
+            // 
+            this.LoadPort03_Slot_8.AutoSize = true;
+            this.LoadPort03_Slot_8.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_8.Location = new System.Drawing.Point(51, 395);
+            this.LoadPort03_Slot_8.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_8.Name = "LoadPort03_Slot_8";
+            this.LoadPort03_Slot_8.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_8.TabIndex = 61;
+            this.LoadPort03_Slot_8.Tag = "1";
+            this.LoadPort03_Slot_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label133
+            // 
+            this.label133.BackColor = System.Drawing.Color.Navy;
+            this.label133.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label133.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label133.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label133.ForeColor = System.Drawing.Color.White;
+            this.label133.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label133.Location = new System.Drawing.Point(4, 395);
+            this.label133.Margin = new System.Windows.Forms.Padding(3);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(40, 16);
+            this.label133.TabIndex = 60;
+            this.label133.Tag = "1";
+            this.label133.Text = "08";
+            this.label133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_9
+            // 
+            this.LoadPort03_Slot_9.AutoSize = true;
+            this.LoadPort03_Slot_9.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_9.Location = new System.Drawing.Point(51, 372);
+            this.LoadPort03_Slot_9.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_9.Name = "LoadPort03_Slot_9";
+            this.LoadPort03_Slot_9.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_9.TabIndex = 58;
+            this.LoadPort03_Slot_9.Tag = "1";
+            this.LoadPort03_Slot_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label135
+            // 
+            this.label135.BackColor = System.Drawing.Color.Navy;
+            this.label135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label135.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label135.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label135.ForeColor = System.Drawing.Color.White;
+            this.label135.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label135.Location = new System.Drawing.Point(4, 372);
+            this.label135.Margin = new System.Windows.Forms.Padding(3);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(40, 16);
+            this.label135.TabIndex = 57;
+            this.label135.Tag = "1";
+            this.label135.Text = "09";
+            this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_10
+            // 
+            this.LoadPort03_Slot_10.AutoSize = true;
+            this.LoadPort03_Slot_10.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_10.Location = new System.Drawing.Point(51, 349);
+            this.LoadPort03_Slot_10.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_10.Name = "LoadPort03_Slot_10";
+            this.LoadPort03_Slot_10.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_10.TabIndex = 55;
+            this.LoadPort03_Slot_10.Tag = "1";
+            this.LoadPort03_Slot_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label137
+            // 
+            this.label137.BackColor = System.Drawing.Color.Navy;
+            this.label137.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label137.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label137.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label137.ForeColor = System.Drawing.Color.White;
+            this.label137.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label137.Location = new System.Drawing.Point(4, 349);
+            this.label137.Margin = new System.Windows.Forms.Padding(3);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(40, 16);
+            this.label137.TabIndex = 54;
+            this.label137.Tag = "1";
+            this.label137.Text = "10";
+            this.label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_11
+            // 
+            this.LoadPort03_Slot_11.AutoSize = true;
+            this.LoadPort03_Slot_11.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_11.Location = new System.Drawing.Point(51, 326);
+            this.LoadPort03_Slot_11.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_11.Name = "LoadPort03_Slot_11";
+            this.LoadPort03_Slot_11.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_11.TabIndex = 52;
+            this.LoadPort03_Slot_11.Tag = "1";
+            this.LoadPort03_Slot_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label139
+            // 
+            this.label139.BackColor = System.Drawing.Color.Navy;
+            this.label139.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label139.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label139.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label139.ForeColor = System.Drawing.Color.White;
+            this.label139.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label139.Location = new System.Drawing.Point(4, 326);
+            this.label139.Margin = new System.Windows.Forms.Padding(3);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(40, 16);
+            this.label139.TabIndex = 51;
+            this.label139.Tag = "1";
+            this.label139.Text = "11";
+            this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_12
+            // 
+            this.LoadPort03_Slot_12.AutoSize = true;
+            this.LoadPort03_Slot_12.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_12.Location = new System.Drawing.Point(51, 303);
+            this.LoadPort03_Slot_12.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_12.Name = "LoadPort03_Slot_12";
+            this.LoadPort03_Slot_12.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_12.TabIndex = 49;
+            this.LoadPort03_Slot_12.Tag = "1";
+            this.LoadPort03_Slot_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label141
+            // 
+            this.label141.BackColor = System.Drawing.Color.Navy;
+            this.label141.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label141.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label141.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label141.ForeColor = System.Drawing.Color.White;
+            this.label141.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label141.Location = new System.Drawing.Point(4, 303);
+            this.label141.Margin = new System.Windows.Forms.Padding(3);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(40, 16);
+            this.label141.TabIndex = 48;
+            this.label141.Tag = "1";
+            this.label141.Text = "12";
+            this.label141.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_13
+            // 
+            this.LoadPort03_Slot_13.AutoSize = true;
+            this.LoadPort03_Slot_13.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_13.Location = new System.Drawing.Point(51, 280);
+            this.LoadPort03_Slot_13.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_13.Name = "LoadPort03_Slot_13";
+            this.LoadPort03_Slot_13.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_13.TabIndex = 46;
+            this.LoadPort03_Slot_13.Tag = "1";
+            this.LoadPort03_Slot_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label143
+            // 
+            this.label143.BackColor = System.Drawing.Color.Navy;
+            this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label143.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label143.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label143.ForeColor = System.Drawing.Color.White;
+            this.label143.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label143.Location = new System.Drawing.Point(4, 280);
+            this.label143.Margin = new System.Windows.Forms.Padding(3);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(40, 16);
+            this.label143.TabIndex = 45;
+            this.label143.Tag = "1";
+            this.label143.Text = "13";
+            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_14
+            // 
+            this.LoadPort03_Slot_14.AutoSize = true;
+            this.LoadPort03_Slot_14.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_14.Location = new System.Drawing.Point(51, 257);
+            this.LoadPort03_Slot_14.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_14.Name = "LoadPort03_Slot_14";
+            this.LoadPort03_Slot_14.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_14.TabIndex = 43;
+            this.LoadPort03_Slot_14.Tag = "1";
+            this.LoadPort03_Slot_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label145
+            // 
+            this.label145.BackColor = System.Drawing.Color.Navy;
+            this.label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label145.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label145.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label145.ForeColor = System.Drawing.Color.White;
+            this.label145.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label145.Location = new System.Drawing.Point(4, 257);
+            this.label145.Margin = new System.Windows.Forms.Padding(3);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(40, 16);
+            this.label145.TabIndex = 42;
+            this.label145.Tag = "1";
+            this.label145.Text = "14";
+            this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_15
+            // 
+            this.LoadPort03_Slot_15.AutoSize = true;
+            this.LoadPort03_Slot_15.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_15.Location = new System.Drawing.Point(51, 234);
+            this.LoadPort03_Slot_15.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_15.Name = "LoadPort03_Slot_15";
+            this.LoadPort03_Slot_15.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_15.TabIndex = 40;
+            this.LoadPort03_Slot_15.Tag = "1";
+            this.LoadPort03_Slot_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label147
+            // 
+            this.label147.BackColor = System.Drawing.Color.Navy;
+            this.label147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label147.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label147.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label147.ForeColor = System.Drawing.Color.White;
+            this.label147.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label147.Location = new System.Drawing.Point(4, 234);
+            this.label147.Margin = new System.Windows.Forms.Padding(3);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(40, 16);
+            this.label147.TabIndex = 39;
+            this.label147.Tag = "1";
+            this.label147.Text = "15";
+            this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_16
+            // 
+            this.LoadPort03_Slot_16.AutoSize = true;
+            this.LoadPort03_Slot_16.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_16.Location = new System.Drawing.Point(51, 211);
+            this.LoadPort03_Slot_16.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_16.Name = "LoadPort03_Slot_16";
+            this.LoadPort03_Slot_16.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_16.TabIndex = 37;
+            this.LoadPort03_Slot_16.Tag = "1";
+            this.LoadPort03_Slot_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label149
+            // 
+            this.label149.BackColor = System.Drawing.Color.Navy;
+            this.label149.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label149.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label149.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label149.ForeColor = System.Drawing.Color.White;
+            this.label149.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label149.Location = new System.Drawing.Point(4, 211);
+            this.label149.Margin = new System.Windows.Forms.Padding(3);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(40, 16);
+            this.label149.TabIndex = 36;
+            this.label149.Tag = "1";
+            this.label149.Text = "16";
+            this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_17
+            // 
+            this.LoadPort03_Slot_17.AutoSize = true;
+            this.LoadPort03_Slot_17.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_17.Location = new System.Drawing.Point(51, 188);
+            this.LoadPort03_Slot_17.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_17.Name = "LoadPort03_Slot_17";
+            this.LoadPort03_Slot_17.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_17.TabIndex = 34;
+            this.LoadPort03_Slot_17.Tag = "1";
+            this.LoadPort03_Slot_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label151
+            // 
+            this.label151.BackColor = System.Drawing.Color.Navy;
+            this.label151.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label151.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label151.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label151.ForeColor = System.Drawing.Color.White;
+            this.label151.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label151.Location = new System.Drawing.Point(4, 188);
+            this.label151.Margin = new System.Windows.Forms.Padding(3);
+            this.label151.Name = "label151";
+            this.label151.Size = new System.Drawing.Size(40, 16);
+            this.label151.TabIndex = 33;
+            this.label151.Tag = "1";
+            this.label151.Text = "17";
+            this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_18
+            // 
+            this.LoadPort03_Slot_18.AutoSize = true;
+            this.LoadPort03_Slot_18.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_18.Location = new System.Drawing.Point(51, 165);
+            this.LoadPort03_Slot_18.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_18.Name = "LoadPort03_Slot_18";
+            this.LoadPort03_Slot_18.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_18.TabIndex = 31;
+            this.LoadPort03_Slot_18.Tag = "1";
+            this.LoadPort03_Slot_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label153
+            // 
+            this.label153.BackColor = System.Drawing.Color.Navy;
+            this.label153.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label153.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label153.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label153.ForeColor = System.Drawing.Color.White;
+            this.label153.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label153.Location = new System.Drawing.Point(4, 165);
+            this.label153.Margin = new System.Windows.Forms.Padding(3);
+            this.label153.Name = "label153";
+            this.label153.Size = new System.Drawing.Size(40, 16);
+            this.label153.TabIndex = 30;
+            this.label153.Tag = "1";
+            this.label153.Text = "18";
+            this.label153.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_19
+            // 
+            this.LoadPort03_Slot_19.AutoSize = true;
+            this.LoadPort03_Slot_19.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_19.Location = new System.Drawing.Point(51, 142);
+            this.LoadPort03_Slot_19.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_19.Name = "LoadPort03_Slot_19";
+            this.LoadPort03_Slot_19.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_19.TabIndex = 28;
+            this.LoadPort03_Slot_19.Tag = "1";
+            this.LoadPort03_Slot_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label155
+            // 
+            this.label155.BackColor = System.Drawing.Color.Navy;
+            this.label155.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label155.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label155.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label155.ForeColor = System.Drawing.Color.White;
+            this.label155.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label155.Location = new System.Drawing.Point(4, 142);
+            this.label155.Margin = new System.Windows.Forms.Padding(3);
+            this.label155.Name = "label155";
+            this.label155.Size = new System.Drawing.Size(40, 16);
+            this.label155.TabIndex = 27;
+            this.label155.Tag = "1";
+            this.label155.Text = "19";
+            this.label155.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_20
+            // 
+            this.LoadPort03_Slot_20.AutoSize = true;
+            this.LoadPort03_Slot_20.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_20.Location = new System.Drawing.Point(51, 119);
+            this.LoadPort03_Slot_20.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_20.Name = "LoadPort03_Slot_20";
+            this.LoadPort03_Slot_20.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_20.TabIndex = 25;
+            this.LoadPort03_Slot_20.Tag = "1";
+            this.LoadPort03_Slot_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label157
+            // 
+            this.label157.BackColor = System.Drawing.Color.Navy;
+            this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label157.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label157.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label157.ForeColor = System.Drawing.Color.White;
+            this.label157.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label157.Location = new System.Drawing.Point(4, 119);
+            this.label157.Margin = new System.Windows.Forms.Padding(3);
+            this.label157.Name = "label157";
+            this.label157.Size = new System.Drawing.Size(40, 16);
+            this.label157.TabIndex = 24;
+            this.label157.Tag = "1";
+            this.label157.Text = "20";
+            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_21
+            // 
+            this.LoadPort03_Slot_21.AutoSize = true;
+            this.LoadPort03_Slot_21.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_21.Location = new System.Drawing.Point(51, 96);
+            this.LoadPort03_Slot_21.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_21.Name = "LoadPort03_Slot_21";
+            this.LoadPort03_Slot_21.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_21.TabIndex = 22;
+            this.LoadPort03_Slot_21.Tag = "1";
+            this.LoadPort03_Slot_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label159
+            // 
+            this.label159.BackColor = System.Drawing.Color.Navy;
+            this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label159.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label159.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label159.ForeColor = System.Drawing.Color.White;
+            this.label159.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label159.Location = new System.Drawing.Point(4, 96);
+            this.label159.Margin = new System.Windows.Forms.Padding(3);
+            this.label159.Name = "label159";
+            this.label159.Size = new System.Drawing.Size(40, 16);
+            this.label159.TabIndex = 21;
+            this.label159.Tag = "1";
+            this.label159.Text = "21";
+            this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_22
+            // 
+            this.LoadPort03_Slot_22.AutoSize = true;
+            this.LoadPort03_Slot_22.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_22.Location = new System.Drawing.Point(51, 73);
+            this.LoadPort03_Slot_22.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_22.Name = "LoadPort03_Slot_22";
+            this.LoadPort03_Slot_22.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_22.TabIndex = 19;
+            this.LoadPort03_Slot_22.Tag = "1";
+            this.LoadPort03_Slot_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label161
+            // 
+            this.label161.BackColor = System.Drawing.Color.Navy;
+            this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label161.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label161.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label161.ForeColor = System.Drawing.Color.White;
+            this.label161.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label161.Location = new System.Drawing.Point(4, 73);
+            this.label161.Margin = new System.Windows.Forms.Padding(3);
+            this.label161.Name = "label161";
+            this.label161.Size = new System.Drawing.Size(40, 16);
+            this.label161.TabIndex = 18;
+            this.label161.Tag = "1";
+            this.label161.Text = "22";
+            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_23
+            // 
+            this.LoadPort03_Slot_23.AutoSize = true;
+            this.LoadPort03_Slot_23.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_23.Location = new System.Drawing.Point(51, 50);
+            this.LoadPort03_Slot_23.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_23.Name = "LoadPort03_Slot_23";
+            this.LoadPort03_Slot_23.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_23.TabIndex = 16;
+            this.LoadPort03_Slot_23.Tag = "1";
+            this.LoadPort03_Slot_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label163
+            // 
+            this.label163.BackColor = System.Drawing.Color.Navy;
+            this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label163.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label163.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label163.ForeColor = System.Drawing.Color.White;
+            this.label163.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label163.Location = new System.Drawing.Point(4, 50);
+            this.label163.Margin = new System.Windows.Forms.Padding(3);
+            this.label163.Name = "label163";
+            this.label163.Size = new System.Drawing.Size(40, 16);
+            this.label163.TabIndex = 15;
+            this.label163.Tag = "1";
+            this.label163.Text = "23";
+            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_24
+            // 
+            this.LoadPort03_Slot_24.AutoSize = true;
+            this.LoadPort03_Slot_24.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_24.Location = new System.Drawing.Point(51, 27);
+            this.LoadPort03_Slot_24.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_24.Name = "LoadPort03_Slot_24";
+            this.LoadPort03_Slot_24.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_24.TabIndex = 13;
+            this.LoadPort03_Slot_24.Tag = "1";
+            this.LoadPort03_Slot_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label165
+            // 
+            this.label165.BackColor = System.Drawing.Color.Navy;
+            this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label165.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label165.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label165.ForeColor = System.Drawing.Color.White;
+            this.label165.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label165.Location = new System.Drawing.Point(4, 27);
+            this.label165.Margin = new System.Windows.Forms.Padding(3);
+            this.label165.Name = "label165";
+            this.label165.Size = new System.Drawing.Size(40, 16);
+            this.label165.TabIndex = 12;
+            this.label165.Tag = "1";
+            this.label165.Text = "24";
+            this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_Slot_25
+            // 
+            this.LoadPort03_Slot_25.AutoSize = true;
+            this.LoadPort03_Slot_25.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_Slot_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_Slot_25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LoadPort03_Slot_25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadPort03_Slot_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadPort03_Slot_25.Location = new System.Drawing.Point(51, 4);
+            this.LoadPort03_Slot_25.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadPort03_Slot_25.Name = "LoadPort03_Slot_25";
+            this.LoadPort03_Slot_25.Size = new System.Drawing.Size(104, 16);
+            this.LoadPort03_Slot_25.TabIndex = 10;
+            this.LoadPort03_Slot_25.Tag = "1";
+            this.LoadPort03_Slot_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label167
+            // 
+            this.label167.BackColor = System.Drawing.Color.Navy;
+            this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label167.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label167.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label167.ForeColor = System.Drawing.Color.White;
+            this.label167.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label167.Location = new System.Drawing.Point(4, 4);
+            this.label167.Margin = new System.Windows.Forms.Padding(3);
+            this.label167.Name = "label167";
+            this.label167.Size = new System.Drawing.Size(40, 16);
+            this.label167.TabIndex = 9;
+            this.label167.Tag = "1";
+            this.label167.Text = "25";
+            this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort04_State
+            // 
+            this.LoadPort04_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LoadPort04_State.BackColor = System.Drawing.Color.DarkGray;
+            this.LoadPort04_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadPort04_State.ForeColor = System.Drawing.Color.White;
+            this.LoadPort04_State.Location = new System.Drawing.Point(567, 97);
+            this.LoadPort04_State.Name = "LoadPort04_State";
+            this.LoadPort04_State.Size = new System.Drawing.Size(158, 29);
+            this.LoadPort04_State.TabIndex = 182;
+            this.LoadPort04_State.Text = "Ready To Load";
+            this.LoadPort04_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LoadPort03_State
+            // 
+            this.LoadPort03_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LoadPort03_State.BackColor = System.Drawing.Color.DarkGray;
+            this.LoadPort03_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadPort03_State.ForeColor = System.Drawing.Color.White;
+            this.LoadPort03_State.Location = new System.Drawing.Point(385, 97);
+            this.LoadPort03_State.Name = "LoadPort03_State";
+            this.LoadPort03_State.Size = new System.Drawing.Size(158, 29);
+            this.LoadPort03_State.TabIndex = 181;
+            this.LoadPort03_State.Text = "Ready To Load";
+            this.LoadPort03_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LoadPort04_FID
+            // 
+            this.LoadPort04_FID.BackColor = System.Drawing.Color.White;
+            this.LoadPort04_FID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort04_FID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadPort04_FID.ForeColor = System.Drawing.Color.Black;
+            this.LoadPort04_FID.Location = new System.Drawing.Point(566, 62);
+            this.LoadPort04_FID.Name = "LoadPort04_FID";
+            this.LoadPort04_FID.Size = new System.Drawing.Size(158, 29);
+            this.LoadPort04_FID.TabIndex = 180;
+            this.LoadPort04_FID.Text = "Foup ID";
+            this.LoadPort04_FID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label168
+            // 
+            this.label168.BackColor = System.Drawing.Color.Transparent;
+            this.label168.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label168.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label168.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label168.ForeColor = System.Drawing.Color.Black;
+            this.label168.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label168.Location = new System.Drawing.Point(566, 39);
+            this.label168.Name = "label168";
+            this.label168.Size = new System.Drawing.Size(158, 20);
+            this.label168.TabIndex = 179;
+            this.label168.Text = "LoadPort04";
+            this.label168.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadPort03_FID
+            // 
+            this.LoadPort03_FID.BackColor = System.Drawing.Color.White;
+            this.LoadPort03_FID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadPort03_FID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.LoadPort03_FID.ForeColor = System.Drawing.Color.Black;
+            this.LoadPort03_FID.Location = new System.Drawing.Point(384, 62);
+            this.LoadPort03_FID.Name = "LoadPort03_FID";
+            this.LoadPort03_FID.Size = new System.Drawing.Size(158, 29);
+            this.LoadPort03_FID.TabIndex = 178;
+            this.LoadPort03_FID.Text = "Foup ID";
+            this.LoadPort03_FID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label169
+            // 
+            this.label169.BackColor = System.Drawing.Color.Transparent;
+            this.label169.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label169.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label169.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label169.ForeColor = System.Drawing.Color.Black;
+            this.label169.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label169.Location = new System.Drawing.Point(384, 39);
+            this.label169.Name = "label169";
+            this.label169.Size = new System.Drawing.Size(158, 20);
+            this.label169.TabIndex = 177;
+            this.label169.Text = "LoadPort03";
+            this.label169.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Log_rt
+            // 
+            this.Log_rt.Location = new System.Drawing.Point(783, 498);
+            this.Log_rt.Name = "Log_rt";
+            this.Log_rt.Size = new System.Drawing.Size(405, 238);
+            this.Log_rt.TabIndex = 176;
+            this.Log_rt.Text = "";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(1213, 201);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(107, 15);
+            this.label3.Size = new System.Drawing.Size(85, 15);
             this.label3.TabIndex = 175;
             this.label3.Text = "Foup Notch方向";
             // 
@@ -378,12 +2476,55 @@
             // panel5
             // 
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.panel3);
             this.panel5.Controls.Add(this.WPH);
             this.panel5.Controls.Add(this.label32);
-            this.panel5.Location = new System.Drawing.Point(1283, 564);
+            this.panel5.Location = new System.Drawing.Point(1282, 518);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(177, 40);
             this.panel5.TabIndex = 170;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Location = new System.Drawing.Point(-1, -1);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(177, 40);
+            this.panel3.TabIndex = 171;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.Navy;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(63, 12);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 18);
+            this.label4.TabIndex = 17;
+            this.label4.Tag = "1";
+            this.label4.Text = "0";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.DimGray;
+            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label8.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label8.Location = new System.Drawing.Point(9, 12);
+            this.label8.Margin = new System.Windows.Forms.Padding(3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(48, 18);
+            this.label8.TabIndex = 16;
+            this.label8.Tag = "1";
+            this.label8.Text = "WPH";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WPH
             // 
@@ -2586,7 +4727,7 @@
             this.LoadPort02_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort02_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort02_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort02_State.Location = new System.Drawing.Point(204, 97);
+            this.LoadPort02_State.Location = new System.Drawing.Point(205, 97);
             this.LoadPort02_State.Name = "LoadPort02_State";
             this.LoadPort02_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort02_State.TabIndex = 128;
@@ -2600,7 +4741,7 @@
             this.LoadPort01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort01_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort01_State.Location = new System.Drawing.Point(22, 97);
+            this.LoadPort01_State.Location = new System.Drawing.Point(23, 97);
             this.LoadPort01_State.Name = "LoadPort01_State";
             this.LoadPort01_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort01_State.TabIndex = 127;
@@ -2641,7 +4782,7 @@
             this.Robot01_State.BackColor = System.Drawing.Color.Orange;
             this.Robot01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Robot01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.Robot01_State.Location = new System.Drawing.Point(1216, 417);
+            this.Robot01_State.Location = new System.Drawing.Point(1056, 417);
             this.Robot01_State.Name = "Robot01_State";
             this.Robot01_State.Size = new System.Drawing.Size(67, 29);
             this.Robot01_State.TabIndex = 94;
@@ -2654,7 +4795,7 @@
             this.Aligner01_State.BackColor = System.Drawing.Color.Orange;
             this.Aligner01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Aligner01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.Aligner01_State.Location = new System.Drawing.Point(1216, 279);
+            this.Aligner01_State.Location = new System.Drawing.Point(1056, 279);
             this.Aligner01_State.Name = "Aligner01_State";
             this.Aligner01_State.Size = new System.Drawing.Size(67, 29);
             this.Aligner01_State.TabIndex = 88;
@@ -2689,2030 +4830,22 @@
             this.label9.Text = "LoadPort01";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Log_rt
-            // 
-            this.Log_rt.Location = new System.Drawing.Point(783, 498);
-            this.Log_rt.Name = "Log_rt";
-            this.Log_rt.Size = new System.Drawing.Size(405, 238);
-            this.Log_rt.TabIndex = 176;
-            this.Log_rt.Text = "";
-            // 
-            // LoadPort04_Mode
-            // 
-            this.LoadPort04_Mode.BackColor = System.Drawing.Color.Green;
-            this.LoadPort04_Mode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Mode.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadPort04_Mode.ForeColor = System.Drawing.Color.White;
-            this.LoadPort04_Mode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Mode.Location = new System.Drawing.Point(623, 132);
-            this.LoadPort04_Mode.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Mode.Name = "LoadPort04_Mode";
-            this.LoadPort04_Mode.Size = new System.Drawing.Size(98, 18);
-            this.LoadPort04_Mode.TabIndex = 188;
-            this.LoadPort04_Mode.Tag = "1";
-            this.LoadPort04_Mode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Green;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(569, 132);
-            this.label7.Margin = new System.Windows.Forms.Padding(3);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 18);
-            this.label7.TabIndex = 187;
-            this.label7.Tag = "1";
-            this.label7.Text = "Mode";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Mode
-            // 
-            this.LoadPort03_Mode.BackColor = System.Drawing.Color.Green;
-            this.LoadPort03_Mode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Mode.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoadPort03_Mode.ForeColor = System.Drawing.Color.White;
-            this.LoadPort03_Mode.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Mode.Location = new System.Drawing.Point(442, 132);
-            this.LoadPort03_Mode.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Mode.Name = "LoadPort03_Mode";
-            this.LoadPort03_Mode.Size = new System.Drawing.Size(98, 18);
-            this.LoadPort03_Mode.TabIndex = 186;
-            this.LoadPort03_Mode.Tag = "1";
-            this.LoadPort03_Mode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label10
-            // 
-            this.label10.BackColor = System.Drawing.Color.Green;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label10.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label10.Location = new System.Drawing.Point(388, 132);
-            this.label10.Margin = new System.Windows.Forms.Padding(3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(48, 18);
-            this.label10.TabIndex = 185;
-            this.label10.Tag = "1";
-            this.label10.Text = "Mode";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_1, 1, 24);
-            this.tableLayoutPanel2.Controls.Add(this.label12, 0, 24);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_2, 1, 23);
-            this.tableLayoutPanel2.Controls.Add(this.label14, 0, 23);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_3, 1, 22);
-            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 22);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_4, 1, 21);
-            this.tableLayoutPanel2.Controls.Add(this.label30, 0, 21);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_5, 1, 20);
-            this.tableLayoutPanel2.Controls.Add(this.label36, 0, 20);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_6, 1, 19);
-            this.tableLayoutPanel2.Controls.Add(this.label40, 0, 19);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_7, 1, 18);
-            this.tableLayoutPanel2.Controls.Add(this.label44, 0, 18);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_8, 1, 17);
-            this.tableLayoutPanel2.Controls.Add(this.label48, 0, 17);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_9, 1, 16);
-            this.tableLayoutPanel2.Controls.Add(this.label52, 0, 16);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_10, 1, 15);
-            this.tableLayoutPanel2.Controls.Add(this.label56, 0, 15);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_11, 1, 14);
-            this.tableLayoutPanel2.Controls.Add(this.label60, 0, 14);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_12, 1, 13);
-            this.tableLayoutPanel2.Controls.Add(this.label64, 0, 13);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_13, 1, 12);
-            this.tableLayoutPanel2.Controls.Add(this.label68, 0, 12);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_14, 1, 11);
-            this.tableLayoutPanel2.Controls.Add(this.label70, 0, 11);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_15, 1, 10);
-            this.tableLayoutPanel2.Controls.Add(this.label72, 0, 10);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_16, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.label74, 0, 9);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_17, 1, 8);
-            this.tableLayoutPanel2.Controls.Add(this.label76, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_18, 1, 7);
-            this.tableLayoutPanel2.Controls.Add(this.label78, 0, 7);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_19, 1, 6);
-            this.tableLayoutPanel2.Controls.Add(this.label80, 0, 6);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_20, 1, 5);
-            this.tableLayoutPanel2.Controls.Add(this.label107, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_21, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label109, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_22, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label111, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_23, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label113, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_24, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label115, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.LoadPort04_Slot_25, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label117, 0, 0);
-            this.tableLayoutPanel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(565, 159);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 25;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(159, 576);
-            this.tableLayoutPanel2.TabIndex = 184;
-            this.tableLayoutPanel2.Tag = "1";
-            // 
-            // LoadPort04_Slot_1
-            // 
-            this.LoadPort04_Slot_1.AutoSize = true;
-            this.LoadPort04_Slot_1.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_1.Location = new System.Drawing.Point(51, 556);
-            this.LoadPort04_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_1.Name = "LoadPort04_Slot_1";
-            this.LoadPort04_Slot_1.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_1.TabIndex = 82;
-            this.LoadPort04_Slot_1.Tag = "1";
-            this.LoadPort04_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.BackColor = System.Drawing.Color.Navy;
-            this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label12.Location = new System.Drawing.Point(4, 556);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 16);
-            this.label12.TabIndex = 81;
-            this.label12.Tag = "1";
-            this.label12.Text = "01";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_2
-            // 
-            this.LoadPort04_Slot_2.AutoSize = true;
-            this.LoadPort04_Slot_2.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_2.Location = new System.Drawing.Point(51, 533);
-            this.LoadPort04_Slot_2.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_2.Name = "LoadPort04_Slot_2";
-            this.LoadPort04_Slot_2.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_2.TabIndex = 79;
-            this.LoadPort04_Slot_2.Tag = "1";
-            this.LoadPort04_Slot_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label14
-            // 
-            this.label14.BackColor = System.Drawing.Color.Navy;
-            this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label14.Location = new System.Drawing.Point(4, 533);
-            this.label14.Margin = new System.Windows.Forms.Padding(3);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(40, 16);
-            this.label14.TabIndex = 78;
-            this.label14.Tag = "1";
-            this.label14.Text = "02";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_3
-            // 
-            this.LoadPort04_Slot_3.AutoSize = true;
-            this.LoadPort04_Slot_3.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_3.Location = new System.Drawing.Point(51, 510);
-            this.LoadPort04_Slot_3.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_3.Name = "LoadPort04_Slot_3";
-            this.LoadPort04_Slot_3.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_3.TabIndex = 76;
-            this.LoadPort04_Slot_3.Tag = "1";
-            this.LoadPort04_Slot_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label24
-            // 
-            this.label24.BackColor = System.Drawing.Color.Navy;
-            this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label24.Location = new System.Drawing.Point(4, 510);
-            this.label24.Margin = new System.Windows.Forms.Padding(3);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(40, 16);
-            this.label24.TabIndex = 75;
-            this.label24.Tag = "1";
-            this.label24.Text = "03";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_4
-            // 
-            this.LoadPort04_Slot_4.AutoSize = true;
-            this.LoadPort04_Slot_4.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_4.Location = new System.Drawing.Point(51, 487);
-            this.LoadPort04_Slot_4.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_4.Name = "LoadPort04_Slot_4";
-            this.LoadPort04_Slot_4.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_4.TabIndex = 73;
-            this.LoadPort04_Slot_4.Tag = "1";
-            this.LoadPort04_Slot_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label30
-            // 
-            this.label30.BackColor = System.Drawing.Color.Navy;
-            this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label30.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label30.Location = new System.Drawing.Point(4, 487);
-            this.label30.Margin = new System.Windows.Forms.Padding(3);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(40, 16);
-            this.label30.TabIndex = 72;
-            this.label30.Tag = "1";
-            this.label30.Text = "04";
-            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_5
-            // 
-            this.LoadPort04_Slot_5.AutoSize = true;
-            this.LoadPort04_Slot_5.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_5.Location = new System.Drawing.Point(51, 464);
-            this.LoadPort04_Slot_5.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_5.Name = "LoadPort04_Slot_5";
-            this.LoadPort04_Slot_5.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_5.TabIndex = 70;
-            this.LoadPort04_Slot_5.Tag = "1";
-            this.LoadPort04_Slot_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label36
-            // 
-            this.label36.BackColor = System.Drawing.Color.Navy;
-            this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label36.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.ForeColor = System.Drawing.Color.White;
-            this.label36.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label36.Location = new System.Drawing.Point(4, 464);
-            this.label36.Margin = new System.Windows.Forms.Padding(3);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(40, 16);
-            this.label36.TabIndex = 69;
-            this.label36.Tag = "1";
-            this.label36.Text = "05";
-            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_6
-            // 
-            this.LoadPort04_Slot_6.AutoSize = true;
-            this.LoadPort04_Slot_6.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_6.Location = new System.Drawing.Point(51, 441);
-            this.LoadPort04_Slot_6.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_6.Name = "LoadPort04_Slot_6";
-            this.LoadPort04_Slot_6.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_6.TabIndex = 67;
-            this.LoadPort04_Slot_6.Tag = "1";
-            this.LoadPort04_Slot_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label40
-            // 
-            this.label40.BackColor = System.Drawing.Color.Navy;
-            this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label40.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.ForeColor = System.Drawing.Color.White;
-            this.label40.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label40.Location = new System.Drawing.Point(4, 441);
-            this.label40.Margin = new System.Windows.Forms.Padding(3);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(40, 16);
-            this.label40.TabIndex = 66;
-            this.label40.Tag = "1";
-            this.label40.Text = "06";
-            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_7
-            // 
-            this.LoadPort04_Slot_7.AutoSize = true;
-            this.LoadPort04_Slot_7.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_7.Location = new System.Drawing.Point(51, 418);
-            this.LoadPort04_Slot_7.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_7.Name = "LoadPort04_Slot_7";
-            this.LoadPort04_Slot_7.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_7.TabIndex = 64;
-            this.LoadPort04_Slot_7.Tag = "1";
-            this.LoadPort04_Slot_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label44
-            // 
-            this.label44.BackColor = System.Drawing.Color.Navy;
-            this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label44.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.ForeColor = System.Drawing.Color.White;
-            this.label44.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label44.Location = new System.Drawing.Point(4, 418);
-            this.label44.Margin = new System.Windows.Forms.Padding(3);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(40, 16);
-            this.label44.TabIndex = 63;
-            this.label44.Tag = "1";
-            this.label44.Text = "07";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_8
-            // 
-            this.LoadPort04_Slot_8.AutoSize = true;
-            this.LoadPort04_Slot_8.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_8.Location = new System.Drawing.Point(51, 395);
-            this.LoadPort04_Slot_8.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_8.Name = "LoadPort04_Slot_8";
-            this.LoadPort04_Slot_8.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_8.TabIndex = 61;
-            this.LoadPort04_Slot_8.Tag = "1";
-            this.LoadPort04_Slot_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label48
-            // 
-            this.label48.BackColor = System.Drawing.Color.Navy;
-            this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label48.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label48.Location = new System.Drawing.Point(4, 395);
-            this.label48.Margin = new System.Windows.Forms.Padding(3);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(40, 16);
-            this.label48.TabIndex = 60;
-            this.label48.Tag = "1";
-            this.label48.Text = "08";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_9
-            // 
-            this.LoadPort04_Slot_9.AutoSize = true;
-            this.LoadPort04_Slot_9.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_9.Location = new System.Drawing.Point(51, 372);
-            this.LoadPort04_Slot_9.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_9.Name = "LoadPort04_Slot_9";
-            this.LoadPort04_Slot_9.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_9.TabIndex = 58;
-            this.LoadPort04_Slot_9.Tag = "1";
-            this.LoadPort04_Slot_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label52
-            // 
-            this.label52.BackColor = System.Drawing.Color.Navy;
-            this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label52.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.ForeColor = System.Drawing.Color.White;
-            this.label52.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label52.Location = new System.Drawing.Point(4, 372);
-            this.label52.Margin = new System.Windows.Forms.Padding(3);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(40, 16);
-            this.label52.TabIndex = 57;
-            this.label52.Tag = "1";
-            this.label52.Text = "09";
-            this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_10
-            // 
-            this.LoadPort04_Slot_10.AutoSize = true;
-            this.LoadPort04_Slot_10.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_10.Location = new System.Drawing.Point(51, 349);
-            this.LoadPort04_Slot_10.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_10.Name = "LoadPort04_Slot_10";
-            this.LoadPort04_Slot_10.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_10.TabIndex = 55;
-            this.LoadPort04_Slot_10.Tag = "1";
-            this.LoadPort04_Slot_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label56
-            // 
-            this.label56.BackColor = System.Drawing.Color.Navy;
-            this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label56.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.ForeColor = System.Drawing.Color.White;
-            this.label56.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label56.Location = new System.Drawing.Point(4, 349);
-            this.label56.Margin = new System.Windows.Forms.Padding(3);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(40, 16);
-            this.label56.TabIndex = 54;
-            this.label56.Tag = "1";
-            this.label56.Text = "10";
-            this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_11
-            // 
-            this.LoadPort04_Slot_11.AutoSize = true;
-            this.LoadPort04_Slot_11.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_11.Location = new System.Drawing.Point(51, 326);
-            this.LoadPort04_Slot_11.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_11.Name = "LoadPort04_Slot_11";
-            this.LoadPort04_Slot_11.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_11.TabIndex = 52;
-            this.LoadPort04_Slot_11.Tag = "1";
-            this.LoadPort04_Slot_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label60
-            // 
-            this.label60.BackColor = System.Drawing.Color.Navy;
-            this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label60.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.ForeColor = System.Drawing.Color.White;
-            this.label60.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label60.Location = new System.Drawing.Point(4, 326);
-            this.label60.Margin = new System.Windows.Forms.Padding(3);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(40, 16);
-            this.label60.TabIndex = 51;
-            this.label60.Tag = "1";
-            this.label60.Text = "11";
-            this.label60.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_12
-            // 
-            this.LoadPort04_Slot_12.AutoSize = true;
-            this.LoadPort04_Slot_12.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_12.Location = new System.Drawing.Point(51, 303);
-            this.LoadPort04_Slot_12.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_12.Name = "LoadPort04_Slot_12";
-            this.LoadPort04_Slot_12.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_12.TabIndex = 49;
-            this.LoadPort04_Slot_12.Tag = "1";
-            this.LoadPort04_Slot_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label64
-            // 
-            this.label64.BackColor = System.Drawing.Color.Navy;
-            this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label64.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.ForeColor = System.Drawing.Color.White;
-            this.label64.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label64.Location = new System.Drawing.Point(4, 303);
-            this.label64.Margin = new System.Windows.Forms.Padding(3);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(40, 16);
-            this.label64.TabIndex = 48;
-            this.label64.Tag = "1";
-            this.label64.Text = "12";
-            this.label64.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_13
-            // 
-            this.LoadPort04_Slot_13.AutoSize = true;
-            this.LoadPort04_Slot_13.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_13.Location = new System.Drawing.Point(51, 280);
-            this.LoadPort04_Slot_13.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_13.Name = "LoadPort04_Slot_13";
-            this.LoadPort04_Slot_13.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_13.TabIndex = 46;
-            this.LoadPort04_Slot_13.Tag = "1";
-            this.LoadPort04_Slot_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label68
-            // 
-            this.label68.BackColor = System.Drawing.Color.Navy;
-            this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label68.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.ForeColor = System.Drawing.Color.White;
-            this.label68.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label68.Location = new System.Drawing.Point(4, 280);
-            this.label68.Margin = new System.Windows.Forms.Padding(3);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(40, 16);
-            this.label68.TabIndex = 45;
-            this.label68.Tag = "1";
-            this.label68.Text = "13";
-            this.label68.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_14
-            // 
-            this.LoadPort04_Slot_14.AutoSize = true;
-            this.LoadPort04_Slot_14.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_14.Location = new System.Drawing.Point(51, 257);
-            this.LoadPort04_Slot_14.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_14.Name = "LoadPort04_Slot_14";
-            this.LoadPort04_Slot_14.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_14.TabIndex = 43;
-            this.LoadPort04_Slot_14.Tag = "1";
-            this.LoadPort04_Slot_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label70
-            // 
-            this.label70.BackColor = System.Drawing.Color.Navy;
-            this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label70.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label70.ForeColor = System.Drawing.Color.White;
-            this.label70.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label70.Location = new System.Drawing.Point(4, 257);
-            this.label70.Margin = new System.Windows.Forms.Padding(3);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(40, 16);
-            this.label70.TabIndex = 42;
-            this.label70.Tag = "1";
-            this.label70.Text = "14";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_15
-            // 
-            this.LoadPort04_Slot_15.AutoSize = true;
-            this.LoadPort04_Slot_15.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_15.Location = new System.Drawing.Point(51, 234);
-            this.LoadPort04_Slot_15.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_15.Name = "LoadPort04_Slot_15";
-            this.LoadPort04_Slot_15.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_15.TabIndex = 40;
-            this.LoadPort04_Slot_15.Tag = "1";
-            this.LoadPort04_Slot_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label72
-            // 
-            this.label72.BackColor = System.Drawing.Color.Navy;
-            this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label72.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.ForeColor = System.Drawing.Color.White;
-            this.label72.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label72.Location = new System.Drawing.Point(4, 234);
-            this.label72.Margin = new System.Windows.Forms.Padding(3);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(40, 16);
-            this.label72.TabIndex = 39;
-            this.label72.Tag = "1";
-            this.label72.Text = "15";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_16
-            // 
-            this.LoadPort04_Slot_16.AutoSize = true;
-            this.LoadPort04_Slot_16.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_16.Location = new System.Drawing.Point(51, 211);
-            this.LoadPort04_Slot_16.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_16.Name = "LoadPort04_Slot_16";
-            this.LoadPort04_Slot_16.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_16.TabIndex = 37;
-            this.LoadPort04_Slot_16.Tag = "1";
-            this.LoadPort04_Slot_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.BackColor = System.Drawing.Color.Navy;
-            this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label74.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.ForeColor = System.Drawing.Color.White;
-            this.label74.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label74.Location = new System.Drawing.Point(4, 211);
-            this.label74.Margin = new System.Windows.Forms.Padding(3);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(40, 16);
-            this.label74.TabIndex = 36;
-            this.label74.Tag = "1";
-            this.label74.Text = "16";
-            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_17
-            // 
-            this.LoadPort04_Slot_17.AutoSize = true;
-            this.LoadPort04_Slot_17.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_17.Location = new System.Drawing.Point(51, 188);
-            this.LoadPort04_Slot_17.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_17.Name = "LoadPort04_Slot_17";
-            this.LoadPort04_Slot_17.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_17.TabIndex = 34;
-            this.LoadPort04_Slot_17.Tag = "1";
-            this.LoadPort04_Slot_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label76
-            // 
-            this.label76.BackColor = System.Drawing.Color.Navy;
-            this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label76.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.ForeColor = System.Drawing.Color.White;
-            this.label76.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label76.Location = new System.Drawing.Point(4, 188);
-            this.label76.Margin = new System.Windows.Forms.Padding(3);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(40, 16);
-            this.label76.TabIndex = 33;
-            this.label76.Tag = "1";
-            this.label76.Text = "17";
-            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_18
-            // 
-            this.LoadPort04_Slot_18.AutoSize = true;
-            this.LoadPort04_Slot_18.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_18.Location = new System.Drawing.Point(51, 165);
-            this.LoadPort04_Slot_18.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_18.Name = "LoadPort04_Slot_18";
-            this.LoadPort04_Slot_18.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_18.TabIndex = 31;
-            this.LoadPort04_Slot_18.Tag = "1";
-            this.LoadPort04_Slot_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.BackColor = System.Drawing.Color.Navy;
-            this.label78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label78.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label78.ForeColor = System.Drawing.Color.White;
-            this.label78.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label78.Location = new System.Drawing.Point(4, 165);
-            this.label78.Margin = new System.Windows.Forms.Padding(3);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(40, 16);
-            this.label78.TabIndex = 30;
-            this.label78.Tag = "1";
-            this.label78.Text = "18";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_19
-            // 
-            this.LoadPort04_Slot_19.AutoSize = true;
-            this.LoadPort04_Slot_19.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_19.Location = new System.Drawing.Point(51, 142);
-            this.LoadPort04_Slot_19.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_19.Name = "LoadPort04_Slot_19";
-            this.LoadPort04_Slot_19.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_19.TabIndex = 28;
-            this.LoadPort04_Slot_19.Tag = "1";
-            this.LoadPort04_Slot_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label80
-            // 
-            this.label80.BackColor = System.Drawing.Color.Navy;
-            this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label80.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label80.ForeColor = System.Drawing.Color.White;
-            this.label80.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label80.Location = new System.Drawing.Point(4, 142);
-            this.label80.Margin = new System.Windows.Forms.Padding(3);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(40, 16);
-            this.label80.TabIndex = 27;
-            this.label80.Tag = "1";
-            this.label80.Text = "19";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_20
-            // 
-            this.LoadPort04_Slot_20.AutoSize = true;
-            this.LoadPort04_Slot_20.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_20.Location = new System.Drawing.Point(51, 119);
-            this.LoadPort04_Slot_20.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_20.Name = "LoadPort04_Slot_20";
-            this.LoadPort04_Slot_20.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_20.TabIndex = 25;
-            this.LoadPort04_Slot_20.Tag = "1";
-            this.LoadPort04_Slot_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label107
-            // 
-            this.label107.BackColor = System.Drawing.Color.Navy;
-            this.label107.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label107.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label107.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label107.ForeColor = System.Drawing.Color.White;
-            this.label107.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label107.Location = new System.Drawing.Point(4, 119);
-            this.label107.Margin = new System.Windows.Forms.Padding(3);
-            this.label107.Name = "label107";
-            this.label107.Size = new System.Drawing.Size(40, 16);
-            this.label107.TabIndex = 24;
-            this.label107.Tag = "1";
-            this.label107.Text = "20";
-            this.label107.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_21
-            // 
-            this.LoadPort04_Slot_21.AutoSize = true;
-            this.LoadPort04_Slot_21.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_21.Location = new System.Drawing.Point(51, 96);
-            this.LoadPort04_Slot_21.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_21.Name = "LoadPort04_Slot_21";
-            this.LoadPort04_Slot_21.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_21.TabIndex = 22;
-            this.LoadPort04_Slot_21.Tag = "1";
-            this.LoadPort04_Slot_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label109
-            // 
-            this.label109.BackColor = System.Drawing.Color.Navy;
-            this.label109.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label109.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label109.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label109.ForeColor = System.Drawing.Color.White;
-            this.label109.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label109.Location = new System.Drawing.Point(4, 96);
-            this.label109.Margin = new System.Windows.Forms.Padding(3);
-            this.label109.Name = "label109";
-            this.label109.Size = new System.Drawing.Size(40, 16);
-            this.label109.TabIndex = 21;
-            this.label109.Tag = "1";
-            this.label109.Text = "21";
-            this.label109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_22
-            // 
-            this.LoadPort04_Slot_22.AutoSize = true;
-            this.LoadPort04_Slot_22.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_22.Location = new System.Drawing.Point(51, 73);
-            this.LoadPort04_Slot_22.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_22.Name = "LoadPort04_Slot_22";
-            this.LoadPort04_Slot_22.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_22.TabIndex = 19;
-            this.LoadPort04_Slot_22.Tag = "1";
-            this.LoadPort04_Slot_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label111
-            // 
-            this.label111.BackColor = System.Drawing.Color.Navy;
-            this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label111.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label111.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label111.ForeColor = System.Drawing.Color.White;
-            this.label111.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label111.Location = new System.Drawing.Point(4, 73);
-            this.label111.Margin = new System.Windows.Forms.Padding(3);
-            this.label111.Name = "label111";
-            this.label111.Size = new System.Drawing.Size(40, 16);
-            this.label111.TabIndex = 18;
-            this.label111.Tag = "1";
-            this.label111.Text = "22";
-            this.label111.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_23
-            // 
-            this.LoadPort04_Slot_23.AutoSize = true;
-            this.LoadPort04_Slot_23.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_23.Location = new System.Drawing.Point(51, 50);
-            this.LoadPort04_Slot_23.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_23.Name = "LoadPort04_Slot_23";
-            this.LoadPort04_Slot_23.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_23.TabIndex = 16;
-            this.LoadPort04_Slot_23.Tag = "1";
-            this.LoadPort04_Slot_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label113
-            // 
-            this.label113.BackColor = System.Drawing.Color.Navy;
-            this.label113.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label113.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label113.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label113.ForeColor = System.Drawing.Color.White;
-            this.label113.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label113.Location = new System.Drawing.Point(4, 50);
-            this.label113.Margin = new System.Windows.Forms.Padding(3);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(40, 16);
-            this.label113.TabIndex = 15;
-            this.label113.Tag = "1";
-            this.label113.Text = "23";
-            this.label113.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_24
-            // 
-            this.LoadPort04_Slot_24.AutoSize = true;
-            this.LoadPort04_Slot_24.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_24.Location = new System.Drawing.Point(51, 27);
-            this.LoadPort04_Slot_24.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_24.Name = "LoadPort04_Slot_24";
-            this.LoadPort04_Slot_24.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_24.TabIndex = 13;
-            this.LoadPort04_Slot_24.Tag = "1";
-            this.LoadPort04_Slot_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label115
-            // 
-            this.label115.BackColor = System.Drawing.Color.Navy;
-            this.label115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label115.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label115.ForeColor = System.Drawing.Color.White;
-            this.label115.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label115.Location = new System.Drawing.Point(4, 27);
-            this.label115.Margin = new System.Windows.Forms.Padding(3);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(40, 16);
-            this.label115.TabIndex = 12;
-            this.label115.Tag = "1";
-            this.label115.Text = "24";
-            this.label115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_Slot_25
-            // 
-            this.LoadPort04_Slot_25.AutoSize = true;
-            this.LoadPort04_Slot_25.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_Slot_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_Slot_25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort04_Slot_25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort04_Slot_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort04_Slot_25.Location = new System.Drawing.Point(51, 4);
-            this.LoadPort04_Slot_25.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort04_Slot_25.Name = "LoadPort04_Slot_25";
-            this.LoadPort04_Slot_25.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort04_Slot_25.TabIndex = 10;
-            this.LoadPort04_Slot_25.Tag = "1";
-            this.LoadPort04_Slot_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label117
-            // 
-            this.label117.BackColor = System.Drawing.Color.Navy;
-            this.label117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label117.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label117.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label117.ForeColor = System.Drawing.Color.White;
-            this.label117.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label117.Location = new System.Drawing.Point(4, 4);
-            this.label117.Margin = new System.Windows.Forms.Padding(3);
-            this.label117.Name = "label117";
-            this.label117.Size = new System.Drawing.Size(40, 16);
-            this.label117.TabIndex = 9;
-            this.label117.Tag = "1";
-            this.label117.Text = "25";
-            this.label117.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_1, 1, 24);
-            this.tableLayoutPanel3.Controls.Add(this.label119, 0, 24);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_2, 1, 23);
-            this.tableLayoutPanel3.Controls.Add(this.label121, 0, 23);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_3, 1, 22);
-            this.tableLayoutPanel3.Controls.Add(this.label123, 0, 22);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_4, 1, 21);
-            this.tableLayoutPanel3.Controls.Add(this.label125, 0, 21);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_5, 1, 20);
-            this.tableLayoutPanel3.Controls.Add(this.label127, 0, 20);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_6, 1, 19);
-            this.tableLayoutPanel3.Controls.Add(this.label129, 0, 19);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_7, 1, 18);
-            this.tableLayoutPanel3.Controls.Add(this.label131, 0, 18);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_8, 1, 17);
-            this.tableLayoutPanel3.Controls.Add(this.label133, 0, 17);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_9, 1, 16);
-            this.tableLayoutPanel3.Controls.Add(this.label135, 0, 16);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_10, 1, 15);
-            this.tableLayoutPanel3.Controls.Add(this.label137, 0, 15);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_11, 1, 14);
-            this.tableLayoutPanel3.Controls.Add(this.label139, 0, 14);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_12, 1, 13);
-            this.tableLayoutPanel3.Controls.Add(this.label141, 0, 13);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_13, 1, 12);
-            this.tableLayoutPanel3.Controls.Add(this.label143, 0, 12);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_14, 1, 11);
-            this.tableLayoutPanel3.Controls.Add(this.label145, 0, 11);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_15, 1, 10);
-            this.tableLayoutPanel3.Controls.Add(this.label147, 0, 10);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_16, 1, 9);
-            this.tableLayoutPanel3.Controls.Add(this.label149, 0, 9);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_17, 1, 8);
-            this.tableLayoutPanel3.Controls.Add(this.label151, 0, 8);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_18, 1, 7);
-            this.tableLayoutPanel3.Controls.Add(this.label153, 0, 7);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_19, 1, 6);
-            this.tableLayoutPanel3.Controls.Add(this.label155, 0, 6);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_20, 1, 5);
-            this.tableLayoutPanel3.Controls.Add(this.label157, 0, 5);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_21, 1, 4);
-            this.tableLayoutPanel3.Controls.Add(this.label159, 0, 4);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_22, 1, 3);
-            this.tableLayoutPanel3.Controls.Add(this.label161, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_23, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label163, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_24, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.label165, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.LoadPort03_Slot_25, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.label167, 0, 0);
-            this.tableLayoutPanel3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(384, 159);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 25;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(159, 576);
-            this.tableLayoutPanel3.TabIndex = 183;
-            this.tableLayoutPanel3.Tag = "1";
-            // 
-            // LoadPort03_Slot_1
-            // 
-            this.LoadPort03_Slot_1.AutoSize = true;
-            this.LoadPort03_Slot_1.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_1.Location = new System.Drawing.Point(51, 556);
-            this.LoadPort03_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_1.Name = "LoadPort03_Slot_1";
-            this.LoadPort03_Slot_1.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_1.TabIndex = 82;
-            this.LoadPort03_Slot_1.Tag = "1";
-            this.LoadPort03_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label119
-            // 
-            this.label119.BackColor = System.Drawing.Color.Navy;
-            this.label119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label119.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label119.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label119.ForeColor = System.Drawing.Color.White;
-            this.label119.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label119.Location = new System.Drawing.Point(4, 556);
-            this.label119.Margin = new System.Windows.Forms.Padding(3);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(40, 16);
-            this.label119.TabIndex = 81;
-            this.label119.Tag = "1";
-            this.label119.Text = "01";
-            this.label119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_2
-            // 
-            this.LoadPort03_Slot_2.AutoSize = true;
-            this.LoadPort03_Slot_2.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_2.Location = new System.Drawing.Point(51, 533);
-            this.LoadPort03_Slot_2.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_2.Name = "LoadPort03_Slot_2";
-            this.LoadPort03_Slot_2.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_2.TabIndex = 79;
-            this.LoadPort03_Slot_2.Tag = "1";
-            this.LoadPort03_Slot_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label121
-            // 
-            this.label121.BackColor = System.Drawing.Color.Navy;
-            this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label121.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label121.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label121.ForeColor = System.Drawing.Color.White;
-            this.label121.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label121.Location = new System.Drawing.Point(4, 533);
-            this.label121.Margin = new System.Windows.Forms.Padding(3);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(40, 16);
-            this.label121.TabIndex = 78;
-            this.label121.Tag = "1";
-            this.label121.Text = "02";
-            this.label121.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_3
-            // 
-            this.LoadPort03_Slot_3.AutoSize = true;
-            this.LoadPort03_Slot_3.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_3.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_3.Location = new System.Drawing.Point(51, 510);
-            this.LoadPort03_Slot_3.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_3.Name = "LoadPort03_Slot_3";
-            this.LoadPort03_Slot_3.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_3.TabIndex = 76;
-            this.LoadPort03_Slot_3.Tag = "1";
-            this.LoadPort03_Slot_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label123
-            // 
-            this.label123.BackColor = System.Drawing.Color.Navy;
-            this.label123.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label123.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label123.ForeColor = System.Drawing.Color.White;
-            this.label123.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label123.Location = new System.Drawing.Point(4, 510);
-            this.label123.Margin = new System.Windows.Forms.Padding(3);
-            this.label123.Name = "label123";
-            this.label123.Size = new System.Drawing.Size(40, 16);
-            this.label123.TabIndex = 75;
-            this.label123.Tag = "1";
-            this.label123.Text = "03";
-            this.label123.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_4
-            // 
-            this.LoadPort03_Slot_4.AutoSize = true;
-            this.LoadPort03_Slot_4.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_4.Location = new System.Drawing.Point(51, 487);
-            this.LoadPort03_Slot_4.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_4.Name = "LoadPort03_Slot_4";
-            this.LoadPort03_Slot_4.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_4.TabIndex = 73;
-            this.LoadPort03_Slot_4.Tag = "1";
-            this.LoadPort03_Slot_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label125
-            // 
-            this.label125.BackColor = System.Drawing.Color.Navy;
-            this.label125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label125.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label125.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label125.ForeColor = System.Drawing.Color.White;
-            this.label125.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label125.Location = new System.Drawing.Point(4, 487);
-            this.label125.Margin = new System.Windows.Forms.Padding(3);
-            this.label125.Name = "label125";
-            this.label125.Size = new System.Drawing.Size(40, 16);
-            this.label125.TabIndex = 72;
-            this.label125.Tag = "1";
-            this.label125.Text = "04";
-            this.label125.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_5
-            // 
-            this.LoadPort03_Slot_5.AutoSize = true;
-            this.LoadPort03_Slot_5.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_5.Location = new System.Drawing.Point(51, 464);
-            this.LoadPort03_Slot_5.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_5.Name = "LoadPort03_Slot_5";
-            this.LoadPort03_Slot_5.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_5.TabIndex = 70;
-            this.LoadPort03_Slot_5.Tag = "1";
-            this.LoadPort03_Slot_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label127
-            // 
-            this.label127.BackColor = System.Drawing.Color.Navy;
-            this.label127.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label127.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label127.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label127.ForeColor = System.Drawing.Color.White;
-            this.label127.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label127.Location = new System.Drawing.Point(4, 464);
-            this.label127.Margin = new System.Windows.Forms.Padding(3);
-            this.label127.Name = "label127";
-            this.label127.Size = new System.Drawing.Size(40, 16);
-            this.label127.TabIndex = 69;
-            this.label127.Tag = "1";
-            this.label127.Text = "05";
-            this.label127.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_6
-            // 
-            this.LoadPort03_Slot_6.AutoSize = true;
-            this.LoadPort03_Slot_6.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_6.Location = new System.Drawing.Point(51, 441);
-            this.LoadPort03_Slot_6.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_6.Name = "LoadPort03_Slot_6";
-            this.LoadPort03_Slot_6.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_6.TabIndex = 67;
-            this.LoadPort03_Slot_6.Tag = "1";
-            this.LoadPort03_Slot_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label129
-            // 
-            this.label129.BackColor = System.Drawing.Color.Navy;
-            this.label129.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label129.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label129.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label129.ForeColor = System.Drawing.Color.White;
-            this.label129.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label129.Location = new System.Drawing.Point(4, 441);
-            this.label129.Margin = new System.Windows.Forms.Padding(3);
-            this.label129.Name = "label129";
-            this.label129.Size = new System.Drawing.Size(40, 16);
-            this.label129.TabIndex = 66;
-            this.label129.Tag = "1";
-            this.label129.Text = "06";
-            this.label129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_7
-            // 
-            this.LoadPort03_Slot_7.AutoSize = true;
-            this.LoadPort03_Slot_7.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_7.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_7.Location = new System.Drawing.Point(51, 418);
-            this.LoadPort03_Slot_7.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_7.Name = "LoadPort03_Slot_7";
-            this.LoadPort03_Slot_7.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_7.TabIndex = 64;
-            this.LoadPort03_Slot_7.Tag = "1";
-            this.LoadPort03_Slot_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label131
-            // 
-            this.label131.BackColor = System.Drawing.Color.Navy;
-            this.label131.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label131.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label131.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label131.ForeColor = System.Drawing.Color.White;
-            this.label131.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label131.Location = new System.Drawing.Point(4, 418);
-            this.label131.Margin = new System.Windows.Forms.Padding(3);
-            this.label131.Name = "label131";
-            this.label131.Size = new System.Drawing.Size(40, 16);
-            this.label131.TabIndex = 63;
-            this.label131.Tag = "1";
-            this.label131.Text = "07";
-            this.label131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_8
-            // 
-            this.LoadPort03_Slot_8.AutoSize = true;
-            this.LoadPort03_Slot_8.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_8.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_8.Location = new System.Drawing.Point(51, 395);
-            this.LoadPort03_Slot_8.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_8.Name = "LoadPort03_Slot_8";
-            this.LoadPort03_Slot_8.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_8.TabIndex = 61;
-            this.LoadPort03_Slot_8.Tag = "1";
-            this.LoadPort03_Slot_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label133
-            // 
-            this.label133.BackColor = System.Drawing.Color.Navy;
-            this.label133.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label133.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label133.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label133.ForeColor = System.Drawing.Color.White;
-            this.label133.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label133.Location = new System.Drawing.Point(4, 395);
-            this.label133.Margin = new System.Windows.Forms.Padding(3);
-            this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(40, 16);
-            this.label133.TabIndex = 60;
-            this.label133.Tag = "1";
-            this.label133.Text = "08";
-            this.label133.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_9
-            // 
-            this.LoadPort03_Slot_9.AutoSize = true;
-            this.LoadPort03_Slot_9.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_9.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_9.Location = new System.Drawing.Point(51, 372);
-            this.LoadPort03_Slot_9.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_9.Name = "LoadPort03_Slot_9";
-            this.LoadPort03_Slot_9.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_9.TabIndex = 58;
-            this.LoadPort03_Slot_9.Tag = "1";
-            this.LoadPort03_Slot_9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label135
-            // 
-            this.label135.BackColor = System.Drawing.Color.Navy;
-            this.label135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label135.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label135.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label135.ForeColor = System.Drawing.Color.White;
-            this.label135.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label135.Location = new System.Drawing.Point(4, 372);
-            this.label135.Margin = new System.Windows.Forms.Padding(3);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(40, 16);
-            this.label135.TabIndex = 57;
-            this.label135.Tag = "1";
-            this.label135.Text = "09";
-            this.label135.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_10
-            // 
-            this.LoadPort03_Slot_10.AutoSize = true;
-            this.LoadPort03_Slot_10.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_10.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_10.Location = new System.Drawing.Point(51, 349);
-            this.LoadPort03_Slot_10.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_10.Name = "LoadPort03_Slot_10";
-            this.LoadPort03_Slot_10.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_10.TabIndex = 55;
-            this.LoadPort03_Slot_10.Tag = "1";
-            this.LoadPort03_Slot_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label137
-            // 
-            this.label137.BackColor = System.Drawing.Color.Navy;
-            this.label137.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label137.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label137.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label137.ForeColor = System.Drawing.Color.White;
-            this.label137.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label137.Location = new System.Drawing.Point(4, 349);
-            this.label137.Margin = new System.Windows.Forms.Padding(3);
-            this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(40, 16);
-            this.label137.TabIndex = 54;
-            this.label137.Tag = "1";
-            this.label137.Text = "10";
-            this.label137.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_11
-            // 
-            this.LoadPort03_Slot_11.AutoSize = true;
-            this.LoadPort03_Slot_11.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_11.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_11.Location = new System.Drawing.Point(51, 326);
-            this.LoadPort03_Slot_11.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_11.Name = "LoadPort03_Slot_11";
-            this.LoadPort03_Slot_11.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_11.TabIndex = 52;
-            this.LoadPort03_Slot_11.Tag = "1";
-            this.LoadPort03_Slot_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label139
-            // 
-            this.label139.BackColor = System.Drawing.Color.Navy;
-            this.label139.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label139.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label139.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label139.ForeColor = System.Drawing.Color.White;
-            this.label139.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label139.Location = new System.Drawing.Point(4, 326);
-            this.label139.Margin = new System.Windows.Forms.Padding(3);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(40, 16);
-            this.label139.TabIndex = 51;
-            this.label139.Tag = "1";
-            this.label139.Text = "11";
-            this.label139.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_12
-            // 
-            this.LoadPort03_Slot_12.AutoSize = true;
-            this.LoadPort03_Slot_12.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_12.Location = new System.Drawing.Point(51, 303);
-            this.LoadPort03_Slot_12.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_12.Name = "LoadPort03_Slot_12";
-            this.LoadPort03_Slot_12.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_12.TabIndex = 49;
-            this.LoadPort03_Slot_12.Tag = "1";
-            this.LoadPort03_Slot_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label141
-            // 
-            this.label141.BackColor = System.Drawing.Color.Navy;
-            this.label141.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label141.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label141.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label141.ForeColor = System.Drawing.Color.White;
-            this.label141.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label141.Location = new System.Drawing.Point(4, 303);
-            this.label141.Margin = new System.Windows.Forms.Padding(3);
-            this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(40, 16);
-            this.label141.TabIndex = 48;
-            this.label141.Tag = "1";
-            this.label141.Text = "12";
-            this.label141.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_13
-            // 
-            this.LoadPort03_Slot_13.AutoSize = true;
-            this.LoadPort03_Slot_13.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_13.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_13.Location = new System.Drawing.Point(51, 280);
-            this.LoadPort03_Slot_13.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_13.Name = "LoadPort03_Slot_13";
-            this.LoadPort03_Slot_13.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_13.TabIndex = 46;
-            this.LoadPort03_Slot_13.Tag = "1";
-            this.LoadPort03_Slot_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label143
-            // 
-            this.label143.BackColor = System.Drawing.Color.Navy;
-            this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label143.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label143.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label143.ForeColor = System.Drawing.Color.White;
-            this.label143.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label143.Location = new System.Drawing.Point(4, 280);
-            this.label143.Margin = new System.Windows.Forms.Padding(3);
-            this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(40, 16);
-            this.label143.TabIndex = 45;
-            this.label143.Tag = "1";
-            this.label143.Text = "13";
-            this.label143.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_14
-            // 
-            this.LoadPort03_Slot_14.AutoSize = true;
-            this.LoadPort03_Slot_14.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_14.Location = new System.Drawing.Point(51, 257);
-            this.LoadPort03_Slot_14.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_14.Name = "LoadPort03_Slot_14";
-            this.LoadPort03_Slot_14.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_14.TabIndex = 43;
-            this.LoadPort03_Slot_14.Tag = "1";
-            this.LoadPort03_Slot_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label145
-            // 
-            this.label145.BackColor = System.Drawing.Color.Navy;
-            this.label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label145.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label145.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label145.ForeColor = System.Drawing.Color.White;
-            this.label145.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label145.Location = new System.Drawing.Point(4, 257);
-            this.label145.Margin = new System.Windows.Forms.Padding(3);
-            this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(40, 16);
-            this.label145.TabIndex = 42;
-            this.label145.Tag = "1";
-            this.label145.Text = "14";
-            this.label145.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_15
-            // 
-            this.LoadPort03_Slot_15.AutoSize = true;
-            this.LoadPort03_Slot_15.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_15.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_15.Location = new System.Drawing.Point(51, 234);
-            this.LoadPort03_Slot_15.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_15.Name = "LoadPort03_Slot_15";
-            this.LoadPort03_Slot_15.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_15.TabIndex = 40;
-            this.LoadPort03_Slot_15.Tag = "1";
-            this.LoadPort03_Slot_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label147
-            // 
-            this.label147.BackColor = System.Drawing.Color.Navy;
-            this.label147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label147.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label147.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label147.ForeColor = System.Drawing.Color.White;
-            this.label147.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label147.Location = new System.Drawing.Point(4, 234);
-            this.label147.Margin = new System.Windows.Forms.Padding(3);
-            this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(40, 16);
-            this.label147.TabIndex = 39;
-            this.label147.Tag = "1";
-            this.label147.Text = "15";
-            this.label147.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_16
-            // 
-            this.LoadPort03_Slot_16.AutoSize = true;
-            this.LoadPort03_Slot_16.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_16.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_16.Location = new System.Drawing.Point(51, 211);
-            this.LoadPort03_Slot_16.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_16.Name = "LoadPort03_Slot_16";
-            this.LoadPort03_Slot_16.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_16.TabIndex = 37;
-            this.LoadPort03_Slot_16.Tag = "1";
-            this.LoadPort03_Slot_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label149
-            // 
-            this.label149.BackColor = System.Drawing.Color.Navy;
-            this.label149.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label149.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label149.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label149.ForeColor = System.Drawing.Color.White;
-            this.label149.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label149.Location = new System.Drawing.Point(4, 211);
-            this.label149.Margin = new System.Windows.Forms.Padding(3);
-            this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(40, 16);
-            this.label149.TabIndex = 36;
-            this.label149.Tag = "1";
-            this.label149.Text = "16";
-            this.label149.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_17
-            // 
-            this.LoadPort03_Slot_17.AutoSize = true;
-            this.LoadPort03_Slot_17.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_17.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_17.Location = new System.Drawing.Point(51, 188);
-            this.LoadPort03_Slot_17.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_17.Name = "LoadPort03_Slot_17";
-            this.LoadPort03_Slot_17.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_17.TabIndex = 34;
-            this.LoadPort03_Slot_17.Tag = "1";
-            this.LoadPort03_Slot_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label151
-            // 
-            this.label151.BackColor = System.Drawing.Color.Navy;
-            this.label151.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label151.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label151.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label151.ForeColor = System.Drawing.Color.White;
-            this.label151.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label151.Location = new System.Drawing.Point(4, 188);
-            this.label151.Margin = new System.Windows.Forms.Padding(3);
-            this.label151.Name = "label151";
-            this.label151.Size = new System.Drawing.Size(40, 16);
-            this.label151.TabIndex = 33;
-            this.label151.Tag = "1";
-            this.label151.Text = "17";
-            this.label151.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_18
-            // 
-            this.LoadPort03_Slot_18.AutoSize = true;
-            this.LoadPort03_Slot_18.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_18.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_18.Location = new System.Drawing.Point(51, 165);
-            this.LoadPort03_Slot_18.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_18.Name = "LoadPort03_Slot_18";
-            this.LoadPort03_Slot_18.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_18.TabIndex = 31;
-            this.LoadPort03_Slot_18.Tag = "1";
-            this.LoadPort03_Slot_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label153
-            // 
-            this.label153.BackColor = System.Drawing.Color.Navy;
-            this.label153.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label153.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label153.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label153.ForeColor = System.Drawing.Color.White;
-            this.label153.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label153.Location = new System.Drawing.Point(4, 165);
-            this.label153.Margin = new System.Windows.Forms.Padding(3);
-            this.label153.Name = "label153";
-            this.label153.Size = new System.Drawing.Size(40, 16);
-            this.label153.TabIndex = 30;
-            this.label153.Tag = "1";
-            this.label153.Text = "18";
-            this.label153.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_19
-            // 
-            this.LoadPort03_Slot_19.AutoSize = true;
-            this.LoadPort03_Slot_19.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_19.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_19.Location = new System.Drawing.Point(51, 142);
-            this.LoadPort03_Slot_19.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_19.Name = "LoadPort03_Slot_19";
-            this.LoadPort03_Slot_19.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_19.TabIndex = 28;
-            this.LoadPort03_Slot_19.Tag = "1";
-            this.LoadPort03_Slot_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label155
-            // 
-            this.label155.BackColor = System.Drawing.Color.Navy;
-            this.label155.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label155.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label155.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label155.ForeColor = System.Drawing.Color.White;
-            this.label155.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label155.Location = new System.Drawing.Point(4, 142);
-            this.label155.Margin = new System.Windows.Forms.Padding(3);
-            this.label155.Name = "label155";
-            this.label155.Size = new System.Drawing.Size(40, 16);
-            this.label155.TabIndex = 27;
-            this.label155.Tag = "1";
-            this.label155.Text = "19";
-            this.label155.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_20
-            // 
-            this.LoadPort03_Slot_20.AutoSize = true;
-            this.LoadPort03_Slot_20.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_20.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_20.Location = new System.Drawing.Point(51, 119);
-            this.LoadPort03_Slot_20.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_20.Name = "LoadPort03_Slot_20";
-            this.LoadPort03_Slot_20.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_20.TabIndex = 25;
-            this.LoadPort03_Slot_20.Tag = "1";
-            this.LoadPort03_Slot_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label157
-            // 
-            this.label157.BackColor = System.Drawing.Color.Navy;
-            this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label157.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label157.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label157.ForeColor = System.Drawing.Color.White;
-            this.label157.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label157.Location = new System.Drawing.Point(4, 119);
-            this.label157.Margin = new System.Windows.Forms.Padding(3);
-            this.label157.Name = "label157";
-            this.label157.Size = new System.Drawing.Size(40, 16);
-            this.label157.TabIndex = 24;
-            this.label157.Tag = "1";
-            this.label157.Text = "20";
-            this.label157.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_21
-            // 
-            this.LoadPort03_Slot_21.AutoSize = true;
-            this.LoadPort03_Slot_21.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_21.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_21.Location = new System.Drawing.Point(51, 96);
-            this.LoadPort03_Slot_21.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_21.Name = "LoadPort03_Slot_21";
-            this.LoadPort03_Slot_21.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_21.TabIndex = 22;
-            this.LoadPort03_Slot_21.Tag = "1";
-            this.LoadPort03_Slot_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label159
-            // 
-            this.label159.BackColor = System.Drawing.Color.Navy;
-            this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label159.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label159.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label159.ForeColor = System.Drawing.Color.White;
-            this.label159.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label159.Location = new System.Drawing.Point(4, 96);
-            this.label159.Margin = new System.Windows.Forms.Padding(3);
-            this.label159.Name = "label159";
-            this.label159.Size = new System.Drawing.Size(40, 16);
-            this.label159.TabIndex = 21;
-            this.label159.Tag = "1";
-            this.label159.Text = "21";
-            this.label159.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_22
-            // 
-            this.LoadPort03_Slot_22.AutoSize = true;
-            this.LoadPort03_Slot_22.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_22.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_22.Location = new System.Drawing.Point(51, 73);
-            this.LoadPort03_Slot_22.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_22.Name = "LoadPort03_Slot_22";
-            this.LoadPort03_Slot_22.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_22.TabIndex = 19;
-            this.LoadPort03_Slot_22.Tag = "1";
-            this.LoadPort03_Slot_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label161
-            // 
-            this.label161.BackColor = System.Drawing.Color.Navy;
-            this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label161.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label161.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label161.ForeColor = System.Drawing.Color.White;
-            this.label161.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label161.Location = new System.Drawing.Point(4, 73);
-            this.label161.Margin = new System.Windows.Forms.Padding(3);
-            this.label161.Name = "label161";
-            this.label161.Size = new System.Drawing.Size(40, 16);
-            this.label161.TabIndex = 18;
-            this.label161.Tag = "1";
-            this.label161.Text = "22";
-            this.label161.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_23
-            // 
-            this.LoadPort03_Slot_23.AutoSize = true;
-            this.LoadPort03_Slot_23.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_23.Location = new System.Drawing.Point(51, 50);
-            this.LoadPort03_Slot_23.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_23.Name = "LoadPort03_Slot_23";
-            this.LoadPort03_Slot_23.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_23.TabIndex = 16;
-            this.LoadPort03_Slot_23.Tag = "1";
-            this.LoadPort03_Slot_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label163
-            // 
-            this.label163.BackColor = System.Drawing.Color.Navy;
-            this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label163.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label163.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label163.ForeColor = System.Drawing.Color.White;
-            this.label163.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label163.Location = new System.Drawing.Point(4, 50);
-            this.label163.Margin = new System.Windows.Forms.Padding(3);
-            this.label163.Name = "label163";
-            this.label163.Size = new System.Drawing.Size(40, 16);
-            this.label163.TabIndex = 15;
-            this.label163.Tag = "1";
-            this.label163.Text = "23";
-            this.label163.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_24
-            // 
-            this.LoadPort03_Slot_24.AutoSize = true;
-            this.LoadPort03_Slot_24.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_24.Location = new System.Drawing.Point(51, 27);
-            this.LoadPort03_Slot_24.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_24.Name = "LoadPort03_Slot_24";
-            this.LoadPort03_Slot_24.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_24.TabIndex = 13;
-            this.LoadPort03_Slot_24.Tag = "1";
-            this.LoadPort03_Slot_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label165
-            // 
-            this.label165.BackColor = System.Drawing.Color.Navy;
-            this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label165.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label165.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label165.ForeColor = System.Drawing.Color.White;
-            this.label165.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label165.Location = new System.Drawing.Point(4, 27);
-            this.label165.Margin = new System.Windows.Forms.Padding(3);
-            this.label165.Name = "label165";
-            this.label165.Size = new System.Drawing.Size(40, 16);
-            this.label165.TabIndex = 12;
-            this.label165.Tag = "1";
-            this.label165.Text = "24";
-            this.label165.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_Slot_25
-            // 
-            this.LoadPort03_Slot_25.AutoSize = true;
-            this.LoadPort03_Slot_25.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_Slot_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_Slot_25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.LoadPort03_Slot_25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadPort03_Slot_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadPort03_Slot_25.Location = new System.Drawing.Point(51, 4);
-            this.LoadPort03_Slot_25.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadPort03_Slot_25.Name = "LoadPort03_Slot_25";
-            this.LoadPort03_Slot_25.Size = new System.Drawing.Size(104, 16);
-            this.LoadPort03_Slot_25.TabIndex = 10;
-            this.LoadPort03_Slot_25.Tag = "1";
-            this.LoadPort03_Slot_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label167
-            // 
-            this.label167.BackColor = System.Drawing.Color.Navy;
-            this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label167.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label167.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label167.ForeColor = System.Drawing.Color.White;
-            this.label167.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label167.Location = new System.Drawing.Point(4, 4);
-            this.label167.Margin = new System.Windows.Forms.Padding(3);
-            this.label167.Name = "label167";
-            this.label167.Size = new System.Drawing.Size(40, 16);
-            this.label167.TabIndex = 9;
-            this.label167.Tag = "1";
-            this.label167.Text = "25";
-            this.label167.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort04_State
-            // 
-            this.LoadPort04_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoadPort04_State.BackColor = System.Drawing.Color.DarkGray;
-            this.LoadPort04_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.LoadPort04_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort04_State.Location = new System.Drawing.Point(566, 97);
-            this.LoadPort04_State.Name = "LoadPort04_State";
-            this.LoadPort04_State.Size = new System.Drawing.Size(158, 29);
-            this.LoadPort04_State.TabIndex = 182;
-            this.LoadPort04_State.Text = "Ready To Load";
-            this.LoadPort04_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LoadPort03_State
-            // 
-            this.LoadPort03_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoadPort03_State.BackColor = System.Drawing.Color.DarkGray;
-            this.LoadPort03_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.LoadPort03_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort03_State.Location = new System.Drawing.Point(384, 97);
-            this.LoadPort03_State.Name = "LoadPort03_State";
-            this.LoadPort03_State.Size = new System.Drawing.Size(158, 29);
-            this.LoadPort03_State.TabIndex = 181;
-            this.LoadPort03_State.Text = "Ready To Load";
-            this.LoadPort03_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LoadPort04_FID
-            // 
-            this.LoadPort04_FID.BackColor = System.Drawing.Color.White;
-            this.LoadPort04_FID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort04_FID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.LoadPort04_FID.ForeColor = System.Drawing.Color.Black;
-            this.LoadPort04_FID.Location = new System.Drawing.Point(566, 62);
-            this.LoadPort04_FID.Name = "LoadPort04_FID";
-            this.LoadPort04_FID.Size = new System.Drawing.Size(158, 29);
-            this.LoadPort04_FID.TabIndex = 180;
-            this.LoadPort04_FID.Text = "Foup ID";
-            this.LoadPort04_FID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label168
-            // 
-            this.label168.BackColor = System.Drawing.Color.Transparent;
-            this.label168.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label168.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label168.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label168.ForeColor = System.Drawing.Color.Black;
-            this.label168.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label168.Location = new System.Drawing.Point(566, 39);
-            this.label168.Name = "label168";
-            this.label168.Size = new System.Drawing.Size(158, 20);
-            this.label168.TabIndex = 179;
-            this.label168.Text = "LoadPort04";
-            this.label168.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LoadPort03_FID
-            // 
-            this.LoadPort03_FID.BackColor = System.Drawing.Color.White;
-            this.LoadPort03_FID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadPort03_FID.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.LoadPort03_FID.ForeColor = System.Drawing.Color.Black;
-            this.LoadPort03_FID.Location = new System.Drawing.Point(384, 62);
-            this.LoadPort03_FID.Name = "LoadPort03_FID";
-            this.LoadPort03_FID.Size = new System.Drawing.Size(158, 29);
-            this.LoadPort03_FID.TabIndex = 178;
-            this.LoadPort03_FID.Text = "Foup ID";
-            this.LoadPort03_FID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label169
-            // 
-            this.label169.BackColor = System.Drawing.Color.Transparent;
-            this.label169.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label169.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label169.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label169.ForeColor = System.Drawing.Color.Black;
-            this.label169.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label169.Location = new System.Drawing.Point(384, 39);
-            this.label169.Name = "label169";
-            this.label169.Size = new System.Drawing.Size(158, 20);
-            this.label169.TabIndex = 177;
-            this.label169.Text = "LoadPort03";
-            this.label169.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.ConnectStatus_lb);
-            this.groupBox1.Location = new System.Drawing.Point(1328, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(132, 41);
-            this.groupBox1.TabIndex = 189;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "上位系統連線";
-            // 
-            // ConnectStatus_lb
-            // 
-            this.ConnectStatus_lb.AutoSize = true;
-            this.ConnectStatus_lb.BackColor = System.Drawing.Color.Red;
-            this.ConnectStatus_lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ConnectStatus_lb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConnectStatus_lb.Location = new System.Drawing.Point(6, 18);
-            this.ConnectStatus_lb.MinimumSize = new System.Drawing.Size(120, 9);
-            this.ConnectStatus_lb.Name = "ConnectStatus_lb";
-            this.ConnectStatus_lb.Size = new System.Drawing.Size(120, 17);
-            this.ConnectStatus_lb.TabIndex = 1;
-            // 
-            // ResetInterface
-            // 
-            this.ResetInterface.Location = new System.Drawing.Point(1466, 64);
-            this.ResetInterface.Name = "ResetInterface";
-            this.ResetInterface.Size = new System.Drawing.Size(75, 23);
-            this.ResetInterface.TabIndex = 190;
-            this.ResetInterface.Text = "Reset";
-            this.ResetInterface.UseVisualStyleBackColor = true;
-            this.ResetInterface.Click += new System.EventHandler(this.ResetInterface_Click);
-            // 
             // FormMonitoring
             // 
-            this.ClientSize = new System.Drawing.Size(1620, 760);
+            this.ClientSize = new System.Drawing.Size(1460, 760);
             this.Controls.Add(this.Aligner01_tb);
             this.Name = "FormMonitoring";
+            this.Load += new System.EventHandler(this.FormMonitoring_Load);
             this.Aligner01_tb.ResumeLayout(false);
             this.Aligner01_tb.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.panel5.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OCR01_Pic)).EndInit();
@@ -4725,12 +4858,6 @@
             this.tableLayoutPanel1.PerformLayout();
             this.TblPanel_A.ResumeLayout(false);
             this.TblPanel_A.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -4991,5 +5118,14 @@
         private System.Windows.Forms.Label label168;
         private System.Windows.Forms.TextBox LoadPort03_FID;
         private System.Windows.Forms.Label label169;
+        private System.Windows.Forms.CheckBox TRANSREQ_ck;
+        private System.Windows.Forms.CheckBox MAPDT_ck;
+        private System.Windows.Forms.CheckBox FFU_ck;
+        private System.Windows.Forms.CheckBox PRS_ck;
+        private System.Windows.Forms.CheckBox PORT_ck;
+        private System.Windows.Forms.CheckBox SYSTEM_ck;
+        private System.Windows.Forms.Panel panel3;
+        internal System.Windows.Forms.Label label4;
+        internal System.Windows.Forms.Label label8;
     }
 }

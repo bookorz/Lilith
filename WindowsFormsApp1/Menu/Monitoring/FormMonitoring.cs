@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using TransferControl.Management;
 
@@ -16,17 +17,17 @@ namespace Lilith.Menu.Monitoring
             InitializeComponent();
         }
 
-       
+
         private void LoadPort_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             switch (e.ColumnIndex)
             {
                 case 1:
                     List<Job> JobList = (sender as DataGridView).DataSource as List<Job>;
-                    
+
                     switch (JobList[e.RowIndex].NeedProcess)
                     {
-                        case true:  
+                        case true:
                             e.CellStyle.BackColor = Color.Green;
                             e.CellStyle.ForeColor = Color.White;
                             break;
@@ -45,7 +46,7 @@ namespace Lilith.Menu.Monitoring
                             e.CellStyle.BackColor = Color.Red;
                             e.CellStyle.ForeColor = Color.White;
                             break;
-                       
+
 
                     }
                     break;
@@ -135,9 +136,9 @@ namespace Lilith.Menu.Monitoring
                 if (p != null)
                 {
                     Job j;
-                    if(p.JobList.TryGetValue(Slot,out j))
+                    if (p.JobList.TryGetValue(Slot, out j))
                     {
-                        if(j.OCRImgPath == "")
+                        if (j.OCRImgPath == "")
                         {
                             MessageBox.Show("未找到OCR紀錄");
                         }
@@ -227,7 +228,7 @@ namespace Lilith.Menu.Monitoring
         //                switch (each.Type)
         //                {
         //                    case "ALIGNER":
-                                
+
         //                        each.ErrorMsg = "";
         //                        each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit");
         //                        break;
@@ -243,7 +244,7 @@ namespace Lilith.Menu.Monitoring
 
         private void NotchDirect_cb_TextChanged(object sender, EventArgs e)
         {
-            switch(NotchDirect_cb.Text)
+            switch (NotchDirect_cb.Text)
             {
                 case "朝前":
                     FormMain.RouteCtrl.NotchDirect = 90;
@@ -264,5 +265,43 @@ namespace Lilith.Menu.Monitoring
         {
             FormMain.ctrl.Reset();
         }
-    } 
+
+        private void FormMonitoring_Load(object sender, EventArgs e)
+        {
+           
+            //MAPDT_ck.Checked = FormMain.ctrl.Events.MAPDT;
+            //PORT_ck.Checked = FormMain.ctrl.Events.PORT;
+            //PRS_ck.Checked = FormMain.ctrl.Events.PRS;
+            //SYSTEM_ck.Checked = FormMain.ctrl.Events.SYSTEM;
+            //TRANSREQ_ck.Checked = FormMain.ctrl.Events.TRANSREQ;
+            //FFU_ck.Checked = FormMain.ctrl.Events.FFU;
+
+        }
+
+        private void Events_CheckedChanged(object sender, EventArgs e)
+        {
+            switch ((sender as CheckBox).Name)
+            {
+                case "MAPDT_ck":
+                    FormMain.ctrl.Events.MAPDT = MAPDT_ck.Checked;
+                    break;
+                case "TRANSREQ_ck":
+                    FormMain.ctrl.Events.TRANSREQ = TRANSREQ_ck.Checked;
+                    break;
+                case "SYSTEM_ck":
+                    FormMain.ctrl.Events.SYSTEM = SYSTEM_ck.Checked;
+                    break;
+                case "PORT_ck":
+                    FormMain.ctrl.Events.PORT = PORT_ck.Checked;
+                    break;
+                case "PRS_ck":
+                    FormMain.ctrl.Events.PRS = PRS_ck.Checked;
+                    break;
+                case "FFU_ck":
+                    FormMain.ctrl.Events.FFU = FFU_ck.Checked;
+                    break;
+            }
+            FormMain.ctrl.Events.Save();
+        }
+    }
 }

@@ -25,6 +25,7 @@ using Lilith.Util;
 using Lilith.UI_Update.Communications;
 using EFEMInterface.MessageInterface;
 using EFEMInterface;
+using static EFEMInterface.MessageInterface.RorzeInterface;
 
 namespace Lilith
 {
@@ -140,7 +141,7 @@ namespace Lilith
             this.Width = oldWidth;
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
-
+            ctrl.Events = new ReportEvent();
 
         }
 
