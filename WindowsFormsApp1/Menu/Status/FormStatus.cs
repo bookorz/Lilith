@@ -238,6 +238,7 @@ namespace Lilith.Menu.Status
             StateUtil.Init();
             foreach (Node each in NodeManagement.GetList())
             {
+                string Message = "";
                 try
                 {
                     IController Ctrl = ControllerManagement.Get(each.Controller);
@@ -272,7 +273,7 @@ namespace Lilith.Menu.Status
                         txn.Seq = seq;
                         if (!txn.Method.Equals(""))
                         {
-                            each.SendCommand(txn);
+                            each.SendCommand(txn, out Message);
                         }
                     }
                 }

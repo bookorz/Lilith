@@ -188,15 +188,16 @@ namespace Lilith
             {
                 foreach (Node each in NodeManagement.GetList())
                 {
+                    string Message = "";
                     switch (each.Type)
                     {
                         case "ALIGNER":
                             each.ErrorMsg = "";
-                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit");
+                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit",out Message);
                             break;
                         case "ROBOT":
                             each.ErrorMsg = "";
-                            each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit");
+                            each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit", out Message);
                             break;
                     }
                 }
@@ -210,10 +211,11 @@ namespace Lilith
             {
                 each.InitialComplete = false;
                 each.CheckStatus = false;
+                string Message = "";
                 switch (each.Type.ToUpper())
                 {
                     case "ROBOT":
-                        each.ExcuteScript("RobotInit", "Initialize");
+                        each.ExcuteScript("RobotInit", "Initialize", out Message);
                         break;
                         //先做ROBOT
                         //case "ALIGNER":
@@ -230,12 +232,13 @@ namespace Lilith
             string strMsg = "Move to Home position. OK?";
             if (MessageBox.Show(strMsg, "Org.Back", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
             {
+                string Message = "";
                 Transaction txn = new Transaction();
                 txn.Method = Transaction.Command.RobotType.RobotHome;
-                NodeManagement.Get("Robot01").SendCommand(txn);
+                NodeManagement.Get("Robot01").SendCommand(txn, out Message);
                 txn = new Transaction();
                 txn.Method = Transaction.Command.RobotType.RobotHome;
-                NodeManagement.Get("Robot02").SendCommand(txn);
+                NodeManagement.Get("Robot02").SendCommand(txn, out Message);
             }
         }
 
@@ -321,6 +324,7 @@ namespace Lilith
         public void On_Command_Excuted(Node Node, Transaction Txn, ReturnMessage Msg)
         {
             logger.Debug("On_Command_Excuted");
+            string Message = "";
 
             Transaction SendTxn = new Transaction();
 
@@ -500,7 +504,7 @@ namespace Lilith
                                     //向Robot 詢問狀態
                                     Node robot = NodeManagement.Get(Node.Name);
                                     String script_name = robot.Brand.ToUpper().Equals("SANWA") ? "RobotStateGet" : "RobotStateGet(Kawasaki)";
-                                    robot.ExcuteScript(script_name, "FormManual");
+                                    robot.ExcuteScript(script_name, "FormManual", out Message);
                                     ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面 
                                     break;
                                 case Transaction.Command.RobotType.GetSpeed:
@@ -527,7 +531,7 @@ namespace Lilith
                                     //向Aligner 詢問狀態
                                     Node aligner = NodeManagement.Get(Node.Name);
                                     String script_name = aligner.Brand.ToUpper().Equals("SANWA") ? "AlignerStateGet" : "AlignerStateGet(Kawasaki)";
-                                    aligner.ExcuteScript(script_name, "FormManual");
+                                    aligner.ExcuteScript(script_name, "FormManual", out Message);
                                     ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 
                                     break;
                                 case Transaction.Command.AlignerType.GetMode:
@@ -939,6 +943,7 @@ namespace Lilith
         public void On_Port_Begin(string PortName, string FormName)
         {
             logger.Debug("On_Port_Begin");
+            string Message = "";
             Node port = NodeManagement.Get(PortName);
             //for 200mm
             Dictionary<string, string> Params = new Dictionary<string, string>();
@@ -957,7 +962,7 @@ namespace Lilith
                 {//除了第一次用手動Mapping，之後的自動循環都要做Mapping
                     port.WaitForFinish = true;
                     vars.Add("@loadport", PortName);
-                    Robot.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
+                    Robot.ExcuteScript("RobotMapping", "MANSW", vars, out Message, "200MM");
 
                     
                 }
@@ -967,7 +972,7 @@ namespace Lilith
                     Aligner.WaitForFinish = true;
                     vars = new Dictionary<string, string>();
                     vars.Add("@size", "100000");
-                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, "200MM");
+                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, out Message, "200MM");
                     logger.Debug("Wait for ChangeAlignSize.");
                     SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
 
@@ -1007,12 +1012,12 @@ namespace Lilith
                     GetWaitCmd.Arm = "2";
                     GetWaitCmd.Position = port.Name;
                     GetWaitCmd.FormName = "ChangeAlignWaferSize";
-                    Robot.SendCommand(GetWaitCmd);
+                    Robot.SendCommand(GetWaitCmd, out Message);
 
                     Aligner.WaitForFinish = true;
                     Dictionary<string, string> vars = new Dictionary<string, string>();
                     vars.Add("@size", "150000");
-                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, "300MM");
+                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, out Message, "300MM");
                     logger.Debug("Wait for ChangeAlignSize.");
                     SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
 
@@ -1053,7 +1058,7 @@ namespace Lilith
             logger.Debug("On_Port_Finished");
             try
             {
-
+                string Message = "";
                 WaferAssignUpdate.RefreshMapping(PortName);
                 WaferAssignUpdate.RefreshMapping(NodeManagement.Get(PortName).DestPort);
                 Node Port = NodeManagement.Get(PortName);
@@ -1083,7 +1088,7 @@ namespace Lilith
                                     //        eachPort.Available = true;
                                     //    }
                                     //}
-                                    Port.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished");
+                                    Port.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished", out Message);
 
                                 }
                             }
@@ -1100,7 +1105,7 @@ namespace Lilith
                             {
                                 if (Port.WaferSize.Equals("300MM"))
                                 {
-                                    Port.ExcuteScript("LoadPortUnload", "Port_Finished");
+                                    Port.ExcuteScript("LoadPortUnload", "Port_Finished", out Message);
                                 }
                             }
                             MessageBox.Show("自動展示模式停止");
@@ -1109,7 +1114,7 @@ namespace Lilith
 
                         break;
                     default:
-                        Port.ExcuteScript("LoadPortUnload", "Port_Finished");
+                        Port.ExcuteScript("LoadPortUnload", "Port_Finished", out Message);
                         break;
                 }
             }
@@ -1172,6 +1177,7 @@ namespace Lilith
         public void On_Script_Finished(Node Node, string ScriptName, string FormName)
         {
             logger.Debug("On_Script_Finished: " + Node.Name + " Script:" + ScriptName + " Finished, Form name:" + FormName);
+            string Message = "";
             Transaction txn;
             switch (FormName)
             {
@@ -1241,7 +1247,7 @@ namespace Lilith
                             Node port = NodeManagement.Get(Node.CurrentPosition);
                             if (port != null)
                             {
-                                port.SendCommand(txn);
+                                port.SendCommand(txn, out Message);
 
                                 port.WaitForFinish = false;
                             }
@@ -1297,16 +1303,16 @@ namespace Lilith
                                 switch (each.Type.ToUpper())
                                 {
                                     case "ALIGNER":
-                                        each.ExcuteScript("AlignerInit", "Initialize");
+                                        each.ExcuteScript("AlignerInit", "Initialize", out Message);
                                         break;
                                     case "LOADPORT":
                                         if (each.WaferSize.Equals("200MM"))
                                         {
-                                            each.ExcuteScript("LoadPortInit200MM", "Initialize");
+                                            each.ExcuteScript("LoadPortInit200MM", "Initialize", out Message);
                                         }
                                         else
                                         {
-                                            each.ExcuteScript("LoadPortInit", "Initialize");
+                                            each.ExcuteScript("LoadPortInit", "Initialize", out Message);
                                         }
                                         break;
                                 }
@@ -1327,7 +1333,7 @@ namespace Lilith
                                 txn = new Transaction();
                                 txn.Method = Transaction.Command.LoadPortType.ReadStatus;
                                 txn.FormName = "InitialFinish";
-                                EachPort.SendCommand(txn);
+                                EachPort.SendCommand(txn, out Message);
 
                             }
                             EachPort.JobList.Clear();
