@@ -171,7 +171,7 @@ namespace Lilith.UI_Update.Monitoring
                             RouteControl.DIO.SetBlink("ORANGE", "True");
                         }
 
-                        RouteControl.DIO.SetIO(Params);
+                        //RouteControl.DIO.SetIO(Params);
                     }
 
                 }
