@@ -458,7 +458,7 @@ namespace Lilith
                     switch (Node.Type)
                     {
                         case "LOADPORT":
-                            if (!Txn.CommandType.Equals("MOV"))
+                            if (!Txn.CommandType.Equals("MOV") && !Txn.CommandType.Equals("HCS"))
                             {
                                 ManualPortStatusUpdate.LockUI(false);
                             }

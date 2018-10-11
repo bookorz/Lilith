@@ -15,7 +15,7 @@ using TransferControl.Management;
 
 namespace GUI
 {
-    
+
     public partial class FormManual : Form
     {
         private string ActiveAligner { get; set; }
@@ -37,11 +37,22 @@ namespace GUI
         {
             foreach (Node port in NodeManagement.GetLoadPortList())
             {
-                if (Cb_LoadPortSelect.Text.Equals(""))
+                if (port.Brand.ToUpper().Equals("ASYST"))
                 {
-                    Cb_LoadPortSelect.Text = port.Name;
+                    if (Cb_SMIFSelect.Text.Equals(""))
+                    {
+                        Cb_SMIFSelect.Text = port.Name;
+                    }
+                    Cb_SMIFSelect.Items.Add(port.Name);
                 }
-                Cb_LoadPortSelect.Items.Add(port.Name);
+                else if (port.Brand.ToUpper().Equals("TDK"))
+                {
+                    if (Cb_LoadPortSelect.Text.Equals(""))
+                    {
+                        Cb_LoadPortSelect.Text = port.Name;
+                    }
+                    Cb_LoadPortSelect.Items.Add(port.Name);
+                }
             }
             ManualPortStatusUpdate.UpdateMapping(Cb_LoadPortSelect.Text, "?????????????????????????");
         }
@@ -52,6 +63,8 @@ namespace GUI
             Node port = NodeManagement.Get(Cb_LoadPortSelect.Text);
             Transaction txn = new Transaction();
             txn.FormName = "FormManual";
+            Dictionary<string, string> param = new Dictionary<string, string>();
+
             if (port == null)
             {
                 MessageBox.Show(Cb_LoadPortSelect.Text + " can't found!");
@@ -60,6 +73,15 @@ namespace GUI
             Button btn = (Button)sender;
             switch (btn.Name)
             {
+                case "SMIF_Open_bt":
+                    txn.Method = Transaction.Command.LoadPortType.MappingLoad;
+                    break;
+                case "SMIF_Stage_bt":
+                    txn.Method = Transaction.Command.LoadPortType.Load;
+                    break;
+                case "SMIF_Close_bt":
+                    txn.Method = Transaction.Command.LoadPortType.Unload;
+                    break;
                 case "Btn_LOAD_A":
                     if (ChkWithSlotMap_A.Checked)
                     {
@@ -81,6 +103,7 @@ namespace GUI
                     }
                     break;
                 case "Btn_Reset_A":
+                case "SMIF_Reset_bt":
                     txn.Method = Transaction.Command.LoadPortType.Reset;
                     break;
                 case "Btn_Initialize_A":
@@ -90,10 +113,13 @@ namespace GUI
                     txn.Method = Transaction.Command.LoadPortType.ForceInitialPos;
                     break;
                 case "Btn_UnClamp_A":
+                case "SMIF_UnLock_bt":
                     txn.Method = Transaction.Command.LoadPortType.UnClamp;
                     break;
                 case "Btn_Clamp_A":
+                case "SMIF_Lock_bt":
                     txn.Method = Transaction.Command.LoadPortType.Clamp;
+                    param.Add("@Target", Cb_LoadPortSelect.Text);
                     break;
                 case "Btn_UnDock_A":
                     txn.Method = Transaction.Command.LoadPortType.UnDock;
@@ -129,9 +155,11 @@ namespace GUI
                     txn.Method = Transaction.Command.LoadPortType.GetLED;
                     break;
                 case "Btn_ReadVersion_A":
+                case "SMIF_ReadVersion_bt":
                     txn.Method = Transaction.Command.LoadPortType.ReadVersion;
                     break;
                 case "Btn_ReadStatus_A":
+                case "SMIF_ReadStatus_bt":
                     txn.Method = Transaction.Command.LoadPortType.ReadStatus;
                     break;
                 case "Btn_Map_A":
@@ -156,7 +184,8 @@ namespace GUI
             if (!txn.Method.Equals(""))
             {
                 ManualPortStatusUpdate.LockUI(true);
-                port.SendCommand(txn, out Message);
+                //port.SendCommand(txn, out Message);
+                TaskJobManagment.Excute("FormManual", out Message, txn.Method);
             }
             else
             {
@@ -270,7 +299,7 @@ namespace GUI
                     SetFormEnable(true);
                     return;
                 case "btnDisConn":
-                   // ControllerManagement.Get(aligner.Controller).Close();
+                    // ControllerManagement.Get(aligner.Controller).Close();
                     aligner.State = "";
                     SetFormEnable(false);
                     Thread.Sleep(500);//暫解
@@ -314,7 +343,7 @@ namespace GUI
                     txns[0].Method = Transaction.Command.AlignerType.Reset;
                     break;
                 case "btnAlign":
-                    txns[0].Method = Transaction.Command.AlignerType.Align;                   
+                    txns[0].Method = Transaction.Command.AlignerType.Align;
                     txns[0].Value = angle;
                     break;
                 case "btnChgMode":
@@ -367,7 +396,7 @@ namespace GUI
             string Message = "";
             Boolean isRobotActive = false;
             Button btn = (Button)sender;
-            String nodeName = null ;
+            String nodeName = null;
             if (tbcManual.SelectedTab.Text.Equals("Robot"))
             {
                 isRobotActive = true;
@@ -389,7 +418,7 @@ namespace GUI
                     }
                     else
                     {
-                        txn.Method = isRobotActive ? Transaction.Command.RobotType.Stop: Transaction.Command.AlignerType.Stop;
+                        txn.Method = isRobotActive ? Transaction.Command.RobotType.Stop : Transaction.Command.AlignerType.Stop;
                         //txn.Value = "0";//減速停止
                         txn.Value = "1";//立即停止
                         SetFormEnable(true);
@@ -431,17 +460,17 @@ namespace GUI
 
             if (EightInch_rb.Checked)
             {
-                if(cbRA1Arm.Text.Equals("Both") || cbRA2Arm.Text.Equals("Both"))
+                if (cbRA1Arm.Text.Equals("Both") || cbRA2Arm.Text.Equals("Both"))
                 {
                     MessageBox.Show("200MM not surport Both arm.", "Error");
                     return;
                 }
             }
-            
+
             String nodeName = rbR1.Checked ? "ROBOT01" : "ROBOT02";
             Node robot = NodeManagement.Get(nodeName);
             Transaction[] txns = new Transaction[1];
-            
+
             txns[0] = new Transaction();
             txns[0].FormName = "FormManual";
             SetFormEnable(false);
@@ -449,7 +478,8 @@ namespace GUI
             if (EightInch_rb.Checked)
             {
                 WaferSize = "200MM";
-            }else if (TwelveInch_rb.Checked)
+            }
+            else if (TwelveInch_rb.Checked)
             {
                 WaferSize = "300MM";
             }
@@ -513,9 +543,9 @@ namespace GUI
                     isRobotMoveUp = false;//Put option 1
                     break;
                 case "btnRHome":
-                    if(robot.Brand.ToUpper().Equals("SANWA"))
+                    if (robot.Brand.ToUpper().Equals("SANWA"))
                         txns[0].Method = Transaction.Command.RobotType.RobotHomeSafety;//20180607 RobotHome => RobotHomeSafety
-                    else 
+                    else
                         txns[0].Method = Transaction.Command.RobotType.RobotHomeA;//Kawasaki home A
                     isRobotMoveDown = false;//Get option 1
                     isRobotMoveUp = false;//Put option 1
@@ -620,7 +650,7 @@ namespace GUI
                     txns[0].Value = Convert.ToString(cbRMode.SelectedIndex);
                     break;
                 case "btnRPutPut":
-                    if(GetScriptVar() == null)
+                    if (GetScriptVar() == null)
                     {
                         MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
                         return;
@@ -642,7 +672,7 @@ namespace GUI
                         return;
                     }
                 case "btnRGetPut":
-        
+
                     if (GetScriptVar() == null)
                     {
                         MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
@@ -654,7 +684,7 @@ namespace GUI
                         return;
                     }
                 case "btnRPutGet":
-                
+
                     if (GetScriptVar() == null)
                     {
                         MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
@@ -686,14 +716,14 @@ namespace GUI
             {
                 MessageBox.Show("Command is empty!");
             }
-            SetFormEnable(false); 
+            SetFormEnable(false);
             Update_Manual_Status();// steven mark test
         }
 
         private Dictionary<string, string> GetScriptVar()
         {
             Dictionary<string, string> vars = new Dictionary<string, string>();
-            if(cbRA1Arm.SelectedIndex  < 0 || cbRA1Slot.SelectedIndex < 0 || cbRA1Point.SelectedIndex < 0)
+            if (cbRA1Arm.SelectedIndex < 0 || cbRA1Slot.SelectedIndex < 0 || cbRA1Point.SelectedIndex < 0)
             {
                 return null;
             }
@@ -751,7 +781,7 @@ namespace GUI
             //向Aligner 詢問狀態
             if (!tbA1Status.Text.Equals("N/A") && !tbA1Status.Text.Equals("Disconnected") && !tbA1Status.Text.Equals(""))
             {
-                String script_name = aligner1.Brand.ToUpper().Equals("SANWA")?"AlignerStateGet":"AlignerStateGet(Kawasaki)";
+                String script_name = aligner1.Brand.ToUpper().Equals("SANWA") ? "AlignerStateGet" : "AlignerStateGet(Kawasaki)";
                 aligner1.ExcuteScript(script_name, "FormManual", out Message); ;//連線狀態下才執行
             }
             if (!tbA2Status.Text.Equals("N/A") && !tbA2Status.Text.Equals("Disconnected") && !tbA2Status.Text.Equals(""))
@@ -767,7 +797,7 @@ namespace GUI
             if (node == null)
                 return;
             string status = node.State != "" ? node.State : "N/A";
-            string ctrl_status = ControllerManagement.Get(node.Controller) != null? ControllerManagement.Get(node.Controller).Status : "N/A";
+            string ctrl_status = ControllerManagement.Get(node.Controller) != null ? ControllerManagement.Get(node.Controller).Status : "N/A";
             //string ctrl_status = ControllerManagement.Get(node.Controller).Status;
             if (!ctrl_status.Equals("Connected"))
             {
@@ -867,6 +897,74 @@ namespace GUI
         private void tableLayoutPanel23_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void SmifFunction_Click(object sender, EventArgs e)
+        {
+            string Message = "";
+            Node port = NodeManagement.Get(Cb_SMIFSelect.Text);
+            string TaskName = "";
+            Dictionary<string, string> param = new Dictionary<string, string>();
+
+            if (port == null)
+            {
+                MessageBox.Show(Cb_SMIFSelect.Text + " can't found!");
+                return;
+            }
+            Button btn = (Button)sender;
+            switch (btn.Name)
+            {
+                case "SMIF_Initial_bt":
+                    TaskName = "LOADPORT_ORGSH";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_Open_bt":
+                    TaskName = "OPEN";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_Stage_bt":
+                    TaskName = "OPEN_NO_MAP";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_Close_bt":
+                    TaskName = "UNLOCK";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_Reset_bt":
+
+                    TaskName = "SET_LOADPORT_ERROR";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_UnLock_bt":
+                    TaskName = "UNLOCK";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_Lock_bt":
+                    TaskName = "LOCK";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                //case "SMIF_ReadVersion_bt":
+                //    TaskName = "GET_MAPDT";
+                //    param.Add("@Target", Cb_SMIFSelect.Text);
+                //    break;
+                case "SMIF_ReadStatus_bt":
+                    TaskName = "LOADPORT_Init";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_ReadMap_bt":
+                    TaskName = "GET_MAPDT";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+            }
+
+            ManualPortStatusUpdate.LockUI(true);
+            //port.SendCommand(txn, out Message);
+            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+        }
+
+        private void SMIF_ClearMap_bt_Click(object sender, EventArgs e)
+        {
+            ManualPortStatusUpdate.UpdateMapping(Cb_LoadPortSelect.Text, "?????????????????????????");
         }
     }
 }
