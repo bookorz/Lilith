@@ -457,10 +457,23 @@ namespace Lilith
                 case "FormManual":
                     switch (Node.Type)
                     {
+                        case "SMARTTAG":
+                            if (!Txn.Method.Equals(Transaction.Command.SmartTagType.GetLCDData))
+                            {
+                                ManualPortStatusUpdate.LockUI(false);
+                            }
+                            break;
                         case "LOADPORT":
                             if (!Txn.CommandType.Equals("MOV") && !Txn.CommandType.Equals("HCS"))
                             {
                                 ManualPortStatusUpdate.LockUI(false);
+                            }
+                            else
+                            {
+                                if (Txn.Method.Equals(Transaction.Command.LoadPortType.Reset))
+                                {
+                                    ManualPortStatusUpdate.LockUI(false);
+                                }
                             }
                             ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Excuted");
                             switch (Txn.Method)
@@ -472,7 +485,7 @@ namespace Lilith
                                     ManualPortStatusUpdate.UpdateLED(Node.Name, Msg.Value);
                                     break;
                                 case Transaction.Command.LoadPortType.ReadStatus:
-                                    ManualPortStatusUpdate.UpdateStatus(Node.Name, Msg.Value);
+                                    ManualPortStatusUpdate.UpdateSmifStatus(Node.Name, Msg.Value);
                                     break;
                                 case Transaction.Command.LoadPortType.GetCount:
 
@@ -730,6 +743,15 @@ namespace Lilith
 
                     switch (Node.Type)
                     {
+                        case "SMARTTAG":
+                            switch (Txn.Method)
+                            {
+                                case Transaction.Command.SmartTagType.GetLCDData:
+                                    ManualPortStatusUpdate.UpdateID(Msg.Value);
+                                    break;
+                            }
+                            ManualPortStatusUpdate.LockUI(false);
+                            break;
                         case "LOADPORT":
 
                             ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Finished");

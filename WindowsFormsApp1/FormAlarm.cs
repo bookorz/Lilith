@@ -38,7 +38,7 @@ namespace Lilith
 
             foreach (Node node in NodeManagement.GetList())
             {
-                node.State = node.LastState;
+                node.HasAlarm = false;
             }
 
             var NodeList = AlarmManagement.GetAll().GroupBy(t => t.NodeName);
