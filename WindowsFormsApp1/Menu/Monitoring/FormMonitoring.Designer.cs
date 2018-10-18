@@ -29,15 +29,34 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
-            this.TRANSREQ_ck = new System.Windows.Forms.CheckBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.MAPDT_ck = new System.Windows.Forms.CheckBox();
-            this.FFU_ck = new System.Windows.Forms.CheckBox();
-            this.PRS_ck = new System.Windows.Forms.CheckBox();
-            this.PORT_ck = new System.Windows.Forms.CheckBox();
             this.SYSTEM_ck = new System.Windows.Forms.CheckBox();
-            this.ResetInterface = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ConnectStatus_lb = new System.Windows.Forms.Label();
+            this.PORT_ck = new System.Windows.Forms.CheckBox();
+            this.PRS_ck = new System.Windows.Forms.CheckBox();
+            this.FFU_ck = new System.Windows.Forms.CheckBox();
+            this.TRANSREQ_ck = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.LOADLOCK01_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.LoadLock01_Slot_1 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LOADLOCK02_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.LoadLock02_Slot_1 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.LoadPort04_Mode = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.LoadPort03_Mode = new System.Windows.Forms.Label();
@@ -151,34 +170,12 @@
             this.LoadPort03_FID = new System.Windows.Forms.TextBox();
             this.label169 = new System.Windows.Forms.Label();
             this.Log_rt = new System.Windows.Forms.RichTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.NotchDirect_cb = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.WPH = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.LoadPort02_Mode = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.LoadPort01_Mode = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.OCR01_Pic = new System.Windows.Forms.PictureBox();
-            this.OCR01Read_Tb = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.OCR02_Pic = new System.Windows.Forms.PictureBox();
-            this.OCR02Read_Tb = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.Aligner01_Slot_1 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.Robot01_Slot_2 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.Robot01_Slot_1 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -288,20 +285,14 @@
             this.LoadPort02_FID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.Robot01_State = new System.Windows.Forms.TextBox();
-            this.Aligner01_State = new System.Windows.Forms.TextBox();
             this.LoadPort01_FID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Aligner01_tb.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OCR01_Pic)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OCR02_Pic)).BeginInit();
-            this.panel6.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.TblPanel_A.SuspendLayout();
@@ -310,14 +301,12 @@
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
-            this.Aligner01_tb.Controls.Add(this.TRANSREQ_ck);
-            this.Aligner01_tb.Controls.Add(this.MAPDT_ck);
-            this.Aligner01_tb.Controls.Add(this.FFU_ck);
-            this.Aligner01_tb.Controls.Add(this.PRS_ck);
-            this.Aligner01_tb.Controls.Add(this.PORT_ck);
-            this.Aligner01_tb.Controls.Add(this.SYSTEM_ck);
-            this.Aligner01_tb.Controls.Add(this.ResetInterface);
-            this.Aligner01_tb.Controls.Add(this.groupBox1);
+            this.Aligner01_tb.Controls.Add(this.label54);
+            this.Aligner01_tb.Controls.Add(this.panel3);
+            this.Aligner01_tb.Controls.Add(this.label1);
+            this.Aligner01_tb.Controls.Add(this.panel1);
+            this.Aligner01_tb.Controls.Add(this.label17);
+            this.Aligner01_tb.Controls.Add(this.panel2);
             this.Aligner01_tb.Controls.Add(this.LoadPort04_Mode);
             this.Aligner01_tb.Controls.Add(this.label7);
             this.Aligner01_tb.Controls.Add(this.LoadPort03_Mode);
@@ -331,19 +320,10 @@
             this.Aligner01_tb.Controls.Add(this.LoadPort03_FID);
             this.Aligner01_tb.Controls.Add(this.label169);
             this.Aligner01_tb.Controls.Add(this.Log_rt);
-            this.Aligner01_tb.Controls.Add(this.label3);
-            this.Aligner01_tb.Controls.Add(this.NotchDirect_cb);
-            this.Aligner01_tb.Controls.Add(this.panel5);
             this.Aligner01_tb.Controls.Add(this.LoadPort02_Mode);
             this.Aligner01_tb.Controls.Add(this.label26);
             this.Aligner01_tb.Controls.Add(this.LoadPort01_Mode);
             this.Aligner01_tb.Controls.Add(this.label16);
-            this.Aligner01_tb.Controls.Add(this.label1);
-            this.Aligner01_tb.Controls.Add(this.panel2);
-            this.Aligner01_tb.Controls.Add(this.label15);
-            this.Aligner01_tb.Controls.Add(this.panel1);
-            this.Aligner01_tb.Controls.Add(this.label18);
-            this.Aligner01_tb.Controls.Add(this.panel6);
             this.Aligner01_tb.Controls.Add(this.label20);
             this.Aligner01_tb.Controls.Add(this.panel4);
             this.Aligner01_tb.Controls.Add(this.tableLayoutPanel1);
@@ -353,7 +333,6 @@
             this.Aligner01_tb.Controls.Add(this.LoadPort02_FID);
             this.Aligner01_tb.Controls.Add(this.label2);
             this.Aligner01_tb.Controls.Add(this.Robot01_State);
-            this.Aligner01_tb.Controls.Add(this.Aligner01_State);
             this.Aligner01_tb.Controls.Add(this.LoadPort01_FID);
             this.Aligner01_tb.Controls.Add(this.label9);
             this.Aligner01_tb.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -361,26 +340,40 @@
             this.Aligner01_tb.ForeColor = System.Drawing.Color.Black;
             this.Aligner01_tb.Location = new System.Drawing.Point(0, 0);
             this.Aligner01_tb.Name = "Aligner01_tb";
-            this.Aligner01_tb.Size = new System.Drawing.Size(1460, 760);
+            this.Aligner01_tb.Size = new System.Drawing.Size(1620, 760);
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
             // 
-            // TRANSREQ_ck
+            // label54
             // 
-            this.TRANSREQ_ck.AutoSize = true;
-            this.TRANSREQ_ck.Location = new System.Drawing.Point(1301, 610);
-            this.TRANSREQ_ck.Name = "TRANSREQ_ck";
-            this.TRANSREQ_ck.Size = new System.Drawing.Size(82, 19);
-            this.TRANSREQ_ck.TabIndex = 196;
-            this.TRANSREQ_ck.Text = "TRANSREQ";
-            this.TRANSREQ_ck.UseVisualStyleBackColor = true;
-            this.TRANSREQ_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.ForeColor = System.Drawing.Color.Black;
+            this.label54.Location = new System.Drawing.Point(871, 547);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(54, 19);
+            this.label54.TabIndex = 203;
+            this.label54.Text = "EVENT";
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.MAPDT_ck);
+            this.panel3.Controls.Add(this.SYSTEM_ck);
+            this.panel3.Controls.Add(this.PORT_ck);
+            this.panel3.Controls.Add(this.PRS_ck);
+            this.panel3.Controls.Add(this.FFU_ck);
+            this.panel3.Controls.Add(this.TRANSREQ_ck);
+            this.panel3.Location = new System.Drawing.Point(858, 558);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(114, 177);
+            this.panel3.TabIndex = 204;
             // 
             // MAPDT_ck
             // 
             this.MAPDT_ck.AutoSize = true;
-            this.MAPDT_ck.Location = new System.Drawing.Point(1301, 585);
+            this.MAPDT_ck.Location = new System.Drawing.Point(16, 22);
             this.MAPDT_ck.Name = "MAPDT_ck";
             this.MAPDT_ck.Size = new System.Drawing.Size(61, 19);
             this.MAPDT_ck.TabIndex = 195;
@@ -388,43 +381,10 @@
             this.MAPDT_ck.UseVisualStyleBackColor = true;
             this.MAPDT_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
             // 
-            // FFU_ck
-            // 
-            this.FFU_ck.AutoSize = true;
-            this.FFU_ck.Location = new System.Drawing.Point(1301, 708);
-            this.FFU_ck.Name = "FFU_ck";
-            this.FFU_ck.Size = new System.Drawing.Size(47, 19);
-            this.FFU_ck.TabIndex = 194;
-            this.FFU_ck.Text = "FFU";
-            this.FFU_ck.UseVisualStyleBackColor = true;
-            this.FFU_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
-            // 
-            // PRS_ck
-            // 
-            this.PRS_ck.AutoSize = true;
-            this.PRS_ck.Location = new System.Drawing.Point(1301, 683);
-            this.PRS_ck.Name = "PRS_ck";
-            this.PRS_ck.Size = new System.Drawing.Size(47, 19);
-            this.PRS_ck.TabIndex = 193;
-            this.PRS_ck.Text = "PRS";
-            this.PRS_ck.UseVisualStyleBackColor = true;
-            this.PRS_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
-            // 
-            // PORT_ck
-            // 
-            this.PORT_ck.AutoSize = true;
-            this.PORT_ck.Location = new System.Drawing.Point(1301, 658);
-            this.PORT_ck.Name = "PORT_ck";
-            this.PORT_ck.Size = new System.Drawing.Size(54, 19);
-            this.PORT_ck.TabIndex = 192;
-            this.PORT_ck.Text = "PORT";
-            this.PORT_ck.UseVisualStyleBackColor = true;
-            this.PORT_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
-            // 
             // SYSTEM_ck
             // 
             this.SYSTEM_ck.AutoSize = true;
-            this.SYSTEM_ck.Location = new System.Drawing.Point(1301, 633);
+            this.SYSTEM_ck.Location = new System.Drawing.Point(16, 70);
             this.SYSTEM_ck.Name = "SYSTEM_ck";
             this.SYSTEM_ck.Size = new System.Drawing.Size(68, 19);
             this.SYSTEM_ck.TabIndex = 191;
@@ -432,37 +392,351 @@
             this.SYSTEM_ck.UseVisualStyleBackColor = true;
             this.SYSTEM_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
             // 
-            // ResetInterface
+            // PORT_ck
             // 
-            this.ResetInterface.Location = new System.Drawing.Point(1466, 64);
-            this.ResetInterface.Name = "ResetInterface";
-            this.ResetInterface.Size = new System.Drawing.Size(75, 23);
-            this.ResetInterface.TabIndex = 190;
-            this.ResetInterface.Text = "Reset";
-            this.ResetInterface.UseVisualStyleBackColor = true;
-            this.ResetInterface.Click += new System.EventHandler(this.ResetInterface_Click);
+            this.PORT_ck.AutoSize = true;
+            this.PORT_ck.Location = new System.Drawing.Point(16, 95);
+            this.PORT_ck.Name = "PORT_ck";
+            this.PORT_ck.Size = new System.Drawing.Size(54, 19);
+            this.PORT_ck.TabIndex = 192;
+            this.PORT_ck.Text = "PORT";
+            this.PORT_ck.UseVisualStyleBackColor = true;
+            this.PORT_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
             // 
-            // groupBox1
+            // PRS_ck
             // 
-            this.groupBox1.Controls.Add(this.ConnectStatus_lb);
-            this.groupBox1.Location = new System.Drawing.Point(1328, 50);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(132, 41);
-            this.groupBox1.TabIndex = 189;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "上位系統連線";
+            this.PRS_ck.AutoSize = true;
+            this.PRS_ck.Location = new System.Drawing.Point(16, 120);
+            this.PRS_ck.Name = "PRS_ck";
+            this.PRS_ck.Size = new System.Drawing.Size(47, 19);
+            this.PRS_ck.TabIndex = 193;
+            this.PRS_ck.Text = "PRS";
+            this.PRS_ck.UseVisualStyleBackColor = true;
+            this.PRS_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
             // 
-            // ConnectStatus_lb
+            // FFU_ck
             // 
-            this.ConnectStatus_lb.AutoSize = true;
-            this.ConnectStatus_lb.BackColor = System.Drawing.Color.Red;
-            this.ConnectStatus_lb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ConnectStatus_lb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConnectStatus_lb.Location = new System.Drawing.Point(6, 18);
-            this.ConnectStatus_lb.MinimumSize = new System.Drawing.Size(120, 9);
-            this.ConnectStatus_lb.Name = "ConnectStatus_lb";
-            this.ConnectStatus_lb.Size = new System.Drawing.Size(120, 17);
-            this.ConnectStatus_lb.TabIndex = 1;
+            this.FFU_ck.AutoSize = true;
+            this.FFU_ck.Location = new System.Drawing.Point(16, 145);
+            this.FFU_ck.Name = "FFU_ck";
+            this.FFU_ck.Size = new System.Drawing.Size(47, 19);
+            this.FFU_ck.TabIndex = 194;
+            this.FFU_ck.Text = "FFU";
+            this.FFU_ck.UseVisualStyleBackColor = true;
+            this.FFU_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // TRANSREQ_ck
+            // 
+            this.TRANSREQ_ck.AutoSize = true;
+            this.TRANSREQ_ck.Location = new System.Drawing.Point(16, 47);
+            this.TRANSREQ_ck.Name = "TRANSREQ_ck";
+            this.TRANSREQ_ck.Size = new System.Drawing.Size(82, 19);
+            this.TRANSREQ_ck.TabIndex = 196;
+            this.TRANSREQ_ck.Text = "TRANSREQ";
+            this.TRANSREQ_ck.UseVisualStyleBackColor = true;
+            this.TRANSREQ_ck.CheckedChanged += new System.EventHandler(this.Events_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(871, 193);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 19);
+            this.label1.TabIndex = 201;
+            this.label1.Text = "BF1";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.ARM_NOT_EXTEND_LOADLOCK01_signal);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.LOADLOCK01_DOOR_OPEN_Signal);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.LoadLock01_Slot_1);
+            this.panel1.Controls.Add(this.label50);
+            this.panel1.Location = new System.Drawing.Point(858, 204);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(284, 116);
+            this.panel1.TabIndex = 202;
+            // 
+            // ARM_NOT_EXTEND_LOADLOCK01_signal
+            // 
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.BackColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.ForeColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Location = new System.Drawing.Point(124, 88);
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Margin = new System.Windows.Forms.Padding(3);
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Name = "ARM_NOT_EXTEND_LOADLOCK01_signal";
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Size = new System.Drawing.Size(149, 18);
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.TabIndex = 19;
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Tag = "1";
+            this.ARM_NOT_EXTEND_LOADLOCK01_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.Color.DimGray;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label4.Location = new System.Drawing.Point(9, 88);
+            this.label4.Margin = new System.Windows.Forms.Padding(3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 18);
+            this.label4.TabIndex = 18;
+            this.label4.Tag = "1";
+            this.label4.Text = "Arm Not Extend";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LOADLOCK01_ARM_EXTEND_ENABLE_Signal
+            // 
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Name = "LOADLOCK01_ARM_EXTEND_ENABLE_Signal";
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Tag = "1";
+            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.DimGray;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label11.Location = new System.Drawing.Point(9, 64);
+            this.label11.Margin = new System.Windows.Forms.Padding(3);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(109, 18);
+            this.label11.TabIndex = 16;
+            this.label11.Tag = "1";
+            this.label11.Text = "Arm Extend";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LOADLOCK01_DOOR_OPEN_Signal
+            // 
+            this.LOADLOCK01_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
+            this.LOADLOCK01_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LOADLOCK01_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOADLOCK01_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
+            this.LOADLOCK01_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LOADLOCK01_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
+            this.LOADLOCK01_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.LOADLOCK01_DOOR_OPEN_Signal.Name = "LOADLOCK01_DOOR_OPEN_Signal";
+            this.LOADLOCK01_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
+            this.LOADLOCK01_DOOR_OPEN_Signal.TabIndex = 15;
+            this.LOADLOCK01_DOOR_OPEN_Signal.Tag = "1";
+            this.LOADLOCK01_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            this.label15.BackColor = System.Drawing.Color.DimGray;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label15.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label15.Location = new System.Drawing.Point(9, 40);
+            this.label15.Margin = new System.Windows.Forms.Padding(3);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(109, 18);
+            this.label15.TabIndex = 14;
+            this.label15.Tag = "1";
+            this.label15.Text = "Door Open";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadLock01_Slot_1
+            // 
+            this.LoadLock01_Slot_1.BackColor = System.Drawing.Color.White;
+            this.LoadLock01_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadLock01_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadLock01_Slot_1.ForeColor = System.Drawing.Color.White;
+            this.LoadLock01_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadLock01_Slot_1.Location = new System.Drawing.Point(124, 16);
+            this.LoadLock01_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadLock01_Slot_1.Name = "LoadLock01_Slot_1";
+            this.LoadLock01_Slot_1.Size = new System.Drawing.Size(149, 18);
+            this.LoadLock01_Slot_1.TabIndex = 13;
+            this.LoadLock01_Slot_1.Tag = "1";
+            this.LoadLock01_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label50
+            // 
+            this.label50.BackColor = System.Drawing.Color.DimGray;
+            this.label50.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label50.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label50.ForeColor = System.Drawing.Color.White;
+            this.label50.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label50.Location = new System.Drawing.Point(9, 16);
+            this.label50.Margin = new System.Windows.Forms.Padding(3);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(109, 18);
+            this.label50.TabIndex = 12;
+            this.label50.Tag = "1";
+            this.label50.Text = "Presence";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(871, 351);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(36, 19);
+            this.label17.TabIndex = 199;
+            this.label17.Text = "BF2";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.ARM_NOT_EXTEND_LOADLOCK02_signal);
+            this.panel2.Controls.Add(this.label42);
+            this.panel2.Controls.Add(this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Controls.Add(this.LOADLOCK02_DOOR_OPEN_Signal);
+            this.panel2.Controls.Add(this.label28);
+            this.panel2.Controls.Add(this.LoadLock02_Slot_1);
+            this.panel2.Controls.Add(this.label34);
+            this.panel2.Location = new System.Drawing.Point(858, 362);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(284, 116);
+            this.panel2.TabIndex = 200;
+            // 
+            // ARM_NOT_EXTEND_LOADLOCK02_signal
+            // 
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.BackColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.ForeColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Location = new System.Drawing.Point(124, 88);
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Margin = new System.Windows.Forms.Padding(3);
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Name = "ARM_NOT_EXTEND_LOADLOCK02_signal";
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Size = new System.Drawing.Size(149, 18);
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.TabIndex = 19;
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Tag = "1";
+            this.ARM_NOT_EXTEND_LOADLOCK02_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.BackColor = System.Drawing.Color.DimGray;
+            this.label42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label42.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label42.ForeColor = System.Drawing.Color.White;
+            this.label42.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label42.Location = new System.Drawing.Point(9, 88);
+            this.label42.Margin = new System.Windows.Forms.Padding(3);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(109, 18);
+            this.label42.TabIndex = 18;
+            this.label42.Tag = "1";
+            this.label42.Text = "Arm Not Extend";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LOADLOCK02_ARM_EXTEND_ENABLE_Signal
+            // 
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Name = "LOADLOCK02_ARM_EXTEND_ENABLE_Signal";
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Tag = "1";
+            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            this.label19.BackColor = System.Drawing.Color.DimGray;
+            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label19.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label19.Location = new System.Drawing.Point(9, 64);
+            this.label19.Margin = new System.Windows.Forms.Padding(3);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(109, 18);
+            this.label19.TabIndex = 16;
+            this.label19.Tag = "1";
+            this.label19.Text = "Arm Extend";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LOADLOCK02_DOOR_OPEN_Signal
+            // 
+            this.LOADLOCK02_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
+            this.LOADLOCK02_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LOADLOCK02_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LOADLOCK02_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
+            this.LOADLOCK02_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LOADLOCK02_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
+            this.LOADLOCK02_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.LOADLOCK02_DOOR_OPEN_Signal.Name = "LOADLOCK02_DOOR_OPEN_Signal";
+            this.LOADLOCK02_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
+            this.LOADLOCK02_DOOR_OPEN_Signal.TabIndex = 15;
+            this.LOADLOCK02_DOOR_OPEN_Signal.Tag = "1";
+            this.LOADLOCK02_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label28
+            // 
+            this.label28.BackColor = System.Drawing.Color.DimGray;
+            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label28.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label28.Location = new System.Drawing.Point(9, 40);
+            this.label28.Margin = new System.Windows.Forms.Padding(3);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(109, 18);
+            this.label28.TabIndex = 14;
+            this.label28.Tag = "1";
+            this.label28.Text = "Door Open";
+            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LoadLock02_Slot_1
+            // 
+            this.LoadLock02_Slot_1.BackColor = System.Drawing.Color.White;
+            this.LoadLock02_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LoadLock02_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadLock02_Slot_1.ForeColor = System.Drawing.Color.White;
+            this.LoadLock02_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.LoadLock02_Slot_1.Location = new System.Drawing.Point(124, 16);
+            this.LoadLock02_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.LoadLock02_Slot_1.Name = "LoadLock02_Slot_1";
+            this.LoadLock02_Slot_1.Size = new System.Drawing.Size(149, 18);
+            this.LoadLock02_Slot_1.TabIndex = 13;
+            this.LoadLock02_Slot_1.Tag = "1";
+            this.LoadLock02_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label34
+            // 
+            this.label34.BackColor = System.Drawing.Color.DimGray;
+            this.label34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label34.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label34.ForeColor = System.Drawing.Color.White;
+            this.label34.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label34.Location = new System.Drawing.Point(9, 16);
+            this.label34.Margin = new System.Windows.Forms.Padding(3);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(109, 18);
+            this.label34.TabIndex = 12;
+            this.label34.Tag = "1";
+            this.label34.Text = "Presence";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoadPort04_Mode
             // 
@@ -2363,7 +2637,7 @@
             this.LoadPort04_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort04_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort04_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort04_State.Location = new System.Drawing.Point(567, 97);
+            this.LoadPort04_State.Location = new System.Drawing.Point(566, 97);
             this.LoadPort04_State.Name = "LoadPort04_State";
             this.LoadPort04_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort04_State.TabIndex = 182;
@@ -2377,7 +2651,7 @@
             this.LoadPort03_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort03_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort03_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort03_State.Location = new System.Drawing.Point(385, 97);
+            this.LoadPort03_State.Location = new System.Drawing.Point(384, 97);
             this.LoadPort03_State.Name = "LoadPort03_State";
             this.LoadPort03_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort03_State.TabIndex = 181;
@@ -2442,121 +2716,11 @@
             // 
             // Log_rt
             // 
-            this.Log_rt.Location = new System.Drawing.Point(783, 498);
+            this.Log_rt.Location = new System.Drawing.Point(1189, 62);
             this.Log_rt.Name = "Log_rt";
-            this.Log_rt.Size = new System.Drawing.Size(405, 238);
+            this.Log_rt.Size = new System.Drawing.Size(405, 673);
             this.Log_rt.TabIndex = 176;
             this.Log_rt.Text = "";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1213, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 15);
-            this.label3.TabIndex = 175;
-            this.label3.Text = "Foup Notch方向";
-            // 
-            // NotchDirect_cb
-            // 
-            this.NotchDirect_cb.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.NotchDirect_cb.FormattingEnabled = true;
-            this.NotchDirect_cb.Items.AddRange(new object[] {
-            "朝前",
-            "朝右",
-            "朝左",
-            "朝後"});
-            this.NotchDirect_cb.Location = new System.Drawing.Point(1338, 198);
-            this.NotchDirect_cb.Name = "NotchDirect_cb";
-            this.NotchDirect_cb.Size = new System.Drawing.Size(121, 23);
-            this.NotchDirect_cb.TabIndex = 174;
-            this.NotchDirect_cb.Text = "朝後";
-            this.NotchDirect_cb.TextChanged += new System.EventHandler(this.NotchDirect_cb_TextChanged);
-            // 
-            // panel5
-            // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.panel3);
-            this.panel5.Controls.Add(this.WPH);
-            this.panel5.Controls.Add(this.label32);
-            this.panel5.Location = new System.Drawing.Point(1282, 518);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(177, 40);
-            this.panel5.TabIndex = 170;
-            // 
-            // panel3
-            // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Location = new System.Drawing.Point(-1, -1);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(177, 40);
-            this.panel3.TabIndex = 171;
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Navy;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(63, 12);
-            this.label4.Margin = new System.Windows.Forms.Padding(3);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 18);
-            this.label4.TabIndex = 17;
-            this.label4.Tag = "1";
-            this.label4.Text = "0";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.DimGray;
-            this.label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label8.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(9, 12);
-            this.label8.Margin = new System.Windows.Forms.Padding(3);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 18);
-            this.label8.TabIndex = 16;
-            this.label8.Tag = "1";
-            this.label8.Text = "WPH";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // WPH
-            // 
-            this.WPH.BackColor = System.Drawing.Color.Navy;
-            this.WPH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.WPH.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WPH.ForeColor = System.Drawing.Color.White;
-            this.WPH.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.WPH.Location = new System.Drawing.Point(63, 12);
-            this.WPH.Margin = new System.Windows.Forms.Padding(3);
-            this.WPH.Name = "WPH";
-            this.WPH.Size = new System.Drawing.Size(104, 18);
-            this.WPH.TabIndex = 17;
-            this.WPH.Tag = "1";
-            this.WPH.Text = "0";
-            this.WPH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label32
-            // 
-            this.label32.BackColor = System.Drawing.Color.DimGray;
-            this.label32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label32.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label32.Location = new System.Drawing.Point(9, 12);
-            this.label32.Margin = new System.Windows.Forms.Padding(3);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(48, 18);
-            this.label32.TabIndex = 16;
-            this.label32.Tag = "1";
-            this.label32.Text = "WPH";
-            this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LoadPort02_Mode
             // 
@@ -2620,146 +2784,12 @@
             this.label16.Text = "Mode";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(803, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 19);
-            this.label1.TabIndex = 153;
-            this.label1.Text = "OCR1";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.OCR01_Pic);
-            this.panel2.Controls.Add(this.OCR01Read_Tb);
-            this.panel2.Location = new System.Drawing.Point(783, 40);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(405, 203);
-            this.panel2.TabIndex = 152;
-            // 
-            // OCR01_Pic
-            // 
-            this.OCR01_Pic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.OCR01_Pic.ImageLocation = "";
-            this.OCR01_Pic.Location = new System.Drawing.Point(14, 9);
-            this.OCR01_Pic.Name = "OCR01_Pic";
-            this.OCR01_Pic.Size = new System.Drawing.Size(375, 150);
-            this.OCR01_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.OCR01_Pic.TabIndex = 1;
-            this.OCR01_Pic.TabStop = false;
-            this.OCR01_Pic.DoubleClick += new System.EventHandler(this.OCR01_Pic_DoubleClick);
-            // 
-            // OCR01Read_Tb
-            // 
-            this.OCR01Read_Tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OCR01Read_Tb.Location = new System.Drawing.Point(106, 169);
-            this.OCR01Read_Tb.Name = "OCR01Read_Tb";
-            this.OCR01Read_Tb.Size = new System.Drawing.Size(215, 16);
-            this.OCR01Read_Tb.TabIndex = 0;
-            this.OCR01Read_Tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(803, 255);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 19);
-            this.label15.TabIndex = 151;
-            this.label15.Text = "OCR2";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.OCR02_Pic);
-            this.panel1.Controls.Add(this.OCR02Read_Tb);
-            this.panel1.Location = new System.Drawing.Point(783, 268);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(405, 203);
-            this.panel1.TabIndex = 147;
-            // 
-            // OCR02_Pic
-            // 
-            this.OCR02_Pic.Location = new System.Drawing.Point(14, 9);
-            this.OCR02_Pic.Name = "OCR02_Pic";
-            this.OCR02_Pic.Size = new System.Drawing.Size(375, 150);
-            this.OCR02_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.OCR02_Pic.TabIndex = 1;
-            this.OCR02_Pic.TabStop = false;
-            this.OCR02_Pic.DoubleClick += new System.EventHandler(this.OCR02_Pic_DoubleClick);
-            // 
-            // OCR02Read_Tb
-            // 
-            this.OCR02Read_Tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.OCR02Read_Tb.Location = new System.Drawing.Point(106, 172);
-            this.OCR02Read_Tb.Name = "OCR02Read_Tb";
-            this.OCR02Read_Tb.Size = new System.Drawing.Size(215, 16);
-            this.OCR02Read_Tb.TabIndex = 0;
-            this.OCR02Read_Tb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(1295, 265);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(81, 19);
-            this.label18.TabIndex = 145;
-            this.label18.Text = "Aligner1";
-            // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.Aligner01_Slot_1);
-            this.panel6.Controls.Add(this.label19);
-            this.panel6.Location = new System.Drawing.Point(1282, 279);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(177, 39);
-            this.panel6.TabIndex = 146;
-            // 
-            // Aligner01_Slot_1
-            // 
-            this.Aligner01_Slot_1.BackColor = System.Drawing.Color.White;
-            this.Aligner01_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Aligner01_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Aligner01_Slot_1.ForeColor = System.Drawing.Color.White;
-            this.Aligner01_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Aligner01_Slot_1.Location = new System.Drawing.Point(63, 10);
-            this.Aligner01_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.Aligner01_Slot_1.Name = "Aligner01_Slot_1";
-            this.Aligner01_Slot_1.Size = new System.Drawing.Size(104, 18);
-            this.Aligner01_Slot_1.TabIndex = 11;
-            this.Aligner01_Slot_1.Tag = "1";
-            this.Aligner01_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label19
-            // 
-            this.label19.BackColor = System.Drawing.Color.DimGray;
-            this.label19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label19.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label19.Location = new System.Drawing.Point(9, 10);
-            this.label19.Margin = new System.Windows.Forms.Padding(3);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(48, 18);
-            this.label19.TabIndex = 10;
-            this.label19.Tag = "1";
-            this.label19.Text = "Pres";
-            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(1295, 406);
+            this.label20.Location = new System.Drawing.Point(871, 85);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 19);
             this.label20.TabIndex = 143;
@@ -2768,45 +2798,12 @@
             // panel4
             // 
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.Robot01_Slot_2);
-            this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.Robot01_Slot_1);
             this.panel4.Controls.Add(this.label22);
-            this.panel4.Location = new System.Drawing.Point(1282, 417);
+            this.panel4.Location = new System.Drawing.Point(858, 96);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(177, 67);
+            this.panel4.Size = new System.Drawing.Size(284, 59);
             this.panel4.TabIndex = 144;
-            // 
-            // Robot01_Slot_2
-            // 
-            this.Robot01_Slot_2.BackColor = System.Drawing.Color.White;
-            this.Robot01_Slot_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Robot01_Slot_2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Robot01_Slot_2.ForeColor = System.Drawing.Color.White;
-            this.Robot01_Slot_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Robot01_Slot_2.Location = new System.Drawing.Point(63, 38);
-            this.Robot01_Slot_2.Margin = new System.Windows.Forms.Padding(3);
-            this.Robot01_Slot_2.Name = "Robot01_Slot_2";
-            this.Robot01_Slot_2.Size = new System.Drawing.Size(104, 18);
-            this.Robot01_Slot_2.TabIndex = 15;
-            this.Robot01_Slot_2.Tag = "1";
-            this.Robot01_Slot_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label21
-            // 
-            this.label21.BackColor = System.Drawing.Color.DimGray;
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label21.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label21.Location = new System.Drawing.Point(9, 38);
-            this.label21.Margin = new System.Windows.Forms.Padding(3);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(48, 18);
-            this.label21.TabIndex = 14;
-            this.label21.Tag = "1";
-            this.label21.Text = "Lower";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Robot01_Slot_1
             // 
@@ -2815,10 +2812,10 @@
             this.Robot01_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Robot01_Slot_1.ForeColor = System.Drawing.Color.White;
             this.Robot01_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Robot01_Slot_1.Location = new System.Drawing.Point(63, 13);
+            this.Robot01_Slot_1.Location = new System.Drawing.Point(124, 24);
             this.Robot01_Slot_1.Margin = new System.Windows.Forms.Padding(3);
             this.Robot01_Slot_1.Name = "Robot01_Slot_1";
-            this.Robot01_Slot_1.Size = new System.Drawing.Size(104, 18);
+            this.Robot01_Slot_1.Size = new System.Drawing.Size(149, 18);
             this.Robot01_Slot_1.TabIndex = 13;
             this.Robot01_Slot_1.Tag = "1";
             this.Robot01_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2830,13 +2827,13 @@
             this.label22.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label22.Location = new System.Drawing.Point(9, 13);
+            this.label22.Location = new System.Drawing.Point(9, 24);
             this.label22.Margin = new System.Windows.Forms.Padding(3);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(48, 18);
+            this.label22.Size = new System.Drawing.Size(109, 18);
             this.label22.TabIndex = 12;
             this.label22.Tag = "1";
-            this.label22.Text = "Upper";
+            this.label22.Text = "Presence";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
@@ -4727,7 +4724,7 @@
             this.LoadPort02_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort02_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort02_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort02_State.Location = new System.Drawing.Point(205, 97);
+            this.LoadPort02_State.Location = new System.Drawing.Point(204, 97);
             this.LoadPort02_State.Name = "LoadPort02_State";
             this.LoadPort02_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort02_State.TabIndex = 128;
@@ -4741,7 +4738,7 @@
             this.LoadPort01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LoadPort01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.LoadPort01_State.ForeColor = System.Drawing.Color.White;
-            this.LoadPort01_State.Location = new System.Drawing.Point(23, 97);
+            this.LoadPort01_State.Location = new System.Drawing.Point(22, 97);
             this.LoadPort01_State.Name = "LoadPort01_State";
             this.LoadPort01_State.Size = new System.Drawing.Size(158, 29);
             this.LoadPort01_State.TabIndex = 127;
@@ -4782,25 +4779,12 @@
             this.Robot01_State.BackColor = System.Drawing.Color.Orange;
             this.Robot01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Robot01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.Robot01_State.Location = new System.Drawing.Point(1056, 417);
+            this.Robot01_State.Location = new System.Drawing.Point(792, 96);
             this.Robot01_State.Name = "Robot01_State";
             this.Robot01_State.Size = new System.Drawing.Size(67, 29);
             this.Robot01_State.TabIndex = 94;
             this.Robot01_State.Text = "Idle";
             this.Robot01_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // Aligner01_State
-            // 
-            this.Aligner01_State.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Aligner01_State.BackColor = System.Drawing.Color.Orange;
-            this.Aligner01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Aligner01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.Aligner01_State.Location = new System.Drawing.Point(1056, 279);
-            this.Aligner01_State.Name = "Aligner01_State";
-            this.Aligner01_State.Size = new System.Drawing.Size(67, 29);
-            this.Aligner01_State.TabIndex = 88;
-            this.Aligner01_State.Text = "Idle";
-            this.Aligner01_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LoadPort01_FID
             // 
@@ -4832,27 +4816,20 @@
             // 
             // FormMonitoring
             // 
-            this.ClientSize = new System.Drawing.Size(1460, 760);
+            this.ClientSize = new System.Drawing.Size(1620, 760);
             this.Controls.Add(this.Aligner01_tb);
             this.Name = "FormMonitoring";
             this.Load += new System.EventHandler(this.FormMonitoring_Load);
             this.Aligner01_tb.ResumeLayout(false);
             this.Aligner01_tb.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OCR01_Pic)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.OCR02_Pic)).EndInit();
-            this.panel6.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -4866,7 +4843,6 @@
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox LoadPort01_FID;
-        private System.Windows.Forms.TextBox Aligner01_State;
         private System.Windows.Forms.TextBox Robot01_State;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox LoadPort02_FID;
@@ -4975,37 +4951,15 @@
         internal System.Windows.Forms.Label LoadPort02_Slot_25;
         internal System.Windows.Forms.Label label67;
         private System.Windows.Forms.Panel panel4;
-        internal System.Windows.Forms.Label Robot01_Slot_2;
-        internal System.Windows.Forms.Label label21;
         internal System.Windows.Forms.Label Robot01_Slot_1;
         internal System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel6;
-        internal System.Windows.Forms.Label Aligner01_Slot_1;
-        internal System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.GroupBox Aligner01_tb;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox OCR01_Pic;
-        private System.Windows.Forms.TextBox OCR01Read_Tb;
-        private System.Windows.Forms.PictureBox OCR02_Pic;
-        private System.Windows.Forms.TextBox OCR02Read_Tb;
         internal System.Windows.Forms.Label LoadPort02_Mode;
         internal System.Windows.Forms.Label label26;
         internal System.Windows.Forms.Label LoadPort01_Mode;
         internal System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel5;
-        internal System.Windows.Forms.Label WPH;
-        internal System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox NotchDirect_cb;
         private System.Windows.Forms.RichTextBox Log_rt;
-        private System.Windows.Forms.Button ResetInterface;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label ConnectStatus_lb;
         internal System.Windows.Forms.Label LoadPort04_Mode;
         internal System.Windows.Forms.Label label7;
         internal System.Windows.Forms.Label LoadPort03_Mode;
@@ -5124,8 +5078,27 @@
         private System.Windows.Forms.CheckBox PRS_ck;
         private System.Windows.Forms.CheckBox PORT_ck;
         private System.Windows.Forms.CheckBox SYSTEM_ck;
+        private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel1;
+        internal System.Windows.Forms.Label ARM_NOT_EXTEND_LOADLOCK01_signal;
         internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.Label label8;
+        internal System.Windows.Forms.Label LOADLOCK01_ARM_EXTEND_ENABLE_Signal;
+        internal System.Windows.Forms.Label label11;
+        internal System.Windows.Forms.Label LOADLOCK01_DOOR_OPEN_Signal;
+        internal System.Windows.Forms.Label label15;
+        internal System.Windows.Forms.Label LoadLock01_Slot_1;
+        internal System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel2;
+        internal System.Windows.Forms.Label ARM_NOT_EXTEND_LOADLOCK02_signal;
+        internal System.Windows.Forms.Label label42;
+        internal System.Windows.Forms.Label LOADLOCK02_ARM_EXTEND_ENABLE_Signal;
+        internal System.Windows.Forms.Label label19;
+        internal System.Windows.Forms.Label LOADLOCK02_DOOR_OPEN_Signal;
+        internal System.Windows.Forms.Label label28;
+        internal System.Windows.Forms.Label LoadLock02_Slot_1;
+        internal System.Windows.Forms.Label label34;
     }
 }

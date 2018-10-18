@@ -34,22 +34,17 @@ namespace Lilith
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer13 = new System.Windows.Forms.SplitContainer();
             this.groupBox54 = new System.Windows.Forms.GroupBox();
-            this.Pause_btn = new System.Windows.Forms.Button();
             this.Mode_btn = new System.Windows.Forms.Button();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.Connection_btn = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.Initial_btn = new System.Windows.Forms.Button();
             this.DifferentialPressureAlarm2_Signal = new System.Windows.Forms.Button();
             this.DifferentialPressureAlarm1_Signal = new System.Windows.Forms.Button();
-            this.LoadPortVacuum_Signal = new System.Windows.Forms.Button();
             this.SafetyRelay_Signal = new System.Windows.Forms.Button();
             this.IonizerAlarm_Signal = new System.Windows.Forms.Button();
-            this.FFU_Signal = new System.Windows.Forms.Button();
-            this.IonizerAir_Signal = new System.Windows.Forms.Button();
-            this.Air_Signal = new System.Windows.Forms.Button();
-            this.Vacuum_Signal = new System.Windows.Forms.Button();
+            this.FFUAlarm_Signal = new System.Windows.Forms.Button();
+            this.CDAAlarm_Signal = new System.Windows.Forms.Button();
             this.DoorSwitch_Signal = new System.Windows.Forms.Button();
             this.CurrentState_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -153,20 +148,10 @@ namespace Lilith
             // 
             // groupBox54
             // 
-            this.groupBox54.Controls.Add(this.Pause_btn);
             this.groupBox54.Controls.Add(this.Mode_btn);
             resources.ApplyResources(this.groupBox54, "groupBox54");
             this.groupBox54.Name = "groupBox54";
             this.groupBox54.TabStop = false;
-            // 
-            // Pause_btn
-            // 
-            this.Pause_btn.BackColor = System.Drawing.Color.Orange;
-            resources.ApplyResources(this.Pause_btn, "Pause_btn");
-            this.Pause_btn.Name = "Pause_btn";
-            this.Pause_btn.Tag = "Manual";
-            this.Pause_btn.UseVisualStyleBackColor = false;
-            this.Pause_btn.Click += new System.EventHandler(this.Pause_btn_Click);
             // 
             // Mode_btn
             // 
@@ -203,28 +188,17 @@ namespace Lilith
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.Initial_btn);
             this.groupBox5.Controls.Add(this.DifferentialPressureAlarm2_Signal);
             this.groupBox5.Controls.Add(this.DifferentialPressureAlarm1_Signal);
-            this.groupBox5.Controls.Add(this.LoadPortVacuum_Signal);
             this.groupBox5.Controls.Add(this.SafetyRelay_Signal);
             this.groupBox5.Controls.Add(this.IonizerAlarm_Signal);
-            this.groupBox5.Controls.Add(this.FFU_Signal);
-            this.groupBox5.Controls.Add(this.IonizerAir_Signal);
-            this.groupBox5.Controls.Add(this.Air_Signal);
-            this.groupBox5.Controls.Add(this.Vacuum_Signal);
+            this.groupBox5.Controls.Add(this.FFUAlarm_Signal);
+            this.groupBox5.Controls.Add(this.CDAAlarm_Signal);
             this.groupBox5.Controls.Add(this.DoorSwitch_Signal);
             this.groupBox5.Controls.Add(this.CurrentState_btn);
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
-            // 
-            // Initial_btn
-            // 
-            resources.ApplyResources(this.Initial_btn, "Initial_btn");
-            this.Initial_btn.BackColor = System.Drawing.Color.Red;
-            this.Initial_btn.Name = "Initial_btn";
-            this.Initial_btn.UseVisualStyleBackColor = false;
             // 
             // DifferentialPressureAlarm2_Signal
             // 
@@ -240,13 +214,6 @@ namespace Lilith
             this.DifferentialPressureAlarm1_Signal.Name = "DifferentialPressureAlarm1_Signal";
             this.DifferentialPressureAlarm1_Signal.UseVisualStyleBackColor = false;
             // 
-            // LoadPortVacuum_Signal
-            // 
-            resources.ApplyResources(this.LoadPortVacuum_Signal, "LoadPortVacuum_Signal");
-            this.LoadPortVacuum_Signal.BackColor = System.Drawing.Color.Gray;
-            this.LoadPortVacuum_Signal.Name = "LoadPortVacuum_Signal";
-            this.LoadPortVacuum_Signal.UseVisualStyleBackColor = false;
-            // 
             // SafetyRelay_Signal
             // 
             resources.ApplyResources(this.SafetyRelay_Signal, "SafetyRelay_Signal");
@@ -261,33 +228,19 @@ namespace Lilith
             this.IonizerAlarm_Signal.Name = "IonizerAlarm_Signal";
             this.IonizerAlarm_Signal.UseVisualStyleBackColor = false;
             // 
-            // FFU_Signal
+            // FFUAlarm_Signal
             // 
-            resources.ApplyResources(this.FFU_Signal, "FFU_Signal");
-            this.FFU_Signal.BackColor = System.Drawing.Color.Gray;
-            this.FFU_Signal.Name = "FFU_Signal";
-            this.FFU_Signal.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.FFUAlarm_Signal, "FFUAlarm_Signal");
+            this.FFUAlarm_Signal.BackColor = System.Drawing.Color.Gray;
+            this.FFUAlarm_Signal.Name = "FFUAlarm_Signal";
+            this.FFUAlarm_Signal.UseVisualStyleBackColor = false;
             // 
-            // IonizerAir_Signal
+            // CDAAlarm_Signal
             // 
-            resources.ApplyResources(this.IonizerAir_Signal, "IonizerAir_Signal");
-            this.IonizerAir_Signal.BackColor = System.Drawing.Color.Gray;
-            this.IonizerAir_Signal.Name = "IonizerAir_Signal";
-            this.IonizerAir_Signal.UseVisualStyleBackColor = false;
-            // 
-            // Air_Signal
-            // 
-            resources.ApplyResources(this.Air_Signal, "Air_Signal");
-            this.Air_Signal.BackColor = System.Drawing.Color.Gray;
-            this.Air_Signal.Name = "Air_Signal";
-            this.Air_Signal.UseVisualStyleBackColor = false;
-            // 
-            // Vacuum_Signal
-            // 
-            resources.ApplyResources(this.Vacuum_Signal, "Vacuum_Signal");
-            this.Vacuum_Signal.BackColor = System.Drawing.Color.Gray;
-            this.Vacuum_Signal.Name = "Vacuum_Signal";
-            this.Vacuum_Signal.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.CDAAlarm_Signal, "CDAAlarm_Signal");
+            this.CDAAlarm_Signal.BackColor = System.Drawing.Color.Gray;
+            this.CDAAlarm_Signal.Name = "CDAAlarm_Signal";
+            this.CDAAlarm_Signal.UseVisualStyleBackColor = false;
             // 
             // DoorSwitch_Signal
             // 
@@ -880,13 +833,11 @@ namespace Lilith
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button IonizerAlarm_Signal;
-        private System.Windows.Forms.Button FFU_Signal;
-        private System.Windows.Forms.Button Air_Signal;
-        private System.Windows.Forms.Button Vacuum_Signal;
+        private System.Windows.Forms.Button FFUAlarm_Signal;
+        private System.Windows.Forms.Button CDAAlarm_Signal;
         private System.Windows.Forms.Button DoorSwitch_Signal;
         private System.Windows.Forms.Button CurrentState_btn;
         private System.Windows.Forms.Button DifferentialPressureAlarm1_Signal;
-        private System.Windows.Forms.Button LoadPortVacuum_Signal;
         private System.Windows.Forms.Button SafetyRelay_Signal;
         private System.Windows.Forms.Button btnLogInOut;
         private System.Windows.Forms.SplitContainer splitContainer13;
@@ -922,7 +873,6 @@ namespace Lilith
         private System.Windows.Forms.Label lbl_login_name;
         private System.Windows.Forms.Label lbl_login_id;
         private System.Windows.Forms.TabPage tabStatus;
-        private System.Windows.Forms.Button IonizerAir_Signal;
         private System.Windows.Forms.Button DifferentialPressureAlarm2_Signal;
         private System.Windows.Forms.Button BLUE_Signal;
         private System.Windows.Forms.Button GREEN_Signal;
@@ -933,8 +883,6 @@ namespace Lilith
         private System.Windows.Forms.Button BUZZER1_Signal;
         private System.Windows.Forms.Button Mode_btn;
         private System.Windows.Forms.Button Connection_btn;
-        private System.Windows.Forms.Button Initial_btn;
-        private System.Windows.Forms.Button Pause_btn;
         private System.Windows.Forms.CheckBox Mute_chk;
         private System.Windows.Forms.TabPage TestMode;
         private System.Windows.Forms.DataGridView Conn_gv;

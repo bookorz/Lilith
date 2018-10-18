@@ -86,7 +86,7 @@ namespace Lilith
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
 
             Int32 oldWidth = this.Width;
             Int32 oldHeight = this.Height;
@@ -100,7 +100,7 @@ namespace Lilith
             try
             {
 
-               
+
 
                 for (int i = 0; i < ctrlForm.Length; i++)
                 {
@@ -111,13 +111,13 @@ namespace Lilith
                 }
 
                 tbcMian.SelectTab(0);
-                
+
                 alarmFrom.Show();
-//alarmFrom.SendToBack();
+                //alarmFrom.SendToBack();
                 alarmFrom.Hide();
 
 
-                
+
             }
             catch (Exception ex)
             {
@@ -133,7 +133,7 @@ namespace Lilith
             this.Width = oldWidth;
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
-            
+
             RouteCtrl.ConnectAll();
             AuthorityUpdate.UpdateFuncGroupEnable("INIT");//init 權限
             //RouteCtrl.ConnectAll();
@@ -193,7 +193,7 @@ namespace Lilith
                     {
                         case "ALIGNER":
                             each.ErrorMsg = "";
-                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit",out Message);
+                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit", out Message);
                             break;
                         case "ROBOT":
                             each.ErrorMsg = "";
@@ -437,15 +437,15 @@ namespace Lilith
                                     break;
                             }
                             break;
-                        //case Transaction.Command.AlignerType.GetError:
-                         
-                        //    break;
-                        //case Transaction.Command.AlignerType.GetMode:
+                            //case Transaction.Command.AlignerType.GetError:
 
-                        //    break;
-                        //case Transaction.Command.AlignerType.GetSV:
+                            //    break;
+                            //case Transaction.Command.AlignerType.GetMode:
 
-                        //    break;
+                            //    break;
+                            //case Transaction.Command.AlignerType.GetSV:
+
+                            //    break;
                     }
                     break;
                 case "FormStatus":
@@ -510,14 +510,7 @@ namespace Lilith
                                 case Transaction.Command.RobotType.RobotMode:
                                 case Transaction.Command.RobotType.Reset:
                                 case Transaction.Command.RobotType.RobotServo:
-                                    //case Transaction.Command.RobotType.Stop:
-                                    //case Transaction.Command.RobotType.Pause:
-                                    //case Transaction.Command.RobotType.Continue:
-                                    Thread.Sleep(1000);
-                                    //向Robot 詢問狀態
-                                    Node robot = NodeManagement.Get(Node.Name);
-                                    String script_name = robot.Brand.ToUpper().Equals("SANWA") ? "RobotStateGet" : "RobotStateGet(Kawasaki)";
-                                    robot.ExcuteScript(script_name, "FormManual", out Message);
+                                    
                                     ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面 
                                     break;
                                 case Transaction.Command.RobotType.GetSpeed:
@@ -647,7 +640,7 @@ namespace Lilith
                 //                    if (CheckResult)
                 //                    {
                 //                        Node.FoupReady = true;
-                                        
+
                 //                        Node.ExcuteScript("LoadPortFoupIn", "LoadPortFoup", "", true);
                 //                        if (Node.WaferSize.Equals("200MM"))
                 //                        {
@@ -738,7 +731,7 @@ namespace Lilith
                             }
                             break;
                     }
-                            break;
+                    break;
                 case "FormManual":
 
                     switch (Node.Type)
@@ -986,7 +979,7 @@ namespace Lilith
                     vars.Add("@loadport", PortName);
                     Robot.ExcuteScript("RobotMapping", "MANSW", vars, out Message, "200MM");
 
-                    
+
                 }
                 Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
                 if (Aligner != null)//切換Aligner位置
@@ -1011,7 +1004,7 @@ namespace Lilith
                     return;
                 }
 
-                
+
             }
             else if (port.WaferSize.Equals("300MM"))//12" operation before fetch the first wafer.
             {
@@ -1053,7 +1046,7 @@ namespace Lilith
                     RouteCtrl.Stop();
                     return;
                 }
-                
+
             }
 
             WaferAssignUpdate.RefreshMapping(PortName);
@@ -1213,9 +1206,9 @@ namespace Lilith
                                select nd;
                     if (find.Count() == 0)
                     {//在席回報完成
-                        
+
                         find = from nd in NodeManagement.GetList()
-                               where( nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.ErrorMsg.Equals("")
+                               where (nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.ErrorMsg.Equals("")
                                select nd;
                         string tmp = "";
                         foreach (Node each in find)
@@ -1453,7 +1446,21 @@ namespace Lilith
 
         public void On_Data_Chnaged(string Parameter, string Value)
         {
-            DIOUpdate.UpdateDIOStatus(Parameter, Value);
+            switch (Parameter)
+            {
+                case "LOADLOCK01_DOOR_OPEN":
+                case "LOADLOCK01_ARM_EXTEND_ENABLE":
+                case "LOADLOCK02_DOOR_OPEN":
+                case "LOADLOCK02_ARM_EXTEND_ENABLE":
+                case "ARM_NOT_EXTEND_LOADLOCK01":
+                case "ARM_NOT_EXTEND_LOADLOCK02":
+                    DIOUpdate.UpdateInterLock(Parameter, Value);
+                    break;
+                default:
+                    DIOUpdate.UpdateDIOStatus(Parameter, Value);
+                    break;
+            }
+
 
         }
 
@@ -1690,23 +1697,23 @@ namespace Lilith
             //throw new NotImplementedException();
         }
 
-        private void Pause_btn_Click(object sender, EventArgs e)
-        {
-            if (RouteCtrl.GetMode().Equals("Start"))
-            {
+        //private void Pause_btn_Click(object sender, EventArgs e)
+        //{
+        //    if (RouteCtrl.GetMode().Equals("Start"))
+        //    {
 
-                RouteCtrl.Pause();
-                NodeStatusUpdate.UpdateCurrentState("Run");
-                Pause_btn.Text = "Continue";
+        //        RouteCtrl.Pause();
+        //        NodeStatusUpdate.UpdateCurrentState("Run");
+        //        Pause_btn.Text = "Continue";
 
-            }
-            else if (RouteCtrl.GetMode().Equals("Pause"))
-            {
-                RouteCtrl.Continue();
-                NodeStatusUpdate.UpdateCurrentState("Idle");
-                Pause_btn.Text = "Pause";
-            }
-        }
+        //    }
+        //    else if (RouteCtrl.GetMode().Equals("Pause"))
+        //    {
+        //        RouteCtrl.Continue();
+        //        NodeStatusUpdate.UpdateCurrentState("Idle");
+        //        Pause_btn.Text = "Pause";
+        //    }
+        //}
 
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -1747,19 +1754,22 @@ namespace Lilith
 
         public void On_Connection_Connected()
         {
-            MonitoringUpdate.ConnectUpdate("Connected");
+            //MonitoringUpdate.ConnectUpdate("Connected");
+            ConnectionStatusUpdate.UpdateOnlineStatus("Connected");
             MonitoringUpdate.LogUpdate("Connected");
         }
 
         public void On_Connection_Connecting()
         {
-            MonitoringUpdate.ConnectUpdate("Connecting");
+            //MonitoringUpdate.ConnectUpdate("Connecting");
+            ConnectionStatusUpdate.UpdateOnlineStatus("Connecting");
             MonitoringUpdate.LogUpdate("Connecting");
         }
 
         public void On_Connection_Disconnected()
         {
-            MonitoringUpdate.ConnectUpdate("Disconnected");
+            //MonitoringUpdate.ConnectUpdate("Disconnected");
+            ConnectionStatusUpdate.UpdateOnlineStatus("Disconnected");
             MonitoringUpdate.LogUpdate("Disconnected");
         }
     }

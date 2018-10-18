@@ -242,24 +242,24 @@ namespace Lilith.Menu.Monitoring
         //    }
         //}
 
-        private void NotchDirect_cb_TextChanged(object sender, EventArgs e)
-        {
-            switch (NotchDirect_cb.Text)
-            {
-                case "朝前":
-                    FormMain.RouteCtrl.NotchDirect = 90;
-                    break;
-                case "朝左":
-                    FormMain.RouteCtrl.NotchDirect = 180;
-                    break;
-                case "朝右":
-                    FormMain.RouteCtrl.NotchDirect = 0;
-                    break;
-                case "朝後":
-                    FormMain.RouteCtrl.NotchDirect = 270;
-                    break;
-            }
-        }
+        //private void NotchDirect_cb_TextChanged(object sender, EventArgs e)
+        //{
+        //    switch (NotchDirect_cb.Text)
+        //    {
+        //        case "朝前":
+        //            FormMain.RouteCtrl.NotchDirect = 90;
+        //            break;
+        //        case "朝左":
+        //            FormMain.RouteCtrl.NotchDirect = 180;
+        //            break;
+        //        case "朝右":
+        //            FormMain.RouteCtrl.NotchDirect = 0;
+        //            break;
+        //        case "朝後":
+        //            FormMain.RouteCtrl.NotchDirect = 270;
+        //            break;
+        //    }
+        //}
 
         private void ResetInterface_Click(object sender, EventArgs e)
         {

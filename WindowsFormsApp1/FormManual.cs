@@ -542,22 +542,26 @@ namespace GUI
             {
                 case "btnRGet":
                     TaskName = "LOAD";
+                    param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text);                    
                     break;
                 case "btnRPut":
                     TaskName = "UNLOAD";
+                    param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text);
                     break;
                 case "btnRGetWait":
                     TaskName = "DOWN_GOTO";
+                    param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text);
                     param.Add("@Arm", SanwaUtil.GetArmID(cbRA1Arm.Text));
                     break;
                 case "btnRPutWait":
                     TaskName = "UP_GOTO";
+                    param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text);
                     param.Add("@Arm", SanwaUtil.GetArmID(cbRA1Arm.Text));
@@ -1147,8 +1151,11 @@ namespace GUI
 
         private void Cb_SmifSelect_TextUpdate(object sender, EventArgs e)
         {
-            ResetUI();
-            SendCommand("SMIF_Initial_bt", Cb_SMIFSelect.Text);
+            if (tbcManual.SelectedTab.Text.Equals("SMIF"))
+            {
+                ResetUI();
+                SendCommand("SMIF_Initial_bt", Cb_SMIFSelect.Text);
+            }
         }
 
         private void TagRead_bt_Click(object sender, EventArgs e)
