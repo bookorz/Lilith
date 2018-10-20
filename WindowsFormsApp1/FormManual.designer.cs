@@ -72,6 +72,7 @@
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.pnlRobotStatus = new System.Windows.Forms.Panel();
+            this.btnRRetract = new System.Windows.Forms.Button();
             this.tbRError = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -524,8 +525,8 @@
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 3;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 73F));
-            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 79.24242F));
+            this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.75758F));
             this.tableLayoutPanel23.Size = new System.Drawing.Size(756, 715);
             this.tableLayoutPanel23.TabIndex = 52;
             this.tableLayoutPanel23.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel23_Paint);
@@ -542,8 +543,8 @@
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 1;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 475F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(750, 475);
+            this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 516F));
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(750, 516);
             this.tableLayoutPanel24.TabIndex = 0;
             // 
             // pnlRobotCmdA1
@@ -564,7 +565,7 @@
             this.pnlRobotCmdA1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRobotCmdA1.Location = new System.Drawing.Point(3, 3);
             this.pnlRobotCmdA1.Name = "pnlRobotCmdA1";
-            this.pnlRobotCmdA1.Size = new System.Drawing.Size(369, 469);
+            this.pnlRobotCmdA1.Size = new System.Drawing.Size(369, 510);
             this.pnlRobotCmdA1.TabIndex = 50;
             // 
             // label56
@@ -598,7 +599,8 @@
             "LOADPORT02",
             "LOADPORT03",
             "LOADPORT04",
-            "ALIGNER01"});
+            "BF1",
+            "BF2"});
             this.cbRA1Point.Location = new System.Drawing.Point(129, 60);
             this.cbRA1Point.Name = "cbRA1Point";
             this.cbRA1Point.Size = new System.Drawing.Size(208, 38);
@@ -618,7 +620,6 @@
             // btnRMoveDown
             // 
             this.btnRMoveDown.BackColor = System.Drawing.Color.DarkGray;
-            this.btnRMoveDown.Enabled = false;
             this.btnRMoveDown.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRMoveDown.FlatAppearance.BorderSize = 2;
             this.btnRMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -761,7 +762,7 @@
             this.pnlRobotCmdA2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRobotCmdA2.Location = new System.Drawing.Point(378, 3);
             this.pnlRobotCmdA2.Name = "pnlRobotCmdA2";
-            this.pnlRobotCmdA2.Size = new System.Drawing.Size(369, 469);
+            this.pnlRobotCmdA2.Size = new System.Drawing.Size(369, 510);
             this.pnlRobotCmdA2.TabIndex = 49;
             // 
             // label7
@@ -793,7 +794,10 @@
             this.cbRA2Point.Items.AddRange(new object[] {
             "LOADPORT01",
             "LOADPORT02",
-            "ALIGNER01"});
+            "LOADPORT03",
+            "LOADPORT04",
+            "BF1",
+            "BF2"});
             this.cbRA2Point.Location = new System.Drawing.Point(130, 60);
             this.cbRA2Point.Name = "cbRA2Point";
             this.cbRA2Point.Size = new System.Drawing.Size(208, 38);
@@ -802,7 +806,6 @@
             // btnRMoveUp
             // 
             this.btnRMoveUp.BackColor = System.Drawing.Color.DarkGray;
-            this.btnRMoveUp.Enabled = false;
             this.btnRMoveUp.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRMoveUp.FlatAppearance.BorderSize = 2;
             this.btnRMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -948,9 +951,9 @@
             this.pnlRCmd.Controls.Add(this.btnRGetGet);
             this.pnlRCmd.Controls.Add(this.btnRGetPut);
             this.pnlRCmd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRCmd.Location = new System.Drawing.Point(3, 539);
+            this.pnlRCmd.Location = new System.Drawing.Point(3, 580);
             this.pnlRCmd.Name = "pnlRCmd";
-            this.pnlRCmd.Size = new System.Drawing.Size(750, 173);
+            this.pnlRCmd.Size = new System.Drawing.Size(750, 132);
             this.pnlRCmd.TabIndex = 51;
             // 
             // btnRPutPut
@@ -962,7 +965,7 @@
             this.btnRPutPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRPutPut.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRPutPut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRPutPut.Location = new System.Drawing.Point(60, 32);
+            this.btnRPutPut.Location = new System.Drawing.Point(60, 15);
             this.btnRPutPut.Name = "btnRPutPut";
             this.btnRPutPut.Size = new System.Drawing.Size(280, 45);
             this.btnRPutPut.TabIndex = 51;
@@ -979,7 +982,7 @@
             this.btnRPutGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRPutGet.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRPutGet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRPutGet.Location = new System.Drawing.Point(436, 90);
+            this.btnRPutGet.Location = new System.Drawing.Point(436, 73);
             this.btnRPutGet.Name = "btnRPutGet";
             this.btnRPutGet.Size = new System.Drawing.Size(280, 45);
             this.btnRPutGet.TabIndex = 50;
@@ -996,7 +999,7 @@
             this.btnRGetGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRGetGet.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRGetGet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGetGet.Location = new System.Drawing.Point(436, 32);
+            this.btnRGetGet.Location = new System.Drawing.Point(436, 15);
             this.btnRGetGet.Name = "btnRGetGet";
             this.btnRGetGet.Size = new System.Drawing.Size(280, 45);
             this.btnRGetGet.TabIndex = 48;
@@ -1013,7 +1016,7 @@
             this.btnRGetPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRGetPut.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRGetPut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGetPut.Location = new System.Drawing.Point(60, 90);
+            this.btnRGetPut.Location = new System.Drawing.Point(60, 73);
             this.btnRGetPut.Name = "btnRGetPut";
             this.btnRGetPut.Size = new System.Drawing.Size(280, 45);
             this.btnRGetPut.TabIndex = 49;
@@ -1101,6 +1104,7 @@
             // pnlRobotStatus
             // 
             this.pnlRobotStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlRobotStatus.Controls.Add(this.btnRRetract);
             this.pnlRobotStatus.Controls.Add(this.tbRError);
             this.pnlRobotStatus.Controls.Add(this.label25);
             this.pnlRobotStatus.Controls.Add(this.label26);
@@ -1132,6 +1136,22 @@
             this.pnlRobotStatus.Name = "pnlRobotStatus";
             this.pnlRobotStatus.Size = new System.Drawing.Size(629, 715);
             this.pnlRobotStatus.TabIndex = 18;
+            // 
+            // btnRRetract
+            // 
+            this.btnRRetract.BackColor = System.Drawing.Color.DarkGray;
+            this.btnRRetract.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRRetract.FlatAppearance.BorderSize = 2;
+            this.btnRRetract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRRetract.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRRetract.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRRetract.Location = new System.Drawing.Point(488, 248);
+            this.btnRRetract.Name = "btnRRetract";
+            this.btnRRetract.Size = new System.Drawing.Size(123, 46);
+            this.btnRRetract.TabIndex = 115;
+            this.btnRRetract.Text = "Arm Retract";
+            this.btnRRetract.UseVisualStyleBackColor = false;
+            this.btnRRetract.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
             // tbRError
             // 
@@ -6535,5 +6555,6 @@
         private System.Windows.Forms.Button TagRead_bt;
         private System.Windows.Forms.TextBox SmartTagWrite_tb;
         private System.Windows.Forms.TextBox SmartTagRead_tb;
+        private System.Windows.Forms.Button btnRRetract;
     }
 }

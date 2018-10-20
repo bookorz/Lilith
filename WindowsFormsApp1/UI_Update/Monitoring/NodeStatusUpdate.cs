@@ -105,83 +105,83 @@ namespace Lilith.UI_Update.Monitoring
 
         public static void UpdateCurrentState(string State)
         {
-            try
-            {
-                Form form = Application.OpenForms["FormMain"];
+        //    try
+        //    {
+        //        Form form = Application.OpenForms["FormMain"];
 
-                if (form == null)
-                    return;
+        //        if (form == null)
+        //            return;
 
-                Button state_btn = form.Controls.Find("CurrentState_btn", true).FirstOrDefault() as Button;
+        //        Button state_btn = form.Controls.Find("CurrentState_btn", true).FirstOrDefault() as Button;
 
-                if (state_btn == null)
-                    return;
+        //        if (state_btn == null)
+        //            return;
 
-                if (state_btn.InvokeRequired)
-                {
-                    UpdateState ph = new UpdateState(UpdateCurrentState);
-                    state_btn.BeginInvoke(ph, State);
-                }
-                else
-                {
-                    if (SignalSetting == null)
-                    {
-                        InitialSetting();
-                    }
-                    state_btn.Text = State;
-                    Dictionary<string, string> Params = new Dictionary<string, string>();
+        //        if (state_btn.InvokeRequired)
+        //        {
+        //            UpdateState ph = new UpdateState(UpdateCurrentState);
+        //            state_btn.BeginInvoke(ph, State);
+        //        }
+        //        else
+        //        {
+        //            if (SignalSetting == null)
+        //            {
+        //                InitialSetting();
+        //            }
+        //            state_btn.Text = State;
+        //            Dictionary<string, string> Params = new Dictionary<string, string>();
 
-                    var findSetting = from Setting in SignalSetting
-                                      where Setting.Eqp_Status.Equals(State.ToUpper()) && Setting.Is_Alarm == (AlarmManagement.GetAll().Count!=0)
-                                      select Setting;
+        //            var findSetting = from Setting in SignalSetting
+        //                              where Setting.Eqp_Status.Equals(State.ToUpper()) && Setting.Is_Alarm == (AlarmManagement.GetAll().Count!=0)
+        //                              select Setting;
 
-                    if (findSetting.Count() != 0)
-                    {
-                        Setting each = findSetting.First();
-                        if (!each.Blue.Equals("BLINK"))
-                        {
-                            Params.Add("BLUE", each.Blue);
-                        }
-                        else
-                        {
-                            RouteControl.DIO.SetBlink("BLUE", "True");
-                        }
-                        if (!each.Green.Equals("BLINK"))
-                        {
-                            Params.Add("GREEN", each.Green);
-                        }
-                        else
-                        {
-                            RouteControl.DIO.SetBlink("GREEN", "True");
-                        }
-                        if (!each.Red.Equals("BLINK"))
-                        {
-                            Params.Add("RED", each.Red);
-                        }
-                        else
-                        {
-                            RouteControl.DIO.SetBlink("RED", "True");
-                        }
-                        if (!each.Orange.Equals("BLINK"))
-                        {
-                            Params.Add("ORANGE", each.Orange);
-                        }
-                        else
-                        {
-                            RouteControl.DIO.SetBlink("ORANGE", "True");
-                        }
+        //            if (findSetting.Count() != 0)
+        //            {
+        //                Setting each = findSetting.First();
+        //                if (!each.Blue.Equals("BLINK"))
+        //                {
+        //                    Params.Add("BLUE", each.Blue);
+        //                }
+        //                else
+        //                {
+        //                    RouteControl.DIO.SetBlink("BLUE", "True");
+        //                }
+        //                if (!each.Green.Equals("BLINK"))
+        //                {
+        //                    Params.Add("GREEN", each.Green);
+        //                }
+        //                else
+        //                {
+        //                    RouteControl.DIO.SetBlink("GREEN", "True");
+        //                }
+        //                if (!each.Red.Equals("BLINK"))
+        //                {
+        //                    Params.Add("RED", each.Red);
+        //                }
+        //                else
+        //                {
+        //                    RouteControl.DIO.SetBlink("RED", "True");
+        //                }
+        //                if (!each.Orange.Equals("BLINK"))
+        //                {
+        //                    Params.Add("ORANGE", each.Orange);
+        //                }
+        //                else
+        //                {
+        //                    RouteControl.DIO.SetBlink("ORANGE", "True");
+        //                }
 
-                        //RouteControl.DIO.SetIO(Params);
-                    }
+        //                //RouteControl.DIO.SetIO(Params);
+        //            }
 
-                }
+        //        }
 
 
-            }
-            catch (Exception e)
-            {
-                logger.Error("UpdateCurrentState: Update fail.:" + e.StackTrace);
-            }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        logger.Error("UpdateCurrentState: Update fail.:" + e.StackTrace);
+        //    }
         }
 
     }

@@ -460,19 +460,19 @@ namespace Lilith
                         case "SMARTTAG":
                             if (!Txn.Method.Equals(Transaction.Command.SmartTagType.GetLCDData))
                             {
-                                ManualPortStatusUpdate.LockUI(false);
+                                //ManualPortStatusUpdate.LockUI(false);
                             }
                             break;
                         case "LOADPORT":
                             if (!Txn.CommandType.Equals("MOV") && !Txn.CommandType.Equals("HCS"))
                             {
-                                ManualPortStatusUpdate.LockUI(false);
+                                //ManualPortStatusUpdate.LockUI(false);
                             }
                             else
                             {
                                 if (Txn.Method.Equals(Transaction.Command.LoadPortType.Reset))
                                 {
-                                    ManualPortStatusUpdate.LockUI(false);
+                                   // ManualPortStatusUpdate.LockUI(false);
                                 }
                             }
                             ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Excuted");
@@ -673,7 +673,7 @@ namespace Lilith
                     switch (Node.Type)
                     {
                         case "LOADPORT":
-                            ManualPortStatusUpdate.LockUI(false);
+                            //ManualPortStatusUpdate.LockUI(false);
                             break;
 
                     }
@@ -743,12 +743,12 @@ namespace Lilith
                                     ManualPortStatusUpdate.UpdateID(Msg.Value);
                                     break;
                             }
-                            ManualPortStatusUpdate.LockUI(false);
+                            //ManualPortStatusUpdate.LockUI(false);
                             break;
                         case "LOADPORT":
 
                             ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Finished");
-                            ManualPortStatusUpdate.LockUI(false);
+                            //ManualPortStatusUpdate.LockUI(false);
 
                             break;
 
@@ -933,22 +933,31 @@ namespace Lilith
 
             ConnectionStatusUpdate.UpdateControllerStatus(Device_ID, Status);
 
-            if (Status.Equals("Connected"))
-            {
-                //當Loadport連線成功，檢查狀態，進行燈號顯示
-                // var findPort = from port in NodeManagement.GetLoadPortList()
-                //               where port.Controller.Equals(Device_ID) && !port.ByPass && port.Type.Equals("LOADPORT")
-                //               select port;
+            //if (Status.Equals("Connected"))
+            //{
+            //    //當Loadport連線成功，檢查狀態，進行燈號顯示
+            //    // var findPort = from port in NodeManagement.GetLoadPortList()
+            //    //               where port.Controller.Equals(Device_ID) && !port.ByPass && port.Type.Equals("LOADPORT")
+            //    //               select port;
 
-                //foreach (Node port in findPort)
-                //{
-                //    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
-                //}
-                CommunicationsUpdate.UpdateConnection(Device_ID, true);
-            }
-            else
+            //    //foreach (Node port in findPort)
+            //    //{
+            //    //    port.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
+            //    //}
+            //    CommunicationsUpdate.UpdateConnection(Device_ID, true);
+            //}
+            //else
+            //{
+            //    CommunicationsUpdate.UpdateConnection(Device_ID, false);
+            //}
+            switch (Status)
             {
-                CommunicationsUpdate.UpdateConnection(Device_ID, false);
+                case "Connected":
+
+                    break;
+                case "Connection_Error":
+
+                    break;
             }
 
 
@@ -1362,7 +1371,7 @@ namespace Lilith
                     switch (Node.Type)
                     {
                         case "ROBOT":
-                            ManualRobotStatusUpdate.UpdateGUI(new Transaction(), Node.Name, "");//update 手動功能畫面
+                            //ManualRobotStatusUpdate.UpdateGUI(new Transaction(), Node.Name, "");//update 手動功能畫面
                             break;
                     }
                     break;
@@ -1448,12 +1457,12 @@ namespace Lilith
         {
             switch (Parameter)
             {
-                case "LOADLOCK01_DOOR_OPEN":
-                case "LOADLOCK01_ARM_EXTEND_ENABLE":
-                case "LOADLOCK02_DOOR_OPEN":
-                case "LOADLOCK02_ARM_EXTEND_ENABLE":
-                case "ARM_NOT_EXTEND_LOADLOCK01":
-                case "ARM_NOT_EXTEND_LOADLOCK02":
+                case "BF1_DOOR_OPEN":
+                case "BF1_ARM_EXTEND_ENABLE":
+                case "BF2_DOOR_OPEN":
+                case "BF2_ARM_EXTEND_ENABLE":
+                case "ARM_NOT_EXTEND_BF1":
+                case "ARM_NOT_EXTEND_BF2":
                     DIOUpdate.UpdateInterLock(Parameter, Value);
                     break;
                 default:
@@ -1771,6 +1780,56 @@ namespace Lilith
             //MonitoringUpdate.ConnectUpdate("Disconnected");
             ConnectionStatusUpdate.UpdateOnlineStatus("Disconnected");
             MonitoringUpdate.LogUpdate("Disconnected");
+        }
+
+        public void On_TaskJob_Aborted(string TaskID, string NodeName, string ReportType, string Message)
+        {
+            if (TaskID.Equals("FormManual"))
+            {
+                ManualPortStatusUpdate.LockUI(false);
+            }
+            AlarmInfo CurrentAlarm = new AlarmInfo();
+            CurrentAlarm.NodeName = "SYSTEM";
+            CurrentAlarm.AlarmCode = Message;
+            CurrentAlarm.NeedReset = false;
+            try
+            {
+
+                AlarmMessage Detail = AlmMapping.Get("SYSTEM", CurrentAlarm.AlarmCode);
+                if (!Detail.Code_Group.Equals("UNDEFINITION"))
+                {
+                    CurrentAlarm.SystemAlarmCode = Detail.CodeID;
+                    CurrentAlarm.Desc = Detail.Code_Cause;
+                    CurrentAlarm.EngDesc = Detail.Code_Cause_English;
+                    CurrentAlarm.Type = Detail.Code_Type;
+                    CurrentAlarm.IsStop = Detail.IsStop;
+                    if (CurrentAlarm.IsStop)
+                    {
+                        RouteCtrl.Stop();
+                    }
+                    CurrentAlarm.TimeStamp = DateTime.Now;
+
+                    AlarmManagement.Add(CurrentAlarm);
+
+                    AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
+                    AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
+                }
+            }
+            catch (Exception e)
+            {
+                CurrentAlarm.Desc = "未定義";
+                logger.Error("(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
+            }
+           
+
+        }
+
+        public void On_TaskJob_Finished(string TaskID)
+        {
+            if (TaskID.Equals("FormManual"))
+            {
+                ManualPortStatusUpdate.LockUI(false);
+            }
         }
     }
 }

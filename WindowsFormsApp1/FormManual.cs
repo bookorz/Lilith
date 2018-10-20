@@ -431,8 +431,8 @@ namespace GUI
             }
 
             TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
-
-            SetFormEnable(true);
+            ManualPortStatusUpdate.LockUI(false);
+            //SetFormEnable(true);
             //Node node = NodeManagement.Get(nodeName);
             //Transaction txn = new Transaction();
             //txn = new Transaction();
@@ -540,30 +540,50 @@ namespace GUI
 
             switch (btn.Name)
             {
-                case "btnRGet":
-                    TaskName = "LOAD";
+                case "btnRMoveDown":
+                    TaskName = "ROBOT_GET_ARM_EXTEND";
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
-                    param.Add("@Slot", cbRA1Slot.Text);                    
+                    param.Add("@Slot", cbRA1Slot.Text.PadLeft(2, '0'));
+                    break;
+                case "btnRMoveUp":
+                    TaskName = "ROBOT_PUT_ARM_EXTEND";
+                    param.Add("@Target", nodeName);
+                    param.Add("@Position", cbRA2Point.Text);
+                    param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
+                    break;
+                case "btnRRetract":
+                    TaskName = "ROBOT_RETRACT";
+                    param.Add("@Target", nodeName);
+                    break;
+                case "btnRGet":
+                    TaskName = "LOAD";
+                    if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
+                    {
+                        TaskName += "_SaftyCheck";
+                    }
+                    param.Add("@Target", nodeName);
+                    param.Add("@Position", cbRA1Point.Text);
+                    param.Add("@Slot", cbRA1Slot.Text.PadLeft(2,'0'));                    
                     break;
                 case "btnRPut":
                     TaskName = "UNLOAD";
                     param.Add("@Target", nodeName);
-                    param.Add("@Position", cbRA1Point.Text);
-                    param.Add("@Slot", cbRA1Slot.Text);
+                    param.Add("@Position", cbRA2Point.Text);
+                    param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
                     break;
                 case "btnRGetWait":
                     TaskName = "DOWN_GOTO";
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
-                    param.Add("@Slot", cbRA1Slot.Text);
+                    param.Add("@Slot", cbRA1Slot.Text.PadLeft(2, '0'));
                     param.Add("@Arm", SanwaUtil.GetArmID(cbRA1Arm.Text));
                     break;
                 case "btnRPutWait":
                     TaskName = "UP_GOTO";
                     param.Add("@Target", nodeName);
-                    param.Add("@Position", cbRA1Point.Text);
-                    param.Add("@Slot", cbRA1Slot.Text);
+                    param.Add("@Position", cbRA2Point.Text);
+                    param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
                     param.Add("@Arm", SanwaUtil.GetArmID(cbRA1Arm.Text));
                     break;
                 case "btnROrg":
@@ -616,223 +636,223 @@ namespace GUI
                     break;
             }
             TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+            ManualPortStatusUpdate.LockUI(true);
+            //switch (btn.Name)
+            //{
+            //    case "btnRConn":
+            //        try
+            //        {
+            //            //ControllerManagement.Get(robot.Controller).Close();
+            //            //ControllerManagement.Get(robot.Controller).Connect();
+            //            robot.State = "";
+            //            Thread.Sleep(500);//暫解
+            //            setRobotStatus();
+            //            SetFormEnable(true);
+            //        }
+            //        catch (Exception e1)
+            //        {
+            //        } 
+            //        return;
+            //    case "btnRDisConn":
+            //        try
+            //        {
+            //            //ControllerManagement.Get(robot.Controller).Close();
+            //            robot.State = "";
+            //            Thread.Sleep(500);//暫解
+            //            setRobotStatus();
+            //            SetFormEnable(true);
+            //        }
+            //        catch (Exception e1)
+            //        {
+            //        }
+            //        return;
+            //    case "btnRInit":
+            //        //txns[0].Method = Transaction.Command.LoadPortType.MappingDown;
+            //        isRobotMoveDown = false;//Get option 1
+            //        isRobotMoveUp = false;//Put option 1
+            //        break;
+            //    case "btnROrg":
+            //        txns[0].Method = Transaction.Command.RobotType.RobotOrginSearch;
+            //        isRobotMoveDown = false;//Get option 1
+            //        isRobotMoveUp = false;//Put option 1
+            //        break;
+            //    case "btnRHome":
+            //        if (robot.Brand.ToUpper().Equals("KAWASAKI"))
+            //            txns[0].Method = Transaction.Command.RobotType.RobotHomeA;//Kawasaki home A                    
+            //        else
+            //            txns[0].Method = Transaction.Command.RobotType.RobotHomeSafety;//20180607 RobotHome => RobotHomeSafety
+            //        isRobotMoveDown = false;//Get option 1
+            //        isRobotMoveUp = false;//Put option 1
+            //        break;
+            //    case "btnRChgSpeed":
+            //        txns[0].Method = Transaction.Command.RobotType.RobotSpeed;
+            //        txns[0].Value = nudRSpeed.Text.Equals("100") ? "0" : nudRSpeed.Text;
+            //        break;
+            //    //上臂
+            //    case "btnRRVacuOn":
+            //        txns[0].Method = Transaction.Command.RobotType.WaferHold;
+            //        txns[0].Arm = "1";
+            //        break;
+            //    case "btnRRVacuOff":
+            //        txns[0].Method = Transaction.Command.RobotType.WaferRelease;
+            //        txns[0].Arm = "1";
+            //        break;
+            //    //下臂
+            //    case "btnRLVacuOn":
+            //        txns[0].Method = Transaction.Command.RobotType.WaferHold;
+            //        txns[0].Arm = "2";
+            //        break;
+            //    case "btnRLVacuOff":
+            //        txns[0].Method = Transaction.Command.RobotType.WaferRelease;
+            //        txns[0].Arm = "2";
+            //        break;
+            //    case "btnRGet":
+            //        if (cbRA1Point.Text == "" || cbRA1Slot.Text == "" || cbRA1Arm.Text == "")
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source!", "Invalid source");
+            //            return;
+            //        }
+            //        if (isRobotMoveDown)
+            //            txns[0].Method = Transaction.Command.RobotType.GetAfterWait;
+            //        else
+            //            txns[0].Method = Transaction.Command.RobotType.Get;
+            //        txns[0].Position = cbRA1Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
+            //        txns[0].Slot = cbRA1Slot.Text;
+            //        isRobotMoveDown = false;//Get option 1
+            //        isRobotMoveUp = false;//Put option 1
+            //        break;
+            //    case "btnRPut":
+            //        if (cbRA2Point.Text == "" || cbRA2Slot.Text == "" || cbRA2Arm.Text == "")
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select destination!", "Invalid destination");
+            //            return;
+            //        }
+            //        if (isRobotMoveUp)
+            //            txns[0].Method = Transaction.Command.RobotType.PutBack;
+            //        else
+            //            txns[0].Method = Transaction.Command.RobotType.Put;
+            //        txns[0].Position = cbRA2Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
+            //        txns[0].Slot = cbRA2Slot.Text;
+            //        isRobotMoveDown = false;//Get option 1
+            //        isRobotMoveUp = false;//Put option 1
+            //        break;
+            //    case "btnRGetWait":
+            //        if (cbRA1Point.Text == "" || cbRA1Slot.Text == "" || cbRA1Arm.Text == "")
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source!", "Invalid source");
+            //            return;
+            //        }
+            //        txns[0].Method = Transaction.Command.RobotType.GetWait;
+            //        txns[0].Position = cbRA1Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
+            //        txns[0].Slot = cbRA1Slot.Text;
+            //        break;
+            //    case "btnRPutWait":
+            //        if (cbRA2Point.Text == "" || cbRA2Slot.Text == "" || cbRA2Arm.Text == "")
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select destination!", "Invalid destination");
+            //            return;
+            //        }
+            //        txns[0].Method = Transaction.Command.RobotType.PutWait;
+            //        txns[0].Position = cbRA2Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
+            //        txns[0].Slot = cbRA2Slot.Text;
+            //        break;
+            //    case "btnRMoveDown":
+            //        isRobotMoveDown = true;
+            //        txns[0].Method = Transaction.Command.RobotType.WaitBeforeGet;//GET option 1
+            //        txns[0].Position = cbRA1Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
+            //        txns[0].Slot = cbRA1Slot.Text;
+            //        break;
+            //    case "btnRMoveUp":
+            //        isRobotMoveUp = true;
+            //        txns[0].Method = Transaction.Command.RobotType.WaitBeforePut;//Put option 1
+            //        txns[0].Position = cbRA2Point.Text;
+            //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
+            //        txns[0].Slot = cbRA2Slot.Text;
+            //        break;
+            //    case "btnRChgMode":
+            //        if (cbRMode.SelectedIndex < 0)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select mode!", "Invalid Mode");
+            //            return;
+            //        }
+            //        txns[0].Method = Transaction.Command.RobotType.RobotMode;
+            //        txns[0].Value = Convert.ToString(cbRMode.SelectedIndex);
+            //        break;
+            //    case "btnRPutPut":
+            //        if (GetScriptVar() == null)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            robot.ExcuteScript("RobotManualPutPut", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
+            //            return;
+            //        }
+            //    case "btnRGetGet":
+            //        if (GetScriptVar() == null)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            robot.ExcuteScript("RobotManualGetGet", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
+            //            return;
+            //        }
+            //    case "btnRGetPut":
 
-                    //switch (btn.Name)
-                    //{
-                    //    case "btnRConn":
-                    //        try
-                    //        {
-                    //            //ControllerManagement.Get(robot.Controller).Close();
-                    //            //ControllerManagement.Get(robot.Controller).Connect();
-                    //            robot.State = "";
-                    //            Thread.Sleep(500);//暫解
-                    //            setRobotStatus();
-                    //            SetFormEnable(true);
-                    //        }
-                    //        catch (Exception e1)
-                    //        {
-                    //        } 
-                    //        return;
-                    //    case "btnRDisConn":
-                    //        try
-                    //        {
-                    //            //ControllerManagement.Get(robot.Controller).Close();
-                    //            robot.State = "";
-                    //            Thread.Sleep(500);//暫解
-                    //            setRobotStatus();
-                    //            SetFormEnable(true);
-                    //        }
-                    //        catch (Exception e1)
-                    //        {
-                    //        }
-                    //        return;
-                    //    case "btnRInit":
-                    //        //txns[0].Method = Transaction.Command.LoadPortType.MappingDown;
-                    //        isRobotMoveDown = false;//Get option 1
-                    //        isRobotMoveUp = false;//Put option 1
-                    //        break;
-                    //    case "btnROrg":
-                    //        txns[0].Method = Transaction.Command.RobotType.RobotOrginSearch;
-                    //        isRobotMoveDown = false;//Get option 1
-                    //        isRobotMoveUp = false;//Put option 1
-                    //        break;
-                    //    case "btnRHome":
-                    //        if (robot.Brand.ToUpper().Equals("KAWASAKI"))
-                    //            txns[0].Method = Transaction.Command.RobotType.RobotHomeA;//Kawasaki home A                    
-                    //        else
-                    //            txns[0].Method = Transaction.Command.RobotType.RobotHomeSafety;//20180607 RobotHome => RobotHomeSafety
-                    //        isRobotMoveDown = false;//Get option 1
-                    //        isRobotMoveUp = false;//Put option 1
-                    //        break;
-                    //    case "btnRChgSpeed":
-                    //        txns[0].Method = Transaction.Command.RobotType.RobotSpeed;
-                    //        txns[0].Value = nudRSpeed.Text.Equals("100") ? "0" : nudRSpeed.Text;
-                    //        break;
-                    //    //上臂
-                    //    case "btnRRVacuOn":
-                    //        txns[0].Method = Transaction.Command.RobotType.WaferHold;
-                    //        txns[0].Arm = "1";
-                    //        break;
-                    //    case "btnRRVacuOff":
-                    //        txns[0].Method = Transaction.Command.RobotType.WaferRelease;
-                    //        txns[0].Arm = "1";
-                    //        break;
-                    //    //下臂
-                    //    case "btnRLVacuOn":
-                    //        txns[0].Method = Transaction.Command.RobotType.WaferHold;
-                    //        txns[0].Arm = "2";
-                    //        break;
-                    //    case "btnRLVacuOff":
-                    //        txns[0].Method = Transaction.Command.RobotType.WaferRelease;
-                    //        txns[0].Arm = "2";
-                    //        break;
-                    //    case "btnRGet":
-                    //        if (cbRA1Point.Text == "" || cbRA1Slot.Text == "" || cbRA1Arm.Text == "")
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source!", "Invalid source");
-                    //            return;
-                    //        }
-                    //        if (isRobotMoveDown)
-                    //            txns[0].Method = Transaction.Command.RobotType.GetAfterWait;
-                    //        else
-                    //            txns[0].Method = Transaction.Command.RobotType.Get;
-                    //        txns[0].Position = cbRA1Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
-                    //        txns[0].Slot = cbRA1Slot.Text;
-                    //        isRobotMoveDown = false;//Get option 1
-                    //        isRobotMoveUp = false;//Put option 1
-                    //        break;
-                    //    case "btnRPut":
-                    //        if (cbRA2Point.Text == "" || cbRA2Slot.Text == "" || cbRA2Arm.Text == "")
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select destination!", "Invalid destination");
-                    //            return;
-                    //        }
-                    //        if (isRobotMoveUp)
-                    //            txns[0].Method = Transaction.Command.RobotType.PutBack;
-                    //        else
-                    //            txns[0].Method = Transaction.Command.RobotType.Put;
-                    //        txns[0].Position = cbRA2Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
-                    //        txns[0].Slot = cbRA2Slot.Text;
-                    //        isRobotMoveDown = false;//Get option 1
-                    //        isRobotMoveUp = false;//Put option 1
-                    //        break;
-                    //    case "btnRGetWait":
-                    //        if (cbRA1Point.Text == "" || cbRA1Slot.Text == "" || cbRA1Arm.Text == "")
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source!", "Invalid source");
-                    //            return;
-                    //        }
-                    //        txns[0].Method = Transaction.Command.RobotType.GetWait;
-                    //        txns[0].Position = cbRA1Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
-                    //        txns[0].Slot = cbRA1Slot.Text;
-                    //        break;
-                    //    case "btnRPutWait":
-                    //        if (cbRA2Point.Text == "" || cbRA2Slot.Text == "" || cbRA2Arm.Text == "")
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select destination!", "Invalid destination");
-                    //            return;
-                    //        }
-                    //        txns[0].Method = Transaction.Command.RobotType.PutWait;
-                    //        txns[0].Position = cbRA2Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
-                    //        txns[0].Slot = cbRA2Slot.Text;
-                    //        break;
-                    //    case "btnRMoveDown":
-                    //        isRobotMoveDown = true;
-                    //        txns[0].Method = Transaction.Command.RobotType.WaitBeforeGet;//GET option 1
-                    //        txns[0].Position = cbRA1Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA1Arm.Text);
-                    //        txns[0].Slot = cbRA1Slot.Text;
-                    //        break;
-                    //    case "btnRMoveUp":
-                    //        isRobotMoveUp = true;
-                    //        txns[0].Method = Transaction.Command.RobotType.WaitBeforePut;//Put option 1
-                    //        txns[0].Position = cbRA2Point.Text;
-                    //        txns[0].Arm = SanwaUtil.GetArmID(cbRA2Arm.Text);
-                    //        txns[0].Slot = cbRA2Slot.Text;
-                    //        break;
-                    //    case "btnRChgMode":
-                    //        if (cbRMode.SelectedIndex < 0)
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select mode!", "Invalid Mode");
-                    //            return;
-                    //        }
-                    //        txns[0].Method = Transaction.Command.RobotType.RobotMode;
-                    //        txns[0].Value = Convert.ToString(cbRMode.SelectedIndex);
-                    //        break;
-                    //    case "btnRPutPut":
-                    //        if (GetScriptVar() == null)
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
-                    //            return;
-                    //        }
-                    //        else
-                    //        {
-                    //            robot.ExcuteScript("RobotManualPutPut", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
-                    //            return;
-                    //        }
-                    //    case "btnRGetGet":
-                    //        if (GetScriptVar() == null)
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
-                    //            return;
-                    //        }
-                    //        else
-                    //        {
-                    //            robot.ExcuteScript("RobotManualGetGet", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
-                    //            return;
-                    //        }
-                    //    case "btnRGetPut":
+            //        if (GetScriptVar() == null)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            robot.ExcuteScript("RobotManualGetPut", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
+            //            return;
+            //        }
+            //    case "btnRPutGet":
 
-                    //        if (GetScriptVar() == null)
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
-                    //            return;
-                    //        }
-                    //        else
-                    //        {
-                    //            robot.ExcuteScript("RobotManualGetPut", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
-                    //            return;
-                    //        }
-                    //    case "btnRPutGet":
-
-                    //        if (GetScriptVar() == null)
-                    //        {
-                    //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
-                    //            return;
-                    //        }
-                    //        else
-                    //        {
-                    //            robot.ExcuteScript("RobotManualPutGet", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
-                    //            return;
-                    //        }
-                    //    case "btnRReset":
-                    //        txns[0].Method = Transaction.Command.RobotType.Reset;
-                    //        break;
-                    //    case "btnRServoOn":
-                    //        txns[0].Method = Transaction.Command.RobotType.RobotServo;
-                    //        txns[0].Value = "1";
-                    //        break;
-                    //    case "btnRServoOff":
-                    //        txns[0].Method = Transaction.Command.RobotType.RobotServo;
-                    //        txns[0].Value = "0";
-                    //        break;
-                    //}
-                    //if (!txns[0].Method.Equals(""))
-                    //{
-                    //    txns[0].RecipeID = WaferSize;
-                    //    robot.SendCommand(txns[0], out Message);
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("Command is empty!");
-                    //}
-                    //SetFormEnable(false);
-                    //Update_Manual_Status();// steven mark test
-            }
+            //        if (GetScriptVar() == null)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select source or destination!", "Invalid source or destination");
+            //            return;
+            //        }
+            //        else
+            //        {
+            //            robot.ExcuteScript("RobotManualPutGet", "FormManual-Script", GetScriptVar(), out Message, WaferSize);
+            //            return;
+            //        }
+            //    case "btnRReset":
+            //        txns[0].Method = Transaction.Command.RobotType.Reset;
+            //        break;
+            //    case "btnRServoOn":
+            //        txns[0].Method = Transaction.Command.RobotType.RobotServo;
+            //        txns[0].Value = "1";
+            //        break;
+            //    case "btnRServoOff":
+            //        txns[0].Method = Transaction.Command.RobotType.RobotServo;
+            //        txns[0].Value = "0";
+            //        break;
+            //}
+            //if (!txns[0].Method.Equals(""))
+            //{
+            //    txns[0].RecipeID = WaferSize;
+            //    robot.SendCommand(txns[0], out Message);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Command is empty!");
+            //}
+            //SetFormEnable(false);
+            //Update_Manual_Status();// steven mark test
+        }
 
         private Dictionary<string, string> GetScriptVar()
         {
@@ -1075,7 +1095,7 @@ namespace GUI
                     param.Add("@Target", Cb_SMIFSelect.Text);
                     break;
                 case "SMIF_Close_bt":
-                    TaskName = "UNLOCK";
+                    TaskName = "CLOSE";
                     param.Add("@Target", Cb_SMIFSelect.Text);
                     break;
                 case "SMIF_Reset_bt":

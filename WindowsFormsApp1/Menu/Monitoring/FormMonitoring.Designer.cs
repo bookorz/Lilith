@@ -39,21 +39,21 @@
             this.TRANSREQ_ck = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal = new System.Windows.Forms.Label();
+            this.ARM_NOT_EXTEND_BF1_signal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
+            this.BF1_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.LOADLOCK01_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
+            this.BF1_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.LoadLock01_Slot_1 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal = new System.Windows.Forms.Label();
+            this.ARM_NOT_EXTEND_BF2_signal = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
+            this.BF2_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.LOADLOCK02_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
+            this.BF2_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.LoadLock02_Slot_1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
@@ -450,11 +450,11 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.ARM_NOT_EXTEND_LOADLOCK01_signal);
+            this.panel1.Controls.Add(this.ARM_NOT_EXTEND_BF1_signal);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal);
+            this.panel1.Controls.Add(this.BF1_ARM_EXTEND_ENABLE_Signal);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.LOADLOCK01_DOOR_OPEN_Signal);
+            this.panel1.Controls.Add(this.BF1_DOOR_OPEN_Signal);
             this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.LoadLock01_Slot_1);
             this.panel1.Controls.Add(this.label50);
@@ -463,20 +463,20 @@
             this.panel1.Size = new System.Drawing.Size(284, 116);
             this.panel1.TabIndex = 202;
             // 
-            // ARM_NOT_EXTEND_LOADLOCK01_signal
+            // ARM_NOT_EXTEND_BF1_signal
             // 
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.BackColor = System.Drawing.Color.White;
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.ForeColor = System.Drawing.Color.White;
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Location = new System.Drawing.Point(124, 88);
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Margin = new System.Windows.Forms.Padding(3);
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Name = "ARM_NOT_EXTEND_LOADLOCK01_signal";
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Size = new System.Drawing.Size(149, 18);
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.TabIndex = 19;
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.Tag = "1";
-            this.ARM_NOT_EXTEND_LOADLOCK01_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ARM_NOT_EXTEND_BF1_signal.BackColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_BF1_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ARM_NOT_EXTEND_BF1_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARM_NOT_EXTEND_BF1_signal.ForeColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_BF1_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ARM_NOT_EXTEND_BF1_signal.Location = new System.Drawing.Point(124, 88);
+            this.ARM_NOT_EXTEND_BF1_signal.Margin = new System.Windows.Forms.Padding(3);
+            this.ARM_NOT_EXTEND_BF1_signal.Name = "ARM_NOT_EXTEND_BF1_signal";
+            this.ARM_NOT_EXTEND_BF1_signal.Size = new System.Drawing.Size(149, 18);
+            this.ARM_NOT_EXTEND_BF1_signal.TabIndex = 19;
+            this.ARM_NOT_EXTEND_BF1_signal.Tag = "1";
+            this.ARM_NOT_EXTEND_BF1_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -494,20 +494,20 @@
             this.label4.Text = "Arm Not Extend";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LOADLOCK01_ARM_EXTEND_ENABLE_Signal
+            // BF1_ARM_EXTEND_ENABLE_Signal
             // 
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Name = "LOADLOCK01_ARM_EXTEND_ENABLE_Signal";
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.Tag = "1";
-            this.LOADLOCK01_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF1_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Name = "BF1_ARM_EXTEND_ENABLE_Signal";
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
+            this.BF1_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
+            this.BF1_ARM_EXTEND_ENABLE_Signal.Tag = "1";
+            this.BF1_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
@@ -525,20 +525,20 @@
             this.label11.Text = "Arm Extend";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LOADLOCK01_DOOR_OPEN_Signal
+            // BF1_DOOR_OPEN_Signal
             // 
-            this.LOADLOCK01_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
-            this.LOADLOCK01_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LOADLOCK01_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOADLOCK01_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
-            this.LOADLOCK01_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LOADLOCK01_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
-            this.LOADLOCK01_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.LOADLOCK01_DOOR_OPEN_Signal.Name = "LOADLOCK01_DOOR_OPEN_Signal";
-            this.LOADLOCK01_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
-            this.LOADLOCK01_DOOR_OPEN_Signal.TabIndex = 15;
-            this.LOADLOCK01_DOOR_OPEN_Signal.Tag = "1";
-            this.LOADLOCK01_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF1_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
+            this.BF1_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF1_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF1_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
+            this.BF1_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF1_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
+            this.BF1_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.BF1_DOOR_OPEN_Signal.Name = "BF1_DOOR_OPEN_Signal";
+            this.BF1_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
+            this.BF1_DOOR_OPEN_Signal.TabIndex = 15;
+            this.BF1_DOOR_OPEN_Signal.Tag = "1";
+            this.BF1_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label15
             // 
@@ -601,11 +601,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.ARM_NOT_EXTEND_LOADLOCK02_signal);
+            this.panel2.Controls.Add(this.ARM_NOT_EXTEND_BF2_signal);
             this.panel2.Controls.Add(this.label42);
-            this.panel2.Controls.Add(this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal);
+            this.panel2.Controls.Add(this.BF2_ARM_EXTEND_ENABLE_Signal);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.LOADLOCK02_DOOR_OPEN_Signal);
+            this.panel2.Controls.Add(this.BF2_DOOR_OPEN_Signal);
             this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.LoadLock02_Slot_1);
             this.panel2.Controls.Add(this.label34);
@@ -614,20 +614,20 @@
             this.panel2.Size = new System.Drawing.Size(284, 116);
             this.panel2.TabIndex = 200;
             // 
-            // ARM_NOT_EXTEND_LOADLOCK02_signal
+            // ARM_NOT_EXTEND_BF2_signal
             // 
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.BackColor = System.Drawing.Color.White;
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.ForeColor = System.Drawing.Color.White;
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Location = new System.Drawing.Point(124, 88);
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Margin = new System.Windows.Forms.Padding(3);
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Name = "ARM_NOT_EXTEND_LOADLOCK02_signal";
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Size = new System.Drawing.Size(149, 18);
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.TabIndex = 19;
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.Tag = "1";
-            this.ARM_NOT_EXTEND_LOADLOCK02_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ARM_NOT_EXTEND_BF2_signal.BackColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_BF2_signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ARM_NOT_EXTEND_BF2_signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ARM_NOT_EXTEND_BF2_signal.ForeColor = System.Drawing.Color.White;
+            this.ARM_NOT_EXTEND_BF2_signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ARM_NOT_EXTEND_BF2_signal.Location = new System.Drawing.Point(124, 88);
+            this.ARM_NOT_EXTEND_BF2_signal.Margin = new System.Windows.Forms.Padding(3);
+            this.ARM_NOT_EXTEND_BF2_signal.Name = "ARM_NOT_EXTEND_BF2_signal";
+            this.ARM_NOT_EXTEND_BF2_signal.Size = new System.Drawing.Size(149, 18);
+            this.ARM_NOT_EXTEND_BF2_signal.TabIndex = 19;
+            this.ARM_NOT_EXTEND_BF2_signal.Tag = "1";
+            this.ARM_NOT_EXTEND_BF2_signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label42
             // 
@@ -645,20 +645,20 @@
             this.label42.Text = "Arm Not Extend";
             this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LOADLOCK02_ARM_EXTEND_ENABLE_Signal
+            // BF2_ARM_EXTEND_ENABLE_Signal
             // 
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Name = "LOADLOCK02_ARM_EXTEND_ENABLE_Signal";
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.Tag = "1";
-            this.LOADLOCK02_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.BackColor = System.Drawing.Color.White;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF2_ARM_EXTEND_ENABLE_Signal.ForeColor = System.Drawing.Color.White;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Location = new System.Drawing.Point(124, 64);
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Name = "BF2_ARM_EXTEND_ENABLE_Signal";
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Size = new System.Drawing.Size(149, 18);
+            this.BF2_ARM_EXTEND_ENABLE_Signal.TabIndex = 17;
+            this.BF2_ARM_EXTEND_ENABLE_Signal.Tag = "1";
+            this.BF2_ARM_EXTEND_ENABLE_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label19
             // 
@@ -676,20 +676,20 @@
             this.label19.Text = "Arm Extend";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LOADLOCK02_DOOR_OPEN_Signal
+            // BF2_DOOR_OPEN_Signal
             // 
-            this.LOADLOCK02_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
-            this.LOADLOCK02_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LOADLOCK02_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LOADLOCK02_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
-            this.LOADLOCK02_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LOADLOCK02_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
-            this.LOADLOCK02_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.LOADLOCK02_DOOR_OPEN_Signal.Name = "LOADLOCK02_DOOR_OPEN_Signal";
-            this.LOADLOCK02_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
-            this.LOADLOCK02_DOOR_OPEN_Signal.TabIndex = 15;
-            this.LOADLOCK02_DOOR_OPEN_Signal.Tag = "1";
-            this.LOADLOCK02_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF2_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
+            this.BF2_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF2_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF2_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
+            this.BF2_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF2_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
+            this.BF2_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
+            this.BF2_DOOR_OPEN_Signal.Name = "BF2_DOOR_OPEN_Signal";
+            this.BF2_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
+            this.BF2_DOOR_OPEN_Signal.TabIndex = 15;
+            this.BF2_DOOR_OPEN_Signal.Tag = "1";
+            this.BF2_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label28
             // 
@@ -5082,21 +5082,21 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        internal System.Windows.Forms.Label ARM_NOT_EXTEND_LOADLOCK01_signal;
+        internal System.Windows.Forms.Label ARM_NOT_EXTEND_BF1_signal;
         internal System.Windows.Forms.Label label4;
-        internal System.Windows.Forms.Label LOADLOCK01_ARM_EXTEND_ENABLE_Signal;
+        internal System.Windows.Forms.Label BF1_ARM_EXTEND_ENABLE_Signal;
         internal System.Windows.Forms.Label label11;
-        internal System.Windows.Forms.Label LOADLOCK01_DOOR_OPEN_Signal;
+        internal System.Windows.Forms.Label BF1_DOOR_OPEN_Signal;
         internal System.Windows.Forms.Label label15;
         internal System.Windows.Forms.Label LoadLock01_Slot_1;
         internal System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel2;
-        internal System.Windows.Forms.Label ARM_NOT_EXTEND_LOADLOCK02_signal;
+        internal System.Windows.Forms.Label ARM_NOT_EXTEND_BF2_signal;
         internal System.Windows.Forms.Label label42;
-        internal System.Windows.Forms.Label LOADLOCK02_ARM_EXTEND_ENABLE_Signal;
+        internal System.Windows.Forms.Label BF2_ARM_EXTEND_ENABLE_Signal;
         internal System.Windows.Forms.Label label19;
-        internal System.Windows.Forms.Label LOADLOCK02_DOOR_OPEN_Signal;
+        internal System.Windows.Forms.Label BF2_DOOR_OPEN_Signal;
         internal System.Windows.Forms.Label label28;
         internal System.Windows.Forms.Label LoadLock02_Slot_1;
         internal System.Windows.Forms.Label label34;
