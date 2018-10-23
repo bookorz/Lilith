@@ -568,6 +568,10 @@ namespace GUI
                     break;
                 case "btnRPut":
                     TaskName = "UNLOAD";
+                    if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
+                    {
+                        TaskName += "_SaftyCheck";
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA2Point.Text);
                     param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));

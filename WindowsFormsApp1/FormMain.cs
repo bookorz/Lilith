@@ -1764,7 +1764,7 @@ namespace Lilith
         public void On_Connection_Connected()
         {
             //MonitoringUpdate.ConnectUpdate("Connected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Connected");
+            ConnectionStatusUpdate.UpdateOnlineStatus("Online");
             MonitoringUpdate.LogUpdate("Connected");
         }
 
@@ -1778,7 +1778,7 @@ namespace Lilith
         public void On_Connection_Disconnected()
         {
             //MonitoringUpdate.ConnectUpdate("Disconnected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Disconnected");
+            ConnectionStatusUpdate.UpdateOnlineStatus("Offline");
             MonitoringUpdate.LogUpdate("Disconnected");
         }
 
