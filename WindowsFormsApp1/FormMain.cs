@@ -977,7 +977,7 @@ namespace Lilith
             {
                 Params.Add("12_Inch_OCR", "False");
                 Params.Add("8_Inch_OCR", "True");
-                RouteControl.DIO.SetIO(Params);
+                RouteControl.Instance.DIO.SetIO(Params);
 
                 Dictionary<string, string> vars = new Dictionary<string, string>();
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
@@ -1021,7 +1021,7 @@ namespace Lilith
                 Params.Add("8_Inch_OCR", "False");
                 Params.Add("12_Inch_OCR", "True");
 
-                RouteControl.DIO.SetIO(Params);
+                RouteControl.Instance.DIO.SetIO(Params);
 
                 RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
 
@@ -1464,7 +1464,7 @@ namespace Lilith
                 case "ARM_NOT_EXTEND_BF1":
                 case "ARM_NOT_EXTEND_BF2":
                     DIOUpdate.UpdateInterLock(Parameter, Value);
-                    break;
+                    break;                
                 default:
                     DIOUpdate.UpdateDIOStatus(Parameter, Value);
                     break;
@@ -1475,7 +1475,7 @@ namespace Lilith
 
         public void On_Alarm_Happen(string DIOName, string ErrorCode)
         {
-
+            
             AlarmInfo CurrentAlarm = new AlarmInfo();
             CurrentAlarm.NodeName = DIOName;
             CurrentAlarm.AlarmCode = ErrorCode;
@@ -1490,6 +1490,8 @@ namespace Lilith
                 CurrentAlarm.EngDesc = Detail.Code_Cause_English;
                 CurrentAlarm.Type = Detail.Code_Type;
                 CurrentAlarm.IsStop = Detail.IsStop;
+
+                
                 if (CurrentAlarm.IsStop)
                 {
                     RouteCtrl.Stop();
@@ -1549,63 +1551,63 @@ namespace Lilith
             switch ((sender as Button).Name)
             {
                 case "RED_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("RED", "False");
+                        RouteControl.Instance.DIO.SetIO("RED", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("RED", "True");
+                        RouteControl.Instance.DIO.SetIO("RED", "True");
                     }
                     break;
                 case "ORANGE_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("ORANGE", "False");
+                        RouteControl.Instance.DIO.SetIO("ORANGE", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("ORANGE", "True");
+                        RouteControl.Instance.DIO.SetIO("ORANGE", "True");
                     }
                     break;
                 case "GREEN_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("GREEN", "False");
+                        RouteControl.Instance.DIO.SetIO("GREEN", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("GREEN", "True");
+                        RouteControl.Instance.DIO.SetIO("GREEN", "True");
                     }
                     break;
                 case "BLUE_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("BLUE", "False");
+                        RouteControl.Instance.DIO.SetIO("BLUE", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("BLUE", "True");
+                        RouteControl.Instance.DIO.SetIO("BLUE", "True");
                     }
                     break;
                 case "BUZZER1_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("BUZZER1", "False");
+                        RouteControl.Instance.DIO.SetIO("BUZZER1", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("BUZZER1", "True");
+                        RouteControl.Instance.DIO.SetIO("BUZZER1", "True");
                     }
                     break;
                 case "BUZZER2_Signal":
-                    if (RouteControl.DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.DIO.SetIO("BUZZER2", "False");
+                        RouteControl.Instance.DIO.SetIO("BUZZER2", "False");
                     }
                     else
                     {
-                        RouteControl.DIO.SetIO("BUZZER2", "True");
+                        RouteControl.Instance.DIO.SetIO("BUZZER2", "True");
                     }
                     break;
             }

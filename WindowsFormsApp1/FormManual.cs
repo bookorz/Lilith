@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferControl.Engine;
 using TransferControl.Management;
 
 namespace GUI
@@ -29,6 +30,7 @@ namespace GUI
 
         private void FormManual_Load(object sender, EventArgs e)
         {
+            RouteControl.Instance.TaskJob.Remove("FormManual");
             Initialize();
             Update_Manual_Status();
         }
@@ -191,7 +193,7 @@ namespace GUI
             {
                 ManualPortStatusUpdate.LockUI(true);
                 //port.SendCommand(txn, out Message);
-                TaskJobManagment.Excute("FormManual", out Message, txn.Method);
+                RouteControl.Instance.TaskJob.Excute("FormManual", out Message, txn.Method);
             }
             else
             {
@@ -430,7 +432,7 @@ namespace GUI
                     break;
             }
 
-            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
             ManualPortStatusUpdate.LockUI(false);
             //SetFormEnable(true);
             //Node node = NodeManagement.Get(nodeName);
@@ -540,6 +542,10 @@ namespace GUI
 
             switch (btn.Name)
             {
+                case "btnRInit":
+                    TaskName = "ROBOT_Init";
+                    param.Add("@Target", nodeName);
+                    break;
                 case "btnRMoveDown":
                     TaskName = "ROBOT_GET_ARM_EXTEND";
                     param.Add("@Target", nodeName);
@@ -639,8 +645,9 @@ namespace GUI
                     param.Add("@Target", nodeName);                 
                     break;
             }
-            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
             ManualPortStatusUpdate.LockUI(true);
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
+            
             //switch (btn.Name)
             //{
             //    case "btnRConn":
@@ -900,9 +907,9 @@ namespace GUI
             //robot.ExcuteScript(script_name, "FormManual", out Message);
            
             Dictionary<string, string> param = new Dictionary<string, string>();
-            string TaskName = "GET_ROBOT_STATUS";
+            string TaskName = "ROBOT_Init";
             param.Add("@Target", nodeName);
-            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
         }
 
 
@@ -1130,8 +1137,8 @@ namespace GUI
 
             }
             ManualPortStatusUpdate.LockUI(true);
-           
-            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
         }
 
         private void SMIF_ClearMap_bt_Click(object sender, EventArgs e)
@@ -1189,7 +1196,7 @@ namespace GUI
             Dictionary<string, string> param = new Dictionary<string, string>();
             ManualPortStatusUpdate.LockUI(true);
             param.Add("@Target", "SMARTTAG"+Cb_SMIFSelect.Text.Replace("LOADPORT",""));
-            TaskJobManagment.Excute("FormManual", out Message, TaskName,param);
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName,param);
         }
 
         private void TagWrite_bt_Click(object sender, EventArgs e)
@@ -1200,7 +1207,7 @@ namespace GUI
             ManualPortStatusUpdate.LockUI(true);
             param.Add("@Target", "SMARTTAG" + Cb_SMIFSelect.Text.Replace("LOADPORT", ""));
             param.Add("@Value", SmartTagWrite_tb.Text);
-            TaskJobManagment.Excute("FormManual", out Message, TaskName, param);
+            RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
         }
     }
 }

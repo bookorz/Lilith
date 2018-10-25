@@ -158,7 +158,7 @@ namespace Lilith.Menu.SystemSetting
 
                 UpdateList();
                 //改設定後套用
-                RouteControl.DIO.Initial();
+                RouteControl.Instance.DIO.Initial();
             }
             catch (Exception ex)
             {

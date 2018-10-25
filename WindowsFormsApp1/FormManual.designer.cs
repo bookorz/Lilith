@@ -417,6 +417,7 @@
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.pnlMotionStop = new System.Windows.Forms.Panel();
+            this.btnRInit = new System.Windows.Forms.Button();
             this.tbcManual.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox20.SuspendLayout();
@@ -1104,6 +1105,7 @@
             // pnlRobotStatus
             // 
             this.pnlRobotStatus.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlRobotStatus.Controls.Add(this.btnRInit);
             this.pnlRobotStatus.Controls.Add(this.btnRRetract);
             this.pnlRobotStatus.Controls.Add(this.tbRError);
             this.pnlRobotStatus.Controls.Add(this.label25);
@@ -6083,6 +6085,21 @@
             this.pnlMotionStop.Size = new System.Drawing.Size(755, 50);
             this.pnlMotionStop.TabIndex = 1;
             // 
+            // btnRInit
+            // 
+            this.btnRInit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnRInit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRInit.FlatAppearance.BorderSize = 2;
+            this.btnRInit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRInit.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRInit.Location = new System.Drawing.Point(205, 125);
+            this.btnRInit.Name = "btnRInit";
+            this.btnRInit.Size = new System.Drawing.Size(125, 46);
+            this.btnRInit.TabIndex = 116;
+            this.btnRInit.Text = "Initial";
+            this.btnRInit.UseVisualStyleBackColor = false;
+            this.btnRInit.Click += new System.EventHandler(this.RobotFunction_Click);
+            // 
             // FormManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -6556,5 +6573,6 @@
         private System.Windows.Forms.TextBox SmartTagWrite_tb;
         private System.Windows.Forms.TextBox SmartTagRead_tb;
         private System.Windows.Forms.Button btnRRetract;
+        private System.Windows.Forms.Button btnRInit;
     }
 }

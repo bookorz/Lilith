@@ -45,7 +45,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.BF1_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.LoadLock01_Slot_1 = new System.Windows.Forms.Label();
+            this.BF1_Slot_1 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -55,7 +55,7 @@
             this.label19 = new System.Windows.Forms.Label();
             this.BF2_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.LoadLock02_Slot_1 = new System.Windows.Forms.Label();
+            this.BF_Slot_1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.LoadPort04_Mode = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -456,7 +456,7 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.BF1_DOOR_OPEN_Signal);
             this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.LoadLock01_Slot_1);
+            this.panel1.Controls.Add(this.BF1_Slot_1);
             this.panel1.Controls.Add(this.label50);
             this.panel1.Location = new System.Drawing.Point(858, 204);
             this.panel1.Name = "panel1";
@@ -556,20 +556,20 @@
             this.label15.Text = "Door Open";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LoadLock01_Slot_1
+            // BF1_Slot_1
             // 
-            this.LoadLock01_Slot_1.BackColor = System.Drawing.Color.White;
-            this.LoadLock01_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadLock01_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadLock01_Slot_1.ForeColor = System.Drawing.Color.White;
-            this.LoadLock01_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadLock01_Slot_1.Location = new System.Drawing.Point(124, 16);
-            this.LoadLock01_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadLock01_Slot_1.Name = "LoadLock01_Slot_1";
-            this.LoadLock01_Slot_1.Size = new System.Drawing.Size(149, 18);
-            this.LoadLock01_Slot_1.TabIndex = 13;
-            this.LoadLock01_Slot_1.Tag = "1";
-            this.LoadLock01_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF1_Slot_1.BackColor = System.Drawing.Color.White;
+            this.BF1_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF1_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF1_Slot_1.ForeColor = System.Drawing.Color.White;
+            this.BF1_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF1_Slot_1.Location = new System.Drawing.Point(124, 16);
+            this.BF1_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.BF1_Slot_1.Name = "BF1_Slot_1";
+            this.BF1_Slot_1.Size = new System.Drawing.Size(149, 18);
+            this.BF1_Slot_1.TabIndex = 13;
+            this.BF1_Slot_1.Tag = "1";
+            this.BF1_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label50
             // 
@@ -607,7 +607,7 @@
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.BF2_DOOR_OPEN_Signal);
             this.panel2.Controls.Add(this.label28);
-            this.panel2.Controls.Add(this.LoadLock02_Slot_1);
+            this.panel2.Controls.Add(this.BF_Slot_1);
             this.panel2.Controls.Add(this.label34);
             this.panel2.Location = new System.Drawing.Point(858, 362);
             this.panel2.Name = "panel2";
@@ -707,20 +707,20 @@
             this.label28.Text = "Door Open";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LoadLock02_Slot_1
+            // BF_Slot_1
             // 
-            this.LoadLock02_Slot_1.BackColor = System.Drawing.Color.White;
-            this.LoadLock02_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LoadLock02_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadLock02_Slot_1.ForeColor = System.Drawing.Color.White;
-            this.LoadLock02_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LoadLock02_Slot_1.Location = new System.Drawing.Point(124, 16);
-            this.LoadLock02_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.LoadLock02_Slot_1.Name = "LoadLock02_Slot_1";
-            this.LoadLock02_Slot_1.Size = new System.Drawing.Size(149, 18);
-            this.LoadLock02_Slot_1.TabIndex = 13;
-            this.LoadLock02_Slot_1.Tag = "1";
-            this.LoadLock02_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF_Slot_1.BackColor = System.Drawing.Color.White;
+            this.BF_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF_Slot_1.ForeColor = System.Drawing.Color.White;
+            this.BF_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF_Slot_1.Location = new System.Drawing.Point(124, 16);
+            this.BF_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.BF_Slot_1.Name = "BF_Slot_1";
+            this.BF_Slot_1.Size = new System.Drawing.Size(149, 18);
+            this.BF_Slot_1.TabIndex = 13;
+            this.BF_Slot_1.Tag = "1";
+            this.BF_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
@@ -5088,7 +5088,7 @@
         internal System.Windows.Forms.Label label11;
         internal System.Windows.Forms.Label BF1_DOOR_OPEN_Signal;
         internal System.Windows.Forms.Label label15;
-        internal System.Windows.Forms.Label LoadLock01_Slot_1;
+        internal System.Windows.Forms.Label BF1_Slot_1;
         internal System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel2;
@@ -5098,7 +5098,7 @@
         internal System.Windows.Forms.Label label19;
         internal System.Windows.Forms.Label BF2_DOOR_OPEN_Signal;
         internal System.Windows.Forms.Label label28;
-        internal System.Windows.Forms.Label LoadLock02_Slot_1;
+        internal System.Windows.Forms.Label BF_Slot_1;
         internal System.Windows.Forms.Label label34;
     }
 }
