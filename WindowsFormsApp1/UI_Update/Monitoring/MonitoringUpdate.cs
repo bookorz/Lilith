@@ -119,12 +119,12 @@ namespace Lilith.UI_Update.Monitoring
                     }
                     W.ScrollToCaret();
 
-                    EventUpdate("MAPDT", FormMain.ctrl.Events.MAPDT);
-                    EventUpdate("PORT", FormMain.ctrl.Events.PORT);
-                    EventUpdate("PRS", FormMain.ctrl.Events.PRS);
-                    EventUpdate("SYSTEM", FormMain.ctrl.Events.SYSTEM);
-                    EventUpdate("TRANSREQ", FormMain.ctrl.Events.TRANSREQ);
-                    EventUpdate("FFU", FormMain.ctrl.Events.FFU);
+                    EventUpdate("MAPDT", FormMain.HostControl.Events.MAPDT);
+                    EventUpdate("PORT", FormMain.HostControl.Events.PORT);
+                    EventUpdate("PRS", FormMain.HostControl.Events.PRS);
+                    EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
+                    EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
+                    EventUpdate("FFU", FormMain.HostControl.Events.FFU);
 
 
                   

@@ -32,7 +32,7 @@ namespace Lilith
     public partial class FormMain : Form, IUserInterfaceReport, IEFEMControl
     {
         public static RouteControl RouteCtrl;
-        public static RorzeInterface ctrl;
+        public static RorzeInterface HostControl;
         public static AlarmMapping AlmMapping;
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormMain));
 
@@ -55,8 +55,8 @@ namespace Lilith
             XmlConfigurator.Configure();
             Initialize();
 
-            ctrl = new RorzeInterface(this);
-            RouteCtrl = new RouteControl(this, ctrl);
+            HostControl = new RorzeInterface(this);
+            RouteCtrl = new RouteControl(this, HostControl);
             AlmMapping = new AlarmMapping();
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -141,7 +141,7 @@ namespace Lilith
             this.Width = oldWidth;
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
-            ctrl.Events = new ReportEvent();
+            HostControl.Events = new ReportEvent();
 
         }
 
@@ -1659,47 +1659,17 @@ namespace Lilith
         private void Mode_btn_Click(object sender, EventArgs e)
         {
 
-            if (Mode_btn.Tag.ToString() == "Manual")
+            if (Mode_btn.Text.Equals("Manual-Mode"))
             {
-
-                //if (Connection_btn.Tag.ToString() == "Offline")
-                //{
-                //    MessageBox.Show("尚未連線");
-                //    return;
-                //}
-
-
-
-
-                if (AlarmManagement.HasCritical())
-                {
-                    MessageBox.Show("關鍵Alarm尚未解除");
-                }
-                else
-                {
-                    if (NodeManagement.IsNeedInitial())
-                    {
-                        ConnectionStatusUpdate.UpdateInitial(false.ToString());
-                        MessageBox.Show("請先執行Initial");
-                    }
-                    else
-                    {
-
-                        ConnectionStatusUpdate.UpdateInitial(false.ToString());
-                        NodeStatusUpdate.UpdateCurrentState(NodeManagement.GetCurrentState());
-                        RouteCtrl.Start("FormMain");
-                        //ConnectionStatusUpdate.UpdateModeStatus("Start");
-
-
-                    }
-                }
+                HostControl.OnlineMode = true;
+                Mode_btn.Text = "Online-Mode";
+                Mode_btn.BackColor = Color.Green; 
             }
             else
             {
-                RouteCtrl.Stop();
-                //ConnectionStatusUpdate.UpdateModeStatus("Manual");
-
-                ConnectionStatusUpdate.UpdateInitial(false.ToString());
+                HostControl.OnlineMode = false;
+                Mode_btn.Text = "Manual-Mode";
+                Mode_btn.BackColor = Color.Orange;
             }
         }
 

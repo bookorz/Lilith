@@ -263,7 +263,7 @@ namespace Lilith.Menu.Monitoring
 
         private void ResetInterface_Click(object sender, EventArgs e)
         {
-            FormMain.ctrl.Reset();
+            FormMain.HostControl.Reset();
         }
 
         private void FormMonitoring_Load(object sender, EventArgs e)
@@ -283,25 +283,25 @@ namespace Lilith.Menu.Monitoring
             switch ((sender as CheckBox).Name)
             {
                 case "MAPDT_ck":
-                    FormMain.ctrl.Events.MAPDT = MAPDT_ck.Checked;
+                    FormMain.HostControl.Events.MAPDT = MAPDT_ck.Checked;
                     break;
                 case "TRANSREQ_ck":
-                    FormMain.ctrl.Events.TRANSREQ = TRANSREQ_ck.Checked;
+                    FormMain.HostControl.Events.TRANSREQ = TRANSREQ_ck.Checked;
                     break;
                 case "SYSTEM_ck":
-                    FormMain.ctrl.Events.SYSTEM = SYSTEM_ck.Checked;
+                    FormMain.HostControl.Events.SYSTEM = SYSTEM_ck.Checked;
                     break;
                 case "PORT_ck":
-                    FormMain.ctrl.Events.PORT = PORT_ck.Checked;
+                    FormMain.HostControl.Events.PORT = PORT_ck.Checked;
                     break;
                 case "PRS_ck":
-                    FormMain.ctrl.Events.PRS = PRS_ck.Checked;
+                    FormMain.HostControl.Events.PRS = PRS_ck.Checked;
                     break;
                 case "FFU_ck":
-                    FormMain.ctrl.Events.FFU = FFU_ck.Checked;
+                    FormMain.HostControl.Events.FFU = FFU_ck.Checked;
                     break;
             }
-            FormMain.ctrl.Events.Save();
+            FormMain.HostControl.Events.Save();
         }
     }
 }
