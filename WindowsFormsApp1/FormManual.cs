@@ -548,12 +548,32 @@ namespace GUI
                     break;
                 case "btnRMoveDown":
                     TaskName = "ROBOT_GET_ARM_EXTEND";
+                    if (cbRA1Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA1Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text.PadLeft(2, '0'));
                     break;
                 case "btnRMoveUp":
                     TaskName = "ROBOT_PUT_ARM_EXTEND";
+                    if (cbRA2Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA2Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA2Point.Text);
                     param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
@@ -568,6 +588,16 @@ namespace GUI
                     {
                         TaskName += "_SaftyCheck";
                     }
+                    if (cbRA1Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA1Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text.PadLeft(2,'0'));                    
@@ -578,12 +608,32 @@ namespace GUI
                     {
                         TaskName += "_SaftyCheck";
                     }
+                    if (cbRA2Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA2Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA2Point.Text);
                     param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
                     break;
                 case "btnRGetWait":
                     TaskName = "DOWN_GOTO";
+                    if (cbRA1Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA1Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
                     param.Add("@Slot", cbRA1Slot.Text.PadLeft(2, '0'));
@@ -591,6 +641,16 @@ namespace GUI
                     break;
                 case "btnRPutWait":
                     TaskName = "UP_GOTO";
+                    if (cbRA2Point.Text.Equals(""))
+                    {
+                        MessageBox.Show("Point is empty!");
+                        return;
+                    }
+                    else if (cbRA2Slot.Text.Equals(""))
+                    {
+                        MessageBox.Show("Slot is empty!");
+                        return;
+                    }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA2Point.Text);
                     param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));

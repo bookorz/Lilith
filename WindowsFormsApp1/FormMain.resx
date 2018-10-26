@@ -145,7 +145,7 @@
     <value>5</value>
   </data>
   <data name="Mode_btn.Text" xml:space="preserve">
-    <value>Manual</value>
+    <value>Manual-Mode</value>
   </data>
   <data name="&gt;&gt;Mode_btn.Name" xml:space="preserve">
     <value>Mode_btn</value>

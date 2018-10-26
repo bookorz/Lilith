@@ -556,109 +556,7 @@ namespace Lilith
 
                     }
                     break;
-                //case "InitialFinish":
-                //    switch (Node.Type)
-                //    {
-                //        case "LOADPORT":
-                //            switch (Txn.Method)
-                //            {
-
-                //                case Transaction.Command.LoadPortType.ReadStatus:
-                //                    MessageParser parser = new MessageParser(Node.Brand);
-                //                    Dictionary<string, string> content = parser.ParseMessage(Txn.Method, Msg.Value);
-                //                    bool CheckResult = true;
-                //                    foreach (KeyValuePair<string, string> each in content)
-                //                    {
-                //                        if (Node.WaferSize.Equals("200MM"))
-                //                        {
-                //                            switch (each.Key)
-                //                            {
-                //                                case "FOUP Clamp Status":
-                //                                    if (!each.Value.Equals("Close"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-
-                //                                case "Cassette Presence":
-                //                                    if (!each.Value.Equals("Normal position"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Door Position":
-                //                                    if (!each.Value.Equals("Open position"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Equipment Status":
-                //                                    if (each.Value.Equals("Fatal error"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                            }
-                //                        }
-                //                        else
-                //                        {
-                //                            switch (each.Key)
-                //                            {
-                //                                case "FOUP Clamp Status":
-                //                                    if (!each.Value.Equals("Open")) //300MM check only,200MM already loaded
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Latch Key Status":
-                //                                    if (!each.Value.Equals("Close"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Cassette Presence":
-                //                                    if (!each.Value.Equals("Normal position"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Door Position":
-                //                                    if (!each.Value.Equals("Close position"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                                case "Equipment Status":
-                //                                    if (each.Value.Equals("Fatal error"))
-                //                                    {
-                //                                        CheckResult = false;
-                //                                    }
-                //                                    break;
-                //                            }
-                //                        }
-                //                    }
-                //                    if (CheckResult)
-                //                    {
-                //                        Node.FoupReady = true;
-
-                //                        Node.ExcuteScript("LoadPortFoupIn", "LoadPortFoup", "", true);
-                //                        if (Node.WaferSize.Equals("200MM"))
-                //                        {
-                //                            Node.State = "Load Complete";
-                //                            On_Node_State_Changed(Node, "Load Complete");
-                //                        }
-                //                    }
-                //                    else
-                //                    {
-                //                        Node.FoupReady = false;
-                //                        Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
-                //                        On_Node_State_Changed(Node, "Ready To Load");
-                //                    }
-                //                    break;
-                //            }
-                //            break;
-                //    }
-                //    break;
+               
                 default:
 
                     break;
@@ -710,7 +608,7 @@ namespace Lilith
 
             AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
             AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
-
+    
         }
 
         public void On_Command_Finished(Node Node, Transaction Txn, ReturnMessage Msg)
@@ -834,67 +732,7 @@ namespace Lilith
                 switch (Node.Type)
                 {
                     case "LOADPORT":
-                        //ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Trigger");
-                        //switch (Msg.Command)
-                        //{
-                        //    case "MANSW":
-                        //        if (Node.FoupReady)
-                        //        {
-                        //            if (!RouteCtrl.GetMode().Equals("Start"))
-                        //            {
-                        //                MonitoringUpdate.UpdateStartButton(false);//當OpAccess按下，禁用主畫面的Start按鈕
-                        //            }
-                        //            Node.WaitForFinish = true;
-                        //            if (Node.WaferSize.Equals("200MM"))//8" use only , Trigger Robot's fork to mapping wafer.
-                        //            {
-                        //                if (RouteCtrl.GetMode().Equals("Start"))
-                        //                {
-                        //                    Node.Available = true;
-                        //                }
-                        //                else
-                        //                {
-                        //                    RobotPoint rbtP = PointManagement.GetMapPoint(Node.Name, "200MM");
-                        //                    if (rbtP != null)
-                        //                    {
-                        //                        Node Rbt = NodeManagement.Get(rbtP.NodeName);
-                        //                        if (Rbt != null)
-                        //                        {
-                        //                            Dictionary<string, string> vars = new Dictionary<string, string>();
-                        //                            vars.Add("@loadport", Node.Name);
-                        //                            Rbt.ExcuteScript("RobotMapping", "MANSW", vars, "200MM");
-                        //                            Node.FoupReady = false;
-                        //                            //Robot mapping時 LoadPort 的OpAccess燈亮起
-                        //                            txn = new Transaction();
-                        //                            txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
-                        //                            txn.Value = "1";
-                        //                            txn.FormName = "RobotMapping";
-                        //                            Node.SendCommand(txn);
-                        //                        }
-                        //                    }
-                        //                }
-                        //            }
-                        //            else
-                        //            {
-                        //                Node.ExcuteScript("LoadPortMapping", "MANSW", "", true);
-                        //            }
-                        //        }
-                        //        break;
-                        //    case "PODON":
-                        //        //檢查LoadPort狀態
-                        //        if (!NodeManagement.IsNeedInitial())
-                        //        {
-                        //            txn.Method = Transaction.Command.LoadPortType.ReadStatus;
-                        //            txn.FormName = "InitialFinish";
-                        //            Node.SendCommand(txn);
-                        //        }
-                        //        break;
-                        //    case "SMTON":
-                        //    case "PODOF":
-                        //        Node.FoupReady = false;
-                        //        Node.ExcuteScript("LoadPortFoupOut", "LoadPortFoup", "", true);
-                        //        On_Node_State_Changed(Node, "Ready To Load");
-                        //        break;
-                        //}
+                        
                         break;
                 }
             }
