@@ -30,8 +30,8 @@ namespace Lilith
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer13 = new System.Windows.Forms.SplitContainer();
             this.groupBox54 = new System.Windows.Forms.GroupBox();
             this.Mode_btn = new System.Windows.Forms.Button();
@@ -81,9 +81,15 @@ namespace Lilith
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnManual = new System.Windows.Forms.Button();
+            this.btnAlarm = new System.Controls.SplitButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.aAAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bBBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnVersion = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnTeach = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.btnVersion = new System.Windows.Forms.Button();
             this.btnSysLog = new System.Controls.SplitButton();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,10 +97,6 @@ namespace Lilith
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAlarm = new System.Controls.SplitButton();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.aAAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bBBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMaintence = new System.Controls.SplitButton();
             this.menuMaintenace = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.initToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,7 +108,6 @@ namespace Lilith
             this.unitdatatoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.transTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.terminalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer13)).BeginInit();
             this.splitContainer13.Panel1.SuspendLayout();
@@ -125,11 +126,11 @@ namespace Lilith
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
-            this.contextMenuStrip1.SuspendLayout();
             this.menuMaintenace.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer13
@@ -259,9 +260,9 @@ namespace Lilith
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.Conn_gv);
             this.panel1.Controls.Add(this.groupBox4);
-            this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.groupBox2);
@@ -276,21 +277,21 @@ namespace Lilith
             this.Conn_gv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Conn_gv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Conn_gv.ColumnHeadersVisible = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Conn_gv.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Conn_gv.DefaultCellStyle = dataGridViewCellStyle11;
             resources.ApplyResources(this.Conn_gv, "Conn_gv");
             this.Conn_gv.MultiSelect = false;
             this.Conn_gv.Name = "Conn_gv";
             this.Conn_gv.ReadOnly = true;
             this.Conn_gv.RowHeadersVisible = false;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Conn_gv.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Conn_gv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.Conn_gv.RowTemplate.Height = 24;
             this.Conn_gv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.Conn_gv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Conn_gv_CellFormatting);
@@ -527,14 +528,76 @@ namespace Lilith
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.btnTeach, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnHelp, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnVersion, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnSysLog, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnMessage, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnAlarm, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnMaintence, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnManual, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnAlarm, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnVersion, 2, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // btnManual
+            // 
+            this.btnManual.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.btnManual, "btnManual");
+            this.btnManual.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnManual.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnManual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnManual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnManual.Name = "btnManual";
+            this.btnManual.UseVisualStyleBackColor = false;
+            this.btnManual.Click += new System.EventHandler(this.btnManual_Click);
+            // 
+            // btnAlarm
+            // 
+            resources.ApplyResources(this.btnAlarm, "btnAlarm");
+            this.btnAlarm.ContextMenuStrip = this.contextMenuStrip1;
+            this.btnAlarm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAlarm.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAlarm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnAlarm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAlarm.MenuStripShowShowMode = true;
+            this.btnAlarm.Name = "btnAlarm";
+            this.btnAlarm.SplitMenuStrip = this.contextMenuStrip1;
+            this.btnAlarm.SplitMenuStripShowUp = false;
+            this.btnAlarm.UseVisualStyleBackColor = false;
+            // 
+            // contextMenuStrip1
+            // 
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aAAToolStripMenuItem,
+            this.bBBToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.ShowCheckMargin = true;
+            // 
+            // aAAToolStripMenuItem
+            // 
+            this.aAAToolStripMenuItem.Name = "aAAToolStripMenuItem";
+            resources.ApplyResources(this.aAAToolStripMenuItem, "aAAToolStripMenuItem");
+            this.aAAToolStripMenuItem.Click += new System.EventHandler(this.aAAToolStripMenuItem_Click);
+            // 
+            // bBBToolStripMenuItem
+            // 
+            this.bBBToolStripMenuItem.Name = "bBBToolStripMenuItem";
+            resources.ApplyResources(this.bBBToolStripMenuItem, "bBBToolStripMenuItem");
+            this.bBBToolStripMenuItem.Click += new System.EventHandler(this.bBBToolStripMenuItem_Click);
+            // 
+            // btnVersion
+            // 
+            resources.ApplyResources(this.btnVersion, "btnVersion");
+            this.btnVersion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnVersion.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnVersion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnVersion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVersion.Name = "btnVersion";
+            this.btnVersion.UseVisualStyleBackColor = true;
+            this.btnVersion.Click += new System.EventHandler(this.btnVersion_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.splitContainer13);
+            this.panel3.Controls.Add(this.tbcMian);
+            resources.ApplyResources(this.panel3, "panel3");
+            this.panel3.Name = "panel3";
             // 
             // btnTeach
             // 
@@ -558,17 +621,6 @@ namespace Lilith
             this.btnHelp.Name = "btnHelp";
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // btnVersion
-            // 
-            resources.ApplyResources(this.btnVersion, "btnVersion");
-            this.btnVersion.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnVersion.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnVersion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnVersion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnVersion.Name = "btnVersion";
-            this.btnVersion.UseVisualStyleBackColor = true;
-            this.btnVersion.Click += new System.EventHandler(this.btnVersion_Click);
             // 
             // btnSysLog
             // 
@@ -634,42 +686,6 @@ namespace Lilith
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
-            // 
-            // btnAlarm
-            // 
-            resources.ApplyResources(this.btnAlarm, "btnAlarm");
-            this.btnAlarm.ContextMenuStrip = this.contextMenuStrip1;
-            this.btnAlarm.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnAlarm.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAlarm.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnAlarm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnAlarm.MenuStripShowShowMode = true;
-            this.btnAlarm.Name = "btnAlarm";
-            this.btnAlarm.SplitMenuStrip = this.contextMenuStrip1;
-            this.btnAlarm.SplitMenuStripShowUp = false;
-            this.btnAlarm.UseVisualStyleBackColor = false;
-            // 
-            // contextMenuStrip1
-            // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aAAToolStripMenuItem,
-            this.bBBToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.ShowCheckMargin = true;
-            // 
-            // aAAToolStripMenuItem
-            // 
-            this.aAAToolStripMenuItem.Name = "aAAToolStripMenuItem";
-            resources.ApplyResources(this.aAAToolStripMenuItem, "aAAToolStripMenuItem");
-            this.aAAToolStripMenuItem.Click += new System.EventHandler(this.aAAToolStripMenuItem_Click);
-            // 
-            // bBBToolStripMenuItem
-            // 
-            this.bBBToolStripMenuItem.Name = "bBBToolStripMenuItem";
-            resources.ApplyResources(this.bBBToolStripMenuItem, "bBBToolStripMenuItem");
-            this.bBBToolStripMenuItem.Click += new System.EventHandler(this.bBBToolStripMenuItem_Click);
             // 
             // btnMaintence
             // 
@@ -757,13 +773,6 @@ namespace Lilith
             resources.ApplyResources(this.terminalToolStripMenuItem, "terminalToolStripMenuItem");
             this.terminalToolStripMenuItem.Click += new System.EventHandler(this.terminalToolStripMenuItem_Click_1);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.splitContainer13);
-            this.panel3.Controls.Add(this.tbcMian);
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.Name = "panel3";
-            // 
             // directorySearcher1
             // 
             this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
@@ -800,11 +809,11 @@ namespace Lilith
             this.panel4.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.contextMenuStrip3.ResumeLayout(false);
             this.contextMenuStrip2.ResumeLayout(false);
-            this.contextMenuStrip1.ResumeLayout(false);
             this.menuMaintenace.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -887,6 +896,7 @@ namespace Lilith
         private System.Windows.Forms.TabPage TestMode;
         private System.Windows.Forms.DataGridView Conn_gv;
         private System.Windows.Forms.TabPage Wafer;
+        private System.Windows.Forms.Button btnManual;
     }
 }
 

@@ -43,7 +43,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(500, 30);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Copyright ©2017 Sanwa Engineering Corp.";
+            this.label1.Text = "Copyright ©2018 Sanwa Engineering Corp.";
             // 
             // pictureBox1
             // 

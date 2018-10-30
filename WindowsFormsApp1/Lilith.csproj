@@ -22,8 +22,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>2.1.1.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -54,6 +54,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Sekkyumu-Developpers-Transfer.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip">
@@ -559,6 +562,8 @@
     <None Include="Resources\sanwa_robot_status.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Sekkyumu-Developpers-Transfer.ico" />
+    <Content Include="Sekkyumu-Developpers-Transfer.ico" />
     <Content Include="sql\Alarm Log.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

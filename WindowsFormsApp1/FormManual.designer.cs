@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tbcManual = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabRobot = new System.Windows.Forms.TabPage();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.panel9 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
@@ -72,6 +72,7 @@
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.panel13 = new System.Windows.Forms.Panel();
             this.pnlRobotStatus = new System.Windows.Forms.Panel();
+            this.btnRInit = new System.Windows.Forms.Button();
             this.btnRRetract = new System.Windows.Forms.Button();
             this.tbRError = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
@@ -109,7 +110,7 @@
             this.label67 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabSmif = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.TagWrite_bt = new System.Windows.Forms.Button();
             this.TagRead_bt = new System.Windows.Forms.Button();
@@ -211,7 +212,7 @@
             this.SMIF_Reset_bt = new System.Windows.Forms.Button();
             this.SMIF_Initial_bt = new System.Windows.Forms.Button();
             this.SMIF_ReadStatus_bt = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabAligner = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.panel17 = new System.Windows.Forms.Panel();
@@ -283,7 +284,7 @@
             this.btnA1Reset = new System.Windows.Forms.Button();
             this.btnA1Conn = new System.Windows.Forms.Button();
             this.btnA1VacuOn = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabLoadport = new System.Windows.Forms.TabPage();
             this.Command_Group_A = new System.Windows.Forms.GroupBox();
             this.LblLED_A = new System.Windows.Forms.Label();
             this.Btn_ReadLED_A = new System.Windows.Forms.Button();
@@ -417,9 +418,8 @@
             this.btnPause = new System.Windows.Forms.Button();
             this.btnStop = new System.Windows.Forms.Button();
             this.pnlMotionStop = new System.Windows.Forms.Panel();
-            this.btnRInit = new System.Windows.Forms.Button();
             this.tbcManual.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabRobot.SuspendLayout();
             this.groupBox20.SuspendLayout();
             this.panel9.SuspendLayout();
             this.tableLayoutPanel23.SuspendLayout();
@@ -434,14 +434,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudRSpeed)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.tabSmif.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabAligner.SuspendLayout();
             this.tableLayoutPanel25.SuspendLayout();
             this.groupBox23.SuspendLayout();
             this.panel17.SuspendLayout();
@@ -453,7 +453,7 @@
             this.panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA1Speed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.udA1AngleOffset)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabLoadport.SuspendLayout();
             this.Command_Group_A.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.GroupBox36.SuspendLayout();
@@ -466,10 +466,10 @@
             // 
             // tbcManual
             // 
-            this.tbcManual.Controls.Add(this.tabPage1);
-            this.tbcManual.Controls.Add(this.tabPage4);
-            this.tbcManual.Controls.Add(this.tabPage2);
-            this.tbcManual.Controls.Add(this.tabPage3);
+            this.tbcManual.Controls.Add(this.tabRobot);
+            this.tbcManual.Controls.Add(this.tabSmif);
+            this.tbcManual.Controls.Add(this.tabAligner);
+            this.tbcManual.Controls.Add(this.tabLoadport);
             this.tbcManual.Location = new System.Drawing.Point(12, 12);
             this.tbcManual.Name = "tbcManual";
             this.tbcManual.SelectedIndex = 0;
@@ -477,17 +477,17 @@
             this.tbcManual.TabIndex = 0;
             this.tbcManual.SelectedIndexChanged += new System.EventHandler(this.tbcManual_SelectedIndexChanged);
             // 
-            // tabPage1
+            // tabRobot
             // 
-            this.tabPage1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tabPage1.Controls.Add(this.groupBox20);
-            this.tabPage1.Controls.Add(this.groupBox21);
-            this.tabPage1.Location = new System.Drawing.Point(4, 36);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1487, 801);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Robot";
+            this.tabRobot.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabRobot.Controls.Add(this.groupBox20);
+            this.tabRobot.Controls.Add(this.groupBox21);
+            this.tabRobot.Location = new System.Drawing.Point(4, 36);
+            this.tabRobot.Name = "tabRobot";
+            this.tabRobot.Padding = new System.Windows.Forms.Padding(3);
+            this.tabRobot.Size = new System.Drawing.Size(1487, 801);
+            this.tabRobot.TabIndex = 0;
+            this.tabRobot.Text = "Robot";
             // 
             // groupBox20
             // 
@@ -1139,6 +1139,21 @@
             this.pnlRobotStatus.Size = new System.Drawing.Size(629, 715);
             this.pnlRobotStatus.TabIndex = 18;
             // 
+            // btnRInit
+            // 
+            this.btnRInit.BackColor = System.Drawing.Color.DarkGray;
+            this.btnRInit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnRInit.FlatAppearance.BorderSize = 2;
+            this.btnRInit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRInit.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRInit.Location = new System.Drawing.Point(205, 125);
+            this.btnRInit.Name = "btnRInit";
+            this.btnRInit.Size = new System.Drawing.Size(125, 46);
+            this.btnRInit.TabIndex = 116;
+            this.btnRInit.Text = "Initial";
+            this.btnRInit.UseVisualStyleBackColor = false;
+            this.btnRInit.Click += new System.EventHandler(this.RobotFunction_Click);
+            // 
             // btnRRetract
             // 
             this.btnRRetract.BackColor = System.Drawing.Color.DarkGray;
@@ -1630,33 +1645,33 @@
             this.label69.TabIndex = 6;
             this.label69.Text = "(R Axis)";
             // 
-            // tabPage4
+            // tabSmif
             // 
-            this.tabPage4.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tabPage4.Controls.Add(this.groupBox7);
-            this.tabPage4.Controls.Add(this.SMIF_Org_bt);
-            this.tabPage4.Controls.Add(this.Move_To_Slot_bt);
-            this.tabPage4.Controls.Add(this.groupBox6);
-            this.tabPage4.Controls.Add(this.SMIF_Lock_bt);
-            this.tabPage4.Controls.Add(this.SMIF_Stage_bt);
-            this.tabPage4.Controls.Add(this.SMIF_Close_bt);
-            this.tabPage4.Controls.Add(this.SMIF_Open_bt);
-            this.tabPage4.Controls.Add(this.groupBox3);
-            this.tabPage4.Controls.Add(this.SMIF_UnLock_bt);
-            this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Controls.Add(this.groupBox5);
-            this.tabPage4.Controls.Add(this.SMIF_ClearMap_bt);
-            this.tabPage4.Controls.Add(this.SMIF_ReadMap_bt);
-            this.tabPage4.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage4.Controls.Add(this.label177);
-            this.tabPage4.Controls.Add(this.SMIF_Reset_bt);
-            this.tabPage4.Controls.Add(this.SMIF_Initial_bt);
-            this.tabPage4.Controls.Add(this.SMIF_ReadStatus_bt);
-            this.tabPage4.Location = new System.Drawing.Point(4, 36);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1487, 801);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "SMIF";
+            this.tabSmif.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabSmif.Controls.Add(this.groupBox7);
+            this.tabSmif.Controls.Add(this.SMIF_Org_bt);
+            this.tabSmif.Controls.Add(this.Move_To_Slot_bt);
+            this.tabSmif.Controls.Add(this.groupBox6);
+            this.tabSmif.Controls.Add(this.SMIF_Lock_bt);
+            this.tabSmif.Controls.Add(this.SMIF_Stage_bt);
+            this.tabSmif.Controls.Add(this.SMIF_Close_bt);
+            this.tabSmif.Controls.Add(this.SMIF_Open_bt);
+            this.tabSmif.Controls.Add(this.groupBox3);
+            this.tabSmif.Controls.Add(this.SMIF_UnLock_bt);
+            this.tabSmif.Controls.Add(this.groupBox4);
+            this.tabSmif.Controls.Add(this.groupBox5);
+            this.tabSmif.Controls.Add(this.SMIF_ClearMap_bt);
+            this.tabSmif.Controls.Add(this.SMIF_ReadMap_bt);
+            this.tabSmif.Controls.Add(this.tableLayoutPanel1);
+            this.tabSmif.Controls.Add(this.label177);
+            this.tabSmif.Controls.Add(this.SMIF_Reset_bt);
+            this.tabSmif.Controls.Add(this.SMIF_Initial_bt);
+            this.tabSmif.Controls.Add(this.SMIF_ReadStatus_bt);
+            this.tabSmif.Location = new System.Drawing.Point(4, 36);
+            this.tabSmif.Name = "tabSmif";
+            this.tabSmif.Size = new System.Drawing.Size(1487, 801);
+            this.tabSmif.TabIndex = 3;
+            this.tabSmif.Text = "SMIF";
             // 
             // groupBox7
             // 
@@ -3102,16 +3117,16 @@
             this.SMIF_ReadStatus_bt.UseVisualStyleBackColor = true;
             this.SMIF_ReadStatus_bt.Click += new System.EventHandler(this.SmifFunction_Click);
             // 
-            // tabPage2
+            // tabAligner
             // 
-            this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tabPage2.Controls.Add(this.tableLayoutPanel25);
-            this.tabPage2.Location = new System.Drawing.Point(4, 36);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1487, 801);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Aligner";
+            this.tabAligner.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabAligner.Controls.Add(this.tableLayoutPanel25);
+            this.tabAligner.Location = new System.Drawing.Point(4, 36);
+            this.tabAligner.Name = "tabAligner";
+            this.tabAligner.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAligner.Size = new System.Drawing.Size(1487, 801);
+            this.tabAligner.TabIndex = 1;
+            this.tabAligner.Text = "Aligner";
             // 
             // tableLayoutPanel25
             // 
@@ -4180,16 +4195,16 @@
             this.btnA1VacuOn.UseVisualStyleBackColor = false;
             this.btnA1VacuOn.Click += new System.EventHandler(this.AlignerFunction_Click);
             // 
-            // tabPage3
+            // tabLoadport
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.tabPage3.Controls.Add(this.Command_Group_A);
-            this.tabPage3.Location = new System.Drawing.Point(4, 36);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1487, 801);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "LoadPort";
+            this.tabLoadport.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabLoadport.Controls.Add(this.Command_Group_A);
+            this.tabLoadport.Location = new System.Drawing.Point(4, 36);
+            this.tabLoadport.Name = "tabLoadport";
+            this.tabLoadport.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLoadport.Size = new System.Drawing.Size(1487, 801);
+            this.tabLoadport.TabIndex = 2;
+            this.tabLoadport.Text = "LoadPort";
             // 
             // Command_Group_A
             // 
@@ -6085,21 +6100,6 @@
             this.pnlMotionStop.Size = new System.Drawing.Size(755, 50);
             this.pnlMotionStop.TabIndex = 1;
             // 
-            // btnRInit
-            // 
-            this.btnRInit.BackColor = System.Drawing.Color.DarkGray;
-            this.btnRInit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnRInit.FlatAppearance.BorderSize = 2;
-            this.btnRInit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRInit.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnRInit.Location = new System.Drawing.Point(205, 125);
-            this.btnRInit.Name = "btnRInit";
-            this.btnRInit.Size = new System.Drawing.Size(125, 46);
-            this.btnRInit.TabIndex = 116;
-            this.btnRInit.Text = "Initial";
-            this.btnRInit.UseVisualStyleBackColor = false;
-            this.btnRInit.Click += new System.EventHandler(this.RobotFunction_Click);
-            // 
             // FormManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -6119,7 +6119,7 @@
             this.Load += new System.EventHandler(this.FormManual_Load);
             this.EnabledChanged += new System.EventHandler(this.FormManual_EnabledChanged);
             this.tbcManual.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabRobot.ResumeLayout(false);
             this.groupBox20.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.tableLayoutPanel23.ResumeLayout(false);
@@ -6140,8 +6140,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.tabSmif.ResumeLayout(false);
+            this.tabSmif.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -6151,7 +6151,7 @@
             this.groupBox5.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
+            this.tabAligner.ResumeLayout(false);
             this.tableLayoutPanel25.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
@@ -6165,7 +6165,7 @@
             this.panel16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudA1Speed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.udA1AngleOffset)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.tabLoadport.ResumeLayout(false);
             this.Command_Group_A.ResumeLayout(false);
             this.Command_Group_A.PerformLayout();
             this.groupBox10.ResumeLayout(false);
@@ -6185,9 +6185,9 @@
         #endregion
 
         private System.Windows.Forms.TabControl tbcManual;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabRobot;
+        private System.Windows.Forms.TabPage tabAligner;
+        private System.Windows.Forms.TabPage tabLoadport;
         internal System.Windows.Forms.GroupBox Command_Group_A;
         internal System.Windows.Forms.Button Btn_DoorDown_A;
         internal System.Windows.Forms.Button Btn_DoorOpen_A;
@@ -6470,7 +6470,7 @@
         private System.Windows.Forms.RadioButton EightInch_rb;
         private System.Windows.Forms.RadioButton TwelveInch_rb;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabSmif;
         internal System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox Cb_SMIFSelect;
         internal System.Windows.Forms.GroupBox groupBox4;

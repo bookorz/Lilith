@@ -26,6 +26,9 @@ using Lilith.UI_Update.Communications;
 using EFEMInterface.MessageInterface;
 using EFEMInterface;
 using static EFEMInterface.MessageInterface.RorzeInterface;
+using System.Security.Cryptography;
+using System.Text;
+using SANWA.Utility.Config;
 
 namespace Lilith
 {
@@ -47,7 +50,7 @@ namespace Lilith
         private Menu.SystemSetting.FormSystemSetting formSystem = new Menu.SystemSetting.FormSystemSetting();
         private Menu.RunningScreen.FormRunningScreen formTestMode = new Menu.RunningScreen.FormRunningScreen();
         private Menu.Wafer.FormWafer WaferForm = new Menu.Wafer.FormWafer();
-
+        private GUI.FormManual formManual = new GUI.FormManual();
 
         public FormMain()
         {
@@ -1501,14 +1504,79 @@ namespace Lilith
             {
                 HostControl.OnlineMode = true;
                 Mode_btn.Text = "Online-Mode";
-                Mode_btn.BackColor = Color.Green; 
+                Mode_btn.BackColor = Color.Green;
+                btnManual.Enabled = false;
+                btnManual.BackColor = Color.Gray;
+                formManual.Close();
             }
             else
             {
-                HostControl.OnlineMode = false;
-                Mode_btn.Text = "Manual-Mode";
-                Mode_btn.BackColor = Color.Orange;
+                //check 密碼
+                MD5 md5 = MD5.Create();
+                string[] use_info = ShowLoginDialog();
+                string user_id = use_info[0];
+                string password = use_info[1];
+                byte[] source = Encoding.Default.GetBytes(password);//將字串轉為Byte[]
+                byte[] crypto = md5.ComputeHash(source);//進行MD5加密
+                string md5_result = BitConverter.ToString(crypto).Replace("-", String.Empty).ToUpper();//取得 MD5
+                string config_password = SystemConfig.Get().AdminPassword;
+                if (md5_result.Equals(config_password))
+                {
+                    HostControl.OnlineMode = false;
+                    Mode_btn.Text = "Manual-Mode";
+                    Mode_btn.BackColor = Color.Orange;
+                    btnManual.Enabled = true;
+                    btnManual.BackColor = Color.Orange;
+                }
+                else
+                {
+                    MessageBox.Show("Password incorrect !!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    btnManual.Enabled = false;
+                    btnManual.BackColor = Color.Gray;
+                }
+
             }
+        }
+
+
+        public static string[] ShowLoginDialog()
+        {
+            string[] result = new string[] { "", "" };
+            Form prompt = new Form()
+            {
+                Width = 450,
+                Height = 280,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                Text = "Authority check",
+                StartPosition = FormStartPosition.CenterScreen
+            };
+            Label lblUser = new Label() { Left = 30, Top = 20, Text = "User", Width = 200 };
+            TextBox tbUser = new TextBox() { Left = 30, Top = 50, Width = 350 , Text = "Administrator"};
+            Label lblPassword = new Label() { Left = 30, Top = 90, Text = "Password", Width = 200 };
+            TextBox tbPassword = new TextBox() { Left = 30, Top = 120, Width = 350 };
+            tbPassword.PasswordChar = '*';
+            Button confirmation = new Button() { Text = "Ok", Left = 280, Width = 100, Top = 170, DialogResult = DialogResult.OK, Height = 35 };
+            lblUser.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            lblPassword.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tbUser.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tbPassword.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            confirmation.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            confirmation.Click += (sender, e) => { prompt.Close(); };
+            prompt.Controls.Add(lblUser);
+            prompt.Controls.Add(tbUser);
+            prompt.Controls.Add(tbPassword);
+            prompt.Controls.Add(confirmation);
+            prompt.Controls.Add(lblPassword);
+            prompt.AcceptButton = confirmation;
+            tbPassword.Focus();
+            tbUser.Enabled = false;
+
+            if (prompt.ShowDialog() == DialogResult.OK)
+            {
+                result[0] = tbUser.Text;
+                result[1] = tbPassword.Text;
+            }
+            return result;
         }
 
         public void On_InterLock_Report(Node Node, bool InterLock)
@@ -1640,6 +1708,13 @@ namespace Lilith
             {
                 ManualPortStatusUpdate.LockUI(false);
             }
+        }
+
+        private void btnManual_Click(object sender, EventArgs e)
+        {
+            formManual.Close();
+            formManual = new GUI.FormManual();
+            formManual.Show();
         }
     }
 }

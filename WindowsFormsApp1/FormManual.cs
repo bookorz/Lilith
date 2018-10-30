@@ -25,7 +25,7 @@ namespace GUI
         public FormManual()
         {
             InitializeComponent();
-
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void FormManual_Load(object sender, EventArgs e)
@@ -33,6 +33,9 @@ namespace GUI
             RouteControl.Instance.TaskJob.Remove("FormManual");
             Initialize();
             Update_Manual_Status();
+            //20181030 隱藏EFEM 用不到的頁面
+            this.tabAligner.Parent = null;
+            this.tabLoadport.Parent = null;
         }
 
         public void Initialize()
