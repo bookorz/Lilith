@@ -626,12 +626,13 @@
             this.btnRMoveDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRMoveDown.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRMoveDown.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRMoveDown.Location = new System.Drawing.Point(57, 328);
+            this.btnRMoveDown.Location = new System.Drawing.Point(57, 389);
             this.btnRMoveDown.Name = "btnRMoveDown";
             this.btnRMoveDown.Size = new System.Drawing.Size(280, 45);
             this.btnRMoveDown.TabIndex = 47;
             this.btnRMoveDown.Text = "Move Stage Down(GET)";
             this.btnRMoveDown.UseVisualStyleBackColor = false;
+            this.btnRMoveDown.Visible = false;
             this.btnRMoveDown.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
             // btnRGetWait
@@ -669,7 +670,7 @@
             this.btnRGet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRGet.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRGet.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRGet.Location = new System.Drawing.Point(57, 389);
+            this.btnRGet.Location = new System.Drawing.Point(57, 328);
             this.btnRGet.Name = "btnRGet";
             this.btnRGet.Size = new System.Drawing.Size(280, 45);
             this.btnRGet.TabIndex = 18;
@@ -812,12 +813,13 @@
             this.btnRMoveUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRMoveUp.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRMoveUp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRMoveUp.Location = new System.Drawing.Point(58, 328);
+            this.btnRMoveUp.Location = new System.Drawing.Point(58, 389);
             this.btnRMoveUp.Name = "btnRMoveUp";
             this.btnRMoveUp.Size = new System.Drawing.Size(280, 45);
             this.btnRMoveUp.TabIndex = 46;
             this.btnRMoveUp.Text = "Move Stage Up(PUT)";
             this.btnRMoveUp.UseVisualStyleBackColor = false;
+            this.btnRMoveUp.Visible = false;
             this.btnRMoveUp.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
             // label51
@@ -888,7 +890,7 @@
             this.btnRPut.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRPut.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRPut.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnRPut.Location = new System.Drawing.Point(58, 389);
+            this.btnRPut.Location = new System.Drawing.Point(58, 328);
             this.btnRPut.Name = "btnRPut";
             this.btnRPut.Size = new System.Drawing.Size(280, 45);
             this.btnRPut.TabIndex = 43;
@@ -956,6 +958,7 @@
             this.pnlRCmd.Name = "pnlRCmd";
             this.pnlRCmd.Size = new System.Drawing.Size(750, 132);
             this.pnlRCmd.TabIndex = 51;
+            this.pnlRCmd.Visible = false;
             // 
             // btnRPutPut
             // 
@@ -1160,7 +1163,7 @@
             this.btnRRetract.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnRRetract.FlatAppearance.BorderSize = 2;
             this.btnRRetract.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRRetract.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRRetract.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.btnRRetract.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.btnRRetract.Location = new System.Drawing.Point(488, 248);
             this.btnRRetract.Name = "btnRRetract";
@@ -1373,6 +1376,7 @@
             this.btnRLVacuOff.TabIndex = 79;
             this.btnRLVacuOff.Text = "Off";
             this.btnRLVacuOff.UseVisualStyleBackColor = false;
+            this.btnRLVacuOff.Visible = false;
             this.btnRLVacuOff.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
             // btnRLVacuOn
@@ -1388,6 +1392,7 @@
             this.btnRLVacuOn.TabIndex = 78;
             this.btnRLVacuOn.Text = "On";
             this.btnRLVacuOn.UseVisualStyleBackColor = false;
+            this.btnRLVacuOn.Visible = false;
             this.btnRLVacuOn.Click += new System.EventHandler(this.RobotFunction_Click);
             // 
             // label65
@@ -1395,11 +1400,11 @@
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("微軟正黑體", 18F);
             this.label65.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label65.Location = new System.Drawing.Point(69, 35);
+            this.label65.Location = new System.Drawing.Point(52, 35);
             this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(141, 30);
+            this.label65.Size = new System.Drawing.Size(159, 30);
             this.label65.TabIndex = 3;
-            this.label65.Text = "Wafer Hold";
+            this.label65.Text = "Wafer Clamp";
             // 
             // tbRLVacuSolenoid
             // 
@@ -1411,6 +1416,7 @@
             this.tbRLVacuSolenoid.Size = new System.Drawing.Size(106, 32);
             this.tbRLVacuSolenoid.TabIndex = 15;
             this.tbRLVacuSolenoid.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRLVacuSolenoid.Visible = false;
             // 
             // tbRRVacuSolenoid
             // 
@@ -1493,6 +1499,7 @@
             this.tbRLwaferSensor.Size = new System.Drawing.Size(106, 32);
             this.tbRLwaferSensor.TabIndex = 10;
             this.tbRLwaferSensor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbRLwaferSensor.Visible = false;
             // 
             // label2
             // 
@@ -1622,6 +1629,7 @@
             this.label67.Size = new System.Drawing.Size(136, 30);
             this.label67.TabIndex = 5;
             this.label67.Text = "Lower Arm";
+            this.label67.Visible = false;
             // 
             // label68
             // 
@@ -1633,6 +1641,7 @@
             this.label68.Size = new System.Drawing.Size(93, 30);
             this.label68.TabIndex = 7;
             this.label68.Text = "(L Axis)";
+            this.label68.Visible = false;
             // 
             // label69
             // 
