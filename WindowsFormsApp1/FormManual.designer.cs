@@ -6116,6 +6116,7 @@
             this.Name = "FormManual";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manual";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormManual_FormClosed);
             this.Load += new System.EventHandler(this.FormManual_Load);
             this.EnabledChanged += new System.EventHandler(this.FormManual_EnabledChanged);
             this.tbcManual.ResumeLayout(false);

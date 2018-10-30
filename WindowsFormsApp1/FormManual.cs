@@ -1272,5 +1272,10 @@ namespace GUI
             param.Add("@Value", SmartTagWrite_tb.Text);
             RouteControl.Instance.TaskJob.Excute("FormManual", out Message, TaskName, param);
         }
+
+        private void FormManual_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormMain.formManual = null;
+        }
     }
 }

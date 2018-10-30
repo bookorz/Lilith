@@ -50,7 +50,7 @@ namespace Lilith
         private Menu.SystemSetting.FormSystemSetting formSystem = new Menu.SystemSetting.FormSystemSetting();
         private Menu.RunningScreen.FormRunningScreen formTestMode = new Menu.RunningScreen.FormRunningScreen();
         private Menu.Wafer.FormWafer WaferForm = new Menu.Wafer.FormWafer();
-        private GUI.FormManual formManual = new GUI.FormManual();
+        public static GUI.FormManual formManual = null;
 
         public FormMain()
         {
@@ -1507,7 +1507,10 @@ namespace Lilith
                 Mode_btn.BackColor = Color.Green;
                 btnManual.Enabled = false;
                 btnManual.BackColor = Color.Gray;
-                formManual.Close();
+                if (formManual != null)
+                {
+                    formManual.Close();
+                }
             }
             else
             {
@@ -1712,9 +1715,11 @@ namespace Lilith
 
         private void btnManual_Click(object sender, EventArgs e)
         {
-            formManual.Close();
-            formManual = new GUI.FormManual();
-            formManual.Show();
+            if (formManual == null)
+            {
+                formManual = new GUI.FormManual();
+                formManual.Show();
+            }
         }
     }
 }
