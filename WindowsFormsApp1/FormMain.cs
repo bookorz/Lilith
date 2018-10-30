@@ -1720,6 +1720,10 @@ namespace Lilith
                 formManual = new GUI.FormManual();
                 formManual.Show();
             }
+            else
+            {
+                formManual.Focus();
+            }
         }
     }
 }
