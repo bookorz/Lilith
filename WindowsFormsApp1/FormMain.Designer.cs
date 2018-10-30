@@ -155,7 +155,7 @@ namespace Lilith
             // 
             // Mode_btn
             // 
-            this.Mode_btn.BackColor = System.Drawing.Color.Orange;
+            this.Mode_btn.BackColor = System.Drawing.Color.Green;
             resources.ApplyResources(this.Mode_btn, "Mode_btn");
             this.Mode_btn.Name = "Mode_btn";
             this.Mode_btn.Tag = "Manual";
