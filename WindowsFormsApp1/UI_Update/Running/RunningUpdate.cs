@@ -188,7 +188,7 @@ namespace Lilith.UI_Update.Running
                         if (!FormMain.AutoReverse)// 停止DEMO
                         {
                             DestPort.Available = false;
-                            FormMain.RouteCtrl.Stop();
+                            //FormMain.RouteCtrl.Stop();
                         }
                         else
                         {

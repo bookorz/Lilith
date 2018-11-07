@@ -1710,6 +1710,7 @@
             // 
             this.SmartTagWrite_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.SmartTagWrite_tb.Location = new System.Drawing.Point(7, 138);
+            this.SmartTagWrite_tb.MaxLength = 224;
             this.SmartTagWrite_tb.Name = "SmartTagWrite_tb";
             this.SmartTagWrite_tb.Size = new System.Drawing.Size(379, 25);
             this.SmartTagWrite_tb.TabIndex = 1;

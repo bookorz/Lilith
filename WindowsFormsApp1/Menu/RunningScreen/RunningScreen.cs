@@ -30,7 +30,7 @@ namespace Lilith.Menu.RunningScreen
             }
             if (Start_btn.Tag.Equals("Start"))
             {
-                FormMain.RouteCtrl.Stop();
+                //FormMain.RouteCtrl.Stop();
                 //FormMain.RouteCtrl.Stop();
 
 
@@ -64,7 +64,7 @@ namespace Lilith.Menu.RunningScreen
                         }
                     }
 
-                    FormMain.RouteCtrl.Start("Running");
+                    //FormMain.RouteCtrl.Start("Running");
                 }
 
             }

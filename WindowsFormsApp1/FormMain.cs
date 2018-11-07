@@ -597,7 +597,7 @@ namespace Lilith
                 CurrentAlarm.IsStop = Detail.IsStop;
                 if (CurrentAlarm.IsStop)
                 {
-                    RouteCtrl.Stop();
+                   // RouteCtrl.Stop();
                 }
             }
             catch (Exception e)
@@ -702,7 +702,7 @@ namespace Lilith
             try
             {
 
-                AlarmMessage Detail = AlmMapping.Get(Node.Name, CurrentAlarm.AlarmCode);
+                AlarmMessage Detail = AlmMapping.Get("SYSTEM", CurrentAlarm.AlarmCode);
 
                 CurrentAlarm.SystemAlarmCode = Detail.CodeID;
                 CurrentAlarm.Desc = Detail.Code_Cause;
@@ -711,7 +711,7 @@ namespace Lilith
                 CurrentAlarm.IsStop = Detail.IsStop;
                 if (CurrentAlarm.IsStop)
                 {
-                    RouteCtrl.Stop();
+                    //RouteCtrl.Stop();
                 }
             }
             catch (Exception e)
@@ -850,7 +850,7 @@ namespace Lilith
                 else
                 {
                     logger.Error("ChangeAlignSize error: Aligner not found.");
-                    RouteCtrl.Stop();
+                    //RouteCtrl.Stop();
                     return;
                 }
 
@@ -893,7 +893,7 @@ namespace Lilith
                 else
                 {
                     logger.Error("ChangeAlignSize error: Aligner not found.");
-                    RouteCtrl.Stop();
+                   // RouteCtrl.Stop();
                     return;
                 }
 
@@ -965,7 +965,7 @@ namespace Lilith
                         }
                         else
                         {
-                            RouteCtrl.Stop();
+                            //RouteCtrl.Stop();
                             foreach (Node port in NodeManagement.GetLoadPortList())
                             {
                                 if (Port.WaferSize.Equals("300MM"))
@@ -1335,7 +1335,7 @@ namespace Lilith
                 
                 if (CurrentAlarm.IsStop)
                 {
-                    RouteCtrl.Stop();
+                   // RouteCtrl.Stop();
                 }
             }
             catch (Exception e)
@@ -1369,7 +1369,7 @@ namespace Lilith
                 CurrentAlarm.IsStop = Detail.IsStop;
                 if (CurrentAlarm.IsStop)
                 {
-                    RouteCtrl.Stop();
+                    //RouteCtrl.Stop();
                 }
             }
             catch (Exception e)
@@ -1686,7 +1686,7 @@ namespace Lilith
                     CurrentAlarm.IsStop = Detail.IsStop;
                     if (CurrentAlarm.IsStop)
                     {
-                        RouteCtrl.Stop();
+                        //RouteCtrl.Stop();
                     }
                     CurrentAlarm.TimeStamp = DateTime.Now;
 
