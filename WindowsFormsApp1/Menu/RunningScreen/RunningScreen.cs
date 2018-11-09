@@ -93,7 +93,7 @@ namespace Lilith.Menu.RunningScreen
                 if (node.Type.Equals("ROBOT"))
                 {
                     Transaction txn = new Transaction();
-                    txn.Method = Transaction.Command.RobotType.RobotSpeed;
+                    txn.Method = Transaction.Command.RobotType.Speed;
                     txn.Value = sp;
                     txn.FormName = "Running";
                     node.SendCommand(txn, out Message);
@@ -102,7 +102,7 @@ namespace Lilith.Menu.RunningScreen
                 if (node.Type.Equals("ALIGNER"))
                 {
                     Transaction txn = new Transaction();
-                    txn.Method = Transaction.Command.AlignerType.AlignerSpeed;
+                    txn.Method = Transaction.Command.AlignerType.Speed;
                     txn.Value = sp;
                     txn.FormName = "Running";
                     node.SendCommand(txn, out Message);

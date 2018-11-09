@@ -234,159 +234,159 @@ namespace GUI
 
         private void AlignerFunction_Click(object sender, EventArgs e)
         {
-            string Message = "";
-            Button btn = (Button)sender;
-            String nodeName = "NA";
-            String angle = "0";
-            string speed = "0";
-            if (btn.Name.IndexOf("A1") > 0)
-            {
-                nodeName = "ALIGNER01";
-                if (cbA1Angle.Text.Equals(""))
-                {
-                    cbA1Angle.Text = "0";
-                }
-                if (udA1AngleOffset.Text.Equals(""))
-                {
-                    udA1AngleOffset.Text = "0";
-                }
-                angle = Convert.ToString(int.Parse(cbA1Angle.Text) + int.Parse(udA1AngleOffset.Text));
-                speed = nudA1Speed.Text.Equals("100") ? "0" : nudA1Speed.Text;
-            }
-            if (btn.Name.IndexOf("A2") > 0)
-            {
-                nodeName = "ALIGNER02";
-                if (cbA2Angle.Text.Equals(""))
-                {
-                    cbA2Angle.Text = "0";
-                }
-                if (udA2AngleOffset.Text.Equals(""))
-                {
-                    udA2AngleOffset.Text = "0";
-                }
-                angle = Convert.ToString(int.Parse(cbA2Angle.Text) + int.Parse(udA2AngleOffset.Text));
-                speed = nudA2Speed.Text.Equals("100") ? "0" : nudA2Speed.Text;
-            };
-            this.ActiveAligner = nodeName;
-            Node aligner = NodeManagement.Get(nodeName);
-            Transaction[] txns = new Transaction[1];
-            txns[0] = new Transaction();
-            txns[0].FormName = "FormManual";
-            if (aligner == null)
-            {
-                MessageBox.Show(nodeName + " can't found!");
-                return;
-            }
-            String btnFuncName = btn.Name.Replace("A1", "").Replace("A2", ""); // A1 , A2 共用功能
-            if (!btnFuncName.Equals("btnConn") && !btnFuncName.Equals("btnDisConn"))
-            {
-                string status = "";
-                if (nodeName.Equals("ALIGNER01"))
-                {
-                    status = tbA1Status.Text;
-                }
-                if (nodeName.Equals("ALIGNER02"))
-                {
-                    status = tbA2Status.Text;
-                }
-                switch (status)
-                {
-                    case "Disconnected":
-                    case "N/A":
-                    case "":
-                        MessageBox.Show("Please connect first.", "Error");
-                        return;
-                    default:
-                        break;
-                }
-            }
-            switch (btnFuncName)
-            {
-                case "btnConn":
-                    //ControllerManagement.Get(aligner.Controller).Connect();
-                    aligner.State = "";
-                    SetFormEnable(false);
-                    Thread.Sleep(500);//暫解
-                    setAlignerStatus();
-                    SetFormEnable(true);
-                    return;
-                case "btnDisConn":
-                    // ControllerManagement.Get(aligner.Controller).Close();
-                    aligner.State = "";
-                    SetFormEnable(false);
-                    Thread.Sleep(500);//暫解
-                    setAlignerStatus();
-                    SetFormEnable(true);
-                    return;
-                case "btnInit":
-                    //txns = new Transaction[4];
-                    //txns[0].Method = Transaction.Command.AlignerType.Reset;
-                    //txns[1].Method = Transaction.Command.AlignerType.AlignerOrigin;
-                    //txns[2].Method = Transaction.Command.AlignerType.AlignerServo;
-                    //txns[3].Method = Transaction.Command.AlignerType.AlignerHome;
-                    break;
-                case "btnOrg":
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerOrigin;
-                    break;
-                case "btnHome":
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerHome;
-                    break;
-                case "btnServoOn":
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
-                    txns[0].Value = "1";
-                    break;
-                case "btnServoOff":
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
-                    txns[0].Value = "0";
-                    break;
-                case "btnVacuOn":
-                    txns[0].Method = Transaction.Command.AlignerType.WaferHold;
-                    txns[0].Arm = "1";
-                    break;
-                case "btnVacuOff":
-                    txns[0].Method = Transaction.Command.AlignerType.WaferRelease;
-                    txns[0].Arm = "1";
-                    break;
-                case "btnChgSpeed":
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerSpeed;
-                    txns[0].Value = speed;
-                    break;
-                case "btnReset":
-                    txns[0].Method = Transaction.Command.AlignerType.Reset;
-                    break;
-                case "btnAlign":
-                    txns[0].Method = Transaction.Command.AlignerType.Align;
-                    txns[0].Value = angle;
-                    break;
-                case "btnChgMode":
-                    int mode = -1;
-                    if (btn.Name.IndexOf("A1") > 0)
-                    {
-                        mode = cbA1Mode.SelectedIndex;
-                    }
-                    if (btn.Name.IndexOf("A2") > 0)
-                    {
-                        mode = cbA2Mode.SelectedIndex;
-                    }
-                    if (mode < 0)
-                    {
-                        MessageBox.Show(" Insufficient information, please select mode!", "Invalid Mode");
-                        return;
-                    }
-                    txns[0].Method = Transaction.Command.AlignerType.AlignerMode;
-                    txns[0].Value = Convert.ToString(mode);
-                    break;
-            }
-            if (!txns[0].Method.Equals(""))
-            {
-                aligner.SendCommand(txns[0], out Message);
-            }
-            else
-            {
-                MessageBox.Show("Command is empty!");
-            }
-            SetFormEnable(false);
-            setAlignerStatus();
+            //string Message = "";
+            //Button btn = (Button)sender;
+            //String nodeName = "NA";
+            //String angle = "0";
+            //string speed = "0";
+            //if (btn.Name.IndexOf("A1") > 0)
+            //{
+            //    nodeName = "ALIGNER01";
+            //    if (cbA1Angle.Text.Equals(""))
+            //    {
+            //        cbA1Angle.Text = "0";
+            //    }
+            //    if (udA1AngleOffset.Text.Equals(""))
+            //    {
+            //        udA1AngleOffset.Text = "0";
+            //    }
+            //    angle = Convert.ToString(int.Parse(cbA1Angle.Text) + int.Parse(udA1AngleOffset.Text));
+            //    speed = nudA1Speed.Text.Equals("100") ? "0" : nudA1Speed.Text;
+            //}
+            //if (btn.Name.IndexOf("A2") > 0)
+            //{
+            //    nodeName = "ALIGNER02";
+            //    if (cbA2Angle.Text.Equals(""))
+            //    {
+            //        cbA2Angle.Text = "0";
+            //    }
+            //    if (udA2AngleOffset.Text.Equals(""))
+            //    {
+            //        udA2AngleOffset.Text = "0";
+            //    }
+            //    angle = Convert.ToString(int.Parse(cbA2Angle.Text) + int.Parse(udA2AngleOffset.Text));
+            //    speed = nudA2Speed.Text.Equals("100") ? "0" : nudA2Speed.Text;
+            //};
+            //this.ActiveAligner = nodeName;
+            //Node aligner = NodeManagement.Get(nodeName);
+            //Transaction[] txns = new Transaction[1];
+            //txns[0] = new Transaction();
+            //txns[0].FormName = "FormManual";
+            //if (aligner == null)
+            //{
+            //    MessageBox.Show(nodeName + " can't found!");
+            //    return;
+            //}
+            //String btnFuncName = btn.Name.Replace("A1", "").Replace("A2", ""); // A1 , A2 共用功能
+            //if (!btnFuncName.Equals("btnConn") && !btnFuncName.Equals("btnDisConn"))
+            //{
+            //    string status = "";
+            //    if (nodeName.Equals("ALIGNER01"))
+            //    {
+            //        status = tbA1Status.Text;
+            //    }
+            //    if (nodeName.Equals("ALIGNER02"))
+            //    {
+            //        status = tbA2Status.Text;
+            //    }
+            //    switch (status)
+            //    {
+            //        case "Disconnected":
+            //        case "N/A":
+            //        case "":
+            //            MessageBox.Show("Please connect first.", "Error");
+            //            return;
+            //        default:
+            //            break;
+            //    }
+            //}
+            //switch (btnFuncName)
+            //{
+            //    case "btnConn":
+            //        //ControllerManagement.Get(aligner.Controller).Connect();
+            //        aligner.State = "";
+            //        SetFormEnable(false);
+            //        Thread.Sleep(500);//暫解
+            //        setAlignerStatus();
+            //        SetFormEnable(true);
+            //        return;
+            //    case "btnDisConn":
+            //        // ControllerManagement.Get(aligner.Controller).Close();
+            //        aligner.State = "";
+            //        SetFormEnable(false);
+            //        Thread.Sleep(500);//暫解
+            //        setAlignerStatus();
+            //        SetFormEnable(true);
+            //        return;
+            //    case "btnInit":
+            //        //txns = new Transaction[4];
+            //        //txns[0].Method = Transaction.Command.AlignerType.Reset;
+            //        //txns[1].Method = Transaction.Command.AlignerType.AlignerOrigin;
+            //        //txns[2].Method = Transaction.Command.AlignerType.AlignerServo;
+            //        //txns[3].Method = Transaction.Command.AlignerType.AlignerHome;
+            //        break;
+            //    case "btnOrg":
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerOrigin;
+            //        break;
+            //    case "btnHome":
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerHome;
+            //        break;
+            //    case "btnServoOn":
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
+            //        txns[0].Value = "1";
+            //        break;
+            //    case "btnServoOff":
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
+            //        txns[0].Value = "0";
+            //        break;
+            //    case "btnVacuOn":
+            //        txns[0].Method = Transaction.Command.AlignerType.WaferHold;
+            //        txns[0].Arm = "1";
+            //        break;
+            //    case "btnVacuOff":
+            //        txns[0].Method = Transaction.Command.AlignerType.WaferRelease;
+            //        txns[0].Arm = "1";
+            //        break;
+            //    case "btnChgSpeed":
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerSpeed;
+            //        txns[0].Value = speed;
+            //        break;
+            //    case "btnReset":
+            //        txns[0].Method = Transaction.Command.AlignerType.Reset;
+            //        break;
+            //    case "btnAlign":
+            //        txns[0].Method = Transaction.Command.AlignerType.Align;
+            //        txns[0].Value = angle;
+            //        break;
+            //    case "btnChgMode":
+            //        int mode = -1;
+            //        if (btn.Name.IndexOf("A1") > 0)
+            //        {
+            //            mode = cbA1Mode.SelectedIndex;
+            //        }
+            //        if (btn.Name.IndexOf("A2") > 0)
+            //        {
+            //            mode = cbA2Mode.SelectedIndex;
+            //        }
+            //        if (mode < 0)
+            //        {
+            //            MessageBox.Show(" Insufficient information, please select mode!", "Invalid Mode");
+            //            return;
+            //        }
+            //        txns[0].Method = Transaction.Command.AlignerType.AlignerMode;
+            //        txns[0].Value = Convert.ToString(mode);
+            //        break;
+            //}
+            //if (!txns[0].Method.Equals(""))
+            //{
+            //    aligner.SendCommand(txns[0], out Message);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Command is empty!");
+            //}
+            //SetFormEnable(false);
+            //setAlignerStatus();
         }
 
         private void SetFormEnable(bool enable)
