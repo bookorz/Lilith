@@ -436,7 +436,7 @@ namespace GUI
                     break;
             }
             TaskJobManagment.CurrentProceedTask CurrTask;
-            RouteControl.Instance.TaskJob.Excute("FormManual", out Message,out CurrTask, TaskName, param);
+            RouteControl.Instance.TaskJob.Excute("FormManual-1", out Message,out CurrTask, TaskName, param);
             ManualPortStatusUpdate.LockUI(false);
             //SetFormEnable(true);
             //Node node = NodeManagement.Get(nodeName);
@@ -588,10 +588,10 @@ namespace GUI
                     break;
                 case "btnRGet":
                     TaskName = "LOAD";
-                    if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
-                    {
-                        TaskName += "_SaftyCheck";
-                    }
+                    //if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
+                    //{
+                    //    TaskName += "_SaftyCheck";
+                    //}
                     if (cbRA1Point.Text.Equals(""))
                     {
                         MessageBox.Show("Point is empty!");
@@ -608,10 +608,10 @@ namespace GUI
                     break;
                 case "btnRPut":
                     TaskName = "UNLOAD";
-                    if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
-                    {
-                        TaskName += "_SaftyCheck";
-                    }
+                    //if (!SANWA.Utility.Config.SystemConfig.Get().SaftyCheckByPass)
+                    //{
+                    //    TaskName += "_SaftyCheck";
+                    //}
                     if (cbRA2Point.Text.Equals(""))
                     {
                         MessageBox.Show("Point is empty!");

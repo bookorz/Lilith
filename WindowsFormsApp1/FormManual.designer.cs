@@ -1835,6 +1835,7 @@
             this.SMIF_Stage_bt.Tag = "1";
             this.SMIF_Stage_bt.Text = "Open\r\n(No Map)";
             this.SMIF_Stage_bt.UseVisualStyleBackColor = true;
+            this.SMIF_Stage_bt.Visible = false;
             this.SMIF_Stage_bt.Click += new System.EventHandler(this.SmifFunction_Click);
             // 
             // SMIF_Close_bt
