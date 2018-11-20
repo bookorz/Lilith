@@ -98,7 +98,7 @@ namespace Lilith
             this.Width = 1;
             this.Height = 1;
 
-            Control[] ctrlForm = new Control[] { formMonitoring, formCommunications, formWafer, formStatus, formOCR, formTestMode, WaferForm, formSystem };
+            Control[] ctrlForm = new Control[] { formMonitoring};
 
             try
             {
