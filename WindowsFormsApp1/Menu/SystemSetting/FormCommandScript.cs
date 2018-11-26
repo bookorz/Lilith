@@ -189,8 +189,7 @@ namespace Lilith.Menu.SystemSetting
                 Lilith.Util.SanwaUtil.addActionLog("Adam.Menu.SystemSetting", "FormCpmmandScript", Signal.Text);
 
                 UpdateNodeList();
-                //改設定後套用
-                CommandScriptManagement.LoadConfig();
+               
             }
             catch (Exception ex)
             {

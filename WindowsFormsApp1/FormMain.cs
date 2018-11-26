@@ -196,11 +196,11 @@ namespace Lilith
                     {
                         case "ALIGNER":
                             each.ErrorMsg = "";
-                            each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit", out Message);
+                            //each.ExcuteScript("AlignerStateGet", "GetStatsBeforeInit", out Message);
                             break;
                         case "ROBOT":
                             each.ErrorMsg = "";
-                            each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit", out Message);
+                            //each.ExcuteScript("RobotStateGet", "GetStatsBeforeInit", out Message);
                             break;
                     }
                 }
@@ -218,7 +218,7 @@ namespace Lilith
                 switch (each.Type.ToUpper())
                 {
                     case "ROBOT":
-                        each.ExcuteScript("RobotInit", "Initialize", out Message);
+                        //each.ExcuteScript("RobotInit", "Initialize", out Message);
                         break;
                         //先做ROBOT
                         //case "ALIGNER":
@@ -404,53 +404,7 @@ namespace Lilith
 
             switch (Txn.FormName)
             {
-                case "GetStatsBeforeInit":
-                    switch (Txn.Method)
-                    {
-                        //case Transaction.Command.AlignerType.GetStatus:
-
-                        //    break;
-                        //case Transaction.Command.RobotType.GetCombineStatus:
-
-                        //    break;
-                        //case Transaction.Command.AlignerType.GetSpeed:
-
-                        //    break;
-                        case Transaction.Command.AlignerType.GetRIO:
-                            if (Msg.Value == null || Msg.Value.IndexOf(",") < 0)
-                            {
-                                break;
-                            }
-                            string[] result = Msg.Value.Split(',');
-                            switch (result[0])
-                            {
-                                case "004":
-
-                                    if (result[1].Equals("1"))
-                                    {
-                                        Node.ErrorMsg += "Present_R 在席存在 ";
-                                    }
-
-                                    break;
-                                case "005":
-                                    if (result[1].Equals("1"))
-                                    {
-                                        Node.ErrorMsg += "Present_L 在席存在 ";
-                                    }
-                                    break;
-                            }
-                            break;
-                            //case Transaction.Command.AlignerType.GetError:
-
-                            //    break;
-                            //case Transaction.Command.AlignerType.GetMode:
-
-                            //    break;
-                            //case Transaction.Command.AlignerType.GetSV:
-
-                            //    break;
-                    }
-                    break;
+                
                 case "FormStatus":
                     Util.StateUtil.UpdateSTS(Node.Name, Msg.Value);
                     break;
@@ -536,13 +490,13 @@ namespace Lilith
                                 case Transaction.Command.AlignerType.Mode:
                                 case Transaction.Command.AlignerType.Reset:
                                 case Transaction.Command.AlignerType.Servo:
-                                    Thread.Sleep(500);
-                                    //向Aligner 詢問狀態
-                                    Node aligner = NodeManagement.Get(Node.Name);
-                                    String script_name = aligner.Brand.ToUpper().Equals("SANWA") ? "AlignerStateGet" : "AlignerStateGet(Kawasaki)";
-                                    aligner.ExcuteScript(script_name, "FormManual", out Message);
-                                    ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 
-                                    break;
+                                    //Thread.Sleep(500);
+                                    ////向Aligner 詢問狀態
+                                    //Node aligner = NodeManagement.Get(Node.Name);
+                                    //String script_name = aligner.Brand.ToUpper().Equals("SANWA") ? "AlignerStateGet" : "AlignerStateGet(Kawasaki)";
+                                    ////aligner.ExcuteScript(script_name, "FormManual", out Message);
+                                    //ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 
+                                    //break;
                                 case Transaction.Command.AlignerType.GetMode:
                                 case Transaction.Command.AlignerType.GetSV:
                                 case Transaction.Command.AlignerType.GetStatus:
@@ -766,7 +720,7 @@ namespace Lilith
         public void On_Eqp_State_Changed(string OldStatus, string NewStatus)
         {
             NodeStatusUpdate.UpdateCurrentState(NewStatus);
-            StateRecord.EqpStateUpdate("Sorter", OldStatus, NewStatus);
+            //StateRecord.EqpStateUpdate("Sorter", OldStatus, NewStatus);
         }
 
         public void On_Controller_State_Changed(string Device_ID, string Status)
@@ -805,213 +759,11 @@ namespace Lilith
             logger.Debug("On_Controller_State_Changed");
         }
 
-        public void On_Port_Begin(string PortName, string FormName)
-        {
-            logger.Debug("On_Port_Begin");
-            string Message = "";
-            Node port = NodeManagement.Get(PortName);
-            //for 200mm
-            Dictionary<string, string> Params = new Dictionary<string, string>();
+       
 
+        
 
-            if (port.WaferSize.Equals("200MM"))//8" operation before fetch the first wafer.
-            {
-                Params.Add("12_Inch_OCR", "False");
-                Params.Add("8_Inch_OCR", "True");
-                RouteControl.Instance.DIO.SetIO(Params);
-
-                Dictionary<string, string> vars = new Dictionary<string, string>();
-                RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
-                Node Robot = NodeManagement.Get(robotPoint.NodeName);
-                if (!port.IsMapping)
-                {//除了第一次用手動Mapping，之後的自動循環都要做Mapping
-                    port.WaitForFinish = true;
-                    vars.Add("@loadport", PortName);
-                    Robot.ExcuteScript("RobotMapping", "MANSW", vars, out Message, "200MM");
-
-
-                }
-                Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
-                if (Aligner != null)//切換Aligner位置
-                {
-                    Aligner.WaitForFinish = true;
-                    vars = new Dictionary<string, string>();
-                    vars.Add("@size", "100000");
-                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, out Message, "200MM");
-                    logger.Debug("Wait for ChangeAlignSize.");
-                    SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
-
-                    if (!port.IsMapping)
-                    {
-                        logger.Debug("Wait for RobotMapping.");
-                        SpinWait.SpinUntil(() => !port.WaitForFinish, 99999999);//等待Robot Mapping動作結束
-                    }
-                }
-                else
-                {
-                    logger.Error("ChangeAlignSize error: Aligner not found.");
-                    //RouteCtrl.Stop();
-                    return;
-                }
-
-
-            }
-            else if (port.WaferSize.Equals("300MM"))//12" operation before fetch the first wafer.
-            {
-
-                Params.Add("8_Inch_OCR", "False");
-                Params.Add("12_Inch_OCR", "True");
-
-                RouteControl.Instance.DIO.SetIO(Params);
-
-                RobotPoint robotPoint = PointManagement.GetMapPoint(port.Name, port.WaferSize);
-
-                Node Robot = NodeManagement.Get(robotPoint.NodeName);
-                Node Aligner = NodeManagement.Get(Robot.DefaultAligner);
-                if (Aligner != null)
-                {
-                    Robot.WaitForFinish = true;
-                    Transaction GetWaitCmd = new Transaction();
-                    GetWaitCmd.Method = Transaction.Command.RobotType.GetWait;
-                    GetWaitCmd.Slot = "1";
-                    GetWaitCmd.Arm = "2";
-                    GetWaitCmd.Position = port.Name;
-                    GetWaitCmd.FormName = "ChangeAlignWaferSize";
-                    Robot.SendCommand(GetWaitCmd, out Message);
-
-                    Aligner.WaitForFinish = true;
-                    Dictionary<string, string> vars = new Dictionary<string, string>();
-                    vars.Add("@size", "150000");
-                    Aligner.ExcuteScript("ChangeAlignWaferSize", "ChangeAlignWaferSize", vars, out Message, "300MM");
-                    logger.Debug("Wait for ChangeAlignSize.");
-                    SpinWait.SpinUntil(() => !Aligner.WaitForFinish, 99999999);
-
-
-                    logger.Debug("Wait for Robot GetWait.");
-                    SpinWait.SpinUntil(() => !Robot.WaitForFinish, 99999999);//等待Robot GetWait動作結束
-                }
-                else
-                {
-                    logger.Error("ChangeAlignSize error: Aligner not found.");
-                   // RouteCtrl.Stop();
-                    return;
-                }
-
-            }
-
-            WaferAssignUpdate.RefreshMapping(PortName);
-            WaferAssignUpdate.RefreshMapping(NodeManagement.Get(PortName).DestPort);
-            try
-            {
-                switch (FormName)
-                {
-                    case "Running":
-                        MonitoringUpdate.UpdateUseState(PortName, true);
-                        WaferAssignUpdate.UpdateUseState(PortName, true);
-                        break;
-
-                }
-            }
-            catch (Exception e)
-            {
-                logger.Error(e.StackTrace);
-            }
-        }
-
-        public void On_Port_Finished(string PortName, string FormName)
-        {
-            logger.Debug("On_Port_Finished");
-            try
-            {
-                string Message = "";
-                WaferAssignUpdate.RefreshMapping(PortName);
-                WaferAssignUpdate.RefreshMapping(NodeManagement.Get(PortName).DestPort);
-                Node Port = NodeManagement.Get(PortName);
-                Node DestPort = NodeManagement.Get(Port.DestPort);
-                switch (FormName)
-                {
-                    case "Running":
-                        //RunningUpdate.UpdateUseState(PortName, false);
-                        MonitoringUpdate.UpdateUseState(PortName, false);
-                        WaferAssignUpdate.UpdateUseState(PortName, false);
-                        if (FormMain.AutoReverse)
-                        {
-                            if (!Port.ByPass)
-                            {
-                                if (Port.WaferSize.Equals("200MM"))
-                                {
-                                    Port.IsMapping = false;//讓每次循環開始時，都做一次Mapping
-                                    Port.LoadTime = DateTime.Now;
-                                    Port.Available = true;
-                                }
-                                else
-                                {
-                                    //foreach (Node eachPort in NodeManagement.GetLoadPortList())
-                                    //{//當300MM做完才把200MM啟用，這樣不會都一直取200MM的Port
-                                    //    if (eachPort.WaferSize.Equals("200MM"))
-                                    //    {
-                                    //        eachPort.Available = true;
-                                    //    }
-                                    //}
-                                    Port.ExcuteScript("LoadPortUnloadAndLoad", "Running_Port_Finished", out Message);
-
-                                }
-                            }
-                            else
-                            {
-
-                                //RunningUpdate.ReverseRunning(Port.Name);
-                            }
-                        }
-                        else
-                        {
-                            //RouteCtrl.Stop();
-                            foreach (Node port in NodeManagement.GetLoadPortList())
-                            {
-                                if (Port.WaferSize.Equals("300MM"))
-                                {
-                                    Port.ExcuteScript("LoadPortUnload", "Port_Finished", out Message);
-                                }
-                            }
-                            MessageBox.Show("自動展示模式停止");
-                        }
-                        //RunningUpdate.ReverseRunning(PortName);
-
-                        break;
-                    default:
-                        Port.ExcuteScript("LoadPortUnload", "Port_Finished", out Message);
-                        break;
-                }
-            }
-            catch (Exception e)
-            {
-                logger.Error(e.StackTrace);
-            }
-        }
-
-        public void On_Task_Finished(string FormName, string LapsedTime, int LapsedWfCount, int LapsedLotCount)
-        {
-            logger.Debug("On_Task_Finished");
-            //NodeStatusUpdate.UpdateCurrentState("Idle");
-            try
-            {
-                RunningUpdate.UpdateRunningInfo("LapsedTime", LapsedTime);
-                RunningUpdate.UpdateRunningInfo("TransCount", "+1");
-                RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
-                RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
-                RunningUpdate.UpdateRunningInfo("WPH", (LapsedWfCount / Convert.ToDouble(LapsedTime) * 3600).ToString());
-                MonitoringUpdate.UpdateWPH(Math.Round((LapsedWfCount / Convert.ToDouble(LapsedTime) * 3600), 1).ToString());
-                foreach (Node port in NodeManagement.GetLoadPortList())
-                {
-                    WaferAssignUpdate.ResetAssignCM(port.Name, true);
-                }
-            }
-            catch (Exception e)
-            {
-                logger.Error(e.StackTrace);
-            }
-
-        }
+       
 
         public void On_Mode_Changed(string Mode)
         {
@@ -1039,249 +791,7 @@ namespace Lilith
 
         }
 
-        public void On_Script_Finished(Node Node, string ScriptName, string FormName)
-        {
-            logger.Debug("On_Script_Finished: " + Node.Name + " Script:" + ScriptName + " Finished, Form name:" + FormName);
-            string Message = "";
-            Transaction txn;
-            switch (FormName)
-            {
-                case "GetStatsBeforeInit":
-                    Node.CheckStatus = true;
-
-
-                    //檢查在席是否全部回報完成
-                    var find = from nd in NodeManagement.GetList()
-                               where (nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.CheckStatus
-                               select nd;
-                    if (find.Count() == 0)
-                    {//在席回報完成
-
-                        find = from nd in NodeManagement.GetList()
-                               where (nd.Type.Equals("ALIGNER") || nd.Type.Equals("ROBOT")) && !nd.ErrorMsg.Equals("")
-                               select nd;
-                        string tmp = "";
-                        foreach (Node each in find)
-                        {
-                            tmp += " " + each.Name + ":" + each.ErrorMsg + "\n";
-                        }
-                        if (tmp != "")
-                        {
-                            MessageBox.Show("偵測到在席，請先確認再執行Initial.\n\n" + tmp);
-                            MonitoringUpdate.UpdateInitialButton(true);
-                        }
-                        else
-                        {//都沒有在席，自動執行Initial
-                            ProceedInitial();
-                        }
-                    }
-
-                    break;
-
-                case "MANSW":
-                    switch (ScriptName)
-                    {
-                        case "LoadPortMapping":
-                            Node.WaitForFinish = false;
-                            //檢查是否還在Mapping
-                            var findPort = from node in NodeManagement.GetLoadPortList()
-                                           where node.WaitForFinish
-                                           select node;
-                            if (findPort.Count() == 0)
-                            {//沒有的話就啟用Start按鈕
-                                //檢查Mapping資料是否有異常
-                                findPort = from node in NodeManagement.GetLoadPortList()
-                                           from j in node.JobList.Values.ToList()
-                                           where j.Job_Id.Equals("Crossed") || j.Job_Id.Equals("Undefined") || j.Job_Id.Equals("Double")
-                                           select node;
-                                if (findPort.Count() == 0)
-                                {
-                                    MonitoringUpdate.UpdateStartButton(true);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Mapping異常，請檢查Wafer狀態");
-                                }
-                            }
-                            break;
-                        case "RobotMapping":
-                            txn = new Transaction();
-                            txn.Method = Transaction.Command.LoadPortType.SetOpAccess;
-                            txn.Value = "0";
-                            txn.FormName = "RobotMapping";
-                            Node port = NodeManagement.Get(Node.CurrentPosition);
-                            if (port != null)
-                            {
-                                port.SendCommand(txn, out Message);
-
-                                port.WaitForFinish = false;
-                            }
-                            //檢查是否還在Mapping
-                            findPort = from node in NodeManagement.GetLoadPortList()
-                                       where node.WaitForFinish
-                                       select node;
-                            if (findPort.Count() == 0)
-                            {//沒有的話就啟用Start按鈕
-                                //檢查Mapping資料是否有異常
-                                findPort = from node in NodeManagement.GetLoadPortList()
-                                           from j in node.JobList.Values.ToList()
-                                           where j.Job_Id.Equals("Crossed") || j.Job_Id.Equals("Undefined") || j.Job_Id.Equals("Double")
-                                           select node;
-                                if (findPort.Count() == 0)
-                                {
-                                    MonitoringUpdate.UpdateStartButton(true);
-                                }
-                                else
-                                {
-                                    MessageBox.Show("Mapping異常，請檢查Wafer狀態");
-                                }
-                            }
-                            break;
-                    }
-                    break;
-                case "ChangeAlignWaferSize":
-                    Node.WaitForFinish = false;
-
-                    break;
-                case "Initialize":
-
-                    Node.InitialObject();
-                    Node.InitialComplete = true;
-                    switch (Node.Type)
-                    {
-                        case "ROBOT":
-                        case "ALIGNER":
-                            Node.State = "Idle";
-                            break;
-                        case "LOADPORT":
-                            Node.State = "Ready To Load";
-                            break;
-                    }
-
-                    if (Node.Type.Equals("ROBOT"))//當最後一台Robot 完成Initial時，其他才開始做Initial
-                    {
-                        if (NodeManagement.IsRobotInitial())
-                        {
-                            foreach (Node each in NodeManagement.GetList())
-                            {
-
-                                switch (each.Type.ToUpper())
-                                {
-                                    case "ALIGNER":
-                                        each.ExcuteScript("AlignerInit", "Initialize", out Message);
-                                        break;
-                                    case "LOADPORT":
-                                        if (each.WaferSize.Equals("200MM"))
-                                        {
-                                            each.ExcuteScript("LoadPortInit200MM", "Initialize", out Message);
-                                        }
-                                        else
-                                        {
-                                            each.ExcuteScript("LoadPortInit", "Initialize", out Message);
-                                        }
-                                        break;
-                                }
-                            }
-                        }
-                    }
-
-                    if (!NodeManagement.IsNeedInitial())
-                    {
-                        NodeStatusUpdate.UpdateCurrentState("Idle");
-                        ConnectionStatusUpdate.UpdateInitial(true.ToString());
-                        MonitoringUpdate.UpdateInitialButton(true);
-                        foreach (Node EachPort in NodeManagement.GetLoadPortList())
-                        {
-                            if (!EachPort.ByPass)
-                            {
-
-                                txn = new Transaction();
-                                txn.Method = Transaction.Command.LoadPortType.ReadStatus;
-                                txn.FormName = "InitialFinish";
-                                EachPort.SendCommand(txn, out Message);
-
-                            }
-                            EachPort.JobList.Clear();
-                            MonitoringUpdate.UpdateNodesJob(EachPort.Name);
-                            WaferAssignUpdate.RefreshMapping(EachPort.Name);
-                        }
-                    }
-                    break;
-                case "FormManual-Script":
-
-                    switch (Node.Type)
-                    {
-                        case "ROBOT":
-                            //ManualRobotStatusUpdate.UpdateGUI(new Transaction(), Node.Name, "");//update 手動功能畫面
-                            break;
-                    }
-                    break;
-
-                case "Running_Port_Finished":
-                    if (ScriptName.Equals("LoadPortUnloadAndLoad"))
-                    {
-                        //Node Port;
-                        //Node DestPort;
-
-                        //Node.PortUnloadAndLoadFinished = true;
-                        //if (!Node.DestPort.Equals(""))
-                        //{
-                        //    Port = Node;
-                        //    DestPort = NodeManagement.Get(Node.DestPort);
-                        //    // SpinWait.SpinUntil(() => (Port.IsMapping && Port.JobList.Count!=0 && DestPort.IsMapping && DestPort.JobList.Count != 0) || RouteCtrl.GetMode().Equals("Stop") , 99999999);
-
-                        //    SpinWait.SpinUntil(() => (Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished) || RouteCtrl.GetMode().Equals("Stop"), 99999999);
-
-                        //    if (!RouteCtrl.GetMode().Equals("Stop") && Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished)
-                        //    {
-                        //        Port.PortUnloadAndLoadFinished = false;
-                        //        DestPort.PortUnloadAndLoadFinished = false;
-                        //        RunningUpdate.ReverseRunning(Port.Name);
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    var findPort = from port in NodeManagement.GetLoadPortList()
-                        //                   where port.DestPort.Equals(Node.Name)
-                        //                   select port;
-
-                        //    if (findPort.Count() != 0)
-                        //    {
-                        //        Port = findPort.First();
-                        //        DestPort = Node;
-                        //        //SpinWait.SpinUntil(() => (Port.IsMapping && Port.JobList.Count != 0 && DestPort.IsMapping && DestPort.JobList.Count != 0) || RouteCtrl.GetMode().Equals("Stop"), 99999999);
-
-                        //        //SpinWait.SpinUntil(() => (Port.IsMapping && DestPort.IsMapping) || RouteCtrl.GetMode().Equals("Stop"), 99999999);
-                        //        if (!RouteCtrl.GetMode().Equals("Stop") && Port.PortUnloadAndLoadFinished && DestPort.PortUnloadAndLoadFinished)
-                        //        {
-
-                        //            RunningUpdate.ReverseRunning(Port.Name);
-
-                        //        }
-
-                        //    }
-                        //}
-
-                    }
-
-                    break;
-            }
-        }
-
-        //private void vSBRobotStatus_Scroll(object sender, ScrollEventArgs e)
-        //{
-        //    //pbRobotState.Top = -vSBRobotStatus.Value;
-        //}
-
-        //private void vSBAlignerStatus_Scroll(object sender, ScrollEventArgs e)
-        //{
-        //    //pbAlignerState.Top = -vSBAlignerStatus.Value;
-        //}
-
-        //private void vSBPortStatus_Scroll(object sender, ScrollEventArgs e)
-        //{
-        //    //pbPortState.Top = -vSBPortStatus.Value;
-        //}
+        
 
 
 

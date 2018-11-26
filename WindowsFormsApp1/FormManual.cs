@@ -981,29 +981,29 @@ namespace GUI
 
         private void setAlignerStatus()
         {
-            string Message = "";
-            Control[] controls = new Control[] { tbA1Error, tbA1Status, tbA1VacSolenoid, tbA1WaferSensor, tbA1WaferSensor, tbA2Error, tbA2Status, tbA2VacSolenoid, tbA2WaferSensor, tbA2WaferSensor, nudA1Speed, nudA2Speed };
-            foreach (Control control in controls)
-            {
-                control.Text = "";
-                control.BackColor = Color.WhiteSmoke;
-            }
-            SetDeviceStatus("ALIGNER01");
-            SetDeviceStatus("ALIGNER02");
-            Node aligner1 = NodeManagement.Get("ALIGNER01");
-            Node aligner2 = NodeManagement.Get("ALIGNER02");
+            //string Message = "";
+            //Control[] controls = new Control[] { tbA1Error, tbA1Status, tbA1VacSolenoid, tbA1WaferSensor, tbA1WaferSensor, tbA2Error, tbA2Status, tbA2VacSolenoid, tbA2WaferSensor, tbA2WaferSensor, nudA1Speed, nudA2Speed };
+            //foreach (Control control in controls)
+            //{
+            //    control.Text = "";
+            //    control.BackColor = Color.WhiteSmoke;
+            //}
+            //SetDeviceStatus("ALIGNER01");
+            //SetDeviceStatus("ALIGNER02");
+            //Node aligner1 = NodeManagement.Get("ALIGNER01");
+            //Node aligner2 = NodeManagement.Get("ALIGNER02");
 
-            //向Aligner 詢問狀態
-            if (!tbA1Status.Text.Equals("N/A") && !tbA1Status.Text.Equals("Disconnected") && !tbA1Status.Text.Equals(""))
-            {
-                String script_name = aligner1.Brand.ToUpper().Equals("KAWASAKI") ? "AlignerStateGet(Kawasaki)" : "AlignerStateGet";
-                aligner1.ExcuteScript(script_name, "FormManual", out Message); ;//連線狀態下才執行
-            }
-            if (!tbA2Status.Text.Equals("N/A") && !tbA2Status.Text.Equals("Disconnected") && !tbA2Status.Text.Equals(""))
-            {
-                String script_name = aligner2.Brand.ToUpper().Equals("KAWASAKI") ? "AlignerStateGet(Kawasaki)" : "AlignerStateGet";
-                aligner2.ExcuteScript(script_name, "FormManual", out Message); ;//連線狀態下才執行
-            }
+            ////向Aligner 詢問狀態
+            //if (!tbA1Status.Text.Equals("N/A") && !tbA1Status.Text.Equals("Disconnected") && !tbA1Status.Text.Equals(""))
+            //{
+            //    String script_name = aligner1.Brand.ToUpper().Equals("KAWASAKI") ? "AlignerStateGet(Kawasaki)" : "AlignerStateGet";
+            //    aligner1.ExcuteScript(script_name, "FormManual", out Message); ;//連線狀態下才執行
+            //}
+            //if (!tbA2Status.Text.Equals("N/A") && !tbA2Status.Text.Equals("Disconnected") && !tbA2Status.Text.Equals(""))
+            //{
+            //    String script_name = aligner2.Brand.ToUpper().Equals("KAWASAKI") ? "AlignerStateGet(Kawasaki)" : "AlignerStateGet";
+            //    aligner2.ExcuteScript(script_name, "FormManual", out Message); ;//連線狀態下才執行
+            //}
         }
 
         private void SetDeviceStatus(string name)
