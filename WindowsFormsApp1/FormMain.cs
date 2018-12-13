@@ -1173,9 +1173,9 @@ namespace Lilith
             MonitoringUpdate.LogUpdate("Disconnected");
         }
 
-        public void On_TaskJob_Aborted(string TaskID, string NodeName, string ReportType, string Message)
+        public void On_TaskJob_Aborted(TaskJobManagment.CurrentProceedTask Task, string NodeName, string ReportType, string Message)
         {
-            if (TaskID.Equals("FormManual"))
+            if (Task.Id.Equals("FormManual"))
             {
                 ManualPortStatusUpdate.LockUI(false);
             }
@@ -1215,9 +1215,9 @@ namespace Lilith
 
         }
 
-        public void On_TaskJob_Finished(string TaskID)
+        public void On_TaskJob_Finished(TaskJobManagment.CurrentProceedTask Task)
         {
-            if (TaskID.Equals("FormManual"))
+            if (Task.Id.Equals("FormManual"))
             {
                 ManualPortStatusUpdate.LockUI(false);
             }
