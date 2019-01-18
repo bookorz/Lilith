@@ -2210,10 +2210,10 @@
             this.label124.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label124.Location = new System.Drawing.Point(34, 47);
             this.label124.Name = "label124";
-            this.label124.Size = new System.Drawing.Size(165, 24);
+            this.label124.Size = new System.Drawing.Size(192, 24);
             this.label124.TabIndex = 0;
             this.label124.Tag = "1";
-            this.label124.Text = "Elevator up limit :";
+            this.label124.Text = "Elevator down limit :";
             // 
             // groupBox5
             // 

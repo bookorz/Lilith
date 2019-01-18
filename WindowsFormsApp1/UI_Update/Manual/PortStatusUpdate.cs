@@ -636,7 +636,7 @@ namespace Lilith.UI_Update.Manual
                                     break;
                                 case '?':
                                     slotLb.Text = "Undefined";
-                                    slotLb.BackColor = Color.Silver;
+                                    slotLb.BackColor = Color.Red;
                                     break;
                                 case 'W':
                                     slotLb.Text = "Overlapping";
