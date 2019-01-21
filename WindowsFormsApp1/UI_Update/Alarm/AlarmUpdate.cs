@@ -56,7 +56,7 @@ namespace Lilith.UI_Update.Alarm
                     //Conn_gv.Refresh();
                     AlarmList_gv.ClearSelection();
                     AlarmList_gv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                    NodeStatusUpdate.UpdateCurrentState(FormMain.RouteCtrl.EqpState);
+                    //NodeStatusUpdate.UpdateCurrentState(FormMain.RouteCtrl.EqpState);
                     if (AlarmList.Count() != 0)
                     {
                        

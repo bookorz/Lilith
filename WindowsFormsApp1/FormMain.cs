@@ -145,7 +145,45 @@ namespace Lilith
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
             HostControl.Events = new ReportEvent();
+            Dictionary<string, string> param = new Dictionary<string, string>();
+            param.Add("RED", "False");
+            param.Add("ORANGE", "False");
+            param.Add("GREEN", "False");
+            param.Add("BLUE", "False");
+            param.Add("BUZZER1", "False");
+            param.Add("BUZZER2", "False");
+            RouteCtrl.DIO.SetIO(param);
+            
 
+            ThreadPool.QueueUserWorkItem(new WaitCallback(UpdateCheckBox));
+
+        }
+
+        private void UpdateCheckBox(object input)
+        {
+            FormMain.HostControl.Events.Load();
+            MonitoringUpdate.EventUpdate("MAPDT", FormMain.HostControl.Events.MAPDT);
+            MonitoringUpdate.EventUpdate("PORT", FormMain.HostControl.Events.PORT);
+            MonitoringUpdate.EventUpdate("PRS", FormMain.HostControl.Events.PRS);
+            MonitoringUpdate.EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
+            MonitoringUpdate.EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
+            MonitoringUpdate.EventUpdate("FFU", FormMain.HostControl.Events.FFU);
+            MonitoringUpdate.EventUpdate("BF1_BYPASS", FormMain.HostControl.Events.BF1_BYPASS);
+            NodeManagement.Get("BF1").ByPassCheck = FormMain.HostControl.Events.BF1_BYPASS;
+            MonitoringUpdate.EventUpdate("BF2_BYPASS", FormMain.HostControl.Events.BF2_BYPASS);
+            NodeManagement.Get("BF2").ByPassCheck = FormMain.HostControl.Events.BF2_BYPASS;
+
+            DIOUpdate.UpdateDIOStatus("RED", "False");
+            DIOUpdate.UpdateDIOStatus("ORANGE", "False");
+            DIOUpdate.UpdateDIOStatus("GREEN", "False");
+            DIOUpdate.UpdateDIOStatus("BLUE", "False");
+            DIOUpdate.UpdateDIOStatus("BUZZER1", "False");
+            DIOUpdate.UpdateDIOStatus("BUZZER2", "False");
+
+            foreach(Node node in NodeManagement.GetList())
+            {
+                MonitoringUpdate.EventUpdate(node.Name + "_Enable", node.Enable);
+            }
         }
 
         private void LoadPort01_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -719,7 +757,7 @@ namespace Lilith
 
         public void On_Eqp_State_Changed(string OldStatus, string NewStatus)
         {
-            NodeStatusUpdate.UpdateCurrentState(NewStatus);
+           // NodeStatusUpdate.UpdateCurrentState(NewStatus);
             //StateRecord.EqpStateUpdate("Sorter", OldStatus, NewStatus);
         }
 
@@ -1150,6 +1188,12 @@ namespace Lilith
         public void On_CommandMessage(string msg)
         {
             MonitoringUpdate.LogUpdate(msg);
+        }
+
+        public void On_EFEM_Status_changed(string status)
+        {
+
+            NodeStatusUpdate.UpdateCurrentState(status);
         }
 
         public void On_Connection_Connected()

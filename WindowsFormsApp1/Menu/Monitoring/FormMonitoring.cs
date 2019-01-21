@@ -268,7 +268,7 @@ namespace Lilith.Menu.Monitoring
 
         private void FormMonitoring_Load(object sender, EventArgs e)
         {
-           
+
             //MAPDT_ck.Checked = FormMain.ctrl.Events.MAPDT;
             //PORT_ck.Checked = FormMain.ctrl.Events.PORT;
             //PRS_ck.Checked = FormMain.ctrl.Events.PRS;
@@ -302,6 +302,38 @@ namespace Lilith.Menu.Monitoring
                     break;
             }
             FormMain.HostControl.Events.Save();
+        }
+
+        private void Buffer1_Bypass_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buffer2_Bypass_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BF1_BYPASS_ck_Click(object sender, EventArgs e)
+        {
+            NodeManagement.Get("BF1").ByPassCheck = BF1_BYPASS_ck.Checked;
+            FormMain.HostControl.Events.BF1_BYPASS = BF1_BYPASS_ck.Checked;
+            FormMain.HostControl.Events.Save();
+        }
+
+        private void BF2_BYPASS_ck_Click(object sender, EventArgs e)
+        {
+            NodeManagement.Get("BF2").ByPassCheck = BF2_BYPASS_ck.Checked;
+            FormMain.HostControl.Events.BF2_BYPASS = BF2_BYPASS_ck.Checked;
+            FormMain.HostControl.Events.Save();
+        }
+
+        private void Node_Enable_Click(object sender, EventArgs e)
+        {
+            string NodeName = (sender as CheckBox).Name.Replace("_Enable_ck", "");
+            Node node = NodeManagement.Get(NodeName);
+            node.SetEnable((sender as CheckBox).Checked);
+
         }
     }
 }

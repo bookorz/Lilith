@@ -111,7 +111,33 @@ namespace Lilith.UI_Update.Monitoring
                 }
                 else
                 {
+                    //W.AppendText(msg + "\n");
+                    W.SelectionStart = W.TextLength;
+                    W.SelectionLength = 0;
+
+                   
+                    if (msg.ToUpper().Contains("ACK"))
+                    {
+                        W.SelectionColor = Color.Blue;
+                    }
+                    else if (msg.ToUpper().Contains("INF"))
+                    {
+                        W.SelectionColor = Color.Green;
+                    }
+                    else if (msg.ToUpper().Contains("ABS"))
+                    {
+                        W.SelectionColor = Color.Red;
+                    }
+                    else if (msg.ToUpper().Contains("CAN"))
+                    {
+                        W.SelectionColor = Color.Orange;
+                    }
+                    else
+                    {
+                        W.SelectionColor = Color.Black;
+                    }
                     W.AppendText(msg + "\n");
+                    W.SelectionColor = W.ForeColor;
                     if (W.Lines.Length > 1000)
                     {
                         W.Select(0, W.GetFirstCharIndexFromLine(W.Lines.Length - 1000));
@@ -119,15 +145,16 @@ namespace Lilith.UI_Update.Monitoring
                     }
                     W.ScrollToCaret();
 
-                    EventUpdate("MAPDT", FormMain.HostControl.Events.MAPDT);
-                    EventUpdate("PORT", FormMain.HostControl.Events.PORT);
-                    EventUpdate("PRS", FormMain.HostControl.Events.PRS);
-                    EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
-                    EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
-                    EventUpdate("FFU", FormMain.HostControl.Events.FFU);
-
-
-                  
+                    //EventUpdate("MAPDT", FormMain.HostControl.Events.MAPDT);
+                    //EventUpdate("PORT", FormMain.HostControl.Events.PORT);
+                    //EventUpdate("PRS", FormMain.HostControl.Events.PRS);
+                    //EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
+                    //EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
+                    //EventUpdate("FFU", FormMain.HostControl.Events.FFU);
+                    //EventUpdate("BF1_BYPASS", FormMain.HostControl.Events.BF1_BYPASS);
+                    //NodeManagement.Get("BF1").ByPassCheck = FormMain.HostControl.Events.BF1_BYPASS;
+                    //EventUpdate("BF2_BYPASS", FormMain.HostControl.Events.BF2_BYPASS);
+                    //NodeManagement.Get("BF2").ByPassCheck = FormMain.HostControl.Events.BF2_BYPASS;
                 }
             }
             catch(Exception e)
@@ -377,6 +404,18 @@ namespace Lilith.UI_Update.Monitoring
                             }
                         }
                     }
+                    else
+                    {
+                        for (int i = 1; i <= Tools.GetSlotCount(node.Type); i++)
+                        {
+                            Label present = form.Controls.Find(node.Name + "_Slot_" + i.ToString(), true).FirstOrDefault() as Label;
+                            if (present != null)
+                            {
+                                present.Text = "";
+                                present.BackColor = Color.White;
+                            }
+                            }
+                        }
                 }
 
 

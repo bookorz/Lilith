@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
+            this.LoadPort02_Enable_ck = new System.Windows.Forms.CheckBox();
+            this.LoadPort03_Enable_ck = new System.Windows.Forms.CheckBox();
+            this.LoadPort04_Enable_ck = new System.Windows.Forms.CheckBox();
+            this.LoadPort01_Enable_ck = new System.Windows.Forms.CheckBox();
             this.label54 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.MAPDT_ck = new System.Windows.Forms.CheckBox();
@@ -39,22 +43,20 @@
             this.TRANSREQ_ck = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BF1_BYPASS_ck = new System.Windows.Forms.CheckBox();
             this.ARM_NOT_EXTEND_BF1_signal = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.BF1_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.BF1_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
             this.BF1_Slot_1 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BF2_BYPASS_ck = new System.Windows.Forms.CheckBox();
             this.ARM_NOT_EXTEND_BF2_signal = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.BF2_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.BF2_DOOR_OPEN_Signal = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
             this.BF_Slot_1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.LoadPort04_Mode = new System.Windows.Forms.Label();
@@ -178,6 +180,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.Robot01_Slot_1 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.Robot01_Enable_ck = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.LoadPort02_Slot_1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -301,6 +304,10 @@
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
+            this.Aligner01_tb.Controls.Add(this.LoadPort02_Enable_ck);
+            this.Aligner01_tb.Controls.Add(this.LoadPort03_Enable_ck);
+            this.Aligner01_tb.Controls.Add(this.LoadPort04_Enable_ck);
+            this.Aligner01_tb.Controls.Add(this.LoadPort01_Enable_ck);
             this.Aligner01_tb.Controls.Add(this.label54);
             this.Aligner01_tb.Controls.Add(this.panel3);
             this.Aligner01_tb.Controls.Add(this.label1);
@@ -344,6 +351,50 @@
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
+            // 
+            // LoadPort02_Enable_ck
+            // 
+            this.LoadPort02_Enable_ck.AutoSize = true;
+            this.LoadPort02_Enable_ck.Location = new System.Drawing.Point(204, 20);
+            this.LoadPort02_Enable_ck.Name = "LoadPort02_Enable_ck";
+            this.LoadPort02_Enable_ck.Size = new System.Drawing.Size(68, 19);
+            this.LoadPort02_Enable_ck.TabIndex = 210;
+            this.LoadPort02_Enable_ck.Text = "Enable";
+            this.LoadPort02_Enable_ck.UseVisualStyleBackColor = true;
+            this.LoadPort02_Enable_ck.Click += new System.EventHandler(this.Node_Enable_Click);
+            // 
+            // LoadPort03_Enable_ck
+            // 
+            this.LoadPort03_Enable_ck.AutoSize = true;
+            this.LoadPort03_Enable_ck.Location = new System.Drawing.Point(384, 20);
+            this.LoadPort03_Enable_ck.Name = "LoadPort03_Enable_ck";
+            this.LoadPort03_Enable_ck.Size = new System.Drawing.Size(68, 19);
+            this.LoadPort03_Enable_ck.TabIndex = 209;
+            this.LoadPort03_Enable_ck.Text = "Enable";
+            this.LoadPort03_Enable_ck.UseVisualStyleBackColor = true;
+            this.LoadPort03_Enable_ck.Click += new System.EventHandler(this.Node_Enable_Click);
+            // 
+            // LoadPort04_Enable_ck
+            // 
+            this.LoadPort04_Enable_ck.AutoSize = true;
+            this.LoadPort04_Enable_ck.Location = new System.Drawing.Point(565, 20);
+            this.LoadPort04_Enable_ck.Name = "LoadPort04_Enable_ck";
+            this.LoadPort04_Enable_ck.Size = new System.Drawing.Size(68, 19);
+            this.LoadPort04_Enable_ck.TabIndex = 208;
+            this.LoadPort04_Enable_ck.Text = "Enable";
+            this.LoadPort04_Enable_ck.UseVisualStyleBackColor = true;
+            this.LoadPort04_Enable_ck.Click += new System.EventHandler(this.Node_Enable_Click);
+            // 
+            // LoadPort01_Enable_ck
+            // 
+            this.LoadPort01_Enable_ck.AutoSize = true;
+            this.LoadPort01_Enable_ck.Location = new System.Drawing.Point(22, 20);
+            this.LoadPort01_Enable_ck.Name = "LoadPort01_Enable_ck";
+            this.LoadPort01_Enable_ck.Size = new System.Drawing.Size(68, 19);
+            this.LoadPort01_Enable_ck.TabIndex = 205;
+            this.LoadPort01_Enable_ck.Text = "Enable";
+            this.LoadPort01_Enable_ck.UseVisualStyleBackColor = true;
+            this.LoadPort01_Enable_ck.Click += new System.EventHandler(this.Node_Enable_Click);
             // 
             // label54
             // 
@@ -450,18 +501,28 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.BF1_BYPASS_ck);
             this.panel1.Controls.Add(this.ARM_NOT_EXTEND_BF1_signal);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.BF1_ARM_EXTEND_ENABLE_Signal);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.BF1_DOOR_OPEN_Signal);
-            this.panel1.Controls.Add(this.label15);
             this.panel1.Controls.Add(this.BF1_Slot_1);
             this.panel1.Controls.Add(this.label50);
             this.panel1.Location = new System.Drawing.Point(858, 204);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(284, 116);
             this.panel1.TabIndex = 202;
+            // 
+            // BF1_BYPASS_ck
+            // 
+            this.BF1_BYPASS_ck.AutoSize = true;
+            this.BF1_BYPASS_ck.Location = new System.Drawing.Point(9, 39);
+            this.BF1_BYPASS_ck.Name = "BF1_BYPASS_ck";
+            this.BF1_BYPASS_ck.Size = new System.Drawing.Size(110, 19);
+            this.BF1_BYPASS_ck.TabIndex = 21;
+            this.BF1_BYPASS_ck.Text = "Bypass Check";
+            this.BF1_BYPASS_ck.UseVisualStyleBackColor = true;
+            this.BF1_BYPASS_ck.Click += new System.EventHandler(this.BF1_BYPASS_ck_Click);
             // 
             // ARM_NOT_EXTEND_BF1_signal
             // 
@@ -522,39 +583,8 @@
             this.label11.Size = new System.Drawing.Size(109, 18);
             this.label11.TabIndex = 16;
             this.label11.Tag = "1";
-            this.label11.Text = "Arm Extend";
+            this.label11.Text = "Buffer Enable";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BF1_DOOR_OPEN_Signal
-            // 
-            this.BF1_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
-            this.BF1_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BF1_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BF1_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
-            this.BF1_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BF1_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
-            this.BF1_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.BF1_DOOR_OPEN_Signal.Name = "BF1_DOOR_OPEN_Signal";
-            this.BF1_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
-            this.BF1_DOOR_OPEN_Signal.TabIndex = 15;
-            this.BF1_DOOR_OPEN_Signal.Tag = "1";
-            this.BF1_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label15
-            // 
-            this.label15.BackColor = System.Drawing.Color.DimGray;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label15.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label15.Location = new System.Drawing.Point(9, 40);
-            this.label15.Margin = new System.Windows.Forms.Padding(3);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(109, 18);
-            this.label15.TabIndex = 14;
-            this.label15.Tag = "1";
-            this.label15.Text = "Door Open";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BF1_Slot_1
             // 
@@ -601,18 +631,28 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.BF2_BYPASS_ck);
             this.panel2.Controls.Add(this.ARM_NOT_EXTEND_BF2_signal);
             this.panel2.Controls.Add(this.label42);
             this.panel2.Controls.Add(this.BF2_ARM_EXTEND_ENABLE_Signal);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.BF2_DOOR_OPEN_Signal);
-            this.panel2.Controls.Add(this.label28);
             this.panel2.Controls.Add(this.BF_Slot_1);
             this.panel2.Controls.Add(this.label34);
             this.panel2.Location = new System.Drawing.Point(858, 362);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(284, 116);
             this.panel2.TabIndex = 200;
+            // 
+            // BF2_BYPASS_ck
+            // 
+            this.BF2_BYPASS_ck.AutoSize = true;
+            this.BF2_BYPASS_ck.Location = new System.Drawing.Point(9, 41);
+            this.BF2_BYPASS_ck.Name = "BF2_BYPASS_ck";
+            this.BF2_BYPASS_ck.Size = new System.Drawing.Size(110, 19);
+            this.BF2_BYPASS_ck.TabIndex = 20;
+            this.BF2_BYPASS_ck.Text = "Bypass Check";
+            this.BF2_BYPASS_ck.UseVisualStyleBackColor = true;
+            this.BF2_BYPASS_ck.Click += new System.EventHandler(this.BF2_BYPASS_ck_Click);
             // 
             // ARM_NOT_EXTEND_BF2_signal
             // 
@@ -673,39 +713,8 @@
             this.label19.Size = new System.Drawing.Size(109, 18);
             this.label19.TabIndex = 16;
             this.label19.Tag = "1";
-            this.label19.Text = "Arm Extend";
+            this.label19.Text = "Buffer Enable";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // BF2_DOOR_OPEN_Signal
-            // 
-            this.BF2_DOOR_OPEN_Signal.BackColor = System.Drawing.Color.White;
-            this.BF2_DOOR_OPEN_Signal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BF2_DOOR_OPEN_Signal.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BF2_DOOR_OPEN_Signal.ForeColor = System.Drawing.Color.White;
-            this.BF2_DOOR_OPEN_Signal.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BF2_DOOR_OPEN_Signal.Location = new System.Drawing.Point(124, 40);
-            this.BF2_DOOR_OPEN_Signal.Margin = new System.Windows.Forms.Padding(3);
-            this.BF2_DOOR_OPEN_Signal.Name = "BF2_DOOR_OPEN_Signal";
-            this.BF2_DOOR_OPEN_Signal.Size = new System.Drawing.Size(149, 18);
-            this.BF2_DOOR_OPEN_Signal.TabIndex = 15;
-            this.BF2_DOOR_OPEN_Signal.Tag = "1";
-            this.BF2_DOOR_OPEN_Signal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label28
-            // 
-            this.label28.BackColor = System.Drawing.Color.DimGray;
-            this.label28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label28.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label28.Location = new System.Drawing.Point(9, 40);
-            this.label28.Margin = new System.Windows.Forms.Padding(3);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(109, 18);
-            this.label28.TabIndex = 14;
-            this.label28.Tag = "1";
-            this.label28.Text = "Door Open";
-            this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BF_Slot_1
             // 
@@ -2716,6 +2725,7 @@
             // 
             // Log_rt
             // 
+            this.Log_rt.Font = new System.Drawing.Font("Calibri", 11.25F);
             this.Log_rt.Location = new System.Drawing.Point(1189, 62);
             this.Log_rt.Name = "Log_rt";
             this.Log_rt.Size = new System.Drawing.Size(405, 673);
@@ -2800,6 +2810,7 @@
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel4.Controls.Add(this.Robot01_Slot_1);
             this.panel4.Controls.Add(this.label22);
+            this.panel4.Controls.Add(this.Robot01_Enable_ck);
             this.panel4.Location = new System.Drawing.Point(858, 96);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(284, 59);
@@ -2835,6 +2846,18 @@
             this.label22.Tag = "1";
             this.label22.Text = "Presence";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Robot01_Enable_ck
+            // 
+            this.Robot01_Enable_ck.AutoSize = true;
+            this.Robot01_Enable_ck.Location = new System.Drawing.Point(205, 3);
+            this.Robot01_Enable_ck.Name = "Robot01_Enable_ck";
+            this.Robot01_Enable_ck.Size = new System.Drawing.Size(68, 19);
+            this.Robot01_Enable_ck.TabIndex = 207;
+            this.Robot01_Enable_ck.Text = "Enable";
+            this.Robot01_Enable_ck.UseVisualStyleBackColor = true;
+            this.Robot01_Enable_ck.Visible = false;
+            this.Robot01_Enable_ck.Click += new System.EventHandler(this.Node_Enable_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -4779,11 +4802,11 @@
             this.Robot01_State.BackColor = System.Drawing.Color.Orange;
             this.Robot01_State.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Robot01_State.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.Robot01_State.Location = new System.Drawing.Point(792, 96);
+            this.Robot01_State.Location = new System.Drawing.Point(765, 96);
             this.Robot01_State.Name = "Robot01_State";
-            this.Robot01_State.Size = new System.Drawing.Size(67, 29);
+            this.Robot01_State.Size = new System.Drawing.Size(94, 29);
             this.Robot01_State.TabIndex = 94;
-            this.Robot01_State.Text = "Idle";
+            this.Robot01_State.Text = "Not Initial";
             this.Robot01_State.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // LoadPort01_FID
@@ -4825,12 +4848,15 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.TblPanel_A.ResumeLayout(false);
@@ -5086,8 +5112,6 @@
         internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label BF1_ARM_EXTEND_ENABLE_Signal;
         internal System.Windows.Forms.Label label11;
-        internal System.Windows.Forms.Label BF1_DOOR_OPEN_Signal;
-        internal System.Windows.Forms.Label label15;
         internal System.Windows.Forms.Label BF1_Slot_1;
         internal System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label17;
@@ -5096,9 +5120,14 @@
         internal System.Windows.Forms.Label label42;
         internal System.Windows.Forms.Label BF2_ARM_EXTEND_ENABLE_Signal;
         internal System.Windows.Forms.Label label19;
-        internal System.Windows.Forms.Label BF2_DOOR_OPEN_Signal;
-        internal System.Windows.Forms.Label label28;
         internal System.Windows.Forms.Label BF_Slot_1;
         internal System.Windows.Forms.Label label34;
+        private System.Windows.Forms.CheckBox BF1_BYPASS_ck;
+        private System.Windows.Forms.CheckBox BF2_BYPASS_ck;
+        private System.Windows.Forms.CheckBox LoadPort02_Enable_ck;
+        private System.Windows.Forms.CheckBox LoadPort03_Enable_ck;
+        private System.Windows.Forms.CheckBox LoadPort04_Enable_ck;
+        private System.Windows.Forms.CheckBox LoadPort01_Enable_ck;
+        private System.Windows.Forms.CheckBox Robot01_Enable_ck;
     }
 }

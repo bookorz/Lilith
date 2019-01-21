@@ -204,7 +204,7 @@ namespace Lilith.Menu.SystemSetting
                 lsbCondition.SelectedIndex = -1;
                 //改設定後套用
                 NodeStatusUpdate.InitialSetting();
-                NodeStatusUpdate.UpdateCurrentState(FormMain.RouteCtrl.EqpState);
+                //NodeStatusUpdate.UpdateCurrentState(FormMain.RouteCtrl.EqpState);
             }
             catch (Exception ex)
             {

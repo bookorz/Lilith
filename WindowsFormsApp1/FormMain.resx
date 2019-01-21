@@ -544,7 +544,7 @@
     <value>0</value>
   </data>
   <data name="CurrentState_btn.Text" xml:space="preserve">
-    <value>Idle</value>
+    <value>Not Initial</value>
   </data>
   <data name="&gt;&gt;CurrentState_btn.Name" xml:space="preserve">
     <value>CurrentState_btn</value>
@@ -926,6 +926,9 @@
   </data>
   <data name="Mute_chk.Text" xml:space="preserve">
     <value>Mute</value>
+  </data>
+  <data name="Mute_chk.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;Mute_chk.Name" xml:space="preserve">
     <value>Mute_chk</value>
