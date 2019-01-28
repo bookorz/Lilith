@@ -44,13 +44,15 @@ namespace GUI
             {
                 if (port.Brand.ToUpper().Equals("ASYST"))
                 {
-                    
-                    Cb_SMIFSelect.Items.Add(port.Name);
-                    if (Cb_SMIFSelect.Text.Equals(""))
+                    if (port.Enable)
                     {
-                        Cb_SMIFSelect.SelectedIndex = 0;
-                        ResetUI();
-                        
+                        Cb_SMIFSelect.Items.Add(port.Name);
+                        if (Cb_SMIFSelect.Text.Equals(""))
+                        {
+                            Cb_SMIFSelect.SelectedIndex = 0;
+                            ResetUI();
+
+                        }
                     }
                    
                    
@@ -63,6 +65,22 @@ namespace GUI
                         Cb_LoadPortSelect.Text = port.Name;
                     }
                     Cb_LoadPortSelect.Items.Add(port.Name);
+                }
+                
+            }
+            cbRA1Point.Items.Clear();
+            cbRA2Point.Items.Clear();
+            foreach (Node n in NodeManagement.GetList())
+            {
+                if (n.Type.ToUpper().Equals("LOADPORT")|| n.Type.ToUpper().Equals("LOADLOCK"))
+                {
+                    if (n.Enable)
+                    {
+                        
+                        cbRA1Point.Items.Add(n.Name);
+                        
+                        cbRA2Point.Items.Add(n.Name);
+                    }
                 }
             }
             ManualPortStatusUpdate.UpdateMapping(Cb_LoadPortSelect.Text, "?????????????????????????");
@@ -1145,6 +1163,39 @@ namespace GUI
             Dictionary<string, string> param = new Dictionary<string, string>();
             switch (Cmd)
             {
+                case "SLOT_OFFSET_Modify_bt":
+                    TaskName = "LOADPORT_SLOT_OFFSET_MODIFY";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    param.Add("@Value", SLOT_OFFSET_tb.Text);                   
+                    break;
+                case "WAFER_OFFSET_Modify_bt":
+                    TaskName = "LOADPORT_WAFER_OFFSET_MODIFY";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    param.Add("@Value", WAFER_OFFSET_tb.Text);
+                    break;
+                case "SLOT_PITCH_Modify_bt":
+                    TaskName = "LOADPORT_SLOT_PITCH_MODIFY";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    param.Add("@Value", SLOT_PITCH_tb.Text);
+                    break;
+                case "TWEEK_Modify_bt":
+                    TaskName = "LOADPORT_TWEEK_MODIFY";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    param.Add("@Value", TWEEK_tb.Text);
+                    break;
+                case "CASSETTE_SIZE_Modify_bt":
+                    TaskName = "LOADPORT_CASSETTE_SIZE_MODIFY";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    param.Add("@Value", CASSETTE_SIZE_tb.Text);
+                    break;
+                case "SMIF_TweekUP_bt":
+                    TaskName = "LOADPORT_TWEEKUP";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
+                case "SMIF_TweekDN_bt":
+                    TaskName = "LOADPORT_TWEEKDN";
+                    param.Add("@Target", Cb_SMIFSelect.Text);
+                    break;
                 case "SMIF_Org_bt":
                     TaskName = "LOADPORT_ORGSH";
                     param.Add("@Target", Cb_SMIFSelect.Text);
@@ -1281,6 +1332,40 @@ namespace GUI
         private void FormManual_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormMain.formManual = null;
+        }
+
+        private void cbRA1Point_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRA1Point.Text.Contains("BF"))
+            {
+                cbRA1Slot.Items.Clear();
+                cbRA1Slot.Items.Add("1");
+            }
+            else
+            {
+                cbRA1Slot.Items.Clear();
+                for (int i = 25; i >= 1; i--)
+                {
+                    cbRA1Slot.Items.Add(i.ToString());
+                }
+            }
+        }
+
+        private void cbRA2Point_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbRA2Point.Text.Contains("BF"))
+            {
+                cbRA2Slot.Items.Clear();
+                cbRA2Slot.Items.Add("1");
+            }
+            else
+            {
+                cbRA2Slot.Items.Clear();
+                for (int i = 25; i >= 1; i--)
+                {
+                    cbRA2Slot.Items.Add(i.ToString());
+                }
+            }
         }
     }
 }

@@ -111,6 +111,9 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.tabSmif = new System.Windows.Forms.TabPage();
+            this.SMIF_TweekDN_bt = new System.Windows.Forms.Button();
+            this.Smif_log_rt = new System.Windows.Forms.RichTextBox();
+            this.SMIF_TweekUP_bt = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.TagWrite_bt = new System.Windows.Forms.Button();
             this.TagRead_bt = new System.Windows.Forms.Button();
@@ -153,8 +156,22 @@
             this.label81 = new System.Windows.Forms.Label();
             this.label124 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.CASSETTE_SIZE_Modify_bt = new System.Windows.Forms.Button();
+            this.TWEEK_Modify_bt = new System.Windows.Forms.Button();
+            this.SLOT_PITCH_Modify_bt = new System.Windows.Forms.Button();
+            this.WAFER_OFFSET_Modify_bt = new System.Windows.Forms.Button();
+            this.SLOT_OFFSET_Modify_bt = new System.Windows.Forms.Button();
             this.Clear_log_bt = new System.Windows.Forms.Button();
-            this.Smif_log_rt = new System.Windows.Forms.RichTextBox();
+            this.CASSETTE_SIZE_tb = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SLOT_OFFSET_tb = new System.Windows.Forms.TextBox();
+            this.WAFER_OFFSET_tb = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TWEEK_tb = new System.Windows.Forms.TextBox();
+            this.SLOT_PITCH_tb = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.SMIF_ClearMap_bt = new System.Windows.Forms.Button();
             this.SMIF_ReadMap_bt = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -606,6 +623,7 @@
             this.cbRA1Point.Name = "cbRA1Point";
             this.cbRA1Point.Size = new System.Drawing.Size(208, 38);
             this.cbRA1Point.TabIndex = 22;
+            this.cbRA1Point.SelectedIndexChanged += new System.EventHandler(this.cbRA1Point_SelectedIndexChanged);
             // 
             // label58
             // 
@@ -804,6 +822,7 @@
             this.cbRA2Point.Name = "cbRA2Point";
             this.cbRA2Point.Size = new System.Drawing.Size(208, 38);
             this.cbRA2Point.TabIndex = 22;
+            this.cbRA2Point.SelectedIndexChanged += new System.EventHandler(this.cbRA2Point_SelectedIndexChanged);
             // 
             // btnRMoveUp
             // 
@@ -1050,6 +1069,7 @@
             this.EightInch_rb.TabStop = true;
             this.EightInch_rb.Text = "200MM";
             this.EightInch_rb.UseVisualStyleBackColor = true;
+            this.EightInch_rb.Visible = false;
             // 
             // btnRAreaSwap
             // 
@@ -1078,6 +1098,7 @@
             this.TwelveInch_rb.TabIndex = 0;
             this.TwelveInch_rb.Text = "300MM";
             this.TwelveInch_rb.UseVisualStyleBackColor = true;
+            this.TwelveInch_rb.Visible = false;
             // 
             // groupBox21
             // 
@@ -1547,6 +1568,7 @@
             this.rbR2.TabStop = true;
             this.rbR2.Text = "Robot2";
             this.rbR2.UseVisualStyleBackColor = true;
+            this.rbR2.Visible = false;
             this.rbR2.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // rbR1
@@ -1562,6 +1584,7 @@
             this.rbR1.TabStop = true;
             this.rbR1.Text = "Robot1";
             this.rbR1.UseVisualStyleBackColor = true;
+            this.rbR1.Visible = false;
             this.rbR1.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
             // 
             // label63
@@ -1657,6 +1680,9 @@
             // tabSmif
             // 
             this.tabSmif.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabSmif.Controls.Add(this.SMIF_TweekDN_bt);
+            this.tabSmif.Controls.Add(this.Smif_log_rt);
+            this.tabSmif.Controls.Add(this.SMIF_TweekUP_bt);
             this.tabSmif.Controls.Add(this.groupBox7);
             this.tabSmif.Controls.Add(this.SMIF_Org_bt);
             this.tabSmif.Controls.Add(this.Move_To_Slot_bt);
@@ -1681,6 +1707,45 @@
             this.tabSmif.Size = new System.Drawing.Size(1487, 801);
             this.tabSmif.TabIndex = 3;
             this.tabSmif.Text = "SMIF";
+            // 
+            // SMIF_TweekDN_bt
+            // 
+            this.SMIF_TweekDN_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SMIF_TweekDN_bt.Location = new System.Drawing.Point(278, 212);
+            this.SMIF_TweekDN_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SMIF_TweekDN_bt.Name = "SMIF_TweekDN_bt";
+            this.SMIF_TweekDN_bt.Size = new System.Drawing.Size(119, 52);
+            this.SMIF_TweekDN_bt.TabIndex = 86;
+            this.SMIF_TweekDN_bt.Tag = "1";
+            this.SMIF_TweekDN_bt.Text = "TweekDN";
+            this.SMIF_TweekDN_bt.UseVisualStyleBackColor = true;
+            this.SMIF_TweekDN_bt.Click += new System.EventHandler(this.SmifFunction_Click);
+            // 
+            // Smif_log_rt
+            // 
+            this.Smif_log_rt.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Smif_log_rt.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.Smif_log_rt.Location = new System.Drawing.Point(1079, 375);
+            this.Smif_log_rt.Margin = new System.Windows.Forms.Padding(0);
+            this.Smif_log_rt.Name = "Smif_log_rt";
+            this.Smif_log_rt.ReadOnly = true;
+            this.Smif_log_rt.Size = new System.Drawing.Size(402, 413);
+            this.Smif_log_rt.TabIndex = 0;
+            this.Smif_log_rt.Tag = "1";
+            this.Smif_log_rt.Text = "";
+            // 
+            // SMIF_TweekUP_bt
+            // 
+            this.SMIF_TweekUP_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SMIF_TweekUP_bt.Location = new System.Drawing.Point(278, 152);
+            this.SMIF_TweekUP_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SMIF_TweekUP_bt.Name = "SMIF_TweekUP_bt";
+            this.SMIF_TweekUP_bt.Size = new System.Drawing.Size(119, 52);
+            this.SMIF_TweekUP_bt.TabIndex = 85;
+            this.SMIF_TweekUP_bt.Tag = "1";
+            this.SMIF_TweekUP_bt.Text = "TweekUP";
+            this.SMIF_TweekUP_bt.UseVisualStyleBackColor = true;
+            this.SMIF_TweekUP_bt.Click += new System.EventHandler(this.SmifFunction_Click);
             // 
             // groupBox7
             // 
@@ -2220,16 +2285,95 @@
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.CASSETTE_SIZE_Modify_bt);
+            this.groupBox5.Controls.Add(this.TWEEK_Modify_bt);
+            this.groupBox5.Controls.Add(this.SLOT_PITCH_Modify_bt);
+            this.groupBox5.Controls.Add(this.WAFER_OFFSET_Modify_bt);
+            this.groupBox5.Controls.Add(this.SLOT_OFFSET_Modify_bt);
             this.groupBox5.Controls.Add(this.Clear_log_bt);
-            this.groupBox5.Controls.Add(this.Smif_log_rt);
+            this.groupBox5.Controls.Add(this.CASSETTE_SIZE_tb);
+            this.groupBox5.Controls.Add(this.label20);
+            this.groupBox5.Controls.Add(this.label21);
+            this.groupBox5.Controls.Add(this.label3);
+            this.groupBox5.Controls.Add(this.SLOT_OFFSET_tb);
+            this.groupBox5.Controls.Add(this.WAFER_OFFSET_tb);
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Controls.Add(this.TWEEK_tb);
+            this.groupBox5.Controls.Add(this.SLOT_PITCH_tb);
+            this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox5.Location = new System.Drawing.Point(722, 266);
+            this.groupBox5.Location = new System.Drawing.Point(722, 366);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(745, 516);
+            this.groupBox5.Size = new System.Drawing.Size(317, 422);
             this.groupBox5.TabIndex = 74;
             this.groupBox5.TabStop = false;
             this.groupBox5.Tag = "1";
-            this.groupBox5.Text = "Transmit Message";
+            this.groupBox5.Text = "Parameter";
+            // 
+            // CASSETTE_SIZE_Modify_bt
+            // 
+            this.CASSETTE_SIZE_Modify_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.CASSETTE_SIZE_Modify_bt.Location = new System.Drawing.Point(192, 297);
+            this.CASSETTE_SIZE_Modify_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CASSETTE_SIZE_Modify_bt.Name = "CASSETTE_SIZE_Modify_bt";
+            this.CASSETTE_SIZE_Modify_bt.Size = new System.Drawing.Size(119, 37);
+            this.CASSETTE_SIZE_Modify_bt.TabIndex = 91;
+            this.CASSETTE_SIZE_Modify_bt.Tag = "1";
+            this.CASSETTE_SIZE_Modify_bt.Text = "Modify";
+            this.CASSETTE_SIZE_Modify_bt.UseVisualStyleBackColor = true;
+            this.CASSETTE_SIZE_Modify_bt.Click += new System.EventHandler(this.SmifFunction_Click);
+            // 
+            // TWEEK_Modify_bt
+            // 
+            this.TWEEK_Modify_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TWEEK_Modify_bt.Location = new System.Drawing.Point(192, 238);
+            this.TWEEK_Modify_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TWEEK_Modify_bt.Name = "TWEEK_Modify_bt";
+            this.TWEEK_Modify_bt.Size = new System.Drawing.Size(119, 37);
+            this.TWEEK_Modify_bt.TabIndex = 90;
+            this.TWEEK_Modify_bt.Tag = "1";
+            this.TWEEK_Modify_bt.Text = "Modify";
+            this.TWEEK_Modify_bt.UseVisualStyleBackColor = true;
+            this.TWEEK_Modify_bt.Click += new System.EventHandler(this.SmifFunction_Click);
+            // 
+            // SLOT_PITCH_Modify_bt
+            // 
+            this.SLOT_PITCH_Modify_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SLOT_PITCH_Modify_bt.Location = new System.Drawing.Point(192, 177);
+            this.SLOT_PITCH_Modify_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SLOT_PITCH_Modify_bt.Name = "SLOT_PITCH_Modify_bt";
+            this.SLOT_PITCH_Modify_bt.Size = new System.Drawing.Size(119, 37);
+            this.SLOT_PITCH_Modify_bt.TabIndex = 89;
+            this.SLOT_PITCH_Modify_bt.Tag = "1";
+            this.SLOT_PITCH_Modify_bt.Text = "Modify";
+            this.SLOT_PITCH_Modify_bt.UseVisualStyleBackColor = true;
+            this.SLOT_PITCH_Modify_bt.Click += new System.EventHandler(this.SmifFunction_Click);
+            // 
+            // WAFER_OFFSET_Modify_bt
+            // 
+            this.WAFER_OFFSET_Modify_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.WAFER_OFFSET_Modify_bt.Location = new System.Drawing.Point(192, 122);
+            this.WAFER_OFFSET_Modify_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.WAFER_OFFSET_Modify_bt.Name = "WAFER_OFFSET_Modify_bt";
+            this.WAFER_OFFSET_Modify_bt.Size = new System.Drawing.Size(119, 37);
+            this.WAFER_OFFSET_Modify_bt.TabIndex = 88;
+            this.WAFER_OFFSET_Modify_bt.Tag = "1";
+            this.WAFER_OFFSET_Modify_bt.Text = "Modify";
+            this.WAFER_OFFSET_Modify_bt.UseVisualStyleBackColor = true;
+            this.WAFER_OFFSET_Modify_bt.Click += new System.EventHandler(this.SmifFunction_Click);
+            // 
+            // SLOT_OFFSET_Modify_bt
+            // 
+            this.SLOT_OFFSET_Modify_bt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SLOT_OFFSET_Modify_bt.Location = new System.Drawing.Point(192, 62);
+            this.SLOT_OFFSET_Modify_bt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SLOT_OFFSET_Modify_bt.Name = "SLOT_OFFSET_Modify_bt";
+            this.SLOT_OFFSET_Modify_bt.Size = new System.Drawing.Size(119, 37);
+            this.SLOT_OFFSET_Modify_bt.TabIndex = 87;
+            this.SLOT_OFFSET_Modify_bt.Tag = "1";
+            this.SLOT_OFFSET_Modify_bt.Text = "Modify";
+            this.SLOT_OFFSET_Modify_bt.UseVisualStyleBackColor = true;
+            this.SLOT_OFFSET_Modify_bt.Click += new System.EventHandler(this.SmifFunction_Click);
             // 
             // Clear_log_bt
             // 
@@ -2244,18 +2388,100 @@
             this.Clear_log_bt.UseVisualStyleBackColor = true;
             this.Clear_log_bt.Click += new System.EventHandler(this.Clear_log_bt_Click);
             // 
-            // Smif_log_rt
+            // CASSETTE_SIZE_tb
             // 
-            this.Smif_log_rt.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Smif_log_rt.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Smif_log_rt.Location = new System.Drawing.Point(10, 105);
-            this.Smif_log_rt.Margin = new System.Windows.Forms.Padding(0);
-            this.Smif_log_rt.Name = "Smif_log_rt";
-            this.Smif_log_rt.ReadOnly = true;
-            this.Smif_log_rt.Size = new System.Drawing.Size(729, 346);
-            this.Smif_log_rt.TabIndex = 0;
-            this.Smif_log_rt.Tag = "1";
-            this.Smif_log_rt.Text = "";
+            this.CASSETTE_SIZE_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.CASSETTE_SIZE_tb.Location = new System.Drawing.Point(38, 309);
+            this.CASSETTE_SIZE_tb.Name = "CASSETTE_SIZE_tb";
+            this.CASSETTE_SIZE_tb.Size = new System.Drawing.Size(142, 25);
+            this.CASSETTE_SIZE_tb.TabIndex = 47;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label20.Location = new System.Drawing.Point(34, 47);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(133, 24);
+            this.label20.TabIndex = 46;
+            this.label20.Tag = "1";
+            this.label20.Text = "SLOT_OFFSET";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label21.Location = new System.Drawing.Point(34, 282);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(152, 24);
+            this.label21.TabIndex = 48;
+            this.label21.Tag = "1";
+            this.label21.Text = "CASSETTE_TYPE";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(34, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 24);
+            this.label3.TabIndex = 40;
+            this.label3.Tag = "1";
+            this.label3.Text = "WAFER_OFFSET";
+            // 
+            // SLOT_OFFSET_tb
+            // 
+            this.SLOT_OFFSET_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.SLOT_OFFSET_tb.Location = new System.Drawing.Point(38, 74);
+            this.SLOT_OFFSET_tb.Name = "SLOT_OFFSET_tb";
+            this.SLOT_OFFSET_tb.Size = new System.Drawing.Size(142, 25);
+            this.SLOT_OFFSET_tb.TabIndex = 45;
+            // 
+            // WAFER_OFFSET_tb
+            // 
+            this.WAFER_OFFSET_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.WAFER_OFFSET_tb.Location = new System.Drawing.Point(38, 134);
+            this.WAFER_OFFSET_tb.Name = "WAFER_OFFSET_tb";
+            this.WAFER_OFFSET_tb.Size = new System.Drawing.Size(142, 25);
+            this.WAFER_OFFSET_tb.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(34, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(120, 24);
+            this.label6.TabIndex = 42;
+            this.label6.Tag = "1";
+            this.label6.Text = "SLOT_PITCH";
+            // 
+            // TWEEK_tb
+            // 
+            this.TWEEK_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.TWEEK_tb.Location = new System.Drawing.Point(38, 250);
+            this.TWEEK_tb.Name = "TWEEK_tb";
+            this.TWEEK_tb.Size = new System.Drawing.Size(142, 25);
+            this.TWEEK_tb.TabIndex = 43;
+            // 
+            // SLOT_PITCH_tb
+            // 
+            this.SLOT_PITCH_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.SLOT_PITCH_tb.Location = new System.Drawing.Point(38, 189);
+            this.SLOT_PITCH_tb.Name = "SLOT_PITCH_tb";
+            this.SLOT_PITCH_tb.Size = new System.Drawing.Size(142, 25);
+            this.SLOT_PITCH_tb.TabIndex = 41;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label18.Location = new System.Drawing.Point(34, 223);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(72, 24);
+            this.label18.TabIndex = 44;
+            this.label18.Tag = "1";
+            this.label18.Text = "TWEEK";
             // 
             // SMIF_ClearMap_bt
             // 
@@ -6161,6 +6387,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabAligner.ResumeLayout(false);
@@ -6586,5 +6813,22 @@
         private System.Windows.Forms.TextBox SmartTagRead_tb;
         private System.Windows.Forms.Button btnRRetract;
         private System.Windows.Forms.Button btnRInit;
+        internal System.Windows.Forms.Button SMIF_TweekDN_bt;
+        internal System.Windows.Forms.Button SMIF_TweekUP_bt;
+        internal System.Windows.Forms.Button SLOT_OFFSET_Modify_bt;
+        private System.Windows.Forms.TextBox CASSETTE_SIZE_tb;
+        internal System.Windows.Forms.Label label20;
+        internal System.Windows.Forms.Label label21;
+        internal System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox SLOT_OFFSET_tb;
+        private System.Windows.Forms.TextBox WAFER_OFFSET_tb;
+        internal System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox TWEEK_tb;
+        private System.Windows.Forms.TextBox SLOT_PITCH_tb;
+        internal System.Windows.Forms.Label label18;
+        internal System.Windows.Forms.Button CASSETTE_SIZE_Modify_bt;
+        internal System.Windows.Forms.Button TWEEK_Modify_bt;
+        internal System.Windows.Forms.Button SLOT_PITCH_Modify_bt;
+        internal System.Windows.Forms.Button WAFER_OFFSET_Modify_bt;
     }
 }

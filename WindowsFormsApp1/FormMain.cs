@@ -418,7 +418,6 @@ namespace Lilith
                     switch (Txn.Method)
                     {
                         case Transaction.Command.LoadPortType.GetMapping:
-
                         case Transaction.Command.LoadPortType.Unload:
                         case Transaction.Command.LoadPortType.MappingUnload:
                         case Transaction.Command.LoadPortType.DoorUp:
@@ -426,6 +425,21 @@ namespace Lilith
                         case Transaction.Command.LoadPortType.ForceInitialPos:
                             WaferAssignUpdate.RefreshMapping(Node.Name);
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
+                            break;
+                        case Transaction.Command.LoadPortType.GetCassetteSize:
+                            ManualPortStatusUpdate.UpdateParameter("CASSETTE_SIZE_tb", Msg.Value);
+                            break;
+                        case Transaction.Command.LoadPortType.GetSlotOffset:
+                            ManualPortStatusUpdate.UpdateParameter("SLOT_OFFSET_tb", Msg.Value);
+                            break;
+                        case Transaction.Command.LoadPortType.GetWaferOffset:
+                            ManualPortStatusUpdate.UpdateParameter("WAFER_OFFSET_tb", Msg.Value);
+                            break;
+                        case Transaction.Command.LoadPortType.GetTweekDistance:
+                            ManualPortStatusUpdate.UpdateParameter("TWEEK_tb", Msg.Value);
+                            break;
+                        case Transaction.Command.LoadPortType.GetSlotPitch:
+                            ManualPortStatusUpdate.UpdateParameter("SLOT_PITCH_tb", Msg.Value);
                             break;
                     }
                     break;

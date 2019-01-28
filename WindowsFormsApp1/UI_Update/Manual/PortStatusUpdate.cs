@@ -39,7 +39,14 @@ namespace Lilith.UI_Update.Manual
                 else
                 {
                     Tab.Enabled = !Enable;
-
+                    if (!Enable)
+                    {
+                        form.Cursor = Cursors.Default;
+                    }
+                    else
+                    {
+                        form.Cursor = Cursors.WaitCursor;
+                    }
                 }
 
 
@@ -187,6 +194,38 @@ namespace Lilith.UI_Update.Manual
                 else
                 {
                     id.Text = Data;
+
+                }
+
+
+            }
+            catch
+            {
+                logger.Error("UpdateControllerStatus: Update fail.");
+            }
+        }
+
+        public static void UpdateParameter(string Name,string Value)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormManual"];
+                TextBox id;
+                if (form == null)
+                    return;
+
+                id = form.Controls.Find(Name, true).FirstOrDefault() as TextBox;
+                if (id == null)
+                    return;
+
+                if (id.InvokeRequired)
+                {
+                    UpdateData ph = new UpdateData(UpdateParameter);
+                    id.BeginInvoke(ph, Name, Value);
+                }
+                else
+                {
+                    id.Text = Value;
 
                 }
 
