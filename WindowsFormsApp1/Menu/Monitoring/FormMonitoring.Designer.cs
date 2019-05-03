@@ -917,7 +917,7 @@
             // 
             // label12
             // 
-            this.label12.BackColor = System.Drawing.Color.Navy;
+            this.label12.BackColor = System.Drawing.Color.DimGray;
             this.label12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label12.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -950,7 +950,7 @@
             // 
             // label14
             // 
-            this.label14.BackColor = System.Drawing.Color.Navy;
+            this.label14.BackColor = System.Drawing.Color.DimGray;
             this.label14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -983,7 +983,7 @@
             // 
             // label24
             // 
-            this.label24.BackColor = System.Drawing.Color.Navy;
+            this.label24.BackColor = System.Drawing.Color.DimGray;
             this.label24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1016,7 +1016,7 @@
             // 
             // label30
             // 
-            this.label30.BackColor = System.Drawing.Color.Navy;
+            this.label30.BackColor = System.Drawing.Color.DimGray;
             this.label30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label30.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label30.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1049,7 +1049,7 @@
             // 
             // label36
             // 
-            this.label36.BackColor = System.Drawing.Color.Navy;
+            this.label36.BackColor = System.Drawing.Color.DimGray;
             this.label36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label36.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1082,7 +1082,7 @@
             // 
             // label40
             // 
-            this.label40.BackColor = System.Drawing.Color.Navy;
+            this.label40.BackColor = System.Drawing.Color.DimGray;
             this.label40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label40.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1115,7 +1115,7 @@
             // 
             // label44
             // 
-            this.label44.BackColor = System.Drawing.Color.Navy;
+            this.label44.BackColor = System.Drawing.Color.DimGray;
             this.label44.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label44.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label44.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1148,7 +1148,7 @@
             // 
             // label48
             // 
-            this.label48.BackColor = System.Drawing.Color.Navy;
+            this.label48.BackColor = System.Drawing.Color.DimGray;
             this.label48.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label48.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label48.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1181,7 +1181,7 @@
             // 
             // label52
             // 
-            this.label52.BackColor = System.Drawing.Color.Navy;
+            this.label52.BackColor = System.Drawing.Color.DimGray;
             this.label52.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label52.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label52.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1214,7 +1214,7 @@
             // 
             // label56
             // 
-            this.label56.BackColor = System.Drawing.Color.Navy;
+            this.label56.BackColor = System.Drawing.Color.DimGray;
             this.label56.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label56.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label56.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1247,7 +1247,7 @@
             // 
             // label60
             // 
-            this.label60.BackColor = System.Drawing.Color.Navy;
+            this.label60.BackColor = System.Drawing.Color.DimGray;
             this.label60.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label60.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label60.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1280,7 +1280,7 @@
             // 
             // label64
             // 
-            this.label64.BackColor = System.Drawing.Color.Navy;
+            this.label64.BackColor = System.Drawing.Color.DimGray;
             this.label64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label64.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label64.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1313,7 +1313,7 @@
             // 
             // label68
             // 
-            this.label68.BackColor = System.Drawing.Color.Navy;
+            this.label68.BackColor = System.Drawing.Color.DimGray;
             this.label68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label68.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label68.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1346,7 +1346,7 @@
             // 
             // label70
             // 
-            this.label70.BackColor = System.Drawing.Color.Navy;
+            this.label70.BackColor = System.Drawing.Color.DimGray;
             this.label70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label70.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label70.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1379,7 +1379,7 @@
             // 
             // label72
             // 
-            this.label72.BackColor = System.Drawing.Color.Navy;
+            this.label72.BackColor = System.Drawing.Color.DimGray;
             this.label72.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label72.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label72.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1412,7 +1412,7 @@
             // 
             // label74
             // 
-            this.label74.BackColor = System.Drawing.Color.Navy;
+            this.label74.BackColor = System.Drawing.Color.DimGray;
             this.label74.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label74.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label74.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1445,7 +1445,7 @@
             // 
             // label76
             // 
-            this.label76.BackColor = System.Drawing.Color.Navy;
+            this.label76.BackColor = System.Drawing.Color.DimGray;
             this.label76.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label76.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label76.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1478,7 +1478,7 @@
             // 
             // label78
             // 
-            this.label78.BackColor = System.Drawing.Color.Navy;
+            this.label78.BackColor = System.Drawing.Color.DimGray;
             this.label78.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label78.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label78.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1511,7 +1511,7 @@
             // 
             // label80
             // 
-            this.label80.BackColor = System.Drawing.Color.Navy;
+            this.label80.BackColor = System.Drawing.Color.DimGray;
             this.label80.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label80.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label80.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1544,7 +1544,7 @@
             // 
             // label107
             // 
-            this.label107.BackColor = System.Drawing.Color.Navy;
+            this.label107.BackColor = System.Drawing.Color.DimGray;
             this.label107.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label107.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label107.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1577,7 +1577,7 @@
             // 
             // label109
             // 
-            this.label109.BackColor = System.Drawing.Color.Navy;
+            this.label109.BackColor = System.Drawing.Color.DimGray;
             this.label109.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label109.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label109.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1610,7 +1610,7 @@
             // 
             // label111
             // 
-            this.label111.BackColor = System.Drawing.Color.Navy;
+            this.label111.BackColor = System.Drawing.Color.DimGray;
             this.label111.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label111.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label111.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1643,7 +1643,7 @@
             // 
             // label113
             // 
-            this.label113.BackColor = System.Drawing.Color.Navy;
+            this.label113.BackColor = System.Drawing.Color.DimGray;
             this.label113.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label113.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label113.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1676,7 +1676,7 @@
             // 
             // label115
             // 
-            this.label115.BackColor = System.Drawing.Color.Navy;
+            this.label115.BackColor = System.Drawing.Color.DimGray;
             this.label115.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label115.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label115.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1709,7 +1709,7 @@
             // 
             // label117
             // 
-            this.label117.BackColor = System.Drawing.Color.Navy;
+            this.label117.BackColor = System.Drawing.Color.DimGray;
             this.label117.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label117.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label117.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1832,7 +1832,7 @@
             // 
             // label119
             // 
-            this.label119.BackColor = System.Drawing.Color.Navy;
+            this.label119.BackColor = System.Drawing.Color.DimGray;
             this.label119.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label119.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label119.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1865,7 +1865,7 @@
             // 
             // label121
             // 
-            this.label121.BackColor = System.Drawing.Color.Navy;
+            this.label121.BackColor = System.Drawing.Color.DimGray;
             this.label121.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label121.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label121.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1898,7 +1898,7 @@
             // 
             // label123
             // 
-            this.label123.BackColor = System.Drawing.Color.Navy;
+            this.label123.BackColor = System.Drawing.Color.DimGray;
             this.label123.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label123.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label123.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1931,7 +1931,7 @@
             // 
             // label125
             // 
-            this.label125.BackColor = System.Drawing.Color.Navy;
+            this.label125.BackColor = System.Drawing.Color.DimGray;
             this.label125.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label125.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label125.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1964,7 +1964,7 @@
             // 
             // label127
             // 
-            this.label127.BackColor = System.Drawing.Color.Navy;
+            this.label127.BackColor = System.Drawing.Color.DimGray;
             this.label127.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label127.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label127.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1997,7 +1997,7 @@
             // 
             // label129
             // 
-            this.label129.BackColor = System.Drawing.Color.Navy;
+            this.label129.BackColor = System.Drawing.Color.DimGray;
             this.label129.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label129.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label129.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2030,7 +2030,7 @@
             // 
             // label131
             // 
-            this.label131.BackColor = System.Drawing.Color.Navy;
+            this.label131.BackColor = System.Drawing.Color.DimGray;
             this.label131.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label131.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label131.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2063,7 +2063,7 @@
             // 
             // label133
             // 
-            this.label133.BackColor = System.Drawing.Color.Navy;
+            this.label133.BackColor = System.Drawing.Color.DimGray;
             this.label133.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label133.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label133.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2096,7 +2096,7 @@
             // 
             // label135
             // 
-            this.label135.BackColor = System.Drawing.Color.Navy;
+            this.label135.BackColor = System.Drawing.Color.DimGray;
             this.label135.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label135.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label135.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2129,7 +2129,7 @@
             // 
             // label137
             // 
-            this.label137.BackColor = System.Drawing.Color.Navy;
+            this.label137.BackColor = System.Drawing.Color.DimGray;
             this.label137.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label137.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label137.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2162,7 +2162,7 @@
             // 
             // label139
             // 
-            this.label139.BackColor = System.Drawing.Color.Navy;
+            this.label139.BackColor = System.Drawing.Color.DimGray;
             this.label139.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label139.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label139.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2195,7 +2195,7 @@
             // 
             // label141
             // 
-            this.label141.BackColor = System.Drawing.Color.Navy;
+            this.label141.BackColor = System.Drawing.Color.DimGray;
             this.label141.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label141.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label141.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2228,7 +2228,7 @@
             // 
             // label143
             // 
-            this.label143.BackColor = System.Drawing.Color.Navy;
+            this.label143.BackColor = System.Drawing.Color.DimGray;
             this.label143.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label143.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label143.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2261,7 +2261,7 @@
             // 
             // label145
             // 
-            this.label145.BackColor = System.Drawing.Color.Navy;
+            this.label145.BackColor = System.Drawing.Color.DimGray;
             this.label145.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label145.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label145.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2294,7 +2294,7 @@
             // 
             // label147
             // 
-            this.label147.BackColor = System.Drawing.Color.Navy;
+            this.label147.BackColor = System.Drawing.Color.DimGray;
             this.label147.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label147.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label147.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2327,7 +2327,7 @@
             // 
             // label149
             // 
-            this.label149.BackColor = System.Drawing.Color.Navy;
+            this.label149.BackColor = System.Drawing.Color.DimGray;
             this.label149.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label149.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label149.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2360,7 +2360,7 @@
             // 
             // label151
             // 
-            this.label151.BackColor = System.Drawing.Color.Navy;
+            this.label151.BackColor = System.Drawing.Color.DimGray;
             this.label151.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label151.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label151.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2393,7 +2393,7 @@
             // 
             // label153
             // 
-            this.label153.BackColor = System.Drawing.Color.Navy;
+            this.label153.BackColor = System.Drawing.Color.DimGray;
             this.label153.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label153.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label153.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2426,7 +2426,7 @@
             // 
             // label155
             // 
-            this.label155.BackColor = System.Drawing.Color.Navy;
+            this.label155.BackColor = System.Drawing.Color.DimGray;
             this.label155.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label155.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label155.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2459,7 +2459,7 @@
             // 
             // label157
             // 
-            this.label157.BackColor = System.Drawing.Color.Navy;
+            this.label157.BackColor = System.Drawing.Color.DimGray;
             this.label157.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label157.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label157.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2492,7 +2492,7 @@
             // 
             // label159
             // 
-            this.label159.BackColor = System.Drawing.Color.Navy;
+            this.label159.BackColor = System.Drawing.Color.DimGray;
             this.label159.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label159.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label159.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2525,7 +2525,7 @@
             // 
             // label161
             // 
-            this.label161.BackColor = System.Drawing.Color.Navy;
+            this.label161.BackColor = System.Drawing.Color.DimGray;
             this.label161.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label161.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label161.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2558,7 +2558,7 @@
             // 
             // label163
             // 
-            this.label163.BackColor = System.Drawing.Color.Navy;
+            this.label163.BackColor = System.Drawing.Color.DimGray;
             this.label163.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label163.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label163.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2591,7 +2591,7 @@
             // 
             // label165
             // 
-            this.label165.BackColor = System.Drawing.Color.Navy;
+            this.label165.BackColor = System.Drawing.Color.DimGray;
             this.label165.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label165.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label165.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2624,7 +2624,7 @@
             // 
             // label167
             // 
-            this.label167.BackColor = System.Drawing.Color.Navy;
+            this.label167.BackColor = System.Drawing.Color.DimGray;
             this.label167.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label167.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label167.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2968,7 +2968,7 @@
             // 
             // label5
             // 
-            this.label5.BackColor = System.Drawing.Color.Navy;
+            this.label5.BackColor = System.Drawing.Color.DimGray;
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3002,7 +3002,7 @@
             // 
             // label6
             // 
-            this.label6.BackColor = System.Drawing.Color.Navy;
+            this.label6.BackColor = System.Drawing.Color.DimGray;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3036,7 +3036,7 @@
             // 
             // label23
             // 
-            this.label23.BackColor = System.Drawing.Color.Navy;
+            this.label23.BackColor = System.Drawing.Color.DimGray;
             this.label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label23.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3070,7 +3070,7 @@
             // 
             // label25
             // 
-            this.label25.BackColor = System.Drawing.Color.Navy;
+            this.label25.BackColor = System.Drawing.Color.DimGray;
             this.label25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label25.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3104,7 +3104,7 @@
             // 
             // label27
             // 
-            this.label27.BackColor = System.Drawing.Color.Navy;
+            this.label27.BackColor = System.Drawing.Color.DimGray;
             this.label27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label27.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label27.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3138,7 +3138,7 @@
             // 
             // label29
             // 
-            this.label29.BackColor = System.Drawing.Color.Navy;
+            this.label29.BackColor = System.Drawing.Color.DimGray;
             this.label29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3172,7 +3172,7 @@
             // 
             // label31
             // 
-            this.label31.BackColor = System.Drawing.Color.Navy;
+            this.label31.BackColor = System.Drawing.Color.DimGray;
             this.label31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3206,7 +3206,7 @@
             // 
             // label33
             // 
-            this.label33.BackColor = System.Drawing.Color.Navy;
+            this.label33.BackColor = System.Drawing.Color.DimGray;
             this.label33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label33.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label33.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3240,7 +3240,7 @@
             // 
             // label35
             // 
-            this.label35.BackColor = System.Drawing.Color.Navy;
+            this.label35.BackColor = System.Drawing.Color.DimGray;
             this.label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3274,7 +3274,7 @@
             // 
             // label37
             // 
-            this.label37.BackColor = System.Drawing.Color.Navy;
+            this.label37.BackColor = System.Drawing.Color.DimGray;
             this.label37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label37.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label37.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3308,7 +3308,7 @@
             // 
             // label39
             // 
-            this.label39.BackColor = System.Drawing.Color.Navy;
+            this.label39.BackColor = System.Drawing.Color.DimGray;
             this.label39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label39.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3342,7 +3342,7 @@
             // 
             // label41
             // 
-            this.label41.BackColor = System.Drawing.Color.Navy;
+            this.label41.BackColor = System.Drawing.Color.DimGray;
             this.label41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label41.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label41.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3376,7 +3376,7 @@
             // 
             // label43
             // 
-            this.label43.BackColor = System.Drawing.Color.Navy;
+            this.label43.BackColor = System.Drawing.Color.DimGray;
             this.label43.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label43.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label43.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3410,7 +3410,7 @@
             // 
             // label45
             // 
-            this.label45.BackColor = System.Drawing.Color.Navy;
+            this.label45.BackColor = System.Drawing.Color.DimGray;
             this.label45.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label45.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label45.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3444,7 +3444,7 @@
             // 
             // label47
             // 
-            this.label47.BackColor = System.Drawing.Color.Navy;
+            this.label47.BackColor = System.Drawing.Color.DimGray;
             this.label47.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label47.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label47.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3478,7 +3478,7 @@
             // 
             // label49
             // 
-            this.label49.BackColor = System.Drawing.Color.Navy;
+            this.label49.BackColor = System.Drawing.Color.DimGray;
             this.label49.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label49.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label49.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3512,7 +3512,7 @@
             // 
             // label51
             // 
-            this.label51.BackColor = System.Drawing.Color.Navy;
+            this.label51.BackColor = System.Drawing.Color.DimGray;
             this.label51.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label51.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label51.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3546,7 +3546,7 @@
             // 
             // label53
             // 
-            this.label53.BackColor = System.Drawing.Color.Navy;
+            this.label53.BackColor = System.Drawing.Color.DimGray;
             this.label53.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label53.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label53.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3580,7 +3580,7 @@
             // 
             // label55
             // 
-            this.label55.BackColor = System.Drawing.Color.Navy;
+            this.label55.BackColor = System.Drawing.Color.DimGray;
             this.label55.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label55.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3614,7 +3614,7 @@
             // 
             // label57
             // 
-            this.label57.BackColor = System.Drawing.Color.Navy;
+            this.label57.BackColor = System.Drawing.Color.DimGray;
             this.label57.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label57.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label57.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3648,7 +3648,7 @@
             // 
             // label59
             // 
-            this.label59.BackColor = System.Drawing.Color.Navy;
+            this.label59.BackColor = System.Drawing.Color.DimGray;
             this.label59.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label59.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label59.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3682,7 +3682,7 @@
             // 
             // label61
             // 
-            this.label61.BackColor = System.Drawing.Color.Navy;
+            this.label61.BackColor = System.Drawing.Color.DimGray;
             this.label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label61.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label61.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3716,7 +3716,7 @@
             // 
             // label63
             // 
-            this.label63.BackColor = System.Drawing.Color.Navy;
+            this.label63.BackColor = System.Drawing.Color.DimGray;
             this.label63.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label63.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label63.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3750,7 +3750,7 @@
             // 
             // label65
             // 
-            this.label65.BackColor = System.Drawing.Color.Navy;
+            this.label65.BackColor = System.Drawing.Color.DimGray;
             this.label65.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label65.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label65.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3784,7 +3784,7 @@
             // 
             // label67
             // 
-            this.label67.BackColor = System.Drawing.Color.Navy;
+            this.label67.BackColor = System.Drawing.Color.DimGray;
             this.label67.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label67.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label67.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3908,7 +3908,7 @@
             // 
             // label82
             // 
-            this.label82.BackColor = System.Drawing.Color.Navy;
+            this.label82.BackColor = System.Drawing.Color.DimGray;
             this.label82.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label82.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label82.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3942,7 +3942,7 @@
             // 
             // label83
             // 
-            this.label83.BackColor = System.Drawing.Color.Navy;
+            this.label83.BackColor = System.Drawing.Color.DimGray;
             this.label83.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label83.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label83.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -3976,7 +3976,7 @@
             // 
             // label84
             // 
-            this.label84.BackColor = System.Drawing.Color.Navy;
+            this.label84.BackColor = System.Drawing.Color.DimGray;
             this.label84.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label84.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label84.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4010,7 +4010,7 @@
             // 
             // label85
             // 
-            this.label85.BackColor = System.Drawing.Color.Navy;
+            this.label85.BackColor = System.Drawing.Color.DimGray;
             this.label85.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label85.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label85.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4044,7 +4044,7 @@
             // 
             // label86
             // 
-            this.label86.BackColor = System.Drawing.Color.Navy;
+            this.label86.BackColor = System.Drawing.Color.DimGray;
             this.label86.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label86.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label86.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4078,7 +4078,7 @@
             // 
             // label87
             // 
-            this.label87.BackColor = System.Drawing.Color.Navy;
+            this.label87.BackColor = System.Drawing.Color.DimGray;
             this.label87.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label87.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label87.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4112,7 +4112,7 @@
             // 
             // label88
             // 
-            this.label88.BackColor = System.Drawing.Color.Navy;
+            this.label88.BackColor = System.Drawing.Color.DimGray;
             this.label88.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label88.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label88.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4146,7 +4146,7 @@
             // 
             // label89
             // 
-            this.label89.BackColor = System.Drawing.Color.Navy;
+            this.label89.BackColor = System.Drawing.Color.DimGray;
             this.label89.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label89.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label89.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4180,7 +4180,7 @@
             // 
             // label90
             // 
-            this.label90.BackColor = System.Drawing.Color.Navy;
+            this.label90.BackColor = System.Drawing.Color.DimGray;
             this.label90.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label90.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label90.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4214,7 +4214,7 @@
             // 
             // label91
             // 
-            this.label91.BackColor = System.Drawing.Color.Navy;
+            this.label91.BackColor = System.Drawing.Color.DimGray;
             this.label91.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label91.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label91.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4248,7 +4248,7 @@
             // 
             // label92
             // 
-            this.label92.BackColor = System.Drawing.Color.Navy;
+            this.label92.BackColor = System.Drawing.Color.DimGray;
             this.label92.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label92.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label92.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4282,7 +4282,7 @@
             // 
             // label93
             // 
-            this.label93.BackColor = System.Drawing.Color.Navy;
+            this.label93.BackColor = System.Drawing.Color.DimGray;
             this.label93.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label93.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label93.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4316,7 +4316,7 @@
             // 
             // label94
             // 
-            this.label94.BackColor = System.Drawing.Color.Navy;
+            this.label94.BackColor = System.Drawing.Color.DimGray;
             this.label94.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label94.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label94.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4350,7 +4350,7 @@
             // 
             // label95
             // 
-            this.label95.BackColor = System.Drawing.Color.Navy;
+            this.label95.BackColor = System.Drawing.Color.DimGray;
             this.label95.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label95.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label95.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4384,7 +4384,7 @@
             // 
             // label96
             // 
-            this.label96.BackColor = System.Drawing.Color.Navy;
+            this.label96.BackColor = System.Drawing.Color.DimGray;
             this.label96.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label96.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label96.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4418,7 +4418,7 @@
             // 
             // label97
             // 
-            this.label97.BackColor = System.Drawing.Color.Navy;
+            this.label97.BackColor = System.Drawing.Color.DimGray;
             this.label97.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label97.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label97.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4452,7 +4452,7 @@
             // 
             // label98
             // 
-            this.label98.BackColor = System.Drawing.Color.Navy;
+            this.label98.BackColor = System.Drawing.Color.DimGray;
             this.label98.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label98.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label98.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4486,7 +4486,7 @@
             // 
             // label99
             // 
-            this.label99.BackColor = System.Drawing.Color.Navy;
+            this.label99.BackColor = System.Drawing.Color.DimGray;
             this.label99.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label99.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label99.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4520,7 +4520,7 @@
             // 
             // label100
             // 
-            this.label100.BackColor = System.Drawing.Color.Navy;
+            this.label100.BackColor = System.Drawing.Color.DimGray;
             this.label100.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label100.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label100.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4554,7 +4554,7 @@
             // 
             // label101
             // 
-            this.label101.BackColor = System.Drawing.Color.Navy;
+            this.label101.BackColor = System.Drawing.Color.DimGray;
             this.label101.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label101.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label101.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4588,7 +4588,7 @@
             // 
             // label102
             // 
-            this.label102.BackColor = System.Drawing.Color.Navy;
+            this.label102.BackColor = System.Drawing.Color.DimGray;
             this.label102.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label102.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label102.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4622,7 +4622,7 @@
             // 
             // label103
             // 
-            this.label103.BackColor = System.Drawing.Color.Navy;
+            this.label103.BackColor = System.Drawing.Color.DimGray;
             this.label103.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label103.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label103.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4656,7 +4656,7 @@
             // 
             // label104
             // 
-            this.label104.BackColor = System.Drawing.Color.Navy;
+            this.label104.BackColor = System.Drawing.Color.DimGray;
             this.label104.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label104.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label104.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4690,7 +4690,7 @@
             // 
             // label105
             // 
-            this.label105.BackColor = System.Drawing.Color.Navy;
+            this.label105.BackColor = System.Drawing.Color.DimGray;
             this.label105.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label105.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label105.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -4725,7 +4725,7 @@
             // 
             // label106
             // 
-            this.label106.BackColor = System.Drawing.Color.Navy;
+            this.label106.BackColor = System.Drawing.Color.DimGray;
             this.label106.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label106.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label106.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

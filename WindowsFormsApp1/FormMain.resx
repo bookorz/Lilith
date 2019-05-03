@@ -1444,8 +1444,35 @@
   <data name="&gt;&gt;tabMonitor.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tabTest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 44</value>
+  </data>
+  <data name="tabTest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1626, 764</value>
+  </data>
+  <data name="tabTest.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="tabTest.Text" xml:space="preserve">
+    <value>Running Screen</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Name" xml:space="preserve">
+    <value>tabTest</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabTest.Parent" xml:space="preserve">
+    <value>tbcMian</value>
+  </data>
+  <data name="&gt;&gt;tabTest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="tbcMian.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
+  </data>
+  <data name="tbcMian.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="tbcMian.ItemSize" type="System.Drawing.Size, System.Drawing">
     <value>200, 40</value>

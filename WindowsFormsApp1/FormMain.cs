@@ -98,7 +98,7 @@ namespace Lilith
             this.Width = 1;
             this.Height = 1;
 
-            Control[] ctrlForm = new Control[] { formMonitoring};
+            Control[] ctrlForm = new Control[] { formMonitoring, formTestMode };
 
             try
             {
@@ -400,7 +400,7 @@ namespace Lilith
                             j.NeedProcess = true;
                             j.RecipeID = Port.WaferSize;
                             j.AssignPort(Port.Name, j.Slot);
-                            j.DefaultOCR = "OCR01";
+                            
                         }
                     }
                     Port.Mode = "LU";
@@ -425,6 +425,7 @@ namespace Lilith
                         case Transaction.Command.LoadPortType.ForceInitialPos:
                             WaferAssignUpdate.RefreshMapping(Node.Name);
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
+                            RunningUpdate.UpdateNodesJob(Node.Name);
                             break;
                         case Transaction.Command.LoadPortType.GetCassetteSize:
                             ManualPortStatusUpdate.UpdateParameter("CASSETTE_SIZE_tb", Msg.Value);
@@ -449,6 +450,7 @@ namespace Lilith
                         case Transaction.Command.RobotType.GetMapping:
                             WaferAssignUpdate.RefreshMapping(Node.CurrentPosition);
                             MonitoringUpdate.UpdateNodesJob(Node.CurrentPosition);
+                            RunningUpdate.UpdateNodesJob(Node.CurrentPosition);
                             break;
                     }
                     break;
@@ -839,7 +841,7 @@ namespace Lilith
         {
             logger.Debug("On_Job_Location_Changed");
             MonitoringUpdate.UpdateJobMove(Job.Job_Id);
-
+            RunningUpdate.UpdateJobMove(Job.Job_Id);
 
         }
 
@@ -1069,6 +1071,8 @@ namespace Lilith
                 Mode_btn.BackColor = Color.Green;
                 btnManual.Enabled = false;
                 btnManual.BackColor = Color.Gray;
+                tbcMian.Enabled = false;
+                tbcMian.SelectedIndex = 0;
                 if (formManual != null)
                 {
                     formManual.Close();
@@ -1092,6 +1096,7 @@ namespace Lilith
                     Mode_btn.BackColor = Color.Orange;
                     btnManual.Enabled = true;
                     btnManual.BackColor = Color.Orange;
+                    tbcMian.Enabled = true;
                 }
                 else
                 {
@@ -1292,6 +1297,17 @@ namespace Lilith
             {
                 formManual.Focus();
             }
+        }
+
+        public void On_Node_Connection_Changed(string NodeName, string Status)
+        {
+            ConnectionStatusUpdate.UpdateControllerStatus(NodeName, Status);
+            Node node = NodeManagement.Get(NodeName);
+
+            
+
+
+            logger.Debug("On_Node_Connection_Changed");
         }
     }
 }

@@ -241,7 +241,7 @@ namespace Lilith.Menu.Status
                 string Message = "";
                 try
                 {
-                    IController Ctrl = ControllerManagement.Get(each.Controller);
+                    DeviceController Ctrl = ControllerManagement.Get(each.Controller);
                     //string ctrl_status = ControllerManagement.Get(each.Controller).Status;
                     string ctrl_status = ControllerManagement.Get(each.Controller) != null ? ControllerManagement.Get(each.Controller).Status : "";
                     if (ctrl_status.Equals("Connected") && each.ByPass == false )

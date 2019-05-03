@@ -41,180 +41,201 @@ namespace Lilith.UI_Update.Running
                 }
                 else
                 {
+                    Start_btn.Text = Status;
                     switch (Status)
                     {
-                        case "Running":
-                        case "Start":
-                            Start_btn.BackColor = Color.Red;
-                            Start_btn.Text = "Stop";
-                            Start_btn.Tag = "Start";
+                        case "Start Running":
+                            Form formA = Application.OpenForms["FormMain"];
 
-
+                            Button btn = formA.Controls.Find("Mode_btn", true).FirstOrDefault() as Button;
+                            btn.Enabled = true;
+                            break;
+                        case "End Running":
 
                             break;
-                        case "Stop":
-                            Start_btn.BackColor = Color.Silver;
-                            Start_btn.Text = "Start Running";
-                            Start_btn.Tag = "Stop";
-
-
-                            break;
-
-
-
                     }
-
                 }
 
 
             }
             catch
             {
-                logger.Error("UpdateOnlineStatus: Update fail.");
+                logger.Error("UpdateModeStatus: Update fail.");
             }
         }
 
         public static void UpdateRunningInfo(string Param, string Value)
         {
             Form form = Application.OpenForms["FormRunningScreen"];
-            Button Start_btn;
+            TextBox tb;
             if (form == null)
                 return;
 
-            Start_btn = form.Controls.Find("Start_btn", true).FirstOrDefault() as Button;
-            if (Start_btn == null)
-                return;
-
-            if (Start_btn.InvokeRequired)
-            {
-                UpdatePortDest ph = new UpdatePortDest(UpdateRunningInfo);
-                Start_btn.BeginInvoke(ph, Param, Value);
-            }
-            else
-            {
-                TextBox tb = form.Controls.Find(Param + "_tb", true).FirstOrDefault() as TextBox;
-                if (tb == null)
-                    return;
-                if (Param.Equals("TransCount"))
-                {
-                    tb.Text = (Convert.ToInt32(tb.Text) + 1).ToString();
-
-                }
-                else
-                {
-                    tb.Text = Value;
-                }
-            }
-        }
-
-        public static void ReverseRunning(string FinishPort)
-        {
-
-            Form form = Application.OpenForms["FormRunningScreen"];
-
-            if (form == null)
-                return;
-
-            TextBox tb = form.Controls.Find("TransCount_tb", true).FirstOrDefault() as TextBox;
+            tb = form.Controls.Find(Param + "_tb", true).FirstOrDefault() as TextBox;
             if (tb == null)
                 return;
 
             if (tb.InvokeRequired)
             {
-                UpdatePresent ph = new UpdatePresent(ReverseRunning);
-                tb.BeginInvoke(ph, FinishPort);
+                UpdatePortDest ph = new UpdatePortDest(UpdateRunningInfo);
+                tb.BeginInvoke(ph, Param, Value);
             }
             else
             {
-                Node FinPort = NodeManagement.Get(FinishPort);
-                if (FinPort != null)
+                tb.Text = Value;
+            }
+        }
+
+        public static void UpdateNodesJob(string NodeName)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                TextBox tb;
+
+                if (form == null)
+                    return;
+
+                tb = form.Controls.Find("LoadPort01_State", true).FirstOrDefault() as TextBox;
+
+                if (tb == null)
+                    return;
+
+                if (tb.InvokeRequired)
                 {
-
-                    Node DestPort = NodeManagement.Get(FinPort.DestPort);
-                    if (DestPort != null)
-                    {
-                        int StartSlot = 1;
-                        List<Job> DestPortJobs = DestPort.JobList.Values.ToList();
-                        DestPortJobs.Sort((x, y) => { return Convert.ToInt16(x.Slot).CompareTo(Convert.ToInt16(y.Slot)); });
-
-                        foreach (Job job in DestPortJobs)
-                        {
-                            if (job.MapFlag)
-                            {
-                                while (StartSlot <= 25)
-                                {
-                                    if (FinPort.GetJob(StartSlot.ToString()).MapFlag == false || FinPort.Name.Equals(DestPort.Name))
-                                    {
-
-                                        job.RecipeID = FinPort.WaferSize;
-
-                                        job.DefaultOCR = "OCR01";
-                                        job.NeedProcess = true;
-                                        job.ProcessFlag = false;
-                                        job.AlignerFlag = true;
-                                        job.OCRFlag = true;
-                                        job.AssignPort(FinPort.Name, StartSlot.ToString());
-
-                                        FinPort.ReserveList.TryAdd(job.Slot, job);
-                                        StartSlot++;
-                                        break;
-                                    }
-                                    StartSlot++;
-                                }
-                            }
-                            if (StartSlot > 25)
-                            {
-                                break;
-                            }
-                        }
-
-
-                        //FinPort.DestPort = "Assign";
-                        if (FinPort.Name.Equals(DestPort.Name))
-                        {
-                            DestPort.Mode = "LU";
-                        }
-                        else
-                        {
-                            FinPort.Mode = "UD";
-                            DestPort.Mode = "LD";
-                            WaferAssignUpdate.UpdateLoadPortMode(FinPort.Name, FinPort.Mode);
-                            WaferAssignUpdate.UpdateLoadPortMode(DestPort.Name, DestPort.Mode);
-                        }
-                        FinPort.DestPort = "";
-                        DestPort.DestPort = FinPort.Name;
-                        DestPort.ReserveList.Clear();
-                        tb = form.Controls.Find("TransCount_tb", true).FirstOrDefault() as TextBox;
-                        if (!FormMain.AutoReverse)// 停止DEMO
-                        {
-                            DestPort.Available = false;
-                            //FormMain.RouteCtrl.Stop();
-                        }
-                        else
-                        {
-                            ProcessRecord.CreatePr(DestPort);
-                            WaferAssignUpdate.UpdateAssignCM(DestPort.Name, FinPort.Name, false);
-                            DestPort.Available = true;
-                            if (DestPort.ByPass)
-                            {
-                                DestPort.PortUnloadAndLoadFinished = true;
-                            }
-                        }
-                        FinPort.Used = false;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                    UpdatePresent ph = new UpdatePresent(UpdateNodesJob);
+                    tb.BeginInvoke(ph, NodeName);
                 }
                 else
                 {
-                    return;
+                    Node node = NodeManagement.Get(NodeName);
+                    Label Mode = form.Controls.Find(NodeName + "_Mode", true).FirstOrDefault() as Label;
+                    Mode.Text = node.Mode;
+                    if (node.IsMapping)
+                    {
+                        for (int i = 1; i <= Tools.GetSlotCount(node.Type); i++)
+                        {
+                            Label present = form.Controls.Find(node.Name + "_Slot_" + i.ToString(), true).FirstOrDefault() as Label;
+                            if (present != null)
+                            {
+
+                                Job tmp;
+                                if (node.JobList.TryGetValue(i.ToString(), out tmp))
+                                {
+                                    present.Text = tmp.Host_Job_Id;
+                                    switch (present.Text)
+                                    {
+                                        case "No wafer":
+                                            present.BackColor = Color.DimGray;
+                                            present.ForeColor = Color.White;
+                                            break;
+                                        case "Crossed":
+                                        case "Undefined":
+                                        case "Double":
+                                            present.BackColor = Color.Red;
+                                            present.ForeColor = Color.White;
+                                            break;
+                                        default:
+                                            present.BackColor = Color.Green;
+                                            present.ForeColor = Color.White;
+                                            break;
+                                    }
+
+                                }
+                                else
+                                {
+                                    present.Text = "";
+                                    present.BackColor = Color.White;
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 1; i <= Tools.GetSlotCount(node.Type); i++)
+                        {
+                            Label present = form.Controls.Find(node.Name + "_Slot_" + i.ToString(), true).FirstOrDefault() as Label;
+                            if (present != null)
+                            {
+                                present.Text = "";
+                                present.BackColor = Color.White;
+                            }
+                        }
+                    }
                 }
 
 
+            }
+            catch
+            {
+                logger.Error("UpdateNodesJob: Update fail.");
+            }
+        }
+
+        public static void UpdateJobMove(string JobId)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormMonitoring"];
+                TextBox tb;
+
+                if (form == null)
+                    return;
+
+                tb = form.Controls.Find("LoadPort01_State", true).FirstOrDefault() as TextBox;
+
+                if (tb == null)
+                    return;
+
+                if (tb.InvokeRequired)
+                {
+                    UpdatePresent ph = new UpdatePresent(UpdateJobMove);
+                    tb.BeginInvoke(ph, JobId);
+                }
+                else
+                {
+                    Job Job = JobManagement.Get(JobId);
+                    if (Job != null)
+                    {
+                        Node LastNode = NodeManagement.Get(Job.LastNode);
+                        Node CurrentNode = NodeManagement.Get(Job.Position);
+                        if (LastNode != null)
+                        {
+
+                            Label present = form.Controls.Find(Job.LastNode + "_Slot_" + Job.LastSlot, true).FirstOrDefault() as Label;
+                            if (present != null)
+                            {
+
+                                present.Text = "No wafer";
+                                present.BackColor = Color.DimGray;
+                                present.ForeColor = Color.White;
+
+                            }
+
+                        }
+                        if (CurrentNode != null)
+                        {
+                            Label present = form.Controls.Find(Job.Position + "_Slot_" + Job.Slot, true).FirstOrDefault() as Label;
+                            if (present != null)
+                            {
 
 
+                                present.Text = Job.Host_Job_Id;
+
+                                present.BackColor = Color.Green;
+                                present.ForeColor = Color.White;
+
+                            }
+
+                        }
+                    }
+                }
+
+
+            }
+            catch
+            {
+                logger.Error("UpdateJobMove: Update fail.");
             }
         }
 

@@ -1,4 +1,5 @@
 ﻿using Lilith.UI_Update.Monitoring;
+using Lilith.UI_Update.Running;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,8 +7,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferControl.Engine;
 using TransferControl.Management;
 
 namespace Lilith.Menu.RunningScreen
@@ -15,104 +18,397 @@ namespace Lilith.Menu.RunningScreen
     public partial class FormRunningScreen : Lilith.Menu.FormFrame
     {
 
-        public static int TransCount = 0;
+        bool[] ProcessSlotList = new bool[25];
+        bool Run = false;
+        bool CycleStop = false;
+        bool LotEnd = false;
+        bool ThreadEnd = false;
+        string LL = "";
+        int TransCount = 0;
+        string SpeedSet = "";
+
+        List<Node> SelectLoadports = new List<Node>();
 
         public FormRunningScreen()
         {
             InitializeComponent();
-        }
 
+        }
+        private void FormRunningScreen_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < ProcessSlotList.Length; i++)
+            {
+                ProcessSlotList[i] = true;
+            }
+            SelectLoadports.Clear();
+        }
         private void Start_btn_Click(object sender, EventArgs e)
         {
-            if (Start_btn.Tag == null)
+            if (Start_btn.Text.Equals("Start Running"))
             {
-                Start_btn.Tag = "Stop";
-            }
-            if (Start_btn.Tag.Equals("Start"))
-            {
-                //FormMain.RouteCtrl.Stop();
-                //FormMain.RouteCtrl.Stop();
-
-
-
-            }
-            else
-            {
-                if (NodeManagement.IsNeedInitial())
+                if (SelectLoadports.Count != 2)
                 {
-                    ConnectionStatusUpdate.UpdateInitial(false.ToString());
-                    MessageBox.Show("請先執行Initial");
+                    MessageBox.Show("請選擇兩個Loadport!");
+                    return;
+                }
+                if(LL_cb.Text.Equals("BF1")|| LL_cb.Text.Equals("BF2"))
+                {
+                    LL = LL_cb.Text;
                 }
                 else
                 {
-                    var findByPass = from node in NodeManagement.GetList()
-                                     where node.ByPass
-                                     select node;
+                    LL = "";
+                }
+                TransCount = Convert.ToInt32(TransCount_tb.Text);
+                SpeedSet = RunningSpeed_cb.Text.Replace("%","");
+                SpeedSet = SpeedSet.Equals("100") ? "0" : SpeedSet;
 
-                    if (findByPass.Count() != 0)
+                Form form = Application.OpenForms["FormMain"];
+                
+                Button btn = form.Controls.Find("Mode_btn", true).FirstOrDefault() as Button;
+                btn.Enabled = false;
+
+                Start_btn.Text = "End Running";
+                Run = true;
+                CycleStop = false;
+                LotEnd = false;
+                ThreadEnd = false;
+                ThreadPool.QueueUserWorkItem(new WaitCallback(Transfer));
+            }
+            else
+            {
+                using (var form = new FormEndOption())
+                {
+                    var result = form.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
-                        string msg = "";
-                        foreach (Node node in findByPass)
+                        switch (form.Option)
                         {
-                            msg += node.Name + "\n";
+                            case FormEndOption.EndOption.CycleStop:
+                                CycleStop = true;
+                                break;
+                            case FormEndOption.EndOption.LotEnd:
+                                LotEnd = true;
+                                break;
                         }
-                        msg += "\n為By pass 模式，確定要繼續?";
-
-                        if (MessageBox.Show(msg, "警告", MessageBoxButtons.OKCancel) == DialogResult.Cancel)
-                        {
-                            return;
-                        }
+                        SpinWait.SpinUntil(() => ThreadEnd, 99999999);
+                        Start_btn.Text = "Start Running";
+                        Form formA = Application.OpenForms["FormMain"];
+                        
+                        Button btn = formA.Controls.Find("Mode_btn", true).FirstOrDefault() as Button;
+                        btn.Enabled = true;
                     }
 
-                    //FormMain.RouteCtrl.Start("Running");
                 }
 
             }
 
+        }
+
+        private void Transfer(object obj)
+        {
+            int LapsedWfCount = 0;
+            int LapsedLotCount = 0;
+            DateTime StartTime = DateTime.Now;
+            TaskJobManagment.CurrentProceedTask CurrTask; 
+            string Message = "";
+            string TaskName = "";
+            Dictionary<string, string> param = new Dictionary<string, string>();
+            //init
+            TaskName = "ALL_Init";
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+            //org
+            TaskName = "ALL_ORGSH";
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+            //set speed
+            TaskName = "SPEED";
+            param.Clear();
+            param.Add("@Target", "ROBOT01");
+            param.Add("@Value", SpeedSet);
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+
+
+            Node LD = SelectLoadports[1];
+            Node ULD = SelectLoadports[0];
+            
+            while (!LotEnd)
+            {
+                Node swap = LD;
+                LD = ULD;
+                ULD = swap;
+                //loadport open
+                TaskName = "OPEN";
+                param.Clear();
+                param.Add("@Target", LD.Name);
+                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+                if (CurrTask.HasError || CycleStop)
+                {
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+                TaskName = "OPEN";
+                param.Clear();
+                param.Add("@Target", ULD.Name);
+                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+                if (CurrTask.HasError || CycleStop)
+                {
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+
+                for (int i = 0; i < ProcessSlotList.Length; i++)
+                {
+                    TimeSpan timeDiff = DateTime.Now - StartTime;
+                    RunningUpdate.UpdateRunningInfo("LapsedTime", timeDiff.ToString(@"hh\:mm\:ss") );
+
+                    if (TransCount == 0)
+                    {
+                        RunningUpdate.UpdateModeStatus("Start Running");
+                        return;
+                    }
+                    int slotNo = i + 1;
+                    bool needProcess = ProcessSlotList[i];
+                    if (needProcess)
+                    {
+                        Job FromSlot = LD.JobList[slotNo.ToString()];
+                        Job ToSlot = ULD.JobList[slotNo.ToString()];
+                        if (FromSlot.MapFlag && !FromSlot.ErrPosition && !ToSlot.MapFlag && !ToSlot.ErrPosition)//check slot status by from and to 
+                        {
+                            if (!LL.Equals(""))
+                            {//LL use
+                                TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LL);
+                                param.Add("@Slot", "1");
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LL);
+                                param.Add("@Slot", "1");
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", ULD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TransCount--;
+                                RunningUpdate.UpdateRunningInfo("TransCount",TransCount.ToString());
+                                LapsedWfCount++;
+                                RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
+                                if (CycleStop)
+                                {
+                                    break;
+                                }
+                            }
+                            else
+                            {//LL not use
+                                TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", ULD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                                SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
+                                if (CurrTask.HasError)
+                                {
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TransCount--;
+                                RunningUpdate.UpdateRunningInfo("TransCount", TransCount.ToString());
+                                LapsedWfCount++;
+                                RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
+                                if (CycleStop)
+                                {
+                                    break;
+                                }
+                            }
+                            LapsedLotCount++;
+                            RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
+
+                        }
+                    }
+                }
+                TaskName = "CLOSE";
+                param.Clear();
+                param.Add("@Target", LD.Name);
+                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+                if (CurrTask.HasError || CycleStop)
+                {
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+                TaskName = "CLOSE";
+                param.Clear();
+                param.Add("@Target", ULD.Name);
+                RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+                SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+                if (CurrTask.HasError || CycleStop)
+                {
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+
+                if (LotEnd)
+                {
+                    break;
+                }
+            }
+            ThreadEnd = true;
         }
 
         private void RunningSpeed_cb_TextChanged(object sender, EventArgs e)
         {
-            string strMsg = "確定要修改整機速度?";
-            if (MessageBox.Show(strMsg, "ChangeSpeed", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            //string strMsg = "確定要修改整機速度?";
+            //if (MessageBox.Show(strMsg, "ChangeSpeed", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            //{
+            //    ChangeSpeed();
+            //}
+        }
+
+        //private void ChangeSpeed()
+        //{
+        //    string sp = RunningSpeed_cb.Text.Replace("%", "");
+        //    if (sp.Equals("100"))
+        //    {
+        //        sp = "0";
+        //    }
+        //    foreach (Node node in NodeManagement.GetList())
+        //    {
+        //        string Message = "";
+        //        if (node.Type.Equals("ROBOT"))
+        //        {
+        //            Transaction txn = new Transaction();
+        //            txn.Method = Transaction.Command.RobotType.Speed;
+        //            txn.Value = sp;
+        //            txn.FormName = "Running";
+        //            node.SendCommand(txn, out Message);
+        //        }
+        //        else
+        //        if (node.Type.Equals("ALIGNER"))
+        //        {
+        //            Transaction txn = new Transaction();
+        //            txn.Method = Transaction.Command.AlignerType.Speed;
+        //            txn.Value = sp;
+        //            txn.FormName = "Running";
+        //            node.SendCommand(txn, out Message);
+        //        }
+        //    }
+        //}
+
+
+
+        private void option_btn_Click(object sender, EventArgs e)
+        {
+            using (var form = new FormOption(ProcessSlotList))
             {
-                ChangeSpeed();
+                var result = form.ShowDialog();
+                //if (result == DialogResult.OK)
+                //{
+
+                //}
             }
         }
 
-        private void ChangeSpeed()
+
+        private void use_loadport_ck_CheckedChanged(object sender, EventArgs e)
         {
-            string sp = RunningSpeed_cb.Text.Replace("%", "");
-            if (sp.Equals("100"))
+            string LoadportName = ((CheckBox)sender).Name.Replace("use_", "").Replace("_ck", "").ToUpper();
+            Node port = NodeManagement.Get(LoadportName);
+            if (((CheckBox)sender).Checked)
             {
-                sp = "0";
-            }
-            foreach (Node node in NodeManagement.GetList())
-            {
-                string Message = "";
-                if (node.Type.Equals("ROBOT"))
+                SelectLoadports.Add(port);
+                if (SelectLoadports.Count >= 2)
                 {
-                    Transaction txn = new Transaction();
-                    txn.Method = Transaction.Command.RobotType.Speed;
-                    txn.Value = sp;
-                    txn.FormName = "Running";
-                    node.SendCommand(txn, out Message);
-                }
-                else
-                if (node.Type.Equals("ALIGNER"))
-                {
-                    Transaction txn = new Transaction();
-                    txn.Method = Transaction.Command.AlignerType.Speed;
-                    txn.Value = sp;
-                    txn.FormName = "Running";
-                    node.SendCommand(txn, out Message);
+                    if (!use_loadport01_ck.Checked) { use_loadport01_ck.Enabled = false; }
+                    if (!use_loadport02_ck.Checked) { use_loadport02_ck.Enabled = false; }
+                    if (!use_loadport03_ck.Checked) { use_loadport03_ck.Enabled = false; }
+                    if (!use_loadport04_ck.Checked) { use_loadport04_ck.Enabled = false; }
                 }
             }
+            else
+            {
+                SelectLoadports.Remove(port);
+                if (SelectLoadports.Count < 2)
+                {
+                    if (!use_loadport01_ck.Checked) { use_loadport01_ck.Enabled = true; }
+                    if (!use_loadport02_ck.Checked) { use_loadport02_ck.Enabled = true; }
+                    if (!use_loadport03_ck.Checked) { use_loadport03_ck.Enabled = true; }
+                    if (!use_loadport04_ck.Checked) { use_loadport04_ck.Enabled = true; }
+                }
+            }
+
         }
 
-        private void FormRunningScreen_Load(object sender, EventArgs e)
+        private void FormRunningScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+            Run = false;
         }
     }
 }

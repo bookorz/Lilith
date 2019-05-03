@@ -430,7 +430,7 @@ namespace Lilith.Menu.WaferMapping
                             
                             j.RecipeID = port.WaferSize;
                             
-                            j.DefaultOCR = "OCR01";
+                           
                         }
                     }
                    

@@ -71,6 +71,7 @@ namespace Lilith
             this.RED_Signal = new System.Windows.Forms.Button();
             this.tbcMian = new System.Windows.Forms.TabControl();
             this.tabMonitor = new System.Windows.Forms.TabPage();
+            this.tabTest = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -437,6 +438,7 @@ namespace Lilith
             // tbcMian
             // 
             this.tbcMian.Controls.Add(this.tabMonitor);
+            this.tbcMian.Controls.Add(this.tabTest);
             resources.ApplyResources(this.tbcMian, "tbcMian");
             this.tbcMian.Name = "tbcMian";
             this.tbcMian.SelectedIndex = 0;
@@ -450,6 +452,12 @@ namespace Lilith
             this.tabMonitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabMonitor.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tabMonitor.Name = "tabMonitor";
+            // 
+            // tabTest
+            // 
+            resources.ApplyResources(this.tabTest, "tabTest");
+            this.tabTest.Name = "tabTest";
+            this.tabTest.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -829,6 +837,7 @@ namespace Lilith
         private System.Windows.Forms.CheckBox Mute_chk;
         private System.Windows.Forms.DataGridView Conn_gv;
         private System.Windows.Forms.Button btnManual;
+        private System.Windows.Forms.TabPage tabTest;
     }
 }
 
