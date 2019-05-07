@@ -49,6 +49,8 @@ namespace Lilith.UI_Update.Running
 
                             Button btn = formA.Controls.Find("Mode_btn", true).FirstOrDefault() as Button;
                             btn.Enabled = true;
+                            Button btn2 = formA.Controls.Find("btnManual", true).FirstOrDefault() as Button;
+                            btn2.Enabled = true;
                             break;
                         case "End Running":
 
@@ -90,13 +92,13 @@ namespace Lilith.UI_Update.Running
         {
             try
             {
-                Form form = Application.OpenForms["FormMonitoring"];
-                TextBox tb;
+                Form form = Application.OpenForms["FormRunningScreen"];
+                CheckBox tb;
 
                 if (form == null)
                     return;
 
-                tb = form.Controls.Find("LoadPort01_State", true).FirstOrDefault() as TextBox;
+                tb = form.Controls.Find("use_loadport01_ck", true).FirstOrDefault() as CheckBox;
 
                 if (tb == null)
                     return;
@@ -109,8 +111,7 @@ namespace Lilith.UI_Update.Running
                 else
                 {
                     Node node = NodeManagement.Get(NodeName);
-                    Label Mode = form.Controls.Find(NodeName + "_Mode", true).FirstOrDefault() as Label;
-                    Mode.Text = node.Mode;
+                    
                     if (node.IsMapping)
                     {
                         for (int i = 1; i <= Tools.GetSlotCount(node.Type); i++)
@@ -176,13 +177,13 @@ namespace Lilith.UI_Update.Running
         {
             try
             {
-                Form form = Application.OpenForms["FormMonitoring"];
-                TextBox tb;
+                Form form = Application.OpenForms["FormRunningScreen"];
+                CheckBox tb;
 
                 if (form == null)
                     return;
 
-                tb = form.Controls.Find("LoadPort01_State", true).FirstOrDefault() as TextBox;
+                tb = form.Controls.Find("use_loadport01_ck", true).FirstOrDefault() as CheckBox;
 
                 if (tb == null)
                     return;

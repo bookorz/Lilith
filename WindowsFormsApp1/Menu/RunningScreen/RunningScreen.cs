@@ -67,12 +67,15 @@ namespace Lilith.Menu.RunningScreen
                 
                 Button btn = form.Controls.Find("Mode_btn", true).FirstOrDefault() as Button;
                 btn.Enabled = false;
+                Button btn2 = form.Controls.Find("btnManual", true).FirstOrDefault() as Button;
+                btn2.Enabled = false;
 
                 Start_btn.Text = "End Running";
                 Run = true;
                 CycleStop = false;
                 LotEnd = false;
                 ThreadEnd = false;
+                ThreadPool.QueueUserWorkItem(new WaitCallback(UpdateLapsedTime));
                 ThreadPool.QueueUserWorkItem(new WaitCallback(Transfer));
             }
             else
@@ -104,31 +107,93 @@ namespace Lilith.Menu.RunningScreen
             }
 
         }
-
+        private void UpdateLapsedTime(object obj)
+        {
+            DateTime StartTime = DateTime.Now;
+            while (!ThreadEnd)
+            {
+                SpinWait.SpinUntil(() => false, 1000);
+                TimeSpan timeDiff = DateTime.Now - StartTime;
+                RunningUpdate.UpdateRunningInfo("LapsedTime", timeDiff.ToString(@"hh\:mm\:ss"));
+            }
+        }
         private void Transfer(object obj)
         {
             int LapsedWfCount = 0;
             int LapsedLotCount = 0;
-            DateTime StartTime = DateTime.Now;
+            
             TaskJobManagment.CurrentProceedTask CurrTask; 
             string Message = "";
             string TaskName = "";
             Dictionary<string, string> param = new Dictionary<string, string>();
+            Node LD = SelectLoadports[1];
+            Node ULD = SelectLoadports[0];
             //init
-            TaskName = "ALL_Init";
+            TaskName = "ROBOT_Init";
+            param.Clear();
+            param.Add("@Target", "ROBOT01");
             RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
             SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
             if (CurrTask.HasError || CycleStop)
             {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+
+                return;
+            }
+            TaskName = "LOADPORT_Init";
+            param.Clear();
+            param.Add("@Target", LD.Name);
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+            TaskName = "LOADPORT_Init";
+            param.Clear();
+            param.Add("@Target", ULD.Name);
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                ThreadEnd = true;
                 RunningUpdate.UpdateModeStatus("Start Running");
                 return;
             }
             //org
-            TaskName = "ALL_ORGSH";
+            TaskName = "ROBOT_ORGSH";
+            param.Clear();
+            param.Add("@Target", "ROBOT01");
             RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
             SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
             if (CurrTask.HasError || CycleStop)
             {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+            TaskName = "LOADPORT_ORGSH";
+            param.Clear();
+            param.Add("@Target", LD.Name);
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+            TaskName = "LOADPORT_ORGSH";
+            param.Clear();
+            param.Add("@Target", ULD.Name);
+            RouteControl.Instance.TaskJob.Excute("RunningScreen", out Message, out CurrTask, TaskName, param);
+            SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
+            if (CurrTask.HasError || CycleStop)
+            {
+                ThreadEnd = true;
                 RunningUpdate.UpdateModeStatus("Start Running");
                 return;
             }
@@ -141,13 +206,13 @@ namespace Lilith.Menu.RunningScreen
             SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
             if (CurrTask.HasError || CycleStop)
             {
+                ThreadEnd = true;
                 RunningUpdate.UpdateModeStatus("Start Running");
                 return;
             }
 
 
-            Node LD = SelectLoadports[1];
-            Node ULD = SelectLoadports[0];
+            
             
             while (!LotEnd)
             {
@@ -162,6 +227,7 @@ namespace Lilith.Menu.RunningScreen
                 SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
                 if (CurrTask.HasError || CycleStop)
                 {
+                    ThreadEnd = true;
                     RunningUpdate.UpdateModeStatus("Start Running");
                     return;
                 }
@@ -172,17 +238,18 @@ namespace Lilith.Menu.RunningScreen
                 SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
                 if (CurrTask.HasError || CycleStop)
                 {
+                    ThreadEnd = true;
                     RunningUpdate.UpdateModeStatus("Start Running");
                     return;
                 }
 
                 for (int i = 0; i < ProcessSlotList.Length; i++)
                 {
-                    TimeSpan timeDiff = DateTime.Now - StartTime;
-                    RunningUpdate.UpdateRunningInfo("LapsedTime", timeDiff.ToString(@"hh\:mm\:ss") );
+                   
 
                     if (TransCount == 0)
                     {
+                        ThreadEnd = true;
                         RunningUpdate.UpdateModeStatus("Start Running");
                         return;
                     }
@@ -205,6 +272,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -217,6 +285,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -229,6 +298,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -241,6 +311,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -264,6 +335,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -276,6 +348,7 @@ namespace Lilith.Menu.RunningScreen
                                 SpinWait.SpinUntil(() => CurrTask.Finished, 99999999);
                                 if (CurrTask.HasError)
                                 {
+                                    ThreadEnd = true;
                                     RunningUpdate.UpdateModeStatus("Start Running");
                                     return;
                                 }
@@ -288,12 +361,17 @@ namespace Lilith.Menu.RunningScreen
                                     break;
                                 }
                             }
-                            LapsedLotCount++;
-                            RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
+                            
 
                         }
                     }
                 }
+                if (CycleStop)
+                {
+                    break;
+                }
+                LapsedLotCount++;
+                RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
                 TaskName = "CLOSE";
                 param.Clear();
                 param.Add("@Target", LD.Name);
@@ -301,6 +379,7 @@ namespace Lilith.Menu.RunningScreen
                 SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
                 if (CurrTask.HasError || CycleStop)
                 {
+                    ThreadEnd = true;
                     RunningUpdate.UpdateModeStatus("Start Running");
                     return;
                 }
@@ -311,6 +390,7 @@ namespace Lilith.Menu.RunningScreen
                 SpinWait.SpinUntil(() => CurrTask.Finished || CycleStop, 99999999);
                 if (CurrTask.HasError || CycleStop)
                 {
+                    ThreadEnd = true;
                     RunningUpdate.UpdateModeStatus("Start Running");
                     return;
                 }
