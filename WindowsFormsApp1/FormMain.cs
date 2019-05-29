@@ -374,43 +374,7 @@ namespace Lilith
                 AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
             }
 
-            if (Txn.Method.Equals(Transaction.Command.LoadPortType.GetMapping))
-            {
-                Node Port = null;
-                switch (Node.Type)
-                {
-                    case "LOADPORT":
-                        Port = Node;
-                        break;
-                    case "ROBOT":
-                        Port = NodeManagement.Get(Node.CurrentPosition);
-                        break;
-                }
-
-                if (Port != null)
-                {
-                    //Asign Wafer
-
-                    foreach (Job j in Port.JobList.Values.ToList())
-                    {
-                        if (j.MapFlag)
-                        {
-                            j.AlignerFlag = true;
-                            j.OCRFlag = true;
-                            j.NeedProcess = true;
-                            j.RecipeID = Port.WaferSize;
-                            j.AssignPort(Port.Name, j.Slot);
-                            
-                        }
-                    }
-                    Port.Mode = "LU";
-                    if (!Port.WaferSize.Equals("200MM"))
-                    {
-                        Port.LoadTime = DateTime.Now;
-                    }
-                    Port.Available = true;
-                }
-            }
+            
 
             switch (Node.Type)
             {
@@ -858,7 +822,7 @@ namespace Lilith
         }
 
 
-        public void On_Data_Chnaged(string Parameter, string Value)
+        public void On_Data_Chnaged(string Parameter, string Value, string Type)
         {
             switch (Parameter)
             {

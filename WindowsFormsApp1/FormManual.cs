@@ -42,8 +42,8 @@ namespace GUI
         {
             foreach (Node port in NodeManagement.GetLoadPortList())
             {
-                //if (port.Brand.ToUpper().Equals("ASYST"))
-                if (port.Brand.ToUpper().Equals("TDK"))
+                if (port.Brand.ToUpper().Equals("ASYST"))
+                //if (port.Brand.ToUpper().Equals("TDK"))
                 {
                     if (port.Enable)
                     {

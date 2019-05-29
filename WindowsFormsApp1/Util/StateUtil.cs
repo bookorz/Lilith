@@ -345,6 +345,7 @@ namespace Lilith.Util
             switch (result[0])
             {
                 case "004":
+                case "027":
                     if (robot != null)
                         robot.Present_R = result[1];
                     if (aligner != null)
