@@ -1,18 +1,8 @@
 ﻿using log4net;
-using Newtonsoft.Json;
-using SANWA.Utility.Config;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading;
 using System.Windows.Forms;
-using TransferControl.Management;
-using System.Linq;
 using Lilith.UI_Update.OCR;
 
 namespace Lilith.Menu.OCR

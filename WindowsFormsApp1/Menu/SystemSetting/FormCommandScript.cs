@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Windows.Forms;
-using SANWA.Utility;
-using TransferControl.Management;
+using TransferControl.Comm;
+using TransferControl.Config;
 
 namespace Lilith.Menu.SystemSetting
 {
@@ -41,7 +39,7 @@ namespace Lilith.Menu.SystemSetting
             try
             {
                 strSql = "select *, concat(CommandScriptID, ',', `Index`) as CommandScriptIndex from config_command_script order by CommandScriptID asc, `Index` asc";
-                keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
                 dtCommandType = dBUtil.GetDataTable(strSql, keyValues);
 
                 if (dtCommandType.Rows.Count > 0)

@@ -457,7 +457,7 @@ namespace Lilith.Util
             this.Name = name;
             this.Status = robot != null ? robot.State : "N/A";
             if (this.Status.Equals("N/A") && ControllerManagement.Get(name) != null)
-                this.Status = ControllerManagement.Get(name).Status;// 如果 NODE 無狀態，改抓 Controller 的狀態
+                this.Status = ControllerManagement.Get(name).GetStatus();// 如果 NODE 無狀態，改抓 Controller 的狀態
             this.State = "".PadLeft(32);
             this.Present_L = "";
             this.Present_R = "";

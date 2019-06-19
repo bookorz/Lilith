@@ -152,12 +152,6 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="UI_Update\Alarm\AlarmUpdate.cs" />
-    <Compile Include="Menu\SystemSetting\FormCodeSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormCodeSetting.Designer.cs">
-      <DependentUpon>FormCodeSetting.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menu\SystemSetting\FormSettingFram.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,12 +205,6 @@
     </Compile>
     <Compile Include="FormManual.designer.cs">
       <DependentUpon>FormManual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTerminal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTerminal.designer.cs">
-      <DependentUpon>FormTerminal.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVersion.cs">
       <SubType>Form</SubType>
@@ -374,9 +362,6 @@
     <EmbeddedResource Include="FormManual.resx">
       <DependentUpon>FormManual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTerminal.resx">
-      <DependentUpon>FormTerminal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormVersion.resx">
       <DependentUpon>FormVersion.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,9 +397,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\SystemSetting\FormAlarmEventSet .resx">
       <DependentUpon>FormAlarmEventSet .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormCodeSetting.resx">
-      <DependentUpon>FormCodeSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\SystemSetting\FormCommandScript.resx">
       <DependentUpon>FormCommandScript.cs</DependentUpon>
@@ -559,17 +541,9 @@
     <None Include="Resources\like.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DIOControl\DIOControl\DIOControl.csproj">
-      <Project>{21adfcfc-11c7-4982-af57-09002ed8e961}</Project>
-      <Name>DIOControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\EFEMInterface\EFEMInterface\EFEMInterface.csproj">
       <Project>{fa9f0060-9751-4cf0-993a-357fd796143e}</Project>
       <Name>EFEMInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SANWAFunction\SANWA\SANWA\SANWA.csproj">
-      <Project>{4eed2ed4-a72e-4f24-8d80-ef2f0b24fcf1}</Project>
-      <Name>SANWA</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\TransferControl\TransferControl\TransferControl.csproj">
       <Project>{316ccd27-c53f-42f2-ad5e-5ca897dd9ab8}</Project>

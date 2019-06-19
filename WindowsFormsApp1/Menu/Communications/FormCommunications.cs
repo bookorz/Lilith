@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using Lilith.Util;
 using System.Linq;
 using System.IO.Ports;
-using System.Diagnostics;
-using SANWA.Utility;
-using Newtonsoft.Json;
-using SANWA.Utility.Config;
 using TransferControl.Management;
 using TransferControl.Controller;
 using Lilith.UI_Update.Communications;
+using TransferControl.Comm;
+using TransferControl.Config;
 
 namespace Lilith.Menu.Communications
 {
@@ -45,7 +40,7 @@ namespace Lilith.Menu.Communications
                 strSql = "SELECT t.device_name FROM config_controller_setting t where t.equipment_model_id =@equipment_model_id";
 
 
-                keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
 
                 dtNode = dBUtil.GetDataTable(strSql, keyValues);
 
@@ -59,7 +54,7 @@ namespace Lilith.Menu.Communications
 
                 strSql = "SELECT* FROM config_controller_setting t where t.equipment_model_id =@equipment_model_id";
                 keyValues.Clear();
-                keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
                 dtController = dBUtil.GetDataTable(strSql, keyValues);
 
 
@@ -359,11 +354,11 @@ namespace Lilith.Menu.Communications
                                 btnRS232C_Click(this, null);
                                 break;
                         }
-                        DeviceController ctrl = ControllerManagement.Get(ControllerID);
-                        if(ctrl != null)
-                        {
-                            CommunicationsUpdate.UpdateConnection(ControllerID,ctrl.IsConnected());
-                        }
+                        //IController ctrl = ControllerManagement.Get(ControllerID);
+                        //if(ctrl != null)
+                        //{
+                        //    CommunicationsUpdate.UpdateConnection(ControllerID,ctrl.IsConnected());
+                        //}
                     }
                     else
                     {

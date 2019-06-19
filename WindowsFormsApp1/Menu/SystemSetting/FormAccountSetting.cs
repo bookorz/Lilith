@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using SANWA.Utility;
 using System.Linq;
+using TransferControl.Comm;
 
 namespace Lilith.Menu.SystemSetting
 {

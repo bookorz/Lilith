@@ -1,25 +1,20 @@
 ﻿using log4net;
-using MySql.Data.MySqlClient;
-using NPOI;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferControl.Comm;
 
 namespace GUI
 {
-    
+
     public partial class FormQuery : Form
     {
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormQuery));

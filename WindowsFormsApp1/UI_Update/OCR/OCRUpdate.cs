@@ -1,6 +1,4 @@
 ﻿using log4net;
-using SANWA.Utility;
-using SANWA.Utility.Config;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -8,11 +6,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TransferControl.Engine;
+using TransferControl.Comm;
+using TransferControl.Config;
 using TransferControl.Management;
 
 namespace Lilith.UI_Update.OCR

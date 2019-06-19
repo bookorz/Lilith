@@ -1,11 +1,9 @@
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using TransferControl.Engine;
 using TransferControl.Management;
-using TransferControl.Parser;
 using log4net.Config;
 using Lilith.UI_Update.Monitoring;
 using log4net;
@@ -14,25 +12,23 @@ using Lilith.UI_Update.OCR;
 using Lilith.UI_Update.WaferMapping;
 using System.Threading;
 using Lilith.UI_Update.Authority;
-using DIOControl;
 using Lilith.UI_Update.Layout;
 using Lilith.UI_Update.Alarm;
 using GUI;
 using Lilith.UI_Update.Running;
-using System.Linq;
-using System.Collections.Concurrent;
 using Lilith.Util;
-using Lilith.UI_Update.Communications;
 using EFEMInterface.MessageInterface;
 using EFEMInterface;
 using static EFEMInterface.MessageInterface.RorzeInterface;
 using System.Security.Cryptography;
 using System.Text;
-using SANWA.Utility.Config;
+using TransferControl.Comm;
+using TransferControl.CommandConvert;
+using TransferControl.Config;
 
 namespace Lilith
 {
-    public partial class FormMain : Form, IUserInterfaceReport, IEFEMControl
+    public partial class FormMain : Form, IUserInterfaceReport
     {
         public static RouteControl RouteCtrl;
         public static RorzeInterface HostControl;
@@ -59,7 +55,7 @@ namespace Lilith
             Initialize();
 
             HostControl = new RorzeInterface(this);
-            RouteCtrl = new RouteControl(this, HostControl);
+            RouteCtrl = new RouteControl(HostControl);
             AlmMapping = new AlarmMapping();
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -325,8 +321,7 @@ namespace Lilith
 
         private void terminalToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            FormTerminal formTerminal = new FormTerminal();
-            formTerminal.ShowDialog();
+           
         }
 
         private void btnTeach_Click(object sender, EventArgs e)
@@ -362,7 +357,7 @@ namespace Lilith
             alarmFrom.Visible = true;
         }
 
-        public void On_Command_Excuted(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Excuted(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
             logger.Debug("On_Command_Excuted");
             string Message = "";
@@ -538,7 +533,7 @@ namespace Lilith
             }
         }
 
-        public void On_Command_Error(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Error(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
             switch (Txn.FormName)
             {
@@ -586,7 +581,7 @@ namespace Lilith
     
         }
 
-        public void On_Command_Finished(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Finished(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
             logger.Debug("On_Command_Finished");
             //Transaction txn = new Transaction();
@@ -697,7 +692,7 @@ namespace Lilith
             AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
 
-        public void On_Event_Trigger(Node Node, ReturnMessage Msg)
+        public void On_Event_Trigger(Node Node, CommandReturnMessage Msg)
         {
             logger.Debug("On_Event_Trigger");
 
@@ -1168,37 +1163,6 @@ namespace Lilith
 
         }
 
-        public void On_CommandMessage(string msg)
-        {
-            MonitoringUpdate.LogUpdate(msg);
-        }
-
-        public void On_EFEM_Status_changed(string status)
-        {
-
-            NodeStatusUpdate.UpdateCurrentState(status);
-        }
-
-        public void On_Connection_Connected()
-        {
-            //MonitoringUpdate.ConnectUpdate("Connected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Online");
-            MonitoringUpdate.LogUpdate("Connected");
-        }
-
-        public void On_Connection_Connecting()
-        {
-            //MonitoringUpdate.ConnectUpdate("Connecting");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Connecting");
-            MonitoringUpdate.LogUpdate("Connecting");
-        }
-
-        public void On_Connection_Disconnected()
-        {
-            //MonitoringUpdate.ConnectUpdate("Disconnected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Offline");
-            MonitoringUpdate.LogUpdate("Disconnected");
-        }
 
         public void On_TaskJob_Aborted(TaskJobManagment.CurrentProceedTask Task, string NodeName, string ReportType, string Message)
         {
@@ -1272,6 +1236,26 @@ namespace Lilith
 
 
             logger.Debug("On_Node_Connection_Changed");
+        }
+
+        public void On_TaskJob_Ack(TaskJobManagment.CurrentProceedTask Task)
+        {
+           
+        }
+
+        public void On_Message_Log(string Type, string Message)
+        {
+            MonitoringUpdate.LogUpdate(Message);
+        }
+
+        public void On_Status_Changed(string Type, string Message)
+        {
+            switch (Type.ToUpper())
+            {
+                case "EFEM":
+                    NodeStatusUpdate.UpdateCurrentState(Message);
+                    break;
+            }
         }
     }
 }

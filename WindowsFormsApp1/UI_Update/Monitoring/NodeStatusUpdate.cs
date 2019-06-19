@@ -1,16 +1,12 @@
 ﻿using log4net;
 using Newtonsoft.Json;
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using TransferControl.Engine;
-using TransferControl.Management;
+using TransferControl.Comm;
 
 namespace Lilith.UI_Update.Monitoring
 {

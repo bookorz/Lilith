@@ -1,17 +1,12 @@
 ﻿using Lilith.UI_Update.Authority;
 using Lilith.Util;
 using log4net;
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferControl.Comm;
 
 namespace GUI
 {

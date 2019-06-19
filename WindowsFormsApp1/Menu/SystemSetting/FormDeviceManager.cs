@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using SANWA.Utility;
 using TransferControl.Management;
 using Lilith.UI_Update.OCR;
+using TransferControl.Comm;
+using TransferControl.Config;
 
 namespace Lilith.Menu.SystemSetting
 {
@@ -21,7 +19,7 @@ namespace Lilith.Menu.SystemSetting
             InitializeComponent();
         }
 
-        private SANWA.Utility.config_equipment_model equipment_Model = new SANWA.Utility.config_equipment_model();
+        
         private DataTable dtConfigNode = new DataTable();
         private DataTable dtRouteTable = new DataTable();
 
@@ -36,7 +34,7 @@ namespace Lilith.Menu.SystemSetting
             {
                 UpdateNodeList();
 
-                txbEquipmentModel.Text = equipment_Model.EquipmentModel.equipment_model_type;
+                txbEquipmentModel.Text = SystemConfig.Get().SystemMode;
 
                 dtTemp = new DataTable();
                 strSql = "SELECT list_type, list_id, list_name, list_name_en, CASE WHEN list_value = 'DIO' THEN 'SYSTEM' ELSE list_value END list_value, sort_sequence " +
@@ -131,7 +129,7 @@ namespace Lilith.Menu.SystemSetting
                             FROM config_node
                             WHERE equipment_model_id = @equipment_model_id
                             ORDER BY node_id";
-                keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
                 dtConfigNode = dBUtil.GetDataTable(strSql, keyValues);
 
                 if (dtConfigNode.Rows.Count > 0)
@@ -229,7 +227,7 @@ namespace Lilith.Menu.SystemSetting
                 }
 
                 strSql = "select * from config_node where equipment_model_id = @equipment_model_id and node_type = @node_type order by node_id, sn_no";
-                keyValues.Add("@equipment_model_id", SANWA.Utility.Config.SystemConfig.Get().SystemMode);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
                 keyValues.Add("@node_type", cmbDeviceNodeType.SelectedValue.ToString());
                 dtTemp = dBUtil.GetDataTable(strSql, keyValues);
 
@@ -269,7 +267,7 @@ namespace Lilith.Menu.SystemSetting
                     "VALUES " +
                     "(@equipment_model_id, @node_id, @node_type, @sn_no, @vendor, @model_no, @firmware_ver, @conn_address, @controller_id, @bypass, @default_aligner, @alternative_aligner, @route_table, @enable_flg, @create_user, @create_timestamp, @modify_user, NOW())";
 
-                keyValues.Add("@equipment_model_id", equipment_Model.EquipmentModel.equipment_model_id);
+                keyValues.Add("@equipment_model_id", SystemConfig.Get().SystemMode);
                 keyValues.Add("@node_id", txbDeviceNodeName.Text.Trim());
                 keyValues.Add("@node_type", cmbDeviceNodeType.SelectedValue.ToString());
                 keyValues.Add("@sn_no", nudSerialNo.Value);

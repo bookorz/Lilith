@@ -16,7 +16,7 @@ namespace Lilith.Menu.SystemSetting
         private FormDeviceManager deviceManager = new FormDeviceManager();
         private FormOnlineSettings onlineSettings = new FormOnlineSettings();
         private FormSECSSet sECSSet = new FormSECSSet();
-        private FormCodeSetting codeSetting = new FormCodeSetting();
+      
         private FormSignalTower formSignalTower = new FormSignalTower();
         private FormDIOSetting formDIOSetting = new FormDIOSetting();
 
@@ -73,7 +73,7 @@ namespace Lilith.Menu.SystemSetting
                 deviceManager.TopLevel = false;
                 onlineSettings.TopLevel = false;
                 sECSSet.TopLevel = false;
-                codeSetting.TopLevel = false;
+                
                 formSignalTower.TopLevel = false;
                 formDIOSetting.TopLevel = false;
 
@@ -83,7 +83,7 @@ namespace Lilith.Menu.SystemSetting
                 tbpDeviceManager.Controls.Add(deviceManager);
                 tbpOnlineSettings.Controls.Add(onlineSettings);
                 tbpSECSSetting.Controls.Add(sECSSet);
-                tbpCodeSetting.Controls.Add(codeSetting);
+                
                 tbpSignalTtower.Controls.Add(formSignalTower);
                 tbpDIOSetting.Controls.Add(formDIOSetting);
 
@@ -93,7 +93,7 @@ namespace Lilith.Menu.SystemSetting
                 deviceManager.Show();
                 onlineSettings.Show();
                 sECSSet.Show();
-                codeSetting.Show();
+               
                 formSignalTower.Show();
                 formDIOSetting.Show();
             }

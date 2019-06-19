@@ -701,7 +701,7 @@ namespace GUI
                 case "btnRChgSpeed":
                     TaskName = "SPEED";
                     param.Add("@Target", nodeName);
-                    param.Add("@Value", nudRSpeed.Text.Equals("100") ? "0" : nudRSpeed.Text);
+                    param.Add("@Value",  nudRSpeed.Text);
                     break;
                 case "btnRRVacuOn":
                     TaskName = "SET_CLAMP_ON";
@@ -1031,7 +1031,7 @@ namespace GUI
             if (node == null)
                 return;
             string status = node.State != "" ? node.State : "N/A";
-            string ctrl_status = ControllerManagement.Get(node.Controller) != null ? ControllerManagement.Get(node.Controller).Status : "N/A";
+            string ctrl_status = ControllerManagement.Get(node.Controller) != null ? ControllerManagement.Get(node.Controller).GetStatus() : "N/A";
             //string ctrl_status = ControllerManagement.Get(node.Controller).Status;
             if (!ctrl_status.Equals("Connected"))
             {

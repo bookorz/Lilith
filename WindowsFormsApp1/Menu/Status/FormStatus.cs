@@ -93,7 +93,7 @@ namespace Lilith.Menu.Status
                 Thread.Sleep(1000);//避免查詢指令尚未回來
                 foreach (Node each in NodeManagement.GetList())
                 {
-                    string ctrl_status = ControllerManagement.Get(each.Controller) != null ? ControllerManagement.Get(each.Controller).Status : "";
+                    string ctrl_status = ControllerManagement.Get(each.Controller) != null ? ControllerManagement.Get(each.Controller).GetStatus() : "";
                     if (ctrl_status.Equals("Connected") && each.ByPass == false)
                     {
                         if (each.Brand.ToUpper().Equals("KAWASAKI"))
@@ -241,9 +241,9 @@ namespace Lilith.Menu.Status
                 string Message = "";
                 try
                 {
-                    DeviceController Ctrl = ControllerManagement.Get(each.Controller);
+                    IController Ctrl = ControllerManagement.Get(each.Controller);
                     //string ctrl_status = ControllerManagement.Get(each.Controller).Status;
-                    string ctrl_status = ControllerManagement.Get(each.Controller) != null ? ControllerManagement.Get(each.Controller).Status : "";
+                    string ctrl_status = ControllerManagement.Get(each.Controller) != null ? ControllerManagement.Get(each.Controller).GetStatus() : "";
                     if (ctrl_status.Equals("Connected") && each.ByPass == false )
                     {
                         string seq = "";
