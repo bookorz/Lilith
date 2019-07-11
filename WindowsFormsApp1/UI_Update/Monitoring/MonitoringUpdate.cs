@@ -111,11 +111,16 @@ namespace Lilith.UI_Update.Monitoring
                 }
                 else
                 {
-                    //W.AppendText(msg + "\n");
+                   
+
+                    if (W.Text.Length > 13000)
+                    {
+                        W.Text = W.Text.Substring(W.Text.Length - 7000);
+                    }
                     W.SelectionStart = W.TextLength;
                     W.SelectionLength = 0;
 
-                   
+
                     if (msg.ToUpper().Contains("ACK"))
                     {
                         W.SelectionColor = Color.Blue;
@@ -137,13 +142,8 @@ namespace Lilith.UI_Update.Monitoring
                         W.SelectionColor = Color.Black;
                     }
                     W.AppendText(msg + "\n");
-                    W.SelectionColor = W.ForeColor;
-                    if (W.Lines.Length > 1000)
-                    {
-                        W.Select(0, W.GetFirstCharIndexFromLine(W.Lines.Length - 1000));
-                        W.SelectedText = "";
-                    }
                     W.ScrollToCaret();
+
 
                     //EventUpdate("MAPDT", FormMain.HostControl.Events.MAPDT);
                     //EventUpdate("PORT", FormMain.HostControl.Events.PORT);
