@@ -478,7 +478,7 @@
     <value>3</value>
   </data>
   <data name="CDAAlarm_Signal.Text" xml:space="preserve">
-    <value>CDA</value>
+    <value>VAC</value>
   </data>
   <data name="&gt;&gt;CDAAlarm_Signal.Name" xml:space="preserve">
     <value>CDAAlarm_Signal</value>
