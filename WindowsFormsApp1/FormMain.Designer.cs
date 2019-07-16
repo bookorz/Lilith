@@ -44,7 +44,7 @@ namespace Lilith
             this.SafetyRelay_Signal = new System.Windows.Forms.Button();
             this.IonizerAlarm_Signal = new System.Windows.Forms.Button();
             this.FFUAlarm_Signal = new System.Windows.Forms.Button();
-            this.CDAAlarm_Signal = new System.Windows.Forms.Button();
+            this.VACAlarm_Signal = new System.Windows.Forms.Button();
             this.DoorSwitch_Signal = new System.Windows.Forms.Button();
             this.CurrentState_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -188,7 +188,7 @@ namespace Lilith
             this.groupBox5.Controls.Add(this.SafetyRelay_Signal);
             this.groupBox5.Controls.Add(this.IonizerAlarm_Signal);
             this.groupBox5.Controls.Add(this.FFUAlarm_Signal);
-            this.groupBox5.Controls.Add(this.CDAAlarm_Signal);
+            this.groupBox5.Controls.Add(this.VACAlarm_Signal);
             this.groupBox5.Controls.Add(this.DoorSwitch_Signal);
             this.groupBox5.Controls.Add(this.CurrentState_btn);
             resources.ApplyResources(this.groupBox5, "groupBox5");
@@ -230,12 +230,12 @@ namespace Lilith
             this.FFUAlarm_Signal.Name = "FFUAlarm_Signal";
             this.FFUAlarm_Signal.UseVisualStyleBackColor = false;
             // 
-            // CDAAlarm_Signal
+            // VACAlarm_Signal
             // 
-            resources.ApplyResources(this.CDAAlarm_Signal, "CDAAlarm_Signal");
-            this.CDAAlarm_Signal.BackColor = System.Drawing.Color.Gray;
-            this.CDAAlarm_Signal.Name = "CDAAlarm_Signal";
-            this.CDAAlarm_Signal.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.VACAlarm_Signal, "VACAlarm_Signal");
+            this.VACAlarm_Signal.BackColor = System.Drawing.Color.Gray;
+            this.VACAlarm_Signal.Name = "VACAlarm_Signal";
+            this.VACAlarm_Signal.UseVisualStyleBackColor = false;
             // 
             // DoorSwitch_Signal
             // 
@@ -786,7 +786,7 @@ namespace Lilith
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button IonizerAlarm_Signal;
         private System.Windows.Forms.Button FFUAlarm_Signal;
-        private System.Windows.Forms.Button CDAAlarm_Signal;
+        private System.Windows.Forms.Button VACAlarm_Signal;
         private System.Windows.Forms.Button DoorSwitch_Signal;
         private System.Windows.Forms.Button CurrentState_btn;
         private System.Windows.Forms.Button DifferentialPressureAlarm1_Signal;

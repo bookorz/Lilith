@@ -459,37 +459,37 @@
   <data name="&gt;&gt;FFUAlarm_Signal.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="CDAAlarm_Signal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="VACAlarm_Signal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
-  <data name="CDAAlarm_Signal.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="VACAlarm_Signal.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="CDAAlarm_Signal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="VACAlarm_Signal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="CDAAlarm_Signal.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="VACAlarm_Signal.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 347</value>
   </data>
-  <data name="CDAAlarm_Signal.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="VACAlarm_Signal.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 35</value>
   </data>
-  <data name="CDAAlarm_Signal.TabIndex" type="System.Int32, mscorlib">
+  <data name="VACAlarm_Signal.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="CDAAlarm_Signal.Text" xml:space="preserve">
+  <data name="VACAlarm_Signal.Text" xml:space="preserve">
     <value>VAC</value>
   </data>
-  <data name="&gt;&gt;CDAAlarm_Signal.Name" xml:space="preserve">
-    <value>CDAAlarm_Signal</value>
+  <data name="&gt;&gt;VACAlarm_Signal.Name" xml:space="preserve">
+    <value>VACAlarm_Signal</value>
   </data>
-  <data name="&gt;&gt;CDAAlarm_Signal.Type" xml:space="preserve">
+  <data name="&gt;&gt;VACAlarm_Signal.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;CDAAlarm_Signal.Parent" xml:space="preserve">
+  <data name="&gt;&gt;VACAlarm_Signal.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="&gt;&gt;CDAAlarm_Signal.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;VACAlarm_Signal.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
   <data name="DoorSwitch_Signal.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
