@@ -701,7 +701,7 @@ namespace GUI
                 case "btnRChgSpeed":
                     TaskName = "SPEED";
                     param.Add("@Target", nodeName);
-                    param.Add("@Value", nudRSpeed.Text.Equals("100") ? "0" : nudRSpeed.Text);
+                    param.Add("@Value", nudRSpeed.Text);
                     break;
                 case "btnRRVacuOn":
                     TaskName = "SET_CLAMP_ON";
