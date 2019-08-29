@@ -80,17 +80,17 @@ namespace Lilith.UI_Update.Alarm
         }
 
         public static void UpdateAlarmHistory(List<AlarmInfo> AlarmList)
-        { 
+        {
             try
             {
                 Form form = Application.OpenForms["FormAlarmHis"];
                 DataGridView AlarmList_gv;
-                
+
                 if (form == null)
                     return;
 
 
-                AlarmList_gv = form.Controls.Find("AlarmHistory_gv", true).FirstOrDefault() as DataGridView;
+                AlarmList_gv = form.Controls.Find("dg1", true).FirstOrDefault() as DataGridView;
                 if (AlarmList_gv == null)
                     return;
 

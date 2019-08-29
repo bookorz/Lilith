@@ -57,7 +57,7 @@
             this.label42 = new System.Windows.Forms.Label();
             this.BF2_ARM_EXTEND_ENABLE_Signal = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.BF_Slot_1 = new System.Windows.Forms.Label();
+            this.BF2_Slot_1 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.LoadPort04_Mode = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -636,7 +636,7 @@
             this.panel2.Controls.Add(this.label42);
             this.panel2.Controls.Add(this.BF2_ARM_EXTEND_ENABLE_Signal);
             this.panel2.Controls.Add(this.label19);
-            this.panel2.Controls.Add(this.BF_Slot_1);
+            this.panel2.Controls.Add(this.BF2_Slot_1);
             this.panel2.Controls.Add(this.label34);
             this.panel2.Location = new System.Drawing.Point(858, 362);
             this.panel2.Name = "panel2";
@@ -716,20 +716,20 @@
             this.label19.Text = "Buffer Enable";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // BF_Slot_1
+            // BF2_Slot_1
             // 
-            this.BF_Slot_1.BackColor = System.Drawing.Color.White;
-            this.BF_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.BF_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BF_Slot_1.ForeColor = System.Drawing.Color.White;
-            this.BF_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.BF_Slot_1.Location = new System.Drawing.Point(124, 16);
-            this.BF_Slot_1.Margin = new System.Windows.Forms.Padding(3);
-            this.BF_Slot_1.Name = "BF_Slot_1";
-            this.BF_Slot_1.Size = new System.Drawing.Size(149, 18);
-            this.BF_Slot_1.TabIndex = 13;
-            this.BF_Slot_1.Tag = "1";
-            this.BF_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF2_Slot_1.BackColor = System.Drawing.Color.White;
+            this.BF2_Slot_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BF2_Slot_1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BF2_Slot_1.ForeColor = System.Drawing.Color.White;
+            this.BF2_Slot_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.BF2_Slot_1.Location = new System.Drawing.Point(124, 16);
+            this.BF2_Slot_1.Margin = new System.Windows.Forms.Padding(3);
+            this.BF2_Slot_1.Name = "BF2_Slot_1";
+            this.BF2_Slot_1.Size = new System.Drawing.Size(149, 18);
+            this.BF2_Slot_1.TabIndex = 13;
+            this.BF2_Slot_1.Tag = "1";
+            this.BF2_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label34
             // 
@@ -5120,7 +5120,7 @@
         internal System.Windows.Forms.Label label42;
         internal System.Windows.Forms.Label BF2_ARM_EXTEND_ENABLE_Signal;
         internal System.Windows.Forms.Label label19;
-        internal System.Windows.Forms.Label BF_Slot_1;
+        internal System.Windows.Forms.Label BF2_Slot_1;
         internal System.Windows.Forms.Label label34;
         private System.Windows.Forms.CheckBox BF1_BYPASS_ck;
         private System.Windows.Forms.CheckBox BF2_BYPASS_ck;
