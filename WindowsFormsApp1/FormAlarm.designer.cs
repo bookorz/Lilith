@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.AlarmList_gv = new System.Windows.Forms.DataGridView();
             this.ResetAll_bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AlarmList_gv)).BeginInit();
@@ -37,21 +37,25 @@
             // 
             // AlarmList_gv
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.AlarmList_gv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.AlarmList_gv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.AlarmList_gv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.AlarmList_gv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.AlarmList_gv.Location = new System.Drawing.Point(12, 12);
             this.AlarmList_gv.Name = "AlarmList_gv";
             this.AlarmList_gv.RowHeadersVisible = false;
             this.AlarmList_gv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.AlarmList_gv.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.AlarmList_gv.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.AlarmList_gv.RowTemplate.Height = 24;
             this.AlarmList_gv.Size = new System.Drawing.Size(1070, 472);
             this.AlarmList_gv.TabIndex = 39;
             // 
             // ResetAll_bt
             // 
+            this.ResetAll_bt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ResetAll_bt.BackColor = System.Drawing.Color.Green;
             this.ResetAll_bt.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.ResetAll_bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

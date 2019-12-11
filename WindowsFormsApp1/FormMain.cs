@@ -65,8 +65,8 @@ namespace Lilith
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Location = new System.Drawing.Point(-200, 0);
 
-            SanwaUtil.addPartition();
-            SanwaUtil.dropPartition();
+            //SanwaUtil.addPartition();
+            //SanwaUtil.dropPartition();
             ThreadPool.QueueUserWorkItem(new WaitCallback(DBUtil.consumeSqlCmd));
 
         }
