@@ -245,29 +245,7 @@ namespace Lilith
             }
         }
 
-        private void ProceedInitial()
-        {
-
-            foreach (Node each in NodeManagement.GetList())
-            {
-                each.InitialComplete = false;
-                each.CheckStatus = false;
-                string Message = "";
-                switch (each.Type.ToUpper())
-                {
-                    case "ROBOT":
-                        //each.ExcuteScript("RobotInit", "Initialize", out Message);
-                        break;
-                        //先做ROBOT
-                        //case "ALIGNER":
-                        //    each.ExcuteScript("AlignerInit", "Initialize");
-                        //    break;
-                        //case "LOADPORT":
-                        //    each.ExcuteScript("LoadPortInit", "Initialize");
-                        //    break;
-                }
-            }
-        }
+        
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             string strMsg = "Move to Home position. OK?";
@@ -1202,6 +1180,44 @@ namespace Lilith
 
         public void On_TaskJob_Aborted(TaskJobManagment.CurrentProceedTask Task, string NodeName, string ReportType, string Message)
         {
+            Node Target;
+            Node Position;
+            if (!ReportType.Equals("CAN"))
+            {
+                switch (Task.ProceedTask.TaskName)
+                {
+                    case "LOAD":
+                    case "UNLOAD":
+                        Target = NodeManagement.Get(Task.Params["@Target"]);
+                        Position = NodeManagement.Get(Task.Params["@Position"]);
+                        if (Target != null)
+                        {
+                            Target.OrgSearchComplete = false;
+                        }
+                        if (Position != null)
+                        {
+                            Position.OrgSearchComplete = false;
+                        }
+                        break;
+                    case "TRANS":
+                        Target = NodeManagement.Get(Task.Params["@Target"]);
+                        Position = NodeManagement.Get(Task.Params["@FromPosition"]);
+                        if (Target != null)
+                        {
+                            Target.OrgSearchComplete = false;
+                        }
+                        if (Position != null)
+                        {
+                            Position.OrgSearchComplete = false;
+                        }
+                        Position = NodeManagement.Get(Task.Params["@ToPosition"]);
+                        if (Position != null)
+                        {
+                            Position.OrgSearchComplete = false;
+                        }
+                        break;
+                }
+            }
             if (Task.Id.Equals("FormManual"))
             {
                 ManualPortStatusUpdate.LockUI(false);
