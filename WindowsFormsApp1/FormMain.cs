@@ -1,4 +1,3 @@
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,11 +9,8 @@ using log4net.Config;
 using Lilith.UI_Update.Monitoring;
 using log4net;
 using Lilith.UI_Update.Manual;
-using Lilith.UI_Update.OCR;
-using Lilith.UI_Update.WaferMapping;
+
 using System.Threading;
-using Lilith.UI_Update.Authority;
-using DIOControl;
 using Lilith.UI_Update.Layout;
 using Lilith.UI_Update.Alarm;
 using GUI;
@@ -22,34 +18,29 @@ using Lilith.UI_Update.Running;
 using System.Linq;
 using System.Collections.Concurrent;
 using Lilith.Util;
-using Lilith.UI_Update.Communications;
 using EFEMInterface.MessageInterface;
 using EFEMInterface;
 using static EFEMInterface.MessageInterface.RorzeInterface;
 using System.Security.Cryptography;
 using System.Text;
-using SANWA.Utility.Config;
+using TransferControl.CommandConvert;
+using TransferControl.Config;
 
 namespace Lilith
 {
-    public partial class FormMain : Form, IUserInterfaceReport, IEFEMControl
+    public partial class FormMain : Form, IUserInterfaceReport
     {
-        public static RouteControl RouteCtrl;
+        public static TaskFlowManagement TaskFlowCtrl;
         public static RorzeInterface HostControl;
-        public static AlarmMapping AlmMapping;
         private static readonly ILog logger = LogManager.GetLogger(typeof(FormMain));
 
         public static bool AutoReverse = true;
 
         FormAlarm alarmFrom = new FormAlarm();
         private Menu.Monitoring.FormMonitoring formMonitoring = new Menu.Monitoring.FormMonitoring();
-        private Menu.Communications.FormCommunications formCommunications = new Menu.Communications.FormCommunications();
-        private Menu.WaferMapping.FormWaferMapping formWafer = new Menu.WaferMapping.FormWaferMapping();
-        private Menu.Status.FormStatus formStatus = new Menu.Status.FormStatus();
-        private Menu.OCR.FormOCR formOCR = new Menu.OCR.FormOCR();
-        private Menu.SystemSetting.FormSystemSetting formSystem = new Menu.SystemSetting.FormSystemSetting();
+
         private Menu.RunningScreen.FormRunningScreen formTestMode = new Menu.RunningScreen.FormRunningScreen();
-        private Menu.Wafer.FormWafer WaferForm = new Menu.Wafer.FormWafer();
+
         public static GUI.FormManual formManual = null;
 
         public FormMain()
@@ -58,16 +49,12 @@ namespace Lilith
             XmlConfigurator.Configure();
             Initialize();
 
-            HostControl = new RorzeInterface(this);
-            RouteCtrl = new RouteControl(this, HostControl);
-            AlmMapping = new AlarmMapping();
+            
+
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Location = new System.Drawing.Point(-200, 0);
 
-            //SanwaUtil.addPartition();
-            //SanwaUtil.dropPartition();
-            ThreadPool.QueueUserWorkItem(new WaitCallback(DBUtil.consumeSqlCmd));
 
         }
 
@@ -137,9 +124,8 @@ namespace Lilith
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
 
-            RouteCtrl.ConnectAll();
-            AuthorityUpdate.UpdateFuncGroupEnable("INIT");//init 權限
-            //RouteCtrl.ConnectAll();
+            HostControl = new RorzeInterface(this);
+            TaskFlowCtrl = new TaskFlowManagement(HostControl);
 
             this.Width = oldWidth;
             this.Height = oldHeight;
@@ -152,8 +138,8 @@ namespace Lilith
             param.Add("BLUE", "False");
             param.Add("BUZZER1", "False");
             param.Add("BUZZER2", "False");
-            RouteCtrl.DIO.SetIO(param);
-            
+            TaskFlowCtrl.Ctrl.DIO.SetIO(param);
+
 
             ThreadPool.QueueUserWorkItem(new WaitCallback(UpdateCheckBox));
 
@@ -180,7 +166,7 @@ namespace Lilith
             DIOUpdate.UpdateDIOStatus("BUZZER1", "False");
             DIOUpdate.UpdateDIOStatus("BUZZER2", "False");
 
-            foreach(Node node in NodeManagement.GetList())
+            foreach (Node node in NodeManagement.GetList())
             {
                 MonitoringUpdate.EventUpdate(node.Name + "_Enable", node.Enable);
             }
@@ -200,10 +186,7 @@ namespace Lilith
                     formLogin.ShowDialog();
                     break;
                 case "Logout":
-                    AuthorityUpdate.UpdateLogoutInfo();
-                    //disable authroity function
-                    AuthorityUpdate.UpdateFuncGroupEnable("INIT");
-                    ((TabControl)formSystem.Controls["tbcSystemSetting"]).SelectTab(0);
+
                     break;
             }
         }
@@ -245,20 +228,20 @@ namespace Lilith
             }
         }
 
-        
+
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
-            string strMsg = "Move to Home position. OK?";
-            if (MessageBox.Show(strMsg, "Org.Back", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
-            {
-                string Message = "";
-                Transaction txn = new Transaction();
-                txn.Method = Transaction.Command.RobotType.Home;
-                NodeManagement.Get("Robot01").SendCommand(txn, out Message);
-                txn = new Transaction();
-                txn.Method = Transaction.Command.RobotType.Home;
-                NodeManagement.Get("Robot02").SendCommand(txn, out Message);
-            }
+            //string strMsg = "Move to Home position. OK?";
+            //if (MessageBox.Show(strMsg, "Org.Back", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
+            //{
+            //    string Message = "";
+            //    Transaction txn = new Transaction();
+            //    txn.Method = Transaction.Command.RobotType.Home;
+            //    NodeManagement.Get("Robot01").SendCommand(txn);
+            //    txn = new Transaction();
+            //    txn.Method = Transaction.Command.RobotType.Home;
+            //    NodeManagement.Get("Robot02").SendCommand(txn);
+            //}
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -303,8 +286,7 @@ namespace Lilith
 
         private void terminalToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            FormTerminal formTerminal = new FormTerminal();
-            formTerminal.ShowDialog();
+
         }
 
         private void btnTeach_Click(object sender, EventArgs e)
@@ -340,7 +322,7 @@ namespace Lilith
             alarmFrom.Visible = true;
         }
 
-        public void On_Command_Excuted(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Excuted(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
             logger.Debug("On_Command_Excuted");
             string Message = "";
@@ -349,40 +331,60 @@ namespace Lilith
 
             if (Txn.Method == Transaction.Command.LoadPortType.Reset)
             {
-                AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
+                AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
             }
 
-            
+
 
             switch (Node.Type)
             {
                 case "LOADPORT":
+
+                    ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Excuted");
+
                     switch (Txn.Method)
                     {
-                        case Transaction.Command.LoadPortType.GetMapping:
+                        //case Transaction.Command.LoadPortType.GetMapping:
                         case Transaction.Command.LoadPortType.Unload:
                         case Transaction.Command.LoadPortType.MappingUnload:
                         case Transaction.Command.LoadPortType.DoorUp:
                         case Transaction.Command.LoadPortType.InitialPos:
                         case Transaction.Command.LoadPortType.ForceInitialPos:
-                            WaferAssignUpdate.RefreshMapping(Node.Name);
+
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
                             RunningUpdate.UpdateNodesJob(Node.Name);
                             break;
-                        case Transaction.Command.LoadPortType.GetCassetteSize:
-                            ManualPortStatusUpdate.UpdateParameter("CASSETTE_SIZE_tb", Msg.Value);
-                            break;
-                        case Transaction.Command.LoadPortType.GetSlotOffset:
-                            ManualPortStatusUpdate.UpdateParameter("SLOT_OFFSET_tb", Msg.Value);
-                            break;
-                        case Transaction.Command.LoadPortType.GetWaferOffset:
-                            ManualPortStatusUpdate.UpdateParameter("WAFER_OFFSET_tb", Msg.Value);
-                            break;
-                        case Transaction.Command.LoadPortType.GetTweekDistance:
-                            ManualPortStatusUpdate.UpdateParameter("TWEEK_tb", Msg.Value);
-                            break;
-                        case Transaction.Command.LoadPortType.GetSlotPitch:
-                            ManualPortStatusUpdate.UpdateParameter("SLOT_PITCH_tb", Msg.Value);
+                        //case Transaction.Command.LoadPortType.GetCassetteSize:
+                        //    ManualPortStatusUpdate.UpdateParameter("CASSETTE_SIZE_tb", Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetSlotOffset:
+                        //    ManualPortStatusUpdate.UpdateParameter("SLOT_OFFSET_tb", Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetWaferOffset:
+                        //    ManualPortStatusUpdate.UpdateParameter("WAFER_OFFSET_tb", Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetTweekDistance:
+                        //    ManualPortStatusUpdate.UpdateParameter("TWEEK_tb", Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetSlotPitch:
+                        //    ManualPortStatusUpdate.UpdateParameter("SLOT_PITCH_tb", Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.ReadVersion:
+                        //    ManualPortStatusUpdate.UpdateVersion(Node.Name, Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetLED:
+                        //    ManualPortStatusUpdate.UpdateLED(Node.Name, Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.ReadStatus:
+                        //    ManualPortStatusUpdate.UpdateSmifStatus(Node.Name, Msg.Value);
+                        //    break;
+                        //case Transaction.Command.LoadPortType.GetCount:
+
+                        //    break;
+                        case Transaction.Command.LoadPortType.GetMapping:
+                            ManualPortStatusUpdate.UpdateMapping(Node.Name, Msg.Value);
+                            MonitoringUpdate.UpdateNodesJob(Node.Name);
+                            RunningUpdate.UpdateNodesJob(Node.Name);
                             break;
                     }
                     break;
@@ -390,135 +392,40 @@ namespace Lilith
                     switch (Txn.Method)
                     {
                         case Transaction.Command.RobotType.GetMapping:
-                            WaferAssignUpdate.RefreshMapping(Node.CurrentPosition);
+
                             MonitoringUpdate.UpdateNodesJob(Node.CurrentPosition);
                             RunningUpdate.UpdateNodesJob(Node.CurrentPosition);
                             break;
+                        case Transaction.Command.RobotType.GetStatus:
+                            ManualRobotStatusUpdate.UpdateManual("tbRServo",Node.Servo);//update 手動功能畫面
+                            break;
+                        case Transaction.Command.RobotType.GetSpeed:
+                            ManualRobotStatusUpdate.UpdateManual("nudRSpeed", Node.Speed);//update 手動功能畫面
+                            break;
+                        case Transaction.Command.RobotType.GetRIO:
+                            ManualRobotStatusUpdate.UpdateManual("tbRRVacuSolenoid", Node.R_Vacuum_Solenoid);//update 手動功能畫面
+                            break;
+                        case Transaction.Command.RobotType.GetError:
+                            ManualRobotStatusUpdate.UpdateManual("tbRError", Node.LastError);//update 手動功能畫面
+                            break;
+                        case Transaction.Command.RobotType.GetMode:
+                            ManualRobotStatusUpdate.UpdateCbx("cbRMode", Node.Mode);//update 手動功能畫面
+                            break;
+                        //case Transaction.Command.RobotType.GetStatus:
+                        case Transaction.Command.RobotType.GetSV:
+                           // ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
+                            break;
+                        case Transaction.Command.RobotType.GetCombineStatus:
+                            //ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Command);//update 手動功能畫面
+                            break;
                     }
                     break;
-            }
-
-            switch (Txn.FormName)
-            {
-                
-                case "FormStatus":
-                    Util.StateUtil.UpdateSTS(Node.Name, Msg.Value);
-                    break;
-                case "PauseProcedure":
-
-                    break;
-                case "FormManual":
-                    switch (Node.Type)
-                    {
-                        case "SMARTTAG":
-                            if (!Txn.Method.Equals(Transaction.Command.SmartTagType.GetLCDData))
-                            {
-                                //ManualPortStatusUpdate.LockUI(false);
-                            }
-                            break;
-                        case "LOADPORT":
-                            if (!Txn.CommandType.Equals("MOV") && !Txn.CommandType.Equals("HCS"))
-                            {
-                                //ManualPortStatusUpdate.LockUI(false);
-                            }
-                            else
-                            {
-                                if (Txn.Method.Equals(Transaction.Command.LoadPortType.Reset))
-                                {
-                                   // ManualPortStatusUpdate.LockUI(false);
-                                }
-                            }
-                            ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Excuted");
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.LoadPortType.ReadVersion:
-                                    ManualPortStatusUpdate.UpdateVersion(Node.Name, Msg.Value);
-                                    break;
-                                case Transaction.Command.LoadPortType.GetLED:
-                                    ManualPortStatusUpdate.UpdateLED(Node.Name, Msg.Value);
-                                    break;
-                                case Transaction.Command.LoadPortType.ReadStatus:
-                                    ManualPortStatusUpdate.UpdateSmifStatus(Node.Name, Msg.Value);
-                                    break;
-                                case Transaction.Command.LoadPortType.GetCount:
-
-                                    break;
-                                case Transaction.Command.LoadPortType.GetMapping:
-                                    ManualPortStatusUpdate.UpdateMapping(Node.Name, Msg.Value);
-                                    break;
-                            }
-                            break;
-                        case "OCR":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.OCRType.GetOnline:
-                                    //OCRUpdate.UpdateOCRStatus(Node.Name, Msg.Value);
-                                    break;
-                            }
-                            break;
-                        case "ROBOT":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.RobotType.Speed:
-                                case Transaction.Command.RobotType.Mode:
-                                case Transaction.Command.RobotType.Reset:
-                                case Transaction.Command.RobotType.Servo:
-                                    
-                                    ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面 
-                                    break;
-                                case Transaction.Command.RobotType.GetSpeed:
-                                case Transaction.Command.RobotType.GetRIO:
-                                case Transaction.Command.RobotType.GetError:
-                                case Transaction.Command.RobotType.GetMode:
-                                case Transaction.Command.RobotType.GetStatus:
-                                case Transaction.Command.RobotType.GetSV:
-                                    ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
-                                    break;
-                                case Transaction.Command.RobotType.GetCombineStatus:
-                                    ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Command);//update 手動功能畫面
-                                    break;
-                            }
-                            break;
-                        case "ALIGNER":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.AlignerType.Speed:
-                                case Transaction.Command.AlignerType.Mode:
-                                case Transaction.Command.AlignerType.Reset:
-                                case Transaction.Command.AlignerType.Servo:
-                                    //Thread.Sleep(500);
-                                    ////向Aligner 詢問狀態
-                                    //Node aligner = NodeManagement.Get(Node.Name);
-                                    //String script_name = aligner.Brand.ToUpper().Equals("SANWA") ? "AlignerStateGet" : "AlignerStateGet(Kawasaki)";
-                                    ////aligner.ExcuteScript(script_name, "FormManual", out Message);
-                                    //ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 
-                                    //break;
-                                case Transaction.Command.AlignerType.GetMode:
-                                case Transaction.Command.AlignerType.GetSV:
-                                case Transaction.Command.AlignerType.GetStatus:
-                                case Transaction.Command.AlignerType.GetSpeed:
-                                case Transaction.Command.AlignerType.GetRIO:
-                                case Transaction.Command.AlignerType.GetError:
-                                    ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
-                                    break;
-                                case Transaction.Command.RobotType.GetCombineStatus:
-                                    ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Command);//update 手動功能畫面
-                                    break;
-                            }
-                            break;
-
-                    }
-                    break;
-               
-                default:
-
-                    break;
-            }
+            }   
         }
 
-        public void On_Command_Error(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Error(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
-            switch (Txn.FormName)
+            switch (Txn.TaskObj.Id)
             {
                 case "FormManual":
                     switch (Node.Type)
@@ -531,113 +438,44 @@ namespace Lilith
                     break;
             }
             logger.Debug("On_Command_Error");
-            AlarmInfo CurrentAlarm = new AlarmInfo();
-            CurrentAlarm.NodeName = Node.Name;
-            CurrentAlarm.AlarmCode = Msg.Value;
-            CurrentAlarm.NeedReset = true;
-            try
-            {
 
-                AlarmMessage Detail = AlmMapping.Get(Node.Name, CurrentAlarm.AlarmCode);
 
-                CurrentAlarm.SystemAlarmCode = Detail.CodeID;
-                CurrentAlarm.Desc = Detail.Code_Cause;
-                CurrentAlarm.EngDesc = Detail.Code_Cause_English;
-                CurrentAlarm.Type = Detail.Code_Type;
-                CurrentAlarm.IsStop = Detail.IsStop;
-                if (CurrentAlarm.IsStop)
-                {
-                   // RouteCtrl.Stop();
-                }
-            }
-            catch (Exception e)
-            {
-                CurrentAlarm.Desc = "未定義";
-                logger.Error(Node.Controller + "-" + Node.AdrNo + "(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
-            }
-            CurrentAlarm.TimeStamp = DateTime.Now;
-
-            AlarmManagement.Add(CurrentAlarm);
-
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
-    
         }
 
-        public void On_Command_Finished(Node Node, Transaction Txn, ReturnMessage Msg)
+        public void On_Command_Finished(Node Node, Transaction Txn, CommandReturnMessage Msg)
         {
             logger.Debug("On_Command_Finished");
             //Transaction txn = new Transaction();
-            switch (Txn.FormName)
+            switch (Node.Type)
             {
-                case "ChangeAlignWaferSize":
-                    switch (Node.Type)
+                case "SMARTTAG":
+                    switch (Txn.Method)
                     {
-                        case "ROBOT":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.RobotType.GetWait:
-                                    Node.WaitForFinish = false;
-                                    break;
-                            }
+                        case Transaction.Command.SmartTagType.GetLCDData:
+                            ManualPortStatusUpdate.UpdateID(Msg.Value);
+                            break;
+                    }
+                    //ManualPortStatusUpdate.LockUI(false);
+                    break;
+                case "LOADPORT":
+
+                    ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Finished");
+                    //ManualPortStatusUpdate.LockUI(false);
+                    switch (Txn.Method)
+                    {
+                        case Transaction.Command.LoadPortType.GetMapping:
+                            ManualPortStatusUpdate.UpdateMapping(Node.Name, Node.MappingResult);
+                            MonitoringUpdate.UpdateNodesJob(Node.Name);
+                            RunningUpdate.UpdateNodesJob(Node.Name);
                             break;
                     }
                     break;
-                case "FormManual":
 
-                    switch (Node.Type)
-                    {
-                        case "SMARTTAG":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.SmartTagType.GetLCDData:
-                                    ManualPortStatusUpdate.UpdateID(Msg.Value);
-                                    break;
-                            }
-                            //ManualPortStatusUpdate.LockUI(false);
-                            break;
-                        case "LOADPORT":
-
-                            ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Finished");
-                            //ManualPortStatusUpdate.LockUI(false);
-
-                            break;
-
-                        case "ROBOT":
-                            ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
-                            break;
-                        case "ALIGNER":
-                            ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
-                            break;
-                    }
+                case "ROBOT":
+                    //ManualRobotStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
                     break;
-                default:
-                    switch (Node.Type)
-                    {
-                        case "ROBOT":
-                        //switch (Txn.Method)
-                        //{
-                        //    case Transaction.Command.RobotType.Mapping: //when 200mm port mapped by robot's fork, then port's busy switch to false.
-                        //        NodeManagement.Get(Txn.Position).Busy = false;
-                        //        break;
-                        //}
-                        //break;
-                        case "LOADPORT":
-                            switch (Txn.Method)
-                            {
-
-                            }
-                            break;
-                        case "OCR":
-                            switch (Txn.Method)
-                            {
-                                case Transaction.Command.OCRType.Read:
-                                    OCRUpdate.UpdateOCRRead(Node.Name, Msg.Value, Txn.TargetJobs[0]);
-
-                                    break;
-                            }
-                            break;
-                    }
+                case "ALIGNER":
+                   // ManualAlignerStatusUpdate.UpdateGUI(Txn, Node.Name, Msg.Value);//update 手動功能畫面
                     break;
             }
         }
@@ -645,37 +483,10 @@ namespace Lilith
         public void On_Command_TimeOut(Node Node, Transaction Txn)
         {
             logger.Debug("On_Command_TimeOut");
-            AlarmInfo CurrentAlarm = new AlarmInfo();
-            CurrentAlarm.NodeName = Node.Name;
-            CurrentAlarm.AlarmCode = "00200002";
-            CurrentAlarm.NeedReset = false;
-            try
-            {
 
-                AlarmMessage Detail = AlmMapping.Get("SYSTEM", CurrentAlarm.AlarmCode);
-
-                CurrentAlarm.SystemAlarmCode = Detail.CodeID;
-                CurrentAlarm.Desc = Detail.Code_Cause;
-                CurrentAlarm.EngDesc = Detail.Code_Cause_English;
-                CurrentAlarm.Type = Detail.Code_Type;
-                CurrentAlarm.IsStop = Detail.IsStop;
-                if (CurrentAlarm.IsStop)
-                {
-                    //RouteCtrl.Stop();
-                }
-            }
-            catch (Exception e)
-            {
-                CurrentAlarm.Desc = "未定義";
-                logger.Error(Node.Controller + "-" + Node.AdrNo + "(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
-            }
-            CurrentAlarm.TimeStamp = DateTime.Now;
-            AlarmManagement.Add(CurrentAlarm);
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
 
-        public void On_Event_Trigger(Node Node, ReturnMessage Msg)
+        public void On_Event_Trigger(Node Node, CommandReturnMessage Msg)
         {
             logger.Debug("On_Event_Trigger");
 
@@ -685,7 +496,7 @@ namespace Lilith
                 switch (Node.Type)
                 {
                     case "LOADPORT":
-                        
+
                         break;
                 }
             }
@@ -703,19 +514,15 @@ namespace Lilith
             switch (Node.Name)
             {
                 case "ROBOT01":
-                case "ROBOT02":
-                    ManualRobotStatusUpdate.UpdateRobotStatus(Node.Name, Status);//update 手動功能畫面
+                    ManualRobotStatusUpdate.UpdateManual("tbRStatus", Status);//update 手動功能畫面
                     break;
-                case "ALIGNER01":
-                case "ALIGNER02":
-                    ManualAlignerStatusUpdate.UpdateAlignerStatus(Node.Name, Status);//update 手動功能畫面
-                    break;
+                
             }
         }
 
         public void On_Eqp_State_Changed(string OldStatus, string NewStatus)
         {
-           // NodeStatusUpdate.UpdateCurrentState(NewStatus);
+            // NodeStatusUpdate.UpdateCurrentState(NewStatus);
             //StateRecord.EqpStateUpdate("Sorter", OldStatus, NewStatus);
         }
 
@@ -755,11 +562,11 @@ namespace Lilith
             logger.Debug("On_Controller_State_Changed");
         }
 
-       
 
-        
 
-       
+
+
+
 
         public void On_Mode_Changed(string Mode)
         {
@@ -768,26 +575,19 @@ namespace Lilith
             ConnectionStatusUpdate.UpdateModeStatus(Mode);
             RunningUpdate.UpdateModeStatus(Mode);
             MonitoringUpdate.UpdateStatus(Mode);
-            foreach (Node port in NodeManagement.GetLoadPortList())
-            {
-                WaferAssignUpdate.RefreshMapping(port.Name);
-                if (Mode.Equals("Stop"))
-                {
-                    WaferAssignUpdate.ResetAssignCM(port.Name, true);
-                }
-            }
+
 
         }
 
         public void On_Job_Location_Changed(Job Job)
         {
             logger.Debug("On_Job_Location_Changed");
-            MonitoringUpdate.UpdateJobMove(Job.Job_Id);
-            RunningUpdate.UpdateJobMove(Job.Job_Id);
+            MonitoringUpdate.UpdateJobMove(Job.Uid);
+            RunningUpdate.UpdateJobMove(Job.Uid);
 
         }
 
-        
+
 
 
 
@@ -800,93 +600,18 @@ namespace Lilith
         }
 
 
-        public void On_Data_Chnaged(string Parameter, string Value, string Type)
+       
+        public void On_Alarm_Happen(AlarmManagement.Alarm Alarm)
         {
-            switch (Parameter)
-            {
-                case "BF1_DOOR_OPEN":
-                case "BF1_ARM_EXTEND_ENABLE":
-                case "BF2_DOOR_OPEN":
-                case "BF2_ARM_EXTEND_ENABLE":
-                case "ARM_NOT_EXTEND_BF1":
-                case "ARM_NOT_EXTEND_BF2":
-                    DIOUpdate.UpdateInterLock(Parameter, Value);
-                    break;                
-                default:
-                    DIOUpdate.UpdateDIOStatus(Parameter, Value);
-                    break;
-            }
 
-
-        }
-
-        public void On_Alarm_Happen(string DIOName, string ErrorCode)
-        {
-            
-            AlarmInfo CurrentAlarm = new AlarmInfo();
-            CurrentAlarm.NodeName = DIOName;
-            CurrentAlarm.AlarmCode = ErrorCode;
-            CurrentAlarm.NeedReset = false;
-            try
-            {
-
-                AlarmMessage Detail = AlmMapping.Get("DIO", CurrentAlarm.AlarmCode);
-
-                CurrentAlarm.SystemAlarmCode = Detail.CodeID;
-                CurrentAlarm.Desc = Detail.Code_Cause;
-                CurrentAlarm.EngDesc = Detail.Code_Cause_English;
-                CurrentAlarm.Type = Detail.Code_Type;
-                CurrentAlarm.IsStop = Detail.IsStop;
-
-                
-                if (CurrentAlarm.IsStop)
-                {
-                   // RouteCtrl.Stop();
-                }
-            }
-            catch (Exception e)
-            {
-                CurrentAlarm.Desc = "未定義";
-                logger.Error(DIOName + "(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
-            }
-            CurrentAlarm.TimeStamp = DateTime.Now;
-            AlarmManagement.Add(CurrentAlarm);
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
+            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
             AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
+
 
         public void On_Connection_Error(string DIOName, string ErrorMsg)
         {
-            //斷線 發ALARM
-            logger.Debug("On_Error_Occurred");
-            AlarmInfo CurrentAlarm = new AlarmInfo();
-            CurrentAlarm.NodeName = DIOName;
-            CurrentAlarm.AlarmCode = "00200001";
-            CurrentAlarm.NeedReset = false;
-            try
-            {
 
-                AlarmMessage Detail = AlmMapping.Get("DIO", CurrentAlarm.AlarmCode);
-
-                CurrentAlarm.SystemAlarmCode = Detail.CodeID;
-                CurrentAlarm.Desc = Detail.Code_Cause;
-                CurrentAlarm.EngDesc = Detail.Code_Cause_English;
-                CurrentAlarm.Type = Detail.Code_Type;
-                CurrentAlarm.IsStop = Detail.IsStop;
-                if (CurrentAlarm.IsStop)
-                {
-                    //RouteCtrl.Stop();
-                }
-            }
-            catch (Exception e)
-            {
-                CurrentAlarm.Desc = "未定義";
-                logger.Error(DIOName + "(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
-            }
-            CurrentAlarm.TimeStamp = DateTime.Now;
-            AlarmManagement.Add(CurrentAlarm);
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
 
 
@@ -898,63 +623,63 @@ namespace Lilith
             switch ((sender as Button).Name)
             {
                 case "RED_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "RED").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("RED", "False");
+                        MainControl.Instance.DIO.SetIO("RED", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("RED", "True");
+                        MainControl.Instance.DIO.SetIO("RED", "True");
                     }
                     break;
                 case "ORANGE_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "ORANGE").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("ORANGE", "False");
+                        MainControl.Instance.DIO.SetIO("ORANGE", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("ORANGE", "True");
+                        MainControl.Instance.DIO.SetIO("ORANGE", "True");
                     }
                     break;
                 case "GREEN_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "GREEN").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("GREEN", "False");
+                        MainControl.Instance.DIO.SetIO("GREEN", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("GREEN", "True");
+                        MainControl.Instance.DIO.SetIO("GREEN", "True");
                     }
                     break;
                 case "BLUE_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "BLUE").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("BLUE", "False");
+                        MainControl.Instance.DIO.SetIO("BLUE", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("BLUE", "True");
+                        MainControl.Instance.DIO.SetIO("BLUE", "True");
                     }
                     break;
                 case "BUZZER1_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "BUZZER1").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("BUZZER1", "False");
+                        MainControl.Instance.DIO.SetIO("BUZZER1", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("BUZZER1", "True");
+                        MainControl.Instance.DIO.SetIO("BUZZER1", "True");
                     }
                     break;
                 case "BUZZER2_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIO("DOUT", "BUZZER2").ToUpper().Equals("TRUE"))
                     {
-                        RouteControl.Instance.DIO.SetIO("BUZZER2", "False");
+                        MainControl.Instance.DIO.SetIO("BUZZER2", "False");
                     }
                     else
                     {
-                        RouteControl.Instance.DIO.SetIO("BUZZER2", "True");
+                        MainControl.Instance.DIO.SetIO("BUZZER2", "True");
                     }
                     break;
             }
@@ -1063,7 +788,7 @@ namespace Lilith
                 StartPosition = FormStartPosition.CenterScreen
             };
             Label lblUser = new Label() { Left = 30, Top = 20, Text = "User", Width = 200 };
-            TextBox tbUser = new TextBox() { Left = 30, Top = 50, Width = 350 , Text = "Administrator"};
+            TextBox tbUser = new TextBox() { Left = 30, Top = 50, Width = 350, Text = "Administrator" };
             Label lblPassword = new Label() { Left = 30, Top = 90, Text = "Password", Width = 200 };
             TextBox tbPassword = new TextBox() { Left = 30, Top = 120, Width = 350 };
             tbPassword.PasswordChar = '*';
@@ -1123,22 +848,12 @@ namespace Lilith
 
         private void tbcMian_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tbcMian.SelectedTab.Text.Equals("Status"))
-            {
-                formStatus.Focus();
-            }
+
         }
 
         private void menuMaintenace_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            foreach (ToolStripMenuItem item in menuMaintenace.Items)
-            {
-                string user_group = lbl_login_group.Text;
-                string fun_form = "FormMain";
-                string fun_ref = item.Name;
-                Boolean enable = AuthorityUpdate.getFuncEnable(user_group, fun_form, fun_ref);
-                item.Enabled = enable;
-            }
+
         }
 
         private void Conn_gv_RowEnter(object sender, DataGridViewCellEventArgs e)
@@ -1146,10 +861,7 @@ namespace Lilith
 
         }
 
-        public void On_CommandMessage(string msg)
-        {
-            MonitoringUpdate.LogUpdate(msg);
-        }
+      
 
         public void On_EFEM_Status_changed(string status)
         {
@@ -1157,113 +869,22 @@ namespace Lilith
             NodeStatusUpdate.UpdateCurrentState(status);
         }
 
-        public void On_Connection_Connected()
+       
+
+      
+
+       
+
+        public void On_TaskJob_Aborted(TaskFlowManagement.CurrentProcessTask Task)
         {
-            //MonitoringUpdate.ConnectUpdate("Connected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Online");
-            MonitoringUpdate.LogUpdate("Connected");
+            ManualPortStatusUpdate.LockUI(false);
         }
 
-        public void On_Connection_Connecting()
+        public void On_TaskJob_Finished(TaskFlowManagement.CurrentProcessTask Task)
         {
-            //MonitoringUpdate.ConnectUpdate("Connecting");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Connecting");
-            MonitoringUpdate.LogUpdate("Connecting");
-        }
-
-        public void On_Connection_Disconnected()
-        {
-            //MonitoringUpdate.ConnectUpdate("Disconnected");
-            ConnectionStatusUpdate.UpdateOnlineStatus("Offline");
-            MonitoringUpdate.LogUpdate("Disconnected");
-        }
-
-        public void On_TaskJob_Aborted(TaskJobManagment.CurrentProceedTask Task, string NodeName, string ReportType, string Message)
-        {
-            Node Target;
-            Node Position;
-            if (!ReportType.Equals("CAN"))
-            {
-                switch (Task.ProceedTask.TaskName)
-                {
-                    case "LOAD":
-                    case "UNLOAD":
-                        Target = NodeManagement.Get(Task.Params["@Target"]);
-                        Position = NodeManagement.Get(Task.Params["@Position"]);
-                        if (Target != null)
-                        {
-                            Target.OrgSearchComplete = false;
-                        }
-                        if (Position != null)
-                        {
-                            Position.OrgSearchComplete = false;
-                        }
-                        break;
-                    case "TRANS":
-                        Target = NodeManagement.Get(Task.Params["@Target"]);
-                        Position = NodeManagement.Get(Task.Params["@FromPosition"]);
-                        if (Target != null)
-                        {
-                            Target.OrgSearchComplete = false;
-                        }
-                        if (Position != null)
-                        {
-                            Position.OrgSearchComplete = false;
-                        }
-                        Position = NodeManagement.Get(Task.Params["@ToPosition"]);
-                        if (Position != null)
-                        {
-                            Position.OrgSearchComplete = false;
-                        }
-                        break;
-                }
-            }
-            if (Task.Id.Equals("FormManual"))
-            {
+            
                 ManualPortStatusUpdate.LockUI(false);
-            }
-            AlarmInfo CurrentAlarm = new AlarmInfo();
-            CurrentAlarm.NodeName = "SYSTEM";
-            CurrentAlarm.AlarmCode = Message;
-            CurrentAlarm.NeedReset = false;
-            try
-            {
-
-                AlarmMessage Detail = AlmMapping.Get("SYSTEM", CurrentAlarm.AlarmCode);
-                if (!Detail.Code_Group.Equals("UNDEFINITION"))
-                {
-                    CurrentAlarm.SystemAlarmCode = Detail.CodeID;
-                    CurrentAlarm.Desc = Detail.Code_Cause;
-                    CurrentAlarm.EngDesc = Detail.Code_Cause_English;
-                    CurrentAlarm.Type = Detail.Code_Type;
-                    CurrentAlarm.IsStop = Detail.IsStop;
-                    if (CurrentAlarm.IsStop)
-                    {
-                        //RouteCtrl.Stop();
-                    }
-                    CurrentAlarm.TimeStamp = DateTime.Now;
-
-                    AlarmManagement.Add(CurrentAlarm);
-
-                    AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
-                    AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
-                }
-            }
-            catch (Exception e)
-            {
-                CurrentAlarm.Desc = "未定義";
-                logger.Error("(GetAlarmMessage)" + e.Message + "\n" + e.StackTrace);
-            }
-           
-
-        }
-
-        public void On_TaskJob_Finished(TaskJobManagment.CurrentProceedTask Task)
-        {
-            if (Task.Id.Equals("FormManual"))
-            {
-                ManualPortStatusUpdate.LockUI(false);
-            }
+            
         }
 
         private void btnManual_Click(object sender, EventArgs e)
@@ -1281,14 +902,73 @@ namespace Lilith
 
         public void On_Node_Connection_Changed(string NodeName, string Status)
         {
-            ConnectionStatusUpdate.UpdateControllerStatus(NodeName, Status);
-            Node node = NodeManagement.Get(NodeName);
+            if (NodeName.Equals("EFEM"))
+            {
+                switch (Status)
+                {
+                    case "Connected":
+                        ConnectionStatusUpdate.UpdateOnlineStatus("Online");
+                        MonitoringUpdate.LogUpdate("Connected");
+                        break;
+                    case "Connecting":
+                        ConnectionStatusUpdate.UpdateOnlineStatus("Connecting");
+                        MonitoringUpdate.LogUpdate("Connecting");
+                        break;
+                    case "Disconnected":
+                        ConnectionStatusUpdate.UpdateOnlineStatus("Offline");
+                        MonitoringUpdate.LogUpdate("Disconnected");
+                        break;
+                }
 
-            
+            }
+            else
+            {
+                ConnectionStatusUpdate.UpdateControllerStatus(NodeName, Status);
+                Node node = NodeManagement.Get(NodeName);
+
+            }
 
 
             logger.Debug("On_Node_Connection_Changed");
         }
+
+
+        public void On_DIO_Data_Chnaged(string Parameter, string Value, string Type)
+        {
+            switch (Parameter)
+            {
+                case "BF1_DOOR_OPEN":
+                case "BF1_ARM_EXTEND_ENABLE":
+                case "BF2_DOOR_OPEN":
+                case "BF2_ARM_EXTEND_ENABLE":
+                case "ARM_NOT_EXTEND_BF1":
+                case "ARM_NOT_EXTEND_BF2":
+                    DIOUpdate.UpdateInterLock(Parameter, Value);
+                    break;
+                default:
+                    DIOUpdate.UpdateDIOStatus(Parameter, Value);
+                    break;
+            }
+        }
+
+
+
+        public void On_TaskJob_Ack(TaskFlowManagement.CurrentProcessTask Task)
+        {
+
+        }
+
+
+        public void On_Message_Log(string Type, string Message)
+        {
+            MonitoringUpdate.LogUpdate(Message);
+        }
+
+        public void On_Status_Changed(string Type, string Message)
+        {
+
+        }
+
 
     }
 }

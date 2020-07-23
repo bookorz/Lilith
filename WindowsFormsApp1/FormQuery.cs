@@ -3,7 +3,6 @@ using MySql.Data.MySqlClient;
 using NPOI;
 using NPOI.HSSF.UserModel;
 using NPOI.SS.UserModel;
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,7 +53,7 @@ namespace GUI
             try
             {
                 this.Cursor = Cursors.WaitCursor;
-                DBUtil dBUtil = new DBUtil();
+                //DBUtil dBUtil = new DBUtil();
 
                 //set parameter
                 Dictionary<string, object> param = new Dictionary<string, object>();
@@ -71,7 +70,7 @@ namespace GUI
                 param.Add("@cond_3", cond_3);
                 param.Add("@limit", Int32.Parse(cbLimitCnt.Text));
 
-                dataTable = dBUtil.GetDataTable(getSqlContent(sqlScript), param);
+                //dataTable = dBUtil.GetDataTable(getSqlContent(sqlScript), param);
                 gdvData.DataSource = dataTable;
                 btnExport.Enabled = true;
             }

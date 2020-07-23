@@ -14,7 +14,7 @@ namespace Lilith.UI_Update.Alarm
     class AlarmUpdate
     {
         static ILog logger = LogManager.GetLogger(typeof(AlarmUpdate));
-        delegate void UpdateAlarm(List<AlarmInfo> AlarmList);
+        delegate void UpdateAlarm(List<AlarmManagement.Alarm> AlarmList);
         delegate void UpdateSignal(string Name, string Signal);
         delegate void UpdateMsg(string Msg);
 
@@ -22,7 +22,7 @@ namespace Lilith.UI_Update.Alarm
 
         
 
-        public static void UpdateAlarmList(List<AlarmInfo> AlarmList)
+        public static void UpdateAlarmList(List<AlarmManagement.Alarm> AlarmList)
         {
             try
             {
@@ -59,9 +59,9 @@ namespace Lilith.UI_Update.Alarm
                     //NodeStatusUpdate.UpdateCurrentState(FormMain.RouteCtrl.EqpState);
                     if (AlarmList.Count() != 0)
                     {
-                       
                         form.Visible = true;
-                        
+                        form.WindowState = FormWindowState.Normal;
+                        Application.OpenForms[form.Name].Focus();
                     }
                     else
                     {
@@ -79,7 +79,7 @@ namespace Lilith.UI_Update.Alarm
 
         }
 
-        public static void UpdateAlarmHistory(List<AlarmInfo> AlarmList)
+        public static void UpdateAlarmHistory(List<AlarmManagement.Alarm> AlarmList)
         {
             try
             {

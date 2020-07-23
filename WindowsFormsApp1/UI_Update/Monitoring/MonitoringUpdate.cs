@@ -374,7 +374,7 @@ namespace Lilith.UI_Update.Monitoring
                             {
 
                                 Job tmp;
-                                if (node.JobList.TryGetValue(i.ToString(), out tmp))
+                                if ((tmp = JobManagement.Get(node.Name, i.ToString())) != null)
                                 {
                                     present.Text = tmp.Host_Job_Id;
                                     switch (present.Text)
@@ -398,8 +398,9 @@ namespace Lilith.UI_Update.Monitoring
                                 }
                                 else
                                 {
-                                    present.Text = "";
-                                    present.BackColor = Color.White;
+                                    present.Text = "No wafer";
+                                    present.BackColor = Color.DimGray;
+                                    present.ForeColor = Color.White;
                                 }
                             }
                         }

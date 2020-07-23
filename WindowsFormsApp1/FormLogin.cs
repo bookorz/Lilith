@@ -1,7 +1,5 @@
-﻿using Lilith.UI_Update.Authority;
-using Lilith.Util;
+﻿using Lilith.Util;
 using log4net;
-using SANWA.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +16,7 @@ namespace GUI
     public partial class FormLogin : Form
     {
         //ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
-        ILog log = LogManager.GetLogger("Database");
+        ILog log = LogManager.GetLogger("FormLogin");
         public FormLogin()
         {
             InitializeComponent();
@@ -33,49 +31,23 @@ namespace GUI
         {
 
             Boolean result = false;
-            //set SQL
-            StringBuilder sql = new StringBuilder();
-            sql.Append("\n SELECT user_id, user_name, user_group_id");
-            sql.Append("\n   FROM account ");
-            sql.Append("\n  WHERE user_id = @user_id ");
-            sql.Append("\n    AND password = MD5(@password)");
-            //set parameter
-            Dictionary<string, object> param = new Dictionary<string, object>();
-            param.Add("@user_id", tbUserID.Text);
-            param.Add("@password", tbPassword.Text);
-            //Query
-            DBUtil dBUtil = new DBUtil();
-            DataTableReader rs = dBUtil.GetDataReader(sql.ToString(), param);
-            if (rs != null)
+            string user_id = tbUserID.Text;
+            string user_pwd = tbPassword.Text;
+            if (user_id=="SANWA"&& user_pwd=="ADMIN123")
             {
-                //Console.Write("\n ID:" + rs["user_id"] + " Password:" + rs["password"] + " MD5:" + rs["md5"]);
 
-                string user_id = "";
-                string user_name = "";
-                string user_group_id = "";
-                while (rs.Read())
-                {
-                    user_id = (string)rs["user_id"];
-                    user_name = (string)rs["user_name"];
-                    user_group_id = (string)rs["user_group_id"];
-                    result = true;
-                }
-                rs.Close();
-                if (result)
-                {
-                    AuthorityUpdate.UpdateLoginInfo(user_id, user_name, user_group_id);
-                    string msg = "{\"user_id\": " + user_id + ", \"name\": \"" + user_name + "\", \"action\": \"Login\"}";
-                    log.Info(msg);
-                    //SanwaUtil.addActionLog("Authority", "Login", user_id);// add record to log_system_action
-                    SanwaUtil.addActionLog("Authority", "Login", user_id, "使用者登錄");// add record to log_system_action
-                    //log.Debug(msg);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Please check data and login again.", "Login Fail");
-                }
+                string msg = "{\"user_id\": " + user_id + "\", \"action\": \"Login\"}";
+                log.Info(msg);
+                //SanwaUtil.addActionLog("Authority", "Login", user_id);// add record to log_system_action
+               
+                                                                               //log.Debug(msg);
+                this.Close();
             }
+            else
+            {
+                MessageBox.Show("Please check data and login again.", "Login Fail");
+            }
+
 
         }
 

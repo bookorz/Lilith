@@ -542,7 +542,7 @@ namespace Lilith.UI_Update.Manual
                     if (portName.Text.Equals(NodeName))
                     {
                         Node port = NodeManagement.Get(NodeName);
-                        MessageParser parser = new MessageParser(port.Brand);
+                        MessageParser parser = new MessageParser(port.Vendor);
                         port.Status = parser.ParseMessage(Transaction.Command.LoadPortType.ReadStatus, Data);
 
                         foreach (KeyValuePair<string, string> item in port.Status)

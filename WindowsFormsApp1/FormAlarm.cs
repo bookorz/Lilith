@@ -26,39 +26,20 @@ namespace Lilith
             Transaction Txn;
             
 
-            foreach (AlarmInfo eachA in AlarmManagement.GetAll())
-            {
-                if (!eachA.NeedReset)
-                {
-                    AlarmManagement.Remove(eachA);
-                }
-            }
-
             
 
-            foreach (Node node in NodeManagement.GetList())
-            {
-                node.HasAlarm = false;
-            }
+            //var NodeList = AlarmManagement.GetCurrent().GroupBy(t => t.nodeName);
 
-            var NodeList = AlarmManagement.GetAll().GroupBy(t => t.NodeName);
-            foreach (var group in NodeList)
-            {
-                string Message = "";
-                Txn = new Transaction();
-                Txn.Method = Transaction.Command.RobotType.Reset;
-                Txn.FormName = "";
-                //NodeManagement.Get(group.First().NodeName).State = "Alarm";
-                NodeManagement.Get(group.First().NodeName).SendCommand(Txn,out Message);
-                AlarmManagement.Remove(group.First().NodeName);
-            }
+           
+            TaskFlowManagement.Excute(TaskFlowManagement.Command.RESET_ALL).Promise();
             //NodeStatusUpdate.UpdateCurrentState("Idle");
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
+            AlarmManagement.ClearALL();
+            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
         }
 
         private void AlarmFrom_Load(object sender, EventArgs e)
         {
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetAll());
+            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
         }
 
         private void AlarmFrom_FormClosing(object sender, FormClosingEventArgs e)

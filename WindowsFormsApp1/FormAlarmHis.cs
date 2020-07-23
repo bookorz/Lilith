@@ -25,12 +25,16 @@ namespace Lilith
         {
             From.Value = DateTime.Now.AddDays(-1);
             To.Value = DateTime.Now;
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory(From.Value, To.Value));
+            AlarmUpdate.UpdateAlarmHistory((from almHis in AlarmManagement.GetHistory()
+                                           where almHis.TimeStamp.CompareTo(From.Value)>=0 && almHis.TimeStamp.CompareTo(To.Value) <= 0
+                                           select almHis).ToList());
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory(From.Value, To.Value));
+            AlarmUpdate.UpdateAlarmHistory((from almHis in AlarmManagement.GetHistory()
+                                            where almHis.TimeStamp.CompareTo(From.Value) >= 0 && almHis.TimeStamp.CompareTo(To.Value) <= 0
+                                            select almHis).ToList());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using log4net;
 using Newtonsoft.Json;
-using SANWA.Utility;
+
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransferControl.Config;
 using TransferControl.Engine;
 using TransferControl.Management;
 
@@ -19,30 +20,6 @@ namespace Lilith.UI_Update.Monitoring
         static ILog logger = LogManager.GetLogger(typeof(NodeStatusUpdate));
         delegate void UpdateNode(string Device_ID, string State);
         delegate void UpdateState(string State);
-        static List<Setting> SignalSetting;
-        class Setting
-        {
-            public string Eqp_Status { get; set; }
-            public bool Is_Alarm { get; set; }
-            public string Red { get; set; }
-            public string Orange { get; set; }
-            public string Blue { get; set; }
-            public string Green { get; set; }
-            public string Buzzer1 { get; set; }
-            public string Buzzer2 { get; set; }
-        }
-
-        public static void InitialSetting()
-        {
-            DBUtil dBUtil = new DBUtil();
-
-            string Sql = @"select * from config_signal_tower";
-            DataTable dt = dBUtil.GetDataTable(Sql, null);
-
-            string str_json = JsonConvert.SerializeObject(dt, Formatting.Indented);
-            SignalSetting = JsonConvert.DeserializeObject<List<Setting>>(str_json);
-
-        }
 
         public static void UpdateNodeState(string Device_ID, string State)
         {

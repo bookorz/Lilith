@@ -30,8 +30,6 @@ namespace Lilith
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer13 = new System.Windows.Forms.SplitContainer();
             this.groupBox54 = new System.Windows.Forms.GroupBox();
             this.Mode_btn = new System.Windows.Forms.Button();
@@ -44,7 +42,7 @@ namespace Lilith
             this.SafetyRelay_Signal = new System.Windows.Forms.Button();
             this.IonizerAlarm_Signal = new System.Windows.Forms.Button();
             this.FFUAlarm_Signal = new System.Windows.Forms.Button();
-            this.VACAlarm_Signal = new System.Windows.Forms.Button();
+            this.Vacuum_Signal = new System.Windows.Forms.Button();
             this.DoorSwitch_Signal = new System.Windows.Forms.Button();
             this.CurrentState_btn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -57,7 +55,6 @@ namespace Lilith
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.Conn_gv = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Mute_chk = new System.Windows.Forms.CheckBox();
             this.BUZZER2_Signal = new System.Windows.Forms.Button();
@@ -112,7 +109,6 @@ namespace Lilith
             this.groupBox5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Conn_gv)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -188,7 +184,7 @@ namespace Lilith
             this.groupBox5.Controls.Add(this.SafetyRelay_Signal);
             this.groupBox5.Controls.Add(this.IonizerAlarm_Signal);
             this.groupBox5.Controls.Add(this.FFUAlarm_Signal);
-            this.groupBox5.Controls.Add(this.VACAlarm_Signal);
+            this.groupBox5.Controls.Add(this.Vacuum_Signal);
             this.groupBox5.Controls.Add(this.DoorSwitch_Signal);
             this.groupBox5.Controls.Add(this.CurrentState_btn);
             resources.ApplyResources(this.groupBox5, "groupBox5");
@@ -230,12 +226,12 @@ namespace Lilith
             this.FFUAlarm_Signal.Name = "FFUAlarm_Signal";
             this.FFUAlarm_Signal.UseVisualStyleBackColor = false;
             // 
-            // VACAlarm_Signal
+            // Vacuum_Signal
             // 
-            resources.ApplyResources(this.VACAlarm_Signal, "VACAlarm_Signal");
-            this.VACAlarm_Signal.BackColor = System.Drawing.Color.Gray;
-            this.VACAlarm_Signal.Name = "VACAlarm_Signal";
-            this.VACAlarm_Signal.UseVisualStyleBackColor = false;
+            resources.ApplyResources(this.Vacuum_Signal, "Vacuum_Signal");
+            this.Vacuum_Signal.BackColor = System.Drawing.Color.Gray;
+            this.Vacuum_Signal.Name = "Vacuum_Signal";
+            this.Vacuum_Signal.UseVisualStyleBackColor = false;
             // 
             // DoorSwitch_Signal
             // 
@@ -255,7 +251,6 @@ namespace Lilith
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.Conn_gv);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -320,34 +315,6 @@ namespace Lilith
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            // 
-            // Conn_gv
-            // 
-            this.Conn_gv.AllowUserToAddRows = false;
-            this.Conn_gv.AllowUserToDeleteRows = false;
-            this.Conn_gv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.Conn_gv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.Conn_gv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Conn_gv.ColumnHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Conn_gv.DefaultCellStyle = dataGridViewCellStyle3;
-            resources.ApplyResources(this.Conn_gv, "Conn_gv");
-            this.Conn_gv.MultiSelect = false;
-            this.Conn_gv.Name = "Conn_gv";
-            this.Conn_gv.ReadOnly = true;
-            this.Conn_gv.RowHeadersVisible = false;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("新細明體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.Conn_gv.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.Conn_gv.RowTemplate.Height = 24;
-            this.Conn_gv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.Conn_gv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Conn_gv_CellFormatting);
-            this.Conn_gv.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.Conn_gv_RowEnter);
             // 
             // groupBox4
             // 
@@ -746,7 +713,6 @@ namespace Lilith
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Conn_gv)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -786,7 +752,7 @@ namespace Lilith
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button IonizerAlarm_Signal;
         private System.Windows.Forms.Button FFUAlarm_Signal;
-        private System.Windows.Forms.Button VACAlarm_Signal;
+        private System.Windows.Forms.Button Vacuum_Signal;
         private System.Windows.Forms.Button DoorSwitch_Signal;
         private System.Windows.Forms.Button CurrentState_btn;
         private System.Windows.Forms.Button DifferentialPressureAlarm1_Signal;
@@ -835,7 +801,6 @@ namespace Lilith
         private System.Windows.Forms.Button Mode_btn;
         private System.Windows.Forms.Button Connection_btn;
         private System.Windows.Forms.CheckBox Mute_chk;
-        private System.Windows.Forms.DataGridView Conn_gv;
         private System.Windows.Forms.Button btnManual;
         private System.Windows.Forms.TabPage tabTest;
     }

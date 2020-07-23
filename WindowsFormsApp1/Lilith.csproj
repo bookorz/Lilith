@@ -62,14 +62,14 @@
     <Reference Include="Ionic.Zip">
       <HintPath>lib\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\..\SANWAFunction\packages\log4net.dll</HintPath>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="mysql.data">
       <HintPath>lib\mysql.data.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="nmodbuspc">
       <HintPath>..\..\SANWAFunction\packages\nmodbuspc.dll</HintPath>
@@ -122,24 +122,6 @@
     <Compile Include="Menu\RunningScreen\RunningScreen.Designer.cs">
       <DependentUpon>RunningScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu\SystemSetting\FormDIOSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormDIOSetting.Designer.cs">
-      <DependentUpon>FormDIOSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSignalTower.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSignalTower.Designer.cs">
-      <DependentUpon>FormSignalTower.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\Wafer\FormWafer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\Wafer\FormWafer.Designer.cs">
-      <DependentUpon>FormWafer.cs</DependentUpon>
-    </Compile>
     <Compile Include="OCRResult.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,18 +135,6 @@
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="UI_Update\Alarm\AlarmUpdate.cs" />
-    <Compile Include="Menu\SystemSetting\FormCodeSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormCodeSetting.Designer.cs">
-      <DependentUpon>FormCodeSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSettingFram.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSettingFram.Designer.cs">
-      <DependentUpon>FormSettingFram.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAlarm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,12 +183,6 @@
     <Compile Include="FormManual.designer.cs">
       <DependentUpon>FormManual.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTerminal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTerminal.designer.cs">
-      <DependentUpon>FormTerminal.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormVersion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,12 +201,6 @@
     <Compile Include="FormLLSetting.designer.cs">
       <DependentUpon>FormLLSetting.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu\Communications\FormCommunications.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\Communications\FormCommunications.Designer.cs">
-      <DependentUpon>FormCommunications.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menu\FormFrame.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,66 +212,6 @@
     </Compile>
     <Compile Include="Menu\Monitoring\FormMonitoring.Designer.cs">
       <DependentUpon>FormMonitoring.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\OCR\FormOCR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\OCR\FormOCR.Designer.cs">
-      <DependentUpon>FormOCR.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\Status\FormStatus.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\Status\FormStatus.Designer.cs">
-      <DependentUpon>FormStatus.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormAccountSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormAccountSetting.Designer.cs">
-      <DependentUpon>FormAccountSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormAlarmEventSet .cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormAlarmEventSet .Designer.cs">
-      <DependentUpon>FormAlarmEventSet .cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormCommandScript.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormCommandScript.Designer.cs">
-      <DependentUpon>FormCommandScript.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormDeviceManager.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormDeviceManager.Designer.cs">
-      <DependentUpon>FormDeviceManager.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormOnlineSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormOnlineSettings.Designer.cs">
-      <DependentUpon>FormOnlineSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSECSSet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSECSSet.Designer.cs">
-      <DependentUpon>FormSECSSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSystemSetting.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\SystemSetting\FormSystemSetting.Designer.cs">
-      <DependentUpon>FormSystemSetting.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu\WaferMapping\FormWaferMapping.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu\WaferMapping\FormWaferMapping.Designer.cs">
-      <DependentUpon>FormWaferMapping.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -329,21 +227,13 @@
     <Compile Include="FormTeaching.designer.cs">
       <DependentUpon>FormTeaching.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI_Update\Aauthority\AuthorityUpdate.cs" />
-    <Compile Include="UI_Update\Communications\CommunicationsUpdate.cs" />
     <Compile Include="UI_Update\Layout\DIOUpdate.cs" />
-    <Compile Include="UI_Update\Manual\AlignerStatusUpdate.cs" />
     <Compile Include="UI_Update\Manual\PortStatusUpdate.cs" />
     <Compile Include="UI_Update\Manual\RobotStatusUpdate.cs" />
     <Compile Include="UI_Update\Monitoring\ConnectionStatusUpdate.cs" />
     <Compile Include="UI_Update\Monitoring\MonitoringUpdate.cs" />
     <Compile Include="UI_Update\Monitoring\NodeStatusUpdate.cs" />
-    <Compile Include="UI_Update\OCR\OCRUpdate.cs" />
     <Compile Include="UI_Update\Running\RunningUpdate.cs" />
-    <Compile Include="UI_Update\Terminal\TerminalUpdate.cs" />
-    <Compile Include="UI_Update\WaferMapping\WaferAssignUpdate.cs" />
-    <Compile Include="Util\SanwaUtil.cs" />
-    <Compile Include="Util\StateUtil.cs" />
     <Compile Include="Util\Tools.cs" />
     <EmbeddedResource Include="FormAlarm.resx">
       <DependentUpon>FormAlarm.cs</DependentUpon>
@@ -375,9 +265,6 @@
     <EmbeddedResource Include="FormManual.resx">
       <DependentUpon>FormManual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTerminal.resx">
-      <DependentUpon>FormTerminal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormVersion.resx">
       <DependentUpon>FormVersion.cs</DependentUpon>
     </EmbeddedResource>
@@ -387,17 +274,11 @@
     <EmbeddedResource Include="FormLLSetting.resx">
       <DependentUpon>FormLLSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu\Communications\FormCommunications.resx">
-      <DependentUpon>FormCommunications.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menu\FormFrame.resx">
       <DependentUpon>FormFrame.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\Monitoring\FormMonitoring.resx">
       <DependentUpon>FormMonitoring.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\OCR\FormOCR.resx">
-      <DependentUpon>FormOCR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu\RunningScreen\FormEndOption.resx">
       <DependentUpon>FormEndOption.cs</DependentUpon>
@@ -405,50 +286,8 @@
     <EmbeddedResource Include="Menu\RunningScreen\FormOption.resx">
       <DependentUpon>FormOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu\Status\FormStatus.resx">
-      <DependentUpon>FormStatus.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormAccountSetting.resx">
-      <DependentUpon>FormAccountSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormAlarmEventSet .resx">
-      <DependentUpon>FormAlarmEventSet .cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormCodeSetting.resx">
-      <DependentUpon>FormCodeSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormCommandScript.resx">
-      <DependentUpon>FormCommandScript.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormDeviceManager.resx">
-      <DependentUpon>FormDeviceManager.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormDIOSetting.resx">
-      <DependentUpon>FormDIOSetting.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormOnlineSettings.resx">
-      <DependentUpon>FormOnlineSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormSECSSet.resx">
-      <DependentUpon>FormSECSSet.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormSettingFram.resx">
-      <DependentUpon>FormSettingFram.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormSignalTower.resx">
-      <DependentUpon>FormSignalTower.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\SystemSetting\FormSystemSetting.resx">
-      <DependentUpon>FormSystemSetting.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Menu\RunningScreen\RunningScreen.resx">
       <DependentUpon>RunningScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\WaferMapping\FormWaferMapping.resx">
-      <DependentUpon>FormWaferMapping.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu\Wafer\FormWafer.resx">
-      <DependentUpon>FormWafer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OCRResult.resx">
       <DependentUpon>OCRResult.cs</DependentUpon>
@@ -472,76 +311,6 @@
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="config\CommandScript\AlignerInit.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\AlignerStateGet.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortFoupIn.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortFoupOut.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortInit.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortMapping.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortUnloadAndLoad.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\LoadPortUnload.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotInit.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotManualGetGet.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotManualGetPut.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotManualPutGet.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotManualPutPut.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\RobotStateGet.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\CommandScript\test.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\Controller\Controllers.1234.json" />
-    <None Include="config\Controller\Controllers.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\Controller\Controllers.json.7788" />
-    <None Include="config\Controller\Controllers.json.test" />
-    <None Include="config\DIO\ControlSetting.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\DIO\DigitalList.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\DIO\ParameterSetting - 複製.json" />
-    <None Include="config\DIO\ParameterSetting.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\Node\Nodes.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\Script\Normal.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="config\SystemConfig.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -560,17 +329,9 @@
     <None Include="Resources\like.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\DIOControl\DIOControl\DIOControl.csproj">
-      <Project>{21adfcfc-11c7-4982-af57-09002ed8e961}</Project>
-      <Name>DIOControl</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\EFEMInterface\EFEMInterface\EFEMInterface.csproj">
       <Project>{fa9f0060-9751-4cf0-993a-357fd796143e}</Project>
       <Name>EFEMInterface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\SANWAFunction\SANWA\SANWA\SANWA.csproj">
-      <Project>{4eed2ed4-a72e-4f24-8d80-ef2f0b24fcf1}</Project>
-      <Name>SANWA</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\TransferControl\TransferControl\TransferControl.csproj">
       <Project>{316ccd27-c53f-42f2-ad5e-5ca897dd9ab8}</Project>
@@ -583,24 +344,6 @@
   <ItemGroup>
     <Content Include="Resources\Sekkyumu-Developpers-Transfer.ico" />
     <Content Include="Sekkyumu-Developpers-Transfer.ico" />
-    <Content Include="sql\Alarm Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="sql\Command Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="sql\DIO Change Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="sql\Process Job Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="sql\Process Wafer Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="sql\User Action Log.sql">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\SplashScreen.JPG" />
     <None Include="Resources\SplashScreen.bmp" />
     <None Include="Resources\arrowleft.png" />
