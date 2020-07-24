@@ -154,11 +154,10 @@ namespace Lilith
             MonitoringUpdate.EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
             MonitoringUpdate.EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
             MonitoringUpdate.EventUpdate("FFU", FormMain.HostControl.Events.FFU);
-            MonitoringUpdate.EventUpdate("BF1_BYPASS", FormMain.HostControl.Events.BF1_BYPASS);
-            NodeManagement.Get("BF1").ByPassCheck = FormMain.HostControl.Events.BF1_BYPASS;
-            MonitoringUpdate.EventUpdate("BF2_BYPASS", FormMain.HostControl.Events.BF2_BYPASS);
-            NodeManagement.Get("BF2").ByPassCheck = FormMain.HostControl.Events.BF2_BYPASS;
-
+            MonitoringUpdate.EventUpdate("BF1_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
+    
+            MonitoringUpdate.EventUpdate("BF2_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
+          
             DIOUpdate.UpdateDIOStatus("RED", "False");
             DIOUpdate.UpdateDIOStatus("ORANGE", "False");
             DIOUpdate.UpdateDIOStatus("GREEN", "False");
@@ -382,6 +381,7 @@ namespace Lilith
 
                         //    break;
                         case Transaction.Command.LoadPortType.GetMapping:
+                        case Transaction.Command.LoadPortType.GetMappingDummy:
                             ManualPortStatusUpdate.UpdateMapping(Node.Name, Msg.Value);
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
                             RunningUpdate.UpdateNodesJob(Node.Name);

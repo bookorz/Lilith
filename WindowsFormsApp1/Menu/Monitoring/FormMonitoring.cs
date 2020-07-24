@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using TransferControl.Engine;
 using TransferControl.Management;
 
 namespace Lilith.Menu.Monitoring
@@ -269,13 +270,20 @@ namespace Lilith.Menu.Monitoring
         private void FormMonitoring_Load(object sender, EventArgs e)
         {
 
-            //MAPDT_ck.Checked = FormMain.ctrl.Events.MAPDT;
-            //PORT_ck.Checked = FormMain.ctrl.Events.PORT;
-            //PRS_ck.Checked = FormMain.ctrl.Events.PRS;
-            //SYSTEM_ck.Checked = FormMain.ctrl.Events.SYSTEM;
-            //TRANSREQ_ck.Checked = FormMain.ctrl.Events.TRANSREQ;
-            //FFU_ck.Checked = FormMain.ctrl.Events.FFU;
+            //MAPDT_ck.Checked = FormMain.HostControl.Events.MAPDT;
+            //PORT_ck.Checked = FormMain.HostControl.Events.PORT;
+            //PRS_ck.Checked = FormMain.HostControl.Events.PRS;
+            //SYSTEM_ck.Checked = FormMain.HostControl.Events.SYSTEM;
+            //TRANSREQ_ck.Checked = FormMain.HostControl.Events.TRANSREQ;
+            //FFU_ck.Checked = FormMain.HostControl.Events.FFU;
 
+            //LoadPort01_Enable_ck.Checked = NodeManagement.Get("LOADPORT01").Enable;
+            //LoadPort02_Enable_ck.Checked = NodeManagement.Get("LOADPORT02").Enable;
+            //LoadPort03_Enable_ck.Checked = NodeManagement.Get("LOADPORT03").Enable;
+            //LoadPort04_Enable_ck.Checked = NodeManagement.Get("LOADPORT04").Enable;
+
+            //BF1_BYPASS_ck.Checked = NodeManagement.Get("BF1").ByPassCheck;
+            //BF2_BYPASS_ck.Checked = NodeManagement.Get("BF2").ByPassCheck;
         }
 
         private void Events_CheckedChanged(object sender, EventArgs e)
@@ -317,15 +325,15 @@ namespace Lilith.Menu.Monitoring
         private void BF1_BYPASS_ck_Click(object sender, EventArgs e)
         {
             NodeManagement.Get("BF1").ByPassCheck = BF1_BYPASS_ck.Checked;
-            FormMain.HostControl.Events.BF1_BYPASS = BF1_BYPASS_ck.Checked;
-            FormMain.HostControl.Events.Save();
+            
+            NodeManagement.Save();
         }
 
         private void BF2_BYPASS_ck_Click(object sender, EventArgs e)
         {
             NodeManagement.Get("BF2").ByPassCheck = BF2_BYPASS_ck.Checked;
-            FormMain.HostControl.Events.BF2_BYPASS = BF2_BYPASS_ck.Checked;
-            FormMain.HostControl.Events.Save();
+
+            NodeManagement.Save();
         }
 
         private void Node_Enable_Click(object sender, EventArgs e)
@@ -333,7 +341,7 @@ namespace Lilith.Menu.Monitoring
             string NodeName = (sender as CheckBox).Name.Replace("_Enable_ck", "");
             Node node = NodeManagement.Get(NodeName);
             node.Enable=(sender as CheckBox).Checked;
-
+            NodeManagement.Save();
         }
     }
 }
