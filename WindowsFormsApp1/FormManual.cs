@@ -74,6 +74,8 @@ namespace GUI
                 }
             }
             ManualPortStatusUpdate.UpdateMapping(Cb_SMIFSelect.Text, "?????????????????????????");
+
+            TagType_cb.Text = NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Vendor;
         }
 
         private void PortFunction_Click(object sender, EventArgs e)
@@ -426,7 +428,8 @@ namespace GUI
                     }
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA1Point.Text);
-                    param.Add("@Slot", cbRA1Slot.Text.PadLeft(2,'0'));                    
+                    param.Add("@Slot", cbRA1Slot.Text.PadLeft(2,'0'));
+                    param.Add("@BYPASS_CHECK",NodeManagement.Get(cbRA1Point.Text).ByPassCheck?"TRUE":"FALSE");
                     break;
                 case "btnRPut":
                     TaskName = "ROBOT_PUT";
@@ -447,6 +450,7 @@ namespace GUI
                     param.Add("@Target", nodeName);
                     param.Add("@Position", cbRA2Point.Text);
                     param.Add("@Slot", cbRA2Slot.Text.PadLeft(2, '0'));
+                    param.Add("@BYPASS_CHECK", NodeManagement.Get(cbRA2Point.Text).ByPassCheck ? "TRUE" : "FALSE");
                     break;
                 case "btnRGetWait":
                     TaskName = "ROBOT_GETWAIT";
@@ -1141,6 +1145,13 @@ namespace GUI
                     cbRA2Slot.Items.Add(i.ToString());
                 }
             }
+        }
+
+        private void TagType_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Vendor = TagType_cb.Text;
+            NodeManagement.Save();
+
         }
     }
 }

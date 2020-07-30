@@ -156,7 +156,7 @@ namespace Lilith
             MonitoringUpdate.EventUpdate("FFU", FormMain.HostControl.Events.FFU);
             MonitoringUpdate.EventUpdate("BF1_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
     
-            MonitoringUpdate.EventUpdate("BF2_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
+            MonitoringUpdate.EventUpdate("BF2_BYPASS", NodeManagement.Get("BF2").ByPassCheck);
           
             DIOUpdate.UpdateDIOStatus("RED", "False");
             DIOUpdate.UpdateDIOStatus("ORANGE", "False");
@@ -455,7 +455,7 @@ namespace Lilith
                             ManualPortStatusUpdate.UpdateID(Msg.Value);
                             break;
                     }
-                    //ManualPortStatusUpdate.LockUI(false);
+                    ManualPortStatusUpdate.LockUI(false);
                     break;
                 case "LOADPORT":
 
@@ -961,7 +961,10 @@ namespace Lilith
 
         public void On_Message_Log(string Type, string Message)
         {
-            MonitoringUpdate.LogUpdate(Message);
+            if (Type.Equals("EFEM"))
+            {
+                MonitoringUpdate.LogUpdate(Message);
+            }
         }
 
         public void On_Status_Changed(string Type, string Message)

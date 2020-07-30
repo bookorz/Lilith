@@ -233,6 +233,8 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.tbcManual = new System.Windows.Forms.TabControl();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TagType_cb = new System.Windows.Forms.ComboBox();
             this.pnlMotionStop.SuspendLayout();
             this.tabSmif.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -390,20 +392,22 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.TagType_cb);
+            this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.TagWrite_bt);
             this.groupBox7.Controls.Add(this.TagRead_bt);
             this.groupBox7.Controls.Add(this.SmartTagWrite_tb);
             this.groupBox7.Controls.Add(this.SmartTagRead_tb);
-            this.groupBox7.Location = new System.Drawing.Point(25, 503);
+            this.groupBox7.Location = new System.Drawing.Point(25, 500);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(393, 217);
+            this.groupBox7.Size = new System.Drawing.Size(393, 267);
             this.groupBox7.TabIndex = 84;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Smart Tag";
             // 
             // TagWrite_bt
             // 
-            this.TagWrite_bt.Location = new System.Drawing.Point(7, 172);
+            this.TagWrite_bt.Location = new System.Drawing.Point(6, 216);
             this.TagWrite_bt.Name = "TagWrite_bt";
             this.TagWrite_bt.Size = new System.Drawing.Size(94, 38);
             this.TagWrite_bt.TabIndex = 3;
@@ -413,7 +417,7 @@
             // 
             // TagRead_bt
             // 
-            this.TagRead_bt.Location = new System.Drawing.Point(7, 81);
+            this.TagRead_bt.Location = new System.Drawing.Point(6, 125);
             this.TagRead_bt.Name = "TagRead_bt";
             this.TagRead_bt.Size = new System.Drawing.Size(94, 38);
             this.TagRead_bt.TabIndex = 2;
@@ -424,7 +428,7 @@
             // SmartTagWrite_tb
             // 
             this.SmartTagWrite_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SmartTagWrite_tb.Location = new System.Drawing.Point(7, 138);
+            this.SmartTagWrite_tb.Location = new System.Drawing.Point(6, 182);
             this.SmartTagWrite_tb.MaxLength = 224;
             this.SmartTagWrite_tb.Name = "SmartTagWrite_tb";
             this.SmartTagWrite_tb.Size = new System.Drawing.Size(379, 25);
@@ -433,7 +437,7 @@
             // SmartTagRead_tb
             // 
             this.SmartTagRead_tb.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.SmartTagRead_tb.Location = new System.Drawing.Point(7, 45);
+            this.SmartTagRead_tb.Location = new System.Drawing.Point(6, 89);
             this.SmartTagRead_tb.Name = "SmartTagRead_tb";
             this.SmartTagRead_tb.Size = new System.Drawing.Size(379, 25);
             this.SmartTagRead_tb.TabIndex = 0;
@@ -2221,6 +2225,7 @@
             this.label61.Size = new System.Drawing.Size(61, 30);
             this.label61.TabIndex = 33;
             this.label61.Text = "Arm";
+            this.label61.Visible = false;
             // 
             // cbRA1Slot
             // 
@@ -2267,6 +2272,7 @@
             this.cbRA1Arm.Size = new System.Drawing.Size(208, 38);
             this.cbRA1Arm.TabIndex = 41;
             this.cbRA1Arm.Text = "Upper";
+            this.cbRA1Arm.Visible = false;
             // 
             // pnlRobotCmdA2
             // 
@@ -2404,6 +2410,7 @@
             this.label54.Size = new System.Drawing.Size(61, 30);
             this.label54.TabIndex = 33;
             this.label54.Text = "Arm";
+            this.label54.Visible = false;
             // 
             // btnRPut
             // 
@@ -2468,6 +2475,7 @@
             this.cbRA2Arm.Size = new System.Drawing.Size(208, 38);
             this.cbRA2Arm.TabIndex = 41;
             this.cbRA2Arm.Text = "Upper";
+            this.cbRA2Arm.Visible = false;
             // 
             // pnlRCmd
             // 
@@ -3194,6 +3202,27 @@
             this.tbcManual.TabIndex = 0;
             this.tbcManual.SelectedIndexChanged += new System.EventHandler(this.tbcManual_SelectedIndexChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 27);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Type";
+            // 
+            // TagType_cb
+            // 
+            this.TagType_cb.FormattingEnabled = true;
+            this.TagType_cb.Items.AddRange(new object[] {
+            "SMARTTAG8200",
+            "SMARTTAG8400"});
+            this.TagType_cb.Location = new System.Drawing.Point(72, 40);
+            this.TagType_cb.Name = "TagType_cb";
+            this.TagType_cb.Size = new System.Drawing.Size(227, 35);
+            this.TagType_cb.TabIndex = 41;
+            this.TagType_cb.SelectedIndexChanged += new System.EventHandler(this.TagType_cb_SelectedIndexChanged);
+            // 
             // FormManual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
@@ -3458,5 +3487,7 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.Label label69;
         private System.Windows.Forms.TabControl tbcManual;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox TagType_cb;
     }
 }

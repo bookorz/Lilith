@@ -121,14 +121,223 @@ namespace Lilith.Menu.RunningScreen
         {
             int LapsedWfCount = 0;
             int LapsedLotCount = 0;
-            
-            
+            DateTime StartTime = DateTime.Now;
+
+           
+            string Message = "";
+            string TaskName = "";
+            Dictionary<string, string> param = new Dictionary<string, string>();
+            Node LD = SelectLoadports[1];
+            Node ULD = SelectLoadports[0];
             //init
            
-            //org
-           
+            if (!TaskFlowManagement.Excute( TaskFlowManagement.Command.ALL_INIT).Promise())
+            {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+
+                return;
+            }
+            if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ALL_ORGSH).Promise())
+            {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+
+                return;
+            }
+
             //set speed
             
+            param.Clear();
+            param.Add("@Target","ROBOT01");
+            param.Add("@Value",SpeedSet);
+            if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_SPEED,param).Promise())
+            {
+                ThreadEnd = true;
+                RunningUpdate.UpdateModeStatus("Start Running");
+                return;
+            }
+
+
+
+            while (!LotEnd)
+            {
+                Node swap = LD;
+                LD = ULD;
+                ULD = swap;
+                //loadport open
+                
+                param.Clear();
+                param.Add("@Target", LD.Name);
+                
+              
+                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.LOADPORT_OPEN, param).Promise())
+                {
+                    ThreadEnd = true;
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+               
+                param.Clear();
+                param.Add("@Target", ULD.Name);
+                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.LOADPORT_OPEN, param).Promise())
+                {
+                    ThreadEnd = true;
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+
+                for (int i = 0; i < ProcessSlotList.Length; i++)
+                {
+                    TimeSpan timeDiff = DateTime.Now - StartTime;
+                    RunningUpdate.UpdateRunningInfo("LapsedTime", timeDiff.ToString(@"hh\:mm\:ss"));
+
+
+                    if (TransCount == 0)
+                    {
+                        ThreadEnd = true;
+                        RunningUpdate.UpdateModeStatus("Start Running");
+                        return;
+                    }
+                    int slotNo = i + 1;
+                    bool needProcess = ProcessSlotList[i];
+                    if (needProcess)
+                    {
+                        Job FromSlot = JobManagement.Get(LD.Name, slotNo.ToString());
+                        Job ToSlot  = JobManagement.Get(ULD.Name, slotNo.ToString());
+
+                        if (FromSlot == null || ToSlot!=null)
+                        {
+                            continue;
+                        }
+                        if (FromSlot.MapFlag && !FromSlot.ErrPosition && ToSlot == null)//check slot status by from and to 
+                        {
+                            if (!LL.Equals(""))
+                            {//LL use
+                                //TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_GET, param).Promise())
+                                {
+                                   
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                //TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LL);
+                                param.Add("@Slot", "1");
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_PUT, param).Promise())
+                                {
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                //TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LL);
+                                param.Add("@Slot", "1");
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_GET, param).Promise())
+                                {
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                //TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", ULD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_PUT, param).Promise())
+                                {
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TransCount--;
+                                RunningUpdate.UpdateRunningInfo("TransCount", TransCount.ToString());
+                                LapsedWfCount++;
+                                RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
+                                if (CycleStop)
+                                {
+                                    break;
+                                }
+                            }
+                            else
+                            {//LL not use
+                                //TaskName = "LOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", LD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_GET, param).Promise())
+                                {
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                //TaskName = "UNLOAD";
+                                param.Clear();
+                                param.Add("@Target", "ROBOT01");
+                                param.Add("@Position", ULD.Name);
+                                param.Add("@Slot", slotNo.ToString());
+                                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.ROBOT_PUT, param).Promise())
+                                {
+                                    ThreadEnd = true;
+                                    RunningUpdate.UpdateModeStatus("Start Running");
+                                    return;
+                                }
+                                TransCount--;
+                                RunningUpdate.UpdateRunningInfo("TransCount", TransCount.ToString());
+                                LapsedWfCount++;
+                                RunningUpdate.UpdateRunningInfo("LapsedWfCount", LapsedWfCount.ToString());
+                                if (CycleStop)
+                                {
+                                    break;
+                                }
+                            }
+                            LapsedLotCount++;
+                            RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
+
+
+                        }
+                    }
+                }
+                if (CycleStop)
+                {
+                    break;
+                }
+                LapsedLotCount++;
+                RunningUpdate.UpdateRunningInfo("LapsedLotCount", LapsedLotCount.ToString());
+                //TaskName = "CLOSE";
+                param.Clear();
+                param.Add("@Target", LD.Name);
+                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.LOADPORT_CLOSE, param).Promise())
+                {
+                    ThreadEnd = true;
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+                //TaskName = "CLOSE";
+                param.Clear();
+                param.Add("@Target", ULD.Name);
+                if (!TaskFlowManagement.Excute(TaskFlowManagement.Command.LOADPORT_CLOSE, param).Promise())
+                {
+                    ThreadEnd = true;
+                    RunningUpdate.UpdateModeStatus("Start Running");
+                    return;
+                }
+                if (LotEnd)
+                {
+                    break;
+                }
+            }
+            ThreadEnd = true;
         }
 
         private void RunningSpeed_cb_TextChanged(object sender, EventArgs e)
@@ -137,6 +346,7 @@ namespace Lilith.Menu.RunningScreen
             //if (MessageBox.Show(strMsg, "ChangeSpeed", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1) == DialogResult.OK)
             //{
             //    ChangeSpeed();
+               
             //}
         }
 
