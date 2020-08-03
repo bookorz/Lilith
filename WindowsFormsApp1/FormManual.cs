@@ -1151,7 +1151,8 @@ namespace GUI
         {
             NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Vendor = TagType_cb.Text;
             NodeManagement.Save();
-
+            ControllerManagement.Get(NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Controller).SetVendor(TagType_cb.Text);
+            ControllerManagement.Save();
         }
     }
 }
