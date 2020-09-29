@@ -605,7 +605,7 @@ namespace Lilith
         {
 
             AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
-            AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
+            //AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
 
 

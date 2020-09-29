@@ -44,13 +44,14 @@ namespace Lilith.UI_Update.Alarm
                 {
                     UpdateAlarm ph = new UpdateAlarm(UpdateAlarmList);
 
-                    AlarmList_gv.BeginInvoke(ph, AlarmList);
+                    AlarmList_gv.Invoke(ph, AlarmList);
 
                 }
                 else
                 {
 
                     //JobList_gv.DataSource = null;
+                    AlarmList_gv.DataSource = null;
                     AlarmList_gv.DataSource = AlarmList.ToList();
 
                     //Conn_gv.Refresh();
