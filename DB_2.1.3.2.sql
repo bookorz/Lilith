@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- 主機:                           127.0.0.1
--- 伺服器版本:                        10.3.8-MariaDB - mariadb.org binary distribution
+-- 伺服器版本:                        10.5.4-MariaDB - mariadb.org binary distribution
 -- 伺服器操作系統:                      Win64
 -- HeidiSQL 版本:                  10.1.0.5464
 -- --------------------------------------------------------
@@ -627,7 +627,7 @@ CREATE TABLE IF NOT EXISTS `config_efem_event` (
   `BF2_BYPASS` bit(1) NOT NULL DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 正在傾印表格  adam.config_efem_event 的資料：~1 rows (大約)
+-- 正在傾印表格  adam.config_efem_event 的資料：~0 rows (大約)
 DELETE FROM `config_efem_event`;
 /*!40000 ALTER TABLE `config_efem_event` DISABLE KEYS */;
 INSERT INTO `config_efem_event` (`MAPDT`, `TRANSREQ`, `SYSTEM`, `PORT`, `PRS`, `FFU`, `BF1_BYPASS`, `BF2_BYPASS`) VALUES
@@ -665,7 +665,7 @@ CREATE TABLE IF NOT EXISTS `config_json` (
   PRIMARY KEY (`table_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 正在傾印表格  adam.config_json 的資料：~1 rows (大約)
+-- 正在傾印表格  adam.config_json 的資料：~0 rows (大約)
 DELETE FROM `config_json`;
 /*!40000 ALTER TABLE `config_json` DISABLE KEYS */;
 INSERT INTO `config_json` (`table_id`, `table_values`) VALUES
@@ -925,7 +925,7 @@ CREATE TABLE IF NOT EXISTS `config_task_job` (
   `is_safety_check` bit(1) NOT NULL DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 正在傾印表格  adam.config_task_job 的資料：~543 rows (大約)
+-- 正在傾印表格  adam.config_task_job 的資料：~545 rows (大約)
 DELETE FROM `config_task_job`;
 /*!40000 ALTER TABLE `config_task_job` DISABLE KEYS */;
 INSERT INTO `config_task_job` (`equipment_model_id`, `task_name`, `excute_obj`, `skip_condition`, `check_condition`, `task_index`, `description`, `is_safety_check`) VALUES
@@ -1471,7 +1471,9 @@ INSERT INTO `config_task_job` (`equipment_model_id`, `task_name`, `excute_obj`, 
 	('EFEM_1R2L4P', 'UNLOAD', '@Target:CMD:Put:POSITION=@Position_PUT,SLOT=1,ARM=1,FIN=FINISHED;', '@Position:Type<>LOADPORT', 'MOVE_WIP:@Target:1:@Position:@Slot;', 11, '放片動作開始', b'0'),
 	('EFEM_1R2L4P', 'TRANS', '@Target:CMD:Get:POSITION=@FromPosition_GET,SLOT=1,ARM=1,FIN=FINISHED;', '@FromPosition:Type<>LOADPORT', 'MOVE_WIP:@FromPosition:@FromSlot:@Target:1;', 13, '開始取片動作', b'0'),
 	('EFEM_1R2L4P', 'TRANS', '@Target:CMD:Put:POSITION=@ToPosition_PUT,SLOT=1,ARM=1,FIN=FINISHED;', '@ToPosition:Type<>LOADPORT', 'MOVE_WIP:@Target:1:@ToPosition:@ToSlot;', 21, '放片動作開始', b'0'),
-	('EFEM_1R2L4P', 'ROBOT_GET_SPEED', '@Target:CMD:GetSpeed:FIN=EXCUTED;', '', '', 1, '取得SPEED', b'1');
+	('EFEM_1R2L4P', 'ROBOT_GET_SPEED', '@Target:CMD:GetSpeed:FIN=EXCUTED;', '', '', 1, '取得SPEED', b'1'),
+	('EFEM_1R2L4P', 'LOAD', '', '@Position:Type<>LOADLOCK;@Position:ByPassCheck=false', 'REPORT:ACK;', 4, '?ˬdBF Interlock', b'1'),
+	('EFEM_1R2L4P', 'UNLOAD', '', '@Position:Type<>LOADLOCK;@Position:ByPassCheck=false', 'REPORT:ACK;', 5, '?ˬdBF Interlock', b'1');
 /*!40000 ALTER TABLE `config_task_job` ENABLE KEYS */;
 
 -- 傾印  表格 adam.config_transfer_script 結構
@@ -3532,7 +3534,7 @@ CREATE TABLE IF NOT EXISTS `eqp_current_state` (
   PRIMARY KEY (`eqp_name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
--- 正在傾印表格  adam.eqp_current_state 的資料：~1 rows (大約)
+-- 正在傾印表格  adam.eqp_current_state 的資料：~0 rows (大約)
 DELETE FROM `eqp_current_state`;
 /*!40000 ALTER TABLE `eqp_current_state` DISABLE KEYS */;
 INSERT INTO `eqp_current_state` (`eqp_name`, `eqp_state`, `update_time`) VALUES
@@ -3726,7 +3728,7 @@ CREATE TABLE IF NOT EXISTS `log_alarm_his` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_alarm_his 的資料：~486 rows (大約)
+-- 正在傾印表格  adam.log_alarm_his 的資料：~499 rows (大約)
 DELETE FROM `log_alarm_his`;
 /*!40000 ALTER TABLE `log_alarm_his` DISABLE KEYS */;
 INSERT INTO `log_alarm_his` (`node_name`, `system_alarm_code`, `alarm_code`, `alarm_desc`, `alarm_eng_desc`, `alarm_type`, `is_stop`, `need_reset`, `time_stamp`) VALUES
@@ -4256,7 +4258,7 @@ CREATE TABLE IF NOT EXISTS `log_cmd_txn` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_cmd_txn 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_cmd_txn 的資料：~14 rows (大約)
 DELETE FROM `log_cmd_txn`;
 /*!40000 ALTER TABLE `log_cmd_txn` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_cmd_txn` ENABLE KEYS */;
@@ -4288,7 +4290,7 @@ CREATE TABLE IF NOT EXISTS `log_cmd_txn_detail` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_cmd_txn_detail 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_cmd_txn_detail 的資料：~14 rows (大約)
 DELETE FROM `log_cmd_txn_detail`;
 /*!40000 ALTER TABLE `log_cmd_txn_detail` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_cmd_txn_detail` ENABLE KEYS */;
@@ -4321,7 +4323,7 @@ CREATE TABLE IF NOT EXISTS `log_dio_event` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_dio_event 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_dio_event 的資料：~14 rows (大約)
 DELETE FROM `log_dio_event`;
 /*!40000 ALTER TABLE `log_dio_event` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_dio_event` ENABLE KEYS */;
@@ -4354,7 +4356,7 @@ CREATE TABLE IF NOT EXISTS `log_process_job` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_process_job 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_process_job 的資料：~14 rows (大約)
 DELETE FROM `log_process_job`;
 /*!40000 ALTER TABLE `log_process_job` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_process_job` ENABLE KEYS */;
@@ -4385,7 +4387,7 @@ CREATE TABLE IF NOT EXISTS `log_process_job_detail` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_process_job_detail 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_process_job_detail 的資料：~14 rows (大約)
 DELETE FROM `log_process_job_detail`;
 /*!40000 ALTER TABLE `log_process_job_detail` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_process_job_detail` ENABLE KEYS */;
@@ -4427,7 +4429,7 @@ CREATE TABLE IF NOT EXISTS `log_process_job_substrate` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_process_job_substrate 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_process_job_substrate 的資料：~14 rows (大約)
 DELETE FROM `log_process_job_substrate`;
 /*!40000 ALTER TABLE `log_process_job_substrate` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_process_job_substrate` ENABLE KEYS */;
@@ -4475,7 +4477,7 @@ CREATE TABLE IF NOT EXISTS `log_system_action` (
  PARTITION `p_2019_05_21` VALUES LESS THAN (1558368000) ENGINE = InnoDB,
  PARTITION `p_future` VALUES LESS THAN MAXVALUE ENGINE = InnoDB);
 
--- 正在傾印表格  adam.log_system_action 的資料：~0 rows (大約)
+-- 正在傾印表格  adam.log_system_action 的資料：~14 rows (大約)
 DELETE FROM `log_system_action`;
 /*!40000 ALTER TABLE `log_system_action` DISABLE KEYS */;
 /*!40000 ALTER TABLE `log_system_action` ENABLE KEYS */;
@@ -4754,7 +4756,7 @@ CREATE TABLE IF NOT EXISTS `system_code_error` (
   `is_complex_location` char(1) CHARACTER SET utf8 NOT NULL DEFAULT 'Y' COMMENT '用 _ 連結, 如果某一欄位為空, 直接使用非空的欄位'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- 正在傾印表格  adam.system_code_error 的資料：~2,758 rows (大約)
+-- 正在傾印表格  adam.system_code_error 的資料：~2,764 rows (大約)
 DELETE FROM `system_code_error`;
 /*!40000 ALTER TABLE `system_code_error` DISABLE KEYS */;
 INSERT INTO `system_code_error` (`node_type`, `vendor`, `model_no`, `category`, `code_id`, `return_code_type`, `return_code`, `code_name`, `code_desc`, `code_desc_en`, `active`, `is_stop`, `location`, `is_complex_location`) VALUES
