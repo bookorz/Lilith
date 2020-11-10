@@ -898,7 +898,7 @@ namespace Lilith
             switch ((sender as Button).Name)
             {
                 case "RED_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "RED").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "RED").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("RED", "False");
                     }
@@ -908,7 +908,7 @@ namespace Lilith
                     }
                     break;
                 case "ORANGE_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "ORANGE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "ORANGE").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("ORANGE", "False");
                     }
@@ -918,7 +918,7 @@ namespace Lilith
                     }
                     break;
                 case "GREEN_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "GREEN").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "GREEN").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("GREEN", "False");
                     }
@@ -928,7 +928,7 @@ namespace Lilith
                     }
                     break;
                 case "BLUE_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BLUE").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "BLUE").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("BLUE", "False");
                     }
@@ -938,7 +938,7 @@ namespace Lilith
                     }
                     break;
                 case "BUZZER1_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER1").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "BUZZER1").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("BUZZER1", "False");
                     }
@@ -948,7 +948,7 @@ namespace Lilith
                     }
                     break;
                 case "BUZZER2_Signal":
-                    if (RouteControl.Instance.DIO.GetIO("OUT", "BUZZER2").ToUpper().Equals("TRUE"))
+                    if (RouteControl.Instance.DIO.GetIO("DOUT", "BUZZER2").ToUpper().Equals("TRUE"))
                     {
                         RouteControl.Instance.DIO.SetIO("BUZZER2", "False");
                     }

@@ -8,8 +8,8 @@
   "OCR1ImgToJpgPath": "C:/ProgramData/e-Reader0/e-Reader/JPG",
   "OCR1ExePath": "C:/Program Files (x86)/Cognex/In-Sight/In-Sight Explorer Wafer 4.5.0/WaferID.exe",
   "MappingData": "1100000000000000000000001",
-  "EFEMInterfaceConn111": "172.16.1.68",
-  "EFEMInterfaceConn": "127.0.0.1",
+  "EFEMInterfaceConn": "172.16.1.68",
+  "EFEMInterfaceConn111": "127.0.0.1",
   "EFEMInterfaceConn_Port": 13000,
   "SaftyCheckByPass": false,
   "AdminPassword": "0192023A7BBD73250516F069DF18B500"
