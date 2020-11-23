@@ -1,0 +1,1899 @@
+[
+  {
+    "node": "CTU",
+    "ioNo": 615,
+    "ioName": "CTU-Grab1-POS-ORG",
+    "ioDesc": "Grab-1 HOME position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10613,
+    "ioName": "CTU-Grab1-POS-Dirty",
+    "ioDesc": "Grab-1 dirty position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10614,
+    "ioName": "CTU-Grab1-POS-Clean",
+    "ioDesc": "Grab-1 clean position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 715,
+    "ioName": "CTU-Grab2-POS-ORG",
+    "ioDesc": "Grab-2 HOME position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10713,
+    "ioName": "CTU-Grab2-POS-Dirty",
+    "ioDesc": "Grab-2 dirty position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10714,
+    "ioName": "CTU-Grab2-POS-Clean",
+    "ioDesc": "Grab-2 clean position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 711,
+    "ioName": "CTU-Present",
+    "ioDesc": "CTU Wafer present sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 815,
+    "ioName": "CTU-Grab3-POS-ORG",
+    "ioDesc": "Grab-3 HOME position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10813,
+    "ioName": "CTU-Grab3-POS-Dirty",
+    "ioDesc": "Grab-3 dirty position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10814,
+    "ioName": "CTU-Grab3-POS-Clean",
+    "ioDesc": "Grab-3 clean position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 915,
+    "ioName": "CTU-Grab4-POS-ORG",
+    "ioDesc": "Grab-4 HOME position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10913,
+    "ioName": "CTU-Grab4-POS-Dirty",
+    "ioDesc": "Grab-4 dirty position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 10914,
+    "ioName": "CTU-Grab4-POS-Clean",
+    "ioDesc": "Grab-4 clean position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 14012,
+    "ioName": "CTU-Protrude-Detect",
+    "ioDesc": "Protruding sensor Detection",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 315,
+    "ioName": "CTU-T-POS-WHR",
+    "ioDesc": "T axis WHR position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4011,
+    "ioName": "CTU-T-POS-Home",
+    "ioDesc": "T axis Home position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 415,
+    "ioName": "CTU-Z-POS-WHR",
+    "ioDesc": "Z axis WHR position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4013,
+    "ioName": "CTU-Z-POS-Home",
+    "ioDesc": "Z axis Home position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4014,
+    "ioName": "CTU-Z-POS-Rotate",
+    "ioDesc": "Z axis can be rotated position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4015,
+    "ioName": "CTU-Belt-Detect",
+    "ioDesc": "Belt broken detection sensor",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3404,
+    "ioName": "CTU-CTRL-Protrude",
+    "ioDesc": "Protrude sensor Control",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 215,
+    "ioName": "PTZ-X-POS-ORG",
+    "ioDesc": "PTZ X axis Home position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 216,
+    "ioName": "PTZ-X-POS-LimitP",
+    "ioDesc": "PTZ X axis +LIMIT position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 217,
+    "ioName": "PTZ-X-POS-LimitN",
+    "ioDesc": "PTZ X axis -LIMIT position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3417,
+    "ioName": "PTZ-X-POS-Odd",
+    "ioDesc": "PTZ X axis Odd position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3418,
+    "ioName": "PTZ-X-POS-Even",
+    "ioDesc": "PTZ X axis Even position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 115,
+    "ioName": "PTZ-T-POS-Face",
+    "ioDesc": "PTZ T axis face get / put position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3412,
+    "ioName": "PTZ-T-POS-Back",
+    "ioDesc": "PTZ T axis back get/ put position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3413,
+    "ioName": "PTZ-POS-Clean-Up",
+    "ioDesc": "PTZ Z axis Clean carrier upward for Clean Wafer position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3414,
+    "ioName": "PTZ-POS-Clean-Down",
+    "ioDesc": "PTZ Z axis Clean carrier downward for Dirty Wafer position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3415,
+    "ioName": "PTZ-POS-Dirty-Up",
+    "ioDesc": "PTZ Z axis Dirty carrier upward for Dirty Wafer position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3416,
+    "ioName": "PTZ-POS-Dirty-Down",
+    "ioDesc": "PTZ Z axis Dirty carrier downward for Clean Wafer position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3411,
+    "ioName": "PTZ-Map-Signal",
+    "ioDesc": "PTZ Mapping sensor detection",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4016,
+    "ioName": "PTZ-Inform-CDA",
+    "ioDesc": "CDA Guage source inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4017,
+    "ioName": "PTZ-Present",
+    "ioDesc": "PTZ present sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3401,
+    "ioName": "PTZ-CTRL-Clean",
+    "ioDesc": "PTZ Carrier Clean path control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3402,
+    "ioName": "PTZ-CTRL-Drity",
+    "ioDesc": "PTZ Carrier Dirty path control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 3403,
+    "ioName": "PTZ-CTRL-Map",
+    "ioDesc": "PTZ Mapping sensor ON/OFF control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11113,
+    "ioName": "ALI-Arm-POS-Hold",
+    "ioDesc": "Support Arm Hold Sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11114,
+    "ioName": "ALI-Arm-POS-Release",
+    "ioDesc": "Support Arm Release Sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11213,
+    "ioName": "ALI-NF-POS-Hold",
+    "ioDesc": "Notch Finder Hold Sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11214,
+    "ioName": "ALI-NF-POS-Release",
+    "ioDesc": "Notch Finder Release Sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11112,
+    "ioName": "ALI-Inform-CDA",
+    "ioDesc": "CDA Gauge",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11211,
+    "ioName": "ALI-Present",
+    "ioDesc": "Aliner present sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 11212,
+    "ioName": "ALI-Inform-FAN",
+    "ioDesc": "Robot Fan1(FAN1)",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 1103,
+    "ioName": "ALI-Arm-CTRL-Hold",
+    "ioDesc": "Support Arm Hold Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 1104,
+    "ioName": "ALI-Arm-CTRL-Release",
+    "ioDesc": "Support Arm Release Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 1203,
+    "ioName": "ALI-NF-CTRL-Hold",
+    "ioDesc": "Notch Finder Hold Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 1204,
+    "ioName": "ALI-NF-CTRL-Release",
+    "ioDesc": "Notch Finder Release Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4901,
+    "ioName": "CTU-WHR-I",
+    "ioDesc": "CTU allow WHR to extend arm in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4902,
+    "ioName": "CTU-WHR-S",
+    "ioDesc": "CTU allow WHR to extend arm software interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4903,
+    "ioName": "PTZ-PTR-I",
+    "ioDesc": "PTZ allow PTR to extend arm in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4904,
+    "ioName": "PTZ-PTR-S",
+    "ioDesc": "PTZ allow PTR to extend arm software interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4905,
+    "ioName": "Aligner-PTR-I",
+    "ioDesc": "Aligner allow PTR to extend arm in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4906,
+    "ioName": "Aligner-PTR-S",
+    "ioDesc": "Aligner allow PTR to extend arm software interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4907,
+    "ioName": "CTU-PTZ-I",
+    "ioDesc": "CTU allow PTZ to move in in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 4908,
+    "ioName": "CTU-PTZ-S",
+    "ioDesc": "CTU allow PTZ to move in software interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5001,
+    "ioName": "CTU-PTZ-A",
+    "ioDesc": "CTU downward to PTZ access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5002,
+    "ioName": "PTZ-CTU-A",
+    "ioDesc": "PTZ move in to CTU access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5003,
+    "ioName": "PTZ-CTU-I-Odd",
+    "ioDesc": "PTZ allow CTU to downward in-positoin interlock(Wafer Odd)",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5004,
+    "ioName": "PTZ-CTU-I-Even",
+    "ioDesc": "PTZ allow CTU to downward in-positoin interlock(Wafer Even)",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5005,
+    "ioName": "PTZ-CTU-I-Drity",
+    "ioDesc": "PTZ allow CTU to downward in-positoin interlock(Dirty)",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5006,
+    "ioName": "PTZ-CTU-I-Clean",
+    "ioDesc": "PTZ allow CTU to downward in-positoin interlock(Clean)",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5007,
+    "ioName": "PTZ-CTU-S1",
+    "ioDesc": "PTZ allow CTU to downward software interlock S1",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 5008,
+    "ioName": "PTZ-CTU-S2",
+    "ioDesc": "PTZ allow CTU to downward software interlock S2",
+    "ioType": "OUT"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 14911,
+    "ioName": "CTU-WHR-A",
+    "ioDesc": "WHR extend arm to CTU access interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 14912,
+    "ioName": "PTZ-PTR-A",
+    "ioDesc": "PTR extend arm to PTZ access interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "CTU",
+    "ioNo": 14913,
+    "ioName": "Aligner-PTR-A",
+    "ioDesc": "PTR extend arm to Aligner access interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11711,
+    "ioName": "STK-ROB-Present1",
+    "ioDesc": "FOUP Robot Present sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11712,
+    "ioName": "STK-ROB-Present2",
+    "ioDesc": "FOUP Robot Present sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11713,
+    "ioName": "STK-ROB-Present3",
+    "ioDesc": "FOUP Robot Present sensor 3",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11714,
+    "ioName": "STK-ROB-POS-Clamp",
+    "ioDesc": "FOUP Robot Clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11715,
+    "ioName": "STK-ROB-POS-Unclamp",
+    "ioDesc": "FOUP Robot Unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11701,
+    "ioName": "STK-ROB-CTRL-Clamp",
+    "ioDesc": "FOUP Robot Clamp sensor",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11702,
+    "ioName": "STK-ROB-CTRL-Unclamp",
+    "ioDesc": "FOUP Robot Unclamp sensor",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11811,
+    "ioName": "ELPT2-Place1",
+    "ioDesc": "ELPT2 FOUP Placement sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11812,
+    "ioName": "ELPT2-Place2",
+    "ioDesc": "ELPT2 FOUP Placement sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11813,
+    "ioName": "ELPT2-Place3",
+    "ioDesc": "ELPT2 FOUP Placement sensor 3",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1814,
+    "ioName": "ELPT2-Present",
+    "ioDesc": "ELPT2 FOUP Presence sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1815,
+    "ioName": "ELPT2-L-POS-Clamp",
+    "ioDesc": "ELPT2 FOUP left clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1816,
+    "ioName": "ELPT2-L-POS-Unclamp",
+    "ioDesc": "ELPT2 FOUP left unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1817,
+    "ioName": "ELPT2-R-POS-Clamp",
+    "ioDesc": "ELPT2 FOUP right clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1818,
+    "ioName": "ELPT2-R-POS-Unclamp",
+    "ioDesc": "ELPT2 FOUP right unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1801,
+    "ioName": "ELPT2-CTRL-Clamp",
+    "ioDesc": "ELPT2 FOUP clamp control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1802,
+    "ioName": "ELPT2-CTRL-Unclamp",
+    "ioDesc": "ELPT2 FOUP unclamp control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11911,
+    "ioName": "STK-Inform-VAC",
+    "ioDesc": "Vacumm source confirm",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11912,
+    "ioName": "STK-Inform-CDA",
+    "ioDesc": "CDA source confirm",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11913,
+    "ioName": "ILPT1-Door-VAC",
+    "ioDesc": "ILPT1 Door Vacuum confirm",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11914,
+    "ioName": "ILPT2-Door-VAC",
+    "ioDesc": "ILPT2 Door Vacuum confirm",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1915,
+    "ioName": "STK-Inform-EMS",
+    "ioDesc": "EMS Signal",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1916,
+    "ioName": "STK-FFU-Alarm",
+    "ioDesc": "FFU abnormal",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 1917,
+    "ioName": "STK-ROB-Press",
+    "ioDesc": "Robot Pressure sensing",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 11918,
+    "ioName": "ELPT-Inform-CDA",
+    "ioDesc": "ELPT CDA gauge",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12011,
+    "ioName": "Shelf11-Confirm1",
+    "ioDesc": "Shelf 11 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12012,
+    "ioName": "Shelf11-Confirm2",
+    "ioDesc": "Shelf 11 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12013,
+    "ioName": "Shelf12-Confirm1",
+    "ioDesc": "Shelf 12 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12014,
+    "ioName": "Shelf12-Confirm2",
+    "ioDesc": "Shelf 12 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12015,
+    "ioName": "Shelf13-Confirm1",
+    "ioDesc": "Shelf 13 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12016,
+    "ioName": "Shelf13-Confirm2",
+    "ioDesc": "Shelf 13 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12017,
+    "ioName": "Shelf21-Confirm1",
+    "ioDesc": "Shelf 21 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12018,
+    "ioName": "Shelf21-Confirm2",
+    "ioDesc": "Shelf 21 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12111,
+    "ioName": "ILPT1-Confirm1",
+    "ioDesc": "ILPT1 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12112,
+    "ioName": "ILPT1-Confirm2",
+    "ioDesc": "ILPT1 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12113,
+    "ioName": "ILPT1-Confirm3",
+    "ioDesc": "ILPT1 FOUP confirmed sensor 3",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12114,
+    "ioName": "ILPT2-Confirm1",
+    "ioDesc": "ILPT2 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12115,
+    "ioName": "ILPT2-Confirm2",
+    "ioDesc": "ILPT2 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12116,
+    "ioName": "ILPT2-Confirm3",
+    "ioDesc": "ILPT2 FOUP confirmed sensor 3",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12117,
+    "ioName": "Shelf31-Confirm1",
+    "ioDesc": "Shelf 31 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12118,
+    "ioName": "Shelf31-Confirm2",
+    "ioDesc": "Shelf 31 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12211,
+    "ioName": "Shelf32-Confirm1",
+    "ioDesc": "Shelf 32 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12212,
+    "ioName": "Shelf32-Confirm2",
+    "ioDesc": "Shelf 32 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12213,
+    "ioName": "Shelf33-Confirm1",
+    "ioDesc": "Shelf 33 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12214,
+    "ioName": "Shelf33-Confirm2",
+    "ioDesc": "Shelf 33 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12215,
+    "ioName": "Shelf41-Confirm1",
+    "ioDesc": "Shelf 41 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12216,
+    "ioName": "Shelf41-Confirm2",
+    "ioDesc": "Shelf 41 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12217,
+    "ioName": "Shelf42-Confirm1",
+    "ioDesc": "Shelf 42 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12218,
+    "ioName": "Shelf42-Confirm2",
+    "ioDesc": "Shelf 42 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12311,
+    "ioName": "Shelf43-Confirm1",
+    "ioDesc": "Shelf 43 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12312,
+    "ioName": "Shelf43-Confirm2",
+    "ioDesc": "Shelf 43 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12313,
+    "ioName": "Shelf51-Confirm1",
+    "ioDesc": "Shelf 51 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12314,
+    "ioName": "Shelf51-Confirm2",
+    "ioDesc": "Shelf 51 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12315,
+    "ioName": "Shelf52-Confirm1",
+    "ioDesc": "Shelf 52 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12316,
+    "ioName": "Shelf52-Confirm2",
+    "ioDesc": "Shelf 52 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12317,
+    "ioName": "Shelf53-Confirm1",
+    "ioDesc": "Shelf 53 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12318,
+    "ioName": "Shelf53-Confirm2",
+    "ioDesc": "Shelf 53 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12411,
+    "ioName": "Shelf61-Confirm1",
+    "ioDesc": "Shelf 61 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12412,
+    "ioName": "Shelf61-Confirm2",
+    "ioDesc": "Shelf 61 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12413,
+    "ioName": "Shelf62-Confirm1",
+    "ioDesc": "Shelf 62 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12414,
+    "ioName": "Shelf62-Confirm2",
+    "ioDesc": "Shelf 62 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12415,
+    "ioName": "Shelf63-Confirm1",
+    "ioDesc": "Shelf 63 FOUP confirmed sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12416,
+    "ioName": "Shelf63-Confirm2",
+    "ioDesc": "Shelf 63 FOUP confirmed sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2511,
+    "ioName": "Shutter1-POS-Open",
+    "ioDesc": "ELPT1 Shutter Open position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2512,
+    "ioName": "Shutter1-POS-Close",
+    "ioDesc": "ELPT1 Shutter Close position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2513,
+    "ioName": "Shutter2-POS-Open",
+    "ioDesc": "ELPT2 Shutter Open position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2514,
+    "ioName": "Shutter2-POS-Close",
+    "ioDesc": "ELPT2 Shutter Close position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12515,
+    "ioName": "LightCurtain-In1",
+    "ioDesc": "Light Curtain detector1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12516,
+    "ioName": "LightCurtain-In2",
+    "ioDesc": "Light Curtain detector2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2517,
+    "ioName": "STK-WHR-Inform-CDA",
+    "ioDesc": "WHR CDA gauge source inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2518,
+    "ioName": "STK-PTZ-Inform-CDA",
+    "ioDesc": "PTZ CDA gauge source inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2501,
+    "ioName": "Shutter1-CTRL-Open",
+    "ioDesc": "ELPT1 Shutter Open",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2502,
+    "ioName": "Shutter1-CTRL-Close",
+    "ioDesc": "ELPT1 Shutter Close",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2503,
+    "ioName": "Shutter2-CTRL-Open",
+    "ioDesc": "ELPT2 Shutter Open",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2504,
+    "ioName": "Shutter2-CTRL-Close",
+    "ioDesc": "ELPT2 Shutter Close",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2505,
+    "ioName": "LightCurtain-Disable",
+    "ioDesc": "Light Curtain Disable",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2507,
+    "ioName": "LightCurtain-Reset",
+    "ioDesc": "LightCurtain-Reset",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2611,
+    "ioName": "ILPT1-POS-Dock",
+    "ioDesc": "ILPT1 Slider Dock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2612,
+    "ioName": "ILPT1-POS-Undock",
+    "ioDesc": "ILPT1 Slider Undock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12613,
+    "ioName": "ILPT1-POS-Clamp",
+    "ioDesc": "ILPT1 Clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12614,
+    "ioName": "ILPT1-POS-Unclamp",
+    "ioDesc": "ILPT1 Unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2615,
+    "ioName": "Mapbar1-POS-Map",
+    "ioDesc": "ILPT1 Mapping bar to map position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2616,
+    "ioName": "Mapbar1-POS-Unmap",
+    "ioDesc": "ILPT1 Mapping bar to Unmap position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2617,
+    "ioName": "ILPT1-Protru-Detect",
+    "ioDesc": "ILPT1 Wafer Protrusion Detect sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2601,
+    "ioName": "ILPT1-CTRL-Dock",
+    "ioDesc": "ILPT1 FOUP Slider Dock Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2602,
+    "ioName": "ILPT1-CTRL-Undock",
+    "ioDesc": "ILPT1 FOUP Slider Backward Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2603,
+    "ioName": "ILPT1-CTRL-Clamp",
+    "ioDesc": "ILPT1 FOUP Clamp Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2604,
+    "ioName": "ILPT1-CTRL-Unclamp",
+    "ioDesc": "ILPT1 FOUP Unclamp Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2605,
+    "ioName": "Mapbar1-CTRL-Map",
+    "ioDesc": "ILPT1 Mapping Bar Map Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2606,
+    "ioName": "Mapbar1-CTRL-Unmap",
+    "ioDesc": "ILPT1 Mapping Bar Unmap Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2607,
+    "ioName": "ILPT1-CTRL-Hold",
+    "ioDesc": "ILPT1 Door Vacuum Hold",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2608,
+    "ioName": "ILPT1-CTRL-Release",
+    "ioDesc": "ILPT1 Door Vacuum release",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2711,
+    "ioName": "ILPT1-POS-Unlock",
+    "ioDesc": "ILPT1 Door unlock (horizontal) position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2712,
+    "ioName": "ILPT1-POS-Lock",
+    "ioDesc": "ILPT1 Door Lock (vertical) position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2713,
+    "ioName": "ILPT1-POS-Open",
+    "ioDesc": "ILPT1 Door Open position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2714,
+    "ioName": "ILPT1-POS-Close",
+    "ioDesc": "ILPT1 Door Close position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12715,
+    "ioName": "ILPT1-Inform-CDA",
+    "ioDesc": "ILPT1 CDA gauge source inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2701,
+    "ioName": "ILPT1-CTRL-Unlock",
+    "ioDesc": "ILPT1 Door unlock (horizontal) Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2702,
+    "ioName": "ILPT1-CTRL-Lock",
+    "ioDesc": "ILPT1 Door Lock (vertical) Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2703,
+    "ioName": "ILPT1-CTRL-Open",
+    "ioDesc": "ILPT1 Door Open Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2704,
+    "ioName": "ILPT1-CTRL-Close",
+    "ioDesc": "ILPT1 Door Close Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2811,
+    "ioName": "ILPT2-POS-Dock",
+    "ioDesc": "ILPT2 Slider Dock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2812,
+    "ioName": "ILPT2-POS-Undock",
+    "ioDesc": "ILPT2 Slider Undock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12813,
+    "ioName": "ILPT2-POS-Clamp",
+    "ioDesc": "ILPT2 FOUP Clamp",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12814,
+    "ioName": "ILPT2-POS-Unclamp",
+    "ioDesc": "ILPT2 FOUP Unclamp",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2815,
+    "ioName": "Mapbar2-POS-Map",
+    "ioDesc": "ILPT2 Mapping bar to map position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2816,
+    "ioName": "Mapbar2-POS-Unmap",
+    "ioDesc": "ILPT2 Mapping bar to Unmap position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2817,
+    "ioName": "ILPT2-Protru-Detect",
+    "ioDesc": "ILPT2 Wafer Protrusion Detect",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2801,
+    "ioName": "ILPT2-CTRL-Dock",
+    "ioDesc": "ILPT2 FOUP Dock Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2802,
+    "ioName": "ILPT2-CTRL-Undock",
+    "ioDesc": "ILPT2 FOUP Undock Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2803,
+    "ioName": "ILPT2-CTRL-Clamp",
+    "ioDesc": "ILPT2 FOUP Clamp Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2804,
+    "ioName": "ILPT2-CTRL-Unclamp",
+    "ioDesc": "ILPT2 FOUP Unclamp Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2805,
+    "ioName": "Mapbar2-CTRL-Map",
+    "ioDesc": "ILPT2 Mapping Bar Map Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2806,
+    "ioName": "Mapbar2-CTRL-Unmap",
+    "ioDesc": "ILPT2 Mapping Bar Unmap Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2807,
+    "ioName": "ILPT2-CTRL-Hold",
+    "ioDesc": "ILPT2 Door Vacuum Hold",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2808,
+    "ioName": "ILPT2-CTRL-Release",
+    "ioDesc": "ILPT2 Door Vacuum release",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2911,
+    "ioName": "ILPT2-POS-Unlock",
+    "ioDesc": "ILPT2 Door unlock (horizontal) position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2912,
+    "ioName": "ILPT2-POS-Lock",
+    "ioDesc": "ILPT2 Door Lock (vertical) position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2913,
+    "ioName": "ILPT2-POS-Open",
+    "ioDesc": "ILPT2 Door Open position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2914,
+    "ioName": "ILPT2-POS-Close",
+    "ioDesc": "ILPT2 Door Close position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 12915,
+    "ioName": "ILPT2-Inform-CDA",
+    "ioDesc": "ILPT2 CDA gauge source inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2901,
+    "ioName": "ILPT2-CTRL-Unlock",
+    "ioDesc": "ILPT2 Door unlock (horizontal) Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2902,
+    "ioName": "ILPT2-CTRL-Lock",
+    "ioDesc": "ILPT2 Door Lock (vertical) Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2903,
+    "ioName": "ILPT2-CTRL-Open",
+    "ioDesc": "ILPT2 Door Open Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 2904,
+    "ioName": "ILPT2-CTRL-Close",
+    "ioDesc": "ILPT2 Door Close Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3001,
+    "ioName": "ELPT1-IND-Auto",
+    "ioDesc": "ELPT1 Auto indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3002,
+    "ioName": "ELPT1-IND-Load",
+    "ioDesc": "ELPT1 Load indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3003,
+    "ioName": "ELPT1-IND-Presence",
+    "ioDesc": "ELPT1 Presence indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3004,
+    "ioName": "ELPT1-IND-Placement",
+    "ioDesc": "ELPT1 Placement indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3005,
+    "ioName": "ELPT1-IND-Clamp",
+    "ioDesc": "ELPT1 Clamp indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3006,
+    "ioName": "ELPT1-IND-Unload",
+    "ioDesc": "ELPT1 Unload indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3007,
+    "ioName": "ELPT1-IND-Alarm",
+    "ioDesc": "ELPT1 Alarm indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3101,
+    "ioName": "ELPT2-IND-Auto",
+    "ioDesc": "ELPT2 Auto indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3102,
+    "ioName": "ELPT2-IND-Load",
+    "ioDesc": "ELPT2 Load indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3103,
+    "ioName": "ELPT2-IND-Presence",
+    "ioDesc": "ELPT2 Presence indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3104,
+    "ioName": "ELPT2-IND-Placement",
+    "ioDesc": "ELPT2 Placement indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3105,
+    "ioName": "ELPT2-IND-Clamp",
+    "ioDesc": "ELPT2 Clamp indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3106,
+    "ioName": "ELPT2-IND-Unload",
+    "ioDesc": "ELPT2 Unload indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3107,
+    "ioName": "ELPT2-IND-Alarm",
+    "ioDesc": "ELPT2 Alarm indicator",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 13211,
+    "ioName": "ELPT1-Place1",
+    "ioDesc": "ELPT1 FOUP Placement sensor 1",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 13212,
+    "ioName": "ELPT1-Place2",
+    "ioDesc": "ELPT1 FOUP Placement sensor 2",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 13213,
+    "ioName": "ELPT1-Place3",
+    "ioDesc": "ELPT1 FOUP Placement sensor 3",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3214,
+    "ioName": "ELPT1-Present",
+    "ioDesc": "ELPT1 FOUP Presence sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3215,
+    "ioName": "ELPT1-L-POS-Clamp",
+    "ioDesc": "ELPT1 FOUP left clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3216,
+    "ioName": "ELPT1-L-POS-Unclamp",
+    "ioDesc": "ELPT1 FOUP left unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3217,
+    "ioName": "ELPT1-R-POS-Clamp",
+    "ioDesc": "ELPT1 FOUP right clamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3218,
+    "ioName": "ELPT1-R-POS-Unclamp",
+    "ioDesc": "ELPT1 FOUP right unclamp position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3201,
+    "ioName": "ELPT1-CTRL-Clamp",
+    "ioDesc": "ELPT1 FOUP clamp control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 3202,
+    "ioName": "ELPT1-CTRL-Unclamp",
+    "ioDesc": "ELPT1 FOUP unclamp control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 611,
+    "ioName": "ELPT1-POS-Undock",
+    "ioDesc": "ELPT1 at undock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 612,
+    "ioName": "ELPT1-POS-Dock",
+    "ioDesc": "ELPT1 at dock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 615,
+    "ioName": "ELPT1-ORG-POS",
+    "ioDesc": "ELPT1 ORG position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 711,
+    "ioName": "ELPT2-POS-Undock",
+    "ioDesc": "ELPT2 at undock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 712,
+    "ioName": "ELPT2-POS-Dock",
+    "ioDesc": "ELPT2 at dock position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 715,
+    "ioName": "ELPT2-POS-ORG",
+    "ioDesc": "ELPT2 ORG position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 811,
+    "ioName": "ILPT1-Map-Signal",
+    "ioDesc": "ILPT1 Mapping Signal Input",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 812,
+    "ioName": "ILPT1-POS-Top",
+    "ioDesc": "ILPT1 Door Opened at Top position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 813,
+    "ioName": "ILPT1-POS-Map",
+    "ioDesc": "ILPT1 Door Opened at Mapping Bar Extend position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 814,
+    "ioName": "ILPT1-POS-Unmap",
+    "ioDesc": "ILPT1 Door Openedat Mapping Bar Retract position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 815,
+    "ioName": "ILPT1-POS-Bottom",
+    "ioDesc": "ILPT1 Door at Bottom position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 803,
+    "ioName": "ILPT1-Z-CTRL-Up",
+    "ioDesc": "ILPT1 Door Z up Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 804,
+    "ioName": "ILPT1-Z-CTRL-Down",
+    "ioDesc": "ILPT1 Door Z down Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 911,
+    "ioName": "ILPT2-Map-Signal",
+    "ioDesc": "ILPT2 Mapping Signal Input",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 912,
+    "ioName": "ILPT2-POS-Top",
+    "ioDesc": "ILPT2 Door Opened at Top position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 913,
+    "ioName": "ILPT2-POS-Map",
+    "ioDesc": "ILPT2 Door Opened at Mapping Bar Extend position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 914,
+    "ioName": "ILPT2-POS-Unmap",
+    "ioDesc": "ILPT2 Door Opened at Mapping Bar Retract position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 915,
+    "ioName": "ILPT2-POS-Bottom",
+    "ioDesc": "ILPT2 Door Opened at Bottom position",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 903,
+    "ioName": "ILPT2-Z-CTRL-Up",
+    "ioDesc": "ILPT2 Door Z up Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 904,
+    "ioName": "ILPT2-Z-CTRL-Down",
+    "ioDesc": "ILPT2 Door Z down Control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4901,
+    "ioName": "ILPT1-WHR-I",
+    "ioDesc": "ILPT1 allow WHR to extend arm in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4902,
+    "ioName": "ILPT1-WHR-S1",
+    "ioDesc": "ILPT1 allow WHR to extend arm software interlock S1",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4903,
+    "ioName": "ILPT1-WHR-S2",
+    "ioDesc": "ILPT1 allow WHR to extend arm software interlock S2",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4904,
+    "ioName": "ILPT2-WHR-I",
+    "ioDesc": "ILPT2 allow WHR to extend arm in-positoin interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4905,
+    "ioName": "ILPT2-WHR-S1",
+    "ioDesc": "ILPT2 allow WHR to extend arm software interlock S1",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4906,
+    "ioName": "ILPT2-WHR-S2",
+    "ioDesc": "ILPT2 allow WHR to extend arm software interlock S2",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4907,
+    "ioName": "ROB-ELPT1-A",
+    "ioDesc": "FOUP Robot extend arm to ELPT1 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 4908,
+    "ioName": "ROB-ELPT2-A",
+    "ioDesc": "FOUP Robot extend arm to ELPT2 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 5001,
+    "ioName": "ROB-ILPT1-A",
+    "ioDesc": "FOUP Robot extend arm to ILPT1 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 5002,
+    "ioName": "ROB-ILPT2-A",
+    "ioDesc": "FOUP Robot extend arm to ILPT2 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 14911,
+    "ioName": "ILPT1-WHR-A",
+    "ioDesc": "WHR extend arm to ILPT1 access interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "FOUP_ROBOT",
+    "ioNo": 14912,
+    "ioName": "ILPT2-WHR-A",
+    "ioDesc": "WHR extend arm to ILPT2 access interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 3415,
+    "ioName": "WHR-X-POS-ILPT1",
+    "ioDesc": "X axis ILPT1 position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 3416,
+    "ioName": "WHR-X-POS-ILPT2",
+    "ioDesc": "X axis ILPT2 position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4011,
+    "ioName": "WHR-Inform-CDA",
+    "ioDesc": "CDA Gauge source infrom",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4012,
+    "ioName": "WHR-Inform-VAC",
+    "ioDesc": "VAC Gauge source infrom",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4013,
+    "ioName": "WHR-Inform-FAN1",
+    "ioDesc": "ROBOT FAN signal inform",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 3411,
+    "ioName": "WHR-Fork-POS-Clean",
+    "ioDesc": "Clean path position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 3412,
+    "ioName": "WHR-Fork-POS-Drity",
+    "ioDesc": "Dirty path position sensor",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 13403,
+    "ioName": "WHR-CTRL-Clean",
+    "ioDesc": "Clean pad control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 13404,
+    "ioName": "WHR-CTRL-Dirty",
+    "ioDesc": "Dirty pad control",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 13405,
+    "ioName": "WHR-CTRL-VAC-On",
+    "ioDesc": "VAC solenoid valve ON",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 13406,
+    "ioName": "WHR-CTRL-VAC-Off",
+    "ioDesc": "VAC solenoid valve OFF",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4901,
+    "ioName": "WHR-ILPT1-A",
+    "ioDesc": "WHR extend arm to ILPT1 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4902,
+    "ioName": "WHR-ILPT2-A",
+    "ioDesc": "WHR extend arm to ILPT2 access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 4903,
+    "ioName": "WHR-CTU-A",
+    "ioDesc": "WHR extend arm to CTU access interlock",
+    "ioType": "OUT"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14911,
+    "ioName": "WHR-ILPT1-I",
+    "ioDesc": "ILPT1 allow WHR to extend arm in-positoin interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14912,
+    "ioName": "WHR-ILPT1-S1",
+    "ioDesc": "ILPT1 allow WHR to extend arm software interlock S1",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14913,
+    "ioName": "WHR-ILPT1-S2",
+    "ioDesc": "ILPT1 allow WHR to extend arm software interlock S2",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14914,
+    "ioName": "WHR-ILPT2-I",
+    "ioDesc": "ILPT2 allow WHR to extend arm in-positoin interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14915,
+    "ioName": "WHR-ILPT2-S1",
+    "ioDesc": "ILPT2 allow WHR to extend arm software interlock S1",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14916,
+    "ioName": "WHR-ILPT2-S2",
+    "ioDesc": "ILPT2 allow WHR to extend arm software interlock S2",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14917,
+    "ioName": "WHR-CTU-I",
+    "ioDesc": "CTU allow WHR to extend arm in-positoin interlock",
+    "ioType": "IN"
+  },
+  {
+    "node": "WHR",
+    "ioNo": 14918,
+    "ioName": "WHR-CTU-S",
+    "ioDesc": "CTU allow WHR to extend arm software interlock",
+    "ioType": "IN"
+  }
+]

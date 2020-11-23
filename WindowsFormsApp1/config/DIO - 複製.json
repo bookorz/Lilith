@@ -1,0 +1,106 @@
+	[
+		{
+			"DeviceName": "D01",
+			"Type": "DIN",
+			"address": "2",
+			"Parameter": "DoorSwitch",
+			"abnormal": "FALSE",
+			"error_code": "00100001"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DIN",
+			"address": "2",
+			"Parameter": "Vacuum",
+			"abnormal": "FALSE",
+			"error_code": "00100002"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DIN",
+			"address": "1",
+			"Parameter": "FFUAlarm",
+			"abnormal": "TRUE",
+			"error_code": "00100005"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DIN",
+			"address": "0",
+			"Parameter": "IonizerAlarm",
+			"abnormal": "FALSE",
+			"error_code": "00100006"
+		},
+		{
+			"DeviceName": "D01",
+			"Type": "DIN",
+			"address": "3",
+			"Parameter": "SafetyRelay",
+			"abnormal": "TRUE",
+			"error_code": "00100007"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DIN",
+			"address": "3",
+			"Parameter": "DifferentialPressureAlarm1",
+			"abnormal": "FALSE",
+			"error_code": "00100009"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DIN",
+			"address": "4",
+			"Parameter": "DifferentialPressureAlarm2",
+			"abnormal": "FALSE",
+			"error_code": "00100010"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "0",
+			"Parameter": "Red",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "1",
+			"Parameter": "Orange",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "2",
+			"Parameter": "Green",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "3",
+			"Parameter": "Blue",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "4",
+			"Parameter": "Buzzer1",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		},
+		{
+			"DeviceName": "D02",
+			"Type": "DOUT",
+			"address": "5",
+			"Parameter": "Buzzer2",
+			"abnormal": "N/A",
+			"error_code": "N/A"
+		}
+	]

@@ -1,0 +1,15 @@
+{
+  "EFEMInterfaceConn": "127.0.0.1",
+  "EFEMInterfaceConn_Port": 13000,
+  "SaftyCheckByPass": false,
+  "AdminPassword": "0192023A7BBD73250516F069DF18B500",
+  "CurrentRecipe": "default",
+  "MappingDataCheck": false,
+  "DummyMappingData": false,
+  "PreMapping": true,
+  "TaskFlow": "Sanwa_EFEM",
+  "FakeDataP1":"1110000000001110000000111",
+  "FakeDataP2":"1110000000001110000000111",
+  "FakeDataP3":"1110000000001110000000111",
+  "FakeDataP4":"1110000000001110000000111"
+}
