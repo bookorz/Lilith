@@ -326,6 +326,7 @@
     <None Include="config\DIO.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="config\DIOController.json" />
     <None Include="config\error_code_en.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

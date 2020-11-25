@@ -1,0 +1,28 @@
+[
+	{
+	"Name": "D01",
+		"DeviceName": "D01",
+		"DeviceType": "DIO",
+		"Vendor": "ICPCONDIGITAL",
+		"IPAdress": "192.168.0.7",
+		"Port": 502,
+		"BaudRate": 38400,
+		"PortName": "COM3",
+		"ConnectionType": "Socket",
+		"Enable": true,
+		"ControllerType": "ASCII"
+	},
+	{
+	"Name": "D01",
+		"DeviceName": "D02",
+		"DeviceType": "DIO",
+		"Vendor": "ICPCONDIGITAL",
+		"IPAdress": "192.168.0.8",
+		"Port": 502,
+		"BaudRate": 38400,
+		"PortName": "COM4",
+		"ConnectionType": "Socket",
+		"Enable": true,
+		"ControllerType": "ASCII"
+	}
+]
