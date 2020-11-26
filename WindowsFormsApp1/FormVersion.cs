@@ -29,7 +29,7 @@ namespace GUI
             //{
             //    Ver_lb.Text = "Version: 2.1.1.5(2018)";
             //}
-            Ver_lb.Text = "Version: 2.1.3.6(2020)";
+            Ver_lb.Text = "Version: 3.01(2020)";
         }
     
     }
