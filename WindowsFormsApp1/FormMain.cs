@@ -673,13 +673,13 @@ namespace Lilith
                     }
                     break;
                 case "BUZZER2_Signal":
-                    if (MainControl.Instance.DIO.GetIO("DOUT", "BUZZER2").ToUpper().Equals("TRUE"))
+                    if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("BLINK"))
                     {
                         MainControl.Instance.DIO.SetIO("BUZZER2", "False");
                     }
                     else
                     {
-                        MainControl.Instance.DIO.SetIO("BUZZER2", "True");
+                        MainControl.Instance.DIO.SetBlink("BUZZER2", "True");
                     }
                     break;
             }
