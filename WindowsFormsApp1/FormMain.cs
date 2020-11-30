@@ -663,23 +663,58 @@ namespace Lilith
                     }
                     break;
                 case "BUZZER1_Signal":
-                    if (MainControl.Instance.DIO.GetIO("DOUT", "BUZZER1").ToUpper().Equals("TRUE"))
+                    if(MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("SHORTBLINK") ||
+                        MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("BLINKSTOP"))
                     {
-                        MainControl.Instance.DIO.SetIO("BUZZER1", "False");
+                        if(MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("SHORTBLINK"))
+                        {
+                            MainControl.Instance.DIO.SetShortBlink("BUZZER2", "False");
+                            MainControl.Instance.DIO.SetBlinkStop("BUZZER2", "True");
+                            MainControl.Instance.DIO.SetBlink("BUZZER1", "True");
+                        }
+                        else
+                        {
+                            MainControl.Instance.DIO.SetIO("BUZZER1", "False");
+                            MainControl.Instance.DIO.SetShortBlink("BUZZER2", "True");
+                        }
                     }
                     else
                     {
-                        MainControl.Instance.DIO.SetIO("BUZZER1", "True");
+                        if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER1").ToUpper().Equals("BLINK"))
+                        {
+                            MainControl.Instance.DIO.SetIO("BUZZER1", "False");
+                        }
+                        else
+                        {
+                            MainControl.Instance.DIO.SetBlink("BUZZER1", "True");
+                        }
                     }
+
                     break;
                 case "BUZZER2_Signal":
-                    if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("BLINK"))
+                    if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("SHORTBLINK"))
                     {
+                        MainControl.Instance.DIO.SetBlinkStop("BUZZER2", "False");
                         MainControl.Instance.DIO.SetIO("BUZZER2", "False");
+
+                    }
+                    else
+                    if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER2").ToUpper().Equals("BLINKSTOP"))
+                    {
+                        MainControl.Instance.DIO.SetBlinkStop("BUZZER2", "false");
+                        MainControl.Instance.DIO.SetIO("BUZZER2", "False");
+                        MainControl.Instance.DIO.SetIO("BUZZER1", "True");
                     }
                     else
                     {
-                        MainControl.Instance.DIO.SetBlink("BUZZER2", "True");
+                        if (MainControl.Instance.DIO.GetIOStatus("DOUT", "BUZZER1").ToUpper().Equals("BLINK"))
+                        {
+                            MainControl.Instance.DIO.SetBlinkStop("BUZZER2", "True");
+                        }
+                        else
+                        {
+                            MainControl.Instance.DIO.SetShortBlink("BUZZER2", "True");
+                        }
                     }
                     break;
             }

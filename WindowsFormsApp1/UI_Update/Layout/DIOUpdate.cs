@@ -136,7 +136,8 @@ namespace Lilith.UI_Update.Layout
                                     Signal.BackColor = Color.Red;
                                     break;
                                 case "BLINK":
-                                    if(Signal.BackColor == Color.Red)
+                                case "BLINKSTOP":
+                                    if (Signal.BackColor == Color.Red)
                                     {
                                         Signal.BackColor = Color.DimGray;
                                     }

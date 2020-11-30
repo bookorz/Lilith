@@ -96,6 +96,14 @@
     "error_code": "N/A"
   },
   {
+    "DeviceName": "D02",
+    "Type": "DOUT",
+    "address": "4",
+    "Parameter": "Buzzer2",
+    "abnormal": "N/A",
+    "error_code": "N/A"
+  },
+  {
     "DeviceName": "D03",
     "Type": "DIN",
     "address": "0",
