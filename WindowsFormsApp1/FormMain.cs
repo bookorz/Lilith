@@ -588,12 +588,6 @@ namespace Lilith
         }
 
 
-
-
-
-
-
-
         public void On_Connection_Status_Report(string DIOName, string Status)
         {
             ConnectionStatusUpdate.UpdateControllerStatus(DIOName, Status);
