@@ -376,6 +376,24 @@ namespace Lilith.UI_Update.Monitoring
                                 Job tmp;
                                 if ((tmp = JobManagement.Get(node.Name, i.ToString())) != null)
                                 {
+                                    ///20201202 Pingchung
+                                    switch (tmp.Status)
+                                    {
+                                        case Job.MapStatus.Undefined:
+                                            tmp.Host_Job_Id = "?";
+                                            break;
+
+                                        case Job.MapStatus.Double:
+                                            tmp.Host_Job_Id = "W";
+                                            break;
+
+                                        case Job.MapStatus.Crossed:
+                                            tmp.Host_Job_Id = "E";
+                                            break;
+                                        default:
+                                            break;
+                                    }
+
                                     present.Text = tmp.Host_Job_Id;
                                     switch (present.Text)
                                     {
@@ -383,9 +401,9 @@ namespace Lilith.UI_Update.Monitoring
                                             present.BackColor = Color.DimGray;
                                             present.ForeColor = Color.White;
                                             break;
-                                        case "Crossed":
-                                        case "Undefined":
-                                        case "Double":
+                                        case "E":
+                                        case "W":
+                                        case "?":
                                             present.BackColor = Color.Red;
                                             present.ForeColor = Color.White;
                                             break;
@@ -415,8 +433,8 @@ namespace Lilith.UI_Update.Monitoring
                                 present.Text = "";
                                 present.BackColor = Color.White;
                             }
-                            }
                         }
+                    }
                 }
 
 
