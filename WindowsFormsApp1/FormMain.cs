@@ -46,16 +46,12 @@ namespace Lilith
         public FormMain()
         {
             InitializeComponent();
+
+            //讀取log4net相關參數
             XmlConfigurator.Configure();
-            Initialize();
-
-            
-
 
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Location = new System.Drawing.Point(-200, 0);
-
-
         }
 
         protected override CreateParams CreateParams
@@ -67,17 +63,8 @@ namespace Lilith
                 return cp;
             }
         }
-
-        private void Initialize()
-        {
-
-
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             Int32 oldWidth = this.Width;
             Int32 oldHeight = this.Height;
 
@@ -89,9 +76,6 @@ namespace Lilith
 
             try
             {
-
-
-
                 for (int i = 0; i < ctrlForm.Length; i++)
                 {
                     ((Form)ctrlForm[i]).TopLevel = false;
@@ -105,8 +89,6 @@ namespace Lilith
                 alarmFrom.Show();
                 //alarmFrom.SendToBack();
                 alarmFrom.Hide();
-
-
 
             }
             catch (Exception ex)
@@ -124,7 +106,12 @@ namespace Lilith
             this.Height = oldHeight;
             this.WindowState = FormWindowState.Maximized;
 
+            //建立與上位的通訊的Interface
             HostControl = new RorzeInterface(this);
+
+            //任務流程管理
+            //1.依照不同的機型搭配不同的工作流程(TaskFlow)
+            //2.相關硬體的初始化與參數檔讀取(MainControl)
             TaskFlowCtrl = new TaskFlowManagement(HostControl);
 
             this.Width = oldWidth;
@@ -587,6 +574,11 @@ namespace Lilith
 
         }
 
+        public void On_CST_Mode_Changed(Node node)
+        {
+            logger.Debug("On_CST_Mode_Changed");
+            MonitoringUpdate.CSTModeUpdate(node.Name, node.Workpiece.ToString());
+        }
 
         public void On_Connection_Status_Report(string DIOName, string Status)
         {

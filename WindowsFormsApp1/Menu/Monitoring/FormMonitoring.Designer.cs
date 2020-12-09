@@ -290,6 +290,10 @@
             this.Robot01_State = new System.Windows.Forms.TextBox();
             this.LoadPort01_FID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.LOADPORT01_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT02_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT03_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT04_CSTMode = new System.Windows.Forms.TextBox();
             this.Aligner01_tb.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -304,6 +308,10 @@
             // Aligner01_tb
             // 
             this.Aligner01_tb.BackColor = System.Drawing.SystemColors.Control;
+            this.Aligner01_tb.Controls.Add(this.LOADPORT04_CSTMode);
+            this.Aligner01_tb.Controls.Add(this.LOADPORT03_CSTMode);
+            this.Aligner01_tb.Controls.Add(this.LOADPORT02_CSTMode);
+            this.Aligner01_tb.Controls.Add(this.LOADPORT01_CSTMode);
             this.Aligner01_tb.Controls.Add(this.LoadPort02_Enable_ck);
             this.Aligner01_tb.Controls.Add(this.LoadPort03_Enable_ck);
             this.Aligner01_tb.Controls.Add(this.LoadPort04_Enable_ck);
@@ -4837,6 +4845,38 @@
             this.label9.Text = "LoadPort01";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // LOADPORT01_CSTMode
+            // 
+            this.LOADPORT01_CSTMode.Location = new System.Drawing.Point(98, 13);
+            this.LOADPORT01_CSTMode.Name = "LOADPORT01_CSTMode";
+            this.LOADPORT01_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT01_CSTMode.TabIndex = 211;
+            this.LOADPORT01_CSTMode.Visible = false;
+            // 
+            // LOADPORT02_CSTMode
+            // 
+            this.LOADPORT02_CSTMode.Location = new System.Drawing.Point(279, 13);
+            this.LOADPORT02_CSTMode.Name = "LOADPORT02_CSTMode";
+            this.LOADPORT02_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT02_CSTMode.TabIndex = 212;
+            this.LOADPORT02_CSTMode.Visible = false;
+            // 
+            // LOADPORT03_CSTMode
+            // 
+            this.LOADPORT03_CSTMode.Location = new System.Drawing.Point(456, 12);
+            this.LOADPORT03_CSTMode.Name = "LOADPORT03_CSTMode";
+            this.LOADPORT03_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT03_CSTMode.TabIndex = 213;
+            this.LOADPORT03_CSTMode.Visible = false;
+            // 
+            // LOADPORT04_CSTMode
+            // 
+            this.LOADPORT04_CSTMode.Location = new System.Drawing.Point(641, 12);
+            this.LOADPORT04_CSTMode.Name = "LOADPORT04_CSTMode";
+            this.LOADPORT04_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT04_CSTMode.TabIndex = 214;
+            this.LOADPORT04_CSTMode.Visible = false;
+            // 
             // FormMonitoring
             // 
             this.ClientSize = new System.Drawing.Size(1620, 760);
@@ -5129,5 +5169,9 @@
         private System.Windows.Forms.CheckBox LoadPort04_Enable_ck;
         private System.Windows.Forms.CheckBox LoadPort01_Enable_ck;
         private System.Windows.Forms.CheckBox Robot01_Enable_ck;
+        private System.Windows.Forms.TextBox LOADPORT01_CSTMode;
+        private System.Windows.Forms.TextBox LOADPORT04_CSTMode;
+        private System.Windows.Forms.TextBox LOADPORT03_CSTMode;
+        private System.Windows.Forms.TextBox LOADPORT02_CSTMode;
     }
 }

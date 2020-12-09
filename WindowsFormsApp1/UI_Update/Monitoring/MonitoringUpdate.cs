@@ -19,6 +19,7 @@ namespace Lilith.UI_Update.Monitoring
         delegate void UpdateNode(string JobId);
         delegate void UpdateEnable(bool Enable);
         delegate void UpdateLog(string msg);
+        delegate void UpdateCSTMode(string PortName, string Mode);
 
         public static void EventUpdate(string Name,bool Checked)
         {
@@ -510,6 +511,60 @@ namespace Lilith.UI_Update.Monitoring
             {
                 logger.Error("UpdateJobMove: Update fail.");
             }
+        }
+        public static void CSTModeUpdate(string PortName, string Mode)
+        {
+            Form form = Application.OpenForms["FormMonitoring"];
+            TextBox Port;
+            if (form == null)
+                return;
+
+            if (form == null)
+                return;
+
+            Port = form.Controls.Find(PortName + "_CSTMode", true).FirstOrDefault() as TextBox;
+            if (Port == null)
+                return;
+
+            if (Port.InvokeRequired)
+            {
+                UpdateCSTMode ph = new UpdateCSTMode(CSTModeUpdate);
+                Port.BeginInvoke(ph, PortName, Mode);
+            }
+            else
+            {
+                if(Mode.Equals("-1"))
+                {
+                    Port.Visible = false;
+                }
+                else
+                {
+                    Port.Visible = true;
+
+                    if (Mode.Equals("0"))
+                    {
+                        Port.Text = "No CST";
+                    }
+                    else if (Mode.Equals("1"))
+                    {
+                        Port.Text = "Pod";
+                    }
+                    else if (Mode.Equals("2"))
+                    {
+                        Port.Text = "Open CST";
+                    }
+                    else if(Mode.Equals("3"))
+                    {
+                        Port.Text = "Adapter";
+                    }
+                    else
+                    {
+                        Port.Text = "Unknow";
+                    }
+
+                }
+            }
+
         }
 
 
