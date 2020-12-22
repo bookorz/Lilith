@@ -681,6 +681,11 @@ namespace Lilith.UI_Update.Manual
                                     slotLb.Text = "Overlapping";
                                     slotLb.BackColor = Color.Red;
                                     break;
+                                case 'E':
+                                    slotLb.Text = "Error";
+                                    slotLb.BackColor = Color.Red;
+                                    break;
+
                             }
                         }
                     }
