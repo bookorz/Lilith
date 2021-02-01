@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.Aligner01_tb = new System.Windows.Forms.GroupBox();
+            this.LOADPORT04_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT03_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT02_CSTMode = new System.Windows.Forms.TextBox();
+            this.LOADPORT01_CSTMode = new System.Windows.Forms.TextBox();
             this.LoadPort02_Enable_ck = new System.Windows.Forms.CheckBox();
             this.LoadPort03_Enable_ck = new System.Windows.Forms.CheckBox();
             this.LoadPort04_Enable_ck = new System.Windows.Forms.CheckBox();
@@ -290,10 +294,6 @@
             this.Robot01_State = new System.Windows.Forms.TextBox();
             this.LoadPort01_FID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.LOADPORT01_CSTMode = new System.Windows.Forms.TextBox();
-            this.LOADPORT02_CSTMode = new System.Windows.Forms.TextBox();
-            this.LOADPORT03_CSTMode = new System.Windows.Forms.TextBox();
-            this.LOADPORT04_CSTMode = new System.Windows.Forms.TextBox();
             this.Aligner01_tb.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -359,6 +359,38 @@
             this.Aligner01_tb.TabIndex = 1;
             this.Aligner01_tb.TabStop = false;
             this.Aligner01_tb.Text = "Device Information";
+            // 
+            // LOADPORT04_CSTMode
+            // 
+            this.LOADPORT04_CSTMode.Location = new System.Drawing.Point(641, 12);
+            this.LOADPORT04_CSTMode.Name = "LOADPORT04_CSTMode";
+            this.LOADPORT04_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT04_CSTMode.TabIndex = 214;
+            this.LOADPORT04_CSTMode.Visible = false;
+            // 
+            // LOADPORT03_CSTMode
+            // 
+            this.LOADPORT03_CSTMode.Location = new System.Drawing.Point(456, 12);
+            this.LOADPORT03_CSTMode.Name = "LOADPORT03_CSTMode";
+            this.LOADPORT03_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT03_CSTMode.TabIndex = 213;
+            this.LOADPORT03_CSTMode.Visible = false;
+            // 
+            // LOADPORT02_CSTMode
+            // 
+            this.LOADPORT02_CSTMode.Location = new System.Drawing.Point(279, 13);
+            this.LOADPORT02_CSTMode.Name = "LOADPORT02_CSTMode";
+            this.LOADPORT02_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT02_CSTMode.TabIndex = 212;
+            this.LOADPORT02_CSTMode.Visible = false;
+            // 
+            // LOADPORT01_CSTMode
+            // 
+            this.LOADPORT01_CSTMode.Location = new System.Drawing.Point(98, 13);
+            this.LOADPORT01_CSTMode.Name = "LOADPORT01_CSTMode";
+            this.LOADPORT01_CSTMode.Size = new System.Drawing.Size(83, 23);
+            this.LOADPORT01_CSTMode.TabIndex = 211;
+            this.LOADPORT01_CSTMode.Visible = false;
             // 
             // LoadPort02_Enable_ck
             // 
@@ -502,9 +534,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(871, 193);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 19);
+            this.label1.Size = new System.Drawing.Size(126, 19);
             this.label1.TabIndex = 201;
-            this.label1.Text = "BF1";
+            this.label1.Text = "BF1 Interlock";
             // 
             // panel1
             // 
@@ -608,6 +640,7 @@
             this.BF1_Slot_1.TabIndex = 13;
             this.BF1_Slot_1.Tag = "1";
             this.BF1_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF1_Slot_1.Visible = false;
             // 
             // label50
             // 
@@ -624,6 +657,7 @@
             this.label50.Tag = "1";
             this.label50.Text = "Presence";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label50.Visible = false;
             // 
             // label17
             // 
@@ -632,9 +666,9 @@
             this.label17.ForeColor = System.Drawing.Color.Black;
             this.label17.Location = new System.Drawing.Point(871, 351);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(36, 19);
+            this.label17.Size = new System.Drawing.Size(126, 19);
             this.label17.TabIndex = 199;
-            this.label17.Text = "BF2";
+            this.label17.Text = "BF2 Interlock";
             // 
             // panel2
             // 
@@ -738,6 +772,7 @@
             this.BF2_Slot_1.TabIndex = 13;
             this.BF2_Slot_1.Tag = "1";
             this.BF2_Slot_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BF2_Slot_1.Visible = false;
             // 
             // label34
             // 
@@ -754,6 +789,7 @@
             this.label34.Tag = "1";
             this.label34.Text = "Presence";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label34.Visible = false;
             // 
             // LoadPort04_Mode
             // 
@@ -4844,38 +4880,6 @@
             this.label9.TabIndex = 53;
             this.label9.Text = "LoadPort01";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LOADPORT01_CSTMode
-            // 
-            this.LOADPORT01_CSTMode.Location = new System.Drawing.Point(98, 13);
-            this.LOADPORT01_CSTMode.Name = "LOADPORT01_CSTMode";
-            this.LOADPORT01_CSTMode.Size = new System.Drawing.Size(83, 23);
-            this.LOADPORT01_CSTMode.TabIndex = 211;
-            this.LOADPORT01_CSTMode.Visible = false;
-            // 
-            // LOADPORT02_CSTMode
-            // 
-            this.LOADPORT02_CSTMode.Location = new System.Drawing.Point(279, 13);
-            this.LOADPORT02_CSTMode.Name = "LOADPORT02_CSTMode";
-            this.LOADPORT02_CSTMode.Size = new System.Drawing.Size(83, 23);
-            this.LOADPORT02_CSTMode.TabIndex = 212;
-            this.LOADPORT02_CSTMode.Visible = false;
-            // 
-            // LOADPORT03_CSTMode
-            // 
-            this.LOADPORT03_CSTMode.Location = new System.Drawing.Point(456, 12);
-            this.LOADPORT03_CSTMode.Name = "LOADPORT03_CSTMode";
-            this.LOADPORT03_CSTMode.Size = new System.Drawing.Size(83, 23);
-            this.LOADPORT03_CSTMode.TabIndex = 213;
-            this.LOADPORT03_CSTMode.Visible = false;
-            // 
-            // LOADPORT04_CSTMode
-            // 
-            this.LOADPORT04_CSTMode.Location = new System.Drawing.Point(641, 12);
-            this.LOADPORT04_CSTMode.Name = "LOADPORT04_CSTMode";
-            this.LOADPORT04_CSTMode.Size = new System.Drawing.Size(83, 23);
-            this.LOADPORT04_CSTMode.TabIndex = 214;
-            this.LOADPORT04_CSTMode.Visible = false;
             // 
             // FormMonitoring
             // 

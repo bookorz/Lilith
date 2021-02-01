@@ -125,6 +125,8 @@ namespace Lilith
             param.Add("BLUE", "False");
             param.Add("BUZZER1", "False");
             param.Add("BUZZER2", "False");
+            param.Add("ARM_NOT_EXTEND_BF1", "True");
+            param.Add("ARM_NOT_EXTEND_BF2", "True");
             TaskFlowCtrl.Ctrl.DIO.SetIO(param);
 
 
@@ -569,9 +571,10 @@ namespace Lilith
         public void On_Job_Location_Changed(Job Job)
         {
             logger.Debug("On_Job_Location_Changed");
-            MonitoringUpdate.UpdateJobMove(Job.Uid);
-            RunningUpdate.UpdateJobMove(Job.Uid);
-
+            //MonitoringUpdate.UpdateJobMove(Job.Uid);
+            MonitoringUpdate.UpdateJobMove(Job.Host_Job_Id, Job.LastNode, Job.LastSlot, Job.Position, Job.Slot);
+            //RunningUpdate.UpdateJobMove(Job.Uid);
+            RunningUpdate.UpdateJobMove(Job.Host_Job_Id, Job.LastNode, Job.LastSlot, Job.Position, Job.Slot);
         }
 
         public void On_CST_Mode_Changed(Node node)
@@ -992,6 +995,24 @@ namespace Lilith
 
         }
 
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(TaskFlowCtrl != null)
+            {
+                Dictionary<string, string> param = new Dictionary<string, string>();
 
+                param.Add("RED", "False");
+                param.Add("ORANGE", "False");
+                param.Add("GREEN", "False");
+                param.Add("BLUE", "False");
+                param.Add("BUZZER1", "False");
+                param.Add("BUZZER2", "False");
+                param.Add("ARM_NOT_EXTEND_BF1", "False");
+                param.Add("ARM_NOT_EXTEND_BF2", "False");
+                TaskFlowCtrl.Ctrl.DIO.SetIO(param);
+            }
+
+
+        }
     }
 }

@@ -324,16 +324,30 @@ namespace Lilith.Menu.Monitoring
 
         private void BF1_BYPASS_ck_Click(object sender, EventArgs e)
         {
-            NodeManagement.Get("BF1").ByPassCheck = BF1_BYPASS_ck.Checked;
-            
-            NodeManagement.Save();
+            CheckBox cb = (CheckBox)sender;
+
+            //NodeManagement.Get("BF1").ByPassCheck = BF1_BYPASS_ck.Checked;
+            Node node = NodeManagement.Get("BF1");
+            if(node != null)
+            {
+                node.ByPassCheck = cb.Checked;
+                NodeManagement.Save();
+            }
+
         }
 
         private void BF2_BYPASS_ck_Click(object sender, EventArgs e)
         {
-            NodeManagement.Get("BF2").ByPassCheck = BF2_BYPASS_ck.Checked;
+            CheckBox cb = (CheckBox)sender;
 
-            NodeManagement.Save();
+            //NodeManagement.Get("BF2").ByPassCheck = BF2_BYPASS_ck.Checked;
+            Node node = NodeManagement.Get("BF2");
+            if (node != null)
+            {
+                node.ByPassCheck = cb.Checked;
+                NodeManagement.Save();
+            }
+
         }
 
         private void Node_Enable_Click(object sender, EventArgs e)

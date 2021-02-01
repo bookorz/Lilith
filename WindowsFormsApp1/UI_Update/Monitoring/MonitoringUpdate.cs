@@ -20,6 +20,8 @@ namespace Lilith.UI_Update.Monitoring
         delegate void UpdateEnable(bool Enable);
         delegate void UpdateLog(string msg);
         delegate void UpdateCSTMode(string PortName, string Mode);
+        delegate void JobMoveUpdate(string Id, string FromPosition, string FromSlot, string ToPosition, string ToSlot);
+
 
         public static void EventUpdate(string Name,bool Checked)
         {
@@ -445,8 +447,7 @@ namespace Lilith.UI_Update.Monitoring
                 logger.Error("UpdateNodesJob: Update fail.");
             }
         }
-
-        public static void UpdateJobMove(string JobId)
+        public static void UpdateJobMove(string Id, string FromPosition, string FromSlot ,string ToPosition, string ToSlot)
         {
             try
             {
@@ -463,55 +464,96 @@ namespace Lilith.UI_Update.Monitoring
 
                 if (tb.InvokeRequired)
                 {
-                    UpdateNode ph = new UpdateNode(UpdateJobMove);
-                    tb.BeginInvoke(ph, JobId);
+                    JobMoveUpdate ph = new JobMoveUpdate(UpdateJobMove);
+                    tb.BeginInvoke(ph, Id, FromPosition, FromSlot, ToPosition, ToSlot);
                 }
                 else
                 {
-                    Job Job = JobManagement.Get(JobId);
-                    if (Job != null)
+                    Label  fromposition = form.Controls.Find(FromPosition + "_Slot_" + FromSlot, true).FirstOrDefault() as Label;
+                    if (fromposition != null)
                     {
-                        Node LastNode = NodeManagement.Get(Job.LastNode);
-                        Node CurrentNode = NodeManagement.Get(Job.Position);
-                        if (LastNode != null)
-                        {
+                        fromposition.Text = "No wafer";
+                        fromposition.BackColor = Color.DimGray;
+                        fromposition.ForeColor = Color.White;
 
-                            Label present = form.Controls.Find(Job.LastNode + "_Slot_" + Job.LastSlot, true).FirstOrDefault() as Label;
-                            if (present != null)
-                            {
+                    }
 
-                                present.Text = "No wafer";
-                                present.BackColor = Color.DimGray;
-                                present.ForeColor = Color.White;
-
-                            }
-
-                        }
-                        if (CurrentNode != null)
-                        {
-                            Label present = form.Controls.Find(Job.Position + "_Slot_" + Job.Slot, true).FirstOrDefault() as Label;
-                            if (present != null)
-                            {
-
-
-                                present.Text = Job.Host_Job_Id;
-
-                                present.BackColor = Color.Green;
-                                present.ForeColor = Color.White;
-
-                            }
-
-                        }
+                    Label toposition = form.Controls.Find(ToPosition + "_Slot_" + ToSlot, true).FirstOrDefault() as Label;
+                    if (toposition != null)
+                    {
+                        toposition.Text = Id;
+                        toposition.BackColor = Color.Green;
+                        toposition.ForeColor = Color.White;
                     }
                 }
-
-
             }
             catch
             {
                 logger.Error("UpdateJobMove: Update fail.");
             }
+
+
         }
+        //public static void UpdateJobMove(string JobId)
+        //{
+        //    try
+        //    {
+        //        Form form = Application.OpenForms["FormMonitoring"];
+        //        TextBox tb;
+
+        //        if (form == null)
+        //            return;
+
+        //        tb = form.Controls.Find("LoadPort01_State", true).FirstOrDefault() as TextBox;
+
+        //        if (tb == null)
+        //            return;
+
+        //        if (tb.InvokeRequired)
+        //        {
+        //            UpdateNode ph = new UpdateNode(UpdateJobMove);
+        //            tb.BeginInvoke(ph, JobId);
+        //        }
+        //        else
+        //        {
+        //            Job Job = JobManagement.Get(JobId);
+        //            if (Job != null)
+        //            {
+        //                Node LastNode = NodeManagement.Get(Job.LastNode);
+        //                Node CurrentNode = NodeManagement.Get(Job.Position);
+        //                if (LastNode != null)
+        //                {
+        //                    Label present = form.Controls.Find(Job.LastNode + "_Slot_" + Job.LastSlot, true).FirstOrDefault() as Label;
+        //                    if (present != null)
+        //                    {
+        //                        present.Text = "No wafer";
+        //                        present.BackColor = Color.DimGray;
+        //                        present.ForeColor = Color.White;
+
+        //                    }
+
+        //                }
+        //                if (CurrentNode != null)
+        //                {
+        //                    Label present = form.Controls.Find(Job.Position + "_Slot_" + Job.Slot, true).FirstOrDefault() as Label;
+        //                    if (present != null)
+        //                    {
+        //                        present.Text = Job.Host_Job_Id;
+        //                        present.BackColor = Color.Green;
+        //                        present.ForeColor = Color.White;
+        //                    }
+
+        //                }
+        //            }
+        //        }
+
+
+        //    }
+        //    catch
+        //    {
+        //        logger.Error("UpdateJobMove: Update fail.");
+        //    }
+        //}
         public static void CSTModeUpdate(string PortName, string Mode)
         {
             Form form = Application.OpenForms["FormMonitoring"];
