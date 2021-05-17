@@ -1,0 +1,62 @@
+[
+	{
+		"eqpStatus": "IDLE",
+		"hasAlarm": false,
+		"red": "FALSE",
+		"orange": "FALSE",
+		"green": "FALSE",
+		"blue": "TRUE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	},
+	{
+		"eqpStatus": "RUN",
+		"hasAlarm": false,
+		"red": "FALSE",
+		"orange": "FALSE",
+		"green": "BLINK",
+		"blue": "FALSE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	},
+	{
+		"eqpStatus": "PAUSE",
+		"hasAlarm": false,
+		"red": "FALSE",
+		"orange": "BLINK",
+		"green": "FALSE",
+		"blue": "FALSE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	},
+	{
+		"eqpStatus": "IDLE",
+		"hasAlarm": true,
+		"red": "BLINK",
+		"orange": "FALSE",
+		"green": "FALSE",
+		"blue": "TRUE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	},
+	{
+		"eqpStatus": "RUN",
+		"hasAlarm": true,
+		"red": "BLINK",
+		"orange": "FALSE",
+		"green": "TRUE",
+		"blue": "FALSE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	},
+	{
+		"eqpStatus": "PAUSE",
+		"hasAlarm": true,
+		"red": "BLINK",
+		"orange": "BLINK",
+		"green": "FALSE",
+		"blue": "FALSE",
+		"buzzer1": "FALSE",
+		"buzzer2": "FALSE"
+	}
+]
