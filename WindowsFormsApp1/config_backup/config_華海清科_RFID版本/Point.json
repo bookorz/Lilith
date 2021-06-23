@@ -1,0 +1,57 @@
+	[
+		{
+			"NodeName": "ROBOT01",
+			"Position": "LOADPORT01",
+			"PositionType": "LOADPORT",
+			"Point": "81",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		},
+		{
+			"NodeName": "ROBOT01",
+			"Position": "LOADPORT02",
+			"PositionType": "LOADPORT",
+			"Point": "82",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		},
+		{
+			"NodeName": "ROBOT01",
+			"Position": "LOADPORT03",
+			"PositionType": "LOADPORT",
+			"Point": "83",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		},
+		{
+			"NodeName": "ROBOT01",
+			"Position": "LOADPORT04",
+			"PositionType": "LOADPORT",
+			"Point": "84",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		},
+		{
+			"NodeName": "ROBOT01",
+			"Position": "BF1",
+			"PositionType": "LOADLOCK",
+			"Point": "1",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		},
+		{
+			"NodeName": "ROBOT01",
+			"Position": "BF2",
+			"PositionType": "LOADLOCK",
+			"Point": "2",
+			"MappingPoint": "",
+			"PreMappingPoint": null,
+			"Offset": 0
+		}
+		
+	]

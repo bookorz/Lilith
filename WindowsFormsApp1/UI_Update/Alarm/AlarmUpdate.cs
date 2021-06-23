@@ -44,7 +44,8 @@ namespace Lilith.UI_Update.Alarm
                 {
                     UpdateAlarm ph = new UpdateAlarm(UpdateAlarmList);
 
-                    AlarmList_gv.Invoke(ph, AlarmList);
+                    //AlarmList_gv.Invoke(ph, AlarmList);
+                    AlarmList_gv.BeginInvoke(ph, AlarmList);
 
                 }
                 else

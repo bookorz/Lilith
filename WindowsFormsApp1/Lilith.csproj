@@ -422,7 +422,7 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties config_4Node_1json__JSONSchema="https://carafe.fm/schema/draft-02/bundle.schema.json" />
+      <UserProperties config_4Node_1json__JSONSchema="https://jenkins-x.io/schemas/jx-requirements.json" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

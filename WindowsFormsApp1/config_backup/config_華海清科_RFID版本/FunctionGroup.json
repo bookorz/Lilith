@@ -1,0 +1,104 @@
+[
+	{
+		"id": "BAS_ALARM",
+		"name": "Alaram",
+		"form": "FormMain",
+		"reference": "btnAlarm"
+	},
+	{
+		"id": "BAS_COMM",
+		"name": "IO Check",
+		"form": "FormMain",
+		"reference": "tbcMain.tabDIO"
+	},
+	{
+		"id": "BAS_DIFF_MONITOR",
+		"name": "Differential data",
+		"form": "FormMain",
+		"reference": "tbcMain.tbDiffMonitor"
+	},
+	{
+		"id": "BAS_MAPPING",
+		"name": "Wafer Assign",
+		"form": "FormMain",
+		"reference": "tabWaferAssign"
+	},
+	{
+		"id": "BAS_MONITOR",
+		"name": "Monitoring",
+		"form": "FormMain",
+		"reference": "tabMonitor"
+	},
+	{
+		"id": "BAS_RUNNING",
+		"name": "Running Mode",
+		"form": "FormMain",
+		"reference": "tbcMain.tabRunning"
+	},
+	{
+		"id": "BAS_SETTING",
+		"name": "System Setting",
+		"form": "FormMain",
+		"reference": "tbcMain.tabNewSetting"
+	},
+	{
+		"id": "BAS_STATUS",
+		"name": "Status",
+		"form": "FormMain",
+		"reference": "tabStatus"
+	},
+	{
+		"id": "SYS_ACCOUNT",
+		"name": "Account Setting",
+		"form": "FormSetting",
+		"reference": "btnAccountSetting"
+	},
+	{
+		"id": "SYS_CHANGE_RECIPE",
+		"name": "Change Recipe",
+		"form": "FormMain",
+		"reference": "btnChangeRecipe"
+	},
+	{
+		"id": "SYS_DEVICE_MANAGER",
+		"name": "Account Setting",
+		"form": "FormSetting",
+		"reference": "btnDeviceManager"
+	},
+	{
+		"id": "SYS_DIO",
+		"name": "DIO setting",
+		"form": "FormSetting",
+		"reference": "btnDIOSetting"
+	},
+	{
+		"id": "SYS_ONLINE_SETTING",
+		"name": "Online setting",
+		"form": "FormSetting",
+		"reference": "btnOnlineSettings"
+	},
+	{
+		"id": "SYS_RECIPE",
+		"name": "Recipe setting",
+		"form": "FormSetting",
+		"reference": "btnRecipeSetting"
+	},
+	{
+		"id": "SYS_SECS_SETTING",
+		"name": "SECS setting",
+		"form": "FormSetting",
+		"reference": "btnSECSSetting"
+	},
+	{
+		"id": "SYS_SIGNAL_SETTING",
+		"name": "Signal tower setting",
+		"form": "FormSetting",
+		"reference": "btnSignalTtower"
+	},
+	{
+		"id": "SYS_SYS_CONFIG",
+		"name": "System Config",
+		"form": "FormSetting",
+		"reference": "btnSysConfig"
+	}
+]

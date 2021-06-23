@@ -37,6 +37,8 @@
             this.Smif_log_rt = new System.Windows.Forms.RichTextBox();
             this.SMIF_TweekUP_bt = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.TagType_cb = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TagWrite_bt = new System.Windows.Forms.Button();
             this.TagRead_bt = new System.Windows.Forms.Button();
             this.SmartTagWrite_tb = new System.Windows.Forms.TextBox();
@@ -233,8 +235,6 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.tbcManual = new System.Windows.Forms.TabControl();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TagType_cb = new System.Windows.Forms.ComboBox();
             this.pnlMotionStop.SuspendLayout();
             this.tabSmif.SuspendLayout();
             this.groupBox7.SuspendLayout();
@@ -404,6 +404,28 @@
             this.groupBox7.TabIndex = 84;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Smart Tag";
+            // 
+            // TagType_cb
+            // 
+            this.TagType_cb.FormattingEnabled = true;
+            this.TagType_cb.Items.AddRange(new object[] {
+            "SMARTTAG8200",
+            "SMARTTAG8400",
+            "OMRON_V640"});
+            this.TagType_cb.Location = new System.Drawing.Point(72, 40);
+            this.TagType_cb.Name = "TagType_cb";
+            this.TagType_cb.Size = new System.Drawing.Size(227, 35);
+            this.TagType_cb.TabIndex = 41;
+            this.TagType_cb.SelectedIndexChanged += new System.EventHandler(this.TagType_cb_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 43);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 27);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Type";
             // 
             // TagWrite_bt
             // 
@@ -3201,27 +3223,6 @@
             this.tbcManual.Size = new System.Drawing.Size(1495, 841);
             this.tbcManual.TabIndex = 0;
             this.tbcManual.SelectedIndexChanged += new System.EventHandler(this.tbcManual_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 43);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 27);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Type";
-            // 
-            // TagType_cb
-            // 
-            this.TagType_cb.FormattingEnabled = true;
-            this.TagType_cb.Items.AddRange(new object[] {
-            "SMARTTAG8200",
-            "SMARTTAG8400"});
-            this.TagType_cb.Location = new System.Drawing.Point(72, 40);
-            this.TagType_cb.Name = "TagType_cb";
-            this.TagType_cb.Size = new System.Drawing.Size(227, 35);
-            this.TagType_cb.TabIndex = 41;
-            this.TagType_cb.SelectedIndexChanged += new System.EventHandler(this.TagType_cb_SelectedIndexChanged);
             // 
             // FormManual
             // 

@@ -1089,8 +1089,8 @@ namespace GUI
 
         private void TagRead_bt_Click(object sender, EventArgs e)
         {
-            string Message = "";
-            string TaskName = "READ_LCD";
+            //string Message = "";
+            //string TaskName = "READ_LCD";
             Dictionary<string, string> param = new Dictionary<string, string>();
             ManualPortStatusUpdate.LockUI(true);
             param.Add("@Target", "SMARTTAG"+Cb_SMIFSelect.Text.Replace("LOADPORT",""));
@@ -1099,8 +1099,8 @@ namespace GUI
 
         private void TagWrite_bt_Click(object sender, EventArgs e)
         {
-            string Message = "";
-            string TaskName = "WRITE_LCD";
+            //string Message = "";
+            //string TaskName = "WRITE_LCD";
             Dictionary<string, string> param = new Dictionary<string, string>();
             ManualPortStatusUpdate.LockUI(true);
             param.Add("@Target", "SMARTTAG" + Cb_SMIFSelect.Text.Replace("LOADPORT", ""));

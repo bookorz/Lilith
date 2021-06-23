@@ -438,9 +438,11 @@ namespace Lilith
             switch (Node.Type)
             {
                 case "SMARTTAG":
+                case "RFID":
                     switch (Txn.Method)
                     {
                         case Transaction.Command.SmartTagType.GetLCDData:
+                        case Transaction.Command.RFIDType.GetCarrierID:
                             ManualPortStatusUpdate.UpdateID(Msg.Value);
                             break;
                     }

@@ -24,15 +24,11 @@ namespace Lilith
         private void ResetAll_bt_Click(object sender, EventArgs e)
         {
             Transaction Txn;
-            
 
-            
+            //AlarmManagement.ClearALL();
+            //AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
 
-            //var NodeList = AlarmManagement.GetCurrent().GroupBy(t => t.nodeName);
-
-           
             TaskFlowManagement.Excute(TaskFlowManagement.Command.RESET_ALL).Promise();
-            //NodeStatusUpdate.UpdateCurrentState("Idle");
             AlarmManagement.ClearALL();
             AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
         }
