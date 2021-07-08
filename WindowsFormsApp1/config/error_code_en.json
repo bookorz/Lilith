@@ -13914,6 +13914,30 @@
     "isAlert": true
   },
   {
+    "vendor": "SYSTEM",
+    "errorCode": "S0400001",
+    "errDesc": "Port 1 E84 VALID ON",
+    "isAlert": true
+  },
+  {
+    "vendor": "SYSTEM",
+    "errorCode": "S0400002",
+    "errDesc": "Port 2 E84 VALID ON",
+    "isAlert": true
+  },
+  {
+    "vendor": "SYSTEM",
+    "errorCode": "S0400003",
+    "errDesc": "Port 3 E84 VALID ON",
+    "isAlert": true
+  },
+  {
+    "vendor": "SYSTEM",
+    "errorCode": "S0400004",
+    "errDesc": "Port 3 E84 VALID ON",
+    "isAlert": true
+  },
+  {
     "vendor": "ATEL_NEW",
     "errorCode": "00070000",
     "errDesc": "File Read/Write Fail",
@@ -15231,6 +15255,138 @@
     "vendor": "OMRON_V640",
     "errorCode": "7F",
     "errDesc": "An inapplicable ID Tag has been used.",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CKSUM",
+    "errDesc": "Checksum error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CMDER",
+    "errDesc": "Command error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "SFSER",
+    "errDesc": "Reserved (Not used.)",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "INTER",
+    "errDesc": "Interlock error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CBUSY",
+    "errDesc": "Communication busy (wait). The command is not accepted.",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "FPILG",
+    "errDesc": "FOUP loading error or no FOUP",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "LATCH",
+    "errDesc": "Latch key error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "FPCLP",
+    "errDesc": "Reserved (Not used.)",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "YPOSI",
+    "errDesc": "Y-axis (docking table) position error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "DOCPO",
+    "errDesc": "Door open/close position error (mapper frame position error)",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "DPOSI",
+    "errDesc": "Door open/close position error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "PROTS",
+    "errDesc": "Reserved (Not used.)",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "MPARM",
+    "errDesc": "Mapper arm storage error. Mapping starting position error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "ZPOSI",
+    "errDesc": "Z-axis (door top/bottom) position error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "MPSTP",
+    "errDesc": "Mapper stopper position error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "DVACM",
+    "errDesc": "Door ¡V Being vacuumed.",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "ERROR",
+    "errDesc": "Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "ORGYT",
+    "errDesc": "Initialization incomplete",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CLDDK",
+    "errDesc": "CLDDK command is incomplete",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CULDK",
+    "errDesc": "CULDK command is incomplete",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "CLOAD",
+    "errDesc": "CLOAD command is incomplete",
+    "isAlert": false
+  },
+  {
+    "vendor": "TDK",
+    "errorCode": "RMPOS",
+    "errDesc": "RMPOS command is incomplete",
     "isAlert": false
   }
 ]

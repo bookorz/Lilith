@@ -1,0 +1,372 @@
+[
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_ALARM",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_COMM",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_DIFF_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_RUNNING",
+		"active": false
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "BAS_STATUS",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_ACCOUNT",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_CHANGE_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_DEVICE_MANAGER",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_DIO",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_ONLINE_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_SECS_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_SIGNAL_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "ADMIN",
+		"functionId": "SYS_SYS_CONFIG",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_ALARM",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_COMM",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_DIFF_MONITOR",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_RUNNING",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "BAS_STATUS",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_ACCOUNT",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_CHANGE_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_DEVICE_MANAGER",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_DIO",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_ONLINE_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_SECS_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_SIGNAL_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "ENG",
+		"functionId": "SYS_SYS_CONFIG",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_ALARM",
+		"active": true
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_COMM",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_DIFF_MONITOR",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_RUNNING",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "BAS_STATUS",
+		"active": true
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "SYS_ACCOUNT",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "SYS_CHANGE_RECIPE",
+		"active": false
+	},
+	{
+		"userGroupId": "INIT",
+		"functionId": "SYS_SYS_CONFIG",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_ALARM",
+		"active": true
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_COMM",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_DIFF_MONITOR",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_RUNNING",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "BAS_STATUS",
+		"active": true
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_ACCOUNT",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_CHANGE_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_DEVICE_MANAGER",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_DIO",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_ONLINE_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_RECIPE",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_SECS_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_SIGNAL_SETTING",
+		"active": false
+	},
+	{
+		"userGroupId": "OP",
+		"functionId": "SYS_SYS_CONFIG",
+		"active": false
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_ALARM",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_COMM",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_DIFF_MONITOR",
+		"active": false
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_MONITOR",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_RUNNING",
+		"active": false
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "BAS_STATUS",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_ACCOUNT",
+		"active": false
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_CHANGE_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_DEVICE_MANAGER",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_DIO",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_ONLINE_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_RECIPE",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_SECS_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_SIGNAL_SETTING",
+		"active": true
+	},
+	{
+		"userGroupId": "P_ENG",
+		"functionId": "SYS_SYS_CONFIG",
+		"active": false
+	}
+]

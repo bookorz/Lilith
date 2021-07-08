@@ -15364,5 +15364,377 @@
     "errorCode": "RMPOS",
     "errDesc": "RMPOS command is incomplete",
     "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "FFFF",
+    "errDesc": "UNKNOWN COMMAND",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "FFFD",
+    "errDesc": "EOC ERROR",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "01010000",
+    "errDesc": "Environment status not ready, can¡¦t switch to AUTO MODE",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "01020000",
+    "errDesc": "Not in Manual mode or in STANDBY",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "02010000",
+    "errDesc": "GO or CS_0 not OFF status, can¡¦t switch to MANUAL MODE",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "04010000",
+    "errDesc": "Controller not in ERROR status or MANUAL MODE, command Fail",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "04010100",
+    "errDesc": "Environment status not ready, command Fail",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5580",
+    "errDesc": "CS_0 timeout: GO_ON, wait CS_0 ON timeout",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5581",
+    "errDesc": "TD0 timeout: CS_0 ON, wait VALID ON timeout",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5582",
+    "errDesc": "TP1 timeout: (L_REQ or U_REQ) ON wait TR_REQ ON timeout (2 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5583",
+    "errDesc": "TP2 timeout: READY ON wait BUSY ON timeout (2 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5584",
+    "errDesc": "TP3-LOAD timeout: BUSY_ON, LOADING FOUP wait PS ON & PL ON timeout(60 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5586",
+    "errDesc": "TP3-UNLOAD timeout: BUSY_ON, UNLOADING FOUP wait PS OFF & PL OFF timeout (60 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "5588",
+    "errDesc": "TP4 timeout: FOUP (LOADED/UNLOADED) wait BUSY OFF, TR_REQ OFF, COMPT ON timeout (60 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "558B",
+    "errDesc": "TP5 timeout: READY OFF wait VALID OFF,COMPT OFF,CS_0 OFF timeout (2 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "558C",
+    "errDesc": "TP5 timeout: READY OFF wait VALID OFF,COMPT OFF,CS_0 OFF timeout (2 seconds)",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A0",
+    "errDesc": "Wait GO ON => CS_0,VALID,TR_REQ,BUSY,COMPT anyone ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A1",
+    "errDesc": "Wait CS_0 ON => GO OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A2",
+    "errDesc": "Wait CS_0 ON => VALID,TR_REQ,BUSY,COMPT anyone ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A3",
+    "errDesc": "Wait VALID ON => GO, CS_0 anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A4",
+    "errDesc": "During TA1(VALID ON - L_REQ or U_REQ ON) => GO,CS0,VALID anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A5",
+    "errDesc": "During TA1(VALID ON - L_REQ or U_REQ ON) => TR-REQ,BUSY,COMPT anyone ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A6",
+    "errDesc": "Wait TR_REQ ON => BUSY,COMPT anyone ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A7",
+    "errDesc": "Wait BUSY ON => GO,CS_0,VALID,TR_REQ anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A8",
+    "errDesc": "During TA2(TR_REQ ON - READY ON) => GO,CS0,VALID,TR-REQ anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55A9",
+    "errDesc": "Wait BUSY OFF, TR_REQ OFF,COMPT ON => GO,CS_0,VALID anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AA",
+    "errDesc": "During TA2(TR_REQ ON - READY ON) => BUSY,COMPT anyone ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AB",
+    "errDesc": "Wait BUSY ON => GO,CS0,VALID,TR_REQ anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AC",
+    "errDesc": "Wait BUSY ON => COMPT ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AD",
+    "errDesc": "Wait BUSY,TR_REQ OFF,COMPT ON => GOT E84 SIGNAL ERROR",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AE",
+    "errDesc": "During TA3(COMPT ON - READY OFF) , E84 handshake signal error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55AF",
+    "errDesc": "During TA3(COMPT ON - READY OFF) , E84 handshake signal error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55B0",
+    "errDesc": "Wait handshake finish(VALID,COMPT,CS_0 OFF), E84 handshake signal error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C0",
+    "errDesc": "BUSY ON, LOADING process, wait PS ON => GO,VALID,CS_0,TR_REQ,BUSY anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C1",
+    "errDesc": "BUSY ON, LOADING process, wait PS ON => COMPT ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C2",
+    "errDesc": "BUSY ON, LOADING process, wait PL ON => GO,VALID,CS_0,TR_REQ,BUSY anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C3",
+    "errDesc": "BUSY ON, LOADING process, wait PL ON => COMPT ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C4",
+    "errDesc": "BUSY ON, UNLOADING process, wait PL OFF => GO,VALID,CS_0,TR_REQ,BUSY anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C5",
+    "errDesc": "BUSY ON, UNLOADING process, wait PL OFF => COMPT ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C6",
+    "errDesc": "BUSY ON, UNLOADING process, wait PS OFF => GO,VALID,CS_0,TR_REQ,BUSY anyone OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C7",
+    "errDesc": "BUSY ON, UNLOADING process, wait PS OFF => COMPT ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C8",
+    "errDesc": "FOUP SENSOR signal located (L-REQ or U-REQ not OFF) => Got E84 signal error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55C9",
+    "errDesc": "FOUP SENSOR signal located (L-REQ or U-REQ not OFF) => Got FOUP SENSOR signal error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D0",
+    "errDesc": "Wait GO ON => Presence Sensor (PS) or Placement Sensor (PL) signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D1",
+    "errDesc": "Wait CS_0 ON => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D2",
+    "errDesc": "Wait VALID ON => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D3",
+    "errDesc": "TA1 period => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D4",
+    "errDesc": "Wait TR_REQ ON => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D5",
+    "errDesc": "TA2 period => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55D6",
+    "errDesc": "Wait BUSY ON => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55DC",
+    "errDesc": "LOADING process, wait PS ON, detected PL ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55DD",
+    "errDesc": "LOADING process, wait PL ON, detected PS OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55DE",
+    "errDesc": "UNLOADIND process, wait PL OFF, detected PS OFF",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55DF",
+    "errDesc": "UNLOADIND process, wait PS OFF, detected PL ON",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E0",
+    "errDesc": "Wait BUSY OFF => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E1",
+    "errDesc": "TA3 period => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E2",
+    "errDesc": "Wait TR_REQ OFF => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E3",
+    "errDesc": "Wait COMPT ON => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E4",
+    "errDesc": "Wait VALID OFF => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E5",
+    "errDesc": "Wait COMPT OFF => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E6",
+    "errDesc": "Wait CS_0 OFF => PS or PL signal Error",
+    "isAlert": false
+  },
+  {
+    "vendor": "SEMI_E84",
+    "errorCode": "55E7",
+    "errDesc": "Wait GO OFF => PS or PL signal Error",
+    "isAlert": false
   }
 ]

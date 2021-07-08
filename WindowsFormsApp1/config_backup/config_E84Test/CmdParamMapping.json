@@ -1,0 +1,346 @@
+	[
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Normal Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "0"
+		},
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "1",
+			"CodeDesc": "Dry Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "2",
+			"CodeDesc": "Test Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "3",
+			"CodeDesc": "Step Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Normal Mode",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "Real"
+		},
+		{
+			"FuncType": "AlignerMode",
+			"ParamName": "Value",
+			"CodeId": "1",
+			"CodeDesc": "Dry Mode",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "Simu"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Upper Arm(R)",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Lower Arm(L)",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both Arm(R+L)",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Hand 2 (Upper)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H2"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Hand 1 (Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H1"
+		},
+		{
+			"FuncType": "Get",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both hands(Upper+Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "HA"
+		},
+		{
+			"FuncType": "GetError",
+			"ParamName": "Value",
+			"CodeId": "00",
+			"CodeDesc": "Last Error Code No",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "GetError",
+			"ParamName": "Value",
+			"CodeId": "00",
+			"CodeDesc": "Last Error Code No",
+			"Vendor": "SANWA",
+			"MappingCode": "00"
+		},
+		{
+			"FuncType": "RobotSpeed",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Max Speed",
+			"Vendor": "SANWA",
+			"MappingCode": "0"
+		},
+		{
+			"FuncType": "RobotSpeed",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Max Speed",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "100"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Normal Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "0"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "1",
+			"CodeDesc": "Dry Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "2",
+			"CodeDesc": "Test Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "3",
+			"CodeDesc": "Step Mode",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Normal Mode",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "Real"
+		},
+		{
+			"FuncType": "RobotMode",
+			"ParamName": "Value",
+			"CodeId": "1",
+			"CodeDesc": "Dry Mode",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "Simu"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Upper Arm(R)",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Lower Arm(L)",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both Arm(R+L)",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Hand 2 (Upper)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H2"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Hand 1 (Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H1"
+		},
+		{
+			"FuncType": "Put",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both hands(Upper+Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "HA"
+		},
+		{
+			"FuncType": "AlignerSpeed",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Max Speed",
+			"Vendor": "SANWA",
+			"MappingCode": "0"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Upper Arm(R)",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Lower Arm(L)",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both Arm(R+L)",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Hand 2 (Upper)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H2"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Hand 1 (Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H1"
+		},
+		{
+			"FuncType": "WaferRelease",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both hands(Upper+Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "HA"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Upper Arm(R)",
+			"Vendor": "SANWA",
+			"MappingCode": "1"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Lower Arm(L)",
+			"Vendor": "SANWA",
+			"MappingCode": "2"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both Arm(R+L)",
+			"Vendor": "SANWA",
+			"MappingCode": "3"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "1",
+			"CodeDesc": "Hand 2 (Upper)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H2"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "2",
+			"CodeDesc": "Hand 1 (Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H1"
+		},
+		{
+			"FuncType": "WaferHold",
+			"ParamName": "Arm",
+			"CodeId": "3",
+			"CodeDesc": "Both hands(Upper+Lower)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "HA"
+		},
+		{
+			"FuncType": "GetCombineStatus",
+			"ParamName": "A",
+			"CodeId": "1",
+			"CodeDesc": "Hand 2 (Upper)",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "H2"
+		},
+		{
+			"FuncType": "AlignerSpeed",
+			"ParamName": "Value",
+			"CodeId": "0",
+			"CodeDesc": "Max Speed",
+			"Vendor": "KAWASAKI",
+			"MappingCode": "100"
+		}
+	]

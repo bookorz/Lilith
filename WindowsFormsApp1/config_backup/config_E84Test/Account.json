@@ -1,0 +1,32 @@
+[
+	{
+		"userId": "ADMIN",
+		"password": "202cb962ac59075b964b07152d234b70",
+		"groupId": "ADMIN",
+		"active": true
+	},
+	{
+		"userId": "ENG",
+		"password": "5c348e7c6704f125037b20494cc12b66",
+		"groupId": "ENG",
+		"active": true
+	},
+	{
+		"userId": "OP",
+		"password": "202cb962ac59075b964b07152d234b70",
+		"groupId": "OP",
+		"active": true
+	},
+	{
+		"userId": "PENG",
+		"password": "202cb962ac59075b964b07152d234b70",
+		"groupId": "P_ENG",
+		"active": true
+	},
+	{
+		"userId": "SANWA",
+		"password": "009b927906b97d1507451f45d795d55e",
+		"groupId": "ADMIN",
+		"active": true
+	}
+]

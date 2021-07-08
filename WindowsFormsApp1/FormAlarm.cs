@@ -1,4 +1,5 @@
 ﻿//using SorterControl.Management;
+using log4net;
 using Lilith.UI_Update.Alarm;
 using Lilith.UI_Update.Monitoring;
 using System;
@@ -16,6 +17,8 @@ namespace Lilith
 {
     public partial class FormAlarm : Form
     {
+        private static readonly ILog logger = LogManager.GetLogger(typeof(FormAlarm));
+
         public FormAlarm()
         {
             InitializeComponent();
@@ -27,10 +30,19 @@ namespace Lilith
 
             //AlarmManagement.ClearALL();
             //AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
+            logger.Debug("ResetAll_bt_Click_ClearALL_Start");
+            AlarmManagement.ClearALL();
+            logger.Debug("ResetAll_bt_Click_ClearALL_End");
+
+            logger.Debug("ResetAll_bt_Click_Start");
 
             TaskFlowManagement.Excute(TaskFlowManagement.Command.RESET_ALL).Promise();
-            AlarmManagement.ClearALL();
-            AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
+
+
+
+            //logger.Debug("ResetAll_bt_Click_UpdateAlarmList_Start");
+            //AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
+            //logger.Debug("ResetAll_bt_Click_UpdateAlarmList_End");
         }
 
         private void AlarmFrom_Load(object sender, EventArgs e)

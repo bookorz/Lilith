@@ -143,9 +143,12 @@ namespace Lilith
             MonitoringUpdate.EventUpdate("SYSTEM", FormMain.HostControl.Events.SYSTEM);
             MonitoringUpdate.EventUpdate("TRANSREQ", FormMain.HostControl.Events.TRANSREQ);
             MonitoringUpdate.EventUpdate("FFU", FormMain.HostControl.Events.FFU);
-            MonitoringUpdate.EventUpdate("BF1_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
-    
-            MonitoringUpdate.EventUpdate("BF2_BYPASS", NodeManagement.Get("BF2").ByPassCheck);
+
+            if(NodeManagement.Get("BF1") != null)
+                MonitoringUpdate.EventUpdate("BF1_BYPASS", NodeManagement.Get("BF1").ByPassCheck);
+
+            if (NodeManagement.Get("BF2") != null)
+                MonitoringUpdate.EventUpdate("BF2_BYPASS", NodeManagement.Get("BF2").ByPassCheck);
           
             DIOUpdate.UpdateDIOStatus("RED", "False");
             DIOUpdate.UpdateDIOStatus("ORANGE", "False");
@@ -326,6 +329,16 @@ namespace Lilith
 
             switch (Node.Type)
             {
+                case "E84":
+                    switch(Txn.Method)
+                    {
+                        case Transaction.Command.E84.GetDIStatus:
+                        case Transaction.Command.E84.GetDOStatus:
+                        case Transaction.Command.E84.GetOperateStatus:
+                            ManualPortStatusUpdate.UpdateE84Status(Node.Name, "");
+                            break;
+                    }
+                    break;
                 case "LOADPORT":
 
                     ManualPortStatusUpdate.UpdateLog(Node.Name, Msg.Command + " Excuted");
@@ -342,38 +355,15 @@ namespace Lilith
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
                             RunningUpdate.UpdateNodesJob(Node.Name);
                             break;
-                        //case Transaction.Command.LoadPortType.GetCassetteSize:
-                        //    ManualPortStatusUpdate.UpdateParameter("CASSETTE_SIZE_tb", Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetSlotOffset:
-                        //    ManualPortStatusUpdate.UpdateParameter("SLOT_OFFSET_tb", Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetWaferOffset:
-                        //    ManualPortStatusUpdate.UpdateParameter("WAFER_OFFSET_tb", Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetTweekDistance:
-                        //    ManualPortStatusUpdate.UpdateParameter("TWEEK_tb", Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetSlotPitch:
-                        //    ManualPortStatusUpdate.UpdateParameter("SLOT_PITCH_tb", Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.ReadVersion:
-                        //    ManualPortStatusUpdate.UpdateVersion(Node.Name, Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetLED:
-                        //    ManualPortStatusUpdate.UpdateLED(Node.Name, Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.ReadStatus:
-                        //    ManualPortStatusUpdate.UpdateSmifStatus(Node.Name, Msg.Value);
-                        //    break;
-                        //case Transaction.Command.LoadPortType.GetCount:
-
-                        //    break;
                         case Transaction.Command.LoadPortType.GetMapping:
                         case Transaction.Command.LoadPortType.GetMappingDummy:
                             ManualPortStatusUpdate.UpdateMapping(Node.Name, Msg.Value);
                             MonitoringUpdate.UpdateNodesJob(Node.Name);
                             RunningUpdate.UpdateNodesJob(Node.Name);
+                            break;
+
+                        case Transaction.Command.LoadPortType.ReadStatus:
+                            ManualPortStatusUpdate.UpdateLoadPortStatus(Node.Name,"");
                             break;
                     }
                     break;
@@ -489,6 +479,10 @@ namespace Lilith
                     case "LOADPORT":
 
                         break;
+
+                    case "E84":
+                        ManualPortStatusUpdate.UpdateE84Status(Node.Name, "");
+                        break;
                 }
             }
             catch (Exception e)
@@ -594,9 +588,7 @@ namespace Lilith
        
         public void On_Alarm_Happen(AlarmManagement.Alarm Alarm)
         {
-
             AlarmUpdate.UpdateAlarmList(AlarmManagement.GetCurrent());
-            //AlarmUpdate.UpdateAlarmHistory(AlarmManagement.GetHistory());
         }
 
 

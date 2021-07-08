@@ -1,14 +1,14 @@
 [
   {
-    "Name": "ROBOTCONTROLLER",
-    "DeviceName": "ROBOTCONTROLLER",
-    "DeviceType": "ROBOT",
+    "Name": "LOADPORTCONTROLLER01",
+    "DeviceName": "LOADPORTCONTROLLER01",
+    "DeviceType": "LOADPORT",
     "ControllerType": "ASCII",
-    "Vendor": "ATEL_NEW",
-    "IPAdress": "COM5",
-    "Port": 23,
-    "ConnectionType": "Comport",
-    "PortName": "COM5",
+    "Vendor": "TDK",
+    "IPAdress": "192.168.0.11",
+    "Port": 10001,
+    "ConnectionType": "SOCKET",
+    "PortName": "COM1",
     "BaudRate": 38400,
     "Enable": true
   },
@@ -26,12 +26,12 @@
     "Enable": true
   },
   {
-    "Name": "LOADPORTCONTROLLER01",
-    "DeviceName": "LOADPORTCONTROLLER01",
+    "Name": "LOADPORTCONTROLLER02",
+    "DeviceName": "LOADPORTCONTROLLER02",
     "DeviceType": "LOADPORT",
     "ControllerType": "ASCII",
     "Vendor": "TDK",
-    "IPAdress": "192.168.0.11",
+    "IPAdress": "192.168.0.12",
     "Port": 10001,
     "ConnectionType": "SOCKET",
     "PortName": "COM1",
@@ -39,16 +39,17 @@
     "Enable": true
   },
   {
-    "Name": "E84CONTROLLER01",
-    "DeviceName": "E84CONTROLLER01",
-    "DeviceType": "E84",
+    "Name": "RFIDCONTROLLER02",
+    "DeviceName": "RFIDCONTROLLER02",
+    "DeviceType": "RFID",
     "ControllerType": "ASCII",
-    "Vendor": "FRANCES",
-    "IPAdress": "COM27",
+    "Vendor": "OMRON_V640",
+    "IPAdress": "COM11",
     "Port": 23,
-    "ConnectionType": "COMPORT",
-    "PortName": "COM27",
-    "BaudRate": 115200,
+    "ConnectionType": "Comport",
+    "PortName": "COM11",
+    "BaudRate": 9600,
     "Enable": true
   }
+
 ]

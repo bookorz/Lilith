@@ -36,7 +36,7 @@
             this.SMIF_TweekDN_bt = new System.Windows.Forms.Button();
             this.Smif_log_rt = new System.Windows.Forms.RichTextBox();
             this.SMIF_TweekUP_bt = new System.Windows.Forms.Button();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.gbSMIFCSTIDTest = new System.Windows.Forms.GroupBox();
             this.TagType_cb = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TagWrite_bt = new System.Windows.Forms.Button();
@@ -235,9 +235,167 @@
             this.label68 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.tbcManual = new System.Windows.Forms.TabControl();
+            this.tabLoadport = new System.Windows.Forms.TabPage();
+            this.btnRemapping = new System.Windows.Forms.Button();
+            this.btnReadMappingResult = new System.Windows.Forms.Button();
+            this.btnLPClearMappingResult = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbMappingResult_01 = new System.Windows.Forms.Label();
+            this.lbSlot_01 = new System.Windows.Forms.Label();
+            this.lbMappingResult_02 = new System.Windows.Forms.Label();
+            this.lbSlot_02 = new System.Windows.Forms.Label();
+            this.lbMappingResult_03 = new System.Windows.Forms.Label();
+            this.lbSlot_03 = new System.Windows.Forms.Label();
+            this.lbMappingResult_04 = new System.Windows.Forms.Label();
+            this.lbSlot_04 = new System.Windows.Forms.Label();
+            this.lbMappingResult_05 = new System.Windows.Forms.Label();
+            this.lbSlot_05 = new System.Windows.Forms.Label();
+            this.lbMappingResult_06 = new System.Windows.Forms.Label();
+            this.lbSlot_06 = new System.Windows.Forms.Label();
+            this.lbMappingResult_07 = new System.Windows.Forms.Label();
+            this.lbSlot_07 = new System.Windows.Forms.Label();
+            this.lbMappingResult_08 = new System.Windows.Forms.Label();
+            this.lbSlot_08 = new System.Windows.Forms.Label();
+            this.lbMappingResult_09 = new System.Windows.Forms.Label();
+            this.lbSlot_09 = new System.Windows.Forms.Label();
+            this.lbMappingResult_10 = new System.Windows.Forms.Label();
+            this.lbSlot_10 = new System.Windows.Forms.Label();
+            this.lbMappingResult_11 = new System.Windows.Forms.Label();
+            this.lbSlot_11 = new System.Windows.Forms.Label();
+            this.lbMappingResult_12 = new System.Windows.Forms.Label();
+            this.lbSlot_12 = new System.Windows.Forms.Label();
+            this.lbMappingResult_13 = new System.Windows.Forms.Label();
+            this.lbSlot_13 = new System.Windows.Forms.Label();
+            this.lbMappingResult_14 = new System.Windows.Forms.Label();
+            this.lbSlot_14 = new System.Windows.Forms.Label();
+            this.lbMappingResult_15 = new System.Windows.Forms.Label();
+            this.lbSlot_15 = new System.Windows.Forms.Label();
+            this.lbMappingResult_16 = new System.Windows.Forms.Label();
+            this.lbSlot_16 = new System.Windows.Forms.Label();
+            this.lbMappingResult_17 = new System.Windows.Forms.Label();
+            this.lbSlot_17 = new System.Windows.Forms.Label();
+            this.lbMappingResult_18 = new System.Windows.Forms.Label();
+            this.lbSlot_18 = new System.Windows.Forms.Label();
+            this.lbMappingResult_19 = new System.Windows.Forms.Label();
+            this.lbSlot_19 = new System.Windows.Forms.Label();
+            this.lbMappingResult_20 = new System.Windows.Forms.Label();
+            this.lbSlot_20 = new System.Windows.Forms.Label();
+            this.lbMappingResult_21 = new System.Windows.Forms.Label();
+            this.lbSlot_21 = new System.Windows.Forms.Label();
+            this.lbMappingResult_22 = new System.Windows.Forms.Label();
+            this.lbSlot_22 = new System.Windows.Forms.Label();
+            this.lbMappingResult_23 = new System.Windows.Forms.Label();
+            this.lbSlot_23 = new System.Windows.Forms.Label();
+            this.lbMappingResult_24 = new System.Windows.Forms.Label();
+            this.lbSlot_24 = new System.Windows.Forms.Label();
+            this.lbMappingResult_25 = new System.Windows.Forms.Label();
+            this.lbSlot_25 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.gbLPMotion = new System.Windows.Forms.GroupBox();
+            this.cbWithSlotMap = new System.Windows.Forms.CheckBox();
+            this.btnLPDRUp = new System.Windows.Forms.Button();
+            this.btnLPDRDown = new System.Windows.Forms.Button();
+            this.btnLPDROpen = new System.Windows.Forms.Button();
+            this.btnLPDRClose = new System.Windows.Forms.Button();
+            this.lbLPDR = new System.Windows.Forms.Label();
+            this.btnLPLKRelease = new System.Windows.Forms.Button();
+            this.btnLPLKFix = new System.Windows.Forms.Button();
+            this.lbLPLK = new System.Windows.Forms.Label();
+            this.btnLPDVOn = new System.Windows.Forms.Button();
+            this.btnLPDVOff = new System.Windows.Forms.Button();
+            this.lbLPDV = new System.Windows.Forms.Label();
+            this.btnLPDPDock = new System.Windows.Forms.Button();
+            this.btnLPDPUndock = new System.Windows.Forms.Button();
+            this.lbDockingPlate = new System.Windows.Forms.Label();
+            this.btnLPFCFix = new System.Windows.Forms.Button();
+            this.btnLPFCRelease = new System.Windows.Forms.Button();
+            this.lbFoupClamp = new System.Windows.Forms.Label();
+            this.btnLPLoad = new System.Windows.Forms.Button();
+            this.btnLPUnload = new System.Windows.Forms.Button();
+            this.gbLPSemiAuto = new System.Windows.Forms.GroupBox();
+            this.btnLPUnlock = new System.Windows.Forms.Button();
+            this.btnLPLock = new System.Windows.Forms.Button();
+            this.btnLPDock = new System.Windows.Forms.Button();
+            this.btnLPUndock = new System.Windows.Forms.Button();
+            this.btnLPOpen = new System.Windows.Forms.Button();
+            this.btnLPClose = new System.Windows.Forms.Button();
+            this.btnLoadportReadStatus = new System.Windows.Forms.Button();
+            this.btnLoadportABORG = new System.Windows.Forms.Button();
+            this.tbLPInfoPad = new System.Windows.Forms.Label();
+            this.tbLPInterlockKey = new System.Windows.Forms.Label();
+            this.tbLPMappingStatus = new System.Windows.Forms.Label();
+            this.tbLPMapperStopper = new System.Windows.Forms.Label();
+            this.tbLPMapperZAixs = new System.Windows.Forms.Label();
+            this.tbLPMapperArmPosition = new System.Windows.Forms.Label();
+            this.tbLPYAxisPosition = new System.Windows.Forms.Label();
+            this.tbLPZAxisPosition = new System.Windows.Forms.Label();
+            this.tbWaferProtusionSensor = new System.Windows.Forms.Label();
+            this.tbLPDoorPosition = new System.Windows.Forms.Label();
+            this.tbLPVacuum = new System.Windows.Forms.Label();
+            this.tbLatchKeyStatus = new System.Windows.Forms.Label();
+            this.tbFoupClampStatus = new System.Windows.Forms.Label();
+            this.tbLPCassettepresence = new System.Windows.Forms.Label();
+            this.tbLPErrorCode = new System.Windows.Forms.Label();
+            this.tbLPOperationStatus = new System.Windows.Forms.Label();
+            this.tbLPInitalPosition = new System.Windows.Forms.Label();
+            this.tbLPMode = new System.Windows.Forms.Label();
+            this.tbLPEquipmentStatus = new System.Windows.Forms.Label();
+            this.lbLPInfoPad = new System.Windows.Forms.Label();
+            this.lbLPInterlockKey = new System.Windows.Forms.Label();
+            this.lbLPMappingStatus = new System.Windows.Forms.Label();
+            this.lbLPMapperStopper = new System.Windows.Forms.Label();
+            this.lbLPMapperZAixs = new System.Windows.Forms.Label();
+            this.lbLPMapperArmPosition = new System.Windows.Forms.Label();
+            this.lbLPYAxisPosition = new System.Windows.Forms.Label();
+            this.lbLPZAxisPosition = new System.Windows.Forms.Label();
+            this.lbWaferProtusionSensor = new System.Windows.Forms.Label();
+            this.lbLPDoorPosition = new System.Windows.Forms.Label();
+            this.lbLPVacuum = new System.Windows.Forms.Label();
+            this.lbLatchKeyStatus = new System.Windows.Forms.Label();
+            this.lbFoupClampStatus = new System.Windows.Forms.Label();
+            this.lbLPCassettepresence = new System.Windows.Forms.Label();
+            this.lbLPErrorCode = new System.Windows.Forms.Label();
+            this.lbLPOperationStatus = new System.Windows.Forms.Label();
+            this.lbLPInitalPosition = new System.Windows.Forms.Label();
+            this.lbLPMode = new System.Windows.Forms.Label();
+            this.lbLPEquipmentStatus = new System.Windows.Forms.Label();
+            this.btnLoadportORGSH = new System.Windows.Forms.Button();
+            this.btnLodportReset = new System.Windows.Forms.Button();
+            this.btnLodportInitial = new System.Windows.Forms.Button();
+            this.gbLPCSTIDTest = new System.Windows.Forms.GroupBox();
+            this.cmbLPCSTIDType = new System.Windows.Forms.ComboBox();
+            this.lbRfidType = new System.Windows.Forms.Label();
+            this.btnWriteLPCSTID = new System.Windows.Forms.Button();
+            this.btnReadLPCSTID = new System.Windows.Forms.Button();
+            this.tbWriteLPCSTID = new System.Windows.Forms.TextBox();
+            this.tbReadLPCSTID = new System.Windows.Forms.TextBox();
+            this.gbLoadportSelect = new System.Windows.Forms.GroupBox();
+            this.cmbLoadportSelect = new System.Windows.Forms.ComboBox();
+            this.tabE84 = new System.Windows.Forms.TabPage();
+            this.gbE84Select = new System.Windows.Forms.GroupBox();
+            this.cmbE84Select = new System.Windows.Forms.ComboBox();
+            this.gbE84Status = new System.Windows.Forms.GroupBox();
+            this.lbE84AutoMode = new System.Windows.Forms.Label();
+            this.lbE84ManualMode = new System.Windows.Forms.Label();
+            this.lbE84_L_REQ = new System.Windows.Forms.Label();
+            this.lbE84_U_REQ = new System.Windows.Forms.Label();
+            this.lbE84_READY = new System.Windows.Forms.Label();
+            this.lbE84_HO_AVBL = new System.Windows.Forms.Label();
+            this.lbE84_ES = new System.Windows.Forms.Label();
+            this.lbE84_VALID = new System.Windows.Forms.Label();
+            this.lbE84_CS_0 = new System.Windows.Forms.Label();
+            this.lbE84_CS_1 = new System.Windows.Forms.Label();
+            this.lbE84_TR_REQ = new System.Windows.Forms.Label();
+            this.lbE84_BUSY = new System.Windows.Forms.Label();
+            this.lbE84_COMPT = new System.Windows.Forms.Label();
+            this.lbE84_CONT = new System.Windows.Forms.Label();
+            this.btnE84AutoMode = new System.Windows.Forms.Button();
+            this.btnE84ManualMode = new System.Windows.Forms.Button();
+            this.btnE84Reset = new System.Windows.Forms.Button();
+            this.btnE84ReadStatus = new System.Windows.Forms.Button();
             this.pnlMotionStop.SuspendLayout();
             this.tabSmif.SuspendLayout();
-            this.groupBox7.SuspendLayout();
+            this.gbSMIFCSTIDTest.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -259,6 +417,15 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tbcManual.SuspendLayout();
+            this.tabLoadport.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.gbLPMotion.SuspendLayout();
+            this.gbLPSemiAuto.SuspendLayout();
+            this.gbLPCSTIDTest.SuspendLayout();
+            this.gbLoadportSelect.SuspendLayout();
+            this.tabE84.SuspendLayout();
+            this.gbE84Select.SuspendLayout();
+            this.gbE84Status.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnContinue
@@ -325,7 +492,7 @@
             this.tabSmif.Controls.Add(this.SMIF_TweekDN_bt);
             this.tabSmif.Controls.Add(this.Smif_log_rt);
             this.tabSmif.Controls.Add(this.SMIF_TweekUP_bt);
-            this.tabSmif.Controls.Add(this.groupBox7);
+            this.tabSmif.Controls.Add(this.gbSMIFCSTIDTest);
             this.tabSmif.Controls.Add(this.SMIF_Org_bt);
             this.tabSmif.Controls.Add(this.Move_To_Slot_bt);
             this.tabSmif.Controls.Add(this.groupBox6);
@@ -390,20 +557,20 @@
             this.SMIF_TweekUP_bt.UseVisualStyleBackColor = true;
             this.SMIF_TweekUP_bt.Click += new System.EventHandler(this.SmifFunction_Click);
             // 
-            // groupBox7
+            // gbSMIFCSTIDTest
             // 
-            this.groupBox7.Controls.Add(this.TagType_cb);
-            this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Controls.Add(this.TagWrite_bt);
-            this.groupBox7.Controls.Add(this.TagRead_bt);
-            this.groupBox7.Controls.Add(this.SmartTagWrite_tb);
-            this.groupBox7.Controls.Add(this.SmartTagRead_tb);
-            this.groupBox7.Location = new System.Drawing.Point(25, 500);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(393, 267);
-            this.groupBox7.TabIndex = 84;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Smart Tag";
+            this.gbSMIFCSTIDTest.Controls.Add(this.TagType_cb);
+            this.gbSMIFCSTIDTest.Controls.Add(this.label4);
+            this.gbSMIFCSTIDTest.Controls.Add(this.TagWrite_bt);
+            this.gbSMIFCSTIDTest.Controls.Add(this.TagRead_bt);
+            this.gbSMIFCSTIDTest.Controls.Add(this.SmartTagWrite_tb);
+            this.gbSMIFCSTIDTest.Controls.Add(this.SmartTagRead_tb);
+            this.gbSMIFCSTIDTest.Location = new System.Drawing.Point(25, 500);
+            this.gbSMIFCSTIDTest.Name = "gbSMIFCSTIDTest";
+            this.gbSMIFCSTIDTest.Size = new System.Drawing.Size(393, 267);
+            this.gbSMIFCSTIDTest.TabIndex = 84;
+            this.gbSMIFCSTIDTest.TabStop = false;
+            this.gbSMIFCSTIDTest.Text = "CST ID";
             // 
             // TagType_cb
             // 
@@ -3217,12 +3384,2136 @@
             // 
             this.tbcManual.Controls.Add(this.tabRobot);
             this.tbcManual.Controls.Add(this.tabSmif);
+            this.tbcManual.Controls.Add(this.tabLoadport);
+            this.tbcManual.Controls.Add(this.tabE84);
             this.tbcManual.Location = new System.Drawing.Point(12, 12);
             this.tbcManual.Name = "tbcManual";
             this.tbcManual.SelectedIndex = 0;
             this.tbcManual.Size = new System.Drawing.Size(1495, 841);
             this.tbcManual.TabIndex = 0;
             this.tbcManual.SelectedIndexChanged += new System.EventHandler(this.tbcManual_SelectedIndexChanged);
+            // 
+            // tabLoadport
+            // 
+            this.tabLoadport.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabLoadport.Controls.Add(this.btnRemapping);
+            this.tabLoadport.Controls.Add(this.btnReadMappingResult);
+            this.tabLoadport.Controls.Add(this.btnLPClearMappingResult);
+            this.tabLoadport.Controls.Add(this.tableLayoutPanel2);
+            this.tabLoadport.Controls.Add(this.label92);
+            this.tabLoadport.Controls.Add(this.gbLPMotion);
+            this.tabLoadport.Controls.Add(this.gbLPSemiAuto);
+            this.tabLoadport.Controls.Add(this.btnLoadportReadStatus);
+            this.tabLoadport.Controls.Add(this.btnLoadportABORG);
+            this.tabLoadport.Controls.Add(this.tbLPInfoPad);
+            this.tabLoadport.Controls.Add(this.tbLPInterlockKey);
+            this.tabLoadport.Controls.Add(this.tbLPMappingStatus);
+            this.tabLoadport.Controls.Add(this.tbLPMapperStopper);
+            this.tabLoadport.Controls.Add(this.tbLPMapperZAixs);
+            this.tabLoadport.Controls.Add(this.tbLPMapperArmPosition);
+            this.tabLoadport.Controls.Add(this.tbLPYAxisPosition);
+            this.tabLoadport.Controls.Add(this.tbLPZAxisPosition);
+            this.tabLoadport.Controls.Add(this.tbWaferProtusionSensor);
+            this.tabLoadport.Controls.Add(this.tbLPDoorPosition);
+            this.tabLoadport.Controls.Add(this.tbLPVacuum);
+            this.tabLoadport.Controls.Add(this.tbLatchKeyStatus);
+            this.tabLoadport.Controls.Add(this.tbFoupClampStatus);
+            this.tabLoadport.Controls.Add(this.tbLPCassettepresence);
+            this.tabLoadport.Controls.Add(this.tbLPErrorCode);
+            this.tabLoadport.Controls.Add(this.tbLPOperationStatus);
+            this.tabLoadport.Controls.Add(this.tbLPInitalPosition);
+            this.tabLoadport.Controls.Add(this.tbLPMode);
+            this.tabLoadport.Controls.Add(this.tbLPEquipmentStatus);
+            this.tabLoadport.Controls.Add(this.lbLPInfoPad);
+            this.tabLoadport.Controls.Add(this.lbLPInterlockKey);
+            this.tabLoadport.Controls.Add(this.lbLPMappingStatus);
+            this.tabLoadport.Controls.Add(this.lbLPMapperStopper);
+            this.tabLoadport.Controls.Add(this.lbLPMapperZAixs);
+            this.tabLoadport.Controls.Add(this.lbLPMapperArmPosition);
+            this.tabLoadport.Controls.Add(this.lbLPYAxisPosition);
+            this.tabLoadport.Controls.Add(this.lbLPZAxisPosition);
+            this.tabLoadport.Controls.Add(this.lbWaferProtusionSensor);
+            this.tabLoadport.Controls.Add(this.lbLPDoorPosition);
+            this.tabLoadport.Controls.Add(this.lbLPVacuum);
+            this.tabLoadport.Controls.Add(this.lbLatchKeyStatus);
+            this.tabLoadport.Controls.Add(this.lbFoupClampStatus);
+            this.tabLoadport.Controls.Add(this.lbLPCassettepresence);
+            this.tabLoadport.Controls.Add(this.lbLPErrorCode);
+            this.tabLoadport.Controls.Add(this.lbLPOperationStatus);
+            this.tabLoadport.Controls.Add(this.lbLPInitalPosition);
+            this.tabLoadport.Controls.Add(this.lbLPMode);
+            this.tabLoadport.Controls.Add(this.lbLPEquipmentStatus);
+            this.tabLoadport.Controls.Add(this.btnLoadportORGSH);
+            this.tabLoadport.Controls.Add(this.btnLodportReset);
+            this.tabLoadport.Controls.Add(this.btnLodportInitial);
+            this.tabLoadport.Controls.Add(this.gbLPCSTIDTest);
+            this.tabLoadport.Controls.Add(this.gbLoadportSelect);
+            this.tabLoadport.Location = new System.Drawing.Point(4, 36);
+            this.tabLoadport.Name = "tabLoadport";
+            this.tabLoadport.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLoadport.Size = new System.Drawing.Size(1487, 801);
+            this.tabLoadport.TabIndex = 4;
+            this.tabLoadport.Text = "Load Port";
+            // 
+            // btnRemapping
+            // 
+            this.btnRemapping.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnRemapping.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnRemapping.Location = new System.Drawing.Point(746, 551);
+            this.btnRemapping.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRemapping.Name = "btnRemapping";
+            this.btnRemapping.Size = new System.Drawing.Size(119, 49);
+            this.btnRemapping.TabIndex = 142;
+            this.btnRemapping.Tag = "1";
+            this.btnRemapping.Text = "ReMapping";
+            this.btnRemapping.UseVisualStyleBackColor = true;
+            this.btnRemapping.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnReadMappingResult
+            // 
+            this.btnReadMappingResult.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReadMappingResult.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnReadMappingResult.Location = new System.Drawing.Point(871, 551);
+            this.btnReadMappingResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReadMappingResult.Name = "btnReadMappingResult";
+            this.btnReadMappingResult.Size = new System.Drawing.Size(119, 49);
+            this.btnReadMappingResult.TabIndex = 140;
+            this.btnReadMappingResult.Tag = "1";
+            this.btnReadMappingResult.Text = "Read\r\nSlot Map";
+            this.btnReadMappingResult.UseVisualStyleBackColor = true;
+            this.btnReadMappingResult.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPClearMappingResult
+            // 
+            this.btnLPClearMappingResult.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPClearMappingResult.Location = new System.Drawing.Point(873, 608);
+            this.btnLPClearMappingResult.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPClearMappingResult.Name = "btnLPClearMappingResult";
+            this.btnLPClearMappingResult.Size = new System.Drawing.Size(119, 48);
+            this.btnLPClearMappingResult.TabIndex = 141;
+            this.btnLPClearMappingResult.Tag = "1";
+            this.btnLPClearMappingResult.Text = "Clear";
+            this.btnLPClearMappingResult.UseVisualStyleBackColor = true;
+            this.btnLPClearMappingResult.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.BackColor = System.Drawing.Color.Silver;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_01, 1, 24);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_01, 0, 24);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_02, 1, 23);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_02, 0, 23);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_03, 1, 22);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_03, 0, 22);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_04, 1, 21);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_04, 0, 21);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_05, 1, 20);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_05, 0, 20);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_06, 1, 19);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_06, 0, 19);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_07, 1, 18);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_07, 0, 18);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_08, 1, 17);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_08, 0, 17);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_09, 1, 16);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_09, 0, 16);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_10, 1, 15);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_10, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_11, 1, 14);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_11, 0, 14);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_12, 1, 13);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_12, 0, 13);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_13, 1, 12);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_13, 0, 12);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_14, 1, 11);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_14, 0, 11);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_15, 1, 10);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_15, 0, 10);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_16, 1, 9);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_16, 0, 9);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_17, 1, 8);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_17, 0, 8);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_18, 1, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_18, 0, 7);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_19, 1, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_19, 0, 6);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_20, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_20, 0, 5);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_21, 1, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_21, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_22, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_22, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_23, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_23, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_24, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_24, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbMappingResult_25, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lbSlot_25, 0, 0);
+            this.tableLayoutPanel2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(748, 45);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 25;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(245, 479);
+            this.tableLayoutPanel2.TabIndex = 138;
+            this.tableLayoutPanel2.Tag = "1";
+            // 
+            // lbMappingResult_01
+            // 
+            this.lbMappingResult_01.AutoSize = true;
+            this.lbMappingResult_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_01.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_01.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_01.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_01.Location = new System.Drawing.Point(52, 456);
+            this.lbMappingResult_01.Name = "lbMappingResult_01";
+            this.lbMappingResult_01.Size = new System.Drawing.Size(190, 23);
+            this.lbMappingResult_01.TabIndex = 82;
+            this.lbMappingResult_01.Tag = "1";
+            this.lbMappingResult_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_01
+            // 
+            this.lbSlot_01.BackColor = System.Drawing.Color.White;
+            this.lbSlot_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_01.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_01.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_01.Location = new System.Drawing.Point(3, 456);
+            this.lbSlot_01.Name = "lbSlot_01";
+            this.lbSlot_01.Size = new System.Drawing.Size(43, 23);
+            this.lbSlot_01.TabIndex = 81;
+            this.lbSlot_01.Tag = "1";
+            this.lbSlot_01.Text = "01";
+            this.lbSlot_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_02
+            // 
+            this.lbMappingResult_02.AutoSize = true;
+            this.lbMappingResult_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_02.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_02.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_02.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_02.Location = new System.Drawing.Point(52, 437);
+            this.lbMappingResult_02.Name = "lbMappingResult_02";
+            this.lbMappingResult_02.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_02.TabIndex = 79;
+            this.lbMappingResult_02.Tag = "1";
+            this.lbMappingResult_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_02
+            // 
+            this.lbSlot_02.BackColor = System.Drawing.Color.White;
+            this.lbSlot_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_02.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_02.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_02.Location = new System.Drawing.Point(3, 437);
+            this.lbSlot_02.Name = "lbSlot_02";
+            this.lbSlot_02.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_02.TabIndex = 78;
+            this.lbSlot_02.Tag = "1";
+            this.lbSlot_02.Text = "02";
+            this.lbSlot_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_03
+            // 
+            this.lbMappingResult_03.AutoSize = true;
+            this.lbMappingResult_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_03.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_03.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_03.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_03.Location = new System.Drawing.Point(52, 418);
+            this.lbMappingResult_03.Name = "lbMappingResult_03";
+            this.lbMappingResult_03.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_03.TabIndex = 76;
+            this.lbMappingResult_03.Tag = "1";
+            this.lbMappingResult_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_03
+            // 
+            this.lbSlot_03.BackColor = System.Drawing.Color.White;
+            this.lbSlot_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_03.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_03.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_03.Location = new System.Drawing.Point(3, 418);
+            this.lbSlot_03.Name = "lbSlot_03";
+            this.lbSlot_03.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_03.TabIndex = 75;
+            this.lbSlot_03.Tag = "1";
+            this.lbSlot_03.Text = "03";
+            this.lbSlot_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_04
+            // 
+            this.lbMappingResult_04.AutoSize = true;
+            this.lbMappingResult_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_04.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_04.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_04.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_04.Location = new System.Drawing.Point(52, 399);
+            this.lbMappingResult_04.Name = "lbMappingResult_04";
+            this.lbMappingResult_04.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_04.TabIndex = 73;
+            this.lbMappingResult_04.Tag = "1";
+            this.lbMappingResult_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_04
+            // 
+            this.lbSlot_04.BackColor = System.Drawing.Color.White;
+            this.lbSlot_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_04.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_04.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_04.Location = new System.Drawing.Point(3, 399);
+            this.lbSlot_04.Name = "lbSlot_04";
+            this.lbSlot_04.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_04.TabIndex = 72;
+            this.lbSlot_04.Tag = "1";
+            this.lbSlot_04.Text = "04";
+            this.lbSlot_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_05
+            // 
+            this.lbMappingResult_05.AutoSize = true;
+            this.lbMappingResult_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_05.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_05.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_05.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_05.Location = new System.Drawing.Point(52, 380);
+            this.lbMappingResult_05.Name = "lbMappingResult_05";
+            this.lbMappingResult_05.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_05.TabIndex = 70;
+            this.lbMappingResult_05.Tag = "1";
+            this.lbMappingResult_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_05
+            // 
+            this.lbSlot_05.BackColor = System.Drawing.Color.White;
+            this.lbSlot_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_05.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_05.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_05.Location = new System.Drawing.Point(3, 380);
+            this.lbSlot_05.Name = "lbSlot_05";
+            this.lbSlot_05.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_05.TabIndex = 69;
+            this.lbSlot_05.Tag = "1";
+            this.lbSlot_05.Text = "05";
+            this.lbSlot_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_06
+            // 
+            this.lbMappingResult_06.AutoSize = true;
+            this.lbMappingResult_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_06.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_06.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_06.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_06.Location = new System.Drawing.Point(52, 361);
+            this.lbMappingResult_06.Name = "lbMappingResult_06";
+            this.lbMappingResult_06.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_06.TabIndex = 67;
+            this.lbMappingResult_06.Tag = "1";
+            this.lbMappingResult_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_06
+            // 
+            this.lbSlot_06.BackColor = System.Drawing.Color.White;
+            this.lbSlot_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_06.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_06.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_06.Location = new System.Drawing.Point(3, 361);
+            this.lbSlot_06.Name = "lbSlot_06";
+            this.lbSlot_06.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_06.TabIndex = 66;
+            this.lbSlot_06.Tag = "1";
+            this.lbSlot_06.Text = "06";
+            this.lbSlot_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_07
+            // 
+            this.lbMappingResult_07.AutoSize = true;
+            this.lbMappingResult_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_07.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_07.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_07.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_07.Location = new System.Drawing.Point(52, 342);
+            this.lbMappingResult_07.Name = "lbMappingResult_07";
+            this.lbMappingResult_07.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_07.TabIndex = 64;
+            this.lbMappingResult_07.Tag = "1";
+            this.lbMappingResult_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_07
+            // 
+            this.lbSlot_07.BackColor = System.Drawing.Color.White;
+            this.lbSlot_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_07.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_07.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_07.Location = new System.Drawing.Point(3, 342);
+            this.lbSlot_07.Name = "lbSlot_07";
+            this.lbSlot_07.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_07.TabIndex = 63;
+            this.lbSlot_07.Tag = "1";
+            this.lbSlot_07.Text = "07";
+            this.lbSlot_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_08
+            // 
+            this.lbMappingResult_08.AutoSize = true;
+            this.lbMappingResult_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_08.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_08.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_08.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_08.Location = new System.Drawing.Point(52, 323);
+            this.lbMappingResult_08.Name = "lbMappingResult_08";
+            this.lbMappingResult_08.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_08.TabIndex = 61;
+            this.lbMappingResult_08.Tag = "1";
+            this.lbMappingResult_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_08
+            // 
+            this.lbSlot_08.BackColor = System.Drawing.Color.White;
+            this.lbSlot_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_08.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_08.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_08.Location = new System.Drawing.Point(3, 323);
+            this.lbSlot_08.Name = "lbSlot_08";
+            this.lbSlot_08.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_08.TabIndex = 60;
+            this.lbSlot_08.Tag = "1";
+            this.lbSlot_08.Text = "08";
+            this.lbSlot_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_09
+            // 
+            this.lbMappingResult_09.AutoSize = true;
+            this.lbMappingResult_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_09.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_09.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_09.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_09.Location = new System.Drawing.Point(52, 304);
+            this.lbMappingResult_09.Name = "lbMappingResult_09";
+            this.lbMappingResult_09.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_09.TabIndex = 58;
+            this.lbMappingResult_09.Tag = "1";
+            this.lbMappingResult_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_09
+            // 
+            this.lbSlot_09.BackColor = System.Drawing.Color.White;
+            this.lbSlot_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_09.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_09.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_09.Location = new System.Drawing.Point(3, 304);
+            this.lbSlot_09.Name = "lbSlot_09";
+            this.lbSlot_09.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_09.TabIndex = 57;
+            this.lbSlot_09.Tag = "1";
+            this.lbSlot_09.Text = "09";
+            this.lbSlot_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_10
+            // 
+            this.lbMappingResult_10.AutoSize = true;
+            this.lbMappingResult_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_10.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_10.Location = new System.Drawing.Point(52, 285);
+            this.lbMappingResult_10.Name = "lbMappingResult_10";
+            this.lbMappingResult_10.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_10.TabIndex = 55;
+            this.lbMappingResult_10.Tag = "1";
+            this.lbMappingResult_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_10
+            // 
+            this.lbSlot_10.BackColor = System.Drawing.Color.White;
+            this.lbSlot_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_10.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_10.Location = new System.Drawing.Point(3, 285);
+            this.lbSlot_10.Name = "lbSlot_10";
+            this.lbSlot_10.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_10.TabIndex = 54;
+            this.lbSlot_10.Tag = "1";
+            this.lbSlot_10.Text = "10";
+            this.lbSlot_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_11
+            // 
+            this.lbMappingResult_11.AutoSize = true;
+            this.lbMappingResult_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_11.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_11.Location = new System.Drawing.Point(52, 266);
+            this.lbMappingResult_11.Name = "lbMappingResult_11";
+            this.lbMappingResult_11.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_11.TabIndex = 52;
+            this.lbMappingResult_11.Tag = "1";
+            this.lbMappingResult_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_11
+            // 
+            this.lbSlot_11.BackColor = System.Drawing.Color.White;
+            this.lbSlot_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_11.Location = new System.Drawing.Point(3, 266);
+            this.lbSlot_11.Name = "lbSlot_11";
+            this.lbSlot_11.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_11.TabIndex = 51;
+            this.lbSlot_11.Tag = "1";
+            this.lbSlot_11.Text = "11";
+            this.lbSlot_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_12
+            // 
+            this.lbMappingResult_12.AutoSize = true;
+            this.lbMappingResult_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_12.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_12.Location = new System.Drawing.Point(52, 247);
+            this.lbMappingResult_12.Name = "lbMappingResult_12";
+            this.lbMappingResult_12.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_12.TabIndex = 49;
+            this.lbMappingResult_12.Tag = "1";
+            this.lbMappingResult_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_12
+            // 
+            this.lbSlot_12.BackColor = System.Drawing.Color.White;
+            this.lbSlot_12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_12.Location = new System.Drawing.Point(3, 247);
+            this.lbSlot_12.Name = "lbSlot_12";
+            this.lbSlot_12.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_12.TabIndex = 48;
+            this.lbSlot_12.Tag = "1";
+            this.lbSlot_12.Text = "12";
+            this.lbSlot_12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_13
+            // 
+            this.lbMappingResult_13.AutoSize = true;
+            this.lbMappingResult_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_13.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_13.Location = new System.Drawing.Point(52, 228);
+            this.lbMappingResult_13.Name = "lbMappingResult_13";
+            this.lbMappingResult_13.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_13.TabIndex = 46;
+            this.lbMappingResult_13.Tag = "1";
+            this.lbMappingResult_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_13
+            // 
+            this.lbSlot_13.BackColor = System.Drawing.Color.White;
+            this.lbSlot_13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_13.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_13.Location = new System.Drawing.Point(3, 228);
+            this.lbSlot_13.Name = "lbSlot_13";
+            this.lbSlot_13.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_13.TabIndex = 45;
+            this.lbSlot_13.Tag = "1";
+            this.lbSlot_13.Text = "13";
+            this.lbSlot_13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_14
+            // 
+            this.lbMappingResult_14.AutoSize = true;
+            this.lbMappingResult_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_14.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_14.Location = new System.Drawing.Point(52, 209);
+            this.lbMappingResult_14.Name = "lbMappingResult_14";
+            this.lbMappingResult_14.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_14.TabIndex = 43;
+            this.lbMappingResult_14.Tag = "1";
+            this.lbMappingResult_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_14
+            // 
+            this.lbSlot_14.BackColor = System.Drawing.Color.White;
+            this.lbSlot_14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_14.Location = new System.Drawing.Point(3, 209);
+            this.lbSlot_14.Name = "lbSlot_14";
+            this.lbSlot_14.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_14.TabIndex = 42;
+            this.lbSlot_14.Tag = "1";
+            this.lbSlot_14.Text = "14";
+            this.lbSlot_14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_15
+            // 
+            this.lbMappingResult_15.AutoSize = true;
+            this.lbMappingResult_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_15.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_15.Location = new System.Drawing.Point(52, 190);
+            this.lbMappingResult_15.Name = "lbMappingResult_15";
+            this.lbMappingResult_15.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_15.TabIndex = 40;
+            this.lbMappingResult_15.Tag = "1";
+            this.lbMappingResult_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_15
+            // 
+            this.lbSlot_15.BackColor = System.Drawing.Color.White;
+            this.lbSlot_15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_15.Location = new System.Drawing.Point(3, 190);
+            this.lbSlot_15.Name = "lbSlot_15";
+            this.lbSlot_15.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_15.TabIndex = 39;
+            this.lbSlot_15.Tag = "1";
+            this.lbSlot_15.Text = "15";
+            this.lbSlot_15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_16
+            // 
+            this.lbMappingResult_16.AutoSize = true;
+            this.lbMappingResult_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_16.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_16.Location = new System.Drawing.Point(52, 171);
+            this.lbMappingResult_16.Name = "lbMappingResult_16";
+            this.lbMappingResult_16.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_16.TabIndex = 37;
+            this.lbMappingResult_16.Tag = "1";
+            this.lbMappingResult_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_16
+            // 
+            this.lbSlot_16.BackColor = System.Drawing.Color.White;
+            this.lbSlot_16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_16.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_16.Location = new System.Drawing.Point(3, 171);
+            this.lbSlot_16.Name = "lbSlot_16";
+            this.lbSlot_16.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_16.TabIndex = 36;
+            this.lbSlot_16.Tag = "1";
+            this.lbSlot_16.Text = "16";
+            this.lbSlot_16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_17
+            // 
+            this.lbMappingResult_17.AutoSize = true;
+            this.lbMappingResult_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_17.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_17.Location = new System.Drawing.Point(52, 152);
+            this.lbMappingResult_17.Name = "lbMappingResult_17";
+            this.lbMappingResult_17.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_17.TabIndex = 34;
+            this.lbMappingResult_17.Tag = "1";
+            this.lbMappingResult_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_17
+            // 
+            this.lbSlot_17.BackColor = System.Drawing.Color.White;
+            this.lbSlot_17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_17.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_17.Location = new System.Drawing.Point(3, 152);
+            this.lbSlot_17.Name = "lbSlot_17";
+            this.lbSlot_17.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_17.TabIndex = 33;
+            this.lbSlot_17.Tag = "1";
+            this.lbSlot_17.Text = "17";
+            this.lbSlot_17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_18
+            // 
+            this.lbMappingResult_18.AutoSize = true;
+            this.lbMappingResult_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_18.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_18.Location = new System.Drawing.Point(52, 133);
+            this.lbMappingResult_18.Name = "lbMappingResult_18";
+            this.lbMappingResult_18.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_18.TabIndex = 31;
+            this.lbMappingResult_18.Tag = "1";
+            this.lbMappingResult_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_18
+            // 
+            this.lbSlot_18.BackColor = System.Drawing.Color.White;
+            this.lbSlot_18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_18.Location = new System.Drawing.Point(3, 133);
+            this.lbSlot_18.Name = "lbSlot_18";
+            this.lbSlot_18.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_18.TabIndex = 30;
+            this.lbSlot_18.Tag = "1";
+            this.lbSlot_18.Text = "18";
+            this.lbSlot_18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_19
+            // 
+            this.lbMappingResult_19.AutoSize = true;
+            this.lbMappingResult_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_19.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_19.Location = new System.Drawing.Point(52, 114);
+            this.lbMappingResult_19.Name = "lbMappingResult_19";
+            this.lbMappingResult_19.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_19.TabIndex = 28;
+            this.lbMappingResult_19.Tag = "1";
+            this.lbMappingResult_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_19
+            // 
+            this.lbSlot_19.BackColor = System.Drawing.Color.White;
+            this.lbSlot_19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_19.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_19.Location = new System.Drawing.Point(3, 114);
+            this.lbSlot_19.Name = "lbSlot_19";
+            this.lbSlot_19.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_19.TabIndex = 27;
+            this.lbSlot_19.Tag = "1";
+            this.lbSlot_19.Text = "19";
+            this.lbSlot_19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_20
+            // 
+            this.lbMappingResult_20.AutoSize = true;
+            this.lbMappingResult_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_20.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_20.Location = new System.Drawing.Point(52, 95);
+            this.lbMappingResult_20.Name = "lbMappingResult_20";
+            this.lbMappingResult_20.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_20.TabIndex = 25;
+            this.lbMappingResult_20.Tag = "1";
+            this.lbMappingResult_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_20
+            // 
+            this.lbSlot_20.BackColor = System.Drawing.Color.White;
+            this.lbSlot_20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_20.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_20.Location = new System.Drawing.Point(3, 95);
+            this.lbSlot_20.Name = "lbSlot_20";
+            this.lbSlot_20.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_20.TabIndex = 24;
+            this.lbSlot_20.Tag = "1";
+            this.lbSlot_20.Text = "20";
+            this.lbSlot_20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_21
+            // 
+            this.lbMappingResult_21.AutoSize = true;
+            this.lbMappingResult_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_21.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_21.Location = new System.Drawing.Point(52, 76);
+            this.lbMappingResult_21.Name = "lbMappingResult_21";
+            this.lbMappingResult_21.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_21.TabIndex = 22;
+            this.lbMappingResult_21.Tag = "1";
+            this.lbMappingResult_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_21
+            // 
+            this.lbSlot_21.BackColor = System.Drawing.Color.White;
+            this.lbSlot_21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_21.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_21.Location = new System.Drawing.Point(3, 76);
+            this.lbSlot_21.Name = "lbSlot_21";
+            this.lbSlot_21.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_21.TabIndex = 21;
+            this.lbSlot_21.Tag = "1";
+            this.lbSlot_21.Text = "21";
+            this.lbSlot_21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_22
+            // 
+            this.lbMappingResult_22.AutoSize = true;
+            this.lbMappingResult_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_22.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_22.Location = new System.Drawing.Point(52, 57);
+            this.lbMappingResult_22.Name = "lbMappingResult_22";
+            this.lbMappingResult_22.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_22.TabIndex = 19;
+            this.lbMappingResult_22.Tag = "1";
+            this.lbMappingResult_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_22
+            // 
+            this.lbSlot_22.BackColor = System.Drawing.Color.White;
+            this.lbSlot_22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_22.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_22.Location = new System.Drawing.Point(3, 57);
+            this.lbSlot_22.Name = "lbSlot_22";
+            this.lbSlot_22.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_22.TabIndex = 18;
+            this.lbSlot_22.Tag = "1";
+            this.lbSlot_22.Text = "22";
+            this.lbSlot_22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_23
+            // 
+            this.lbMappingResult_23.AutoSize = true;
+            this.lbMappingResult_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_23.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_23.Location = new System.Drawing.Point(52, 38);
+            this.lbMappingResult_23.Name = "lbMappingResult_23";
+            this.lbMappingResult_23.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_23.TabIndex = 16;
+            this.lbMappingResult_23.Tag = "1";
+            this.lbMappingResult_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_23
+            // 
+            this.lbSlot_23.BackColor = System.Drawing.Color.White;
+            this.lbSlot_23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_23.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_23.Location = new System.Drawing.Point(3, 38);
+            this.lbSlot_23.Name = "lbSlot_23";
+            this.lbSlot_23.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_23.TabIndex = 15;
+            this.lbSlot_23.Tag = "1";
+            this.lbSlot_23.Text = "23";
+            this.lbSlot_23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_24
+            // 
+            this.lbMappingResult_24.AutoSize = true;
+            this.lbMappingResult_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_24.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_24.Location = new System.Drawing.Point(52, 19);
+            this.lbMappingResult_24.Name = "lbMappingResult_24";
+            this.lbMappingResult_24.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_24.TabIndex = 13;
+            this.lbMappingResult_24.Tag = "1";
+            this.lbMappingResult_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_24
+            // 
+            this.lbSlot_24.BackColor = System.Drawing.Color.White;
+            this.lbSlot_24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_24.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_24.Location = new System.Drawing.Point(3, 19);
+            this.lbSlot_24.Name = "lbSlot_24";
+            this.lbSlot_24.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_24.TabIndex = 12;
+            this.lbSlot_24.Tag = "1";
+            this.lbSlot_24.Text = "24";
+            this.lbSlot_24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbMappingResult_25
+            // 
+            this.lbMappingResult_25.AutoSize = true;
+            this.lbMappingResult_25.BackColor = System.Drawing.Color.Silver;
+            this.lbMappingResult_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbMappingResult_25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbMappingResult_25.Font = new System.Drawing.Font("微軟正黑體", 7.8F);
+            this.lbMappingResult_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbMappingResult_25.Location = new System.Drawing.Point(52, 0);
+            this.lbMappingResult_25.Name = "lbMappingResult_25";
+            this.lbMappingResult_25.Size = new System.Drawing.Size(190, 19);
+            this.lbMappingResult_25.TabIndex = 10;
+            this.lbMappingResult_25.Tag = "1";
+            this.lbMappingResult_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbSlot_25
+            // 
+            this.lbSlot_25.BackColor = System.Drawing.Color.White;
+            this.lbSlot_25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbSlot_25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbSlot_25.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lbSlot_25.Location = new System.Drawing.Point(3, 0);
+            this.lbSlot_25.Name = "lbSlot_25";
+            this.lbSlot_25.Size = new System.Drawing.Size(43, 19);
+            this.lbSlot_25.TabIndex = 9;
+            this.lbSlot_25.Tag = "1";
+            this.lbSlot_25.Text = "25";
+            this.lbSlot_25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label92.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label92.Location = new System.Drawing.Point(747, 22);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(160, 20);
+            this.label92.TabIndex = 139;
+            this.label92.Tag = "1";
+            this.label92.Text = "Slot Mapping Result";
+            // 
+            // gbLPMotion
+            // 
+            this.gbLPMotion.Controls.Add(this.cbWithSlotMap);
+            this.gbLPMotion.Controls.Add(this.btnLPDRUp);
+            this.gbLPMotion.Controls.Add(this.btnLPDRDown);
+            this.gbLPMotion.Controls.Add(this.btnLPDROpen);
+            this.gbLPMotion.Controls.Add(this.btnLPDRClose);
+            this.gbLPMotion.Controls.Add(this.lbLPDR);
+            this.gbLPMotion.Controls.Add(this.btnLPLKRelease);
+            this.gbLPMotion.Controls.Add(this.btnLPLKFix);
+            this.gbLPMotion.Controls.Add(this.lbLPLK);
+            this.gbLPMotion.Controls.Add(this.btnLPDVOn);
+            this.gbLPMotion.Controls.Add(this.btnLPDVOff);
+            this.gbLPMotion.Controls.Add(this.lbLPDV);
+            this.gbLPMotion.Controls.Add(this.btnLPDPDock);
+            this.gbLPMotion.Controls.Add(this.btnLPDPUndock);
+            this.gbLPMotion.Controls.Add(this.lbDockingPlate);
+            this.gbLPMotion.Controls.Add(this.btnLPFCFix);
+            this.gbLPMotion.Controls.Add(this.btnLPFCRelease);
+            this.gbLPMotion.Controls.Add(this.lbFoupClamp);
+            this.gbLPMotion.Controls.Add(this.btnLPLoad);
+            this.gbLPMotion.Controls.Add(this.btnLPUnload);
+            this.gbLPMotion.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gbLPMotion.Location = new System.Drawing.Point(362, 22);
+            this.gbLPMotion.Name = "gbLPMotion";
+            this.gbLPMotion.Size = new System.Drawing.Size(347, 502);
+            this.gbLPMotion.TabIndex = 137;
+            this.gbLPMotion.TabStop = false;
+            this.gbLPMotion.Text = "Motion";
+            // 
+            // cbWithSlotMap
+            // 
+            this.cbWithSlotMap.AutoSize = true;
+            this.cbWithSlotMap.Checked = true;
+            this.cbWithSlotMap.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbWithSlotMap.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.cbWithSlotMap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbWithSlotMap.Location = new System.Drawing.Point(188, 82);
+            this.cbWithSlotMap.Name = "cbWithSlotMap";
+            this.cbWithSlotMap.Size = new System.Drawing.Size(135, 24);
+            this.cbWithSlotMap.TabIndex = 138;
+            this.cbWithSlotMap.Tag = "1";
+            this.cbWithSlotMap.Text = "With Slot Map";
+            this.cbWithSlotMap.UseVisualStyleBackColor = true;
+            // 
+            // btnLPDRUp
+            // 
+            this.btnLPDRUp.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDRUp.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDRUp.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDRUp.Location = new System.Drawing.Point(79, 441);
+            this.btnLPDRUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDRUp.Name = "btnLPDRUp";
+            this.btnLPDRUp.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDRUp.TabIndex = 156;
+            this.btnLPDRUp.Tag = "1";
+            this.btnLPDRUp.Text = "UP";
+            this.btnLPDRUp.UseVisualStyleBackColor = false;
+            this.btnLPDRUp.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDRDown
+            // 
+            this.btnLPDRDown.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDRDown.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDRDown.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDRDown.Location = new System.Drawing.Point(204, 441);
+            this.btnLPDRDown.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDRDown.Name = "btnLPDRDown";
+            this.btnLPDRDown.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDRDown.TabIndex = 155;
+            this.btnLPDRDown.Tag = "1";
+            this.btnLPDRDown.Text = "DOWN";
+            this.btnLPDRDown.UseVisualStyleBackColor = false;
+            this.btnLPDRDown.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDROpen
+            // 
+            this.btnLPDROpen.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDROpen.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDROpen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDROpen.Location = new System.Drawing.Point(204, 396);
+            this.btnLPDROpen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDROpen.Name = "btnLPDROpen";
+            this.btnLPDROpen.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDROpen.TabIndex = 154;
+            this.btnLPDROpen.Tag = "1";
+            this.btnLPDROpen.Text = "OPEN";
+            this.btnLPDROpen.UseVisualStyleBackColor = false;
+            this.btnLPDROpen.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDRClose
+            // 
+            this.btnLPDRClose.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDRClose.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDRClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDRClose.Location = new System.Drawing.Point(79, 396);
+            this.btnLPDRClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDRClose.Name = "btnLPDRClose";
+            this.btnLPDRClose.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDRClose.TabIndex = 153;
+            this.btnLPDRClose.Tag = "1";
+            this.btnLPDRClose.Text = "CLOSE";
+            this.btnLPDRClose.UseVisualStyleBackColor = false;
+            this.btnLPDRClose.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // lbLPDR
+            // 
+            this.lbLPDR.AutoSize = true;
+            this.lbLPDR.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPDR.Location = new System.Drawing.Point(6, 377);
+            this.lbLPDR.Name = "lbLPDR";
+            this.lbLPDR.Size = new System.Drawing.Size(39, 17);
+            this.lbLPDR.TabIndex = 152;
+            this.lbLPDR.Text = "Door";
+            // 
+            // btnLPLKRelease
+            // 
+            this.btnLPLKRelease.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPLKRelease.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPLKRelease.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPLKRelease.Location = new System.Drawing.Point(204, 333);
+            this.btnLPLKRelease.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPLKRelease.Name = "btnLPLKRelease";
+            this.btnLPLKRelease.Size = new System.Drawing.Size(119, 37);
+            this.btnLPLKRelease.TabIndex = 138;
+            this.btnLPLKRelease.Tag = "1";
+            this.btnLPLKRelease.Text = "RELEASE";
+            this.btnLPLKRelease.UseVisualStyleBackColor = false;
+            this.btnLPLKRelease.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPLKFix
+            // 
+            this.btnLPLKFix.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPLKFix.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPLKFix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPLKFix.Location = new System.Drawing.Point(79, 333);
+            this.btnLPLKFix.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPLKFix.Name = "btnLPLKFix";
+            this.btnLPLKFix.Size = new System.Drawing.Size(119, 37);
+            this.btnLPLKFix.TabIndex = 139;
+            this.btnLPLKFix.Tag = "1";
+            this.btnLPLKFix.Text = "FIX";
+            this.btnLPLKFix.UseVisualStyleBackColor = false;
+            this.btnLPLKFix.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // lbLPLK
+            // 
+            this.lbLPLK.AutoSize = true;
+            this.lbLPLK.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPLK.Location = new System.Drawing.Point(6, 312);
+            this.lbLPLK.Name = "lbLPLK";
+            this.lbLPLK.Size = new System.Drawing.Size(66, 17);
+            this.lbLPLK.TabIndex = 151;
+            this.lbLPLK.Text = "Latch Key";
+            // 
+            // btnLPDVOn
+            // 
+            this.btnLPDVOn.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDVOn.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDVOn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDVOn.Location = new System.Drawing.Point(204, 267);
+            this.btnLPDVOn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDVOn.Name = "btnLPDVOn";
+            this.btnLPDVOn.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDVOn.TabIndex = 138;
+            this.btnLPDVOn.Tag = "1";
+            this.btnLPDVOn.Text = "ON";
+            this.btnLPDVOn.UseVisualStyleBackColor = false;
+            this.btnLPDVOn.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDVOff
+            // 
+            this.btnLPDVOff.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDVOff.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDVOff.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDVOff.Location = new System.Drawing.Point(79, 267);
+            this.btnLPDVOff.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDVOff.Name = "btnLPDVOff";
+            this.btnLPDVOff.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDVOff.TabIndex = 139;
+            this.btnLPDVOff.Tag = "1";
+            this.btnLPDVOff.Text = "OFF";
+            this.btnLPDVOff.UseVisualStyleBackColor = false;
+            this.btnLPDVOff.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // lbLPDV
+            // 
+            this.lbLPDV.AutoSize = true;
+            this.lbLPDV.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPDV.Location = new System.Drawing.Point(6, 246);
+            this.lbLPDV.Name = "lbLPDV";
+            this.lbLPDV.Size = new System.Drawing.Size(92, 17);
+            this.lbLPDV.TabIndex = 150;
+            this.lbLPDV.Text = "Door Vacuum";
+            // 
+            // btnLPDPDock
+            // 
+            this.btnLPDPDock.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDPDock.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDPDock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDPDock.Location = new System.Drawing.Point(204, 201);
+            this.btnLPDPDock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDPDock.Name = "btnLPDPDock";
+            this.btnLPDPDock.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDPDock.TabIndex = 138;
+            this.btnLPDPDock.Tag = "1";
+            this.btnLPDPDock.Text = "DUCK";
+            this.btnLPDPDock.UseVisualStyleBackColor = false;
+            this.btnLPDPDock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDPUndock
+            // 
+            this.btnLPDPUndock.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPDPUndock.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDPUndock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDPUndock.Location = new System.Drawing.Point(79, 201);
+            this.btnLPDPUndock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDPUndock.Name = "btnLPDPUndock";
+            this.btnLPDPUndock.Size = new System.Drawing.Size(119, 37);
+            this.btnLPDPUndock.TabIndex = 139;
+            this.btnLPDPUndock.Tag = "1";
+            this.btnLPDPUndock.Text = "UNDOCK";
+            this.btnLPDPUndock.UseVisualStyleBackColor = false;
+            this.btnLPDPUndock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // lbDockingPlate
+            // 
+            this.lbDockingPlate.AutoSize = true;
+            this.lbDockingPlate.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbDockingPlate.Location = new System.Drawing.Point(6, 180);
+            this.lbDockingPlate.Name = "lbDockingPlate";
+            this.lbDockingPlate.Size = new System.Drawing.Size(91, 17);
+            this.lbDockingPlate.TabIndex = 149;
+            this.lbDockingPlate.Text = "Docking Plate";
+            // 
+            // btnLPFCFix
+            // 
+            this.btnLPFCFix.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPFCFix.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPFCFix.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPFCFix.Location = new System.Drawing.Point(204, 134);
+            this.btnLPFCFix.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPFCFix.Name = "btnLPFCFix";
+            this.btnLPFCFix.Size = new System.Drawing.Size(119, 40);
+            this.btnLPFCFix.TabIndex = 138;
+            this.btnLPFCFix.Tag = "1";
+            this.btnLPFCFix.Text = "FIX";
+            this.btnLPFCFix.UseVisualStyleBackColor = false;
+            this.btnLPFCFix.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPFCRelease
+            // 
+            this.btnLPFCRelease.BackColor = System.Drawing.SystemColors.Control;
+            this.btnLPFCRelease.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPFCRelease.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPFCRelease.Location = new System.Drawing.Point(79, 134);
+            this.btnLPFCRelease.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPFCRelease.Name = "btnLPFCRelease";
+            this.btnLPFCRelease.Size = new System.Drawing.Size(119, 40);
+            this.btnLPFCRelease.TabIndex = 139;
+            this.btnLPFCRelease.Tag = "1";
+            this.btnLPFCRelease.Text = "RELEASE";
+            this.btnLPFCRelease.UseVisualStyleBackColor = false;
+            this.btnLPFCRelease.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // lbFoupClamp
+            // 
+            this.lbFoupClamp.AutoSize = true;
+            this.lbFoupClamp.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbFoupClamp.Location = new System.Drawing.Point(6, 113);
+            this.lbFoupClamp.Name = "lbFoupClamp";
+            this.lbFoupClamp.Size = new System.Drawing.Size(81, 17);
+            this.lbFoupClamp.TabIndex = 148;
+            this.lbFoupClamp.Text = "Foup Clamp";
+            // 
+            // btnLPLoad
+            // 
+            this.btnLPLoad.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLPLoad.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPLoad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPLoad.Location = new System.Drawing.Point(204, 35);
+            this.btnLPLoad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPLoad.Name = "btnLPLoad";
+            this.btnLPLoad.Size = new System.Drawing.Size(119, 40);
+            this.btnLPLoad.TabIndex = 136;
+            this.btnLPLoad.Tag = "1";
+            this.btnLPLoad.Text = "LOAD";
+            this.btnLPLoad.UseVisualStyleBackColor = false;
+            this.btnLPLoad.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPUnload
+            // 
+            this.btnLPUnload.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLPUnload.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPUnload.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPUnload.Location = new System.Drawing.Point(79, 33);
+            this.btnLPUnload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPUnload.Name = "btnLPUnload";
+            this.btnLPUnload.Size = new System.Drawing.Size(119, 42);
+            this.btnLPUnload.TabIndex = 137;
+            this.btnLPUnload.Tag = "1";
+            this.btnLPUnload.Text = "UNLOAD";
+            this.btnLPUnload.UseVisualStyleBackColor = false;
+            this.btnLPUnload.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // gbLPSemiAuto
+            // 
+            this.gbLPSemiAuto.Controls.Add(this.btnLPUnlock);
+            this.gbLPSemiAuto.Controls.Add(this.btnLPLock);
+            this.gbLPSemiAuto.Controls.Add(this.btnLPDock);
+            this.gbLPSemiAuto.Controls.Add(this.btnLPUndock);
+            this.gbLPSemiAuto.Controls.Add(this.btnLPOpen);
+            this.gbLPSemiAuto.Controls.Add(this.btnLPClose);
+            this.gbLPSemiAuto.Location = new System.Drawing.Point(25, 273);
+            this.gbLPSemiAuto.Name = "gbLPSemiAuto";
+            this.gbLPSemiAuto.Size = new System.Drawing.Size(274, 222);
+            this.gbLPSemiAuto.TabIndex = 136;
+            this.gbLPSemiAuto.TabStop = false;
+            this.gbLPSemiAuto.Text = "SemiAuto";
+            // 
+            // btnLPUnlock
+            // 
+            this.btnLPUnlock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPUnlock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPUnlock.Location = new System.Drawing.Point(18, 38);
+            this.btnLPUnlock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPUnlock.Name = "btnLPUnlock";
+            this.btnLPUnlock.Size = new System.Drawing.Size(119, 52);
+            this.btnLPUnlock.TabIndex = 135;
+            this.btnLPUnlock.Tag = "1";
+            this.btnLPUnlock.Text = "UNLOCK";
+            this.btnLPUnlock.UseVisualStyleBackColor = true;
+            this.btnLPUnlock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPLock
+            // 
+            this.btnLPLock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPLock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPLock.Location = new System.Drawing.Point(149, 38);
+            this.btnLPLock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPLock.Name = "btnLPLock";
+            this.btnLPLock.Size = new System.Drawing.Size(119, 52);
+            this.btnLPLock.TabIndex = 130;
+            this.btnLPLock.Tag = "1";
+            this.btnLPLock.Text = "LOCK";
+            this.btnLPLock.UseVisualStyleBackColor = true;
+            this.btnLPLock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPDock
+            // 
+            this.btnLPDock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPDock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPDock.Location = new System.Drawing.Point(149, 98);
+            this.btnLPDock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPDock.Name = "btnLPDock";
+            this.btnLPDock.Size = new System.Drawing.Size(119, 52);
+            this.btnLPDock.TabIndex = 131;
+            this.btnLPDock.Tag = "1";
+            this.btnLPDock.Text = "DOCK";
+            this.btnLPDock.UseVisualStyleBackColor = true;
+            this.btnLPDock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPUndock
+            // 
+            this.btnLPUndock.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPUndock.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPUndock.Location = new System.Drawing.Point(18, 98);
+            this.btnLPUndock.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPUndock.Name = "btnLPUndock";
+            this.btnLPUndock.Size = new System.Drawing.Size(119, 52);
+            this.btnLPUndock.TabIndex = 134;
+            this.btnLPUndock.Tag = "1";
+            this.btnLPUndock.Text = "UNDOCK";
+            this.btnLPUndock.UseVisualStyleBackColor = true;
+            this.btnLPUndock.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPOpen
+            // 
+            this.btnLPOpen.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPOpen.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPOpen.Location = new System.Drawing.Point(149, 160);
+            this.btnLPOpen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPOpen.Name = "btnLPOpen";
+            this.btnLPOpen.Size = new System.Drawing.Size(119, 52);
+            this.btnLPOpen.TabIndex = 132;
+            this.btnLPOpen.Tag = "1";
+            this.btnLPOpen.Text = "OPEN";
+            this.btnLPOpen.UseVisualStyleBackColor = true;
+            this.btnLPOpen.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLPClose
+            // 
+            this.btnLPClose.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLPClose.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLPClose.Location = new System.Drawing.Point(18, 160);
+            this.btnLPClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLPClose.Name = "btnLPClose";
+            this.btnLPClose.Size = new System.Drawing.Size(119, 52);
+            this.btnLPClose.TabIndex = 133;
+            this.btnLPClose.Tag = "1";
+            this.btnLPClose.Text = "CLOSE";
+            this.btnLPClose.UseVisualStyleBackColor = true;
+            this.btnLPClose.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLoadportReadStatus
+            // 
+            this.btnLoadportReadStatus.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLoadportReadStatus.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLoadportReadStatus.Location = new System.Drawing.Point(43, 146);
+            this.btnLoadportReadStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadportReadStatus.Name = "btnLoadportReadStatus";
+            this.btnLoadportReadStatus.Size = new System.Drawing.Size(119, 52);
+            this.btnLoadportReadStatus.TabIndex = 129;
+            this.btnLoadportReadStatus.Tag = "1";
+            this.btnLoadportReadStatus.Text = "Read Status";
+            this.btnLoadportReadStatus.UseVisualStyleBackColor = true;
+            this.btnLoadportReadStatus.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLoadportABORG
+            // 
+            this.btnLoadportABORG.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLoadportABORG.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLoadportABORG.Location = new System.Drawing.Point(174, 205);
+            this.btnLoadportABORG.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadportABORG.Name = "btnLoadportABORG";
+            this.btnLoadportABORG.Size = new System.Drawing.Size(119, 52);
+            this.btnLoadportABORG.TabIndex = 128;
+            this.btnLoadportABORG.Tag = "1";
+            this.btnLoadportABORG.Text = "Force Original";
+            this.btnLoadportABORG.UseVisualStyleBackColor = true;
+            this.btnLoadportABORG.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // tbLPInfoPad
+            // 
+            this.tbLPInfoPad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPInfoPad.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPInfoPad.Location = new System.Drawing.Point(1292, 418);
+            this.tbLPInfoPad.Name = "tbLPInfoPad";
+            this.tbLPInfoPad.Size = new System.Drawing.Size(165, 18);
+            this.tbLPInfoPad.TabIndex = 127;
+            this.tbLPInfoPad.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPInterlockKey
+            // 
+            this.tbLPInterlockKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPInterlockKey.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPInterlockKey.Location = new System.Drawing.Point(1292, 396);
+            this.tbLPInterlockKey.Name = "tbLPInterlockKey";
+            this.tbLPInterlockKey.Size = new System.Drawing.Size(165, 18);
+            this.tbLPInterlockKey.TabIndex = 126;
+            this.tbLPInterlockKey.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPMappingStatus
+            // 
+            this.tbLPMappingStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPMappingStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPMappingStatus.Location = new System.Drawing.Point(1292, 374);
+            this.tbLPMappingStatus.Name = "tbLPMappingStatus";
+            this.tbLPMappingStatus.Size = new System.Drawing.Size(165, 18);
+            this.tbLPMappingStatus.TabIndex = 125;
+            this.tbLPMappingStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPMapperStopper
+            // 
+            this.tbLPMapperStopper.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPMapperStopper.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPMapperStopper.Location = new System.Drawing.Point(1292, 352);
+            this.tbLPMapperStopper.Name = "tbLPMapperStopper";
+            this.tbLPMapperStopper.Size = new System.Drawing.Size(165, 18);
+            this.tbLPMapperStopper.TabIndex = 124;
+            this.tbLPMapperStopper.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPMapperZAixs
+            // 
+            this.tbLPMapperZAixs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPMapperZAixs.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPMapperZAixs.Location = new System.Drawing.Point(1292, 330);
+            this.tbLPMapperZAixs.Name = "tbLPMapperZAixs";
+            this.tbLPMapperZAixs.Size = new System.Drawing.Size(165, 18);
+            this.tbLPMapperZAixs.TabIndex = 123;
+            this.tbLPMapperZAixs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPMapperArmPosition
+            // 
+            this.tbLPMapperArmPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPMapperArmPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPMapperArmPosition.Location = new System.Drawing.Point(1292, 308);
+            this.tbLPMapperArmPosition.Name = "tbLPMapperArmPosition";
+            this.tbLPMapperArmPosition.Size = new System.Drawing.Size(165, 18);
+            this.tbLPMapperArmPosition.TabIndex = 122;
+            this.tbLPMapperArmPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPYAxisPosition
+            // 
+            this.tbLPYAxisPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPYAxisPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPYAxisPosition.Location = new System.Drawing.Point(1292, 286);
+            this.tbLPYAxisPosition.Name = "tbLPYAxisPosition";
+            this.tbLPYAxisPosition.Size = new System.Drawing.Size(165, 18);
+            this.tbLPYAxisPosition.TabIndex = 121;
+            this.tbLPYAxisPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPZAxisPosition
+            // 
+            this.tbLPZAxisPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPZAxisPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPZAxisPosition.Location = new System.Drawing.Point(1292, 264);
+            this.tbLPZAxisPosition.Name = "tbLPZAxisPosition";
+            this.tbLPZAxisPosition.Size = new System.Drawing.Size(165, 18);
+            this.tbLPZAxisPosition.TabIndex = 120;
+            this.tbLPZAxisPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbWaferProtusionSensor
+            // 
+            this.tbWaferProtusionSensor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbWaferProtusionSensor.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbWaferProtusionSensor.Location = new System.Drawing.Point(1292, 242);
+            this.tbWaferProtusionSensor.Name = "tbWaferProtusionSensor";
+            this.tbWaferProtusionSensor.Size = new System.Drawing.Size(165, 18);
+            this.tbWaferProtusionSensor.TabIndex = 119;
+            this.tbWaferProtusionSensor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPDoorPosition
+            // 
+            this.tbLPDoorPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPDoorPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPDoorPosition.Location = new System.Drawing.Point(1292, 220);
+            this.tbLPDoorPosition.Name = "tbLPDoorPosition";
+            this.tbLPDoorPosition.Size = new System.Drawing.Size(165, 18);
+            this.tbLPDoorPosition.TabIndex = 118;
+            this.tbLPDoorPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPVacuum
+            // 
+            this.tbLPVacuum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPVacuum.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPVacuum.Location = new System.Drawing.Point(1292, 198);
+            this.tbLPVacuum.Name = "tbLPVacuum";
+            this.tbLPVacuum.Size = new System.Drawing.Size(165, 18);
+            this.tbLPVacuum.TabIndex = 117;
+            this.tbLPVacuum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLatchKeyStatus
+            // 
+            this.tbLatchKeyStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLatchKeyStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLatchKeyStatus.Location = new System.Drawing.Point(1292, 176);
+            this.tbLatchKeyStatus.Name = "tbLatchKeyStatus";
+            this.tbLatchKeyStatus.Size = new System.Drawing.Size(165, 18);
+            this.tbLatchKeyStatus.TabIndex = 116;
+            this.tbLatchKeyStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbFoupClampStatus
+            // 
+            this.tbFoupClampStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFoupClampStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbFoupClampStatus.Location = new System.Drawing.Point(1292, 154);
+            this.tbFoupClampStatus.Name = "tbFoupClampStatus";
+            this.tbFoupClampStatus.Size = new System.Drawing.Size(165, 18);
+            this.tbFoupClampStatus.TabIndex = 115;
+            this.tbFoupClampStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPCassettepresence
+            // 
+            this.tbLPCassettepresence.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPCassettepresence.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPCassettepresence.Location = new System.Drawing.Point(1292, 132);
+            this.tbLPCassettepresence.Name = "tbLPCassettepresence";
+            this.tbLPCassettepresence.Size = new System.Drawing.Size(165, 18);
+            this.tbLPCassettepresence.TabIndex = 114;
+            this.tbLPCassettepresence.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPErrorCode
+            // 
+            this.tbLPErrorCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPErrorCode.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPErrorCode.Location = new System.Drawing.Point(1292, 110);
+            this.tbLPErrorCode.Name = "tbLPErrorCode";
+            this.tbLPErrorCode.Size = new System.Drawing.Size(165, 18);
+            this.tbLPErrorCode.TabIndex = 113;
+            this.tbLPErrorCode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPOperationStatus
+            // 
+            this.tbLPOperationStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPOperationStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPOperationStatus.Location = new System.Drawing.Point(1292, 88);
+            this.tbLPOperationStatus.Name = "tbLPOperationStatus";
+            this.tbLPOperationStatus.Size = new System.Drawing.Size(165, 18);
+            this.tbLPOperationStatus.TabIndex = 112;
+            this.tbLPOperationStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPInitalPosition
+            // 
+            this.tbLPInitalPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPInitalPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPInitalPosition.Location = new System.Drawing.Point(1292, 66);
+            this.tbLPInitalPosition.Name = "tbLPInitalPosition";
+            this.tbLPInitalPosition.Size = new System.Drawing.Size(165, 18);
+            this.tbLPInitalPosition.TabIndex = 111;
+            this.tbLPInitalPosition.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPMode
+            // 
+            this.tbLPMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPMode.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPMode.Location = new System.Drawing.Point(1292, 44);
+            this.tbLPMode.Name = "tbLPMode";
+            this.tbLPMode.Size = new System.Drawing.Size(165, 18);
+            this.tbLPMode.TabIndex = 110;
+            this.tbLPMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbLPEquipmentStatus
+            // 
+            this.tbLPEquipmentStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbLPEquipmentStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbLPEquipmentStatus.Location = new System.Drawing.Point(1292, 22);
+            this.tbLPEquipmentStatus.Name = "tbLPEquipmentStatus";
+            this.tbLPEquipmentStatus.Size = new System.Drawing.Size(165, 18);
+            this.tbLPEquipmentStatus.TabIndex = 109;
+            this.tbLPEquipmentStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbLPInfoPad
+            // 
+            this.lbLPInfoPad.AutoSize = true;
+            this.lbLPInfoPad.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPInfoPad.Location = new System.Drawing.Point(1218, 418);
+            this.lbLPInfoPad.Name = "lbLPInfoPad";
+            this.lbLPInfoPad.Size = new System.Drawing.Size(64, 18);
+            this.lbLPInfoPad.TabIndex = 108;
+            this.lbLPInfoPad.Text = "Info Pad";
+            this.lbLPInfoPad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPInterlockKey
+            // 
+            this.lbLPInterlockKey.AutoSize = true;
+            this.lbLPInterlockKey.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPInterlockKey.Location = new System.Drawing.Point(1188, 396);
+            this.lbLPInterlockKey.Name = "lbLPInterlockKey";
+            this.lbLPInterlockKey.Size = new System.Drawing.Size(94, 18);
+            this.lbLPInterlockKey.TabIndex = 107;
+            this.lbLPInterlockKey.Text = "Interlock Key";
+            this.lbLPInterlockKey.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPMappingStatus
+            // 
+            this.lbLPMappingStatus.AutoSize = true;
+            this.lbLPMappingStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPMappingStatus.Location = new System.Drawing.Point(1167, 374);
+            this.lbLPMappingStatus.Name = "lbLPMappingStatus";
+            this.lbLPMappingStatus.Size = new System.Drawing.Size(115, 18);
+            this.lbLPMappingStatus.TabIndex = 106;
+            this.lbLPMappingStatus.Text = "Mapping Status";
+            this.lbLPMappingStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPMapperStopper
+            // 
+            this.lbLPMapperStopper.AutoSize = true;
+            this.lbLPMapperStopper.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPMapperStopper.Location = new System.Drawing.Point(1164, 352);
+            this.lbLPMapperStopper.Name = "lbLPMapperStopper";
+            this.lbLPMapperStopper.Size = new System.Drawing.Size(118, 18);
+            this.lbLPMapperStopper.TabIndex = 105;
+            this.lbLPMapperStopper.Text = "Mapper Stopper";
+            this.lbLPMapperStopper.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPMapperZAixs
+            // 
+            this.lbLPMapperZAixs.AutoSize = true;
+            this.lbLPMapperZAixs.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPMapperZAixs.Location = new System.Drawing.Point(1175, 330);
+            this.lbLPMapperZAixs.Name = "lbLPMapperZAixs";
+            this.lbLPMapperZAixs.Size = new System.Drawing.Size(107, 18);
+            this.lbLPMapperZAixs.TabIndex = 104;
+            this.lbLPMapperZAixs.Text = "Mapper Z-Aixs";
+            this.lbLPMapperZAixs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPMapperArmPosition
+            // 
+            this.lbLPMapperArmPosition.AutoSize = true;
+            this.lbLPMapperArmPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPMapperArmPosition.Location = new System.Drawing.Point(1131, 308);
+            this.lbLPMapperArmPosition.Name = "lbLPMapperArmPosition";
+            this.lbLPMapperArmPosition.Size = new System.Drawing.Size(151, 18);
+            this.lbLPMapperArmPosition.TabIndex = 103;
+            this.lbLPMapperArmPosition.Text = "Mapper Arm Position";
+            this.lbLPMapperArmPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPYAxisPosition
+            // 
+            this.lbLPYAxisPosition.AutoSize = true;
+            this.lbLPYAxisPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPYAxisPosition.Location = new System.Drawing.Point(1175, 286);
+            this.lbLPYAxisPosition.Name = "lbLPYAxisPosition";
+            this.lbLPYAxisPosition.Size = new System.Drawing.Size(107, 18);
+            this.lbLPYAxisPosition.TabIndex = 102;
+            this.lbLPYAxisPosition.Text = "Y-Axis Position";
+            this.lbLPYAxisPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPZAxisPosition
+            // 
+            this.lbLPZAxisPosition.AutoSize = true;
+            this.lbLPZAxisPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPZAxisPosition.Location = new System.Drawing.Point(1174, 264);
+            this.lbLPZAxisPosition.Name = "lbLPZAxisPosition";
+            this.lbLPZAxisPosition.Size = new System.Drawing.Size(108, 18);
+            this.lbLPZAxisPosition.TabIndex = 101;
+            this.lbLPZAxisPosition.Text = "Z-Axis Position";
+            this.lbLPZAxisPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbWaferProtusionSensor
+            // 
+            this.lbWaferProtusionSensor.AutoSize = true;
+            this.lbWaferProtusionSensor.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbWaferProtusionSensor.Location = new System.Drawing.Point(1117, 242);
+            this.lbWaferProtusionSensor.Name = "lbWaferProtusionSensor";
+            this.lbWaferProtusionSensor.Size = new System.Drawing.Size(165, 18);
+            this.lbWaferProtusionSensor.TabIndex = 100;
+            this.lbWaferProtusionSensor.Text = "Wafer Protusion Sensor";
+            this.lbWaferProtusionSensor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPDoorPosition
+            // 
+            this.lbLPDoorPosition.AutoSize = true;
+            this.lbLPDoorPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPDoorPosition.Location = new System.Drawing.Point(1182, 220);
+            this.lbLPDoorPosition.Name = "lbLPDoorPosition";
+            this.lbLPDoorPosition.Size = new System.Drawing.Size(100, 18);
+            this.lbLPDoorPosition.TabIndex = 99;
+            this.lbLPDoorPosition.Text = "Door Position";
+            this.lbLPDoorPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPVacuum
+            // 
+            this.lbLPVacuum.AutoSize = true;
+            this.lbLPVacuum.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPVacuum.Location = new System.Drawing.Point(1219, 198);
+            this.lbLPVacuum.Name = "lbLPVacuum";
+            this.lbLPVacuum.Size = new System.Drawing.Size(63, 18);
+            this.lbLPVacuum.TabIndex = 98;
+            this.lbLPVacuum.Text = "Vacuum";
+            this.lbLPVacuum.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLatchKeyStatus
+            // 
+            this.lbLatchKeyStatus.AutoSize = true;
+            this.lbLatchKeyStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLatchKeyStatus.Location = new System.Drawing.Point(1165, 176);
+            this.lbLatchKeyStatus.Name = "lbLatchKeyStatus";
+            this.lbLatchKeyStatus.Size = new System.Drawing.Size(117, 18);
+            this.lbLatchKeyStatus.TabIndex = 97;
+            this.lbLatchKeyStatus.Text = "Latch Key Status";
+            this.lbLatchKeyStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbFoupClampStatus
+            // 
+            this.lbFoupClampStatus.AutoSize = true;
+            this.lbFoupClampStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbFoupClampStatus.Location = new System.Drawing.Point(1148, 154);
+            this.lbFoupClampStatus.Name = "lbFoupClampStatus";
+            this.lbFoupClampStatus.Size = new System.Drawing.Size(134, 18);
+            this.lbFoupClampStatus.TabIndex = 96;
+            this.lbFoupClampStatus.Text = "Foup Clamp Status";
+            this.lbFoupClampStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPCassettepresence
+            // 
+            this.lbLPCassettepresence.AutoSize = true;
+            this.lbLPCassettepresence.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPCassettepresence.Location = new System.Drawing.Point(1156, 132);
+            this.lbLPCassettepresence.Name = "lbLPCassettepresence";
+            this.lbLPCassettepresence.Size = new System.Drawing.Size(126, 18);
+            this.lbLPCassettepresence.TabIndex = 95;
+            this.lbLPCassettepresence.Text = "Cassette Presence";
+            this.lbLPCassettepresence.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPErrorCode
+            // 
+            this.lbLPErrorCode.AutoSize = true;
+            this.lbLPErrorCode.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPErrorCode.Location = new System.Drawing.Point(1203, 110);
+            this.lbLPErrorCode.Name = "lbLPErrorCode";
+            this.lbLPErrorCode.Size = new System.Drawing.Size(79, 18);
+            this.lbLPErrorCode.TabIndex = 94;
+            this.lbLPErrorCode.Text = "Error Code";
+            this.lbLPErrorCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPOperationStatus
+            // 
+            this.lbLPOperationStatus.AutoSize = true;
+            this.lbLPOperationStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPOperationStatus.Location = new System.Drawing.Point(1161, 88);
+            this.lbLPOperationStatus.Name = "lbLPOperationStatus";
+            this.lbLPOperationStatus.Size = new System.Drawing.Size(121, 18);
+            this.lbLPOperationStatus.TabIndex = 93;
+            this.lbLPOperationStatus.Text = "Opetation Status";
+            this.lbLPOperationStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPInitalPosition
+            // 
+            this.lbLPInitalPosition.AutoSize = true;
+            this.lbLPInitalPosition.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPInitalPosition.Location = new System.Drawing.Point(1182, 66);
+            this.lbLPInitalPosition.Name = "lbLPInitalPosition";
+            this.lbLPInitalPosition.Size = new System.Drawing.Size(100, 18);
+            this.lbLPInitalPosition.TabIndex = 92;
+            this.lbLPInitalPosition.Text = "Inital Position";
+            this.lbLPInitalPosition.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPMode
+            // 
+            this.lbLPMode.AutoSize = true;
+            this.lbLPMode.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPMode.Location = new System.Drawing.Point(1234, 44);
+            this.lbLPMode.Name = "lbLPMode";
+            this.lbLPMode.Size = new System.Drawing.Size(48, 18);
+            this.lbLPMode.TabIndex = 91;
+            this.lbLPMode.Text = "Mode";
+            this.lbLPMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lbLPEquipmentStatus
+            // 
+            this.lbLPEquipmentStatus.AutoSize = true;
+            this.lbLPEquipmentStatus.Font = new System.Drawing.Font("微軟正黑體", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.lbLPEquipmentStatus.Location = new System.Drawing.Point(1155, 22);
+            this.lbLPEquipmentStatus.Name = "lbLPEquipmentStatus";
+            this.lbLPEquipmentStatus.Size = new System.Drawing.Size(127, 18);
+            this.lbLPEquipmentStatus.TabIndex = 90;
+            this.lbLPEquipmentStatus.Text = "Equipment Status";
+            this.lbLPEquipmentStatus.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnLoadportORGSH
+            // 
+            this.btnLoadportORGSH.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLoadportORGSH.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLoadportORGSH.Location = new System.Drawing.Point(174, 145);
+            this.btnLoadportORGSH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLoadportORGSH.Name = "btnLoadportORGSH";
+            this.btnLoadportORGSH.Size = new System.Drawing.Size(119, 52);
+            this.btnLoadportORGSH.TabIndex = 88;
+            this.btnLoadportORGSH.Tag = "1";
+            this.btnLoadportORGSH.Text = "Original";
+            this.btnLoadportORGSH.UseVisualStyleBackColor = true;
+            this.btnLoadportORGSH.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLodportReset
+            // 
+            this.btnLodportReset.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLodportReset.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLodportReset.Location = new System.Drawing.Point(43, 85);
+            this.btnLodportReset.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLodportReset.Name = "btnLodportReset";
+            this.btnLodportReset.Size = new System.Drawing.Size(119, 52);
+            this.btnLodportReset.TabIndex = 87;
+            this.btnLodportReset.Tag = "1";
+            this.btnLodportReset.Text = "Reset";
+            this.btnLodportReset.UseVisualStyleBackColor = true;
+            this.btnLodportReset.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnLodportInitial
+            // 
+            this.btnLodportInitial.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnLodportInitial.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.btnLodportInitial.Location = new System.Drawing.Point(174, 85);
+            this.btnLodportInitial.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLodportInitial.Name = "btnLodportInitial";
+            this.btnLodportInitial.Size = new System.Drawing.Size(119, 52);
+            this.btnLodportInitial.TabIndex = 86;
+            this.btnLodportInitial.Tag = "1";
+            this.btnLodportInitial.Text = "Initialize";
+            this.btnLodportInitial.UseVisualStyleBackColor = true;
+            this.btnLodportInitial.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // gbLPCSTIDTest
+            // 
+            this.gbLPCSTIDTest.Controls.Add(this.cmbLPCSTIDType);
+            this.gbLPCSTIDTest.Controls.Add(this.lbRfidType);
+            this.gbLPCSTIDTest.Controls.Add(this.btnWriteLPCSTID);
+            this.gbLPCSTIDTest.Controls.Add(this.btnReadLPCSTID);
+            this.gbLPCSTIDTest.Controls.Add(this.tbWriteLPCSTID);
+            this.gbLPCSTIDTest.Controls.Add(this.tbReadLPCSTID);
+            this.gbLPCSTIDTest.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gbLPCSTIDTest.Location = new System.Drawing.Point(25, 500);
+            this.gbLPCSTIDTest.Name = "gbLPCSTIDTest";
+            this.gbLPCSTIDTest.Size = new System.Drawing.Size(331, 229);
+            this.gbLPCSTIDTest.TabIndex = 85;
+            this.gbLPCSTIDTest.TabStop = false;
+            this.gbLPCSTIDTest.Text = "CST ID";
+            // 
+            // cmbLPCSTIDType
+            // 
+            this.cmbLPCSTIDType.FormattingEnabled = true;
+            this.cmbLPCSTIDType.Items.AddRange(new object[] {
+            "SMARTTAG8200",
+            "SMARTTAG8400",
+            "OMRON_V640"});
+            this.cmbLPCSTIDType.Location = new System.Drawing.Point(72, 40);
+            this.cmbLPCSTIDType.Name = "cmbLPCSTIDType";
+            this.cmbLPCSTIDType.Size = new System.Drawing.Size(160, 28);
+            this.cmbLPCSTIDType.TabIndex = 41;
+            this.cmbLPCSTIDType.SelectedIndexChanged += new System.EventHandler(this.cmbLPCSTIDType_SelectedIndexChanged);
+            // 
+            // lbRfidType
+            // 
+            this.lbRfidType.AutoSize = true;
+            this.lbRfidType.Location = new System.Drawing.Point(6, 43);
+            this.lbRfidType.Name = "lbRfidType";
+            this.lbRfidType.Size = new System.Drawing.Size(45, 20);
+            this.lbRfidType.TabIndex = 4;
+            this.lbRfidType.Text = "Type";
+            // 
+            // btnWriteLPCSTID
+            // 
+            this.btnWriteLPCSTID.Location = new System.Drawing.Point(6, 180);
+            this.btnWriteLPCSTID.Name = "btnWriteLPCSTID";
+            this.btnWriteLPCSTID.Size = new System.Drawing.Size(94, 38);
+            this.btnWriteLPCSTID.TabIndex = 3;
+            this.btnWriteLPCSTID.Text = "Write";
+            this.btnWriteLPCSTID.UseVisualStyleBackColor = true;
+            this.btnWriteLPCSTID.Click += new System.EventHandler(this.btnWriteLPCSTID_Click);
+            // 
+            // btnReadLPCSTID
+            // 
+            this.btnReadLPCSTID.Location = new System.Drawing.Point(8, 105);
+            this.btnReadLPCSTID.Name = "btnReadLPCSTID";
+            this.btnReadLPCSTID.Size = new System.Drawing.Size(94, 38);
+            this.btnReadLPCSTID.TabIndex = 2;
+            this.btnReadLPCSTID.Text = "Read";
+            this.btnReadLPCSTID.UseVisualStyleBackColor = true;
+            this.btnReadLPCSTID.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tbWriteLPCSTID
+            // 
+            this.tbWriteLPCSTID.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbWriteLPCSTID.Location = new System.Drawing.Point(8, 149);
+            this.tbWriteLPCSTID.MaxLength = 224;
+            this.tbWriteLPCSTID.Name = "tbWriteLPCSTID";
+            this.tbWriteLPCSTID.Size = new System.Drawing.Size(314, 25);
+            this.tbWriteLPCSTID.TabIndex = 1;
+            // 
+            // tbReadLPCSTID
+            // 
+            this.tbReadLPCSTID.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.tbReadLPCSTID.Location = new System.Drawing.Point(8, 74);
+            this.tbReadLPCSTID.Name = "tbReadLPCSTID";
+            this.tbReadLPCSTID.Size = new System.Drawing.Size(314, 25);
+            this.tbReadLPCSTID.TabIndex = 0;
+            // 
+            // gbLoadportSelect
+            // 
+            this.gbLoadportSelect.Controls.Add(this.cmbLoadportSelect);
+            this.gbLoadportSelect.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gbLoadportSelect.Location = new System.Drawing.Point(19, 9);
+            this.gbLoadportSelect.Name = "gbLoadportSelect";
+            this.gbLoadportSelect.Size = new System.Drawing.Size(305, 69);
+            this.gbLoadportSelect.TabIndex = 77;
+            this.gbLoadportSelect.TabStop = false;
+            this.gbLoadportSelect.Tag = "1";
+            this.gbLoadportSelect.Text = "Load Port Select";
+            // 
+            // cmbLoadportSelect
+            // 
+            this.cmbLoadportSelect.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbLoadportSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLoadportSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbLoadportSelect.FormattingEnabled = true;
+            this.cmbLoadportSelect.Location = new System.Drawing.Point(6, 31);
+            this.cmbLoadportSelect.Name = "cmbLoadportSelect";
+            this.cmbLoadportSelect.Size = new System.Drawing.Size(293, 32);
+            this.cmbLoadportSelect.TabIndex = 0;
+            // 
+            // tabE84
+            // 
+            this.tabE84.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.tabE84.Controls.Add(this.btnE84ReadStatus);
+            this.tabE84.Controls.Add(this.btnE84Reset);
+            this.tabE84.Controls.Add(this.btnE84ManualMode);
+            this.tabE84.Controls.Add(this.btnE84AutoMode);
+            this.tabE84.Controls.Add(this.gbE84Status);
+            this.tabE84.Controls.Add(this.gbE84Select);
+            this.tabE84.Location = new System.Drawing.Point(4, 36);
+            this.tabE84.Name = "tabE84";
+            this.tabE84.Padding = new System.Windows.Forms.Padding(3);
+            this.tabE84.Size = new System.Drawing.Size(1487, 801);
+            this.tabE84.TabIndex = 5;
+            this.tabE84.Text = "E84";
+            // 
+            // gbE84Select
+            // 
+            this.gbE84Select.Controls.Add(this.cmbE84Select);
+            this.gbE84Select.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.gbE84Select.Location = new System.Drawing.Point(19, 9);
+            this.gbE84Select.Name = "gbE84Select";
+            this.gbE84Select.Size = new System.Drawing.Size(305, 69);
+            this.gbE84Select.TabIndex = 78;
+            this.gbE84Select.TabStop = false;
+            this.gbE84Select.Tag = "1";
+            this.gbE84Select.Text = "E84";
+            // 
+            // cmbE84Select
+            // 
+            this.cmbE84Select.BackColor = System.Drawing.SystemColors.Window;
+            this.cmbE84Select.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbE84Select.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbE84Select.FormattingEnabled = true;
+            this.cmbE84Select.Location = new System.Drawing.Point(6, 31);
+            this.cmbE84Select.Name = "cmbE84Select";
+            this.cmbE84Select.Size = new System.Drawing.Size(293, 32);
+            this.cmbE84Select.TabIndex = 0;
+            // 
+            // gbE84Status
+            // 
+            this.gbE84Status.Controls.Add(this.lbE84_CONT);
+            this.gbE84Status.Controls.Add(this.lbE84_COMPT);
+            this.gbE84Status.Controls.Add(this.lbE84_BUSY);
+            this.gbE84Status.Controls.Add(this.lbE84_TR_REQ);
+            this.gbE84Status.Controls.Add(this.lbE84_CS_1);
+            this.gbE84Status.Controls.Add(this.lbE84_CS_0);
+            this.gbE84Status.Controls.Add(this.lbE84_VALID);
+            this.gbE84Status.Controls.Add(this.lbE84_ES);
+            this.gbE84Status.Controls.Add(this.lbE84_HO_AVBL);
+            this.gbE84Status.Controls.Add(this.lbE84_READY);
+            this.gbE84Status.Controls.Add(this.lbE84_U_REQ);
+            this.gbE84Status.Controls.Add(this.lbE84_L_REQ);
+            this.gbE84Status.Controls.Add(this.lbE84ManualMode);
+            this.gbE84Status.Controls.Add(this.lbE84AutoMode);
+            this.gbE84Status.Location = new System.Drawing.Point(702, 9);
+            this.gbE84Status.Name = "gbE84Status";
+            this.gbE84Status.Size = new System.Drawing.Size(779, 715);
+            this.gbE84Status.TabIndex = 79;
+            this.gbE84Status.TabStop = false;
+            this.gbE84Status.Text = "Status";
+            // 
+            // lbE84AutoMode
+            // 
+            this.lbE84AutoMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84AutoMode.Location = new System.Drawing.Point(21, 33);
+            this.lbE84AutoMode.Name = "lbE84AutoMode";
+            this.lbE84AutoMode.Size = new System.Drawing.Size(136, 36);
+            this.lbE84AutoMode.TabIndex = 0;
+            this.lbE84AutoMode.Text = "Auto ";
+            this.lbE84AutoMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84ManualMode
+            // 
+            this.lbE84ManualMode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84ManualMode.Location = new System.Drawing.Point(21, 85);
+            this.lbE84ManualMode.Name = "lbE84ManualMode";
+            this.lbE84ManualMode.Size = new System.Drawing.Size(136, 36);
+            this.lbE84ManualMode.TabIndex = 1;
+            this.lbE84ManualMode.Text = "Manual";
+            this.lbE84ManualMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_L_REQ
+            // 
+            this.lbE84_L_REQ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_L_REQ.Location = new System.Drawing.Point(188, 33);
+            this.lbE84_L_REQ.Name = "lbE84_L_REQ";
+            this.lbE84_L_REQ.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_L_REQ.TabIndex = 2;
+            this.lbE84_L_REQ.Text = "L_REQ";
+            this.lbE84_L_REQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_U_REQ
+            // 
+            this.lbE84_U_REQ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_U_REQ.Location = new System.Drawing.Point(188, 85);
+            this.lbE84_U_REQ.Name = "lbE84_U_REQ";
+            this.lbE84_U_REQ.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_U_REQ.TabIndex = 3;
+            this.lbE84_U_REQ.Text = "U_REQ";
+            this.lbE84_U_REQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_READY
+            // 
+            this.lbE84_READY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_READY.Location = new System.Drawing.Point(188, 138);
+            this.lbE84_READY.Name = "lbE84_READY";
+            this.lbE84_READY.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_READY.TabIndex = 4;
+            this.lbE84_READY.Text = "READY";
+            this.lbE84_READY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_HO_AVBL
+            // 
+            this.lbE84_HO_AVBL.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_HO_AVBL.Location = new System.Drawing.Point(188, 190);
+            this.lbE84_HO_AVBL.Name = "lbE84_HO_AVBL";
+            this.lbE84_HO_AVBL.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_HO_AVBL.TabIndex = 5;
+            this.lbE84_HO_AVBL.Text = "HO_AVBL";
+            this.lbE84_HO_AVBL.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_ES
+            // 
+            this.lbE84_ES.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_ES.Location = new System.Drawing.Point(188, 241);
+            this.lbE84_ES.Name = "lbE84_ES";
+            this.lbE84_ES.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_ES.TabIndex = 6;
+            this.lbE84_ES.Text = "ES";
+            this.lbE84_ES.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_VALID
+            // 
+            this.lbE84_VALID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_VALID.Location = new System.Drawing.Point(355, 33);
+            this.lbE84_VALID.Name = "lbE84_VALID";
+            this.lbE84_VALID.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_VALID.TabIndex = 7;
+            this.lbE84_VALID.Text = "VALID";
+            this.lbE84_VALID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_CS_0
+            // 
+            this.lbE84_CS_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_CS_0.Location = new System.Drawing.Point(355, 85);
+            this.lbE84_CS_0.Name = "lbE84_CS_0";
+            this.lbE84_CS_0.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_CS_0.TabIndex = 8;
+            this.lbE84_CS_0.Text = "CS_0";
+            this.lbE84_CS_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_CS_1
+            // 
+            this.lbE84_CS_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_CS_1.Location = new System.Drawing.Point(355, 138);
+            this.lbE84_CS_1.Name = "lbE84_CS_1";
+            this.lbE84_CS_1.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_CS_1.TabIndex = 9;
+            this.lbE84_CS_1.Text = "CS_1";
+            this.lbE84_CS_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_TR_REQ
+            // 
+            this.lbE84_TR_REQ.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_TR_REQ.Location = new System.Drawing.Point(355, 190);
+            this.lbE84_TR_REQ.Name = "lbE84_TR_REQ";
+            this.lbE84_TR_REQ.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_TR_REQ.TabIndex = 10;
+            this.lbE84_TR_REQ.Text = "TR_REQ";
+            this.lbE84_TR_REQ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_BUSY
+            // 
+            this.lbE84_BUSY.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_BUSY.Location = new System.Drawing.Point(355, 241);
+            this.lbE84_BUSY.Name = "lbE84_BUSY";
+            this.lbE84_BUSY.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_BUSY.TabIndex = 11;
+            this.lbE84_BUSY.Text = "BUSY";
+            this.lbE84_BUSY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_COMPT
+            // 
+            this.lbE84_COMPT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_COMPT.Location = new System.Drawing.Point(355, 294);
+            this.lbE84_COMPT.Name = "lbE84_COMPT";
+            this.lbE84_COMPT.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_COMPT.TabIndex = 12;
+            this.lbE84_COMPT.Text = "COMPT";
+            this.lbE84_COMPT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbE84_CONT
+            // 
+            this.lbE84_CONT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbE84_CONT.Location = new System.Drawing.Point(355, 349);
+            this.lbE84_CONT.Name = "lbE84_CONT";
+            this.lbE84_CONT.Size = new System.Drawing.Size(136, 36);
+            this.lbE84_CONT.TabIndex = 13;
+            this.lbE84_CONT.Text = "CONT";
+            this.lbE84_CONT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnE84AutoMode
+            // 
+            this.btnE84AutoMode.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnE84AutoMode.Location = new System.Drawing.Point(156, 105);
+            this.btnE84AutoMode.Name = "btnE84AutoMode";
+            this.btnE84AutoMode.Size = new System.Drawing.Size(118, 45);
+            this.btnE84AutoMode.TabIndex = 80;
+            this.btnE84AutoMode.Text = "Auto Mode";
+            this.btnE84AutoMode.UseVisualStyleBackColor = true;
+            this.btnE84AutoMode.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnE84ManualMode
+            // 
+            this.btnE84ManualMode.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnE84ManualMode.Location = new System.Drawing.Point(156, 167);
+            this.btnE84ManualMode.Name = "btnE84ManualMode";
+            this.btnE84ManualMode.Size = new System.Drawing.Size(118, 45);
+            this.btnE84ManualMode.TabIndex = 81;
+            this.btnE84ManualMode.Text = "Manual Mode";
+            this.btnE84ManualMode.UseVisualStyleBackColor = true;
+            this.btnE84ManualMode.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnE84Reset
+            // 
+            this.btnE84Reset.Location = new System.Drawing.Point(19, 105);
+            this.btnE84Reset.Name = "btnE84Reset";
+            this.btnE84Reset.Size = new System.Drawing.Size(118, 45);
+            this.btnE84Reset.TabIndex = 82;
+            this.btnE84Reset.Text = "Reset";
+            this.btnE84Reset.UseVisualStyleBackColor = true;
+            this.btnE84Reset.Click += new System.EventHandler(this.btnLodportInitial_Click);
+            // 
+            // btnE84ReadStatus
+            // 
+            this.btnE84ReadStatus.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnE84ReadStatus.Location = new System.Drawing.Point(19, 167);
+            this.btnE84ReadStatus.Name = "btnE84ReadStatus";
+            this.btnE84ReadStatus.Size = new System.Drawing.Size(118, 45);
+            this.btnE84ReadStatus.TabIndex = 83;
+            this.btnE84ReadStatus.Text = "Read Status";
+            this.btnE84ReadStatus.UseVisualStyleBackColor = true;
+            this.btnE84ReadStatus.Click += new System.EventHandler(this.btnLodportInitial_Click);
             // 
             // FormManual
             // 
@@ -3246,8 +5537,8 @@
             this.pnlMotionStop.ResumeLayout(false);
             this.tabSmif.ResumeLayout(false);
             this.tabSmif.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
+            this.gbSMIFCSTIDTest.ResumeLayout(false);
+            this.gbSMIFCSTIDTest.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
@@ -3278,6 +5569,19 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tbcManual.ResumeLayout(false);
+            this.tabLoadport.ResumeLayout(false);
+            this.tabLoadport.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            this.gbLPMotion.ResumeLayout(false);
+            this.gbLPMotion.PerformLayout();
+            this.gbLPSemiAuto.ResumeLayout(false);
+            this.gbLPCSTIDTest.ResumeLayout(false);
+            this.gbLPCSTIDTest.PerformLayout();
+            this.gbLoadportSelect.ResumeLayout(false);
+            this.tabE84.ResumeLayout(false);
+            this.gbE84Select.ResumeLayout(false);
+            this.gbE84Status.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -3291,7 +5595,7 @@
         internal System.Windows.Forms.Button SMIF_TweekDN_bt;
         internal System.Windows.Forms.RichTextBox Smif_log_rt;
         internal System.Windows.Forms.Button SMIF_TweekUP_bt;
-        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox gbSMIFCSTIDTest;
         private System.Windows.Forms.Button TagWrite_bt;
         private System.Windows.Forms.Button TagRead_bt;
         private System.Windows.Forms.TextBox SmartTagWrite_tb;
@@ -3490,5 +5794,163 @@
         private System.Windows.Forms.TabControl tbcManual;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox TagType_cb;
+        private System.Windows.Forms.TabPage tabLoadport;
+        internal System.Windows.Forms.GroupBox gbLoadportSelect;
+        private System.Windows.Forms.ComboBox cmbLoadportSelect;
+        private System.Windows.Forms.GroupBox gbLPCSTIDTest;
+        private System.Windows.Forms.ComboBox cmbLPCSTIDType;
+        private System.Windows.Forms.Label lbRfidType;
+        private System.Windows.Forms.Button btnWriteLPCSTID;
+        private System.Windows.Forms.Button btnReadLPCSTID;
+        private System.Windows.Forms.TextBox tbWriteLPCSTID;
+        private System.Windows.Forms.TextBox tbReadLPCSTID;
+        internal System.Windows.Forms.Button btnLoadportORGSH;
+        internal System.Windows.Forms.Button btnLodportReset;
+        internal System.Windows.Forms.Button btnLodportInitial;
+        private System.Windows.Forms.Label lbLPInfoPad;
+        private System.Windows.Forms.Label lbLPInterlockKey;
+        private System.Windows.Forms.Label lbLPMappingStatus;
+        private System.Windows.Forms.Label lbLPMapperStopper;
+        private System.Windows.Forms.Label lbLPMapperZAixs;
+        private System.Windows.Forms.Label lbLPMapperArmPosition;
+        private System.Windows.Forms.Label lbLPYAxisPosition;
+        private System.Windows.Forms.Label lbLPZAxisPosition;
+        private System.Windows.Forms.Label lbWaferProtusionSensor;
+        private System.Windows.Forms.Label lbLPDoorPosition;
+        private System.Windows.Forms.Label lbLPVacuum;
+        private System.Windows.Forms.Label lbLatchKeyStatus;
+        private System.Windows.Forms.Label lbFoupClampStatus;
+        private System.Windows.Forms.Label lbLPCassettepresence;
+        private System.Windows.Forms.Label lbLPErrorCode;
+        private System.Windows.Forms.Label lbLPOperationStatus;
+        private System.Windows.Forms.Label lbLPInitalPosition;
+        private System.Windows.Forms.Label lbLPMode;
+        private System.Windows.Forms.Label lbLPEquipmentStatus;
+        private System.Windows.Forms.Label tbLPInfoPad;
+        private System.Windows.Forms.Label tbLPInterlockKey;
+        private System.Windows.Forms.Label tbLPMappingStatus;
+        private System.Windows.Forms.Label tbLPMapperStopper;
+        private System.Windows.Forms.Label tbLPMapperZAixs;
+        private System.Windows.Forms.Label tbLPMapperArmPosition;
+        private System.Windows.Forms.Label tbLPYAxisPosition;
+        private System.Windows.Forms.Label tbLPZAxisPosition;
+        private System.Windows.Forms.Label tbWaferProtusionSensor;
+        private System.Windows.Forms.Label tbLPDoorPosition;
+        private System.Windows.Forms.Label tbLPVacuum;
+        private System.Windows.Forms.Label tbLatchKeyStatus;
+        private System.Windows.Forms.Label tbFoupClampStatus;
+        private System.Windows.Forms.Label tbLPCassettepresence;
+        private System.Windows.Forms.Label tbLPErrorCode;
+        private System.Windows.Forms.Label tbLPOperationStatus;
+        private System.Windows.Forms.Label tbLPInitalPosition;
+        private System.Windows.Forms.Label tbLPMode;
+        private System.Windows.Forms.Label tbLPEquipmentStatus;
+        internal System.Windows.Forms.Button btnLoadportABORG;
+        internal System.Windows.Forms.Button btnLoadportReadStatus;
+        private System.Windows.Forms.GroupBox gbLPMotion;
+        internal System.Windows.Forms.Button btnLPDRDown;
+        internal System.Windows.Forms.Button btnLPDROpen;
+        internal System.Windows.Forms.Button btnLPDRClose;
+        private System.Windows.Forms.Label lbLPDR;
+        internal System.Windows.Forms.Button btnLPLKRelease;
+        internal System.Windows.Forms.Button btnLPLKFix;
+        private System.Windows.Forms.Label lbLPLK;
+        internal System.Windows.Forms.Button btnLPDVOn;
+        internal System.Windows.Forms.Button btnLPDVOff;
+        private System.Windows.Forms.Label lbLPDV;
+        internal System.Windows.Forms.Button btnLPDPUndock;
+        private System.Windows.Forms.Label lbDockingPlate;
+        internal System.Windows.Forms.Button btnLPFCFix;
+        internal System.Windows.Forms.Button btnLPFCRelease;
+        private System.Windows.Forms.Label lbFoupClamp;
+        internal System.Windows.Forms.Button btnLPLoad;
+        internal System.Windows.Forms.Button btnLPUnload;
+        private System.Windows.Forms.GroupBox gbLPSemiAuto;
+        internal System.Windows.Forms.Button btnLPLock;
+        internal System.Windows.Forms.Button btnLPUnlock;
+        internal System.Windows.Forms.Button btnLPDock;
+        internal System.Windows.Forms.Button btnLPUndock;
+        internal System.Windows.Forms.Button btnLPOpen;
+        internal System.Windows.Forms.Button btnLPClose;
+        internal System.Windows.Forms.Button btnLPDPDock;
+        internal System.Windows.Forms.Button btnLPDRUp;
+        internal System.Windows.Forms.CheckBox cbWithSlotMap;
+        internal System.Windows.Forms.Button btnLPClearMappingResult;
+        internal System.Windows.Forms.Button btnReadMappingResult;
+        internal System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        internal System.Windows.Forms.Label lbMappingResult_01;
+        internal System.Windows.Forms.Label lbSlot_01;
+        internal System.Windows.Forms.Label lbMappingResult_02;
+        internal System.Windows.Forms.Label lbSlot_02;
+        internal System.Windows.Forms.Label lbMappingResult_03;
+        internal System.Windows.Forms.Label lbSlot_03;
+        internal System.Windows.Forms.Label lbMappingResult_04;
+        internal System.Windows.Forms.Label lbSlot_04;
+        internal System.Windows.Forms.Label lbMappingResult_05;
+        internal System.Windows.Forms.Label lbSlot_05;
+        internal System.Windows.Forms.Label lbMappingResult_06;
+        internal System.Windows.Forms.Label lbSlot_06;
+        internal System.Windows.Forms.Label lbMappingResult_07;
+        internal System.Windows.Forms.Label lbSlot_07;
+        internal System.Windows.Forms.Label lbMappingResult_08;
+        internal System.Windows.Forms.Label lbSlot_08;
+        internal System.Windows.Forms.Label lbMappingResult_09;
+        internal System.Windows.Forms.Label lbSlot_09;
+        internal System.Windows.Forms.Label lbMappingResult_10;
+        internal System.Windows.Forms.Label lbSlot_10;
+        internal System.Windows.Forms.Label lbMappingResult_11;
+        internal System.Windows.Forms.Label lbSlot_11;
+        internal System.Windows.Forms.Label lbMappingResult_12;
+        internal System.Windows.Forms.Label lbSlot_12;
+        internal System.Windows.Forms.Label lbMappingResult_13;
+        internal System.Windows.Forms.Label lbSlot_13;
+        internal System.Windows.Forms.Label lbMappingResult_14;
+        internal System.Windows.Forms.Label lbSlot_14;
+        internal System.Windows.Forms.Label lbMappingResult_15;
+        internal System.Windows.Forms.Label lbSlot_15;
+        internal System.Windows.Forms.Label lbMappingResult_16;
+        internal System.Windows.Forms.Label lbSlot_16;
+        internal System.Windows.Forms.Label lbMappingResult_17;
+        internal System.Windows.Forms.Label lbSlot_17;
+        internal System.Windows.Forms.Label lbMappingResult_18;
+        internal System.Windows.Forms.Label lbSlot_18;
+        internal System.Windows.Forms.Label lbMappingResult_19;
+        internal System.Windows.Forms.Label lbSlot_19;
+        internal System.Windows.Forms.Label lbMappingResult_20;
+        internal System.Windows.Forms.Label lbSlot_20;
+        internal System.Windows.Forms.Label lbMappingResult_21;
+        internal System.Windows.Forms.Label lbSlot_21;
+        internal System.Windows.Forms.Label lbMappingResult_22;
+        internal System.Windows.Forms.Label lbSlot_22;
+        internal System.Windows.Forms.Label lbMappingResult_23;
+        internal System.Windows.Forms.Label lbSlot_23;
+        internal System.Windows.Forms.Label lbMappingResult_24;
+        internal System.Windows.Forms.Label lbSlot_24;
+        internal System.Windows.Forms.Label lbMappingResult_25;
+        internal System.Windows.Forms.Label lbSlot_25;
+        internal System.Windows.Forms.Label label92;
+        internal System.Windows.Forms.Button btnRemapping;
+        private System.Windows.Forms.TabPage tabE84;
+        internal System.Windows.Forms.GroupBox gbE84Select;
+        private System.Windows.Forms.ComboBox cmbE84Select;
+        private System.Windows.Forms.Button btnE84ReadStatus;
+        private System.Windows.Forms.Button btnE84Reset;
+        private System.Windows.Forms.Button btnE84ManualMode;
+        private System.Windows.Forms.Button btnE84AutoMode;
+        private System.Windows.Forms.GroupBox gbE84Status;
+        private System.Windows.Forms.Label lbE84_CONT;
+        private System.Windows.Forms.Label lbE84_COMPT;
+        private System.Windows.Forms.Label lbE84_BUSY;
+        private System.Windows.Forms.Label lbE84_TR_REQ;
+        private System.Windows.Forms.Label lbE84_CS_1;
+        private System.Windows.Forms.Label lbE84_CS_0;
+        private System.Windows.Forms.Label lbE84_VALID;
+        private System.Windows.Forms.Label lbE84_ES;
+        private System.Windows.Forms.Label lbE84_HO_AVBL;
+        private System.Windows.Forms.Label lbE84_READY;
+        private System.Windows.Forms.Label lbE84_U_REQ;
+        private System.Windows.Forms.Label lbE84_L_REQ;
+        private System.Windows.Forms.Label lbE84ManualMode;
+        private System.Windows.Forms.Label lbE84AutoMode;
     }
 }

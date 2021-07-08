@@ -38,10 +38,46 @@ namespace GUI
 
         public void Initialize()
         {
-            foreach (Node port in NodeManagement.GetLoadPortList())
+            tabRobot.Parent = null;
+            tabSmif.Parent = null;
+            tabLoadport.Parent = null;
+            tabE84.Parent = null;
+
+            foreach (Node n in NodeManagement.GetList())
             {
-                
-                    if (port.Enable)
+                if(n.Enable)
+                {
+                    if(n.Controller.Contains("SMIFCONTROLLER"))
+                    {
+                        tabSmif.Parent = tbcManual;
+                    }
+                    else if(n.Controller.Contains("LOADPORTCONTROLLER"))
+                    {
+                        tabLoadport.Parent = tbcManual;
+                    }
+                    else if(n.Controller.Contains("ROBOTCONTROLLER"))
+                    {
+                        tabRobot.Parent = tbcManual;
+                    }
+                    else if(n.Controller.Contains("E84CONTROLLER"))
+                    {
+                        tabE84.Parent = tbcManual;
+
+                        cmbE84Select.Items.Add(n.Name);
+                        if(cmbE84Select.Text.Equals(""))
+                        {
+                            cmbE84Select.SelectedIndex = 0;
+                            ResetUI();
+                        }
+                    }
+                }
+            }
+
+            foreach (Node port in NodeManagement.GetLoadPortList())
+            {                
+                if (port.Enable)
+                {
+                    if (port.Controller.Contains("SMIFCONTROLLER"))
                     {
                         Cb_SMIFSelect.Items.Add(port.Name);
                         if (Cb_SMIFSelect.Text.Equals(""))
@@ -51,13 +87,20 @@ namespace GUI
 
                         }
                     }
-                   
-                   
-                    
-                
-                
-                
+                    else if (port.Controller.Contains("LOADPORTCONTROLLER"))
+                    {
+                        cmbLoadportSelect.Items.Add(port.Name);
+                        if (cmbLoadportSelect.Text.Equals(""))
+                        {
+                            cmbLoadportSelect.SelectedIndex = 0;
+                            ResetUI();
+
+                        }
+                    }
+                }           
             }
+
+
             cbRA1Point.Items.Clear();
             cbRA2Point.Items.Clear();
             foreach (Node n in NodeManagement.GetList())
@@ -75,7 +118,11 @@ namespace GUI
             }
             ManualPortStatusUpdate.UpdateMapping(Cb_SMIFSelect.Text, "?????????????????????????");
 
-            TagType_cb.Text = NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Vendor;
+            if(tabSmif.Parent != null)
+                TagType_cb.Text = NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Vendor;
+
+            if (tabLoadport.Parent != null)
+                cmbLPCSTIDType.Text = NodeManagement.Get(NodeManagement.Get(cmbLoadportSelect.Text).Associated_Node).Vendor;
         }
 
         private void PortFunction_Click(object sender, EventArgs e)
@@ -84,168 +131,9 @@ namespace GUI
             
         }
 
-       
-
-       
-
-        
-
-
         private void AlignerFunction_Click(object sender, EventArgs e)
         {
-            //string Message = "";
-            //Button btn = (Button)sender;
-            //String nodeName = "NA";
-            //String angle = "0";
-            //string speed = "0";
-            //if (btn.Name.IndexOf("A1") > 0)
-            //{
-            //    nodeName = "ALIGNER01";
-            //    if (cbA1Angle.Text.Equals(""))
-            //    {
-            //        cbA1Angle.Text = "0";
-            //    }
-            //    if (udA1AngleOffset.Text.Equals(""))
-            //    {
-            //        udA1AngleOffset.Text = "0";
-            //    }
-            //    angle = Convert.ToString(int.Parse(cbA1Angle.Text) + int.Parse(udA1AngleOffset.Text));
-            //    speed = nudA1Speed.Text.Equals("100") ? "0" : nudA1Speed.Text;
-            //}
-            //if (btn.Name.IndexOf("A2") > 0)
-            //{
-            //    nodeName = "ALIGNER02";
-            //    if (cbA2Angle.Text.Equals(""))
-            //    {
-            //        cbA2Angle.Text = "0";
-            //    }
-            //    if (udA2AngleOffset.Text.Equals(""))
-            //    {
-            //        udA2AngleOffset.Text = "0";
-            //    }
-            //    angle = Convert.ToString(int.Parse(cbA2Angle.Text) + int.Parse(udA2AngleOffset.Text));
-            //    speed = nudA2Speed.Text.Equals("100") ? "0" : nudA2Speed.Text;
-            //};
-            //this.ActiveAligner = nodeName;
-            //Node aligner = NodeManagement.Get(nodeName);
-            //Transaction[] txns = new Transaction[1];
-            //txns[0] = new Transaction();
-            //txns[0].FormName = "FormManual";
-            //if (aligner == null)
-            //{
-            //    MessageBox.Show(nodeName + " can't found!");
-            //    return;
-            //}
-            //String btnFuncName = btn.Name.Replace("A1", "").Replace("A2", ""); // A1 , A2 共用功能
-            //if (!btnFuncName.Equals("btnConn") && !btnFuncName.Equals("btnDisConn"))
-            //{
-            //    string status = "";
-            //    if (nodeName.Equals("ALIGNER01"))
-            //    {
-            //        status = tbA1Status.Text;
-            //    }
-            //    if (nodeName.Equals("ALIGNER02"))
-            //    {
-            //        status = tbA2Status.Text;
-            //    }
-            //    switch (status)
-            //    {
-            //        case "Disconnected":
-            //        case "N/A":
-            //        case "":
-            //            MessageBox.Show("Please connect first.", "Error");
-            //            return;
-            //        default:
-            //            break;
-            //    }
-            //}
-            //switch (btnFuncName)
-            //{
-            //    case "btnConn":
-            //        //ControllerManagement.Get(aligner.Controller).Connect();
-            //        aligner.State = "";
-            //        SetFormEnable(false);
-            //        Thread.Sleep(500);//暫解
-            //        setAlignerStatus();
-            //        SetFormEnable(true);
-            //        return;
-            //    case "btnDisConn":
-            //        // ControllerManagement.Get(aligner.Controller).Close();
-            //        aligner.State = "";
-            //        SetFormEnable(false);
-            //        Thread.Sleep(500);//暫解
-            //        setAlignerStatus();
-            //        SetFormEnable(true);
-            //        return;
-            //    case "btnInit":
-            //        //txns = new Transaction[4];
-            //        //txns[0].Method = Transaction.Command.AlignerType.Reset;
-            //        //txns[1].Method = Transaction.Command.AlignerType.AlignerOrigin;
-            //        //txns[2].Method = Transaction.Command.AlignerType.AlignerServo;
-            //        //txns[3].Method = Transaction.Command.AlignerType.AlignerHome;
-            //        break;
-            //    case "btnOrg":
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerOrigin;
-            //        break;
-            //    case "btnHome":
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerHome;
-            //        break;
-            //    case "btnServoOn":
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
-            //        txns[0].Value = "1";
-            //        break;
-            //    case "btnServoOff":
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerServo;
-            //        txns[0].Value = "0";
-            //        break;
-            //    case "btnVacuOn":
-            //        txns[0].Method = Transaction.Command.AlignerType.WaferHold;
-            //        txns[0].Arm = "1";
-            //        break;
-            //    case "btnVacuOff":
-            //        txns[0].Method = Transaction.Command.AlignerType.WaferRelease;
-            //        txns[0].Arm = "1";
-            //        break;
-            //    case "btnChgSpeed":
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerSpeed;
-            //        txns[0].Value = speed;
-            //        break;
-            //    case "btnReset":
-            //        txns[0].Method = Transaction.Command.AlignerType.Reset;
-            //        break;
-            //    case "btnAlign":
-            //        txns[0].Method = Transaction.Command.AlignerType.Align;
-            //        txns[0].Value = angle;
-            //        break;
-            //    case "btnChgMode":
-            //        int mode = -1;
-            //        if (btn.Name.IndexOf("A1") > 0)
-            //        {
-            //            mode = cbA1Mode.SelectedIndex;
-            //        }
-            //        if (btn.Name.IndexOf("A2") > 0)
-            //        {
-            //            mode = cbA2Mode.SelectedIndex;
-            //        }
-            //        if (mode < 0)
-            //        {
-            //            MessageBox.Show(" Insufficient information, please select mode!", "Invalid Mode");
-            //            return;
-            //        }
-            //        txns[0].Method = Transaction.Command.AlignerType.AlignerMode;
-            //        txns[0].Value = Convert.ToString(mode);
-            //        break;
-            //}
-            //if (!txns[0].Method.Equals(""))
-            //{
-            //    aligner.SendCommand(txns[0], out Message);
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Command is empty!");
-            //}
-            //SetFormEnable(false);
-            //setAlignerStatus();
+
         }
 
         private void SetFormEnable(bool enable)
@@ -327,46 +215,9 @@ namespace GUI
             }
 
             string nodeName = rbR1.Checked ? "ROBOT01" : "ROBOT02";
-            //Node robot = NodeManagement.Get(nodeName);
-            //Transaction[] txns = new Transaction[1];
 
-            //txns[0] = new Transaction();
-            //txns[0].FormName = "FormManual";
-            //SetFormEnable(false);
-            //string WaferSize = "";
-            //if (EightInch_rb.Checked)
-            //{
-            //    WaferSize = "200MM";
-            //}
-            //else if (TwelveInch_rb.Checked)
-            //{
-            //    WaferSize = "300MM";
-            //}
-            //switch (btn.Name)
-            //{
-            //    case "btnRGet":
-            //    case "btnRPut":
-            //    case "btnRGetWait":
-            //    case "btnRPutWait":
-            //    case "btnRMoveDown":
-            //    case "btnRMoveUp":
-            //    case "btnRPutPut":
-            //    case "btnRPutGet":
-            //    case "btnRGetPut":
-            //    case "btnRGetGet":
-            //        if (WaferSize.Equals(""))
-            //        {
-            //            MessageBox.Show("請選擇Wafer大小");
-            //            return;
-            //        }
-            //        break;
-            //}
-           
             string TaskName = "";
             Dictionary<string, string> param = new Dictionary<string, string>();
-           
-            
-            
 
             switch (btn.Name)
             {
@@ -871,6 +722,8 @@ namespace GUI
 
         private void tbcManual_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (tbcManual.SelectedTab == null)
+                return;
             switch (tbcManual.SelectedTab.Text)
             {
                 case "Robot":
@@ -889,12 +742,13 @@ namespace GUI
         {
             if (tbcManual.SelectedTab.Text.Equals("Robot"))
                 setRobotStatus();
+
             if (tbcManual.SelectedTab.Text.Equals("Aligner"))
                 setAlignerStatus();
+
             if (tbcManual.SelectedTab.Text.Equals("SMIF"))
-            {
                 SendCommand("SMIF_Initial_bt", Cb_SMIFSelect.Text);
-            }
+
         }
 
         private void btnRAreaSwap_Click(object sender, EventArgs e)
@@ -919,22 +773,17 @@ namespace GUI
         }
 
         private void SmifFunction_Click(object sender, EventArgs e)
-        {
-            
+        {           
             Node port = NodeManagement.Get(Cb_SMIFSelect.Text);
-            
-           
 
             if (port == null)
             {
                 MessageBox.Show(Cb_SMIFSelect.Text + " can't found!");
                 return;
             }
+
             Button btn = (Button)sender;
-
             SendCommand(btn.Name, Cb_SMIFSelect.Text);
-
-
         }
 
         private void SendCommand(string Cmd,string NodeName)
@@ -944,31 +793,150 @@ namespace GUI
             Dictionary<string, string> param = new Dictionary<string, string>();
             switch (Cmd)
             {
-                //case "SLOT_OFFSET_Modify_bt":
-                //    TaskName = "LOADPORT_SLOT_OFFSET_MODIFY";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    param.Add("@Value", SLOT_OFFSET_tb.Text);                   
-                //    break;
-                //case "WAFER_OFFSET_Modify_bt":
-                //    TaskName = "LOADPORT_WAFER_OFFSET_MODIFY";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    param.Add("@Value", WAFER_OFFSET_tb.Text);
-                //    break;
-                //case "SLOT_PITCH_Modify_bt":
-                //    TaskName = "LOADPORT_SLOT_PITCH_MODIFY";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    param.Add("@Value", SLOT_PITCH_tb.Text);
-                //    break;
-                //case "TWEEK_Modify_bt":
-                //    TaskName = "LOADPORT_TWEEK_MODIFY";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    param.Add("@Value", TWEEK_tb.Text);
-                //    break;
-                //case "CASSETTE_SIZE_Modify_bt":
-                //    TaskName = "LOADPORT_CASSETTE_SIZE_MODIFY";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    param.Add("@Value", CASSETTE_SIZE_tb.Text);
-                //    break;
+                case "btnE84AutoMode":
+                    TaskName = TaskFlowManagement.Command.E84_MODE;
+                    param.Add("@Target", cmbE84Select.Text);
+                    param.Add("@Value", "1");
+                    break;
+
+                case "btnE84ManualMode":
+                    TaskName = TaskFlowManagement.Command.E84_MODE;
+                    param.Add("@Target", cmbE84Select.Text);
+                    param.Add("@Value", "0");
+                    break;
+                case "btnE84ReadStatus":
+                    TaskName = TaskFlowManagement.Command.E84_INIT;
+                    param.Add("@Target", cmbE84Select.Text);
+                    break;
+                case "btnE84Reset":
+                    TaskName = TaskFlowManagement.Command.RESET_E84;
+                    param.Add("@Target", cmbE84Select.Text);
+                    break;
+                case "btnLodportInitial":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_INIT;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLoadportORGSH":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_ORGSH;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLodportReset":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_RESET;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLoadportABORG":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_FORCE_ORGSH;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLoadportReadStatus":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_READ_STATUS;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPLock":
+                case "btnLPFCFix":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_CLAMP;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPUnlock":
+                case "btnLPFCRelease":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_UNCLAMP;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDock":
+                case "btnLPDPDock":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_DOCK;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPUndock":
+                case "btnLPDPUndock":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_UNDOCK;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDVOn":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_VAC_ON;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDVOff":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_VAC_OFF;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPLKRelease":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_UNLATCH;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPLKFix":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_LATCH;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDROpen":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_DOOR_OPEN;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDRClose":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_DOOR_CLOSE;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDRDown":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_DOOR_DOWN;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPDRUp":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_DOOR_UP;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPOpen":
+                case "btnLPLoad":
+                    if(Cmd.Equals("btnLPLoad") && !cbWithSlotMap.Checked)
+                    {
+                        TaskName = TaskFlowManagement.Command.LOADPORT_OPEN_NOMAP;
+                    }
+                    else
+                    {
+                        TaskName = TaskFlowManagement.Command.LOADPORT_OPEN;
+                    }
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnLPClose":
+                case "btnLPUnload":
+                    if (Cmd.Equals("btnLPUnload") && !cbWithSlotMap.Checked)
+                    {
+                        TaskName = TaskFlowManagement.Command.LOADPORT_CLOSE_NOMAP;
+                    }
+                    else
+                    {
+                        TaskName = TaskFlowManagement.Command.LOADPORT_CLOSE;
+                    }
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnRemapping":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_RE_MAPPING;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
+                case "btnReadMappingResult":
+                    TaskName = TaskFlowManagement.Command.LOADPORT_GET_MAPDT;
+                    param.Add("@Target", cmbLoadportSelect.Text);
+                    break;
+
                 case "SMIF_TweekUP_bt":
                     TaskName =  TaskFlowManagement.Command.LOADPORT_TWKUP;
                     param.Add("@Target", Cb_SMIFSelect.Text);
@@ -1021,18 +989,12 @@ namespace GUI
                     TaskName =  TaskFlowManagement.Command.LOADPORT_CLAMP;
                     param.Add("@Target", Cb_SMIFSelect.Text);
                     break;
-                //case "SMIF_ReadVersion_bt":
-                //    TaskName = "GET_MAPDT";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    break;
-                //case "SMIF_ReadStatus_bt":
-                //    TaskName = "LOADPORT_Init";
-                //    param.Add("@Target", Cb_SMIFSelect.Text);
-                //    break;
+
                 case "SMIF_ReadMap_bt":
                     TaskName =  TaskFlowManagement.Command.LOADPORT_GET_MAPDT;
                     param.Add("@Target", Cb_SMIFSelect.Text);
                     break;
+                    
 
             }
             ManualPortStatusUpdate.LockUI(true);
@@ -1089,23 +1051,27 @@ namespace GUI
 
         private void TagRead_bt_Click(object sender, EventArgs e)
         {
-            //string Message = "";
-            //string TaskName = "READ_LCD";
+            ReadCSTID(Cb_SMIFSelect.Text.Replace("LOADPORT", ""));
+        }
+        private void ReadCSTID(string id)
+        {
             Dictionary<string, string> param = new Dictionary<string, string>();
             ManualPortStatusUpdate.LockUI(true);
-            param.Add("@Target", "SMARTTAG"+Cb_SMIFSelect.Text.Replace("LOADPORT",""));
+            param.Add("@Target", "SMARTTAG" + id);
             TaskFlowManagement.Excute(TaskFlowManagement.Command.GET_CSTID, param);
         }
 
         private void TagWrite_bt_Click(object sender, EventArgs e)
         {
-            //string Message = "";
-            //string TaskName = "WRITE_LCD";
+            WriteCSTID(Cb_SMIFSelect.Text.Replace("LOADPORT", ""), SmartTagWrite_tb.Text);
+        }
+        private void WriteCSTID(string id, string value)
+        {
             Dictionary<string, string> param = new Dictionary<string, string>();
             ManualPortStatusUpdate.LockUI(true);
-            param.Add("@Target", "SMARTTAG" + Cb_SMIFSelect.Text.Replace("LOADPORT", ""));
-            param.Add("@Value", SmartTagWrite_tb.Text);
-            TaskFlowManagement.Excute( TaskFlowManagement.Command.SET_CSTID, param);
+            param.Add("@Target", "SMARTTAG" + id);
+            param.Add("@Value", value);
+            TaskFlowManagement.Excute(TaskFlowManagement.Command.SET_CSTID, param);
         }
 
         private void FormManual_FormClosed(object sender, FormClosedEventArgs e)
@@ -1153,6 +1119,50 @@ namespace GUI
             NodeManagement.Save();
             ControllerManagement.Get(NodeManagement.Get(NodeManagement.Get(Cb_SMIFSelect.Text).Associated_Node).Controller).SetVendor(TagType_cb.Text);
             ControllerManagement.Save();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ReadCSTID(cmbLoadportSelect.Text.Replace("LOADPORT", ""));
+        }
+
+        private void btnWriteLPCSTID_Click(object sender, EventArgs e)
+        {
+            WriteCSTID(cmbLoadportSelect.Text.Replace("LOADPORT", ""), tbWriteLPCSTID.Text);
+        }
+
+        private void cmbLPCSTIDType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (NodeManagement.Get(NodeManagement.Get(cmbLoadportSelect.Text).Associated_Node) == null)
+                return;
+            if (ControllerManagement.Get(NodeManagement.Get(NodeManagement.Get(cmbLoadportSelect.Text).Associated_Node).Controller) == null)
+                return;
+
+            NodeManagement.Get(NodeManagement.Get(cmbLoadportSelect.Text).Associated_Node).Vendor = cmbLPCSTIDType.Text;
+            NodeManagement.Save();
+
+            ControllerManagement.Get(NodeManagement.Get(NodeManagement.Get(cmbLoadportSelect.Text).Associated_Node).Controller).SetVendor(cmbLPCSTIDType.Text);
+            ControllerManagement.Save();
+
+        }
+
+        private void btnLodportInitial_Click(object sender, EventArgs e)
+        {
+            Node port = NodeManagement.Get(cmbLoadportSelect.Text);
+
+            if (port == null)
+            {
+                MessageBox.Show(cmbLoadportSelect.Text + " can't found!");
+                return;
+            }
+
+            Button btn = (Button)sender;
+            SendCommand(btn.Name, cmbLoadportSelect.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ManualPortStatusUpdate.UpdateMapping(cmbLoadportSelect.Text, "?????????????????????????");
         }
     }
 }

@@ -18,6 +18,8 @@ namespace Lilith.UI_Update.Manual
         delegate void UpdateLock(bool Enable);
         delegate void UpdateId(string Data);
 
+
+
         public static void LockUI(bool Enable)
         {
             try
@@ -237,7 +239,7 @@ namespace Lilith.UI_Update.Manual
             }
         }
 
-        public static void UpdateStatus(string NodeName, string Data)
+        public static void UpdateE84Status(string NodeName, string Data)
         {
             try
             {
@@ -246,267 +248,455 @@ namespace Lilith.UI_Update.Manual
                 if (form == null)
                     return;
 
-                portName = form.Controls.Find("Cb_LoadPortSelect", true).FirstOrDefault() as ComboBox;
+                portName = form.Controls.Find("cmbE84Select", true).FirstOrDefault() as ComboBox;
                 if (portName == null)
                     return;
 
                 if (portName.InvokeRequired)
                 {
-                    UpdateData ph = new UpdateData(UpdateStatus);
+                    UpdateData ph = new UpdateData(UpdateE84Status);
                     portName.BeginInvoke(ph, NodeName, Data);
                 }
                 else
                 {
+                    Node node = NodeManagement.Get(NodeName);
+                    Label STS = null;
                     if (portName.Text.Equals(NodeName))
                     {
-                        Label STS = form.Controls.Find("LblStatus_A", true).FirstOrDefault() as Label;
-                        if (STS == null)
-                            return;
-                        STS.Text = Data;
+                        if(node.E84Mode == E84_Mode.AUTO)
+                        {
+                            STS = form.Controls.Find("lbE84AutoMode", true).FirstOrDefault() as Label;
+                            STS.BackColor = Color.Lime;
 
-                        for (int i = 0; i < 19; i++)
+                            STS = form.Controls.Find("lbE84ManualMode", true).FirstOrDefault() as Label;
+                            STS.BackColor = Color.White;
+                        }
+
+                        if (node.E84Mode == E84_Mode.MANUAL)
+                        {
+                            STS = form.Controls.Find("lbE84AutoMode", true).FirstOrDefault() as Label;
+                            STS.BackColor = Color.White;
+
+                            STS = form.Controls.Find("lbE84ManualMode", true).FirstOrDefault() as Label;
+                            STS.BackColor = Color.Lime;
+                        }
+
+                        STS = form.Controls.Find("lbE84_L_REQ", true).FirstOrDefault() as Label;
+                        if(STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["L_REQ"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_U_REQ", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["U_REQ"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_READY", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["READY"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_HO_AVBL", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["HO_AVBL"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_ES", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["ES"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_VALID", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["VALID"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_CS_0", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["CS_0"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_CS_1", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["CS_1"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_TR_REQ", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["TR_REQ"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_BUSY", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["BUSY"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_COMPT", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["COMPT"] ? Color.Lime : Color.White;
+
+                        STS = form.Controls.Find("lbE84_CONT", true).FirstOrDefault() as Label;
+                        if (STS.BackColor != null)
+                            STS.BackColor = node.E84IOStatus["CONT"] ? Color.Lime : Color.White;
+                    }
+                }
+            }
+            catch
+            {
+                logger.Error("UpdateE84Status: Update fail.");
+            }
+        }
+
+        public static void UpdateLoadPortStatus(string NodeName, string Data)
+        {
+            try
+            {
+                Form form = Application.OpenForms["FormManual"];
+                ComboBox portName;
+                if (form == null)
+                    return;
+
+                portName = form.Controls.Find("cmbLoadportSelect", true).FirstOrDefault() as ComboBox;
+                if (portName == null)
+                    return;
+
+                if (portName.InvokeRequired)
+                {
+                    UpdateData ph = new UpdateData(UpdateLoadPortStatus);
+                    portName.BeginInvoke(ph, NodeName, Data);
+                }
+                else
+                {
+                    Node node = NodeManagement.Get(NodeName);
+                    Label STS = null;
+                    if (portName.Text.Equals(NodeName))
+                    {
+                        for (int i = 0; i < 20; i++)
                         {
                             string Idx = (i + 1).ToString("00");
-                            Label StsLb = form.Controls.Find("Lab_StateCode_" + Idx + "_A", true).FirstOrDefault() as Label;
-                            string Sts = "";
                             switch (Idx)
                             {
                                 case "01":
-                                    switch (Data[i])
-                                    {
-                                        case '0':
-                                            Sts = "Normal";
-                                            break;
-                                        case 'A':
-                                            Sts = "Recoverable error";
-                                            break;
-                                        case 'E':
-                                            Sts = "Fatal error";
-                                            break;
+                                    STS = form.Controls.Find("tbLPEquipmentStatus", true).FirstOrDefault() as Label;
+                                    if (STS != null)
+                                    { 
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                    STS.Text = "Normal";
+                                                break;
+                                            case 'A':
+                                                    STS.Text = "Recoverable error";
+                                                break;
+                                            case 'E':
+                                                    STS.Text = "Fatal error";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "02":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPMode", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Online";
-                                            break;
-                                        case '1':
-                                            Sts = "Teaching";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Online";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Teaching";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "03":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPInitalPosition", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Unexecuted";
-                                            break;
-                                        case '1':
-                                            Sts = "Executed";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Unexecuted";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Executed";
+                                                break;
+                                        }
                                     }
                                     break;
+
                                 case "04":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPOperationStatus", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Stopped";
-                                            break;
-                                        case '1':
-                                            Sts = "Operating";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Stopped";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Operating";
+                                                break;
+                                        }
                                     }
+
                                     break;
-                                case "05":
                                 case "06":
-                                    Sts = Data[i].ToString();
+                                    STS = form.Controls.Find("tbLPErrorCode", true).FirstOrDefault() as Label;
+                                    if (STS != null)
+                                        STS.Text = node.StatusRawData[4].ToString() + node.StatusRawData[5].ToString();
+
                                     break;
                                 case "07":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPCassettepresence", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "None";
-                                            break;
-                                        case '1':
-                                            Sts = "Normal position";
-                                            break;
-                                        case '2':
-                                            Sts = "Error load";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "None";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Normal position";
+                                                break;
+                                            case '2':
+                                                STS.Text = "Error load";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "08":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbFoupClampStatus", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Open";
-                                            break;
-                                        case '1':
-                                            Sts = "Close";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Open";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Close";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
+
                                     break;
                                 case "09":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLatchKeyStatus", true).FirstOrDefault() as Label;
+                                    if(STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Open";
-                                            break;
-                                        case '1':
-                                            Sts = "Close";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Open";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Close";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
+
                                     break;
                                 case "10":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPVacuum", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "OFF";
-                                            break;
-                                        case '1':
-                                            Sts = "ON";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "OFF";
+                                                break;
+                                            case '1':
+                                                STS.Text = "ON";
+                                                break;
+                                        }
                                     }
+
                                     break;
                                 case "11":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPDoorPosition", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Open position";
-                                            break;
-                                        case '1':
-                                            Sts = "Close position";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Open position";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Close position";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
+
                                     break;
                                 case "12":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbWaferProtusionSensor", true).FirstOrDefault() as Label;
+                                    if(STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Blocked.";
-                                            break;
-                                        case '1':
-                                            Sts = "Unblocked.";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Blocked";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Unblocked";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "13":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPZAxisPosition", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Up position";
-                                            break;
-                                        case '1':
-                                            Sts = "Down position";
-                                            break;
-                                        case '2':
-                                            Sts = "Start position";
-                                            break;
-                                        case '3':
-                                            Sts = "End position";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Up position";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Down position";
+                                                break;
+                                            case '2':
+                                                STS.Text = "Start position";
+                                                break;
+                                            case '3':
+                                                STS.Text = "End position";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "14":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPYAxisPosition", true).FirstOrDefault() as Label;
+                                    if(STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Undock position";
-                                            break;
-                                        case '1':
-                                            Sts = "Dock position";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Undock position";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Dock position";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "15":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPMapperArmPosition", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Open";
-                                            break;
-                                        case '1':
-                                            Sts = "Close";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Open";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Close";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "16":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPMapperZAixs", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Retract position";
-                                            break;
-                                        case '1':
-                                            Sts = "Mapping position";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Retract position";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Mapping position";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "17":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPMapperStopper", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "ON";
-                                            break;
-                                        case '1':
-                                            Sts = "OFF";
-                                            break;
-                                        case '?':
-                                            Sts = "Not defined";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "ON";
+                                                break;
+                                            case '1':
+                                                STS.Text = "OFF";
+                                                break;
+                                            case '?':
+                                                STS.Text = "Not defined";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "18":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPMappingStatus", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Unexecuted";
-                                            break;
-                                        case '1':
-                                            Sts = "Normal end";
-                                            break;
-                                        case '2':
-                                            Sts = "Abnormal end";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Unexecuted";
+                                                break;
+                                            case '1':
+                                                STS.Text = "Normal end";
+                                                break;
+                                            case '2':
+                                                STS.Text = "Abnormal end";
+                                                break;
+                                        }
                                     }
                                     break;
                                 case "19":
-                                    switch (Data[i])
+                                    STS = form.Controls.Find("tbLPInterlockKey", true).FirstOrDefault() as Label;
+                                    if (STS != null)
                                     {
-                                        case '0':
-                                            Sts = "Enable";
-                                            break;
-                                        case '1':
-                                        case '2':
-                                        case '3':
-                                            Sts = "Disable";
-                                            break;
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "Enable";
+                                                break;
+                                            case '1':
+                                            case '2':
+                                            case '3':
+                                                STS.Text = "Disable";
+                                                break;
+                                        }
+                                    }
+                                    break;
+
+                                case "20":
+                                    STS = form.Controls.Find("tbLPInfoPad", true).FirstOrDefault() as Label;
+                                    if (STS != null)
+                                    {
+                                        switch (node.StatusRawData[i])
+                                        {
+                                            case '0':
+                                                STS.Text = "No input";
+                                                break;
+                                            case '1':
+                                                STS.Text = "A-pin ON";
+                                                break;
+                                            case '2':
+                                                STS.Text = "B-pin ON";
+                                                break;
+                                            case '3':
+                                                STS.Text = "A-pin/B-pin ON";
+                                                break;
+                                        }
                                     }
                                     break;
                             }
-
-                            StsLb.Text = Sts;
-
                         }
                     }
                 }
@@ -637,11 +827,22 @@ namespace Lilith.UI_Update.Manual
             try
             {
                 Form form = Application.OpenForms["FormManual"];
-                ComboBox portName;
+                ComboBox portName = null;
                 if (form == null)
                     return;
+                Node node = NodeManagement.Get(NodeName);
 
-                portName = form.Controls.Find("Cb_SMIFSelect", true).FirstOrDefault() as ComboBox;
+                switch(node.Vendor)
+                {
+                    case "SANWA_MC":
+                        portName = form.Controls.Find("Cb_SMIFSelect", true).FirstOrDefault() as ComboBox;
+                        break;
+
+                    case "TDK":
+                        portName = form.Controls.Find("cmbLoadportSelect", true).FirstOrDefault() as ComboBox;
+                        break;
+                }
+
                 if (portName == null)
                     return;
 
@@ -654,49 +855,72 @@ namespace Lilith.UI_Update.Manual
                 {
                     if (portName.Text.Equals(NodeName))
                     {
-                        for (int i = Data.Length - 1; i >= 0; i--)
+                        node = NodeManagement.Get(NodeName);
+
+                        switch (node.Vendor)
                         {
-                            string Slot = (i + 1).ToString("00");
-                            Label slotLb = form.Controls.Find("Lab_S_Slot_" + Slot, true).FirstOrDefault() as Label;
-
-                            switch (Data[i])
-                            {
-                                case '0':
-                                    slotLb.Text = "No wafer";
-                                    slotLb.BackColor = Color.Silver;
-                                    break;
-                                case '1':
-                                    slotLb.Text = "Wafer";
-                                    slotLb.BackColor = Color.Lime;
-                                    break;
-                                case '2':
-                                    slotLb.Text = "Crossed";
-                                    slotLb.BackColor = Color.Red;
-                                    break;
-                                case '?':
-                                    slotLb.Text = "Undefined";
-                                    slotLb.BackColor = Color.Red;
-                                    break;
-                                case 'W':
-                                    slotLb.Text = "Overlapping";
-                                    slotLb.BackColor = Color.Red;
-                                    break;
-                                case 'E':
-                                    slotLb.Text = "Error";
-                                    slotLb.BackColor = Color.Red;
-                                    break;
-
-                            }
+                            case "SANWA_MC":
+                            case "TDK":
+                                SanwaMappingResult(node, form, Data);
+                                break;
                         }
                     }
 
                 }
 
-
             }
             catch
             {
                 logger.Error("UpdateControllerStatus: Update fail.");
+            }
+        }
+        private static void SanwaMappingResult(Node node, Form form, string Data)
+        {
+            for (int i = Data.Length - 1; i >= 0; i--)
+            {
+                string Slot = (i + 1).ToString("00");
+                Label slotLb = null;
+
+                if(node.Vendor.Equals("SANWA_MC"))
+                {
+                    slotLb = form.Controls.Find("Lab_S_Slot_" + Slot, true).FirstOrDefault() as Label;
+                }
+                else if(node.Vendor.Equals("TDK"))
+                {
+                    slotLb = form.Controls.Find("lbMappingResult_" + Slot, true).FirstOrDefault() as Label;
+                }
+
+                if (slotLb == null) return;
+
+
+                switch (Data[i])
+                {
+                    case '0':
+                        slotLb.Text = "No wafer";
+                        slotLb.BackColor = Color.Silver;
+                        break;
+                    case '1':
+                        slotLb.Text = "Wafer";
+                        slotLb.BackColor = Color.Lime;
+                        break;
+                    case '2':
+                        slotLb.Text = "Crossed";
+                        slotLb.BackColor = Color.Red;
+                        break;
+                    case '?':
+                        slotLb.Text = "Undefined";
+                        slotLb.BackColor = Color.Red;
+                        break;
+                    case 'W':
+                        slotLb.Text = "Overlapping";
+                        slotLb.BackColor = Color.Red;
+                        break;
+                    case 'E':
+                        slotLb.Text = "Error";
+                        slotLb.BackColor = Color.Red;
+                        break;
+
+                }
             }
         }
     }
